@@ -438,60 +438,6 @@ void menuTelemetryMavlinkGPS(void) {
 	//}
 }
 
-#ifdef DUMP_RX_TX
-//! \brief Display one byte as hex.
-void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val) {
-	x += FWNUM * 2;
-	for (int i = 0; i < 2; i++) {
-		x -= FWNUM;
-		char c = val & 0xf;
-		c = c > 9 ? c + 'A' - 10 : c + '0';
-		lcd_putcAtt(x, y, c, c >= 'A' ? CONDENSED : 0);
-		val >>= 4;
-	}
-}
-
-//! \brief Hex dump of the current mavlink message.
-void menuTelemetryMavlinkDump(uint8_t event) {
-	uint8_t x = 0;
-	uint8_t y = FH;
-	uint16_t count = 0;
-	uint16_t bufferLen = 0;
-	uint8_t *ptr = NULL;
-	switch (MAVLINK_menu) {
-		case MENU_DUMP_RX:
-			mav_dump_rx = 1;
-			mav_title(PSTR("RX"), MAVLINK_menu);
-			bufferLen = mavlinkRxBufferCount;
-			ptr = mavlinkRxBuffer;
-			break;
-
-		case MENU_DUMP_DIAG:
-			mav_title(PSTR("Diag"), MAVLINK_menu);
-		//	bufferLen = serialTxBufferCount;
-		//	ptr = ptrTxISR;
-			break;
-		
-		default:
-			break;
-	}
-	for (uint16_t var = 0; var < bufferLen; var++) {
-		uint8_t byte = *ptr++;
-		lcd_outhex2(x, y, byte);
-		x += 2 * FW;
-		count++;
-		if (count > 8) {
-			count = 0;
-			x = 0;
-			y += FH;
-			if (y == (6 * FH))
-			break;
-		}
-	}
-}
-#endif
-
-
 /*!	\brief Mavlink General setup menu.
  *	\details Setup menu for generic mavlink settings.
  *	Current menu items
@@ -530,3 +476,102 @@ void menuTelemetryMavlinkSetup(uint8_t event) {
 		}
 	}
 }
+
+#ifdef DUMP_RX_TX
+//! \brief Display one byte as hex.
+void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val) {
+	x += FWNUM * 2;
+	for (int i = 0; i < 2; i++) {
+		x -= FWNUM;
+		char c = val & 0xf;
+		c = c > 9 ? c + 'A' - 10 : c + '0';
+		lcd_putcAtt(x, y, c, c >= 'A' ? CONDENSED : 0);
+		val >>= 4;
+	}
+}
+
+//! \brief Hex dump of the current mavlink message.
+void menuTelemetryMavlinkDump(uint8_t event) {
+	uint8_t x = 0;
+	uint8_t y = FH;
+	uint16_t count = 0;
+	uint16_t bufferLen = 0;
+	uint8_t *ptr = NULL;
+	switch (MAVLINK_menu) {
+		case MENU_DUMP_RX:
+			mav_dump_rx = 1;
+			mav_title(PSTR("RX"), MAVLINK_menu);
+			bufferLen = mavlinkRxBufferCount;
+			ptr = mavlinkRxBuffer;
+			break;
+
+		case MENU_DUMP_DIAG:
+			menuTelemetryMavlinkDiag();
+			break;
+		
+		default:
+			break;
+	}
+	for (uint16_t var = 0; var < bufferLen; var++) {
+		uint8_t byte = *ptr++;
+		lcd_outhex2(x, y, byte);
+		x += 2 * FW;
+		count++;
+		if (count > 8) {
+			count = 0;
+			x = 0;
+			y += FH;
+			if (y == (6 * FH))
+			break;
+		}
+	}
+}
+
+/*!	\brief Global info menu
+ *	\details Quick status overview menu. The menu should contain current mode, 
+ *	armed | disarmed, battery status and RSSI info. Menu must be clean and
+ *	readable with a quick glance.
+ *	\todo Make menu as described as above.
+ */
+void menuTelemetryMavlinkDiag(void) {
+
+	mav_title(PSTR("Diag"), MAVLINK_menu);
+
+	uint8_t x1, x2, xnum, y;
+	x1 = FW;
+	x2 = 7 * FW;
+	xnum = x2 + 5 * FWNUM;
+	y = FH;
+
+	lcd_putsnAtt(x1, y, STR_MAVLINK_MODE, 4, 0);
+	if (telemetry_data.active)
+		lcd_putsnAtt(x2, y, PSTR("A"), 1, 0);
+	lcd_outdezAtt(xnum, y, telemetry_data.mode, 0);
+
+	y += FH;
+	lcd_puts(x1, y, PSTR("MAVLINK_MSG_ID_GPS_RAW_INT"));
+	lcd_outdezNAtt(xnum, y, telemetry_data.vbat, PREC1, 5);
+	y += FH;
+	lcd_puts(x1, y, PSTR("PKT DROP"));
+	lcd_outdezAtt(xnum, y, telemetry_data.packet_drop, 0);
+	y += FH;
+	lcd_puts(x1, y, PSTR("PKT REC"));
+	lcd_outdezAtt(xnum, y, telemetry_data.packet_fixed, 0);		/* TODO use correct var */
+	y += FH;
+	lcd_puts(x1, y, PSTR("MAV Comp"));
+	lcd_outdezAtt(xnum, y, telemetry_data.mav_compid, 0);
+	y += FH;
+	lcd_puts(x1, y, PSTR("MAV Sys"));
+	lcd_outdezAtt(xnum, y, telemetry_data.mav_sysid, 0);
+	y += FH;
+	lcd_puts(x1, y, PSTR("Rad Comp"));
+	lcd_outdezAtt(xnum, y, telemetry_data.radio_compid, 0);
+	y += FH;
+	lcd_puts(x1, y, PSTR("Rad Sys"));
+	lcd_outdezAtt(xnum, y, telemetry_data.radio_sysid, 0);
+}
+
+
+#endif
+
+

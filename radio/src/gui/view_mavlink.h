@@ -62,6 +62,7 @@ void menuTelemetryMavlinkGPS(void);
 #ifdef DUMP_RX_TX
 void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val);
 void menuTelemetryMavlinkDump(uint8_t event);
+void menuTelemetryMavlinkDiag(void);
 #endif
 void menuTelemetryMavlinkSetup(uint8_t event);
 
