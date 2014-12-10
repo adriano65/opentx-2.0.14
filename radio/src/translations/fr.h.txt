@@ -231,11 +231,11 @@
     #define TR_PLAY_TRACK      "Jouer fich\0  "
   #endif
   #define TR_PLAY_BOTH         "Jouer les 2\0 "
-  #define TR_PLAY_VALUE        "Dire valeur\0 "
+  #define TR_PLAY_VALUE        "Lire valeur\0 "
 #else
   #define TR_PLAY_TRACK        "[Jouer fich.]"
   #define TR_PLAY_BOTH         "[Jouer les 2]"
-  #define TR_PLAY_VALUE        "[Dire valeur]"
+  #define TR_PLAY_VALUE        "[Lire valeur]"
 #endif
 
 #define TR_CFN_BG_MUSIC        "Musique\0     ""Pause Musique"
@@ -305,7 +305,7 @@
 
 #if defined(CPUARM)
   #define TR_TELEM_RESERVE     TR("[--]", "[---]")
-  #define TR_TELEM_TIME        TR("Heur", "Heure")
+  #define TR_TELEM_TIME        TR("Heur", "H:M\0 ")
   #define TR_SWR               TR("SWR\0", "SWR\0 ")
   #define TR_RX_BATT           TR("BtRx", "BatRx")
   #define TR_A3_A4             TR("A3\0 ""A4\0 ", "A3\0  ""A4\0  ") 

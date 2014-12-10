@@ -125,7 +125,7 @@ void telemetrySecondPortInit(unsigned int /*protocol*/)
 #endif
 
 #if defined(MAVLINK)
-void telemetrySecondPortInit(uint32_t baudrate)
+void telemetrySecondPortInit(unsigned int baudrate)
 {
   SECOND_UART_Configure(baudrate, Master_frequency);
 }

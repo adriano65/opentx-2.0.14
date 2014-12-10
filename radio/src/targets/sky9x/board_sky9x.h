@@ -292,7 +292,7 @@ uint32_t telemetryTransmitPending();
 void telemetryTransmitBuffer(uint8_t * buffer, uint32_t size);
 
 // Second UART driver
-void telemetrySecondPortInit(uint32_t protocol);
+void telemetrySecondPortInit(unsigned int);
 bool telemetrySecondPortReceive(uint8_t & data);
 
 #endif
