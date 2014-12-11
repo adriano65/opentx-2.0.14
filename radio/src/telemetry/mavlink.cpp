@@ -39,7 +39,6 @@
 #include "telemetry/mavlink.h"
 
 // this might need to move to the flight software
-//static
 mavlink_system_t mavlink_system = { 7, MAV_COMP_ID_MISSIONPLANNER, 0, 0, 0, 0 };
 
 //static uint8_t system_id = 7;
@@ -56,6 +55,7 @@ static int8_t mav_heartbeat = 0;
 static uint8_t data_stream_start_stop = 0;
 
 static int8_t actualbaudrateIdx = 0;
+
 // Telemetry data hold
 Telemetry_Data_t telemetry_data;
 
@@ -73,7 +73,7 @@ uint8_t mav_dump_rx = 0;
 #if defined(CPUARM)
 #else
 #include "serial.cpp"
-SerialFuncP RXHandler = MAVLINK_rxhandler;
+SerialFuncP RXHandler = processSerialData;
 #endif
 
 
@@ -110,7 +110,7 @@ void MAVLINK_Init(void) {
 	mav_statustext[0] = 0;
 	MAVLINK_reset(0);
 	actualbaudrateIdx=g_eeGeneral.mavbaud;
-	#if defined(PCBSKY9X)	/* PCBSKY9X means SKY9X AND 9XRPRO !! */
+	#if defined(PCBSKY9X) || defined(PCBTARANIS)	/* PCBSKY9X means SKY9X AND 9XRPRO !! */
 		#if defined(REVX)
 			telemetryPortInit(0);
 			telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));			
@@ -130,22 +130,34 @@ void telemetryWakeup() {
 	if (!count) {
 	  mav_heartbeat=0;	/* reset counter */
 	  }
-	/* --------------------------------- */
+	/* ---------------------------------------------------- */
 	
-	#if defined(PCBSKY9X)
+	/* CHANGE BAUDRATE IF USER MODIFY SPEED IN MENU ------- */
+	if (actualbaudrateIdx!=g_eeGeneral.mavbaud) {
+	#if defined(PCBSKY9X) || defined(PCBTARANIS)
 		#if defined(REVX)
-			if (actualbaudrateIdx!=g_eeGeneral.mavbaud) {
-			  telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
-			  actualbaudrateIdx=g_eeGeneral.mavbaud;
-			  }
+		telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
+		#else
+		telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
+		#endif
+	#else
+		// TODO 9x, 9xr
+	#endif
+		actualbaudrateIdx=g_eeGeneral.mavbaud;
+	}
+	/* ---------------------------------------------------- */
+	
+	#if defined(PCBSKY9X) || defined(PCBTARANIS)
+		#if defined(REVX)
 			uint8_t data;
 			while (telemetrySecondPortReceive(data)) {
 			  processSerialData(data);
 			}	
 		#else
-			//#error scemo REVB
 			rxPdcUsart(processSerialData);
 		#endif
+	#else
+			
 	#endif
 }
 
