@@ -196,12 +196,12 @@ typedef struct Telemetry_Data_ {
 	int8_t ack_result;
 
 	// GPS
-	uint8_t fix_type; ///< 0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the value of this field unless it is at least two, so always correctly fill in the fix.
-	uint8_t satellites_visible; ///< Number of satellites visible
+	uint8_t fix_type; // 0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the value of this field unless it is at least two, so always correctly fill in the fix.
+	uint8_t satellites_visible; // Number of satellites visible
 	Location_t loc_current;
 	float eph;
 	uint16_t course;
-	float v; // Ground speed
+	float v; 			// Ground speed
 	// Navigation
 	uint16_t heading;
 	uint16_t bearing;
@@ -211,6 +211,15 @@ typedef struct Telemetry_Data_ {
 	MavlinkParam_t params[NB_PARAMS];
 #endif
 
+#ifdef DUMP_RX_TX
+	uint8_t lastFix_type;
+	uint8_t lastSatellites_visible;
+	Location_t lastLocation;
+	float lastEph;
+	uint16_t lastCourse;
+	float last_v;
+#endif
+	
 } Telemetry_Data_t;
 
 // Telemetry data hold

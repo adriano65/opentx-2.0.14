@@ -105,7 +105,7 @@ void MAVLINK_reset(uint8_t warm_reset) {
 	data_stream_start_stop = 0;
 }
 
-//! \brief initialize serial (see opentx.cpp)
+/* initialize serial (see opentx.cpp) */
 void MAVLINK_Init(void) {
 	mav_statustext[0] = 0;
 	MAVLINK_reset(0);
@@ -189,7 +189,25 @@ uint32_t Index2Baud(uint8_t mavbaudIdx)
 		return 4800;
 	  }
 }
-/*!	\brief Mavlink message parser
+
+void request_mavlink_rates() {
+    const int  maxStreams = 6;
+    const uint8_t MAVStreams[maxStreams] = {MAV_DATA_STREAM_RAW_SENSORS,
+											MAV_DATA_STREAM_EXTENDED_STATUS,
+											MAV_DATA_STREAM_RC_CHANNELS,
+											MAV_DATA_STREAM_POSITION,
+											MAV_DATA_STREAM_EXTRA1, 
+											MAV_DATA_STREAM_EXTRA2};
+    const uint16_t MAVRates[maxStreams] = {0x02, 0x02, 0x05, 0x02, 0x05, 0x02};
+    for (int i=0; i < maxStreams; i++) {
+        mavlink_msg_request_data_stream_send(MAVLINK_COMM_0,
+											 telemetry_data.radio_sysid, 
+											 telemetry_data.radio_compid,
+											 MAVStreams[i], MAVRates[i], 1);
+    }
+}
+
+/* Mavlink message parser
  *	\details Parses the characters in a mavlink message.
  *	Case statement parses each character as it is received.
  *	\attention One big change form the 0.9 to 1.0 version is the
@@ -455,8 +473,8 @@ static inline void REC_MAVLINK_MSG_ID_HIL_CONTROLS(const mavlink_message_t* msg)
 	telemetry_data.nav_mode = mavlink_msg_hil_controls_get_mode(msg);
 }
 
-/*!	\brief Process GPS raw integer message
- *	\details This message contains the following data:
+/* Process GPS raw integer message
+ *	This message contains the following data:
  *		- fix type: 0-1: no fix, 2: 2D fix, 3: 3D fix.
  *		- Latitude, longitude in 1E7 * degrees
  *		- Altutude 1E3 * meters above MSL.
@@ -473,6 +491,17 @@ static inline void REC_MAVLINK_MSG_ID_GPS_RAW_INT(const mavlink_message_t* msg) 
 	telemetry_data.course = mavlink_msg_gps_raw_int_get_cog(msg) / 100.0;
 	telemetry_data.v = mavlink_msg_gps_raw_int_get_vel(msg) / 100.0 ;
 	telemetry_data.satellites_visible = mavlink_msg_gps_raw_int_get_satellites_visible(msg);
+	
+#ifdef DUMP_RX_TX
+	telemetry_data.lastFix_type = mavlink_msg_gps_raw_int_get_fix_type(msg);
+	telemetry_data.lastLocation.lat = mavlink_msg_gps_raw_int_get_lat(msg) / 1E7;
+	telemetry_data.lastLocation.lon = mavlink_msg_gps_raw_int_get_lon(msg) / 1E7;
+	telemetry_data.lastLocation.gps_alt = mavlink_msg_gps_raw_int_get_alt(msg) / 1E3;
+	telemetry_data.lastEph = mavlink_msg_gps_raw_int_get_eph(msg) / 100.0;
+	telemetry_data.lastCourse = mavlink_msg_gps_raw_int_get_cog(msg) / 100.0;
+	telemetry_data.last_v = mavlink_msg_gps_raw_int_get_vel(msg) / 100.0 ;
+	telemetry_data.lastSatellites_visible = mavlink_msg_gps_raw_int_get_satellites_visible(msg);
+#endif
 }
 
 #ifdef MAVLINK_PARAMS

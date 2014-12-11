@@ -130,7 +130,7 @@ const pm_char * openLogs()
       f_puts("),Vertical Speed,Air Speed(kts),Temp1,Temp2,RPM,Fuel," TELEMETRY_CELLS_LABEL "Current,Consumption,Vfas,AccelX,AccelY,AccelZ,", &g_oLogFile);
     }
 #elif defined(CPUARM) && defined(MAVLINK)
-      f_puts("fix,  lat,        lon,        alt,   eph,   course, v,		sat_vis, ", &g_oLogFile);
+      f_puts("fix, lat, lon, alt, eph, course, v, sat_vis, ", &g_oLogFile);
 #endif
 
 #if defined(WS_HOW_HIGH)
@@ -138,6 +138,9 @@ const pm_char * openLogs()
       f_puts("WSHH Alt,", &g_oLogFile);
     }
 #endif
+	for (uint8_t i=0; i<NUM_STICKS+NUM_POTS; i++) {
+		f_printf(&g_oLogFile, "%d,", calibratedStick[i]);
+	}
 
 #if defined(PCBTARANIS)
     f_puts("Rud,Ele,Thr,Ail,S1,S2,S3,LS,RS,SA,SB,SC,SD,SE,SF,SG,SH\n", &g_oLogFile);
@@ -264,7 +267,7 @@ void writeLogs()
 		  telemetry_data.loc_current.gps_alt,
 		  telemetry_data.eph,
 		  telemetry_data.course,
-		  telemetry_data.v,		// speed
+		  telemetry_data.v,
 		  telemetry_data.satellites_visible			 
 		);
 #endif

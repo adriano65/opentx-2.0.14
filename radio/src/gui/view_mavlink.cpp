@@ -36,78 +36,74 @@
  *
  */
  
-/*!	\file view_mavlink.cpp
- *	Mavlink menu
- *	Contains the menu specific code for Mavlink support.
- */
-
 #include "gui/view_mavlink.h"
 
-// Globals declaration
-
- 
-/*!	\brief Top Mavlink Menu definition
- *	\details Registers button events and handles that info. Buttons select menus,
+/*	Top Mavlink Menu definition
+ *	Registers button events and handles that info. Buttons select menus,
  *	these are launched from the MAVLINK_menu switch statement. Setup menu is
  *	lanuched by the menu button. On exit (with exit button) the mavlink
  *	extension is reinitialized.
  */
 void menuTelemetryMavlink(uint8_t event) {
 	
-	switch (event) // new event received, branch accordingly
-	{
-	case EVT_ENTRY:
-		MAVLINK_menu = MENU_INFO;
-		break;
-
-	case EVT_KEY_FIRST(KEY_UP):
-		if (MAVLINK_menu > 0)
-		{
-			MAVLINK_menu--;
+	switch (event) {
+		case EVT_ENTRY:
+			MAVLINK_menu = MENU_INFO;
 			break;
-		}
-		else
-		{
+
+		case EVT_KEY_FIRST(KEY_UP):
+			if (MAVLINK_menu > 0) {
+				MAVLINK_menu--;
+				break;
+				}
+			else {
+				chainMenu(menuMainView);
+				return;
+				}
+		case EVT_KEY_FIRST(KEY_DOWN):
+			if (MAVLINK_menu < MAX_MAVLINK_MENU - 1)
+				MAVLINK_menu++;
+			break;
+			
+		case EVT_KEY_FIRST(KEY_MENU):
+			return;
+			
+		case EVT_KEY_FIRST(KEY_EXIT):
 			chainMenu(menuMainView);
 			return;
 		}
-	case EVT_KEY_FIRST(KEY_DOWN):
-		if (MAVLINK_menu < MAX_MAVLINK_MENU - 1)
-			MAVLINK_menu++;
-		break;
-	case EVT_KEY_FIRST(KEY_MENU):
-		return;
-	case EVT_KEY_FIRST(KEY_EXIT):
-		chainMenu(menuMainView);
-		return;
-	}
 
 	switch (MAVLINK_menu) {
-	case MENU_INFO:
-		menuTelemetryMavlinkInfos();
-		break;
-	case MENU_MODE:
-		menuTelemetryMavlinkFlightMode();
-		break;
-	case MENU_BATT:
-		menuTelemetryMavlinkBattery();
-		break;
-	case MENU_NAV:
-		menuTelemetryMavlinkNavigation();
-		break;
-	case MENU_GPS:
-		menuTelemetryMavlinkGPS();
-		break;
+		case MENU_INFO:
+			menuTelemetryMavlinkInfos();
+			break;
+		case MENU_MODE:
+			menuTelemetryMavlinkFlightMode();
+			break;
+		case MENU_BATT:
+			menuTelemetryMavlinkBattery();
+			break;
+		case MENU_GPS:
+			menuTelemetryMavlinkGPS();
+			break;
+		
 #ifdef DUMP_RX_TX
-	case MENU_DUMP_RX:
-	case MENU_DUMP_DIAG:
-		menuTelemetryMavlinkDump(event);
-		break;
+		case MENU_LASTGPSFIX:
+			menuMavlinkLastGPSFix();
+			break;
+		case MENU_NAV:
+			menuTelemetryMavlinkNavigation();
+			break;
+		case MENU_DUMP_DIAG:
+			menuMavlinkDiag();
+			break;
+		case MENU_DUMP_RX:
+			menuTelemetryMavlinkDumpRx(event);
+			break;
 #endif
-	default:
-		break;
-	}
-
+		default:
+			break;
+		}
 }
 
 /*!	\brief Float variable display helper
@@ -344,46 +340,6 @@ void menuTelemetryMavlinkBattery(void) {
     
 }
 
-/*!	\brief Navigation dislplay
- *	\details Shows Navigation telemetry.
- *	Altitude in this menu is the relative (to the home location) altitude. This
- *	is the same altitude used by the waypoints.
- *	\todo Add a similar menu to fly back to the home location.
- */
-void menuTelemetryMavlinkNavigation(void) {
-	
-	mav_title(STR_MAVLINK_NAV_MENU_TITLE, MAVLINK_menu);
-	
-	uint8_t x, y, ynum;
-	x = 7 * FWNUM;
-//	x = xnum + 0 * FW;
-	ynum = 2 * FH;
-	y = FH;
-	
-    
-	x = 0;	
-    lcd_puts  (x, y, STR_MAVLINK_COURSE);
-	lcd_outdezAtt(x + 7 * FWNUM, ynum, telemetry_data.course, (DBLSIZE | UNSIGN));
-	lcd_puts(x + 7 * FWNUM, ynum, PSTR("o"));
-	x += 8 * (2 * FWNUM);
-    lcd_puts(x, y, STR_MAVLINK_HEADING);
-	lcd_outdezAtt(x + 7 * FWNUM, ynum, telemetry_data.heading, (DBLSIZE | UNSIGN));
-	lcd_puts(x + 7 * FWNUM, ynum,  PSTR("o"));
-	y += 3 * FH;
-	ynum += 3 * FH;
-	
-	x = 0;	
-    lcd_puts  (x, y, STR_MAVLINK_BEARING);
-	lcd_outdezAtt(x + 7 * FWNUM, ynum, telemetry_data.bearing, (DBLSIZE | UNSIGN));
-	lcd_puts(x + 7 * FWNUM, ynum, PSTR("o"));
-	x += 8 * (2 * FWNUM);
-    lcd_puts(x, y, STR_MAVLINK_ALTITUDE);
-	lcd_outdezFloat(x + 4 * FWNUM - 1, ynum, telemetry_data.loc_current.rel_alt, 1, (DBLSIZE));
-	lcd_puts(x + 7 * FWNUM, ynum + FH,  PSTR("m"));
- 
-}
-
-
 
 /*!	\brief GPS information menu
  *	\details Menu gives a lot of info from the gps like fix type, position,
@@ -438,6 +394,7 @@ void menuTelemetryMavlinkGPS(void) {
 	//}
 }
 
+
 /*!	\brief Mavlink General setup menu.
  *	\details Setup menu for generic mavlink settings.
  *	Current menu items
@@ -478,7 +435,7 @@ void menuTelemetryMavlinkSetup(uint8_t event) {
 }
 
 #ifdef DUMP_RX_TX
-//! \brief Display one byte as hex.
+/* Display one byte as hex. */
 void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val) {
 	x += FWNUM * 2;
 	for (int i = 0; i < 2; i++) {
@@ -490,50 +447,95 @@ void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val) {
 	}
 }
 
-//! \brief Hex dump of the current mavlink message.
-void menuTelemetryMavlinkDump(uint8_t event) {
-	uint8_t x = 0;
-	uint8_t y = FH;
-	uint16_t count = 0;
-	uint16_t bufferLen = 0;
-	uint8_t *ptr = NULL;
-	switch (MAVLINK_menu) {
-		case MENU_DUMP_RX:
-			mav_dump_rx = 1;
-			mav_title(PSTR("RX"), MAVLINK_menu);
-			bufferLen = mavlinkRxBufferCount;
-			ptr = mavlinkRxBuffer;
-			break;
+void menuMavlinkLastGPSFix(void) {
+	mav_title(STR_MAVLINK_GPS, MAVLINK_menu);
 
-		case MENU_DUMP_DIAG:
-			menuTelemetryMavlinkDiag();
-			break;
-		
-		default:
-			break;
-	}
-	for (uint16_t var = 0; var < bufferLen; var++) {
-		uint8_t byte = *ptr++;
-		lcd_outhex2(x, y, byte);
-		x += 2 * FW;
-		count++;
-		if (count > 8) {
-			count = 0;
-			x = 0;
-			y += FH;
-			if (y == (6 * FH))
-			break;
+	uint8_t x1, x2, xnum, xnum2, y;
+	x1 = FW;
+	x2 = x1 + 12 * FW;
+	xnum = 7 * FW + 3 * FWNUM;
+	xnum2 = xnum + 11 * FWNUM;
+	y = FH;
+
+	lcd_putsnAtt(x1, y, STR_MAVLINK_GPS, 3, 0);
+	if (telemetry_data.lastFix_type < 2) {
+		lcd_putsnAtt(xnum, y, STR_MAVLINK_NO_FIX, 6, 0);
+		} 
+	else {
+		lcd_outdezNAtt(xnum, y, telemetry_data.lastFix_type, 0, 3);
+		lcd_puts(xnum, y, PSTR("D"));
 		}
-	}
+		
+	lcd_puts(x2, y, STR_MAVLINK_SAT);
+	lcd_outdezNAtt(xnum2, y, telemetry_data.lastSatellites_visible, 0, 2);
+
+	y += FH;
+	lcd_puts(x1, y, STR_MAVLINK_HDOP);
+	lcd_outdezFloat(xnum, y, telemetry_data.lastEph, 2);
+
+	y += FH;
+	lcd_puts(x1, y, STR_MAVLINK_LAT);
+	lcd_outdezFloat(xnum, y, telemetry_data.lastLocation.lat, 2);
+
+	lcd_putsnAtt(x2, y, STR_MAVLINK_LON, 3, 0);
+	lcd_outdezFloat(xnum2, y, telemetry_data.lastLocation.lon, 2);
+
+	y += FH;
+	lcd_putsnAtt(x1, y, STR_MAVLINK_ALTITUDE, 3, 0);
+	lcd_outdezAtt(xnum, y, telemetry_data.lastLocation.gps_alt, 0);
+
+	y += FH;
+	lcd_putsnAtt(x1, y, STR_MAVLINK_COURSE, 6, 0);
+	lcd_outdezFloat(xnum, y, telemetry_data.lastCourse, 2);
+
+	y += FH;
+	lcd_putsnAtt(x1, y, PSTR("V"), 1, 0);
+	lcd_outdezAtt(xnum, y, telemetry_data.last_v, 0);
+
+		
 }
 
-/*!	\brief Global info menu
- *	\details Quick status overview menu. The menu should contain current mode, 
- *	armed | disarmed, battery status and RSSI info. Menu must be clean and
- *	readable with a quick glance.
- *	\todo Make menu as described as above.
+/*	Navigation display
+ *	Shows Navigation telemetry.
+ *	Altitude in this menu is the relative (to the home location) altitude. This
+ *	is the same altitude used by the waypoints.
  */
-void menuTelemetryMavlinkDiag(void) {
+void menuTelemetryMavlinkNavigation(void) {
+	
+	mav_title(STR_MAVLINK_NAV_MENU_TITLE, MAVLINK_menu);
+	
+	uint8_t x, y, ynum;
+	x = 7 * FWNUM;
+//	x = xnum + 0 * FW;
+	ynum = 2 * FH;
+	y = FH;
+	
+    
+	x = 0;	
+    lcd_puts  (x, y, STR_MAVLINK_COURSE);
+	lcd_outdezAtt(x + 7 * FWNUM, ynum, telemetry_data.course, (DBLSIZE | UNSIGN));
+	lcd_puts(x + 7 * FWNUM, ynum, PSTR("o"));
+	x += 8 * (2 * FWNUM);
+    lcd_puts(x, y, STR_MAVLINK_HEADING);
+	lcd_outdezAtt(x + 7 * FWNUM, ynum, telemetry_data.heading, (DBLSIZE | UNSIGN));
+	lcd_puts(x + 7 * FWNUM, ynum,  PSTR("o"));
+	y += 3 * FH;
+	ynum += 3 * FH;
+	
+	x = 0;	
+    lcd_puts  (x, y, STR_MAVLINK_BEARING);
+	lcd_outdezAtt(x + 7 * FWNUM, ynum, telemetry_data.bearing, (DBLSIZE | UNSIGN));
+	lcd_puts(x + 7 * FWNUM, ynum, PSTR("o"));
+	x += 8 * (2 * FWNUM);
+    lcd_puts(x, y, STR_MAVLINK_ALTITUDE);
+	lcd_outdezFloat(x + 4 * FWNUM - 1, ynum, telemetry_data.loc_current.rel_alt, 1, (DBLSIZE));
+	lcd_puts(x + 7 * FWNUM, ynum + FH,  PSTR("m"));
+ 
+}
+
+/*	Diagnostic menu
+ */
+void menuMavlinkDiag(void) {
 
 	mav_title(PSTR("Diag"), MAVLINK_menu);
 
@@ -569,6 +571,34 @@ void menuTelemetryMavlinkDiag(void) {
 	y += FH;
 	lcd_puts(x1, y, PSTR("Rad Sys"));
 	lcd_outdezAtt(xnum, y, telemetry_data.radio_sysid, 0);
+}
+
+/* Hex dump of the current mavlink message.	*/
+void menuTelemetryMavlinkDumpRx(uint8_t event) {
+	uint8_t x = 0;
+	uint8_t y = FH;
+	uint16_t count = 0;
+	uint16_t bufferLen = 0;
+	uint8_t *ptr = NULL;
+	
+	mav_dump_rx = 1;
+	mav_title(PSTR("RX"), MAVLINK_menu);
+	bufferLen = mavlinkRxBufferCount;
+	ptr = mavlinkRxBuffer;
+	
+	for (uint16_t var = 0; var < bufferLen; var++) {
+		uint8_t byte = *ptr++;
+		lcd_outhex2(x, y, byte);
+		x += 2 * FW;
+		count++;
+		if (count > 8) {
+			count = 0;
+			x = 0;
+			y += FH;
+			if (y == (6 * FH))
+			break;
+		}
+	}
 }
 
 

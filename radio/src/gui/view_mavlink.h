@@ -36,10 +36,6 @@
  *
  */
  
-/*!	\file view_mavlink.h
- *	Mavlink menu include file
- */
-
 #ifndef _VIEW_MAVLINK_H_
 #define _VIEW_MAVLINK_H_
 
@@ -57,28 +53,30 @@ void mav_title(const pm_char * s, uint8_t index);
 void menuTelemetryMavlinkInfos(void);
 void menuTelemetryMavlinkFlightMode(void);
 void menuTelemetryMavlinkBattery(void);
-void menuTelemetryMavlinkNavigation(void);
 void menuTelemetryMavlinkGPS(void);
 #ifdef DUMP_RX_TX
 void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val);
-void menuTelemetryMavlinkDump(uint8_t event);
-void menuTelemetryMavlinkDiag(void);
+void menuMavlinkLastGPSFix(void);
+void menuTelemetryMavlinkNavigation(void);
+void menuMavlinkDiag(void);
+void menuTelemetryMavlinkDumpRx(uint8_t);
 #endif
 void menuTelemetryMavlinkSetup(uint8_t event);
 
-/*!	\brief Mavlink menu enumerator
- *	\details Used to create a readable case statement for the
- *	\link menuTelemetryMavlink menuTelemetryMavlink \endlink funtion.
+/*!	Mavlink menu enumerator
+ *	Used to create a readable case statement for the
+ *	menuTelemetryMavlink menuTelemetryMavlink funtion.
  */
 enum mavlink_menu_ {
-	MENU_INFO = 0, //
+	MENU_INFO = 0,
 	MENU_MODE,
 	MENU_BATT,
-	MENU_NAV,
-	MENU_GPS, //
+	MENU_GPS,
 #ifdef DUMP_RX_TX
-	MENU_DUMP_RX, //
-	MENU_DUMP_DIAG, //
+	MENU_LASTGPSFIX,
+	MENU_NAV,			// seems not very useful in flight
+	MENU_DUMP_DIAG,
+	MENU_DUMP_RX,
 #endif
 	MAX_MAVLINK_MENU
 };
