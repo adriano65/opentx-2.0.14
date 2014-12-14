@@ -46,6 +46,8 @@
 #include "opentx.h"
 //#include "include/mavlink_helpers.h"
 
+#undef MAVLINK_USE_CONVENIENCE_FUNCTIONS
+
 extern mavlink_system_t mavlink_system;
 
 extern void SERIAL_start_uart_send();
@@ -55,6 +57,15 @@ extern void SERIAL_send_uart_bytes(const uint8_t * buf, uint16_t len);
 # define MAV_SYSTEM_ID	1
 //mavlink_system.type = 2; //MAV_QUADROTOR;
 
+// ----- use '3D' for 3DRadio
+#define RADIO_SOURCE_SYSTEM '3'
+#define RADIO_SOURCE_COMPONENT 'D'
+
+#define MAVLINK_MSG_ID_RADIO 166
+#define MAVLINK_RADIO_CRC_EXTRA 21
+#define MAV_HEADER_SIZE 6
+#define MAV_MAX_PACKET_LENGTH  (MAV_HEADER_SIZE + sizeof(struct mavlink_RADIO_v10) + 2) // 17
+// ------------------------------------------
 
 #define MAVLINK_START_UART_SEND(chan,len) SERIAL_start_uart_send()
 #define MAVLINK_END_UART_SEND(chan,len) SERIAL_end_uart_send()
@@ -179,7 +190,7 @@ typedef struct Telemetry_Data_ {
 	uint32_t custom_mode;
 	bool 	active;
 	uint8_t nav_mode;
-	uint8_t rcv_control_mode; ///< System mode, see MAV_MODE ENUM in mavlink/include/mavlink_types.h
+	uint8_t rcv_control_mode;	//System mode, see MAV_MODE ENUM in mavlink/include/mavlink_types.h
 	uint16_t load; ///< Maximum usage in percent of the mainloop time, (0%: 0, 100%: 1000) should be always below 1000
 	uint8_t vbat; ///< Battery voltage, in millivolts (1 = 1 millivolt)
 	uint8_t ibat; ///< Battery voltage, in millivolts (1 = 1 millivolt)
@@ -211,15 +222,6 @@ typedef struct Telemetry_Data_ {
 	MavlinkParam_t params[NB_PARAMS];
 #endif
 
-#ifdef DUMP_RX_TX
-	uint8_t lastFix_type;
-	uint8_t lastSatellites_visible;
-	Location_t lastLocation;
-	float lastEph;
-	uint16_t lastCourse;
-	float last_v;
-#endif
-	
 } Telemetry_Data_t;
 
 // Telemetry data hold
@@ -250,6 +252,7 @@ void telemetryInterrupt10ms(void);
 void menuTelemetryMavlink(uint8_t);
 NOINLINE void processSerialData(uint8_t);
 uint32_t Index2Baud(uint8_t);
+static void mavlink_checksum(uint8_t*);
 
 static inline void handleMessage(mavlink_message_t*);
 

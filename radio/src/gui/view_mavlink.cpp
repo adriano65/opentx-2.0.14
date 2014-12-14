@@ -88,17 +88,11 @@ void menuTelemetryMavlink(uint8_t event) {
 			break;
 		
 #ifdef DUMP_RX_TX
-		case MENU_LASTGPSFIX:
-			menuMavlinkLastGPSFix();
-			break;
 		case MENU_NAV:
 			menuTelemetryMavlinkNavigation();
 			break;
 		case MENU_DUMP_DIAG:
 			menuMavlinkDiag();
-			break;
-		case MENU_DUMP_RX:
-			menuTelemetryMavlinkDumpRx(event);
 			break;
 #endif
 		default:
@@ -112,7 +106,7 @@ void menuTelemetryMavlink(uint8_t event) {
  *	\param val value to display
  *	\param percis precision to display
  *	\param mode Use one of the defines in lcd.h line 81
- *	\details The maximum value is 9999. The position is the position of the ones, see below for explanation "*" marks
+ *	The maximum value is 9999. The position is the position of the ones, see below for explanation "*" marks
  *	the x position.
  *	\verbatim
           *
@@ -341,12 +335,9 @@ void menuTelemetryMavlinkBattery(void) {
 }
 
 
-/*!	\brief GPS information menu
- *	\details Menu gives a lot of info from the gps like fix type, position,
- *	attitude, heading and velocity. Text is small and the user must focus to
- *	read it.
- *	\todo Text is small. Should we do something about this or leaf it like this.
- *	I don't think will be used much when a user is concentrated on flying.
+/*!	GPS information menu
+ *	Menu gives a lot of info from the gps like fix type, position,
+ *	attitude, heading and velocity.
  */
 void menuTelemetryMavlinkGPS(void) {
 	mav_title(STR_MAVLINK_GPS, MAVLINK_menu);
@@ -361,42 +352,43 @@ void menuTelemetryMavlinkGPS(void) {
 	lcd_putsnAtt(x1, y, STR_MAVLINK_GPS, 3, 0);
 	if (telemetry_data.fix_type < 2) {
 		lcd_putsnAtt(xnum, y, STR_MAVLINK_NO_FIX, 6, 0);
-	} else {
+		}
+	else {
 		lcd_outdezNAtt(xnum, y, telemetry_data.fix_type, 0, 3);
 		lcd_puts(xnum, y, PSTR("D"));
-	}
+		}
 	lcd_puts(x2, y, STR_MAVLINK_SAT);
 	lcd_outdezNAtt(xnum2, y, telemetry_data.satellites_visible, 0, 2);
 
-//	if (telemetry_data.fix_type > 0) {
-	y += FH;
-	lcd_puts(x1, y, STR_MAVLINK_HDOP);
-	lcd_outdezFloat(xnum, y, telemetry_data.eph, 2);
+	if (telemetry_data.fix_type > 0) {
+		y += FH;
+		lcd_puts(x1, y, STR_MAVLINK_HDOP);
+		lcd_outdezFloat(xnum, y, telemetry_data.eph, 2);
 
-	y += FH;
-	lcd_puts(x1, y, STR_MAVLINK_LAT);
-	lcd_outdezFloat(xnum, y, telemetry_data.loc_current.lat, 2);
+		y += FH;
+		lcd_puts(x1, y, STR_MAVLINK_LAT);
+		lcd_outdezFloat(xnum, y, telemetry_data.loc_current.lat, 2);
 
-	lcd_putsnAtt(x2, y, STR_MAVLINK_LON, 3, 0);
-	lcd_outdezFloat(xnum2, y, telemetry_data.loc_current.lon, 2);
+		lcd_putsnAtt(x2, y, STR_MAVLINK_LON, 3, 0);
+		lcd_outdezFloat(xnum2, y, telemetry_data.loc_current.lon, 2);
 
-	y += FH;
-	lcd_putsnAtt(x1, y, STR_MAVLINK_ALTITUDE, 3, 0);
-	lcd_outdezAtt(xnum, y, telemetry_data.loc_current.gps_alt, 0);
+		y += FH;
+		lcd_putsnAtt(x1, y, STR_MAVLINK_ALTITUDE, 3, 0);
+		lcd_outdezAtt(xnum, y, telemetry_data.loc_current.gps_alt, 0);
 
-	y += FH;
-	lcd_putsnAtt(x1, y, STR_MAVLINK_COURSE, 6, 0);
-	lcd_outdezFloat(xnum, y, telemetry_data.course, 2);
+		y += FH;
+		lcd_putsnAtt(x1, y, STR_MAVLINK_COURSE, 6, 0);
+		lcd_outdezFloat(xnum, y, telemetry_data.course, 2);
 
-	y += FH;
-	lcd_putsnAtt(x1, y, PSTR("V"), 1, 0);
-	lcd_outdezAtt(xnum, y, telemetry_data.v, 0);
-	//}
+		y += FH;
+		lcd_putsnAtt(x1, y, PSTR("V"), 1, 0);
+		lcd_outdezAtt(xnum, y, telemetry_data.v, 0);
+	}
 }
 
 
-/*!	\brief Mavlink General setup menu.
- *	\details Setup menu for generic mavlink settings.
+/*Mavlink General setup menu.
+ * Setup menu for generic mavlink settings.
  *	Current menu items
  *	- RC RSSI scale item. Used to adjust the scale of the RSSI indicator to match
  *	the actual rssi value
@@ -416,26 +408,27 @@ void menuTelemetryMavlinkSetup(uint8_t event) {
 		uint8_t blink = ((s_editMode>0) ? BLINK|INVERS : INVERS);
 		uint8_t attr = (sub == k ? blink : 0);
 		switch(k) {	
-		case ITEM_MAVLINK_RC_RSSI_SCALE:
-			lcd_putsLeft(y, STR_MAVLINK_RC_RSSI_SCALE_LABEL);
-			lcd_outdezAtt(RADIO_SETUP_2ND_COLUMN, y, (25 + g_model.mavlink.rc_rssi_scale * 5), attr|LEFT);
-			lcd_putc(lcdLastPos, y, '%');
-			if (attr) CHECK_INCDEC_MODELVAR(event, g_model.mavlink.rc_rssi_scale, 0, 15);
-			break;
-		case ITEM_MAVLINK_PC_RSSI_EN:
-			g_model.mavlink.pc_rssi_en = onoffMenuItem(g_model.mavlink.pc_rssi_en,
-				RADIO_SETUP_2ND_COLUMN,
-				y,
-				STR_MAVLINK_PC_RSSI_EN_LABEL,
-				attr,
-				event);
-			break;
+			case ITEM_MAVLINK_RC_RSSI_SCALE:
+				lcd_putsLeft(y, STR_MAVLINK_RC_RSSI_SCALE_LABEL);
+				lcd_outdezAtt(RADIO_SETUP_2ND_COLUMN, y, (25 + g_model.mavlink.rc_rssi_scale * 5), attr|LEFT);
+				lcd_putc(lcdLastPos, y, '%');
+				if (attr) CHECK_INCDEC_MODELVAR(event, g_model.mavlink.rc_rssi_scale, 0, 15);
+				break;
+				
+			case ITEM_MAVLINK_PC_RSSI_EN:
+				g_model.mavlink.pc_rssi_en = onoffMenuItem(g_model.mavlink.pc_rssi_en,
+					RADIO_SETUP_2ND_COLUMN,
+					y,
+					STR_MAVLINK_PC_RSSI_EN_LABEL,
+					attr,
+					event);
+				break;
 		}
 	}
 }
 
 #ifdef DUMP_RX_TX
-/* Display one byte as hex. */
+/* Display one byte as hex.
 void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val) {
 	x += FWNUM * 2;
 	for (int i = 0; i < 2; i++) {
@@ -446,54 +439,7 @@ void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val) {
 		val >>= 4;
 	}
 }
-
-void menuMavlinkLastGPSFix(void) {
-	mav_title(STR_MAVLINK_GPS, MAVLINK_menu);
-
-	uint8_t x1, x2, xnum, xnum2, y;
-	x1 = FW;
-	x2 = x1 + 12 * FW;
-	xnum = 7 * FW + 3 * FWNUM;
-	xnum2 = xnum + 11 * FWNUM;
-	y = FH;
-
-	lcd_putsnAtt(x1, y, STR_MAVLINK_GPS, 3, 0);
-	if (telemetry_data.lastFix_type < 2) {
-		lcd_putsnAtt(xnum, y, STR_MAVLINK_NO_FIX, 6, 0);
-		} 
-	else {
-		lcd_outdezNAtt(xnum, y, telemetry_data.lastFix_type, 0, 3);
-		lcd_puts(xnum, y, PSTR("D"));
-		}
-		
-	lcd_puts(x2, y, STR_MAVLINK_SAT);
-	lcd_outdezNAtt(xnum2, y, telemetry_data.lastSatellites_visible, 0, 2);
-
-	y += FH;
-	lcd_puts(x1, y, STR_MAVLINK_HDOP);
-	lcd_outdezFloat(xnum, y, telemetry_data.lastEph, 2);
-
-	y += FH;
-	lcd_puts(x1, y, STR_MAVLINK_LAT);
-	lcd_outdezFloat(xnum, y, telemetry_data.lastLocation.lat, 2);
-
-	lcd_putsnAtt(x2, y, STR_MAVLINK_LON, 3, 0);
-	lcd_outdezFloat(xnum2, y, telemetry_data.lastLocation.lon, 2);
-
-	y += FH;
-	lcd_putsnAtt(x1, y, STR_MAVLINK_ALTITUDE, 3, 0);
-	lcd_outdezAtt(xnum, y, telemetry_data.lastLocation.gps_alt, 0);
-
-	y += FH;
-	lcd_putsnAtt(x1, y, STR_MAVLINK_COURSE, 6, 0);
-	lcd_outdezFloat(xnum, y, telemetry_data.lastCourse, 2);
-
-	y += FH;
-	lcd_putsnAtt(x1, y, PSTR("V"), 1, 0);
-	lcd_outdezAtt(xnum, y, telemetry_data.last_v, 0);
-
-		
-}
+*/
 
 /*	Navigation display
  *	Shows Navigation telemetry.
@@ -533,8 +479,7 @@ void menuTelemetryMavlinkNavigation(void) {
  
 }
 
-/*	Diagnostic menu
- */
+/*	Diagnostic menu */
 void menuMavlinkDiag(void) {
 
 	mav_title(PSTR("Diag"), MAVLINK_menu);
@@ -572,35 +517,6 @@ void menuMavlinkDiag(void) {
 	lcd_puts(x1, y, PSTR("Rad Sys"));
 	lcd_outdezAtt(xnum, y, telemetry_data.radio_sysid, 0);
 }
-
-/* Hex dump of the current mavlink message.	*/
-void menuTelemetryMavlinkDumpRx(uint8_t event) {
-	uint8_t x = 0;
-	uint8_t y = FH;
-	uint16_t count = 0;
-	uint16_t bufferLen = 0;
-	uint8_t *ptr = NULL;
-	
-	mav_dump_rx = 1;
-	mav_title(PSTR("RX"), MAVLINK_menu);
-	bufferLen = mavlinkRxBufferCount;
-	ptr = mavlinkRxBuffer;
-	
-	for (uint16_t var = 0; var < bufferLen; var++) {
-		uint8_t byte = *ptr++;
-		lcd_outhex2(x, y, byte);
-		x += 2 * FW;
-		count++;
-		if (count > 8) {
-			count = 0;
-			x = 0;
-			y += FH;
-			if (y == (6 * FH))
-			break;
-		}
-	}
-}
-
 
 #endif
 
