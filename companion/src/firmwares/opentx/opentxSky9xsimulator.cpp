@@ -28,10 +28,22 @@
 #define TEMPLATES
 #define SPLASH
 #define FLIGHT_MODES
-#define FRSKY
+
+// FIXME !
+//#define FRSKY
+#define MAVLINK
+
+#if defined(FRSKY)
 #define FRSKY_HUB
+#define FRSKY_STICKS
 #define WS_HOW_HIGH
 #define VARIO
+#define HELI
+#define TEMPLATES
+#endif
+
+//#define WS_HOW_HIGH
+//#define VARIO
 #define PPM_UNIT_PERCENT_PREC1
 #define BUZZER
 #define AUDIO
@@ -53,7 +65,7 @@
 #define GAUGES
 #define GPS
 #define FAI_CHOICE
-#define FRSKY_STICKS
+//#define FRSKY_STICKS
 #define OVERRIDE_CHANNEL_FUNCTION
 
 #define NUM_POTS  3
@@ -84,13 +96,27 @@ namespace Open9xSky9x {
 #include "radio/src/pulses/pulses_arm.cpp"
 #include "radio/src/stamp.cpp"
 #include "radio/src/maths.cpp"
-#include "radio/src/vario.cpp"
+
 #include "radio/src/gui/menus.cpp"
 #include "radio/src/gui/menu_model.cpp"
 #include "radio/src/gui/menu_general.cpp"
 #include "radio/src/gui/view_main.cpp"
 #include "radio/src/gui/view_statistics.cpp"
+
+#if defined(FRSKY)
+#include "radio/src/vario.cpp"
+#include "radio/src/telemetry/frsky.cpp"
+#include "radio/src/telemetry/frsky_sport.cpp"
+#include "radio/src/telemetry/frsky_d.cpp"
 #include "radio/src/gui/view_telemetry.cpp"
+#endif
+
+#if defined(MAVLINK)
+#include "radio/src/telemetry/mavlink.cpp"
+#include "radio/src/gui/view_mavlink.cpp"
+#endif
+
+
 #include "radio/src/gui/view_about.cpp"
 #include "radio/src/gui/view_text.cpp"
 #include "radio/src/lcd_common.cpp"
@@ -102,9 +128,7 @@ namespace Open9xSky9x {
 #include "radio/src/templates.cpp"
 #include "radio/src/translations.cpp"
 #include "radio/src/fonts.cpp"
-#include "radio/src/telemetry/frsky.cpp"
-#include "radio/src/telemetry/frsky_sport.cpp"
-#include "radio/src/telemetry/frsky_d.cpp"
+
 #include "radio/src/targets/sky9x/audio_driver.cpp"
 #include "radio/src/audio_arm.cpp"
 #include "radio/src/buzzer.cpp"
