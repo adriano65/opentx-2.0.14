@@ -64,16 +64,21 @@ Telemetry_Data_t telemetry_data;
 #include "serial.h"
 
 #if defined(CPUARM)
+	#if defined(MAVLINK_DEBUG)
+	  #ifdef BLUETOOTH
+		#error "---->> MAVLINK_DEBUG is incompatible with BLUETOOTH"
+	  #endif
+	#include "targets/sky9x/bluetooth.cpp"
+	OS_TID btTaskId;
+	OS_STK btStack[BT_STACK_SIZE];
+	#endif
 #else
 #include "serial.cpp"
 SerialFuncP RXHandler = processSerialData;
 #endif
 
 
-/*!	\brief Reset basic Mavlink variables
- *	\todo Figure out exact function
- *
- */
+/*Reset basic Mavlink variables */
 void MAVLINK_reset(uint8_t warm_reset) {
 	if (warm_reset && telemetry_data.status) {
 		mav_statustext[0] = 0;
@@ -100,8 +105,13 @@ void MAVLINK_Init(void) {
 	actualbaudrateIdx=g_eeGeneral.mavbaud;
 	#if defined(PCBSKY9X) || defined(PCBTARANIS)	/* PCBSKY9X means SKY9X AND 9XRPRO !! */
 		#if defined(REVX)
-			telemetryPortInit(0);
-			telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));			
+			#if defined(MAVLINK_DEBUG)
+			  btSetBaudrate(Index2Baud(g_eeGeneral.mavbaud));
+			  btTaskId = CoCreateTask(btTask, NULL, 15, &btStack[BT_STACK_SIZE-1], BT_STACK_SIZE);
+			#else
+			  telemetryPortInit(0);
+			  telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
+			#endif
 		#else
 			telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
 		#endif
@@ -123,7 +133,11 @@ void telemetryWakeup() {
 	if (actualbaudrateIdx!=g_eeGeneral.mavbaud) {
 	#if defined(PCBSKY9X) || defined(PCBTARANIS)
 		#if defined(REVX)
-		telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
+			#if defined(MAVLINK_DEBUG)
+			  btSetBaudrate(Index2Baud(g_eeGeneral.mavbaud));
+			#else
+			  telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
+			#endif
 		#else
 		telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
 		#endif
@@ -136,10 +150,17 @@ void telemetryWakeup() {
 	
 	#if defined(PCBSKY9X) || defined(PCBTARANIS)
 		#if defined(REVX)
-			uint8_t data;
-			while (telemetrySecondPortReceive(data)) {
-			  processSerialData(data);
-			}	
+			#if defined(MAVLINK_DEBUG)
+				uint8_t data;
+				while ((data=rxBtuart()) != 0xFFFF ) {
+				  processSerialData(data);
+				}	
+			#else
+				uint8_t data;
+				while (telemetrySecondPortReceive(data)) {
+				  processSerialData(data);
+				}	
+			#endif
 		#else
 			rxPdcUsart(processSerialData);
 		#endif
@@ -152,8 +173,7 @@ void telemetryInterrupt10ms()
 {
 }
 
-uint32_t Index2Baud(uint8_t mavbaudIdx)
-{
+uint32_t Index2Baud(uint8_t mavbaudIdx) {
 	switch (mavbaudIdx) {
 	  //"4800  ""9600  ""14400 ""19200 ""38400 ""57600 ""76800 ""115200"
 	  case 0:
@@ -176,6 +196,7 @@ uint32_t Index2Baud(uint8_t mavbaudIdx)
 		return 4800;
 	  }
 }
+
 /*
 void request_mavlink_rates() {
     const int  maxStreams = 6;
@@ -245,7 +266,6 @@ Message ID			5			Identification of the message
 Payload			6 to (n+6)		The data into the message, depends on the message id.
 CRC				(n+7) to (n+8)	Check-sum of the entire packet, excluding the packet start sign (LSB to MSB)
 ------------------------------------------------------------------------------------------------------------
-
 */
 NOINLINE void processSerialData(uint8_t c) {
 
@@ -412,7 +432,7 @@ static inline void REC_MAVLINK_MSG_ID_SYS_STATUS(const mavlink_message_t* msg) {
 #endif
 }
 
-/*!	\brief Receive rc channels
+/*Receive rc channels
  *
  */
 static inline void REC_MAVLINK_MSG_ID_RC_CHANNELS_RAW(const mavlink_message_t* msg) {
@@ -421,7 +441,7 @@ static inline void REC_MAVLINK_MSG_ID_RC_CHANNELS_RAW(const mavlink_message_t* m
 	telemetry_data.rc_rssi =  (temp_rssi * 100) / temp_scale;
 }
 
-/*!	\brief Arducopter specific radio message
+/*Arducopter specific radio message
  *
  */
 static inline void REC_MAVLINK_MSG_ID_RADIO(const mavlink_message_t* msg) {

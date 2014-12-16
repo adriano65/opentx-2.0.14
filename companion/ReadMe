@@ -1,0 +1,19 @@
+copy opentx-rNNNN modified sources in companion9x/opentx
+to let eeprom format reading!
+
+cd companion9x
+-- Create directory to compile in
+
+mkdir lbuild
+
+-- Prepare a Makefile using CMake
+
+cd lbuild
+
+cmake ../src
+
+-- Finally, we're ready to compile ...
+
+make clean && make
+
+NOTE: make clean WORKS!

@@ -54,7 +54,7 @@ void menuTelemetryMavlinkInfos(void);
 void menuTelemetryMavlinkFlightMode(void);
 void menuTelemetryMavlinkBattery(void);
 void menuTelemetryMavlinkGPS(void);
-#ifdef DUMP_RX_TX
+#ifdef MAVLINK_DEBUG
 void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val);
 void menuMavlinkLastGPSFix(void);
 void menuTelemetryMavlinkNavigation(void);
@@ -72,7 +72,7 @@ enum mavlink_menu_ {
 	MENU_MODE,
 	MENU_BATT,
 	MENU_GPS,
-#ifdef DUMP_RX_TX
+#ifdef MAVLINK_DEBUG
 	MENU_NAV,			// seems not very useful in flight
 	MENU_DUMP_DIAG,
 #endif
@@ -88,6 +88,7 @@ const MenuFuncP_PROGMEM menuTabMav[] PROGMEM = {
 enum menuMavlinkSetupItems {
 	ITEM_MAVLINK_RC_RSSI_SCALE,
 	ITEM_MAVLINK_PC_RSSI_EN,
+	ITEM_MAVLINK_ENABLE_BLUETOOTH,
 	ITEM_MAVLINK_MAX
 };
 

@@ -87,7 +87,7 @@ void menuTelemetryMavlink(uint8_t event) {
 			menuTelemetryMavlinkGPS();
 			break;
 		
-#ifdef DUMP_RX_TX
+#ifdef MAVLINK_DEBUG
 		case MENU_NAV:
 			menuTelemetryMavlinkNavigation();
 			break;
@@ -213,7 +213,7 @@ void menuTelemetryMavlinkInfos(void) {
 	uint8_t x1, x2, xnum, y;
 	x1 = FW;
 	x2 = 7 * FW;
-	xnum = x2 + 5 * FWNUM;
+	xnum = x2 + 10 * FWNUM;
 	y = FH;
 /*
 	char * ptr = mav_statustext;
@@ -423,11 +423,18 @@ void menuTelemetryMavlinkSetup(uint8_t event) {
 					attr,
 					event);
 				break;
+			case ITEM_MAVLINK_ENABLE_BLUETOOTH:
+				lcd_putsLeft(y, "Enable Bluetooth");
+				lcd_outdezAtt(RADIO_SETUP_2ND_COLUMN, y, (25 + g_model.mavlink.rc_rssi_scale * 5), attr|LEFT);
+				lcd_putc(lcdLastPos, y, '%');
+				if (attr) CHECK_INCDEC_MODELVAR(event, g_model.mavlink.rc_rssi_scale, 0, 15);
+				break;
+				
 		}
 	}
 }
 
-#ifdef DUMP_RX_TX
+#ifdef MAVLINK_DEBUG
 /* Display one byte as hex.
 void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val) {
 	x += FWNUM * 2;
@@ -487,7 +494,7 @@ void menuMavlinkDiag(void) {
 	uint8_t x1, x2, xnum, y;
 	x1 = FW;
 	x2 = 7 * FW;
-	xnum = x2 + 5 * FWNUM;
+	xnum = x2 + 12 * FWNUM;
 	y = FH;
 
 	lcd_putsnAtt(x1, y, STR_MAVLINK_MODE, 4, 0);
@@ -496,7 +503,7 @@ void menuMavlinkDiag(void) {
 	lcd_outdezAtt(xnum, y, telemetry_data.mode, 0);
 
 	y += FH;
-	lcd_puts(x1, y, PSTR("MAVLINK_MSG_ID_GPS_RAW_INT"));
+	lcd_puts(x1, y, PSTR("GPS_RAW_INT"));
 	lcd_outdezNAtt(xnum, y, telemetry_data.vbat, PREC1, 5);
 	y += FH;
 	lcd_puts(x1, y, PSTR("PKT DROP"));

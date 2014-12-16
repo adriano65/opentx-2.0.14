@@ -74,8 +74,7 @@ extern void SERIAL_send_uart_bytes(const uint8_t * buf, uint16_t len);
 #include "../GCS_MAVLink/include_v1.0/ardupilotmega/mavlink.h"
 
 //#define MAVLINK_PARAMS
-#define DUMP_RX_TX
-//#undef DUMP_RX_TX
+#define MAVLINK_DEBUG
 #define ERROR_NUM_MODES 99
 #define ERROR_MAV_ACTION_NB 99
 

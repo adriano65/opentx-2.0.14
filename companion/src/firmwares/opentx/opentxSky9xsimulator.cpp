@@ -38,12 +38,10 @@
 #define FRSKY_STICKS
 #define WS_HOW_HIGH
 #define VARIO
-#define HELI
-#define TEMPLATES
 #endif
 
-//#define WS_HOW_HIGH
-//#define VARIO
+#define HELI
+#define TEMPLATES
 #define PPM_UNIT_PERCENT_PREC1
 #define BUZZER
 #define AUDIO
