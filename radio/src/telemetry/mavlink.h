@@ -32,92 +32,27 @@
  *
  */
  
-/*!	\file mavlink.h
- *	Mavlink include file
- */
-
 #ifndef _MAVLINK_H_
 #define _MAVLINK_H_
 
+#define MAV_SYSTEM_ID	1
+
+//#undef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 #define MAVLINK_USE_CONVENIENCE_FUNCTIONS
-#define MAVLINK_COMM_NUM_BUFFERS 1
 
-#include "GCS_MAVLink/include_v1.0/mavlink_types.h"
-#include "opentx.h"
-//#include "include/mavlink_helpers.h"
+void mavlink_send_uart_bytes(uint8_t, const uint8_t *buffer, uint32_t size);
+#define MAVLINK_SEND_UART_BYTES mavlink_send_uart_bytes
 
-#undef MAVLINK_USE_CONVENIENCE_FUNCTIONS
-
+#include "../GCS_MAVLink/include_v1.0/mavlink_types.h"
 extern mavlink_system_t mavlink_system;
-
-extern void SERIAL_start_uart_send();
-extern void SERIAL_end_uart_send();
-extern void SERIAL_send_uart_bytes(const uint8_t * buf, uint16_t len);
-
-# define MAV_SYSTEM_ID	1
-//mavlink_system.type = 2; //MAV_QUADROTOR;
-
-// ----- use '3D' for 3DRadio
-#define RADIO_SOURCE_SYSTEM '3'
-#define RADIO_SOURCE_COMPONENT 'D'
-
-#define MAVLINK_MSG_ID_RADIO 166
-#define MAVLINK_RADIO_CRC_EXTRA 21
-#define MAV_HEADER_SIZE 6
-#define MAV_MAX_PACKET_LENGTH  (MAV_HEADER_SIZE + sizeof(struct mavlink_RADIO_v10) + 2) // 17
-// ------------------------------------------
-
-#define MAVLINK_START_UART_SEND(chan,len) SERIAL_start_uart_send()
-#define MAVLINK_END_UART_SEND(chan,len) SERIAL_end_uart_send()
-#define MAVLINK_SEND_UART_BYTES(chan,buf,len) SERIAL_send_uart_bytes(buf,len)
 
 #include "../GCS_MAVLink/include_v1.0/ardupilotmega/mavlink.h"
 
-//#define MAVLINK_PARAMS
-#define MAVLINK_DEBUG
-#define ERROR_NUM_MODES 99
-#define ERROR_MAV_ACTION_NB 99
-
-
-// Auto Pilot modes
-// ----------------
-#define AC_STABILIZE 0		// hold level position
-#define AC_ACRO 1			// rate control
-#define AC_ALT_HOLD 2		// AUTO control
-#define AC_AUTO 3			// AUTO control
-#define AC_GUIDED 4			// AUTO control
-#define AC_LOITER 5			// Hold a single location
-#define AC_RTL 6			// AUTO control
-#define AC_CIRCLE 7			// AUTO control
-#define AC_POSITION 8		// AUTO control
-#define AC_LAND 9			// AUTO control
-#define AC_OF_LOITER 10		// Hold a single location using optical flow
-							// sensor
-#define AC_TOY_A 11			// THOR Enum for Toy mode
-#define AC_TOY_M 12			// THOR Enum for Toy mode
-#define AC_NUM_MODES 13
-
-// Mavlink airframe types
-#define MAVLINK_ARDUCOPTER 0
-#define MAVLINK_ARDUPLANE 1
-#define MAVLINK_INVALID_TYPE 2
-
-
-#define AP_MANUAL        0
-#define AP_CIRCLE        1
-#define AP_STABILIZE     2
-#define AP_TRAINING      3
-#define AP_FLY_BY_WIRE_A 5
-#define AP_FLY_BY_WIRE_B 6
-#define AP_AUTO          10
-#define AP_RTL           11
-#define AP_LOITER        12
-#define AP_GUIDED        15
-#define AP_INITIALISING  16
-#define AP_NUM_MODES 17
-
+/*
 static const uint8_t ap_modes_lut[18] PROGMEM = {0,1,2,3,12,4,5,12,12,12,6,7,8,9,12,12,10,11};
+*/
 
+#define MAVLINK_STACK_SIZE       500
 /*
  * Type definitions
  */
@@ -167,15 +102,15 @@ typedef struct MavlinkParam_ {
 #endif
 
 typedef struct Location_ {
-	float lat; ///< Latitude in degrees
-	float lon; ///< Longitude in degrees
-	float gps_alt; ///< Altitude in meters
+	float lat; 		//Latitude in degrees
+	float lon; 		//Longitude in degrees
+	float gps_alt; 	//Altitude in meters
 	float rel_alt;
 } Location_t;
 
 typedef struct Telemetry_Data_ {
 	// INFOS
-	uint8_t status; ///< System status flag, see MAV_STATUS ENUM
+	uint8_t status; // System status flag, see MAV_STATUS ENUM
 	uint8_t type;
 	uint8_t autopilot;
 	uint8_t type_autopilot;
@@ -189,28 +124,30 @@ typedef struct Telemetry_Data_ {
 	uint32_t custom_mode;
 	bool 	active;
 	uint8_t nav_mode;
-	uint8_t rcv_control_mode;	//System mode, see MAV_MODE ENUM in mavlink/include/mavlink_types.h
-	uint16_t load; ///< Maximum usage in percent of the mainloop time, (0%: 0, 100%: 1000) should be always below 1000
-	uint8_t vbat; ///< Battery voltage, in millivolts (1 = 1 millivolt)
-	uint8_t ibat; ///< Battery voltage, in millivolts (1 = 1 millivolt)
-	uint8_t rem_bat; ///< Battery voltage, in millivolts (1 = 1 millivolt)
-	bool vbat_low;
+	uint8_t rcv_control_mode;	// System mode, see MAV_MODE ENUM in mavlink/include/mavlink_types.h
+	uint8_t vbat; 				// Battery voltage, in millivolts (1 = 1 millivolt)
+	uint8_t ibat; 				// Battery current, in millivolts (1 = 1 millivolt)
+	uint8_t rem_bat; 			// Remaining battery percent
+	bool 	vbat_low;
 	
 	uint8_t rc_rssi;
 	uint8_t pc_rssi;
 	
-	uint8_t debug;
+	uint8_t 	debug;
+	uint16_t	unknow_pckt_cnt;
+	int8_t 		heartbeat;
 
 	// MSG ACTION / ACK
 	uint8_t req_mode;
 	int8_t ack_result;
 
 	// GPS
-	uint8_t fix_type; // 0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the value of this field unless it is at least two, so always correctly fill in the fix.
-	uint8_t satellites_visible; // Number of satellites visible
-	Location_t loc_current;
-	float eph;
-	uint16_t course;
+	uint8_t 	fix_type; // 0-1: no fix, 2: 2D fix, 3: 3D fix. 
+						  // Some applications will not use the value of this field unless it is at least two, so always correctly fill in the fix.
+	uint8_t 	satellites_visible; // Number of satellites visible
+	Location_t	loc_current;
+	float 		eph;
+	uint16_t 	course;
 	float v; 			// Ground speed
 	// Navigation
 	uint16_t heading;
@@ -229,8 +166,6 @@ extern Telemetry_Data_t telemetry_data;
 /*
  * Funtion definitions
  */
-
-
 extern inline uint8_t MAVLINK_CtrlMode2Action(uint8_t mode) {
 	uint8_t action;
 	
@@ -251,9 +186,9 @@ void telemetryInterrupt10ms(void);
 void menuTelemetryMavlink(uint8_t);
 NOINLINE void processSerialData(uint8_t);
 uint32_t Index2Baud(uint8_t);
-static void mavlink_checksum(uint8_t*);
+//static void mavlink_checksum(uint8_t*);
 
-static inline void handleMessage(mavlink_message_t*);
+static inline void handleMessage(mavlink_message_t* );
 
 #ifdef MAVLINK_PARAMS
 

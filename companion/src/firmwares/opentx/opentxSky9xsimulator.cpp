@@ -32,6 +32,7 @@
 // FIXME !
 //#define FRSKY
 #define MAVLINK
+#define MAVLINK_DEBUG
 
 #if defined(FRSKY)
 #define FRSKY_HUB

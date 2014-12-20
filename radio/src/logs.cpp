@@ -259,8 +259,8 @@ void writeLogs()
             frskyData.hub.accelZ);
       }
 #elif defined(CPUARM) && defined(MAVLINK)
-	  //					  fix    lat   lon   alt   eph   course v	sat_vis
-        f_printf(&g_oLogFile, "%02d, %.3f, %.3f, %.1f, %.1f, %03d, %03d, %02d,",
+	  //					  fix    lat     lon     alt   eph   course v	sat_vis
+        f_printf(&g_oLogFile, "%02u, %02.5f, %02.5f, %.1f, %.1f, %04u, %03f, %02u,",
 		  telemetry_data.fix_type,
 		  telemetry_data.loc_current.lat,
 		  telemetry_data.loc_current.lon,

@@ -164,28 +164,27 @@ void lcd_outdezFloat(uint8_t x, uint8_t y, float val, uint8_t precis, uint8_t mo
 	}
 }
 
-/*!	\brief Fightmode string printer
- *	\details Decodes the flight mode from Mavlink custom mode enum to a string.
+/*Flightmode string printer
+ *	Decodes the flight mode from Mavlink custom mode enum to a string.
  *	This funtion can handle ArduPilot and ArduCoper code.
  *	To support new autopilot pilots add a STR_MAVLINK_... to the translations,
  *	and if requred a lut (see arduplane for examle) if there are unused modes
  *	in the sequence.
  */
 
-void print_mav_mode(uint8_t x, uint8_t y, uint32_t custom_mode, uint8_t attr) //, const char * mode_text_p)
-{
-	uint8_t mode = (uint8_t) custom_mode;
+void print_mav_mode(uint8_t x, uint8_t y, uint8_t attr) {
 	switch (telemetry_data.type_autopilot) {
-	case MAVLINK_ARDUCOPTER:
-		lcd_putsiAtt(x,y,STR_MAVLINK_AC_MODES,mode,attr);
-		break;
-	case MAVLINK_ARDUPLANE:
-		lcd_putsiAtt(x,y,STR_MAVLINK_AP_MODES,ap_modes_lut[custom_mode],attr);
-		break;
-	default:
-		lcd_putsAtt (FW, y, PSTR("INV. MAV TYPE"), attr);
-		break;
-	}
+		case MAV_TYPE_QUADROTOR:
+			lcd_putsiAtt(x,y,STR_MAVLINK_AC_MODES, telemetry_data.custom_mode, attr);
+			break;
+		case MAV_TYPE_FIXED_WING:
+			//lcd_putsiAtt(x,y,STR_MAVLINK_AP_MODES, ap_modes_lut[custom_mode],attr);
+			lcd_putsiAtt(x,y,STR_MAVLINK_AP_MODES, telemetry_data.custom_mode, attr);
+			break;
+		default:
+			lcd_putsAtt (FW, y, PSTR("INV. MAV MODE"), attr);
+			break;
+		}
 }
 
 /*!	\brief Menu header
@@ -196,7 +195,7 @@ void mav_title(const pm_char * s, uint8_t index)
   lcd_putsAtt(0, 0, PSTR("MAVLINK"), INVERS);
   lcd_puts(10 * FW, 0, s);
   displayScreenIndex(index, MAX_MAVLINK_MENU, INVERS);
-  lcd_putc(7 * FW, 0, mav_heartbeat+'0');	/* ok til 9 :-) */
+  lcd_putc(7 * FW, 0, telemetry_data.heartbeat+'0');	/* ok til 9 :-) */
   lcd_putc(8 * FW, 0, telemetry_data.active ? 'A' : 'N');
 }
 
@@ -274,7 +273,7 @@ void menuTelemetryMavlinkFlightMode(void) {
 	
     lcd_puts  (x, y, STR_MAVLINK_CUR_MODE);
     y += FH;
-    print_mav_mode(FW, y, telemetry_data.custom_mode, DBLSIZE);
+    print_mav_mode(FW, y, DBLSIZE);
     y += 2 * FH;
 	
 	char * ptr = mav_statustext;
@@ -293,8 +292,8 @@ void menuTelemetryMavlinkFlightMode(void) {
     	lcd_putsAtt (FW, y, STR_MAVLINK_ARMED, DBLSIZE);
 }
 
-/*!	\brief Batterystatus dislplay
- *	\details Shows flight batery status.
+/*!	\brief Battery status display
+ *	\details Shows flight battery status.
  *	Also RC and PC RSSI are in this menu. 
  */
 void menuTelemetryMavlinkBattery(void) {
@@ -324,8 +323,7 @@ void menuTelemetryMavlinkBattery(void) {
     lcd_puts  (x, y, STR_MAVLINK_RC_RSSI_LABEL);
 	lcd_outdezAtt(x + 7 * FWNUM, ynum, telemetry_data.rc_rssi, (DBLSIZE | UNSIGN));
 	lcd_puts(x + 7 * FWNUM, ynum + FH, PSTR("%"));
-	if (g_model.mavlink.pc_rssi_en)
-	{
+	if (g_model.mavlink.pc_rssi_en)	{
 		x += 8 * (2 * FWNUM);
 		lcd_puts(x, y, STR_MAVLINK_PC_RSSI_LABEL);
 		lcd_outdezAtt(x + 7 * FWNUM, ynum, telemetry_data.pc_rssi, (DBLSIZE));
@@ -335,7 +333,7 @@ void menuTelemetryMavlinkBattery(void) {
 }
 
 
-/*!	GPS information menu
+/*	GPS information menu
  *	Menu gives a lot of info from the gps like fix type, position,
  *	attitude, heading and velocity.
  */
@@ -423,11 +421,9 @@ void menuTelemetryMavlinkSetup(uint8_t event) {
 					attr,
 					event);
 				break;
+				
 			case ITEM_MAVLINK_ENABLE_BLUETOOTH:
 				lcd_putsLeft(y, "Enable Bluetooth");
-				lcd_outdezAtt(RADIO_SETUP_2ND_COLUMN, y, (25 + g_model.mavlink.rc_rssi_scale * 5), attr|LEFT);
-				lcd_putc(lcdLastPos, y, '%');
-				if (attr) CHECK_INCDEC_MODELVAR(event, g_model.mavlink.rc_rssi_scale, 0, 15);
 				break;
 				
 		}
