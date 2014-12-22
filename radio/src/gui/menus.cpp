@@ -104,6 +104,29 @@ uint8_t switchToMix(uint8_t source)
 #endif
 }
 
+#if defined(AUTOSWITCH)
+int8_t checkIncDecMovedSwitch(int8_t val)
+{
+  if (s_editMode>0) {
+    int8_t swtch = getMovedSwitch();
+    if (swtch) {
+#if defined(PCBTARANIS)
+      if (swtch == SWSRC_SH2)
+        val = (val == SWSRC_SH2 ? SWSRC_SH0 : SWSRC_SH2);
+      else if (swtch != SWSRC_SH0)
+        val = swtch;
+#else
+      if (IS_MOMENTARY(val) && IS_MOMENTARY(val))
+        val = -val;
+      else
+        val = swtch;
+#endif
+    }
+  }
+  return val;
+}
+#endif
+
 int8_t  checkIncDec_Ret;
 
 #if defined(CPUARM)
@@ -116,7 +139,7 @@ int16_t checkIncDec(uint8_t event, int16_t val, int16_t i_min, int16_t i_max, ui
 
 #if defined(DBLKEYS)
   uint8_t in = KEYS_PRESSED();
-  if (EVT_KEY_MASK(event)) {
+  if (!(i_flags & NO_DBLKEYS) && (EVT_KEY_MASK(event))) {
     bool dblkey = true;
     if (DBLKEYS_PRESSED_RGT_LFT(in))
       newval = -val;
@@ -136,10 +159,6 @@ int16_t checkIncDec(uint8_t event, int16_t val, int16_t i_min, int16_t i_max, ui
       newval = 0;
     else
       dblkey = false;
-
-#if defined(CPUARM)
-
-#endif
 
     if (dblkey) {
       killEvents(KEY_UP);
@@ -221,22 +240,7 @@ int16_t checkIncDec(uint8_t event, int16_t val, int16_t i_min, int16_t i_max, ui
 
 #if defined(AUTOSWITCH)
   if (i_flags & INCDEC_SWITCH) {
-    if (s_editMode>0) {
-      int8_t swtch = getMovedSwitch();
-      if (swtch) {
-#if defined(PCBTARANIS)
-        if(swtch == SWSRC_SH2)
-          newval = (newval == SWSRC_SH2 ? SWSRC_SH0 : SWSRC_SH2);
-        else if(swtch != SWSRC_SH0)
-          newval = swtch;
-#else
-        if (IS_MOMENTARY(newval) && IS_MOMENTARY(swtch))
-          newval = -newval;
-        else
-          newval = swtch;
-#endif
-      }
-    }
+    newval = checkIncDecMovedSwitch(newval);
   }
 #endif
 
@@ -1137,6 +1141,10 @@ int8_t switchMenuItem(uint8_t x, uint8_t y, int8_t value, LcdFlags attr, uint8_t
   }
 #endif
 
+bool noZero(int val) {
+  return val != 0;
+}
+
 #if defined(GVARS)
 #if defined(CPUARM)
 int16_t gvarMenuItem(uint8_t x, uint8_t y, int16_t value, int16_t min, int16_t max, LcdFlags attr, uint8_t editflags, uint8_t event) 
@@ -1172,18 +1180,29 @@ int16_t gvarMenuItem(uint8_t x, uint8_t y, int16_t value, int16_t min, int16_t m
 #endif
 
     int8_t idx = (int16_t) GV_INDEX_CALC_DELTA(value, delta);
+#if defined(CPUARM)
+    if (idx >= 0) ++idx;    // transform form idx=0=GV1 to idx=1=GV1 in order to handle double keys invert 
+#endif
     if (invers) {
-      CHECK_INCDEC_MODELVAR(event, idx, -MAX_GVARS, MAX_GVARS-1);
+#if defined(CPUARM)
+      CHECK_INCDEC_MODELVAR_CHECK(event, idx, -MAX_GVARS, MAX_GVARS, noZero);
+      if (idx == 0) idx = 1;    // handle reset to zero, map to GV1
+#else
+      idx = checkIncDec(event, idx, -MAX_GVARS, MAX_GVARS-1, EE_MODEL|NO_DBLKEYS);   // disable double keys
+#endif
     }
-
-    if (idx < 0) { 
+    if (idx < 0) {
       value = (int16_t) GV_CALC_VALUE_IDX_NEG(idx, delta);
       idx = -idx;
       lcd_putcAtt(x-6, y, '-', attr);
     }
     else {
+#if defined(CPUARM)
+      value = (int16_t) GV_CALC_VALUE_IDX_POS(idx-1, delta);
+#else
       value = (int16_t) GV_CALC_VALUE_IDX_POS(idx, delta);
       idx++;
+#endif
     }
     putsStrIdx(x, y, STR_GV, idx, attr);
   }

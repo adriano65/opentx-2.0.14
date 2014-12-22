@@ -2355,7 +2355,10 @@ void doMixerCalculations()
             timerState->cnt=0;
           }
           else if (tm == TMRMODE_THR_TRG) {
-            if (val || newTimerVal > 0) {
+            if (val) {
+              timerState->state = TMR_TRIGGED;
+            }
+            if (timerState->state == TMR_TRIGGED) {
               newTimerVal++;
             }
           }
@@ -2525,7 +2528,7 @@ void opentxStart()
   doSplash();
 
 #if defined(DEBUG_TRACE_BUFFER)
-    trace_event(trace_start, 0x12345678); 
+  trace_event(trace_start, 0x12345678);
 #endif 
 
 #if defined(PCBSKY9X) && defined(SDCARD) && !defined(SIMU)
@@ -3403,14 +3406,13 @@ inline void opentxInit(OPENTX_INIT_ARGS)
   eeReadAll();
 
 #if defined(CPUARM)
-  if (UNEXPECTED_SHUTDOWN())
+  if (UNEXPECTED_SHUTDOWN()) {
     unexpectedShutdown = 1;
+  }
 #endif
 
 #if defined(PCBTARANIS)
-  lcdInitFinish();
   BACKLIGHT_ON();
-  Splash();
 #endif
 
 #if MENUS_LOCK == 1

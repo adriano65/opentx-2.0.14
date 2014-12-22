@@ -183,6 +183,7 @@ extern int8_t s_editMode;       // global editmode
 #define INCDEC_SOURCE   0x10
 #define DBLKEYS_1000    0x20
 #define INCDEC_REP10    0x40
+#define NO_DBLKEYS      0x80
 
 // mawrow special values
 #define TITLE_ROW      ((uint8_t)-1)
@@ -194,6 +195,8 @@ int16_t checkIncDec(uint8_t event, int16_t i_pval, int16_t i_min, int16_t i_max,
 #else
 int16_t checkIncDec(uint8_t event, int16_t i_pval, int16_t i_min, int16_t i_max, uint8_t i_flags=0);
 #endif
+
+int8_t checkIncDecMovedSwitch(int8_t val);
 
 #if defined(CPUM64)
 int8_t checkIncDecModel(uint8_t event, int8_t i_val, int8_t i_min, int8_t i_max);

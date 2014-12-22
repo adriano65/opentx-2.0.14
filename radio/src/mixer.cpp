@@ -64,7 +64,7 @@ int16_t ex_chans[NUM_CHNOUT] = {0}; // Outputs (before LIMITS) of the last perMa
   int16_t cyc_anas[3] = {0};
   #if defined(PCBTARANIS)
     int16_t heliAnas[4] = {0};
-    uint8_t heliTrims[4] = {0};
+    int8_t heliTrims[4] = {0};
   #endif
 #endif
 
@@ -463,7 +463,9 @@ void evalInputs(uint8_t mode)
         if (tmp==0 || (tmp==1 && (bpanaCenter & mask))) {
           anaCenter |= mask;
           if ((g_model.beepANACenter & mask) && !(bpanaCenter & mask) && !calibrationState) {
-            AUDIO_POT_MIDDLE(i);
+            if (!IS_POT(i) || IS_POT_AVAILABLE(i)) {
+              AUDIO_POT_MIDDLE(i);
+            }
           }
         }
       }
@@ -534,7 +536,7 @@ void evalInputs(uint8_t mode)
 
 #if defined(PCBTARANIS)
   #define HELI_ANAS_ARRAY(x)  heliAnas[x]
-  #define HELI_TRIMS_ARRAY(x) trims[heliTrims[x]]
+  #define HELI_TRIMS_ARRAY(x) ((heliTrims[x]>=0) ? trims[heliTrims[x]] : 0)
 #else
   #define HELI_ANAS_ARRAY(x)  anas[x]
   #define HELI_TRIMS_ARRAY(x) trims[x]

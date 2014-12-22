@@ -110,7 +110,7 @@ void lcdPutPattern(xcoord_t x, uint8_t y, const uint8_t * pattern, uint8_t width
 
       for (int8_t j=-1; j<=height; j++) {
         bool plot;
-        if (j < 0 || j == height) {
+        if (j < 0 || ((j == height) && !(flags & SMLSIZE))) {
           plot = false;
           if (height >= 12) continue;
           if (j<0 && !inv) continue;
@@ -177,7 +177,7 @@ void lcd_putcAtt(xcoord_t x, uint8_t y, const unsigned char c, LcdFlags flags)
   }
   else if (flags & SMLSIZE) {
     q = (c < 0xc0 ? &font_4x6[(c-0x20)*5] : &font_4x6_extra[(c-0xc0)*5]);
-    lcdPutPattern(x, y, q, 5, 7, flags);
+    lcdPutPattern(x, y, q, 5, 6, flags);
   }
   else if (flags & TINSIZE) {
     q = &font_3x5[((uint16_t)c-0x2d)*3];
