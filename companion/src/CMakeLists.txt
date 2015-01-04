@@ -58,6 +58,20 @@ ADD_CUSTOM_COMMAND(
   DEPENDS ${PROJECT_SOURCE_DIR}/radio.xsd
 )
 
+#if(EXT EQUAL FRSKY)
+#add_definitions(-DEXT=FRSKY)
+#endif() 
+
+#IF(EXT EQUAL MAVLINK)
+#add_definitions(-DEXT=MAVLINK)
+#MESSAGE("EXT EQUAL MAVLINK--------------")
+#endif() 
+
+add_custom_command(OUTPUT ${PROJECT_SOURCE_DIR}/custom.h 
+				   COMMAND echo "#define MAVLINK" > ${PROJECT_SOURCE_DIR}/custom.h)
+#set_source_files_properties(./opentxSky9xsimulator.cpp
+#    PROPERTIES COMPILE_DEFINITIONS MAVLINK=1;)
+
 IF( MSVC )
   SET(CMAKE_CXX_FLAGS "/EHsc /LD")
   INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/winbuild C:/Programs/pthreads/Pre-built.2/include C:/Programs/msinttypes)

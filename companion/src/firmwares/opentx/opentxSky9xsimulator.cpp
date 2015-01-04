@@ -31,10 +31,11 @@
 
 // FIXME !
 //#define FRSKY
-#define MAVLINK
-#define MAVLINK_DEBUG
+//#define MAVLINK
+//#define MAVLINK_DEBUG
 
 #if defined(FRSKY)
+#error frsky-test
 #define FRSKY_HUB
 #define FRSKY_STICKS
 #define WS_HOW_HIGH

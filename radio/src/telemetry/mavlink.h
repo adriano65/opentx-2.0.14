@@ -182,11 +182,15 @@ extern inline uint8_t MAVLINK_Action2CtrlMode(uint8_t action) {
 #endif
 void MAVLINK_Init(void);
 void telemetryWakeup();
-void telemetryInterrupt10ms(void);
-void menuTelemetryMavlink(uint8_t);
 NOINLINE void processSerialData(uint8_t);
 uint32_t Index2Baud(uint8_t);
+#if defined(PCBSKY9X) || defined(PCBTARANIS)	/* PCBSKY9X means SKY9X AND 9XRPRO */
+OS_TID TelemetryTxTaskId;
+OS_FlagID TelemTxFlag;
 //static void mavlink_checksum(uint8_t*);
+void TelemetryTxTask(void*);
+void TxPushByte(uint8_t);
+#endif
 
 static inline void handleMessage(mavlink_message_t* );
 

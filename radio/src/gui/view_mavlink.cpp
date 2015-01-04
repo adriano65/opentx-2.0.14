@@ -235,8 +235,9 @@ void menuTelemetryMavlinkInfos(void) {
 		lcd_outdezAtt(xnum, y, telemetry_data.mode, 0);
 
 		y += FH;
-		lcd_puts(x1, y, PSTR("BATT"));
-		lcd_outdezNAtt(xnum, y, telemetry_data.vbat, PREC1, 5);
+		lcd_puts(x1, y, PSTR("UNKN PKT"));
+		lcd_outdezAtt(xnum, y, telemetry_data.unknow_pckt_cnt, 0);
+		
 		y += FH;
 		lcd_puts(x1, y, PSTR("PKT DROP"));
 		lcd_outdezAtt(xnum, y, telemetry_data.packet_drop, 0);
@@ -250,10 +251,10 @@ void menuTelemetryMavlinkInfos(void) {
 		lcd_puts(x1, y, PSTR("MAV Sys"));
 		lcd_outdezAtt(xnum, y, telemetry_data.mav_sysid, 0);
 		y += FH;
-		lcd_puts(x1, y, PSTR("Rad Comp"));
+		lcd_puts(x1, y, PSTR("Radio Comp"));
 		lcd_outdezAtt(xnum, y, telemetry_data.radio_compid, 0);
 		y += FH;
-		lcd_puts(x1, y, PSTR("Rad Sys"));
+		lcd_puts(x1, y, PSTR("Radio Sys"));
 		lcd_outdezAtt(xnum, y, telemetry_data.radio_sysid, 0);
 		
 	}

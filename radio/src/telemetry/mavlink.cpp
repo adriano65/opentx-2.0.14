@@ -81,22 +81,73 @@ static int8_t actualbaudrateIdx = 0;
 
 // Telemetry data hold
 Telemetry_Data_t telemetry_data;
+Fifo<32> TelemTxFifo;
+Fifo<32> TelemRxFifo;
 
 // *****************************************************
 
 
 #if defined(CPUARM)
-	OS_FlagID TelemTxFlag;
-	Fifo<32> TelemTxFifo;
-	struct t_serial_tx TelemTx ;
-	uint8_t TelemTxBuffer[32] ;
 	#if defined(MAVLINK_DEBUG)
 	  #ifdef BLUETOOTH
-		#error "---->> MAVLINK_DEBUG is incompatible with BLUETOOTH"
+		#error "---->> MAVLINK_DEBUG NOT works with BLUETOOTH defined (btTask)"
 	  #endif
-	OS_TID btTaskId;
-	OS_STK btStack[BT_STACK_SIZE];
+	  
+	  uint32_t txBt(uint32_t data) {
+	  #ifndef SIMU
+		Uart *pUart = BT_USART;
+
+		if (pUart->UART_TNCR == 0) {
+		  pUart->UART_TPR = data;
+		  pUart->UART_TCR = 1;
+		  pUart->UART_PTCR = US_PTCR_TXTEN;
+		  pUart->UART_IER = UART_IER_TXBUFE;
+		  NVIC_EnableIRQ(UART1_IRQn);
+		  return 1; // Sent OK
+		  }
+	  #endif
+		return 0 ;  // Busy
+	  }
+
+	  extern "C" void UART1_IRQHandler() {
+		Uart *pUart = BT_USART;
+		if ( pUart->UART_SR & UART_SR_TXBUFE ) {
+		  pUart->UART_IDR = UART_IDR_TXBUFE ;
+		  pUart->UART_PTCR = US_PTCR_TXTDIS ;
+		  //Current_bt->ready = 0 ;
+		  }
+		if ( pUart->UART_SR & UART_SR_RXRDY ) {
+		  TelemRxFifo.push(pUart->UART_RHR);
+		  }
+	  }
+
 	#endif
+	/*
+	void Txchar(uint8_t c) {
+	  //Uart *pUart = SECOND_SERIAL_UART;
+
+	  // Wait for the transmitter to be ready
+	 // while ( (pUart->UART_SR & UART_SR_TXEMPTY) == 0 ) ;
+
+	  // Send character
+	  //pUart->UART_THR = c;
+	  
+	  SECOND_SERIAL_UART->UART_THR = c;
+	}
+	
+	void txCom2Uart( uint8_t *buffer ) {
+		Uart *pUart=SECOND_SERIAL_UART ;
+
+		if ( pUart->UART_TNCR == 0 ) {
+		#ifndef SIMU
+			pUart->UART_TNPR = (uint32_t)buffer ;
+		#endif
+			pUart->UART_TNCR = 1 ;
+			pUart->UART_PTCR = US_PTCR_TXTEN ;
+			}
+		return;
+	}
+	*/
 #else
 #include "serial.cpp"
 SerialFuncP RXHandler = processSerialData;
@@ -104,7 +155,7 @@ SerialFuncP RXHandler = processSerialData;
 
 
 /*Reset basic Mavlink variables */
-void MAVLINK_reset(uint8_t reset_type) {
+void MAVLINK_reset(void) {
 	mavlink_status_t* p_status = mavlink_get_channel_status(MAVLINK_COMM_0);
 	p_status->current_rx_seq = 0;
 	p_status->current_tx_seq = 0;
@@ -123,23 +174,25 @@ void MAVLINK_reset(uint8_t reset_type) {
 /* initialize serial (see opentx.cpp) */
 void MAVLINK_Init(void) {
 	mav_statustext[0] = 0;
-	MAVLINK_reset(0);
+	MAVLINK_reset();
 	actualbaudrateIdx=g_eeGeneral.mavbaud;
 	#if defined(PCBSKY9X) || defined(PCBTARANIS)	/* PCBSKY9X means SKY9X AND 9XRPRO */
+		OS_STK TelemetryTxStack[MAVLINK_STACK_SIZE];
 		#if defined(REVX)
 			#if defined(MAVLINK_DEBUG)
-			  btSetBaudrate(Index2Baud(g_eeGeneral.mavbaud));
-			  btTaskId = CoCreateTask(btTask, NULL, 15, &btStack[BT_STACK_SIZE-1], BT_STACK_SIZE);
+			  // btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
+			  UART3_Configure(Index2Baud(g_eeGeneral.mavbaud), Master_frequency);
 			#else
 			  telemetryPortInit(0);
+			  // telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
+			  // in ersky9x CONSOLE_USART==UART0
 			  telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
-			  OS_TID TelemetryTxTaskId;
-			  OS_STK TelemetryTxStack[MAVLINK_STACK_SIZE];
-			  TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 15, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
 			#endif
 		#else
+			//telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
 			telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
 		#endif
+		TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 15, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
 	#else
 	SERIAL_Init();
 	#endif
@@ -159,7 +212,7 @@ void telemetryWakeup() {
 	#if defined(PCBSKY9X) || defined(PCBTARANIS)
 		#if defined(REVX)
 			#if defined(MAVLINK_DEBUG)
-			  btSetBaudrate(Index2Baud(g_eeGeneral.mavbaud));
+			  UART3_Configure(Index2Baud(g_eeGeneral.mavbaud), Master_frequency);
 			#else
 			  telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
 			#endif
@@ -169,33 +222,28 @@ void telemetryWakeup() {
 	#else
 		// TODO 9x, 9xr
 	#endif
-		actualbaudrateIdx=g_eeGeneral.mavbaud;
-	}
+	  actualbaudrateIdx=g_eeGeneral.mavbaud;
+	  }
 	/* ---------------------------------------------------- */
 	
 	#if defined(PCBSKY9X) || defined(PCBTARANIS)
 		#if defined(REVX)
+			uint8_t data;
 			#if defined(MAVLINK_DEBUG)
-				uint8_t data;
-				while ((data=rxBtuart()) != 0xFFFF ) {
-				  processSerialData(data);
-				}	
+			if (TelemRxFifo.pop(data)) {
+				processSerialData(data);
+				}
 			#else
-				uint8_t data;
-				while (telemetrySecondPortReceive(data)) {
-				  processSerialData(data);
-				}	
+			while (telemetrySecondPortReceive(data)) {
+			  processSerialData(data);
+			  }	
 			#endif
 		#else
-			rxPdcUsart(processSerialData);
+		rxPdcUsart(processSerialData);
 		#endif
 	#else
-			
+		// TODO 9x, 9xr
 	#endif
-}
-
-void telemetryInterrupt10ms()
-{
 }
 
 uint32_t Index2Baud(uint8_t mavbaudIdx) {
@@ -220,6 +268,42 @@ uint32_t Index2Baud(uint8_t mavbaudIdx) {
 	  default:
 		return 4800;
 	  }
+}
+
+void TelemetryTxTask(void* pdata) {
+  uint8_t byte;
+  uint16_t msElapsedX10=0;
+
+  TelemTxFlag = CoCreateFlag(true, false);	//(BOOL bAutoReset,BOOL bInitialState);
+  CoTickDelay(1) ;
+
+  while (1) {
+    uint32_t errcode = CoWaitForSingleFlag(TelemTxFlag, 10); // Wait for flag MAX 10 ms
+		//if (errcode == E_OK) {
+			while (TelemTxFifo.pop(byte)) {
+			  #if defined(PCBSKY9X) || defined(PCBTARANIS)	/* PCBSKY9X means SKY9X AND 9XRPRO */
+				  #if defined(REVX)
+					  #if defined(MAVLINK_DEBUG)
+					  txBt((uint32_t)byte);
+					  #else
+					  debugPutc(byte);	/* second_serial_driver.cpp */
+					  #endif
+				  #else
+					  txPdcUsart(&byte, 1); 
+				  #endif
+			  #endif
+				  }
+			//}
+	msElapsedX10++;
+	//if (msElapsedX10>70) 
+	{ TxPushByte('A'); msElapsedX10=0; }
+	}		// while 1
+  
+}
+
+void TxPushByte(uint8_t data) {
+  TelemTxFifo.push(data);
+  CoSetFlag(TelemTxFlag); // Tell the TelemetryTxTask something to do
 }
 
 
@@ -416,40 +500,6 @@ NOINLINE void processSerialData(uint8_t c) {
 	//return p_status->msg_received;
 }
 
-
-void TelemetryTxTask(void* pdata) {
-
-  uint8_t byte;
-
-  TelemTxFlag = CoCreateFlag(true, false);
-  TelemTx.size = 0;
-
-  CoTickDelay(1) ;
-
-  //btPollDevice(); // Do we get a response?
-
-  while (1) {
-    uint32_t x = CoWaitForSingleFlag(TelemTxFlag, 10); // Wait for data in Fifo
-    if (x == E_OK) {
-      // have we some data in the Fifo ?
-      while (TelemTxFifo.pop(byte)) {
-		#if defined(PCBSKY9X) || defined(PCBTARANIS)	/* PCBSKY9X means SKY9X AND 9XRPRO */
-			#if defined(REVX)
-				#if defined(MAVLINK_DEBUG)
-				txPdcBt(&TelemTx);
-				#else
-				debugPutc(byte);
-				#endif
-			#else
-				txPdcUsart(&byte, 1); 
-			#endif
-			//txPdcBt(&TelemTx);
-		#endif
-			}
-		}
-	}
-  
-}
 
 /*!	\brief Status log message
  *	\details Processes the mavlink status messages. This message contains a
