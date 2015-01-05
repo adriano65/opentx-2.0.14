@@ -81,13 +81,13 @@ static int8_t actualbaudrateIdx = 0;
 
 // Telemetry data hold
 Telemetry_Data_t telemetry_data;
-Fifo<32> TelemTxFifo;
-Fifo<32> TelemRxFifo;
 
 // *****************************************************
 
 
 #if defined(CPUARM)
+	Fifo<32> TelemTxFifo;
+	Fifo<32> TelemRxFifo;
 	#if defined(MAVLINK_DEBUG)
 	  #ifdef BLUETOOTH
 		#error "---->> MAVLINK_DEBUG NOT works with BLUETOOTH defined (btTask)"
@@ -150,7 +150,11 @@ Fifo<32> TelemRxFifo;
 	*/
 #else
 #include "serial.cpp"
-SerialFuncP RXHandler = processSerialData;
+void MAVLINK_rxhandler(uint8_t byte) {
+	processSerialData(byte);
+}
+
+SerialFuncP RXHandler = MAVLINK_rxhandler;
 #endif
 
 
@@ -220,7 +224,7 @@ void telemetryWakeup() {
 		telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
 		#endif
 	#else
-		// TODO 9x, 9xr
+		// See RXHandler for 9x, 9xr
 	#endif
 	  actualbaudrateIdx=g_eeGeneral.mavbaud;
 	  }
@@ -270,6 +274,7 @@ uint32_t Index2Baud(uint8_t mavbaudIdx) {
 	  }
 }
 
+#if defined(PCBSKY9X) || defined(PCBTARANIS)
 void TelemetryTxTask(void* pdata) {
   uint8_t byte;
   uint16_t msElapsedX10=0;
@@ -278,22 +283,20 @@ void TelemetryTxTask(void* pdata) {
   CoTickDelay(1) ;
 
   while (1) {
-    uint32_t errcode = CoWaitForSingleFlag(TelemTxFlag, 10); // Wait for flag MAX 10 ms
-		//if (errcode == E_OK) {
+    uint32_t errcode = CoWaitForSingleFlag(TelemTxFlag, 100); // Wait for flag MAX 100 ms
+		if (errcode == E_OK) {
 			while (TelemTxFifo.pop(byte)) {
-			  #if defined(PCBSKY9X) || defined(PCBTARANIS)	/* PCBSKY9X means SKY9X AND 9XRPRO */
-				  #if defined(REVX)
-					  #if defined(MAVLINK_DEBUG)
-					  txBt((uint32_t)byte);
-					  #else
-					  debugPutc(byte);	/* second_serial_driver.cpp */
-					  #endif
-				  #else
-					  txPdcUsart(&byte, 1); 
-				  #endif
+			  #if defined(REVX)
+				#if defined(MAVLINK_DEBUG)
+					txBt((uint32_t)byte);
+				#else
+					debugPutc(byte);	/* second_serial_driver.cpp */
+				#endif
+			  #else
+				txPdcUsart(&byte, 1); 
 			  #endif
-				  }
-			//}
+			  }
+		  }
 	msElapsedX10++;
 	//if (msElapsedX10>70) 
 	{ TxPushByte('A'); msElapsedX10=0; }
@@ -323,6 +326,7 @@ void request_mavlink_rates() {
 											 MAVStreams[i], MAVRates[i], 1);
     }
 }
+#endif
 
 /*
  * Calculates the MAVLink checksum on a packet in parameter buffer
