@@ -75,6 +75,7 @@ void mavlink_send_uart_bytes(uint8_t chan, const uint8_t *buffer, uint32_t size)
 #define PARAM_NB_REPEAT 10
 #define LEN_STATUSTEXT 20
 static char mav_statustext[LEN_STATUSTEXT];
+static int8_t mav_heartbeat = 0;
 static uint8_t data_stream_start_stop = 0;
 
 static int8_t actualbaudrateIdx = 0;
@@ -90,7 +91,7 @@ Telemetry_Data_t telemetry_data;
 	Fifo<32> TelemRxFifo;
 	#if defined(MAVLINK_DEBUG)
 	  #ifdef BLUETOOTH
-		#error "---->> MAVLINK_DEBUG NOT works with BLUETOOTH defined (btTask)"
+		#error "---->> MAVLINK_DEBUG NOT works with BLUETOOTH defined (btTask conflicts)"
 	  #endif
 	  
 	  uint32_t txBt(uint32_t data) {
@@ -159,7 +160,14 @@ SerialFuncP RXHandler = MAVLINK_rxhandler;
 
 
 /*Reset basic Mavlink variables */
+#if !defined(CPUARM)
+void MAVLINK_reset(uint8_t warm_reset) {
+	if (warm_reset && telemetry_data.status) {
+		mav_statustext[0] = 0;
+	}
+#else
 void MAVLINK_reset(void) {
+#endif
 	mavlink_status_t* p_status = mavlink_get_channel_status(MAVLINK_COMM_0);
 	p_status->current_rx_seq = 0;
 	p_status->current_tx_seq = 0;
@@ -178,9 +186,9 @@ void MAVLINK_reset(void) {
 /* initialize serial (see opentx.cpp) */
 void MAVLINK_Init(void) {
 	mav_statustext[0] = 0;
-	MAVLINK_reset();
 	actualbaudrateIdx=g_eeGeneral.mavbaud;
-	#if defined(PCBSKY9X) || defined(PCBTARANIS)	/* PCBSKY9X means SKY9X AND 9XRPRO */
+	#if defined(CPUARM)
+		MAVLINK_reset();
 		OS_STK TelemetryTxStack[MAVLINK_STACK_SIZE];
 		#if defined(REVX)
 			#if defined(MAVLINK_DEBUG)
@@ -198,6 +206,7 @@ void MAVLINK_Init(void) {
 		#endif
 		TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 15, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
 	#else
+	MAVLINK_reset(0);
 	SERIAL_Init();
 	#endif
 }
@@ -205,14 +214,14 @@ void MAVLINK_Init(void) {
 void telemetryWakeup() {
 	/* RESET protocol activity status (* symbol) on display */
 	uint16_t tmr10ms = get_tmr10ms();
-	#if defined(PCBSKY9X)
+	#if defined(CPUARM)
 	uint16_t count = tmr10ms & 0x02BC; // 700*10ms ==  7 SEC
 	#else
 	uint8_t count = tmr10ms & 0x0f; // 15*10ms
 	#endif	  
 
 	if (!count) {
-	#if defined(PCBSKY9X)
+	#if defined(CPUARM)
 		mav_heartbeat=0;	/* reset counter */
 	#else
 		if (mav_heartbeat > -30) {
@@ -231,7 +240,7 @@ void telemetryWakeup() {
 	
 	/* CHANGE BAUDRATE IF USER MODIFY SPEED IN MENU ------- */
 	if (actualbaudrateIdx!=g_eeGeneral.mavbaud) {
-	#if defined(PCBSKY9X) || defined(PCBTARANIS)
+	#if defined(CPUARM)
 		#if defined(REVX)
 			#if defined(MAVLINK_DEBUG)
 			  UART3_Configure(Index2Baud(g_eeGeneral.mavbaud), Master_frequency);
@@ -248,7 +257,7 @@ void telemetryWakeup() {
 	  }
 	/* ---------------------------------------------------- */
 	
-	#if defined(PCBSKY9X) || defined(PCBTARANIS)
+	#if defined(CPUARM)
 		#if defined(REVX)
 			uint8_t data;
 			#if defined(MAVLINK_DEBUG)
@@ -292,7 +301,7 @@ uint32_t Index2Baud(uint8_t mavbaudIdx) {
 	  }
 }
 
-#if defined(PCBSKY9X) || defined(PCBTARANIS)
+#if defined(CPUARM)
 void TelemetryTxTask(void* pdata) {
   uint8_t byte;
   uint16_t msElapsedX10=0;
