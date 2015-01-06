@@ -205,9 +205,27 @@ void MAVLINK_Init(void) {
 void telemetryWakeup() {
 	/* RESET protocol activity status (* symbol) on display */
 	uint16_t tmr10ms = get_tmr10ms();
+	#if defined(PCBSKY9X)
 	uint16_t count = tmr10ms & 0x02BC; // 700*10ms ==  7 SEC
+	#else
+	uint8_t count = tmr10ms & 0x0f; // 15*10ms
+	#endif	  
+
 	if (!count) {
-	  telemetry_data.heartbeat=0;	/* reset counter */
+	#if defined(PCBSKY9X)
+		mav_heartbeat=0;	/* reset counter */
+	#else
+		if (mav_heartbeat > -30) {
+			// TODO mavlink_system.sysid = g_eeGeneral.mavTargetSystem;
+			mav_heartbeat--;
+
+			if (mav_heartbeat == -30) {
+				MAVLINK_reset(1);
+				SERIAL_Init();
+			}
+//			SERIAL_startTX();
+		}
+	#endif	  
 	  }
 	/* ---------------------------------------------------- */
 	
