@@ -184,7 +184,7 @@ void MAVLINK_Init(void);
 void telemetryWakeup();
 NOINLINE void processSerialData(uint8_t);
 uint32_t Index2Baud(uint8_t);
-#if defined(PCBSKY9X) || defined(PCBTARANIS)	/* PCBSKY9X means SKY9X AND 9XRPRO */
+#if defined(CPUARM)
 OS_TID TelemetryTxTaskId;
 OS_FlagID TelemTxFlag;
 //static void mavlink_checksum(uint8_t*);

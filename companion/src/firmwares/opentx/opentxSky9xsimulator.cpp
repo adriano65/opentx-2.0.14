@@ -22,7 +22,6 @@
 #define SIMU_EXCEPTIONS
 #define PCBSKY9X
 #define CPUARM
-#define REVB
 #define ROTARY_ENCODERS 1
 #define HELI
 #define TEMPLATES
@@ -35,7 +34,7 @@
 //#define MAVLINK_DEBUG
 
 #if defined(FRSKY)
-#error frsky-test
+#define REVB
 #define FRSKY_HUB
 #define FRSKY_STICKS
 #define WS_HOW_HIGH
@@ -65,7 +64,6 @@
 #define GAUGES
 #define GPS
 #define FAI_CHOICE
-//#define FRSKY_STICKS
 #define OVERRIDE_CHANNEL_FUNCTION
 
 #define NUM_POTS  3
@@ -112,8 +110,10 @@ namespace Open9xSky9x {
 #endif
 
 #if defined(MAVLINK)
+//#error -------------------------------> mavlink-test 
 #include "radio/src/telemetry/mavlink.cpp"
 #include "radio/src/gui/view_mavlink.cpp"
+uint8_t RotEncoder ;
 #endif
 
 

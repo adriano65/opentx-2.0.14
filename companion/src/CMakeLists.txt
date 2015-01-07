@@ -2,7 +2,7 @@ PROJECT( companion )
 
 SET( C9X_VERSION_MAJOR "2" )
 SET( C9X_VERSION_MINOR "0" )
-SET( C9X_VERSION_REVISION "14" )
+SET( C9X_VERSION_REVISION "14a" )
 SET( C9X_VERSION ${C9X_VERSION_MAJOR}.${C9X_VERSION_MINOR}.${C9X_VERSION_REVISION} )
 
 CMAKE_MINIMUM_REQUIRED( VERSION 2.8 )
@@ -58,20 +58,6 @@ ADD_CUSTOM_COMMAND(
   DEPENDS ${PROJECT_SOURCE_DIR}/radio.xsd
 )
 
-#if(EXT EQUAL FRSKY)
-#add_definitions(-DEXT=FRSKY)
-#endif() 
-
-#IF(EXT EQUAL MAVLINK)
-#add_definitions(-DEXT=MAVLINK)
-#MESSAGE("EXT EQUAL MAVLINK--------------")
-#endif() 
-
-add_custom_command(OUTPUT ${PROJECT_SOURCE_DIR}/custom.h 
-				   COMMAND echo "#define MAVLINK" > ${PROJECT_SOURCE_DIR}/custom.h)
-#set_source_files_properties(./opentxSky9xsimulator.cpp
-#    PROPERTIES COMPILE_DEFINITIONS MAVLINK=1;)
-
 IF( MSVC )
   SET(CMAKE_CXX_FLAGS "/EHsc /LD")
   INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/winbuild C:/Programs/pthreads/Pre-built.2/include C:/Programs/msinttypes)
@@ -120,6 +106,27 @@ include_directories(
 
 add_subdirectory(modeledit)
 add_subdirectory(simulation)
+
+#if(EXT EQUAL FRSKY)
+#add_definitions(-DEXT=FRSKY)
+#endif() 
+
+if(EXT EQUAL MAVLINK)
+set_source_files_properties( ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp PROPERTIES COMPILE_DEFINITIONS MAVLINK)
+MESSAGE("EXT EQUAL MAVLINK--------------!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+endif() 
+
+#set_source_files_properties( ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp PROPERTIES COMPILE_DEFINITIONS MAVLINK)
+
+
+set_property(
+  SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
+  APPEND
+  PROPERTY COMPILE_DEFINITIONS
+  MAVLINK REVX
+)
+
+
 
 set(common_SRCS
   eeprominterface.cpp

@@ -196,7 +196,7 @@ void mav_title(const pm_char * s, uint8_t index)
   lcd_puts(10 * FW, 0, s);
   displayScreenIndex(index, MAX_MAVLINK_MENU, INVERS);
   #if defined(PCBSKY9X)
-  lcd_putc(7 * FW, 0, mav_heartbeat+'0');	/* ok til 9 :-) */
+  lcd_putc(7 * FW, 0, mav_heartbeat+'0');	/* ok until 9 :-) */
   #else
   lcd_putc(7 * FW, 0, (mav_heartbeat > 0) ? '*' : ' ');  
   #endif

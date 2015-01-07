@@ -187,27 +187,29 @@ void MAVLINK_reset(void) {
 void MAVLINK_Init(void) {
 	mav_statustext[0] = 0;
 	actualbaudrateIdx=g_eeGeneral.mavbaud;
-	#if defined(CPUARM)
-		MAVLINK_reset();
-		OS_STK TelemetryTxStack[MAVLINK_STACK_SIZE];
-		#if defined(REVX)
-			#if defined(MAVLINK_DEBUG)
-			  // btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
-			  UART3_Configure(Index2Baud(g_eeGeneral.mavbaud), Master_frequency);
-			#else
-			  telemetryPortInit(0);
-			  // telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
-			  // in ersky9x CONSOLE_USART==UART0
-			  telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
-			#endif
-		#else
+	#if !defined(SIMU)
+	  #if defined(CPUARM) && !defined(SIMU)
+		  MAVLINK_reset();
+		  OS_STK TelemetryTxStack[MAVLINK_STACK_SIZE];
+		  #if defined(REVX)
+			  #if defined(MAVLINK_DEBUG)
+				// btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
+				UART3_Configure(Index2Baud(g_eeGeneral.mavbaud), Master_frequency);
+			  #else
+				telemetryPortInit(0);
+				// telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
+				// in ersky9x CONSOLE_USART==UART0
+				telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
+			  #endif
+		  #else
 			//telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
 			telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
-		#endif
-		TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 15, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
-	#else
-	MAVLINK_reset(0);
-	SERIAL_Init();
+		  #endif
+		  TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 15, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
+	  #else
+		MAVLINK_reset(0);
+		SERIAL_Init();
+	  #endif
 	#endif
 }
 
@@ -248,7 +250,7 @@ void telemetryWakeup() {
 			  telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
 			#endif
 		#else
-		telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
+		  telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
 		#endif
 	#else
 		// See RXHandler for 9x, 9xr
@@ -261,19 +263,17 @@ void telemetryWakeup() {
 		#if defined(REVX)
 			uint8_t data;
 			#if defined(MAVLINK_DEBUG)
-			if (TelemRxFifo.pop(data)) {
-				processSerialData(data);
-				}
+			  if (TelemRxFifo.pop(data)) {
+				  processSerialData(data);
+				  }
 			#else
-			while (telemetrySecondPortReceive(data)) {
-			  processSerialData(data);
-			  }	
+			  while (telemetrySecondPortReceive(data)) {
+				processSerialData(data);
+				}	
 			#endif
 		#else
-		rxPdcUsart(processSerialData);
+		  rxPdcUsart(processSerialData);
 		#endif
-	#else
-		// TODO 9x, 9xr
 	#endif
 }
 
@@ -301,7 +301,7 @@ uint32_t Index2Baud(uint8_t mavbaudIdx) {
 	  }
 }
 
-#if defined(CPUARM)
+#if defined(CPUARM) && !defined(SIMU)
 void TelemetryTxTask(void* pdata) {
   uint8_t byte;
   uint16_t msElapsedX10=0;
