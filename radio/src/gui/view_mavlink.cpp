@@ -190,8 +190,7 @@ void print_mav_mode(uint8_t x, uint8_t y, uint8_t attr) {
 /*!	\brief Menu header
  *	\details Small helper function to print the standard header on the screen.
  */
-void mav_title(const pm_char * s, uint8_t index)
-{
+void mav_title(const pm_char * s, uint8_t index) {
   lcd_putsAtt(0, 0, PSTR("MAVLINK"), INVERS);
   lcd_puts(10 * FW, 0, s);
   displayScreenIndex(index, MAX_MAVLINK_MENU, INVERS);
@@ -203,11 +202,11 @@ void mav_title(const pm_char * s, uint8_t index)
   lcd_putc(8 * FW, 0, telemetry_data.active ? 'A' : 'N');
 }
 
-/*!	\brief Global info menu
- *	\details Quick status overview menu. The menu should contain current mode, 
+/* Global info menu
+ * Quick status overview menu. The menu should contain current mode, 
  *	armed | disarmed, battery status and RSSI info. Menu must be clean and
  *	readable with a quick glance.
- *	\todo Make menu as described as above.
+ *	Make menu as described as above.
  */
 void menuTelemetryMavlinkInfos(void) {
 
@@ -231,37 +230,33 @@ void menuTelemetryMavlinkInfos(void) {
 	x1 = FW;
 	y += FH;
 */
-	if (telemetry_data.status) {
+	lcd_putsnAtt(x1, y, STR_MAVLINK_MODE, 4, 0);
+	if (telemetry_data.active)
+		lcd_putsnAtt(x2, y, PSTR("A"), 1, 0);
+	lcd_outdezAtt(xnum, y, telemetry_data.mode, 0);
 
-		lcd_putsnAtt(x1, y, STR_MAVLINK_MODE, 4, 0);
-		if (telemetry_data.active)
-			lcd_putsnAtt(x2, y, PSTR("A"), 1, 0);
-		lcd_outdezAtt(xnum, y, telemetry_data.mode, 0);
-
-		y += FH;
-		lcd_puts(x1, y, PSTR("UNKN PKT"));
-		lcd_outdezAtt(xnum, y, telemetry_data.unknow_pckt_cnt, 0);
-		
-		y += FH;
-		lcd_puts(x1, y, PSTR("PKT DROP"));
-		lcd_outdezAtt(xnum, y, telemetry_data.packet_drop, 0);
-		y += FH;
-		lcd_puts(x1, y, PSTR("PKT REC"));
-		lcd_outdezAtt(xnum, y, telemetry_data.packet_fixed, 0);		/* TODO use correct var */
-		y += FH;
-		lcd_puts(x1, y, PSTR("MAV Comp"));
-		lcd_outdezAtt(xnum, y, telemetry_data.mav_compid, 0);
-		y += FH;
-		lcd_puts(x1, y, PSTR("MAV Sys"));
-		lcd_outdezAtt(xnum, y, telemetry_data.mav_sysid, 0);
-		y += FH;
-		lcd_puts(x1, y, PSTR("Radio Comp"));
-		lcd_outdezAtt(xnum, y, telemetry_data.radio_compid, 0);
-		y += FH;
-		lcd_puts(x1, y, PSTR("Radio Sys"));
-		lcd_outdezAtt(xnum, y, telemetry_data.radio_sysid, 0);
-		
-	}
+	y += FH;
+	lcd_puts(x1, y, PSTR("UNKN PKT"));
+	lcd_outdezAtt(xnum, y, telemetry_data.unknow_pckt_cnt, 0);
+	
+	y += FH;
+	lcd_puts(x1, y, PSTR("PKT DROP"));
+	lcd_outdezAtt(xnum, y, telemetry_data.packet_drop, 0);
+	y += FH;
+	lcd_puts(x1, y, PSTR("PKT REC"));
+	lcd_outdezAtt(xnum, y, telemetry_data.packet_fixed, 0);		/* TODO use correct var */
+	y += FH;
+	lcd_puts(x1, y, PSTR("MAV Comp"));
+	lcd_outdezAtt(xnum, y, telemetry_data.mav_compid, 0);
+	y += FH;
+	lcd_puts(x1, y, PSTR("MAV Sys"));
+	lcd_outdezAtt(xnum, y, telemetry_data.mav_sysid, 0);
+	y += FH;
+	lcd_puts(x1, y, PSTR("Radio Comp"));
+	lcd_outdezAtt(xnum, y, telemetry_data.radio_compid, 0);
+	y += FH;
+	lcd_puts(x1, y, PSTR("Radio Sys"));
+	lcd_outdezAtt(xnum, y, telemetry_data.radio_sysid, 0);
 }
 
 /*!	\brief Flight mode menu

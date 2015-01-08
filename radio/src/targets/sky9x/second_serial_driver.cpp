@@ -108,9 +108,16 @@ void SECOND_UART_Stop()
   NVIC_DisableIRQ(UART0_IRQn) ;
 }
 
-extern "C" void UART0_IRQHandler()
-{
-  serial2RxFifo.push(SECOND_SERIAL_UART->UART_RHR);
+extern "C" void UART0_IRQHandler() {
+  Uart *pUart=SECOND_SERIAL_UART ;
+  if ( pUart->UART_SR & UART_SR_TXBUFE ) {
+	pUart->UART_IDR = UART_IDR_TXBUFE ;
+	pUart->UART_PTCR = US_PTCR_TXTDIS ;
+	//Current_Com2->ready = 0 ;	
+	}
+  if ( pUart->UART_SR & UART_SR_RXRDY ) {
+	serial2RxFifo.push(pUart->UART_RHR);	
+	}	 
 }
 #else
 #define SECOND_UART_Configure(...)

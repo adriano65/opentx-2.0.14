@@ -109,7 +109,6 @@ Telemetry_Data_t telemetry_data;
 	  #endif
 		return 0 ;  // Busy
 	  }
-
 	  extern "C" void UART1_IRQHandler() {
 		Uart *pUart = BT_USART;
 		if ( pUart->UART_SR & UART_SR_TXBUFE ) {
@@ -121,7 +120,29 @@ Telemetry_Data_t telemetry_data;
 		  TelemRxFifo.push(pUart->UART_RHR);
 		  }
 	  }
+	#else
+	  struct t_serial_tx *Current_Com2;
+	  struct t_serial_tx Com2_tx ;
+	  uint8_t Com2TxBuffer[32];	  
+	  uint32_t txPdcCom2( struct t_serial_tx *data ) {
+		#ifndef SIMU
+		Uart *pUart=SECOND_SERIAL_UART;			// CONSOLE_USART in ersky9x
+		if ( pUart->UART_TNCR == 0 ) {
+		  Current_Com2 = data;
+		  data->ready = 1 ;
+		  pUart->UART_TPR = (uint32_t)data->buffer ;
+		  pUart->UART_TCR = data->size ;
+		  pUart->UART_PTCR = US_PTCR_TXTEN ;
+		  pUart->UART_IER = UART_IER_TXBUFE ;
+		  NVIC_SetPriority( UART0_IRQn, 4 ) ; // Lower priority interrupt
+		  NVIC_EnableIRQ(UART0_IRQn) ;
+		  return 1 ;			// Sent OK
+		  }
+		#endif
+		return 0 ;				// Busy
+	  }
 
+	  
 	#endif
 	/*
 	void Txchar(uint8_t c) {
@@ -225,6 +246,7 @@ void telemetryWakeup() {
 	if (!count) {
 	#if defined(CPUARM)
 		mav_heartbeat=0;	/* reset counter */
+		TxPushByte('A');
 	#else
 		if (mav_heartbeat > -30) {
 			// TODO mavlink_system.sysid = g_eeGeneral.mavTargetSystem;
@@ -317,7 +339,11 @@ void TelemetryTxTask(void* pdata) {
 				#if defined(MAVLINK_DEBUG)
 					txBt((uint32_t)byte);
 				#else
-					debugPutc(byte);	/* second_serial_driver.cpp */
+					//debugPutc(byte);	/* second_serial_driver.cpp */
+					Com2_tx.size = 0;
+					Com2TxBuffer[Com2_tx.size++] = byte;
+					Com2_tx.buffer = Com2TxBuffer ;
+					txPdcCom2( &Com2_tx );
 				#endif
 			  #else
 				txPdcUsart(&byte, 1); 
@@ -326,10 +352,11 @@ void TelemetryTxTask(void* pdata) {
 		  }
 	msElapsedX10++;
 	//if (msElapsedX10>70) 
-	{ TxPushByte('A'); msElapsedX10=0; }
+	//{ TxPushByte('A'); msElapsedX10=0; }
 	}		// while 1
   
 }
+#endif
 
 void TxPushByte(uint8_t data) {
   TelemTxFifo.push(data);
@@ -353,7 +380,6 @@ void request_mavlink_rates() {
 											 MAVStreams[i], MAVRates[i], 1);
     }
 }
-#endif
 
 /*
  * Calculates the MAVLink checksum on a packet in parameter buffer

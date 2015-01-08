@@ -10,7 +10,9 @@ mkdir lbuild
 
 cd lbuild
 
-cmake ../src
+cmake -D EXT=MAVLINK ../src
+or
+cmake -D EXT=FRSKY ../src
 
 -- Finally, we're ready to compile ...
 

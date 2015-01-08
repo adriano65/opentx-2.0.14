@@ -107,24 +107,27 @@ include_directories(
 add_subdirectory(modeledit)
 add_subdirectory(simulation)
 
-#if(EXT EQUAL FRSKY)
-#add_definitions(-DEXT=FRSKY)
-#endif() 
+if(${EXT} MATCHES FRSKY)
+  MESSAGE("FRSKY protocol enabled." )
+  set_property(
+	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
+	APPEND
+	PROPERTY COMPILE_DEFINITIONS
+	FRSKY
+  )
+endif() 
 
-if(EXT EQUAL MAVLINK)
-set_source_files_properties( ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp PROPERTIES COMPILE_DEFINITIONS MAVLINK)
-MESSAGE("EXT EQUAL MAVLINK--------------!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+if(${EXT} MATCHES MAVLINK)
+  MESSAGE("MAVLINK protocol enabled." )
+  set_property(
+	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
+	APPEND
+	PROPERTY COMPILE_DEFINITIONS
+	MAVLINK REVX
+  )
 endif() 
 
 #set_source_files_properties( ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp PROPERTIES COMPILE_DEFINITIONS MAVLINK)
-
-
-set_property(
-  SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
-  APPEND
-  PROPERTY COMPILE_DEFINITIONS
-  MAVLINK REVX
-)
 
 
 
