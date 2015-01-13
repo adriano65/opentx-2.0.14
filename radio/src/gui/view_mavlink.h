@@ -54,13 +54,10 @@ void menuTelemetryMavlinkInfos(void);
 void menuTelemetryMavlinkFlightMode(void);
 void menuTelemetryMavlinkBattery(void);
 void menuTelemetryMavlinkGPS(void);
-#ifdef MAVLINK_DEBUG
-void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val);
+//void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val);
 void menuMavlinkLastGPSFix(void);
 void menuTelemetryMavlinkNavigation(void);
 void menuMavlinkDiag(void);
-void menuTelemetryMavlinkDumpRx(uint8_t);
-#endif
 void menuTelemetryMavlinkSetup(uint8_t event);
 
 /*!	Mavlink menu enumerator
@@ -72,10 +69,8 @@ enum mavlink_menu_ {
 	MENU_MODE,
 	MENU_BATT,
 	MENU_GPS,
-#ifdef MAVLINK_DEBUG
 	MENU_NAV,			// seems not very useful in flight
 	MENU_DUMP_DIAG,
-#endif
 	MAX_MAVLINK_MENU
 };
 

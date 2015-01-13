@@ -89,6 +89,7 @@ Telemetry_Data_t telemetry_data;
 #if defined(CPUARM)
 	Fifo<32> TelemTxFifo;
 	Fifo<32> TelemRxFifo;
+	OS_STK TelemetryTxStack[MAVLINK_STACK_SIZE];
 	#if defined(MAVLINK_DEBUG)
 	  #ifdef BLUETOOTH
 		#error "---->> MAVLINK_DEBUG NOT works with BLUETOOTH defined (btTask conflicts)"
@@ -120,29 +121,6 @@ Telemetry_Data_t telemetry_data;
 		  TelemRxFifo.push(pUart->UART_RHR);
 		  }
 	  }
-	#else
-	  struct t_serial_tx *Current_Com2;
-	  struct t_serial_tx Com2_tx ;
-	  uint8_t Com2TxBuffer[32];	  
-	  uint32_t txPdcCom2( struct t_serial_tx *data ) {
-		#ifndef SIMU
-		Uart *pUart=SECOND_SERIAL_UART;			// CONSOLE_USART in ersky9x
-		if ( pUart->UART_TNCR == 0 ) {
-		  Current_Com2 = data;
-		  data->ready = 1 ;
-		  pUart->UART_TPR = (uint32_t)data->buffer ;
-		  pUart->UART_TCR = data->size ;
-		  pUart->UART_PTCR = US_PTCR_TXTEN ;
-		  pUart->UART_IER = UART_IER_TXBUFE ;
-		  NVIC_SetPriority( UART0_IRQn, 4 ) ; // Lower priority interrupt
-		  NVIC_EnableIRQ(UART0_IRQn) ;
-		  return 1 ;			// Sent OK
-		  }
-		#endif
-		return 0 ;				// Busy
-	  }
-
-	  
 	#endif
 	/*
 	void Txchar(uint8_t c) {
@@ -211,7 +189,6 @@ void MAVLINK_Init(void) {
 	#if !defined(SIMU)
 	  #if defined(CPUARM) && !defined(SIMU)
 		  MAVLINK_reset();
-		  OS_STK TelemetryTxStack[MAVLINK_STACK_SIZE];
 		  #if defined(REVX)
 			  #if defined(MAVLINK_DEBUG)
 				// btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
@@ -226,7 +203,6 @@ void MAVLINK_Init(void) {
 			//telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
 			telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
 		  #endif
-		  TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 15, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
 	  #else
 		MAVLINK_reset(0);
 		SERIAL_Init();
@@ -239,6 +215,11 @@ void telemetryWakeup() {
 	uint16_t tmr10ms = get_tmr10ms();
 	#if defined(CPUARM)
 	uint16_t count = tmr10ms & 0x02BC; // 700*10ms ==  7 SEC
+	// enable AFTER CoInitOS()
+	if (data_stream_start_stop==0) {
+	  TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 19, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
+	  data_stream_start_stop=1;
+	  }
 	#else
 	uint8_t count = tmr10ms & 0x0f; // 15*10ms
 	#endif	  
@@ -246,7 +227,7 @@ void telemetryWakeup() {
 	if (!count) {
 	#if defined(CPUARM)
 		mav_heartbeat=0;	/* reset counter */
-		TxPushByte('A');
+		if (MAVLINK_menu==MENU_DUMP_DIAG) TxPushByte('D');
 	#else
 		if (mav_heartbeat > -30) {
 			// TODO mavlink_system.sysid = g_eeGeneral.mavTargetSystem;
@@ -256,7 +237,6 @@ void telemetryWakeup() {
 				MAVLINK_reset(1);
 				SERIAL_Init();
 			}
-//			SERIAL_startTX();
 		}
 	#endif	  
 	  }
@@ -332,18 +312,14 @@ void TelemetryTxTask(void* pdata) {
   CoTickDelay(1) ;
 
   while (1) {
-    uint32_t errcode = CoWaitForSingleFlag(TelemTxFlag, 100); // Wait for flag MAX 100 ms
+    uint32_t errcode = CoWaitForSingleFlag(TelemTxFlag, 10); // Wait for flag MAX 20 ms
 		if (errcode == E_OK) {
 			while (TelemTxFifo.pop(byte)) {
 			  #if defined(REVX)
 				#if defined(MAVLINK_DEBUG)
 					txBt((uint32_t)byte);
 				#else
-					//debugPutc(byte);	/* second_serial_driver.cpp */
-					Com2_tx.size = 0;
-					Com2TxBuffer[Com2_tx.size++] = byte;
-					Com2_tx.buffer = Com2TxBuffer ;
-					txPdcCom2( &Com2_tx );
+					debugPutc(byte);	/* second_serial_driver.cpp */
 				#endif
 			  #else
 				txPdcUsart(&byte, 1); 
@@ -351,8 +327,8 @@ void TelemetryTxTask(void* pdata) {
 			  }
 		  }
 	msElapsedX10++;
-	//if (msElapsedX10>70) 
-	//{ TxPushByte('A'); msElapsedX10=0; }
+	if (msElapsedX10>50) { // once per second
+	  msElapsedX10=0; }
 	}		// while 1
   
 }
@@ -807,7 +783,7 @@ static inline void REC_MAVLINK_MSG_ID_PARAM_VALUE(const mavlink_message_t* msg) 
 	mavlink_msg_param_value_decode(msg, &param_value);
 	char *id = param_value.param_id;
 	setParamValue((int8_t*)id, param_value.param_value);
-	data_stream_start_stop = 0; // stop data stream while getting params list
+	//data_stream_start_stop = 0; // stop data stream while getting params list
 	watch_mav_req_params_list = mav_req_params_nb_recv < (NB_PARAMS - 5) ? 20 : 0; // stop timeout
 }
 #endif

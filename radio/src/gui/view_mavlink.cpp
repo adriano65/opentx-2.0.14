@@ -86,15 +86,12 @@ void menuTelemetryMavlink(uint8_t event) {
 		case MENU_GPS:
 			menuTelemetryMavlinkGPS();
 			break;
-		
-#ifdef MAVLINK_DEBUG
 		case MENU_NAV:
 			menuTelemetryMavlinkNavigation();
 			break;
 		case MENU_DUMP_DIAG:
 			menuMavlinkDiag();
 			break;
-#endif
 		default:
 			break;
 		}
@@ -430,7 +427,6 @@ void menuTelemetryMavlinkSetup(uint8_t event) {
 	}
 }
 
-#ifdef MAVLINK_DEBUG
 /* Display one byte as hex.
 void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val) {
 	x += FWNUM * 2;
@@ -520,7 +516,5 @@ void menuMavlinkDiag(void) {
 	lcd_puts(x1, y, PSTR("Rad Sys"));
 	lcd_outdezAtt(xnum, y, telemetry_data.radio_sysid, 0);
 }
-
-#endif
 
 

@@ -52,7 +52,7 @@ extern mavlink_system_t mavlink_system;
 static const uint8_t ap_modes_lut[18] PROGMEM = {0,1,2,3,12,4,5,12,12,12,6,7,8,9,12,12,10,11};
 */
 
-#define MAVLINK_STACK_SIZE       500
+#define MAVLINK_STACK_SIZE       200
 /*
  * Type definitions
  */
