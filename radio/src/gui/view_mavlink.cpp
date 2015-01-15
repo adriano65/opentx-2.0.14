@@ -179,13 +179,13 @@ void print_mav_mode(uint8_t x, uint8_t y, uint8_t attr) {
 			lcd_putsiAtt(x,y,STR_MAVLINK_AP_MODES, telemetry_data.custom_mode, attr);
 			break;
 		default:
-			lcd_putsAtt (FW, y, PSTR("INV. MAV MODE"), attr);
+			lcd_putsAtt (FW, y, PSTR("UNKN MAV TYPE"), attr);
 			break;
 		}
 }
 
-/*!	\brief Menu header
- *	\details Small helper function to print the standard header on the screen.
+/* Menu header
+ *	Small helper function to print the standard header on the screen.
  */
 void mav_title(const pm_char * s, uint8_t index) {
   lcd_putsAtt(0, 0, PSTR("MAVLINK"), INVERS);
@@ -289,8 +289,8 @@ void menuTelemetryMavlinkFlightMode(void) {
     	lcd_putsAtt (FW, y, STR_MAVLINK_ARMED, DBLSIZE);
 }
 
-/*!	\brief Battery status display
- *	\details Shows flight battery status.
+/*	Battery status display
+ *	Shows flight battery status.
  *	Also RC and PC RSSI are in this menu. 
  */
 void menuTelemetryMavlinkBattery(void) {
@@ -421,6 +421,22 @@ void menuTelemetryMavlinkSetup(uint8_t event) {
 				
 			case ITEM_MAVLINK_ENABLE_BLUETOOTH:
 				lcd_putsLeft(y, "Enable Bluetooth");
+				g_model.mavlink.pc_rssi_en = onoffMenuItem(g_model.mavlink.pc_rssi_en,
+					RADIO_SETUP_2ND_COLUMN,
+					y,
+					STR_MAVLINK_PC_RSSI_EN_LABEL,
+					attr,
+					event);
+				break;
+				
+			case ITEM_MAVLINK_REQUEST_APMPARAM:
+				lcd_putsLeft(y, "Request APM param");
+				g_model.mavlink.pc_rssi_en = onoffMenuItem(g_model.mavlink.pc_rssi_en,
+					RADIO_SETUP_2ND_COLUMN,
+					y,
+					STR_MAVLINK_PC_RSSI_EN_LABEL,
+					attr,
+					event);
 				break;
 				
 		}

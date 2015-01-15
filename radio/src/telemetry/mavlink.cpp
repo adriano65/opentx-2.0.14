@@ -95,7 +95,8 @@ Telemetry_Data_t telemetry_data;
 		#error "---->> MAVLINK_DEBUG NOT works with BLUETOOTH defined (btTask conflicts)"
 	  #endif
 	  
-	  uint32_t txBt(uint32_t data) {
+	  //uint32_t txBt(uint32_t data) {
+	  uint32_t txBt(const char data) {
 	  #ifndef SIMU
 		Uart *pUart = BT_USART;
 
@@ -115,7 +116,6 @@ Telemetry_Data_t telemetry_data;
 		if ( pUart->UART_SR & UART_SR_TXBUFE ) {
 		  pUart->UART_IDR = UART_IDR_TXBUFE ;
 		  pUart->UART_PTCR = US_PTCR_TXTDIS ;
-		  //Current_bt->ready = 0 ;
 		  }
 		if ( pUart->UART_SR & UART_SR_RXRDY ) {
 		  TelemRxFifo.push(pUart->UART_RHR);
@@ -217,7 +217,9 @@ void telemetryWakeup() {
 	uint16_t count = tmr10ms & 0x02BC; // 700*10ms ==  7 SEC
 	// enable AFTER CoInitOS()
 	if (data_stream_start_stop==0) {
+	  #if !defined(SIMU)
 	  TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 19, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
+	  #endif
 	  data_stream_start_stop=1;
 	  }
 	#else
@@ -317,7 +319,7 @@ void TelemetryTxTask(void* pdata) {
 			while (TelemTxFifo.pop(byte)) {
 			  #if defined(REVX)
 				#if defined(MAVLINK_DEBUG)
-					txBt((uint32_t)byte);
+					txBt(byte);
 				#else
 					debugPutc(byte);	/* second_serial_driver.cpp */
 				#endif
