@@ -157,7 +157,7 @@ extern uint8_t TrotCount;
 extern uint8_t TezRotary;
 #endif
 
-NOINLINE void processSerialData(uint8_t data)
+NOINLINE void processSerialFrskyData(uint8_t data)
 {
   static uint8_t dataState = STATE_DATA_IDLE;
 
@@ -297,7 +297,7 @@ void telemetryWakeup()
   gettime(&utm);
 #endif
   while (telemetryFifo.pop(data)) {
-    processSerialData(data);
+    processSerialFrskyData(data);
 #if defined(SPORT_FILE_LOG) && !defined(SIMU)
     extern FIL g_telemetryFile;
     if (lastTime != newTime) {
@@ -313,12 +313,12 @@ void telemetryWakeup()
   if (telemetryProtocol == PROTOCOL_FRSKY_D_SECONDARY) {
     uint8_t data;
     while (telemetrySecondPortReceive(data)) {
-      processSerialData(data);
+      processSerialFrskyData(data);
     }
   }
   else {
     // Receive serial data here
-    rxPdcUsart(processSerialData);
+    rxPdcUsart(processSerialFrskyData);
   }
 #endif
 

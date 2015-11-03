@@ -123,15 +123,7 @@ extern "C" void UART0_IRQHandler() {
 #define SECOND_UART_Configure(...)
 #endif
 
-#if defined(FRSKY)
-void telemetrySecondPortInit(unsigned int /*protocol*/)
-{
-  SECOND_UART_Configure(FRSKY_D_BAUDRATE, Master_frequency);
-  // startPdcUsartReceive();
-}
-#endif
-
-#if defined(MAVLINK)
+#if defined(FRSKY) || defined(MAVLINK)
 void telemetrySecondPortInit(unsigned int baudrate)
 {
   SECOND_UART_Configure(baudrate, Master_frequency);

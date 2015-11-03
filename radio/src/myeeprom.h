@@ -1705,10 +1705,10 @@ enum FailsafeModes {
   FAILSAFE_LAST = FAILSAFE_RECEIVER
 };
 
-#if defined(MAVLINK)
-  #define TELEMETRY_DATA MavlinkData mavlink;
-#elif defined(FRSKY) || !defined(PCBSTD)
+#if defined(FRSKY) || !defined(PCBSTD)
   #define TELEMETRY_DATA FrSkyData frsky;
+#elif defined(MAVLINK)
+  #define TELEMETRY_DATA MavlinkData mavlink;
 #else
   #define TELEMETRY_DATA
 #endif
@@ -1746,6 +1746,9 @@ enum TelemetryProtocol
   PROTOCOL_TELEMETRY_FIRST,
   PROTOCOL_FRSKY_SPORT = PROTOCOL_TELEMETRY_FIRST,
   PROTOCOL_FRSKY_D,
+#if defined(MAVLINK)
+  PROTOCOL_MAVLINK,
+#endif
   PROTOCOL_FRSKY_D_SECONDARY
 };
 
@@ -1788,6 +1791,10 @@ PACK(typedef struct t_ModelData {
 
   TELEMETRY_DATA
 
+#if defined(MAVLINK)
+  MavlinkData mavlink;
+#endif
+  
   MODELDATA_EXTRA
 
 }) ModelData;

@@ -611,8 +611,18 @@ void menuMainView(uint8_t event)
 
     case EVT_KEY_TELEMETRY:
 #if defined(FRSKY)
-      if (!IS_FAI_ENABLED())
+      if (!IS_FAI_ENABLED()) {
+#if defined(MAVLINK)
+	if (g_model.telemetryProtocol == PROTOCOL_MAVLINK) {
+          chainMenu(menuTelemetryMavlink);
+        }
+        else {
+         chainMenu(menuTelemetryFrsky);
+        }
+#else
         chainMenu(menuTelemetryFrsky);
+#endif
+      }
 #elif defined(JETI)
       JETI_EnableRXD(); // enable JETI-Telemetry reception
       chainMenu(menuTelemetryJeti);
@@ -622,8 +632,6 @@ void menuMainView(uint8_t event)
 #elif defined(NMEA)
       NMEA_EnableRXD(); // enable NMEA-Telemetry reception
       chainMenu(menuTelemetryNMEA);
-#elif defined(MAVLINK)
-      chainMenu(menuTelemetryMavlink);
 #else
       chainMenu(menuStatisticsDebug);
 #endif

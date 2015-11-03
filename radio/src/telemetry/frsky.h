@@ -69,6 +69,13 @@ enum TelemetryStates {
 extern uint8_t telemetryState;
 #endif
 
+#if defined(MAVLINK)
+typedef void (*SerialFuncP)(uint8_t event);
+extern SerialFuncP RXHandler;
+extern void MAVLINK_telemetryWakeup(void);
+uint32_t mavbauds[] = {4800,9600,14400,19200,38400,57600,76800,115200};
+#endif
+
 #if defined(CPUARM)
 #define TELEMETRY_AVERAGE_COUNT 3     //we actually average one more reading!
 #define RAW_FRSKY_MINMAX(v)     v.values[TELEMETRY_AVERAGE_COUNT-1]

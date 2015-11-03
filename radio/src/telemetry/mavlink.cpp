@@ -35,6 +35,7 @@
  * GNU General Public License for more details.
  *
  */
+void MAVLINK_Init(void);
 
 #include "telemetry/mavlink.h"
 #include "../opentx.h"
@@ -151,7 +152,7 @@ Telemetry_Data_t telemetry_data;
 #else
 #include "serial.cpp"
 void MAVLINK_rxhandler(uint8_t byte) {
-	processSerialData(byte);
+	processSerialMavlinkData(byte);
 }
 
 SerialFuncP RXHandler = MAVLINK_rxhandler;
@@ -159,14 +160,7 @@ SerialFuncP RXHandler = MAVLINK_rxhandler;
 
 
 /*Reset basic Mavlink variables */
-#if !defined(CPUARM)
-void MAVLINK_reset(uint8_t warm_reset) {
-	if (warm_reset && telemetry_data.status) {
-		mav_statustext[0] = 0;
-	}
-#else
 void MAVLINK_reset(void) {
-#endif
 	mavlink_status_t* p_status = mavlink_get_channel_status(MAVLINK_COMM_0);
 	p_status->current_rx_seq = 0;
 	p_status->current_tx_seq = 0;
@@ -210,7 +204,7 @@ void MAVLINK_Init(void) {
 	#endif
 }
 
-void telemetryWakeup() {
+void MAVLINK_telemetryWakeup() {
 	/* RESET protocol activity status (* symbol) on display */
 	uint16_t tmr10ms = get_tmr10ms();
 	#if defined(CPUARM)
@@ -264,19 +258,26 @@ void telemetryWakeup() {
 	/* ---------------------------------------------------- */
 	
 	#if defined(CPUARM)
+		uint8_t data;
 		#if defined(REVX)
-			uint8_t data;
 			#if defined(MAVLINK_DEBUG)
 			  if (TelemRxFifo.pop(data)) {
-				  processSerialData(data);
+				  processSerialMavlinkData(data);
 				  }
 			#else
 			  while (telemetrySecondPortReceive(data)) {
-				processSerialData(data);
+				processSerialMavlinkData(data);
 				}	
 			#endif
 		#else
-		  rxPdcUsart(processSerialData);
+		  #if defined(SKY9X)
+		  rxPdcUsart(processSerialMavlinkData);
+		  #else
+		  while (TelemRxFifo.pop(data)) {
+			processSerialMavlinkData(data);
+			}	
+		  #endif
+		  
 		#endif
 	#endif
 }
@@ -324,7 +325,11 @@ void TelemetryTxTask(void* pdata) {
 					debugPutc(byte);	/* second_serial_driver.cpp */
 				#endif
 			  #else
-				txPdcUsart(&byte, 1); 
+				#if defined(SKY9X)
+					txPdcUsart(&byte, 1); 
+				#else
+					
+				#endif
 			  #endif
 			  }
 		  }
@@ -412,7 +417,7 @@ Payload			6 to (n+6)		The data into the message, depends on the message id.
 CRC				(n+7) to (n+8)	Check-sum of the entire packet, excluding the packet start sign (LSB to MSB)
 ------------------------------------------------------------------------------------------------------------
 */
-NOINLINE void processSerialData(uint8_t c) {
+NOINLINE void processSerialMavlinkData(uint8_t c) {
 	// The current decoding status
 	mavlink_status_t* p_status = mavlink_get_channel_status(MAVLINK_COMM_0);
 
