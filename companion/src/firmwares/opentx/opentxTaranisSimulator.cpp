@@ -22,14 +22,19 @@
 #define SIMU_EXCEPTIONS
 #define PCBTARANIS
 #define CPUARM
-#define HELI
+//#define HELI
 #define SPLASH
 #define FLIGHT_MODES
-#define FRSKY
+
+// -- defined in CMakeLists.txt
+//#define FRSKY
 #define FRSKY_HUB
 #define FRSKY_SPORT
+// -- defined in CMakeLists.txt
+//#define MAVLINK
 #define GPS
 #define VARIO
+
 #define GAUGES
 #define PPM_UNIT_PERCENT_PREC1
 #define AUDIO
@@ -118,6 +123,10 @@ inline int geteepromsize() {
 #include "radio/src/telemetry/frsky.cpp"
 #include "radio/src/telemetry/frsky_sport.cpp"
 #include "radio/src/telemetry/frsky_d.cpp"
+
+#include "radio/src/telemetry/mavlink.cpp"
+#include "radio/src/gui/view_mavlink.cpp"
+
 #include "radio/src/targets/taranis/audio_driver.cpp"
 #include "radio/src/targets/taranis/telemetry_driver.cpp"
 #include "radio/src/audio_arm.cpp"

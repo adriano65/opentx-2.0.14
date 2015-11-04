@@ -3,7 +3,7 @@
 #include <float.h>
 #include "eeprominterface.h"
 #include "firmwares/er9x/er9xinterface.h"
-#include "firmwares/th9x/th9xinterface.h"
+//#include "firmwares/th9x/th9xinterface.h"
 #include "firmwares/gruvin9x/gruvin9xinterface.h"
 #include "firmwares/opentx/opentxinterface.h"
 #include "firmwares/opentx/opentxeeprom.h"
@@ -1332,7 +1332,7 @@ void RegisterEepromInterfaces()
   eepromInterfaces.push_back(new Gruvin9xInterface(BOARD_STOCK));
   eepromInterfaces.push_back(new Gruvin9xInterface(BOARD_GRUVIN9X));
   eepromInterfaces.push_back(new Ersky9xInterface());
-  eepromInterfaces.push_back(new Th9xInterface());
+//  eepromInterfaces.push_back(new Th9xInterface());
   eepromInterfaces.push_back(new Er9xInterface());
 }
 

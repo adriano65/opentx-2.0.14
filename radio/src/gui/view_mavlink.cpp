@@ -387,7 +387,7 @@ void menuTelemetryMavlinkGPS(void) {
  *	Current menu items
  *	- RC RSSI scale item. Used to adjust the scale of the RSSI indicator to match
  *	the actual rssi value
- *	- PC RSSI enable item. Can be used to dissable PC RSSI display if not used.
+ *	- PC RSSI enable item. Can be used to disable PC RSSI display if not used.
  *	This funcion is called from the model setup menus, not directly by the
  *	telemetry menus
  */

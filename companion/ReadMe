@@ -10,12 +10,16 @@ mkdir lbuild
 
 cd lbuild
 
-cmake -D EXT=MAVLINK ../src
+cmake -D EXT=9xrProMAVLINK ../src
 or
 cmake -D EXT=FRSKY ../src
+or
+cmake -D EXT=FRSKY_MAVLINK ../src
 
 -- Finally, we're ready to compile ...
 
 make clean && make
 
 NOTE: make clean WORKS!
+	  remove CMakefileCache.txt in lbuild AND src dir if any
+

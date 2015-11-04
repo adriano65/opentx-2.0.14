@@ -107,17 +107,17 @@ include_directories(
 add_subdirectory(modeledit)
 add_subdirectory(simulation)
 
-if(${EXT} MATCHES FRSKY)
+if(${EXT} MATCHES Sky9xMAVLINK)
   MESSAGE("FRSKY protocol enabled." )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS
-	FRSKY
+	MAVLINK REVB
   )
 endif() 
 
-if(${EXT} MATCHES MAVLINK)
+if(${EXT} MATCHES 9xrProMAVLINK)
   MESSAGE("MAVLINK protocol enabled." )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
@@ -129,12 +129,21 @@ endif()
 
 #set_source_files_properties( ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp PROPERTIES COMPILE_DEFINITIONS MAVLINK)
 
+if(${EXT} MATCHES FRSKY_MAVLINK)
+  MESSAGE("FRSKY_MAVLINK protocol enabled." )
+  set_property(
+	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxTaranisSimulator.cpp
+	APPEND
+	PROPERTY COMPILE_DEFINITIONS
+	MAVLINK FRSKY
+  )
+endif() 
 
 
 set(common_SRCS
   eeprominterface.cpp
   firmwares/th9x/th9xeeprom.cpp # TODO not needed
-  firmwares/th9x/th9xinterface.cpp
+  #firmwares/th9x/th9xinterface.cpp
   firmwares/er9x/er9xeeprom.cpp
   firmwares/er9x/er9xinterface.cpp
   firmwares/gruvin9x/gruvin9xeeprom.cpp
@@ -311,14 +320,14 @@ TARGET_LINK_LIBRARIES( ${PROJECT_NAME} modeledit simulation common ${QT_LIBRARIE
 
 ############# Standalone simu ###############
 
-set(TH9X_CHECKOUT_DIRECTORY ${PROJECT_BINARY_DIR}/firmwares/th9x)
-add_custom_command(
-  OUTPUT ${TH9X_CHECKOUT_DIRECTORY}/th9xsimulator.cpp
-  COMMAND ${CMAKE_COMMAND} -E make_directory ${TH9X_CHECKOUT_DIRECTORY}
-  COMMAND cd ${TH9X_CHECKOUT_DIRECTORY} && svn checkout http://th9x.googlecode.com/svn/trunk/src@285 .
-  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/firmwares/th9x/th9xsimulator.cpp ${TH9X_CHECKOUT_DIRECTORY}
-  DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/firmwares/th9x/th9xsimulator.cpp
-)
+# set(TH9X_CHECKOUT_DIRECTORY ${PROJECT_BINARY_DIR}/firmwares/th9x)
+# add_custom_command(
+#   OUTPUT ${TH9X_CHECKOUT_DIRECTORY}/th9xsimulator.cpp
+#   COMMAND ${CMAKE_COMMAND} -E make_directory ${TH9X_CHECKOUT_DIRECTORY}
+#   COMMAND cd ${TH9X_CHECKOUT_DIRECTORY} && svn checkout http://th9x.googlecode.com/svn/trunk/src@285 .
+#   COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/firmwares/th9x/th9xsimulator.cpp ${TH9X_CHECKOUT_DIRECTORY}
+#   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/firmwares/th9x/th9xsimulator.cpp
+# )
 
 set(ER9X_CHECKOUT_DIRECTORY ${PROJECT_BINARY_DIR}/firmwares/er9x)
 add_custom_command(
@@ -329,19 +338,19 @@ add_custom_command(
   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/firmwares/er9x/er9xsimulator.cpp
 )
 
-set(ERSKY9X_CHECKOUT_DIRECTORY ${PROJECT_BINARY_DIR}/firmwares/ersky9x)
-add_custom_command(
-  OUTPUT ${ERSKY9X_CHECKOUT_DIRECTORY}/ersky9xsimulator.cpp
-  COMMAND ${CMAKE_COMMAND} -E make_directory ${ERSKY9X_CHECKOUT_DIRECTORY}
-  COMMAND cd ${ERSKY9X_CHECKOUT_DIRECTORY} && svn checkout http://ersky9x.googlecode.com/svn/trunk/src@170 .
-  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/firmwares/ersky9x/ersky9xsimulator.cpp ${ERSKY9X_CHECKOUT_DIRECTORY}
-  DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/firmwares/ersky9x/ersky9xsimulator.cpp
-)
+# set(ERSKY9X_CHECKOUT_DIRECTORY ${PROJECT_BINARY_DIR}/firmwares/ersky9x)
+# add_custom_command(
+#   OUTPUT ${ERSKY9X_CHECKOUT_DIRECTORY}/ersky9xsimulator.cpp
+#   COMMAND ${CMAKE_COMMAND} -E make_directory ${ERSKY9X_CHECKOUT_DIRECTORY}
+#   COMMAND cd ${ERSKY9X_CHECKOUT_DIRECTORY} && svn checkout http://ersky9x.googlecode.com/svn/trunk/src@170 .
+#   COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/firmwares/ersky9x/ersky9xsimulator.cpp ${ERSKY9X_CHECKOUT_DIRECTORY}
+#   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/firmwares/ersky9x/ersky9xsimulator.cpp
+# )
 
 set(simu_SRCS
-  ${TH9X_CHECKOUT_DIRECTORY}/th9xsimulator.cpp
-  ${ER9X_CHECKOUT_DIRECTORY}/er9xsimulator.cpp
-  ${ERSKY9X_CHECKOUT_DIRECTORY}/ersky9xsimulator.cpp
+  #${TH9X_CHECKOUT_DIRECTORY}/th9xsimulator.cpp
+  #${ER9X_CHECKOUT_DIRECTORY}/er9xsimulator.cpp
+  #${ERSKY9X_CHECKOUT_DIRECTORY}/ersky9xsimulator.cpp
   ${RADIO_SRC_DIRECTORY}/bitmaps/sticks.lbm
   ${RADIO_SRC_DIRECTORY}/translations/en.h
   ${RADIO_SRC_DIRECTORY}/lua_exports.inc

@@ -49,7 +49,7 @@ void telemetryEnableRx(void)
   UCSR0B |= (1 << RXCIE0); // enable Interrupt
 }
 
-void processSerialData(uint8_t data);
+void processSerialFrskyData(uint8_t data);
 extern uint8_t frskyRxBufferCount; // TODO not driver, change name
 
 ISR(USART0_RX_vect)
@@ -98,7 +98,7 @@ ISR(USART0_RX_vect)
     frskyRxBufferCount = 0;
   }
   else {
-    processSerialData(data);
+    processSerialFrskyData(data);
   }
 
   cli() ;
