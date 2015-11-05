@@ -420,24 +420,26 @@ void menuTelemetryMavlinkSetup(uint8_t event) {
 				break;
 				
 			case ITEM_MAVLINK_ENABLE_BLUETOOTH:
-				lcd_putsLeft(y, "Enable Bluetooth");
-				g_model.mavlink.pc_rssi_en = onoffMenuItem(g_model.mavlink.pc_rssi_en,
+				g_model.mavlink.bluetooth_en = onoffMenuItem(g_model.mavlink.bluetooth_en,
 					RADIO_SETUP_2ND_COLUMN,
 					y,
-					STR_MAVLINK_PC_RSSI_EN_LABEL,
+					STR_MAVLINK_BLUETOOTH,
 					attr,
 					event);
 				break;
 				
 			case ITEM_MAVLINK_REQUEST_APMPARAM:
-				lcd_putsLeft(y, "Request APM param");
-				g_model.mavlink.pc_rssi_en = onoffMenuItem(g_model.mavlink.pc_rssi_en,
+				g_model.mavlink.mavreq_en = onoffMenuItem(g_model.mavlink.mavreq_en,
 					RADIO_SETUP_2ND_COLUMN,
 					y,
-					STR_MAVLINK_PC_RSSI_EN_LABEL,
+					STR_MAVLINK_MAVLINREQ,
 					attr,
 					event);
 				break;
+			case ITEM_MAVLINK_BAUD:
+				g_eeGeneral.mavbaud = selectMenuItem(RADIO_SETUP_2ND_COLUMN, y, STR_MAVLINK_BAUD_LABEL, STR_MAVLINK_BAUDS, g_eeGeneral.mavbaud, 0, 7, attr, event);
+				break;
+			//CASE_MAVLINK(ITEM_MAVLINK_BAUD)
 				
 		}
 	}

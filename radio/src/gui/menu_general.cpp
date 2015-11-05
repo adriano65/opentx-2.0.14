@@ -179,7 +179,6 @@ enum menuGeneralSetupItems {
   CASE_CPUARM(ITEM_SETUP_LANGUAGE)
   CASE_CPUARM(ITEM_SETUP_IMPERIAL)
   IF_FAI_CHOICE(ITEM_SETUP_FAI)
-  CASE_MAVLINK(ITEM_MAVLINK_BAUD)
   CASE_CPUARM(ITEM_SETUP_SWITCHES_DELAY)
   ITEM_SETUP_RX_CHANNEL_ORD,
   ITEM_SETUP_STICK_MODE_LABELS,
@@ -616,12 +615,6 @@ void menuGeneralSetup(uint8_t event)
           else
             POPUP_CONFIRMATION(PSTR("FAI mode?"));
         }
-        break;
-#endif
-
-#if defined(MAVLINK)
-      case ITEM_MAVLINK_BAUD:
-        g_eeGeneral.mavbaud = selectMenuItem(RADIO_SETUP_2ND_COLUMN, y, STR_MAVLINK_BAUD_LABEL, STR_MAVLINK_BAUDS, g_eeGeneral.mavbaud, 0, 7, attr, event);
         break;
 #endif
 

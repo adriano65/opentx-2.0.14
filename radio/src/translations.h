@@ -743,6 +743,8 @@ extern const pm_char STR_COPY_TRIMS_TO_OFS[];
 #if defined(MAVLINK)
   extern const pm_char STR_MAVLINK_RC_RSSI_SCALE_LABEL[];
   extern const pm_char STR_MAVLINK_PC_RSSI_EN_LABEL[];
+  extern const pm_char STR_MAVLINK_BLUETOOTH[];
+  extern const pm_char STR_MAVLINK_MAVLINREQ[];
   extern const pm_char STR_MAVMENUSETUP_TITLE[];
   extern const pm_char STR_MAVLINK_BAUD_LABEL[];
   extern const pm_char STR_MAVLINK_INFOS[];

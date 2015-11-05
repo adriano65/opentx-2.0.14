@@ -149,6 +149,7 @@ Telemetry_Data_t telemetry_data;
 		return;
 	}
 	*/
+SerialFuncP RXHandler = processSerialMavlinkData;
 #else
 #include "serial.cpp"
 void MAVLINK_rxhandler(uint8_t byte) {

@@ -60,9 +60,9 @@ void menuTelemetryMavlinkNavigation(void);
 void menuMavlinkDiag(void);
 void menuTelemetryMavlinkSetup(uint8_t event);
 
-/*!	Mavlink menu enumerator
+/*	Mavlink menu enumerator
  *	Used to create a readable case statement for the
- *	menuTelemetryMavlink menuTelemetryMavlink funtion.
+ *	menuTelemetryMavlink function.
  */
 enum mavlink_menu_ {
 	MENU_INFO = 0,
@@ -85,10 +85,11 @@ enum menuMavlinkSetupItems {
 	ITEM_MAVLINK_PC_RSSI_EN,
 	ITEM_MAVLINK_REQUEST_APMPARAM,
 	ITEM_MAVLINK_ENABLE_BLUETOOTH,
+	ITEM_MAVLINK_BAUD,
 	ITEM_MAVLINK_MAX
 };
 
-//! \brief Menu index varible, initialized on info menu.
+//Menu index variable, initialized on info menu.
 uint8_t MAVLINK_menu = MENU_INFO;
 
 #endif

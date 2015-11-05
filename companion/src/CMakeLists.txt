@@ -108,7 +108,7 @@ add_subdirectory(modeledit)
 add_subdirectory(simulation)
 
 if(${EXT} MATCHES Sky9xMAVLINK)
-  MESSAGE("FRSKY protocol enabled." )
+  MESSAGE("Sky9x with MAVLINK protocol enabled." )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
 	APPEND
@@ -118,7 +118,7 @@ if(${EXT} MATCHES Sky9xMAVLINK)
 endif() 
 
 if(${EXT} MATCHES 9xrProMAVLINK)
-  MESSAGE("MAVLINK protocol enabled." )
+  MESSAGE("9xrPro with MAVLINK protocol enabled." )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
 	APPEND
@@ -129,14 +129,17 @@ endif()
 
 #set_source_files_properties( ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp PROPERTIES COMPILE_DEFINITIONS MAVLINK)
 
-if(${EXT} MATCHES FRSKY_MAVLINK)
-  MESSAGE("FRSKY_MAVLINK protocol enabled." )
+if(${EXT} MATCHES TaranisMAVLINK)
+  MESSAGE("Taranis with FRSKY and MAVLINK protocols enabled." )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxTaranisSimulator.cpp
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS
 	MAVLINK FRSKY
   )
+elseif (${EXT} MATCHES 9xrProMAVLINK)
+  MESSAGE("9xrPro with MAVLINK protocol enabled." )
+
 endif() 
 
 

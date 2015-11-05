@@ -1265,7 +1265,8 @@ PACK(typedef struct t_FrSkyData {
 PACK(typedef struct t_MavlinkData {
   uint8_t rc_rssi_scale:4;
   uint8_t pc_rssi_en:1;
-  uint8_t spare1:3;
+  uint8_t bluetooth_en:1;
+  uint8_t mavreq_en:1;
   uint8_t spare2[3];
 }) MavlinkData;
 #endif
@@ -1707,8 +1708,6 @@ enum FailsafeModes {
 
 #if defined(FRSKY) || !defined(PCBSTD)
   #define TELEMETRY_DATA FrSkyData frsky;
-#elif defined(MAVLINK)
-  #define TELEMETRY_DATA MavlinkData mavlink;
 #else
   #define TELEMETRY_DATA
 #endif

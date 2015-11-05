@@ -67,14 +67,30 @@ uint8_t frskyRxBufferCount = 0;
 
 FrskyData frskyData;
 
+// #if defined(CPUARM)
+// uint8_t telemetryProtocol = 255;
+// #define IS_FRSKY_D_PROTOCOL()      (telemetryProtocol == PROTOCOL_FRSKY_D)
+// #define IS_FRSKY_SPORT_PROTOCOL()  (telemetryProtocol == PROTOCOL_FRSKY_SPORT)
+// #else
+// #define IS_FRSKY_D_PROTOCOL()     (true)
+// #define IS_FRSKY_SPORT_PROTOCOL() (false)
+// #endif
+
 #if defined(CPUARM)
 uint8_t telemetryProtocol = 255;
 #define IS_FRSKY_D_PROTOCOL()      (telemetryProtocol == PROTOCOL_FRSKY_D)
 #define IS_FRSKY_SPORT_PROTOCOL()  (telemetryProtocol == PROTOCOL_FRSKY_SPORT)
+#ifdef MAVLINK
+#define IS_MAVLINK_PROTOCOL()      (telemetryProtocol == PROTOCOL_MAVLINK)
+#endif
 #else
 #define IS_FRSKY_D_PROTOCOL()     (true)
 #define IS_FRSKY_SPORT_PROTOCOL() (false)
+#ifdef MAVLINK
+#define IS_MAVLINK_PROTOCOL()     (false)
 #endif
+#endif
+
 
 void FrskyValueWithMin::set(uint8_t value)
 {
@@ -172,6 +188,14 @@ NOINLINE void processSerialFrskyData(uint8_t data)
     }
 #endif
 
+#if defined(MAVLINK)
+  if (IS_MAVLINK_PROTOCOL()) {
+    RXHandler(data);
+  }
+#else
+  if (1) {}
+#endif
+  else {
   switch (dataState)
   {
     case STATE_DATA_START:
@@ -267,6 +291,7 @@ NOINLINE void processSerialFrskyData(uint8_t data)
   }
 #endif
 }
+}
 
 enum AlarmsCheckSteps {
   ALARM_SWR_STEP,
@@ -280,6 +305,11 @@ enum AlarmsCheckSteps {
 
 void telemetryWakeup()
 {
+#ifdef MAVLINK
+  if (IS_MAVLINK_PROTOCOL())
+    MAVLINK_telemetryWakeup();
+#endif
+
 #if defined(CPUARM)
   uint8_t requiredTelemetryProtocol = MODEL_TELEMETRY_PROTOCOL();
   if (telemetryProtocol != requiredTelemetryProtocol) {
@@ -438,6 +468,11 @@ void telemetryWakeup()
 
 void telemetryInterrupt10ms()
 {
+#ifdef MAVLINK
+  if (IS_MAVLINK_PROTOCOL())
+    return;
+#endif
+	
 #if defined(CPUARM)
   uint16_t voltage = frskyData.hub.cellsSum; /* unit: 1/10 volts */
 #elif defined(FRSKY_HUB)
