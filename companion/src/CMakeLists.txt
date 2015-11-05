@@ -113,36 +113,33 @@ add_subdirectory(simulation)
 
 #set_source_files_properties( ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp PROPERTIES COMPILE_DEFINITIONS MAVLINK)
 
-
-if(${EXT} MATCHES Sky9xMAVLINK)
-  MESSAGE("Sky9x with MAVLINK protocol enabled." )
+if(${EXT} MATCHES MAVLINK)
+  MESSAGE("Sky9x, 9xrPro and Taranis MAVLINK protocol enabled." )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS
-	MAVLINK FRSKY REVB
+	MAVLINK REVB
 	# cmake -D EXT=Sky9xMAVLINK ../src
   )
-elseif(${EXT} MATCHES 9xrProMAVLINK)
-  MESSAGE("9xrPro with MAVLINK protocol enabled." )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS
 	MAVLINK REVX
   )
-elseif(${EXT} MATCHES TaranisMAVLINK)
-  MESSAGE("Taranis with FRSKY and MAVLINK protocols enabled." )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxTaranisSimulator.cpp
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS
-	MAVLINK FRSKY
+	MAVLINK
   )
 else ()
   MESSAGE(FATAL_ERROR "This version MUST be configured: see ReadMe" )
 endif()
-#add_definitions( -DMAVLINK )
+
+# ADD Definitions for every radio Simulator: Not working
+#add_definitions( -DMAVLINK -DFRSKY)
 
 set(common_SRCS
   eeprominterface.cpp

@@ -108,38 +108,37 @@ typedef struct Location_ {
 	float rel_alt;
 } Location_t;
 
-typedef struct Telemetry_Data_ {
-	// INFOS
-	uint8_t status; // System status flag, see MAV_STATUS ENUM
-	uint8_t type;
-	uint8_t autopilot;
-	uint8_t type_autopilot;
-	uint16_t packet_drop;
-	uint16_t packet_fixed;
-	uint8_t radio_sysid;
-	uint8_t radio_compid;
-	uint8_t mav_sysid;
-	uint8_t mav_compid;
-	uint8_t mode;
-	uint32_t custom_mode;
-	bool 	active;
-	uint8_t nav_mode;
-	uint8_t rcv_control_mode;	// System mode, see MAV_MODE ENUM in mavlink/include/mavlink_types.h
-	uint8_t vbat; 				// Battery voltage, in millivolts (1 = 1 millivolt)
-	uint8_t ibat; 				// Battery current, in millivolts (1 = 1 millivolt)
-	uint8_t rem_bat; 			// Remaining battery percent
-	bool 	vbat_low;
+typedef struct MavlinkData_t {
+	uint8_t		status; // System status flag, see MAV_STATUS ENUM
+	uint8_t		type;
+	uint8_t		autopilot;
+	uint8_t		type_autopilot;
+	uint16_t	packet_drop;
+	uint16_t	packet_fixed;
+	uint8_t		radio_sysid;
+	uint8_t		radio_compid;
+	uint8_t		mav_sysid;
+	uint8_t		mav_compid;
+	uint8_t		mode;
+	uint32_t	custom_mode;
+	bool 		active;
+	uint8_t 	nav_mode;
+	uint8_t 	rcv_control_mode;	// System mode, see MAV_MODE ENUM in mavlink/include/mavlink_types.h
+	uint8_t 	vbat; 				// Battery voltage, in millivolts (1 = 1 millivolt)
+	uint8_t 	ibat; 				// Battery current, in millivolts (1 = 1 millivolt)
+	uint8_t 	rem_bat; 			// Remaining battery percent
+	bool 		vbat_low;
 	
-	uint8_t rc_rssi;
-	uint8_t pc_rssi;
+	uint8_t 	rc_rssi;
+	uint8_t 	pc_rssi;
 	
 	uint8_t 	debug;
 	uint16_t	unknow_pckt_cnt;
 	int8_t 		heartbeat;
 
 	// MSG ACTION / ACK
-	uint8_t req_mode;
-	int8_t ack_result;
+	uint8_t 	req_mode;
+	int8_t 		ack_result;
 
 	// GPS
 	uint8_t 	fix_type; // 0-1: no fix, 2: 2D fix, 3: 3D fix. 
@@ -150,18 +149,18 @@ typedef struct Telemetry_Data_ {
 	uint16_t 	course;
 	float v; 			// Ground speed
 	// Navigation
-	uint16_t heading;
-	uint16_t bearing;
+	uint16_t 	heading;
+	uint16_t 	bearing;
 
 #ifdef MAVLINK_PARAMS
 	// Params
 	MavlinkParam_t params[NB_PARAMS];
 #endif
 
-} Telemetry_Data_t;
+} MavlinkData;
 
 // Telemetry data hold
-extern Telemetry_Data_t telemetry_data;
+extern MavlinkData mavlinkData;
 
 /*
  * Funtion definitions

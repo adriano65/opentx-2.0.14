@@ -26,8 +26,7 @@
 #define SPLASH
 #define FLIGHT_MODES
 
-// -- defined in CMakeLists.txt
-//#define FRSKY
+#define FRSKY
 #define FRSKY_HUB
 #define FRSKY_SPORT
 // -- defined in CMakeLists.txt

@@ -170,13 +170,13 @@ void lcd_outdezFloat(uint8_t x, uint8_t y, float val, uint8_t precis, uint8_t mo
  */
 
 void print_mav_mode(uint8_t x, uint8_t y, uint8_t attr) {
-	switch (telemetry_data.type_autopilot) {
+	switch (mavlinkData.type_autopilot) {
 		case MAV_TYPE_QUADROTOR:
-			lcd_putsiAtt(x,y,STR_MAVLINK_AC_MODES, telemetry_data.custom_mode, attr);
+			lcd_putsiAtt(x,y,STR_MAVLINK_AC_MODES, mavlinkData.custom_mode, attr);
 			break;
 		case MAV_TYPE_FIXED_WING:
 			//lcd_putsiAtt(x,y,STR_MAVLINK_AP_MODES, ap_modes_lut[custom_mode],attr);
-			lcd_putsiAtt(x,y,STR_MAVLINK_AP_MODES, telemetry_data.custom_mode, attr);
+			lcd_putsiAtt(x,y,STR_MAVLINK_AP_MODES, mavlinkData.custom_mode, attr);
 			break;
 		default:
 			lcd_putsAtt (FW, y, PSTR("UNKN MAV TYPE"), attr);
@@ -196,7 +196,7 @@ void mav_title(const pm_char * s, uint8_t index) {
   #else
   lcd_putc(7 * FW, 0, (mav_heartbeat > 0) ? '*' : ' ');  
   #endif
-  lcd_putc(8 * FW, 0, telemetry_data.active ? 'A' : 'N');
+  lcd_putc(8 * FW, 0, mavlinkData.active ? 'A' : 'N');
 }
 
 /* Global info menu
@@ -228,32 +228,32 @@ void menuTelemetryMavlinkInfos(void) {
 	y += FH;
 */
 	lcd_putsnAtt(x1, y, STR_MAVLINK_MODE, 4, 0);
-	if (telemetry_data.active)
+	if (mavlinkData.active)
 		lcd_putsnAtt(x2, y, PSTR("A"), 1, 0);
-	lcd_outdezAtt(xnum, y, telemetry_data.mode, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.mode, 0);
 
 	y += FH;
 	lcd_puts(x1, y, PSTR("UNKN PKT"));
-	lcd_outdezAtt(xnum, y, telemetry_data.unknow_pckt_cnt, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.unknow_pckt_cnt, 0);
 	
 	y += FH;
 	lcd_puts(x1, y, PSTR("PKT DROP"));
-	lcd_outdezAtt(xnum, y, telemetry_data.packet_drop, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.packet_drop, 0);
 	y += FH;
 	lcd_puts(x1, y, PSTR("PKT REC"));
-	lcd_outdezAtt(xnum, y, telemetry_data.packet_fixed, 0);		/* TODO use correct var */
+	lcd_outdezAtt(xnum, y, mavlinkData.packet_fixed, 0);		/* TODO use correct var */
 	y += FH;
 	lcd_puts(x1, y, PSTR("MAV Comp"));
-	lcd_outdezAtt(xnum, y, telemetry_data.mav_compid, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.mav_compid, 0);
 	y += FH;
 	lcd_puts(x1, y, PSTR("MAV Sys"));
-	lcd_outdezAtt(xnum, y, telemetry_data.mav_sysid, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.mav_sysid, 0);
 	y += FH;
 	lcd_puts(x1, y, PSTR("Radio Comp"));
-	lcd_outdezAtt(xnum, y, telemetry_data.radio_compid, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.radio_compid, 0);
 	y += FH;
 	lcd_puts(x1, y, PSTR("Radio Sys"));
-	lcd_outdezAtt(xnum, y, telemetry_data.radio_sysid, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.radio_sysid, 0);
 }
 
 /*!	\brief Flight mode menu
@@ -285,7 +285,7 @@ void menuTelemetryMavlinkFlightMode(void) {
     y += FH;
     x = 0;
 	
-    if (telemetry_data.active)
+    if (mavlinkData.active)
     	lcd_putsAtt (FW, y, STR_MAVLINK_ARMED, DBLSIZE);
 }
 
@@ -305,25 +305,25 @@ void menuTelemetryMavlinkBattery(void) {
 	
     lcd_puts(0, 1*FH, STR_MAVLINK_BATTERY_LABEL); 
 	
-	lcd_outdezAtt(x, ynum, telemetry_data.vbat, (DBLSIZE | PREC1 | UNSIGN));
+	lcd_outdezAtt(x, ynum, mavlinkData.vbat, (DBLSIZE | PREC1 | UNSIGN));
 	lcd_puts(x, y, PSTR("V"));
 	x += 4 * (2 * FWNUM);
-	lcd_outdezAtt(x, ynum, telemetry_data.ibat, (DBLSIZE | PREC1 | UNSIGN));
+	lcd_outdezAtt(x, ynum, mavlinkData.ibat, (DBLSIZE | PREC1 | UNSIGN));
 	lcd_puts(x, y, PSTR("A"));
 	x += 4 * (2 * FWNUM);
-	lcd_outdezAtt(x, ynum, telemetry_data.rem_bat, (DBLSIZE | UNSIGN));
+	lcd_outdezAtt(x, ynum, mavlinkData.rem_bat, (DBLSIZE | UNSIGN));
 	lcd_puts(x, y, PSTR("%"));
 	y += FH;
 	ynum += 3 * FH;
 	
 	x = 0;	
     lcd_puts  (x, y, STR_MAVLINK_RC_RSSI_LABEL);
-	lcd_outdezAtt(x + 7 * FWNUM, ynum, telemetry_data.rc_rssi, (DBLSIZE | UNSIGN));
+	lcd_outdezAtt(x + 7 * FWNUM, ynum, mavlinkData.rc_rssi, (DBLSIZE | UNSIGN));
 	lcd_puts(x + 7 * FWNUM, ynum + FH, PSTR("%"));
 	if (g_model.mavlink.pc_rssi_en)	{
 		x += 8 * (2 * FWNUM);
 		lcd_puts(x, y, STR_MAVLINK_PC_RSSI_LABEL);
-		lcd_outdezAtt(x + 7 * FWNUM, ynum, telemetry_data.pc_rssi, (DBLSIZE));
+		lcd_outdezAtt(x + 7 * FWNUM, ynum, mavlinkData.pc_rssi, (DBLSIZE));
 		lcd_puts(x + 7 * FWNUM, ynum + FH,  PSTR("%"));
 	}
     
@@ -345,39 +345,39 @@ void menuTelemetryMavlinkGPS(void) {
 	y = FH;
 
 	lcd_putsnAtt(x1, y, STR_MAVLINK_GPS, 3, 0);
-	if (telemetry_data.fix_type < 2) {
+	if (mavlinkData.fix_type < 2) {
 		lcd_putsnAtt(xnum, y, STR_MAVLINK_NO_FIX, 6, 0);
 		}
 	else {
-		lcd_outdezNAtt(xnum, y, telemetry_data.fix_type, 0, 3);
+		lcd_outdezNAtt(xnum, y, mavlinkData.fix_type, 0, 3);
 		lcd_puts(xnum, y, PSTR("D"));
 		}
 	lcd_puts(x2, y, STR_MAVLINK_SAT);
-	lcd_outdezNAtt(xnum2, y, telemetry_data.satellites_visible, 0, 2);
+	lcd_outdezNAtt(xnum2, y, mavlinkData.satellites_visible, 0, 2);
 
-	if (telemetry_data.fix_type > 0) {
+	if (mavlinkData.fix_type > 0) {
 		y += FH;
 		lcd_puts(x1, y, STR_MAVLINK_HDOP);
-		lcd_outdezFloat(xnum, y, telemetry_data.eph, 2);
+		lcd_outdezFloat(xnum, y, mavlinkData.eph, 2);
 
 		y += FH;
 		lcd_puts(x1, y, STR_MAVLINK_LAT);
-		lcd_outdezFloat(xnum, y, telemetry_data.loc_current.lat, 2);
+		lcd_outdezFloat(xnum, y, mavlinkData.loc_current.lat, 2);
 
 		lcd_putsnAtt(x2, y, STR_MAVLINK_LON, 3, 0);
-		lcd_outdezFloat(xnum2, y, telemetry_data.loc_current.lon, 2);
+		lcd_outdezFloat(xnum2, y, mavlinkData.loc_current.lon, 2);
 
 		y += FH;
 		lcd_putsnAtt(x1, y, STR_MAVLINK_ALTITUDE, 3, 0);
-		lcd_outdezAtt(xnum, y, telemetry_data.loc_current.gps_alt, 0);
+		lcd_outdezAtt(xnum, y, mavlinkData.loc_current.gps_alt, 0);
 
 		y += FH;
 		lcd_putsnAtt(x1, y, STR_MAVLINK_COURSE, 6, 0);
-		lcd_outdezFloat(xnum, y, telemetry_data.course, 2);
+		lcd_outdezFloat(xnum, y, mavlinkData.course, 2);
 
 		y += FH;
 		lcd_putsnAtt(x1, y, PSTR("V"), 1, 0);
-		lcd_outdezAtt(xnum, y, telemetry_data.v, 0);
+		lcd_outdezAtt(xnum, y, mavlinkData.v, 0);
 	}
 }
 
@@ -476,22 +476,22 @@ void menuTelemetryMavlinkNavigation(void) {
     
 	x = 0;	
     lcd_puts  (x, y, STR_MAVLINK_COURSE);
-	lcd_outdezAtt(x + 7 * FWNUM, ynum, telemetry_data.course, (DBLSIZE | UNSIGN));
+	lcd_outdezAtt(x + 7 * FWNUM, ynum, mavlinkData.course, (DBLSIZE | UNSIGN));
 	lcd_puts(x + 7 * FWNUM, ynum, PSTR("o"));
 	x += 8 * (2 * FWNUM);
     lcd_puts(x, y, STR_MAVLINK_HEADING);
-	lcd_outdezAtt(x + 7 * FWNUM, ynum, telemetry_data.heading, (DBLSIZE | UNSIGN));
+	lcd_outdezAtt(x + 7 * FWNUM, ynum, mavlinkData.heading, (DBLSIZE | UNSIGN));
 	lcd_puts(x + 7 * FWNUM, ynum,  PSTR("o"));
 	y += 3 * FH;
 	ynum += 3 * FH;
 	
 	x = 0;	
     lcd_puts  (x, y, STR_MAVLINK_BEARING);
-	lcd_outdezAtt(x + 7 * FWNUM, ynum, telemetry_data.bearing, (DBLSIZE | UNSIGN));
+	lcd_outdezAtt(x + 7 * FWNUM, ynum, mavlinkData.bearing, (DBLSIZE | UNSIGN));
 	lcd_puts(x + 7 * FWNUM, ynum, PSTR("o"));
 	x += 8 * (2 * FWNUM);
     lcd_puts(x, y, STR_MAVLINK_ALTITUDE);
-	lcd_outdezFloat(x + 4 * FWNUM - 1, ynum, telemetry_data.loc_current.rel_alt, 1, (DBLSIZE));
+	lcd_outdezFloat(x + 4 * FWNUM - 1, ynum, mavlinkData.loc_current.rel_alt, 1, (DBLSIZE));
 	lcd_puts(x + 7 * FWNUM, ynum + FH,  PSTR("m"));
  
 }
@@ -508,31 +508,31 @@ void menuMavlinkDiag(void) {
 	y = FH;
 
 	lcd_putsnAtt(x1, y, STR_MAVLINK_MODE, 4, 0);
-	if (telemetry_data.active)
+	if (mavlinkData.active)
 		lcd_putsnAtt(x2, y, PSTR("A"), 1, 0);
-	lcd_outdezAtt(xnum, y, telemetry_data.mode, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.mode, 0);
 
 	y += FH;
 	lcd_puts(x1, y, PSTR("GPS_RAW_INT"));
-	lcd_outdezNAtt(xnum, y, telemetry_data.vbat, PREC1, 5);
+	lcd_outdezNAtt(xnum, y, mavlinkData.vbat, PREC1, 5);
 	y += FH;
 	lcd_puts(x1, y, PSTR("PKT DROP"));
-	lcd_outdezAtt(xnum, y, telemetry_data.packet_drop, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.packet_drop, 0);
 	y += FH;
 	lcd_puts(x1, y, PSTR("PKT REC"));
-	lcd_outdezAtt(xnum, y, telemetry_data.packet_fixed, 0);		/* TODO use correct var */
+	lcd_outdezAtt(xnum, y, mavlinkData.packet_fixed, 0);		/* TODO use correct var */
 	y += FH;
 	lcd_puts(x1, y, PSTR("MAV Comp"));
-	lcd_outdezAtt(xnum, y, telemetry_data.mav_compid, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.mav_compid, 0);
 	y += FH;
 	lcd_puts(x1, y, PSTR("MAV Sys"));
-	lcd_outdezAtt(xnum, y, telemetry_data.mav_sysid, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.mav_sysid, 0);
 	y += FH;
 	lcd_puts(x1, y, PSTR("Rad Comp"));
-	lcd_outdezAtt(xnum, y, telemetry_data.radio_compid, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.radio_compid, 0);
 	y += FH;
 	lcd_puts(x1, y, PSTR("Rad Sys"));
-	lcd_outdezAtt(xnum, y, telemetry_data.radio_sysid, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.radio_sysid, 0);
 }
 
 

@@ -82,10 +82,9 @@ static uint8_t data_stream_start_stop = 0;
 static int8_t actualbaudrateIdx = 0;
 
 // Telemetry data hold
-Telemetry_Data_t telemetry_data;
+MavlinkData mavlinkData;
 
 // *****************************************************
-
 
 #if defined(CPUARM)
 	Fifo<32> TelemTxFifo;
@@ -165,15 +164,15 @@ void MAVLINK_reset(void) {
 	mavlink_status_t* p_status = mavlink_get_channel_status(MAVLINK_COMM_0);
 	p_status->current_rx_seq = 0;
 	p_status->current_tx_seq = 0;
-	memset(&telemetry_data, 0, sizeof(telemetry_data));
-	telemetry_data.rcv_control_mode = MAV_MODE_PREFLIGHT;
-	telemetry_data.req_mode = MAV_MODE_ENUM_END;
+	memset(&mavlinkData, 0, sizeof(mavlinkData));
+	mavlinkData.rcv_control_mode = MAV_MODE_PREFLIGHT;
+	mavlinkData.req_mode = MAV_MODE_ENUM_END;
 
-	telemetry_data.type = MAV_TYPE_ENUM_END;
-	telemetry_data.autopilot = MAV_AUTOPILOT_ENUM_END;
-	telemetry_data.type_autopilot = MAV_AUTOPILOT_INVALID;
+	mavlinkData.type = MAV_TYPE_ENUM_END;
+	mavlinkData.autopilot = MAV_AUTOPILOT_ENUM_END;
+	mavlinkData.type_autopilot = MAV_AUTOPILOT_INVALID;
 
-	telemetry_data.heartbeat = 0;
+	mavlinkData.heartbeat = 0;
 	data_stream_start_stop = 0;
 }
 
@@ -359,8 +358,8 @@ void request_mavlink_rates() {
     const uint16_t MAVRates[maxStreams] = {0x02, 0x02, 0x05, 0x02, 0x05, 0x02};
     for (int i=0; i < maxStreams; i++) {
         mavlink_msg_request_data_stream_send(MAVLINK_COMM_0,
-											 telemetry_data.radio_sysid, 
-											 telemetry_data.radio_compid,
+											 mavlinkData.radio_sysid, 
+											 mavlinkData.radio_compid,
 											 MAVStreams[i], MAVRates[i], 1);
     }
 }
@@ -506,7 +505,7 @@ NOINLINE void processSerialMavlinkData(uint8_t c) {
 				}
 			else {
 				// Successfully got message ------------------------------------------------
-				telemetry_data.packet_fixed++;
+				mavlinkData.packet_fixed++;
 				
 				p_status->current_rx_seq = pmavlink_msg->seq;
 				//p_status->msg_received = 1;
@@ -523,7 +522,7 @@ NOINLINE void processSerialMavlinkData(uint8_t c) {
 			p_status->parse_state = MAVLINK_PARSE_STATE_GOT_STX;
 			mavlink_start_checksum(pmavlink_msg);
 		}
-		telemetry_data.packet_drop++;
+		mavlinkData.packet_drop++;
 		p_status->parse_error = 0;
 	}
 	// If a message has been sucessfully decoded, check index
@@ -561,20 +560,20 @@ static inline void REC_MAVLINK_MSG_ID_STATUSTEXT(const mavlink_message_t* msg) {
  *	is not realy of use while flying. The complete message can be decoded in to
  *	a struct with the first two commented lines.
  *  The battery votage is in mV. We divide by 100 to display tenths of volts.'
- *	\todo Add battery remaining variable in telemetry_data struct for estimated
+ *	\todo Add battery remaining variable in mavlinkData struct for estimated
  *	remaining battery. Decoding function already in place.
  */
 
 static inline void REC_MAVLINK_MSG_ID_SYS_STATUS(const mavlink_message_t* msg) {
-	telemetry_data.vbat = mavlink_msg_sys_status_get_voltage_battery(msg) / 100; // Voltage * 10
-	telemetry_data.ibat = mavlink_msg_sys_status_get_current_battery(msg) / 10;
-	telemetry_data.rem_bat = mavlink_msg_sys_status_get_battery_remaining(msg);
+	mavlinkData.vbat = mavlink_msg_sys_status_get_voltage_battery(msg) / 100; // Voltage * 10
+	mavlinkData.ibat = mavlink_msg_sys_status_get_current_battery(msg) / 10;
+	mavlinkData.rem_bat = mavlink_msg_sys_status_get_battery_remaining(msg);
 
 #ifdef MAVLINK_PARAMS
-	telemetry_data.vbat_low = (getMavlinParamsValue(BATT_MONITOR) > 0)
-					&& (((float) telemetry_data.vbat / 10.0) < getMavlinParamsValue(LOW_VOLT)) && (telemetry_data.vbat > 50);
+	mavlinkData.vbat_low = (getMavlinParamsValue(BATT_MONITOR) > 0)
+					&& (((float) mavlinkData.vbat / 10.0) < getMavlinParamsValue(LOW_VOLT)) && (mavlinkData.vbat > 50);
 #else
-	telemetry_data.vbat_low = (telemetry_data.rem_bat < 10);
+	mavlinkData.vbat_low = (mavlinkData.rem_bat < 10);
 #endif
 }
 
@@ -582,7 +581,7 @@ static inline void REC_MAVLINK_MSG_ID_SYS_STATUS(const mavlink_message_t* msg) {
 static inline void REC_MAVLINK_MSG_ID_RC_CHANNELS_RAW(const mavlink_message_t* msg) {
 	uint8_t temp_rssi =(mavlink_msg_rc_channels_raw_get_rssi(msg) * 100) / 255;
 	uint8_t temp_scale = 25 + g_model.mavlink.rc_rssi_scale * 5;
-	telemetry_data.rc_rssi =  (temp_rssi * 100) / temp_scale;
+	mavlinkData.rc_rssi =  (temp_rssi * 100) / temp_scale;
 }
 
 /*Arducopter specific radio message
@@ -591,11 +590,11 @@ static inline void REC_MAVLINK_MSG_ID_RC_CHANNELS_RAW(const mavlink_message_t* m
 static inline void REC_MAVLINK_MSG_ID_RADIO(const mavlink_message_t* msg) {
 	if (msg->sysid != 51)		// ArduPilot/Arducopter customization
 		return;
-	telemetry_data.pc_rssi =  (mavlink_msg_radio_get_rssi(msg) * 100) / 255;
-	telemetry_data.packet_drop = mavlink_msg_radio_get_rxerrors(msg);
-	telemetry_data.packet_fixed = mavlink_msg_radio_get_fixed(msg);
-	telemetry_data.radio_sysid = msg->sysid;
-	telemetry_data.radio_compid = msg->compid;
+	mavlinkData.pc_rssi =  (mavlink_msg_radio_get_rssi(msg) * 100) / 255;
+	mavlinkData.packet_drop = mavlink_msg_radio_get_rxerrors(msg);
+	mavlinkData.packet_fixed = mavlink_msg_radio_get_fixed(msg);
+	mavlinkData.radio_sysid = msg->sysid;
+	mavlinkData.radio_compid = msg->compid;
 }
 static inline void REC_MAVLINK_MSG_ID_RADIO_STATUS(const mavlink_message_t* msg) {
 	REC_MAVLINK_MSG_ID_RADIO(msg);
@@ -603,13 +602,13 @@ static inline void REC_MAVLINK_MSG_ID_RADIO_STATUS(const mavlink_message_t* msg)
 
 //! \brief Navigation output message
 static inline void REC_MAVLINK_MSG_ID_NAV_CONTROLLER_OUTPUT(const mavlink_message_t* msg) {
-	telemetry_data.bearing = mavlink_msg_nav_controller_output_get_target_bearing(msg);
+	mavlinkData.bearing = mavlink_msg_nav_controller_output_get_target_bearing(msg);
 }
 
 //! \brief Hud navigation message
 static inline void REC_MAVLINK_MSG_ID_VFR_HUD(const mavlink_message_t* msg) {
-	telemetry_data.heading = mavlink_msg_vfr_hud_get_heading(msg);
-	telemetry_data.loc_current.rel_alt = mavlink_msg_vfr_hud_get_alt(msg);
+	mavlinkData.heading = mavlink_msg_vfr_hud_get_heading(msg);
+	mavlinkData.loc_current.rel_alt = mavlink_msg_vfr_hud_get_alt(msg);
 }
 
 /*!	\brief Heartbeat message
@@ -617,23 +616,23 @@ static inline void REC_MAVLINK_MSG_ID_VFR_HUD(const mavlink_message_t* msg) {
  *	type and autopilot is used to determine if the UAV is an ArduPlane or Arducopter
  */
 static inline void REC_MAVLINK_MSG_ID_HEARTBEAT(const mavlink_message_t* msg) {
-	telemetry_data.mode  = mavlink_msg_heartbeat_get_base_mode(msg);
-	telemetry_data.custom_mode  = mavlink_msg_heartbeat_get_custom_mode(msg);
-	telemetry_data.status = mavlink_msg_heartbeat_get_system_status(msg);
-	telemetry_data.mav_sysid = msg->sysid;
-	telemetry_data.mav_compid = msg->compid;
+	mavlinkData.mode  = mavlink_msg_heartbeat_get_base_mode(msg);
+	mavlinkData.custom_mode  = mavlink_msg_heartbeat_get_custom_mode(msg);
+	mavlinkData.status = mavlink_msg_heartbeat_get_system_status(msg);
+	mavlinkData.mav_sysid = msg->sysid;
+	mavlinkData.mav_compid = msg->compid;
 	uint8_t type = mavlink_msg_heartbeat_get_type(msg);
 	uint8_t autopilot = mavlink_msg_heartbeat_get_autopilot(msg);
-	if (type != telemetry_data.type || autopilot != telemetry_data.autopilot) {
-		telemetry_data.type = mavlink_msg_heartbeat_get_type(msg);
-		telemetry_data.autopilot = mavlink_msg_heartbeat_get_autopilot(msg);
+	if (type != mavlinkData.type || autopilot != mavlinkData.autopilot) {
+		mavlinkData.type = mavlink_msg_heartbeat_get_type(msg);
+		mavlinkData.autopilot = mavlink_msg_heartbeat_get_autopilot(msg);
 		}
-	telemetry_data.active = (telemetry_data.mode & MAV_MODE_FLAG_SAFETY_ARMED) ? true : false;
-	telemetry_data.heartbeat++;
+	mavlinkData.active = (mavlinkData.mode & MAV_MODE_FLAG_SAFETY_ARMED) ? true : false;
+	mavlinkData.heartbeat++;
 }
 
 static inline void REC_MAVLINK_MSG_ID_HIL_CONTROLS(const mavlink_message_t* msg) {
-	telemetry_data.nav_mode = mavlink_msg_hil_controls_get_mode(msg);
+	mavlinkData.nav_mode = mavlink_msg_hil_controls_get_mode(msg);
 }
 
 /* Process GPS raw integer message
@@ -646,14 +645,14 @@ static inline void REC_MAVLINK_MSG_ID_HIL_CONTROLS(const mavlink_message_t* msg)
  *		- Ground speed in m/s * 100
  */
 static inline void REC_MAVLINK_MSG_ID_GPS_RAW_INT(const mavlink_message_t* msg) {
-	telemetry_data.fix_type = mavlink_msg_gps_raw_int_get_fix_type(msg);
-	telemetry_data.loc_current.lat = mavlink_msg_gps_raw_int_get_lat(msg) / 1E7;
-	telemetry_data.loc_current.lon = mavlink_msg_gps_raw_int_get_lon(msg) / 1E7;
-	telemetry_data.loc_current.gps_alt = mavlink_msg_gps_raw_int_get_alt(msg) / 1E3;
-	telemetry_data.eph = mavlink_msg_gps_raw_int_get_eph(msg) / 100.0;
-	telemetry_data.course = mavlink_msg_gps_raw_int_get_cog(msg) / 100.0;
-	telemetry_data.v = mavlink_msg_gps_raw_int_get_vel(msg) / 100.0 ;
-	telemetry_data.satellites_visible = mavlink_msg_gps_raw_int_get_satellites_visible(msg);
+	mavlinkData.fix_type = mavlink_msg_gps_raw_int_get_fix_type(msg);
+	mavlinkData.loc_current.lat = mavlink_msg_gps_raw_int_get_lat(msg) / 1E7;
+	mavlinkData.loc_current.lon = mavlink_msg_gps_raw_int_get_lon(msg) / 1E7;
+	mavlinkData.loc_current.gps_alt = mavlink_msg_gps_raw_int_get_alt(msg) / 1E3;
+	mavlinkData.eph = mavlink_msg_gps_raw_int_get_eph(msg) / 100.0;
+	mavlinkData.course = mavlink_msg_gps_raw_int_get_cog(msg) / 100.0;
+	mavlinkData.v = mavlink_msg_gps_raw_int_get_vel(msg) / 100.0 ;
+	mavlinkData.satellites_visible = mavlink_msg_gps_raw_int_get_satellites_visible(msg);
 }
 
 #ifdef MAVLINK_PARAMS
@@ -820,7 +819,7 @@ static inline void MAVLINK_msg_param_set(uint8_t idx) {
 		}
 		*p++ = c;
 	}
-	//float param_value = ((float) telemetry_data.params[idx].pi_param[subIdx].pi_value / 100.00 + 0.005);
+	//float param_value = ((float) mavlinkData.params[idx].pi_param[subIdx].pi_value / 100.00 + 0.005);
 	float param_value = getParam(idx)->value;
 
 	mavlink_channel_t chan = MAVLINK_COMM_0;
@@ -891,7 +890,7 @@ static inline void handleMessage(mavlink_message_t* pmavlink_msg) {
 			break;
 	#endif
 		default:
-			telemetry_data.unknow_pckt_cnt++;
+			mavlinkData.unknow_pckt_cnt++;
 			break;
 	}
 
@@ -910,7 +909,7 @@ static inline void handleMessage(mavlink_message_t* pmavlink_msg) {
 			watch_mav_req_id_action--;
 			// Repeat  is not ack : 150ms*0x07
 			if ((watch_mav_req_id_action & 0x07) == 0) {
-				uint8_t action = MAVLINK_CtrlMode2Action(telemetry_data.req_mode);
+				uint8_t action = MAVLINK_CtrlMode2Action(mavlinkData.req_mode);
 				MAVLINK_msg_action_pack_send(action);
 				char *ptr = mav_statustext;
 				*ptr++ = 'R';
@@ -921,9 +920,9 @@ static inline void handleMessage(mavlink_message_t* pmavlink_msg) {
 				*ptr++ = 0;
 			}
 		}
-		if (telemetry_data.ack_result < 5) {
-			if (telemetry_data.ack_result > 0) {
-				telemetry_data.ack_result++;
+		if (mavlinkData.ack_result < 5) {
+			if (mavlinkData.ack_result > 0) {
+				mavlinkData.ack_result++;
 			}
 		}
 		break;

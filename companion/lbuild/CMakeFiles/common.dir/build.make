@@ -367,15 +367,15 @@ CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: CMakeFiles/
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) -DMAVLINK -DFRSKY $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp
+	/usr/bin/c++   $(CXX_DEFINES) -DMAVLINK $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp
 
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK -DFRSKY $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.i
 
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK -DFRSKY $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.s
 
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o.requires
@@ -390,15 +390,15 @@ CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: CMakeFiles/co
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp
+	/usr/bin/c++   $(CXX_DEFINES) -DMAVLINK -DREVB -DMAVLINK -DREVX $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp
 
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK -DREVB -DMAVLINK -DREVX $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.i
 
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK -DREVB -DMAVLINK -DREVX $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.s
 
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o.requires

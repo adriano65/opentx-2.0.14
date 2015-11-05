@@ -28,18 +28,16 @@
 #define SPLASH
 #define FLIGHT_MODES
 
-// FIXME !
-//#define FRSKY
-//#define MAVLINK
-//#define MAVLINK_DEBUG
-
-#if defined(FRSKY)
-#define REVB
+#define FRSKY
 #define FRSKY_HUB
 #define FRSKY_STICKS
 #define WS_HOW_HIGH
 #define VARIO
-#endif
+
+// -- defined in CMakeLists.txt
+//#define MAVLINK
+// FIXME 
+//#define MAVLINK_DEBUG
 
 #define HELI
 #define TEMPLATES

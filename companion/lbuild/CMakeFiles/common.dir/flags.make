@@ -6,5 +6,7 @@ CXX_FLAGS = -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/u
 
 CXX_DEFINES = -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -DQT_TRANSLATIONS_DIR=\"/usr/lib64/qt/translations\"
 
-# Custom defines: CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o_DEFINES = MAVLINK;FRSKY
+# Custom defines: CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o_DEFINES = MAVLINK
+
+# Custom defines: CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o_DEFINES = MAVLINK;REVB;MAVLINK;REVX
 

@@ -261,14 +261,14 @@ void writeLogs()
 #elif defined(CPUARM) && defined(MAVLINK)
 	  //					  fix    lat     lon     alt   eph   course v	sat_vis
         f_printf(&g_oLogFile, "%02u, %02.5d, %02.5d, %.1d, %.1d, %04u, %03d, %02u,",
-		  telemetry_data.fix_type,
-		  telemetry_data.loc_current.lat,
-		  telemetry_data.loc_current.lon,
-		  telemetry_data.loc_current.gps_alt,
-		  telemetry_data.eph,
-		  telemetry_data.course,
-		  telemetry_data.v,
-		  telemetry_data.satellites_visible			 
+		  mavlinkData.fix_type,
+		  mavlinkData.loc_current.lat,
+		  mavlinkData.loc_current.lon,
+		  mavlinkData.loc_current.gps_alt,
+		  mavlinkData.eph,
+		  mavlinkData.course,
+		  mavlinkData.v,
+		  mavlinkData.satellites_visible			 
 		);
 #endif
 

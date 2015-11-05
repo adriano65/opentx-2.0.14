@@ -1262,13 +1262,13 @@ PACK(typedef struct t_FrSkyData {
 #endif
 
 #if defined(MAVLINK)
-PACK(typedef struct t_MavlinkData {
+PACK(typedef struct MavLinkData_t {
   uint8_t rc_rssi_scale:4;
   uint8_t pc_rssi_en:1;
   uint8_t bluetooth_en:1;
   uint8_t mavreq_en:1;
   uint8_t spare2[3];
-}) MavlinkData;
+}) MavLinkData;
 #endif
 
 enum SwashType {
@@ -1791,7 +1791,7 @@ PACK(typedef struct t_ModelData {
   TELEMETRY_DATA
 
 #if defined(MAVLINK)
-  MavlinkData mavlink;
+  MavLinkData mavlink;
 #endif
   
   MODELDATA_EXTRA
