@@ -1,7 +1,7 @@
-﻿##OpenTX Master Branch
+##OpenTX v2.0.14 Master Branch
 
-You have found your way to the GitHub repository site for the OpenTX Master Branch. This code branch holds the source code for the latest stable release.    
+Based on OpenTX, pienk and Sam Tabor work
 
-The ongoing development is not done in this branch. It is performed in the branch called next.
-
-Refer to the opentx.wiki for information about setting up the tool chains for building OpenTX and OpenTX Companion as well as other development related issues.
+Here we add MAVLINK protocol to Taranis, Sky9x and 9xPro
+on a model based selection. We can have FRSKY protocols
+for a plane and MAVLINK for another.

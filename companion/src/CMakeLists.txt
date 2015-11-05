@@ -9,6 +9,10 @@ CMAKE_MINIMUM_REQUIRED( VERSION 2.8 )
 
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+if(${CMAKE_BINARY_DIR} MATCHES ${CMAKE_SOURCE_DIR})
+  MESSAGE(FATAL_ERROR "DO Not compile in src dir; create ../lbuild and do it there" )
+endif()
+
 MESSAGE( STATUS "Looking for XercesC " )
 FIND_PACKAGE(XercesC)
 IF ( XERCESC_FOUND )
@@ -108,10 +112,6 @@ add_subdirectory(modeledit)
 add_subdirectory(simulation)
 
 #set_source_files_properties( ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp PROPERTIES COMPILE_DEFINITIONS MAVLINK)
-
-if(${CMAKE_BINARY_DIR} MATCHES ${CMAKE_SOURCE_DIR})
-  MESSAGE(FATAL_ERROR "DO Not compile in src dir; create ../lbuild and do it there" )
-endif()
 
 
 if(${EXT} MATCHES Sky9xMAVLINK)
