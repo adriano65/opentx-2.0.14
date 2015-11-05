@@ -21,5 +21,5 @@ cmake -D EXT=TaranisMAVLINK ../src
 make clean && make
 
 NOTE: make clean WORKS!
-	  remove CMakefileCache.txt in lbuild AND src dir if any
+	  remove CMakefileCache.txt in lbuild (and src dir if any)
 

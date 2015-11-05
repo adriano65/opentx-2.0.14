@@ -107,17 +107,23 @@ include_directories(
 add_subdirectory(modeledit)
 add_subdirectory(simulation)
 
+#set_source_files_properties( ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp PROPERTIES COMPILE_DEFINITIONS MAVLINK)
+
+if(${CMAKE_BINARY_DIR} MATCHES ${CMAKE_SOURCE_DIR})
+  MESSAGE(FATAL_ERROR "DO Not compile in src dir; create ../lbuild and do it there" )
+endif()
+
+
 if(${EXT} MATCHES Sky9xMAVLINK)
   MESSAGE("Sky9x with MAVLINK protocol enabled." )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS
-	MAVLINK REVB
+	MAVLINK FRSKY REVB
+	# cmake -D EXT=Sky9xMAVLINK ../src
   )
-endif() 
-
-if(${EXT} MATCHES 9xrProMAVLINK)
+elseif(${EXT} MATCHES 9xrProMAVLINK)
   MESSAGE("9xrPro with MAVLINK protocol enabled." )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
@@ -125,11 +131,7 @@ if(${EXT} MATCHES 9xrProMAVLINK)
 	PROPERTY COMPILE_DEFINITIONS
 	MAVLINK REVX
   )
-endif() 
-
-#set_source_files_properties( ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp PROPERTIES COMPILE_DEFINITIONS MAVLINK)
-
-if(${EXT} MATCHES TaranisMAVLINK)
+elseif(${EXT} MATCHES TaranisMAVLINK)
   MESSAGE("Taranis with FRSKY and MAVLINK protocols enabled." )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxTaranisSimulator.cpp
@@ -137,11 +139,10 @@ if(${EXT} MATCHES TaranisMAVLINK)
 	PROPERTY COMPILE_DEFINITIONS
 	MAVLINK FRSKY
   )
-elseif (${EXT} MATCHES 9xrProMAVLINK)
-  MESSAGE("9xrPro with MAVLINK protocol enabled." )
-
-endif() 
-
+else ()
+  MESSAGE(FATAL_ERROR "This version MUST be configured: see ReadMe" )
+endif()
+#add_definitions( -DMAVLINK )
 
 set(common_SRCS
   eeprominterface.cpp

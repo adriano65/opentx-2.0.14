@@ -91,8 +91,8 @@ clean: CMakeFiles/common.dir/clean
 # Target rules for target CMakeFiles/companion.dir
 
 # All Build rule for target.
-CMakeFiles/companion.dir/all: CMakeFiles/common.dir/all
 CMakeFiles/companion.dir/all: simulation/CMakeFiles/simulation.dir/all
+CMakeFiles/companion.dir/all: CMakeFiles/common.dir/all
 CMakeFiles/companion.dir/all: modeledit/CMakeFiles/modeledit.dir/all
 	$(MAKE) -f CMakeFiles/companion.dir/build.make CMakeFiles/companion.dir/depend
 	$(MAKE) -f CMakeFiles/companion.dir/build.make CMakeFiles/companion.dir/build
@@ -128,8 +128,8 @@ clean: CMakeFiles/companion.dir/clean
 # Target rules for target CMakeFiles/simulator.dir
 
 # All Build rule for target.
-CMakeFiles/simulator.dir/all: CMakeFiles/common.dir/all
 CMakeFiles/simulator.dir/all: simulation/CMakeFiles/simulation.dir/all
+CMakeFiles/simulator.dir/all: CMakeFiles/common.dir/all
 	$(MAKE) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/depend
 	$(MAKE) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles  96 97 98 99 100
