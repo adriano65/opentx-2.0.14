@@ -1,0 +1,906 @@
+The system is: Linux - 3.2.45 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec3322392024/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec3322392024.dir/build.make CMakeFiles/cmTryCompileExec3322392024.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3322392024.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec3322392024.dir/testCCompiler.c.o   -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec3322392024
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3322392024.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec3322392024.dir/testCCompiler.c.o  -o cmTryCompileExec3322392024 -rdynamic 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec23560602/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec23560602.dir/build.make CMakeFiles/cmTryCompileExec23560602.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec23560602.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec23560602.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec23560602
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec23560602.dir/link.txt --verbose=1
+/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec23560602.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec23560602 -rdynamic  
+Reading specs from /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/specs
+COLLECT_GCC=/usr/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/lto-wrapper
+Target: x86_64-slackware-linux
+Configured with: ../gcc-4.7.1/configure --prefix=/usr --libdir=/usr/lib64 --mandir=/usr/man --infodir=/usr/info --enable-shared --enable-bootstrap --enable-languages=ada,c,c++,fortran,go,java,lto,objc --enable-threads=posix --enable-checking=release --enable-objc-gc --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --enable-lto --with-gnu-ld --verbose --enable-java-home --with-java-home=/usr/lib64/jvm/jre --with-jvm-root-dir=/usr/lib64/jvm --with-jvm-jar-dir=/usr/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar=/slack/TMPTMPTMP/gcc-round-two/antlr-runtime-3.4.jar --enable-java-awt=gtk --disable-gtktest --disable-multilib --target=x86_64-slackware-linux --build=x86_64-slackware-linux --host=x86_64-slackware-linux
+Thread model: posix
+gcc version 4.7.1 (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec23560602' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec23560602 /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../.. CMakeFiles/cmTryCompileExec23560602.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/local/bin/make "cmTryCompileExec23560602/fast"]
+  ignore line: [/usr/local/bin/make -f CMakeFiles/cmTryCompileExec23560602.dir/build.make CMakeFiles/cmTryCompileExec23560602.dir/build]
+  ignore line: [make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec23560602.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec23560602.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec23560602]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec23560602.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec23560602.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec23560602 -rdynamic  ]
+  ignore line: [Reading specs from /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/specs]
+  ignore line: [COLLECT_GCC=/usr/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/lto-wrapper]
+  ignore line: [Target: x86_64-slackware-linux]
+  ignore line: [Configured with: ../gcc-4.7.1/configure --prefix=/usr --libdir=/usr/lib64 --mandir=/usr/man --infodir=/usr/info --enable-shared --enable-bootstrap --enable-languages=ada,c,c++,fortran,go,java,lto,objc --enable-threads=posix --enable-checking=release --enable-objc-gc --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --enable-lto --with-gnu-ld --verbose --enable-java-home --with-java-home=/usr/lib64/jvm/jre --with-jvm-root-dir=/usr/lib64/jvm --with-jvm-jar-dir=/usr/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar=/slack/TMPTMPTMP/gcc-round-two/antlr-runtime-3.4.jar --enable-java-awt=gtk --disable-gtktest --disable-multilib --target=x86_64-slackware-linux --build=x86_64-slackware-linux --host=x86_64-slackware-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.7.1 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec23560602' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec23560602 /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../.. CMakeFiles/cmTryCompileExec23560602.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec23560602] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o] ==> ignore
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..]
+    arg [CMakeFiles/cmTryCompileExec23560602.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1] ==> [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64] ==> [/usr/lib64]
+  collapse dir [/lib/../lib64] ==> [/lib64]
+  collapse dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib] ==> [/usr/x86_64-slackware-linux/lib]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..] ==> [/usr/lib64]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1;/usr/lib64;/lib64;/usr/x86_64-slackware-linux/lib]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec4126921684/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec4126921684.dir/build.make CMakeFiles/cmTryCompileExec4126921684.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec4126921684.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec4126921684.dir/testCXXCompiler.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec4126921684
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4126921684.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec4126921684.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec4126921684 -rdynamic 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec1786239272/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec1786239272.dir/build.make CMakeFiles/cmTryCompileExec1786239272.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1786239272.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1786239272.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec1786239272
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1786239272.dir/link.txt --verbose=1
+/usr/bin/c++        -v CMakeFiles/cmTryCompileExec1786239272.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1786239272 -rdynamic  
+Reading specs from /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/specs
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/lto-wrapper
+Target: x86_64-slackware-linux
+Configured with: ../gcc-4.7.1/configure --prefix=/usr --libdir=/usr/lib64 --mandir=/usr/man --infodir=/usr/info --enable-shared --enable-bootstrap --enable-languages=ada,c,c++,fortran,go,java,lto,objc --enable-threads=posix --enable-checking=release --enable-objc-gc --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --enable-lto --with-gnu-ld --verbose --enable-java-home --with-java-home=/usr/lib64/jvm/jre --with-jvm-root-dir=/usr/lib64/jvm --with-jvm-jar-dir=/usr/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar=/slack/TMPTMPTMP/gcc-round-two/antlr-runtime-3.4.jar --enable-java-awt=gtk --disable-gtktest --disable-multilib --target=x86_64-slackware-linux --build=x86_64-slackware-linux --host=x86_64-slackware-linux
+Thread model: posix
+gcc version 4.7.1 (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1786239272' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec1786239272 /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../.. CMakeFiles/cmTryCompileExec1786239272.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/local/bin/make "cmTryCompileExec1786239272/fast"]
+  ignore line: [/usr/local/bin/make -f CMakeFiles/cmTryCompileExec1786239272.dir/build.make CMakeFiles/cmTryCompileExec1786239272.dir/build]
+  ignore line: [make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec1786239272.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1786239272.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec1786239272]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1786239272.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec1786239272.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1786239272 -rdynamic  ]
+  ignore line: [Reading specs from /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/specs]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/lto-wrapper]
+  ignore line: [Target: x86_64-slackware-linux]
+  ignore line: [Configured with: ../gcc-4.7.1/configure --prefix=/usr --libdir=/usr/lib64 --mandir=/usr/man --infodir=/usr/info --enable-shared --enable-bootstrap --enable-languages=ada,c,c++,fortran,go,java,lto,objc --enable-threads=posix --enable-checking=release --enable-objc-gc --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --enable-lto --with-gnu-ld --verbose --enable-java-home --with-java-home=/usr/lib64/jvm/jre --with-jvm-root-dir=/usr/lib64/jvm --with-jvm-jar-dir=/usr/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar=/slack/TMPTMPTMP/gcc-round-two/antlr-runtime-3.4.jar --enable-java-awt=gtk --disable-gtktest --disable-multilib --target=x86_64-slackware-linux --build=x86_64-slackware-linux --host=x86_64-slackware-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.7.1 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1786239272' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec1786239272 /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../.. CMakeFiles/cmTryCompileExec1786239272.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec1786239272] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o] ==> ignore
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..]
+    arg [CMakeFiles/cmTryCompileExec1786239272.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1] ==> [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64] ==> [/usr/lib64]
+  collapse dir [/lib/../lib64] ==> [/lib64]
+  collapse dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib] ==> [/usr/x86_64-slackware-linux/lib]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..] ==> [/usr/lib64]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1;/usr/lib64;/lib64;/usr/x86_64-slackware-linux/lib]
+
+
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec1721232026/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec1721232026.dir/build.make CMakeFiles/cmTryCompileExec1721232026.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1721232026.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec1721232026.dir/CheckIncludeFiles.c.o   -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec1721232026
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1721232026.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec1721232026.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1721232026 -rdynamic 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec2467968804/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec2467968804.dir/build.make CMakeFiles/cmTryCompileExec2467968804.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2467968804.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2467968804.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2467968804
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2467968804.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2467968804.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2467968804 -rdynamic -lpthread 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Determining if the Q_WS_X11 exist passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec997915593/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec997915593.dir/build.make CMakeFiles/cmTryCompileExec997915593.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec997915593.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/lib64/qt/include    -o CMakeFiles/cmTryCompileExec997915593.dir/CheckSymbolExists.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTryCompileExec997915593
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec997915593.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec997915593.dir/CheckSymbolExists.cxx.o  -o cmTryCompileExec997915593 -rdynamic 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+File /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_X11
+  return ((int*)(&Q_WS_X11))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+The system is: Linux - 3.2.45 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec832147013/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec832147013.dir/build.make CMakeFiles/cmTryCompileExec832147013.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec832147013.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec832147013.dir/testCCompiler.c.o   -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec832147013
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec832147013.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec832147013.dir/testCCompiler.c.o  -o cmTryCompileExec832147013 -rdynamic 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec890926178/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec890926178.dir/build.make CMakeFiles/cmTryCompileExec890926178.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec890926178.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec890926178.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec890926178
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec890926178.dir/link.txt --verbose=1
+/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec890926178.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec890926178 -rdynamic  
+Reading specs from /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/specs
+COLLECT_GCC=/usr/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/lto-wrapper
+Target: x86_64-slackware-linux
+Configured with: ../gcc-4.7.1/configure --prefix=/usr --libdir=/usr/lib64 --mandir=/usr/man --infodir=/usr/info --enable-shared --enable-bootstrap --enable-languages=ada,c,c++,fortran,go,java,lto,objc --enable-threads=posix --enable-checking=release --enable-objc-gc --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --enable-lto --with-gnu-ld --verbose --enable-java-home --with-java-home=/usr/lib64/jvm/jre --with-jvm-root-dir=/usr/lib64/jvm --with-jvm-jar-dir=/usr/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar=/slack/TMPTMPTMP/gcc-round-two/antlr-runtime-3.4.jar --enable-java-awt=gtk --disable-gtktest --disable-multilib --target=x86_64-slackware-linux --build=x86_64-slackware-linux --host=x86_64-slackware-linux
+Thread model: posix
+gcc version 4.7.1 (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec890926178' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec890926178 /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../.. CMakeFiles/cmTryCompileExec890926178.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/local/bin/make "cmTryCompileExec890926178/fast"]
+  ignore line: [/usr/local/bin/make -f CMakeFiles/cmTryCompileExec890926178.dir/build.make CMakeFiles/cmTryCompileExec890926178.dir/build]
+  ignore line: [make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec890926178.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec890926178.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec890926178]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec890926178.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec890926178.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec890926178 -rdynamic  ]
+  ignore line: [Reading specs from /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/specs]
+  ignore line: [COLLECT_GCC=/usr/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/lto-wrapper]
+  ignore line: [Target: x86_64-slackware-linux]
+  ignore line: [Configured with: ../gcc-4.7.1/configure --prefix=/usr --libdir=/usr/lib64 --mandir=/usr/man --infodir=/usr/info --enable-shared --enable-bootstrap --enable-languages=ada,c,c++,fortran,go,java,lto,objc --enable-threads=posix --enable-checking=release --enable-objc-gc --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --enable-lto --with-gnu-ld --verbose --enable-java-home --with-java-home=/usr/lib64/jvm/jre --with-jvm-root-dir=/usr/lib64/jvm --with-jvm-jar-dir=/usr/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar=/slack/TMPTMPTMP/gcc-round-two/antlr-runtime-3.4.jar --enable-java-awt=gtk --disable-gtktest --disable-multilib --target=x86_64-slackware-linux --build=x86_64-slackware-linux --host=x86_64-slackware-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.7.1 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec890926178' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec890926178 /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../.. CMakeFiles/cmTryCompileExec890926178.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec890926178] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o] ==> ignore
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..]
+    arg [CMakeFiles/cmTryCompileExec890926178.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1] ==> [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64] ==> [/usr/lib64]
+  collapse dir [/lib/../lib64] ==> [/lib64]
+  collapse dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib] ==> [/usr/x86_64-slackware-linux/lib]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..] ==> [/usr/lib64]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1;/usr/lib64;/lib64;/usr/x86_64-slackware-linux/lib]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec3831703654/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec3831703654.dir/build.make CMakeFiles/cmTryCompileExec3831703654.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3831703654.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3831703654.dir/testCXXCompiler.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec3831703654
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3831703654.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec3831703654.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec3831703654 -rdynamic 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec1750664373/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec1750664373.dir/build.make CMakeFiles/cmTryCompileExec1750664373.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1750664373.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1750664373.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec1750664373
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1750664373.dir/link.txt --verbose=1
+/usr/bin/c++        -v CMakeFiles/cmTryCompileExec1750664373.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1750664373 -rdynamic  
+Reading specs from /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/specs
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/lto-wrapper
+Target: x86_64-slackware-linux
+Configured with: ../gcc-4.7.1/configure --prefix=/usr --libdir=/usr/lib64 --mandir=/usr/man --infodir=/usr/info --enable-shared --enable-bootstrap --enable-languages=ada,c,c++,fortran,go,java,lto,objc --enable-threads=posix --enable-checking=release --enable-objc-gc --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --enable-lto --with-gnu-ld --verbose --enable-java-home --with-java-home=/usr/lib64/jvm/jre --with-jvm-root-dir=/usr/lib64/jvm --with-jvm-jar-dir=/usr/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar=/slack/TMPTMPTMP/gcc-round-two/antlr-runtime-3.4.jar --enable-java-awt=gtk --disable-gtktest --disable-multilib --target=x86_64-slackware-linux --build=x86_64-slackware-linux --host=x86_64-slackware-linux
+Thread model: posix
+gcc version 4.7.1 (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1750664373' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec1750664373 /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../.. CMakeFiles/cmTryCompileExec1750664373.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/local/bin/make "cmTryCompileExec1750664373/fast"]
+  ignore line: [/usr/local/bin/make -f CMakeFiles/cmTryCompileExec1750664373.dir/build.make CMakeFiles/cmTryCompileExec1750664373.dir/build]
+  ignore line: [make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec1750664373.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1750664373.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec1750664373]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1750664373.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec1750664373.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1750664373 -rdynamic  ]
+  ignore line: [Reading specs from /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/specs]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/lto-wrapper]
+  ignore line: [Target: x86_64-slackware-linux]
+  ignore line: [Configured with: ../gcc-4.7.1/configure --prefix=/usr --libdir=/usr/lib64 --mandir=/usr/man --infodir=/usr/info --enable-shared --enable-bootstrap --enable-languages=ada,c,c++,fortran,go,java,lto,objc --enable-threads=posix --enable-checking=release --enable-objc-gc --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --enable-lto --with-gnu-ld --verbose --enable-java-home --with-java-home=/usr/lib64/jvm/jre --with-jvm-root-dir=/usr/lib64/jvm --with-jvm-jar-dir=/usr/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar=/slack/TMPTMPTMP/gcc-round-two/antlr-runtime-3.4.jar --enable-java-awt=gtk --disable-gtktest --disable-multilib --target=x86_64-slackware-linux --build=x86_64-slackware-linux --host=x86_64-slackware-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.7.1 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1750664373' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec1750664373 /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../.. CMakeFiles/cmTryCompileExec1750664373.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec1750664373] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o] ==> ignore
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..]
+    arg [CMakeFiles/cmTryCompileExec1750664373.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1] ==> [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64] ==> [/usr/lib64]
+  collapse dir [/lib/../lib64] ==> [/lib64]
+  collapse dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib] ==> [/usr/x86_64-slackware-linux/lib]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..] ==> [/usr/lib64]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1;/usr/lib64;/lib64;/usr/x86_64-slackware-linux/lib]
+
+
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec2132579912/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec2132579912.dir/build.make CMakeFiles/cmTryCompileExec2132579912.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2132579912.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec2132579912.dir/CheckIncludeFiles.c.o   -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec2132579912
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2132579912.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec2132579912.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec2132579912 -rdynamic 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec3496284442/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec3496284442.dir/build.make CMakeFiles/cmTryCompileExec3496284442.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3496284442.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3496284442.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3496284442
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3496284442.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3496284442.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3496284442 -rdynamic -lpthread 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Determining if the Q_WS_X11 exist passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec3093111171/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec3093111171.dir/build.make CMakeFiles/cmTryCompileExec3093111171.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3093111171.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/lib64/qt/include    -o CMakeFiles/cmTryCompileExec3093111171.dir/CheckSymbolExists.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTryCompileExec3093111171
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3093111171.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec3093111171.dir/CheckSymbolExists.cxx.o  -o cmTryCompileExec3093111171 -rdynamic 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+File /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_X11
+  return ((int*)(&Q_WS_X11))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+The system is: Linux - 3.2.45 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec1741925216/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec1741925216.dir/build.make CMakeFiles/cmTryCompileExec1741925216.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1741925216.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec1741925216.dir/testCCompiler.c.o   -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec1741925216
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1741925216.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec1741925216.dir/testCCompiler.c.o  -o cmTryCompileExec1741925216 -rdynamic 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec1969175442/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec1969175442.dir/build.make CMakeFiles/cmTryCompileExec1969175442.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1969175442.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec1969175442.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec1969175442
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1969175442.dir/link.txt --verbose=1
+/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec1969175442.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1969175442 -rdynamic  
+Reading specs from /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/specs
+COLLECT_GCC=/usr/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/lto-wrapper
+Target: x86_64-slackware-linux
+Configured with: ../gcc-4.7.1/configure --prefix=/usr --libdir=/usr/lib64 --mandir=/usr/man --infodir=/usr/info --enable-shared --enable-bootstrap --enable-languages=ada,c,c++,fortran,go,java,lto,objc --enable-threads=posix --enable-checking=release --enable-objc-gc --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --enable-lto --with-gnu-ld --verbose --enable-java-home --with-java-home=/usr/lib64/jvm/jre --with-jvm-root-dir=/usr/lib64/jvm --with-jvm-jar-dir=/usr/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar=/slack/TMPTMPTMP/gcc-round-two/antlr-runtime-3.4.jar --enable-java-awt=gtk --disable-gtktest --disable-multilib --target=x86_64-slackware-linux --build=x86_64-slackware-linux --host=x86_64-slackware-linux
+Thread model: posix
+gcc version 4.7.1 (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1969175442' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec1969175442 /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../.. CMakeFiles/cmTryCompileExec1969175442.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/local/bin/make "cmTryCompileExec1969175442/fast"]
+  ignore line: [/usr/local/bin/make -f CMakeFiles/cmTryCompileExec1969175442.dir/build.make CMakeFiles/cmTryCompileExec1969175442.dir/build]
+  ignore line: [make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec1969175442.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec1969175442.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec1969175442]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1969175442.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec1969175442.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1969175442 -rdynamic  ]
+  ignore line: [Reading specs from /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/specs]
+  ignore line: [COLLECT_GCC=/usr/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/lto-wrapper]
+  ignore line: [Target: x86_64-slackware-linux]
+  ignore line: [Configured with: ../gcc-4.7.1/configure --prefix=/usr --libdir=/usr/lib64 --mandir=/usr/man --infodir=/usr/info --enable-shared --enable-bootstrap --enable-languages=ada,c,c++,fortran,go,java,lto,objc --enable-threads=posix --enable-checking=release --enable-objc-gc --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --enable-lto --with-gnu-ld --verbose --enable-java-home --with-java-home=/usr/lib64/jvm/jre --with-jvm-root-dir=/usr/lib64/jvm --with-jvm-jar-dir=/usr/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar=/slack/TMPTMPTMP/gcc-round-two/antlr-runtime-3.4.jar --enable-java-awt=gtk --disable-gtktest --disable-multilib --target=x86_64-slackware-linux --build=x86_64-slackware-linux --host=x86_64-slackware-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.7.1 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1969175442' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec1969175442 /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../.. CMakeFiles/cmTryCompileExec1969175442.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec1969175442] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o] ==> ignore
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..]
+    arg [CMakeFiles/cmTryCompileExec1969175442.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1] ==> [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64] ==> [/usr/lib64]
+  collapse dir [/lib/../lib64] ==> [/lib64]
+  collapse dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib] ==> [/usr/x86_64-slackware-linux/lib]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..] ==> [/usr/lib64]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1;/usr/lib64;/lib64;/usr/x86_64-slackware-linux/lib]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec2609982689/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec2609982689.dir/build.make CMakeFiles/cmTryCompileExec2609982689.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2609982689.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2609982689.dir/testCXXCompiler.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec2609982689
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2609982689.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec2609982689.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec2609982689 -rdynamic 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec601914326/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec601914326.dir/build.make CMakeFiles/cmTryCompileExec601914326.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec601914326.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec601914326.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec601914326
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec601914326.dir/link.txt --verbose=1
+/usr/bin/c++        -v CMakeFiles/cmTryCompileExec601914326.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec601914326 -rdynamic  
+Reading specs from /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/specs
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/lto-wrapper
+Target: x86_64-slackware-linux
+Configured with: ../gcc-4.7.1/configure --prefix=/usr --libdir=/usr/lib64 --mandir=/usr/man --infodir=/usr/info --enable-shared --enable-bootstrap --enable-languages=ada,c,c++,fortran,go,java,lto,objc --enable-threads=posix --enable-checking=release --enable-objc-gc --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --enable-lto --with-gnu-ld --verbose --enable-java-home --with-java-home=/usr/lib64/jvm/jre --with-jvm-root-dir=/usr/lib64/jvm --with-jvm-jar-dir=/usr/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar=/slack/TMPTMPTMP/gcc-round-two/antlr-runtime-3.4.jar --enable-java-awt=gtk --disable-gtktest --disable-multilib --target=x86_64-slackware-linux --build=x86_64-slackware-linux --host=x86_64-slackware-linux
+Thread model: posix
+gcc version 4.7.1 (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec601914326' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec601914326 /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../.. CMakeFiles/cmTryCompileExec601914326.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/local/bin/make "cmTryCompileExec601914326/fast"]
+  ignore line: [/usr/local/bin/make -f CMakeFiles/cmTryCompileExec601914326.dir/build.make CMakeFiles/cmTryCompileExec601914326.dir/build]
+  ignore line: [make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec601914326.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec601914326.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec601914326]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec601914326.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec601914326.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec601914326 -rdynamic  ]
+  ignore line: [Reading specs from /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/specs]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/lto-wrapper]
+  ignore line: [Target: x86_64-slackware-linux]
+  ignore line: [Configured with: ../gcc-4.7.1/configure --prefix=/usr --libdir=/usr/lib64 --mandir=/usr/man --infodir=/usr/info --enable-shared --enable-bootstrap --enable-languages=ada,c,c++,fortran,go,java,lto,objc --enable-threads=posix --enable-checking=release --enable-objc-gc --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --enable-lto --with-gnu-ld --verbose --enable-java-home --with-java-home=/usr/lib64/jvm/jre --with-jvm-root-dir=/usr/lib64/jvm --with-jvm-jar-dir=/usr/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar=/slack/TMPTMPTMP/gcc-round-two/antlr-runtime-3.4.jar --enable-java-awt=gtk --disable-gtktest --disable-multilib --target=x86_64-slackware-linux --build=x86_64-slackware-linux --host=x86_64-slackware-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.7.1 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/:/usr/libexec/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib/:/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec601914326' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec601914326 /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib -L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../.. CMakeFiles/cmTryCompileExec601914326.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-slackware-linux/4.7.1/collect2] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec601914326] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtbegin.o] ==> ignore
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib]
+    arg [-L/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..] ==> dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..]
+    arg [CMakeFiles/cmTryCompileExec601914326.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/crtend.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1] ==> [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../lib64] ==> [/usr/lib64]
+  collapse dir [/lib/../lib64] ==> [/lib64]
+  collapse dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/lib] ==> [/usr/x86_64-slackware-linux/lib]
+  collapse dir [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../..] ==> [/usr/lib64]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/usr/lib64/gcc/x86_64-slackware-linux/4.7.1;/usr/lib64;/lib64;/usr/x86_64-slackware-linux/lib]
+
+
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec3687609596/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec3687609596.dir/build.make CMakeFiles/cmTryCompileExec3687609596.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3687609596.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec3687609596.dir/CheckIncludeFiles.c.o   -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec3687609596
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3687609596.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec3687609596.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec3687609596 -rdynamic 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec841589631/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec841589631.dir/build.make CMakeFiles/cmTryCompileExec841589631.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec841589631.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec841589631.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec841589631
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec841589631.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec841589631.dir/CheckFunctionExists.c.o  -o cmTryCompileExec841589631 -rdynamic -lpthread 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+
+Determining if the Q_WS_X11 exist passed with the following output:
+Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/local/bin/make "cmTryCompileExec2926948282/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec2926948282.dir/build.make CMakeFiles/cmTryCompileExec2926948282.dir/build
+make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2926948282.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/lib64/qt/include    -o CMakeFiles/cmTryCompileExec2926948282.dir/CheckSymbolExists.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTryCompileExec2926948282
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2926948282.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec2926948282.dir/CheckSymbolExists.cxx.o  -o cmTryCompileExec2926948282 -rdynamic 
+make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
+
+File /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_X11
+  return ((int*)(&Q_WS_X11))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

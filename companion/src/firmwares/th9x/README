@@ -1,0 +1,75 @@
+
+Meine Hauptziele:
+-------------------
+- die textsize klein halten
+- die rechenzeiten klein halten
+- kein float verwenden
+- wenig speicher (data) verbrauchen
+- wenig EEPROM verbrauch
+- die Bedienungsabläufe kurz halten und möglichst viel übersicht in den menus schaffen.
+- eine simulationsumgebung mit der man die meisten Tests durchführen kann.
+
+
+
+SW-Modul-Struktur:
+--------------
+
+th9x.h
+---------
+fast alle Interfaces sind in th9x.h enthalten
+
+lcd.h
+--------
+Interface für die lcd-funktionen
+  
+
+th9x.cpp enthält:
+-------------------
+komplette hw-initialisierung ausser lcd
+fast alle Laufzeitkontexte (main, interrupts)
+und einige Hilfsfunktionen für die Menusteuerung (koennte man auslagern)
+
+menus.cpp
+---------------
+alle Menus und weitere Hilfsfunktionen.
+Grundidee: Es gibt für jedes Menu genau eine Funktion in der die
+Visualisierung und die Eventlogik enthalten ist.
+Die Bilder werden bei jedem durchlauf (alle 10 ms) komplett gelöscht und dann wieder neu aufgebaut.
+
+foldedlist.cpp
+---------------
+Behandlung der Listen-Menus (zur Zeit: Expo,Mixer,Switches)
+Das Interface ist etwas unübersichtlich und über viele Variablen verteilt.
+Ausserdem existiert das ganze als Pseudo-Objekt nur ein einziges mal im Speicher. D.h. es kann immer nur eine einzige Liste zum selben Zeitpunkt geben.
+Dies spart Speicher und vereinfacht die Zugriffsfunktionen. (wenig Code und Laufzeit)
+
+pulses.cpp
+-----------
+Aufbereitung der Outputprotokolle PPM..., nebst Interruptroutine zur Pulsgenerierung.
+
+drivers.cpp
+---------------
+tasten teiber und periodische einlesefunktion.
+
+file.cpp
+----------
+filesystem fürs eeprom nebst standalone testroutinen
+
+lcd.cpp
+----------
+alle funktionen die direkt aufs lcd schreiben und ein paar
+komfort funktionen puts, outdez ..
+
+pers.cpp
+-------------
+alles was man zum handling der Modellspeicher braucht,
+setzt auf file.cpp auf
+
+
+simu.cpp
+-------------
+alles was man zusätzlich für die simulation braucht
+
+stamp.cpp
+--------------
+nur Versionsnummernhandling
