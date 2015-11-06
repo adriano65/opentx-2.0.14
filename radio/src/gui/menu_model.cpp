@@ -5681,7 +5681,7 @@ void menuModelTelemetry(uint8_t event)
       case ITEM_TELEMETRY_PROTOCOL_TYPE:
 		#if defined(MAVLINK)
 		//							selectMenuItem(uint8_t x, uint8_t y, const pm_char *label, const pm_char *values, select_menu_value_t value, select_menu_value_t min, select_menu_value_t max, LcdFlags attr, uint8_t event)
-        g_model.telemetryProtocol = selectMenuItem(TELEM_COL2, y, STR_TELEMETRY_TYPE, PSTR("\017FrSky S.PORT\0  FrSky D\0       Mavlink"), g_model.telemetryProtocol, PROTOCOL_TELEMETRY_FIRST, PROTOCOL_MAVLINK, attr, event);
+        g_model.telemetryProtocol = selectMenuItem(TELEM_COL2, y, STR_TELEMETRY_TYPE, PSTR("\017FrSky S.PORT\0  FrSky D\0       Mavlink\0       FrSky D (cable)"), g_model.telemetryProtocol, PROTOCOL_TELEMETRY_FIRST, PROTOCOL_FRSKY_D_SECONDARY, attr, event);
         //g_model.telemetryProtocol = selectMenuItem(TELEM_COL2, y, STR_TELEMETRY_TYPE, CASE_PCBTARANIS("\017FrSky S.PORT\0  FrSky D\0               Mavlink") CASE_PCBSKY9X("\017FrSky S.PORT\0  FrSky D\0       FrSky D (cable)") g_model.telemetryProtocol, PROTOCOL_TELEMETRY_FIRST, CASE_PCBTARANIS(g_eeGeneral.uart3Mode==UART_MODE_TELEMETRY ? PROTOCOL_FRSKY_D_SECONDARY : PROTOCOL_MAVLINK) CASE_PCBSKY9X(PROTOCOL_FRSKY_D_SECONDARY) attr, event);
 		#else
         g_model.telemetryProtocol = selectMenuItem(TELEM_COL2, y, STR_TELEMETRY_TYPE, "\017FrSky S.PORT\0  FrSky D\0       FrSky D (cable)", g_model.telemetryProtocol, PROTOCOL_TELEMETRY_FIRST, CASE_PCBTARANIS(g_eeGeneral.uart3Mode==UART_MODE_TELEMETRY ? PROTOCOL_FRSKY_D_SECONDARY : PROTOCOL_FRSKY_D) CASE_PCBSKY9X(PROTOCOL_FRSKY_D_SECONDARY) attr, event);
