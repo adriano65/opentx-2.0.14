@@ -316,7 +316,8 @@ MENUS_LOCK = NO
 # Values = JOYSTICK, MASSSTORAGE
 # JOYSTICK: The TX will appear as a joystick
 # MASSSTORAGE: The TX will appear as a drive
-USB = MASSSTORAGE
+#USB = MASSSTORAGE
+USB = JOYSTICK
 
 # Channel monitor display behavior
 # Values = NO, YES

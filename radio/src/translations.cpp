@@ -127,6 +127,9 @@ const pm_char STR_OPEN9X[] PROGMEM =
     ISTR(MAVLINK_AC_MODES)
     ISTR(MAVLINK_AP_MODES)
 #endif
+#if defined(FRSKY) || defined(MAVLINK)
+    ISTR(TELEMETRY_ITEMS)
+#endif
     ;
 
 // The 0-terminated-strings
@@ -509,7 +512,10 @@ const pm_char STR_BLCOLOR[]  PROGMEM = TR_BLCOLOR;
   const pm_char STR_RESET_SUBMENU[] PROGMEM = TR_RESET_SUBMENU;
   const pm_char STR_LOWALARM[] PROGMEM = TR_LOWALARM;
   const pm_char STR_CRITICALALARM[] PROGMEM = TR_CRITICALALARM;
-  const pm_char STR_TELEMETRY_TYPE[] PROGMEM = TR_TELEMETRY_TYPE;
+#endif
+  
+#if defined(FRSKY) || defined(MAVLINK)
+const pm_char STR_TELEMETRY_TYPE[] PROGMEM = TR_TELEMETRY_TYPE;
 #endif
 
 #if defined(PCBTARANIS)
@@ -528,7 +534,7 @@ const pm_char STR_BLCOLOR[]  PROGMEM = TR_BLCOLOR;
   const pm_char STR_PTS[] PROGMEM = TR_PTS;
   const pm_char STR_SMOOTH[] PROGMEM = TR_SMOOTH;
   const pm_char STR_COPY_STICKS_TO_OFS[] PROGMEM = TR_COPY_STICKS_TO_OFS;
-const pm_char STR_COPY_TRIMS_TO_OFS[] PROGMEM = TR_COPY_TRIMS_TO_OFS;
+  const pm_char STR_COPY_TRIMS_TO_OFS[] PROGMEM = TR_COPY_TRIMS_TO_OFS;
   const pm_char STR_TOP_BAR[] PROGMEM = TR_TOP_BAR;
   const pm_char STR_ALTITUDE[] PROGMEM = TR_ALTITUDE;
   const pm_char STR_SCALE[] PROGMEM = TR_SCALE;

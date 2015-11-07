@@ -894,6 +894,9 @@ enum menuModelSetupItems {
   ITEM_MODEL_SWITCHES_WARNING,
   CASE_PCBTARANIS(ITEM_MODEL_POT_WARNING)
   ITEM_MODEL_BEEP_CENTER,
+#if defined(FRSKY) || defined(MAVLINK)
+  ITEM_MODEL_PROTOCOL,
+#endif
 #if defined(PCBTARANIS)
   ITEM_MODEL_INTERNAL_MODULE_LABEL,
   ITEM_MODEL_INTERNAL_MODULE_MODE,
@@ -996,7 +999,7 @@ void menuModelSetup(uint8_t event)
   #define MODEL_SETUP_MAX_LINES             (1+ITEM_MODEL_SETUP_MAX)
   #define POT_WARN_ITEMS()                  ((g_model.nPotsToWarn >> 6) ? (uint8_t)NUM_POTS : (uint8_t)0)
   bool CURSOR_ON_CELL = (m_posHorz >= 0);
-  MENU_TAB({ 0, 0, CASE_PCBTARANIS(0) 2, CASE_PERSISTENT_TIMERS(0) 0, 0, 2, CASE_PERSISTENT_TIMERS(0) 0, 0, 0, 1, 0, CASE_PCBTARANIS(LABEL(Throttle)) 0, 0, 0, CASE_CPUARM(LABEL(PreflightCheck)) CASE_CPUARM(0) 0, 7, POT_WARN_ITEMS(), NAVIGATION_LINE_BY_LINE|(NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1), LABEL(InternalModule), 0, IF_INTERNAL_MODULE_ON(1), IF_INTERNAL_MODULE_ON(IS_D8_RX(0) ? (uint8_t)1 : (uint8_t)2), IF_INTERNAL_MODULE_ON(FAILSAFE_ROWS(INTERNAL_MODULE)), LABEL(ExternalModule), (IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)1 : (uint8_t)0, EXTERNAL_MODULE_CHANNELS_ROWS(), (IS_MODULE_XJT(EXTERNAL_MODULE) && IS_D8_RX(EXTERNAL_MODULE)) ? (uint8_t)1 : (IS_MODULE_PPM(EXTERNAL_MODULE) || IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)2 : HIDDEN_ROW, IF_EXTERNAL_MODULE_XJT(FAILSAFE_ROWS(EXTERNAL_MODULE)), LABEL(Trainer), 0, TRAINER_CHANNELS_ROWS(), IF_TRAINER_ON(2)});
+  MENU_TAB({ 0, 0, 0, 2, CASE_PERSISTENT_TIMERS(0) 0, 0, 2, CASE_PERSISTENT_TIMERS(0) 0, 0, 0, 1, 0, LABEL(Throttle), 0, 0, 0, CASE_CPUARM(LABEL(PreflightCheck)) CASE_CPUARM(0) 0, 7, POT_WARN_ITEMS(), NAVIGATION_LINE_BY_LINE|(NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1), LABEL(InternalModule), 0, IF_INTERNAL_MODULE_ON(1), IF_INTERNAL_MODULE_ON(IS_D8_RX(0) ? (uint8_t)1 : (uint8_t)2), IF_INTERNAL_MODULE_ON(FAILSAFE_ROWS(INTERNAL_MODULE)), LABEL(ExternalModule), (IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)1 : (uint8_t)0, EXTERNAL_MODULE_CHANNELS_ROWS(), (IS_MODULE_XJT(EXTERNAL_MODULE) && IS_D8_RX(EXTERNAL_MODULE)) ? (uint8_t)1 : (IS_MODULE_PPM(EXTERNAL_MODULE) || IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)2 : HIDDEN_ROW, IF_EXTERNAL_MODULE_XJT(FAILSAFE_ROWS(EXTERNAL_MODULE)), LABEL(Trainer), 0, TRAINER_CHANNELS_ROWS(), IF_TRAINER_ON(2)});
 #elif defined(CPUARM)
   #define IF_EXTERNAL_MODULE_XJT(x)         (IS_MODULE_XJT(EXTERNAL_MODULE) ? (uint8_t)x : HIDDEN_ROW)
   #define IF_EXTERNAL_MODULE_ON(x)          (g_model.externalModule == MODULE_TYPE_NONE ? HIDDEN_ROW : (uint8_t)(x))
@@ -1008,17 +1011,42 @@ void menuModelSetup(uint8_t event)
   #define CURSOR_ON_CELL                    (true)
   #define MODEL_SETUP_MAX_LINES             (1+ITEM_MODEL_SETUP_MAX)
   #define POT_WARN_ITEMS()                  ((g_model.nPotsToWarn >> 6) ? (uint8_t)NUM_POTS : (uint8_t)0)
-#if defined(PCBTARANIS) || (defined(PCBSKY9X) && !defined(REVA) && !defined(REVX))
-  #define EXTRA_MODULE_ROWS                 LABEL(ExtraModule), 1, 2,
-#else
-  #define EXTRA_MODULE_ROWS
-#endif
-#if defined(PCBTARANIS)
-  #define TRAINER_MODULE_ROWS               LABEL(Trainer), IF_TRAINER_ON(1), 2
-#else
+  #if (defined(PCBSKY9X) && !defined(REVA) && !defined(REVX))
+	#define EXTRA_MODULE_ROWS                 LABEL(ExtraModule), 1, 2,
+  #else
+	#define EXTRA_MODULE_ROWS
+  #endif
   #define TRAINER_MODULE_ROWS
-#endif
-  MENU_TAB({ 0, 0, CASE_PCBTARANIS(0) 2, CASE_PERSISTENT_TIMERS(0) 0, 0, 2, CASE_PERSISTENT_TIMERS(0) 0, 0, 0, 1, 0, CASE_PCBTARANIS(LABEL(Throttle)) 0, 0, 0, CASE_CPUARM(LABEL(PreflightCheck)) CASE_CPUARM(0) 0, 6, NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1, LABEL(ExternalModule), (IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)1 : (uint8_t)0, EXTERNAL_MODULE_CHANNELS_ROWS(), (IS_MODULE_XJT(EXTERNAL_MODULE) && IS_D8_RX(EXTERNAL_MODULE)) ? (uint8_t)1 : (IS_MODULE_PPM(EXTERNAL_MODULE) || IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)2 : HIDDEN_ROW, IF_EXTERNAL_MODULE_XJT(FAILSAFE_ROWS(EXTERNAL_MODULE)), EXTRA_MODULE_ROWS TRAINER_MODULE_ROWS });
+  MENU_TAB({ 0								// ITEM_MODEL_NAME
+			, 0								// ITEM_MODEL_TIMER1
+			, CASE_PERSISTENT_TIMERS(0) 	// ITEM_MODEL_TIMER1_PERSISTENT
+			0								// ITEM_MODEL_TIMER1_MINUTE_BEEP
+			, 0								// ITEM_MODEL_TIMER1_COUNTDOWN_BEEP
+			, 2								// ITEM_MODEL_TIMER2
+			, CASE_PERSISTENT_TIMERS(0) 	// ITEM_MODEL_TIMER2_PERSISTENT
+			0								// ITEM_MODEL_TIMER2_MINUTE_BEEP
+			, 0								// ITEM_MODEL_TIMER2_COUNTDOWN_BEEP
+			, 0								// ITEM_MODEL_EXTENDED_LIMITS
+			, 1								// ITEM_MODEL_EXTENDED_TRIMS
+			, 0								// ITEM_MODEL_TRIM_INC
+			, 0								// ITEM_MODEL_THROTTLE_REVERSED
+			, 0								// ITEM_MODEL_THROTTLE_TRACE
+			, 0								// ITEM_MODEL_THROTTLE_TRIM
+			, LABEL(PreflightCheck) 		// ITEM_MODEL_PREFLIGHT_LABEL
+			, 0								// ITEM_MODEL_CHECKLIST_DISPLAY
+			, 1								// ITEM_MODEL_THROTTLE_WARNING
+			, NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1		// ITEM_MODEL_SWITCHES_WARNING
+			, 0								// ITEM_MODEL_BEEP_CENTER
+			, 0								// ITEM_MODEL_BEEP_CENTER
+			, 10								// ITEM_MODEL_PROTOCOL_label
+			, 16								// ITEM_MODEL_PROTOCOL
+			, LABEL(ExternalModule)			// ITEM_MODEL_EXTERNAL_MODULE_LABEL
+			, (IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)1 : (uint8_t)0	//ITEM_MODEL_EXTERNAL_MODULE_MODE
+			, EXTERNAL_MODULE_CHANNELS_ROWS()
+			, (IS_MODULE_XJT(EXTERNAL_MODULE) && IS_D8_RX(EXTERNAL_MODULE)) ? (uint8_t)1 : (IS_MODULE_PPM(EXTERNAL_MODULE) || IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)2 : HIDDEN_ROW
+			, IF_EXTERNAL_MODULE_XJT(FAILSAFE_ROWS(EXTERNAL_MODULE))
+			, EXTRA_MODULE_ROWS 
+			TRAINER_MODULE_ROWS });
 #elif defined(CPUM64)
   #define CURSOR_ON_CELL                    (true)
   #define MODEL_SETUP_MAX_LINES             ((IS_PPM_PROTOCOL(protocol)||IS_DSM2_PROTOCOL(protocol)||IS_PXX_PROTOCOL(protocol)) ? 1+ITEM_MODEL_SETUP_MAX : ITEM_MODEL_SETUP_MAX)
@@ -1226,8 +1254,7 @@ void menuModelSetup(uint8_t event)
         g_model.disableThrottleWarning = !onoffMenuItem(!g_model.disableThrottleWarning, MODEL_SETUP_2ND_COLUMN, y, STR_THROTTLEWARNING, attr, event);
         break;
         
-      case ITEM_MODEL_SWITCHES_WARNING:
-      {
+      case ITEM_MODEL_SWITCHES_WARNING: {
         lcd_putsLeft(y, STR_SWITCHWARNING);
         swstate_t states = g_model.switchWarningStates;
         char c;
@@ -1387,6 +1414,47 @@ void menuModelSetup(uint8_t event)
       case ITEM_MODEL_EXTRA_MODULE_LABEL:
         lcd_putsLeft(y, "RF Port 2 (PPM)");
         break;
+#endif
+
+#if defined(FRSKY) && defined(MAVLINK)
+      case ITEM_MODEL_PROTOCOL: {
+		  g_model.telemetryProtocol = selectMenuItem( MODEL_SETUP_2ND_COLUMN
+													  , y
+													  , STR_TELEMETRY_TYPE
+													  , STR_TELEMETRY_ITEMS
+													  , g_model.telemetryProtocol
+													  , PROTOCOL_TELEMETRY_FIRST
+													  , PROTOCOL_TELEMETRY_LAST
+													  , attr
+													  , event);
+		  break;
+	  }
+#else
+	#if defined(FRSKY)
+	  case ITEM_MODEL_PROTOCOL:
+		  g_model.telemetryProtocol = selectMenuItem( MODEL_SETUP_2ND_COLUMN
+													  , y
+													  , STR_TELEMETRY_TYPE
+													  , STR_TELEMETRY_ITEMS
+													  , g_model.telemetryProtocol
+													  , PROTOCOL_TELEMETRY_FIRST
+													  , PROTOCOL_TELEMETRY_LAST
+													  , attr
+													  , event);
+		  break;
+	#else
+	  case ITEM_MODEL_PROTOCOL:
+		  g_model.telemetryProtocol = selectMenuItem( MODEL_SETUP_2ND_COLUMN
+													  , y
+													  , STR_TELEMETRY_TYPE
+													  , STR_TELEMETRY_ITEMS
+													  , g_model.telemetryProtocol
+													  , PROTOCOL_TELEMETRY_FIRST
+													  , PROTOCOL_TELEMETRY_LAST
+													  , attr
+													  , event);
+		  break;
+	#endif
 #endif
 
 #if defined(PCBTARANIS)
@@ -1622,6 +1690,7 @@ void menuModelSetup(uint8_t event)
         }
         break;
       }
+      
 #endif
 
 #if !defined(CPUARM)
@@ -1642,51 +1711,6 @@ void menuModelSetup(uint8_t event)
             case 1:
               CHECK_INCDEC_MODELVAR(event, g_model.ppmNCH, -2, 4);
               g_model.ppmFrameLength = g_model.ppmNCH * 8;
-              break;
-          }
-        }
-        break;
-#endif
-
-#if 0
-      case ITEM_MODEL_PPM2_PROTOCOL:
-        lcd_putsLeft(y, PSTR("Port2"));
-        lcd_putsiAtt(MODEL_SETUP_2ND_COLUMN, y, STR_VPROTOS, 0, 0);
-        lcd_putsAtt(MODEL_SETUP_2ND_COLUMN+4*FW+3, y, STR_CH, m_posHorz<=0 ? attr : 0);
-        lcd_outdezAtt(lcdLastPos, y, g_model.moduleData[1].channelsStart+1, LEFT | (m_posHorz<=0 ? attr : 0));
-        lcd_putc(lcdLastPos, y, '-');
-        lcd_outdezAtt(lcdLastPos + FW+1, y, g_model.moduleData[1].channelsStart+8+g_model.moduleData[1].channelsCount, LEFT | (m_posHorz!=0 ? attr : 0));
-        if (attr && (editMode>0 || p1valdiff)) {
-          switch (m_posHorz) {
-            case 0:
-              CHECK_INCDEC_MODELVAR_ZERO(event, g_model.moduleData[1].channelsStart, 32-8-g_model.moduleData[1].channelsCount);
-              SET_DEFAULT_PPM_FRAME_LENGTH(1);
-              break;
-            case 1:
-              CHECK_INCDEC_MODELVAR(event, g_model.moduleData[1].channelsCount, -4, min<int8_t>(8, 32-8-g_model.moduleData[1].channelsStart));
-              SET_DEFAULT_PPM_FRAME_LENGTH(1);
-              break;
-          }
-        }
-        break;
-
-      case ITEM_MODEL_PPM2_PARAMS:
-        lcd_putsLeft(y, STR_PPMFRAME);
-        lcd_puts(MODEL_SETUP_2ND_COLUMN+3*FW, y, STR_MS);
-        lcd_outdezAtt(MODEL_SETUP_2ND_COLUMN, y, (int16_t)g_model.moduleData[1].ppmFrameLength*5 + 225, (m_posHorz<=0 ? attr : 0) | PREC1|LEFT);
-        lcd_putc(MODEL_SETUP_2ND_COLUMN+8*FW+2, y, 'u');
-        lcd_outdezAtt(MODEL_SETUP_2ND_COLUMN+8*FW+2, y, (g_model.moduleData[1].ppmDelay*50)+300, (m_posHorz < 0 || m_posHorz==1) ? attr : 0);
-        lcd_putcAtt(MODEL_SETUP_2ND_COLUMN+10*FW, y, g_model.moduleData[1].ppmPulsePol ? '+' : '-', (m_posHorz < 0 || m_posHorz==2) ? attr : 0);
-        if (attr && (editMode>0 || p1valdiff)) {
-          switch (m_posHorz) {
-            case 0:
-              CHECK_INCDEC_MODELVAR(event, g_model.moduleData[1].ppmFrameLength, -20, 35);
-              break;
-            case 1:
-              CHECK_INCDEC_MODELVAR(event, g_model.moduleData[1].ppmDelay, -4, 10);
-              break;
-            case 2:
-              CHECK_INCDEC_MODELVAR_ZERO(event, g_model.moduleData[1].ppmPulsePol, 1);
               break;
           }
         }
@@ -5498,7 +5522,7 @@ void menuModelCustomScripts(uint8_t event)
 #endif
 
 enum menuModelTelemetryItems {
-  CASE_CPUARM(ITEM_TELEMETRY_PROTOCOL_TYPE)
+  //CASE_CPUARM(ITEM_TELEMETRY_PROTOCOL_TYPE)
   ITEM_TELEMETRY_A1_LABEL,
   ITEM_TELEMETRY_A1_RANGE,
   ITEM_TELEMETRY_A1_OFFSET,
@@ -5676,19 +5700,6 @@ void menuModelTelemetry(uint8_t event)
     uint8_t dest = TELEM_A1-1+ch;
 
     switch (k) {
-
-#if defined(CPUARM)
-      case ITEM_TELEMETRY_PROTOCOL_TYPE:
-		#if defined(MAVLINK)
-		//							selectMenuItem(uint8_t x, uint8_t y, const pm_char *label, const pm_char *values, select_menu_value_t value, select_menu_value_t min, select_menu_value_t max, LcdFlags attr, uint8_t event)
-        g_model.telemetryProtocol = selectMenuItem(TELEM_COL2, y, STR_TELEMETRY_TYPE, PSTR("\017FrSky S.PORT\0  FrSky D\0       Mavlink\0       FrSky D (cable)"), g_model.telemetryProtocol, PROTOCOL_TELEMETRY_FIRST, PROTOCOL_FRSKY_D_SECONDARY, attr, event);
-        //g_model.telemetryProtocol = selectMenuItem(TELEM_COL2, y, STR_TELEMETRY_TYPE, CASE_PCBTARANIS("\017FrSky S.PORT\0  FrSky D\0               Mavlink") CASE_PCBSKY9X("\017FrSky S.PORT\0  FrSky D\0       FrSky D (cable)") g_model.telemetryProtocol, PROTOCOL_TELEMETRY_FIRST, CASE_PCBTARANIS(g_eeGeneral.uart3Mode==UART_MODE_TELEMETRY ? PROTOCOL_FRSKY_D_SECONDARY : PROTOCOL_MAVLINK) CASE_PCBSKY9X(PROTOCOL_FRSKY_D_SECONDARY) attr, event);
-		#else
-        g_model.telemetryProtocol = selectMenuItem(TELEM_COL2, y, STR_TELEMETRY_TYPE, "\017FrSky S.PORT\0  FrSky D\0       FrSky D (cable)", g_model.telemetryProtocol, PROTOCOL_TELEMETRY_FIRST, CASE_PCBTARANIS(g_eeGeneral.uart3Mode==UART_MODE_TELEMETRY ? PROTOCOL_FRSKY_D_SECONDARY : PROTOCOL_FRSKY_D) CASE_PCBSKY9X(PROTOCOL_FRSKY_D_SECONDARY) attr, event);
-		#endif
-        break;
-#endif
-
       case ITEM_TELEMETRY_A1_LABEL:
       case ITEM_TELEMETRY_A2_LABEL:
 #if defined(CPUARM)

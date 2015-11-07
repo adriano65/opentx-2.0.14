@@ -1748,14 +1748,15 @@ enum TelemetryProtocol
 #if defined(MAVLINK)
   PROTOCOL_MAVLINK,
 #endif
-  PROTOCOL_FRSKY_D_SECONDARY
+  PROTOCOL_FRSKY_D_SECONDARY,
+  PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D_SECONDARY
 };
 
 PACK(typedef struct t_ModelData {
   ModelHeader header;
   TimerData timers[MAX_TIMERS];
   AVR_FIELD(uint8_t   protocol:3)
-  ARM_FIELD(uint8_t   telemetryProtocol:3)
+  uint8_t   telemetryProtocol:3;
   uint8_t   thrTrim:1;            // Enable Throttle Trim
   AVR_FIELD(int8_t    ppmNCH:4)
   ARM_FIELD(int8_t    spare2:4)
