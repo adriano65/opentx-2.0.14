@@ -637,7 +637,7 @@ void telemetryReset()
 
 void telemetryInit(void)
 {
-#if defined(CPUARM)
+#if defined(PCBTARANIS)
   if (telemetryProtocol == PROTOCOL_FRSKY_D) {
     telemetryPortInit(FRSKY_D_BAUDRATE);
   }
@@ -648,6 +648,9 @@ void telemetryInit(void)
   else {
     telemetryPortInit(FRSKY_SPORT_BAUDRATE);
   }
+#elif defined(CPUARM)
+    telemetryPortInit(0);
+    telemetrySecondPortInit(PROTOCOL_FRSKY_D_SECONDARY);
 #elif !defined(SIMU)
   telemetryPortInit();
 #endif

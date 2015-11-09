@@ -999,7 +999,48 @@ void menuModelSetup(uint8_t event)
   #define MODEL_SETUP_MAX_LINES             (1+ITEM_MODEL_SETUP_MAX)
   #define POT_WARN_ITEMS()                  ((g_model.nPotsToWarn >> 6) ? (uint8_t)NUM_POTS : (uint8_t)0)
   bool CURSOR_ON_CELL = (m_posHorz >= 0);
-  MENU_TAB({ 0, 0, 0, 2, CASE_PERSISTENT_TIMERS(0) 0, 0, 2, CASE_PERSISTENT_TIMERS(0) 0, 0, 0, 1, 0, LABEL(Throttle), 0, 0, 0, CASE_CPUARM(LABEL(PreflightCheck)) CASE_CPUARM(0) 0, 7, POT_WARN_ITEMS(), NAVIGATION_LINE_BY_LINE|(NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1), LABEL(InternalModule), 0, IF_INTERNAL_MODULE_ON(1), IF_INTERNAL_MODULE_ON(IS_D8_RX(0) ? (uint8_t)1 : (uint8_t)2), IF_INTERNAL_MODULE_ON(FAILSAFE_ROWS(INTERNAL_MODULE)), LABEL(ExternalModule), (IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)1 : (uint8_t)0, EXTERNAL_MODULE_CHANNELS_ROWS(), (IS_MODULE_XJT(EXTERNAL_MODULE) && IS_D8_RX(EXTERNAL_MODULE)) ? (uint8_t)1 : (IS_MODULE_PPM(EXTERNAL_MODULE) || IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)2 : HIDDEN_ROW, IF_EXTERNAL_MODULE_XJT(FAILSAFE_ROWS(EXTERNAL_MODULE)), LABEL(Trainer), 0, TRAINER_CHANNELS_ROWS(), IF_TRAINER_ON(2)});
+  MENU_TAB({ 0
+			, 0
+			, 0
+			, 2
+			, CASE_PERSISTENT_TIMERS(0) 
+			0
+			, 0
+			, 2
+			, CASE_PERSISTENT_TIMERS(0) 
+			0
+			, 0
+			, 0
+			, 1
+			, 0
+			, LABEL(Throttle)
+			, 0
+			, 0
+			, 0
+			, LABEL(PreflightCheck)
+			, 0 							// ITEM_MODEL_CHECKLIST_DISPLAY
+			, 0								// ITEM_MODEL_THROTTLE_WARNING
+			, 7								// ITEM_MODEL_SWITCHES_WARNING
+			, POT_WARN_ITEMS()				// ITEM_MODEL_POT_WARNING
+			//, NAVIGATION_LINE_BY_LINE | (NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1)
+			, 0								// ITEM_MODEL_BEEP_CENTER
+			, 0								// ITEM_MODEL_PROTOCOL
+			, 0								// ITEM_MODEL_PROTOCOL (? Why)
+			, LABEL(InternalModule)			// ITEM_MODEL_INTERNAL_MODULE_LABEL
+			, 0								// ITEM_MODEL_INTERNAL_MODULE_MODE
+			, IF_INTERNAL_MODULE_ON(1)
+			, IF_INTERNAL_MODULE_ON(IS_D8_RX(0) ? (uint8_t)1 : (uint8_t)2)
+			, 0
+			, IF_INTERNAL_MODULE_ON(FAILSAFE_ROWS(INTERNAL_MODULE))
+			, LABEL(ExternalModule)
+			, (IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)1 : (uint8_t)0
+			, EXTERNAL_MODULE_CHANNELS_ROWS()
+			, (IS_MODULE_XJT(EXTERNAL_MODULE) && IS_D8_RX(EXTERNAL_MODULE)) ? (uint8_t)1 : (IS_MODULE_PPM(EXTERNAL_MODULE) || IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)2 : HIDDEN_ROW
+			, IF_EXTERNAL_MODULE_XJT(FAILSAFE_ROWS(EXTERNAL_MODULE))
+			, LABEL(Trainer)				// ITEM_MODEL_TRAINER_MODE
+			, 0
+			, TRAINER_CHANNELS_ROWS()
+			, IF_TRAINER_ON(2)});
 #elif defined(CPUARM)
   #define IF_EXTERNAL_MODULE_XJT(x)         (IS_MODULE_XJT(EXTERNAL_MODULE) ? (uint8_t)x : HIDDEN_ROW)
   #define IF_EXTERNAL_MODULE_ON(x)          (g_model.externalModule == MODULE_TYPE_NONE ? HIDDEN_ROW : (uint8_t)(x))
@@ -1017,7 +1058,6 @@ void menuModelSetup(uint8_t event)
 	#define EXTRA_MODULE_ROWS
   #endif
   
-  #define TRAINER_MODULE_ROWS
   MENU_TAB({ 0								// ITEM_MODEL_NAME
 			, 0								// ITEM_MODEL_TIMER1
 			, CASE_PERSISTENT_TIMERS(0) 	// ITEM_MODEL_TIMER1_PERSISTENT
@@ -1038,14 +1078,15 @@ void menuModelSetup(uint8_t event)
 			, 1								// ITEM_MODEL_THROTTLE_WARNING
 			, NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1		// ITEM_MODEL_SWITCHES_WARNING
 			, 0								// ITEM_MODEL_BEEP_CENTER
-			//, 0								// ITEM_MODEL_PROTOCOL
+			, 0								// ITEM_MODEL_PROTOCOL
+			, 0								// ITEM_MODEL_PROTOCOL (? Why)
 			, LABEL(ExternalModule)			// ITEM_MODEL_EXTERNAL_MODULE_LABEL
 			, (IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)1 : (uint8_t)0	//ITEM_MODEL_EXTERNAL_MODULE_MODE
-			, EXTERNAL_MODULE_CHANNELS_ROWS()
+			, EXTERNAL_MODULE_CHANNELS_ROWS()	// ITEM_MODEL_EXTERNAL_MODULE_CHANNELS
 			, (IS_MODULE_XJT(EXTERNAL_MODULE) && IS_D8_RX(EXTERNAL_MODULE)) ? (uint8_t)1 : (IS_MODULE_PPM(EXTERNAL_MODULE) || IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)2 : HIDDEN_ROW
 			, IF_EXTERNAL_MODULE_XJT(FAILSAFE_ROWS(EXTERNAL_MODULE))
-			, EXTRA_MODULE_ROWS 
-			TRAINER_MODULE_ROWS });
+			, EXTRA_MODULE_ROWS
+			});
 #elif defined(CPUM64)
   #define CURSOR_ON_CELL                    (true)
   #define MODEL_SETUP_MAX_LINES             ((IS_PPM_PROTOCOL(protocol)||IS_DSM2_PROTOCOL(protocol)||IS_PXX_PROTOCOL(protocol)) ? 1+ITEM_MODEL_SETUP_MAX : ITEM_MODEL_SETUP_MAX)
@@ -1417,7 +1458,7 @@ void menuModelSetup(uint8_t event)
 
 #if defined(FRSKY) && defined(MAVLINK)
       case ITEM_MODEL_PROTOCOL:
-		  g_model.telemetryProtocol = selectMenuItem( MODEL_SETUP_2ND_COLUMN
+			g_model.telemetryProtocol = selectMenuItem( MODEL_SETUP_2ND_COLUMN
 													  , y
 													  , STR_TELEMETRY_TYPE
 													  , PSTR("\015""FrSky S.PORT\0""FrSky D     \0""Mavlink     \0""FrSky(cable)\0")
@@ -1426,13 +1467,7 @@ void menuModelSetup(uint8_t event)
 													  , PROTOCOL_TELEMETRY_LAST
 													  , attr
 													  , event);
-		  if (attr && m_posHorz>0) {
-			s_editMode = 0;
-			if (event==EVT_KEY_LONG(KEY_ENTER)) {
-			  s_noHi = NO_HI_LEN;
-			  AUDIO_WARNING1();
-			}
-		  }
+			eeDirty(EE_MODEL);
 			break;
 #else
 	#if defined(FRSKY)
@@ -1440,12 +1475,13 @@ void menuModelSetup(uint8_t event)
 		  g_model.telemetryProtocol = selectMenuItem( MODEL_SETUP_2ND_COLUMN
 													  , y
 													  , STR_TELEMETRY_TYPE
-													  , PSTR("\015""FrSky S.PORT\0""FrSky D      \0""FrSky D (cab)\0")
+													  , PSTR("\015""FrSky S.PORT\0""FrSky D     \0""FrSky(cable)\0")
 													  , g_model.telemetryProtocol
 													  , PROTOCOL_TELEMETRY_FIRST
 													  , PROTOCOL_TELEMETRY_LAST
 													  , attr
 													  , event);
+		  eeDirty(EE_MODEL);
 		  break;
 	#else
 	  case ITEM_MODEL_PROTOCOL:
@@ -1458,6 +1494,7 @@ void menuModelSetup(uint8_t event)
 													  , PROTOCOL_TELEMETRY_LAST
 													  , attr
 													  , event);
+		  eeDirty(EE_MODEL);
 		  break;
 	#endif
 #endif

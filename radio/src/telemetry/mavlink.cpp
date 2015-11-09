@@ -181,7 +181,7 @@ void MAVLINK_Init(void) {
 	mav_statustext[0] = 0;
 	actualbaudrateIdx=g_eeGeneral.mavbaud;
 	#if !defined(SIMU)
-	  #if defined(CPUARM) && !defined(SIMU)
+	  #if defined(CPUARM)
 		  MAVLINK_reset();
 		  #if defined(REVX)
 			  #if defined(MAVLINK_DEBUG)
