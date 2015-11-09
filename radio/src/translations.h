@@ -190,16 +190,12 @@ extern const pm_char STR_OPEN9X[];
 #else
   #define OFS_MAVLINK_BAUDS	(OFS_VTRAINERMODES)
 #endif
+
 #if defined(MAVLINK)
   #define OFS_MAVLINK_AC_MODES	(OFS_MAVLINK_BAUDS + sizeof(TR_MAVLINK_BAUDS))
   #define OFS_MAVLINK_AP_MODES	(OFS_MAVLINK_AC_MODES + sizeof(TR_MAVLINK_AC_MODES))
-  #define OFS_SPARE		(OFS_MAVLINK_AP_MODES + sizeof(TR_MAVLINK_AP_MODES))
 #else
-  #define OFS_SPARE		(OFS_MAVLINK_BAUDS)
-#endif
-
-#if defined(FRSKY) || defined(MAVLINK)
-#define OFS_TELEMETRY_ITEMS		(OFS_SPARE + sizeof(TR_TELEMETRY_ITEMS))
+  #define OFS_MAVLINK_AP_MODES		(OFS_MAVLINK_BAUDS)
 #endif
 
 #define STR_OFFON               (STR_OPEN9X + OFS_OFFON)
@@ -298,9 +294,6 @@ extern const pm_char STR_OPEN9X[];
   #define STR_MAVLINK_BAUDS	(STR_OPEN9X + OFS_MAVLINK_BAUDS)
   #define STR_MAVLINK_AC_MODES	(STR_OPEN9X + OFS_MAVLINK_AC_MODES)
   #define STR_MAVLINK_AP_MODES	(STR_OPEN9X + OFS_MAVLINK_AP_MODES)
-#endif
-#if defined(FRSKY) || defined(MAVLINK)
-  #define STR_TELEMETRY_ITEMS       (STR_OPEN9X + OFS_TELEMETRY_ITEMS)
 #endif
   
 // The 0-terminated-strings
@@ -709,7 +702,6 @@ extern const pm_char STR_BLCOLOR[];
   
 #if defined(FRSKY) || defined(MAVLINK)
   extern const pm_char STR_TELEMETRY_TYPE[];
-//  extern const pm_char STR_TELEMETRY_ITEMS[];
 #endif
 
 #if defined(PCBTARANIS)
@@ -728,7 +720,7 @@ extern const pm_char STR_BLCOLOR[];
   extern const pm_char STR_PTS[];
   extern const pm_char STR_SMOOTH[];
   extern const pm_char STR_COPY_STICKS_TO_OFS[];
-extern const pm_char STR_COPY_TRIMS_TO_OFS[];
+  extern const pm_char STR_COPY_TRIMS_TO_OFS[];
   extern const pm_char STR_TOP_BAR[];
   extern const pm_char STR_ALTITUDE[];
   extern const pm_char STR_SCALE[];

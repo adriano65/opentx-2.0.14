@@ -918,11 +918,11 @@ enum menuModelSetupItems {
   ITEM_MODEL_EXTERNAL_MODULE_CHANNELS,
   ITEM_MODEL_EXTERNAL_MODULE_BIND,
   ITEM_MODEL_EXTERNAL_MODULE_FAILSAFE,
-#if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
-  ITEM_MODEL_EXTRA_MODULE_LABEL,
-  ITEM_MODEL_EXTRA_MODULE_CHANNELS,
-  ITEM_MODEL_EXTRA_MODULE_BIND,
-#endif
+  #if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
+	ITEM_MODEL_EXTRA_MODULE_LABEL,
+	ITEM_MODEL_EXTRA_MODULE_CHANNELS,
+	ITEM_MODEL_EXTRA_MODULE_BIND,
+  #endif
 #else
   ITEM_MODEL_PPM1_PROTOCOL,
   ITEM_MODEL_PPM1_PARAMS,
@@ -1016,6 +1016,7 @@ void menuModelSetup(uint8_t event)
   #else
 	#define EXTRA_MODULE_ROWS
   #endif
+  
   #define TRAINER_MODULE_ROWS
   MENU_TAB({ 0								// ITEM_MODEL_NAME
 			, 0								// ITEM_MODEL_TIMER1
@@ -1037,9 +1038,7 @@ void menuModelSetup(uint8_t event)
 			, 1								// ITEM_MODEL_THROTTLE_WARNING
 			, NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1		// ITEM_MODEL_SWITCHES_WARNING
 			, 0								// ITEM_MODEL_BEEP_CENTER
-			, 0								// ITEM_MODEL_BEEP_CENTER
-			, 10								// ITEM_MODEL_PROTOCOL_label
-			, 16								// ITEM_MODEL_PROTOCOL
+			//, 0								// ITEM_MODEL_PROTOCOL
 			, LABEL(ExternalModule)			// ITEM_MODEL_EXTERNAL_MODULE_LABEL
 			, (IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)1 : (uint8_t)0	//ITEM_MODEL_EXTERNAL_MODULE_MODE
 			, EXTERNAL_MODULE_CHANNELS_ROWS()
@@ -1060,15 +1059,15 @@ void menuModelSetup(uint8_t event)
 #endif
 
   if (!MENU_CHECK(menuTabModel, e_ModelSetup, MODEL_SETUP_MAX_LINES)) {
-#if defined(DSM2)
+  #if defined(DSM2)
     dsm2Flag = 0;
-#endif
-#if defined(PCBTARANIS)
+  #endif
+  #if defined(PCBTARANIS)
     pxxFlag[INTERNAL_MODULE] = 0;
-#endif
-#if defined(CPUARM) && defined(PXX)
+  #endif
+  #if defined(CPUARM) && defined(PXX)
     pxxFlag[EXTERNAL_MODULE] = 0;
-#endif
+  #endif
     return;
   }
 
@@ -1417,25 +1416,31 @@ void menuModelSetup(uint8_t event)
 #endif
 
 #if defined(FRSKY) && defined(MAVLINK)
-      case ITEM_MODEL_PROTOCOL: {
+      case ITEM_MODEL_PROTOCOL:
 		  g_model.telemetryProtocol = selectMenuItem( MODEL_SETUP_2ND_COLUMN
 													  , y
 													  , STR_TELEMETRY_TYPE
-													  , STR_TELEMETRY_ITEMS
+													  , PSTR("\015""FrSky S.PORT\0""FrSky D     \0""Mavlink     \0""FrSky(cable)\0")
 													  , g_model.telemetryProtocol
 													  , PROTOCOL_TELEMETRY_FIRST
 													  , PROTOCOL_TELEMETRY_LAST
 													  , attr
 													  , event);
-		  break;
-	  }
+		  if (attr && m_posHorz>0) {
+			s_editMode = 0;
+			if (event==EVT_KEY_LONG(KEY_ENTER)) {
+			  s_noHi = NO_HI_LEN;
+			  AUDIO_WARNING1();
+			}
+		  }
+			break;
 #else
 	#if defined(FRSKY)
 	  case ITEM_MODEL_PROTOCOL:
 		  g_model.telemetryProtocol = selectMenuItem( MODEL_SETUP_2ND_COLUMN
 													  , y
 													  , STR_TELEMETRY_TYPE
-													  , STR_TELEMETRY_ITEMS
+													  , PSTR("\015""FrSky S.PORT\0""FrSky D      \0""FrSky D (cab)\0")
 													  , g_model.telemetryProtocol
 													  , PROTOCOL_TELEMETRY_FIRST
 													  , PROTOCOL_TELEMETRY_LAST
@@ -1447,7 +1452,7 @@ void menuModelSetup(uint8_t event)
 		  g_model.telemetryProtocol = selectMenuItem( MODEL_SETUP_2ND_COLUMN
 													  , y
 													  , STR_TELEMETRY_TYPE
-													  , STR_TELEMETRY_ITEMS
+													  , PSTR("\013""Mavlink      \0")
 													  , g_model.telemetryProtocol
 													  , PROTOCOL_TELEMETRY_FIRST
 													  , PROTOCOL_TELEMETRY_LAST

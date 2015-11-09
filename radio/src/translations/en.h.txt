@@ -477,10 +477,6 @@
   #define TR_MAVLINK_AP_MODES  "Manual       ""Circle       ""Stabilize    ""Training     ""Fly by Wire A""Fly by Wire A""Auto         ""RTL          ""Loiter       ""Guided       ""Initialising ""INVALID      "
 #endif
 
-#define LEN_TELEMETRY_ITEMS		"\016"
-#define TR_TELEMETRY_ITEMS		"FrSky S.PORT   ""FrSky D        ""Mavlink        ""FrSky D (cable)"
-
-
 // ZERO TERMINATED STRINGS
 #define INDENT                 "\001"
 #define LEN_INDENT             1
@@ -814,7 +810,7 @@
 #define TR_ANTENNAPROBLEM      CENTER "TX Antenna problem!"
 #define TR_MODELIDUSED         TR("ID already used","Model ID already used")
 #define TR_MODULE              INDENT "Module"
-#define TR_TELEMETRY_TYPE      TR("Type", "Telemetry Type")
+#define TR_TELEMETRY_TYPE      TR("Telemetry", "Telemetry Type")
 
 //#define LEN_TELEMETRY_ITEM		"\016"
 //#define TR_TELEMETRY_ITEMS		"FrSky S.PORT   ""FrSky D        ""Mavlink        ""FrSky D (cable)"

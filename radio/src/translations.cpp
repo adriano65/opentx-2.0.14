@@ -127,9 +127,6 @@ const pm_char STR_OPEN9X[] PROGMEM =
     ISTR(MAVLINK_AC_MODES)
     ISTR(MAVLINK_AP_MODES)
 #endif
-#if defined(FRSKY) || defined(MAVLINK)
-    ISTR(TELEMETRY_ITEMS)
-#endif
     ;
 
 // The 0-terminated-strings
