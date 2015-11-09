@@ -320,15 +320,15 @@ void telemetryWakeup()
 
 #if defined(PCBTARANIS)
   uint8_t data;
-#if defined(SPORT_FILE_LOG) && !defined(SIMU)
+  #if defined(SPORT_FILE_LOG) && !defined(SIMU)
   static tmr10ms_t lastTime = 0;
   tmr10ms_t newTime = get_tmr10ms();
   struct gtm utm;
   gettime(&utm);
-#endif
+  #endif
   while (telemetryFifo.pop(data)) {
     processSerialFrskyData(data);
-#if defined(SPORT_FILE_LOG) && !defined(SIMU)
+	#if defined(SPORT_FILE_LOG) && !defined(SIMU)
     extern FIL g_telemetryFile;
     if (lastTime != newTime) {
       f_printf(&g_telemetryFile, "\r\n%4d-%02d-%02d,%02d:%02d:%02d.%02d0: %02X", utm.tm_year+1900, utm.tm_mon+1, utm.tm_mday, utm.tm_hour, utm.tm_min, utm.tm_sec, g_ms100, data);
@@ -337,9 +337,9 @@ void telemetryWakeup()
     else {
       f_printf(&g_telemetryFile, " %02X", data);
     }
-#endif
+	#endif
   }
-#elif defined(PCBSKY9X)
+#elif defined(CPUARM)
   if (telemetryProtocol == PROTOCOL_FRSKY_D_SECONDARY) {
     uint8_t data;
     while (telemetrySecondPortReceive(data)) {
@@ -643,14 +643,14 @@ void telemetryInit(void)
   }
   else if (telemetryProtocol==PROTOCOL_FRSKY_D_SECONDARY) {
     telemetryPortInit(0);
-    telemetrySecondPortInit(PROTOCOL_FRSKY_D_SECONDARY);
+    telemetrySecondPortInit(9600);
   }
   else {
     telemetryPortInit(FRSKY_SPORT_BAUDRATE);
   }
 #elif defined(CPUARM)
     telemetryPortInit(0);
-    telemetrySecondPortInit(PROTOCOL_FRSKY_D_SECONDARY);
+    telemetrySecondPortInit(9600);
 #elif !defined(SIMU)
   telemetryPortInit();
 #endif
