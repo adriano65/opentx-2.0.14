@@ -1215,50 +1215,50 @@ enum FrskyVoltsSource {
 };
 
 #if defined(CPUARM)
-#define MAX_FRSKY_A_CHANNELS 4
-#define MAX_FRSKY_SCREENS 3
-PACK(typedef struct t_FrSkyData {
-  FrSkyChannelData channels[MAX_FRSKY_A_CHANNELS];
-  uint8_t usrProto; // Protocol in FrSky user data, 0=None, 1=FrSky hub, 2=WS HowHigh, 3=Halcyon
-  uint8_t voltsSource:7;
-  uint8_t altitudeDisplayed:1;
-  int8_t blades;    // How many blades for RPMs, 0=2 blades
-  uint8_t currentSource;
-  uint8_t screensType;
-  FrSkyScreenData screens[MAX_FRSKY_SCREENS];
-  uint8_t varioSource;
-  int8_t  varioCenterMax;
-  int8_t  varioCenterMin;
-  int8_t  varioMin;
-  int8_t  varioMax;
-  FrSkyRSSIAlarm rssiAlarms[2];
-  uint16_t mAhPersistent:1;
-  uint16_t storedMah:15;
-  int8_t   fasOffset;
-}) FrSkyData;
-#define MIN_BLADES -1   // 1 blade
-#define MAX_BLADES 126  // 128 blades
+	#define MAX_FRSKY_A_CHANNELS 4
+	#define MAX_FRSKY_SCREENS 3
+	PACK(typedef struct t_FrSkyData {
+	  FrSkyChannelData channels[MAX_FRSKY_A_CHANNELS];
+	  uint8_t usrProto; // Protocol in FrSky user data, 0=None, 1=FrSky hub, 2=WS HowHigh, 3=Halcyon
+	  uint8_t voltsSource:7;
+	  uint8_t altitudeDisplayed:1;
+	  int8_t blades;    // How many blades for RPMs, 0=2 blades
+	  uint8_t currentSource;
+	  uint8_t screensType;
+	  FrSkyScreenData screens[MAX_FRSKY_SCREENS];
+	  uint8_t varioSource;
+	  int8_t  varioCenterMax;
+	  int8_t  varioCenterMin;
+	  int8_t  varioMin;
+	  int8_t  varioMax;
+	  FrSkyRSSIAlarm rssiAlarms[2];
+	  uint16_t mAhPersistent:1;
+	  uint16_t storedMah:15;
+	  int8_t   fasOffset;
+	}) FrSkyData;
+	#define MIN_BLADES -1   // 1 blade
+	#define MAX_BLADES 126  // 128 blades
 #else
-#define MAX_FRSKY_A_CHANNELS 2
-#define MAX_FRSKY_SCREENS 2
-PACK(typedef struct t_FrSkyData {
-  FrSkyChannelData channels[MAX_FRSKY_A_CHANNELS];
-  uint8_t usrProto:2; // Protocol in FrSky user data, 0=None, 1=FrSky hub, 2=WS HowHigh, 3=Halcyon
-  uint8_t blades:2;   // How many blades for RPMs, 0=2 blades
-  uint8_t screensType:2;
-  uint8_t voltsSource:2;
-  int8_t  varioMin:4;
-  int8_t  varioMax:4;
-  FrSkyRSSIAlarm rssiAlarms[2];
-  FrSkyScreenData screens[MAX_FRSKY_SCREENS];
-  uint8_t varioSource:3;
-  int8_t  varioCenterMin:5;
-  uint8_t currentSource:3;
-  int8_t  varioCenterMax:5;
-  int8_t  fasOffset;
-}) FrSkyData;
-#define MIN_BLADES 0 // 2 blades
-#define MAX_BLADES 3 // 5 blades
+	#define MAX_FRSKY_A_CHANNELS 2
+	#define MAX_FRSKY_SCREENS 2
+	PACK(typedef struct t_FrSkyData {
+	  FrSkyChannelData channels[MAX_FRSKY_A_CHANNELS];
+	  uint8_t usrProto:2; // Protocol in FrSky user data, 0=None, 1=FrSky hub, 2=WS HowHigh, 3=Halcyon
+	  uint8_t blades:2;   // How many blades for RPMs, 0=2 blades
+	  uint8_t screensType:2;
+	  uint8_t voltsSource:2;
+	  int8_t  varioMin:4;
+	  int8_t  varioMax:4;
+	  FrSkyRSSIAlarm rssiAlarms[2];
+	  FrSkyScreenData screens[MAX_FRSKY_SCREENS];
+	  uint8_t varioSource:3;
+	  int8_t  varioCenterMin:5;
+	  uint8_t currentSource:3;
+	  int8_t  varioCenterMax:5;
+	  int8_t  fasOffset;
+	}) FrSkyData;
+	#define MIN_BLADES 0 // 2 blades
+	#define MAX_BLADES 3 // 5 blades
 #endif
 
 #if defined(MAVLINK)
