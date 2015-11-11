@@ -69,9 +69,9 @@ MAVLINK_DEBUG = NO
 # Old values STD and STD128 are mapped to 9X and 9X128 for compatibility
 #PCB = 9X
 #PCB = 9XR128
-PCB = SKY9X
+#PCB = SKY9X
 #PCB = 9XRPRO
-#PCB = TARANIS
+PCB = TARANIS
 
 
 # PCB revision
