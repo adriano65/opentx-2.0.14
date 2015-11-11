@@ -77,6 +77,7 @@ void menuModelLogicalSwitches(uint8_t event);
 void menuModelCustomFunctions(uint8_t event);
 void menuModelCustomScripts(uint8_t event);
 void menuModelTelemetry(uint8_t event);
+//void menuTelemetryMavlinkSetup(uint8_t event);		defined in view_mavlink.cpp
 void menuModelTemplates(uint8_t event);
 void menuModelExpoOne(uint8_t event);
 

@@ -74,11 +74,6 @@ enum mavlink_menu_ {
 	MAX_MAVLINK_MENU
 };
 
-//! \brief Pointer array to mavlink settings menus.
-const MenuFuncP_PROGMEM menuTabMav[] PROGMEM = {
-  menuTelemetryMavlinkSetup
-};
-
 //! \brief Mavlink setup menu configuration items list.
 enum menuMavlinkSetupItems {
 	ITEM_MAVLINK_RC_RSSI_SCALE,
