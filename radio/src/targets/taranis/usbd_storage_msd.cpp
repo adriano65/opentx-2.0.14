@@ -77,7 +77,7 @@ const unsigned char STORAGE_Inquirydata[] = {//36
 }; 
 
 #if defined(BOOT)
-int32_t fat12Write( const uint8_t *buffer, uint16_t sector, uint32_t count ) ;
+int32_t fat12Write( const uint8_t *buffer, uint16_t sector, uint16_t count ) ;
 int32_t fat12Read( uint8_t *buffer, uint16_t sector, uint16_t count ) ;
 #endif
 
@@ -739,11 +739,18 @@ int32_t fat12Read( uint8_t *buffer, uint16_t sector, uint16_t count )
   return 0 ;
 }
 
-int32_t fat12Write(const uint8_t *buffer, uint16_t sector, uint32_t count )
+int32_t fat12Write(const uint8_t *buffer, uint16_t sector, uint16_t count )
 {
-  static uint8_t eepromOffset = 0;
-  static uint8_t firmwareAllowed = 0;
+//  static uint8_t eepromOffset = 0;
+//  static uint8_t firmwareAllowed = 0;
+enum FatWriteOperation {
+    FATWRITE_NONE,
+    FATWRITE_EEPROM,
+    FATWRITE_FIRMWARE
+  };
 
+  static unsigned int operation = FATWRITE_NONE;
+  
   TRACE("FAT12 Write(sector=%d, count=%d)", sector, count);
 
   if (sector < 3) {
@@ -751,19 +758,25 @@ int32_t fat12Write(const uint8_t *buffer, uint16_t sector, uint32_t count )
   }
   else if (sector < 3 + (EESIZE/BLOCKSIZE)) {
     while (count) {
-      if (eepromOffset == 0 && isEepromStart(buffer)) {
+	  if (operation == FATWRITE_NONE && isEepromStart(buffer)) {
+      //if (eepromOffset == 0 && isEepromStart(buffer)) {
         TRACE("EEPROM start found in sector %d", sector);
-        eepromOffset = sector;
+        //eepromOffset = sector;
+		operation = FATWRITE_EEPROM
       }
-      if (eepromOffset && sector >= eepromOffset && (sector-eepromOffset) < EESIZE/BLOCKSIZE) {
-        eeWriteBlockCmp((uint8_t *)buffer, (sector-eepromOffset)*BLOCKSIZE, BLOCKSIZE);
+      //if (eepromOffset && sector >= eepromOffset && (sector-eepromOffset) < EESIZE/BLOCKSIZE) {
+      //  eeWriteBlockCmp((uint8_t *)buffer, (sector-eepromOffset)*BLOCKSIZE, BLOCKSIZE);
+	  if (operation == FATWRITE_EEPROM) {
+        eeWriteBlockCmp((uint8_t *)buffer, (sector-3)*BLOCKSIZE, BLOCKSIZE);		
       }
       buffer += BLOCKSIZE;
       sector++;
       count--;
-      if (sector-eepromOffset >= EESIZE/BLOCKSIZE) {
+      //if (sector-eepromOffset >= EESIZE/BLOCKSIZE) {
+	  if (sector-3 >= (EESIZE/BLOCKSIZE)) {
         TRACE("EEPROM end written at sector %d", sector-1);
-        eepromOffset = 0;
+        //eepromOffset = 0;
+		operation = FATWRITE_NONE;
       }
     }
   }
@@ -777,17 +790,26 @@ int32_t fat12Write(const uint8_t *buffer, uint16_t sector, uint32_t count )
     while (count) {
       for (uint32_t i=0; i<BLOCKSIZE/FLASH_PAGESIZE; i++) {
         if (address >= FIRMWARE_ADDRESS+BOOTLOADER_SIZE/*protect bootloader*/ && address <= FIRMWARE_ADDRESS+FLASHSIZE-FLASH_PAGESIZE) {
-          if (address == FIRMWARE_ADDRESS+BOOTLOADER_SIZE) {
-            firmwareAllowed = isFirmwareStart(buffer);
-          }
-          if (firmwareAllowed) {
+          //if (address == FIRMWARE_ADDRESS+BOOTLOADER_SIZE) {
+          //  firmwareAllowed = isFirmwareStart(buffer);
+		  if (address == FIRMWARE_ADDRESS+BOOTLOADER_SIZE && isFirmwareStart(buffer)) {
+            TRACE("FIRMWARE start found in sector %d", sector);
+            operation = FATWRITE_FIRMWARE;          
+			}
+          //if (firmwareAllowed) {
+		  if (operation == FATWRITE_FIRMWARE) {
             writeFlash((uint32_t *)address, (uint32_t *)buffer);
           }
         }
         address += FLASH_PAGESIZE;
         buffer += FLASH_PAGESIZE;
       }
+      sector++;
       count--;
+	  if (sector-3-(EESIZE/BLOCKSIZE) >= (FLASHSIZE/BLOCKSIZE)) {
+        TRACE("FIRMWARE end written at sector %d", sector-1);
+        operation = FATWRITE_NONE;
+		}	  
     }
   }
   return 0 ;
