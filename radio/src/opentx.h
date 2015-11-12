@@ -1321,6 +1321,7 @@ inline bool isFunctionActive(uint8_t func)
 #if defined (FRSKY)
   // FrSky Telemetry
   #include "telemetry/frsky.h"
+  // ... and Mavlink Telemetry
   #if defined(MAVLINK)
 	#include "telemetry/mavlink.h"
   #endif

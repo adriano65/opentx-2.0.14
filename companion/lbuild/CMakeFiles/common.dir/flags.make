@@ -8,5 +8,5 @@ CXX_DEFINES = -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_L
 
 # Custom defines: CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o_DEFINES = MAVLINK
 
-# Custom defines: CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o_DEFINES = MAVLINK;REVB;MAVLINK;REVX
+# Custom defines: CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o_DEFINES = MAVLINK;MAVLINK;REVX
 

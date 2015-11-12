@@ -36,7 +36,10 @@
  *
  */
  
-#include "gui/view_mavlink.h"
+#include "../opentx.h"
+//#include "telemetry/mavlink.h"
+//#include "gui/menus.h"
+//#include "serial.h"
 
 /*	Top Mavlink Menu definition
  *	Registers button events and handles that info. Buttons select menus,
@@ -44,6 +47,49 @@
  *	lanuched by the menu button. On exit (with exit button) the mavlink
  *	extension is reinitialized.
  */
+/*	Mavlink menu enumerator
+ *	Used to create a readable case statement for the
+ *	menuTelemetryMavlink function.
+ */
+enum mavlink_menu_ {
+	MENU_INFO = 0,
+	MENU_MODE,
+	MENU_BATT,
+	MENU_GPS,
+	MENU_NAV,			// seems not very useful in flight
+	MENU_DUMP_DIAG,
+	MAX_MAVLINK_MENU=MENU_DUMP_DIAG
+};
+
+//! \brief Mavlink setup menu configuration items list.
+enum menuMavlinkSetupItems {
+	ITEM_MAVLINK_RC_RSSI_SCALE,
+	ITEM_MAVLINK_PC_RSSI_EN,
+	ITEM_MAVLINK_REQUEST_APMPARAM,
+	ITEM_MAVLINK_ENABLE_BLUETOOTH,
+	ITEM_MAVLINK_BAUD,
+	ITEM_MAVLINK_MAX
+};
+
+//Menu index variable, initialized on info menu.
+uint8_t MAVLINK_menu = MENU_INFO;
+
+#define APSIZE (BSS | DBLSIZE)
+
+void displayScreenIndex(uint8_t index, uint8_t count, uint8_t attr);
+void lcd_outdezFloat(uint8_t x, uint8_t y, float val, uint8_t precis, uint8_t mode = 0);
+void mav_title(const pm_char * s, uint8_t index);
+void menuTelemetryMavlinkInfos(void);
+void menuTelemetryMavlinkFlightMode(void);
+void menuTelemetryMavlinkBattery(void);
+void menuTelemetryMavlinkGPS(void);
+//void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val);
+void menuMavlinkLastGPSFix(void);
+void menuTelemetryMavlinkNavigation(void);
+void menuMavlinkDiag(void);
+void menuTelemetryMavlinkSetup(uint8_t event);
+//void menuTelemetryMavlink(uint8_t event);	// defined in menus.h (companion)
+
 void menuTelemetryMavlink(uint8_t event) {
 	
 	switch (event) {

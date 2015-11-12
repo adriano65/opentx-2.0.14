@@ -119,6 +119,10 @@ inline int geteepromsize() {
 #include "radio/src/telemetry/frsky.cpp"
 #include "radio/src/telemetry/frsky_sport.cpp"
 #include "radio/src/telemetry/frsky_d.cpp"
+
+#include "radio/src/telemetry/mavlink.cpp"
+#include "radio/src/gui/view_mavlink.cpp"
+
 #include "radio/src/targets/taranis/audio_driver.cpp"
 #include "radio/src/targets/taranis/telemetry_driver.cpp"
 #include "radio/src/audio_arm.cpp"

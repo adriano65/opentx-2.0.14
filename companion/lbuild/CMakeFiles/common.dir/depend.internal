@@ -4116,7 +4116,6 @@ CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_main.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_statistics.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_telemetry.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/haptic.cpp
@@ -4130,7 +4129,6 @@ CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/../opentx.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/pulses_avr.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/rtc.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp-opentx.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/strhelpers.cpp
@@ -4610,7 +4608,6 @@ CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_main.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_statistics.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_telemetry.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/haptic.cpp
@@ -4624,7 +4621,6 @@ CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/../opentx.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/pulses_avr.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/rtc.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp-opentx.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/strhelpers.cpp
@@ -5104,7 +5100,6 @@ CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_main.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_statistics.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_telemetry.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/haptic.cpp
@@ -5118,7 +5113,6 @@ CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/../opentx.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/pulses_avr.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/rtc.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp-opentx.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/strhelpers.cpp
@@ -5605,7 +5599,7 @@ CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_about.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_main.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.h
+ /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_statistics.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_telemetry.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_text.cpp
@@ -5624,6 +5618,7 @@ CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/pulses_arm.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/pxx_arm.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/rtc.h
+ /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp-opentx.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp.cpp
@@ -5852,6 +5847,7 @@ CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky_d.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky_sport.cpp
+ /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/mavlink.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/templates.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations/tts_cz.cpp
@@ -6131,7 +6127,7 @@ CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_about.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_channels.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_main.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.h
+ /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_statistics.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_telemetry.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_text.cpp
@@ -6207,6 +6203,7 @@ CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/pxx_arm.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/rtc.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/rtc.h
+ /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp-opentx.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp.cpp
@@ -6437,6 +6434,7 @@ CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky_d.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky_sport.cpp
+ /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/mavlink.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations/tts_cz.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations/tts_de.cpp

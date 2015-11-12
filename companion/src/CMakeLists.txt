@@ -119,8 +119,8 @@ if(${EXT} MATCHES MAVLINK)
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS
-	MAVLINK REVB
-	# cmake -D EXT=Sky9xMAVLINK ../src
+	MAVLINK 
+	# REVB is already defined
   )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp

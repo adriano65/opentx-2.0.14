@@ -70,8 +70,8 @@ MAVLINK_DEBUG = NO
 #PCB = 9X
 #PCB = 9XR128
 #PCB = SKY9X
-#PCB = 9XRPRO
-PCB = TARANIS
+PCB = 9XRPRO
+#PCB = TARANIS
 
 
 # PCB revision
@@ -1023,10 +1023,12 @@ ifeq ($(EXT), $(filter $(EXT), FRSKY FRSKY_SPORT TELEMETREZ FRSKY_MAVLINK))
     CPPDEFS += -DFRSKY_SPORT
   else
     CPPSRC += telemetry/frsky.cpp telemetry/frsky_d.cpp
+
     ifeq ($(EXT), FRSKY_MAVLINK)
       CPPSRC += telemetry/frsky_sport.cpp telemetry/mavlink.cpp gui/view_mavlink.cpp
       CPPDEFS += -DMAVLINK -DFRSKY_SPORT
     endif
+
   endif
   CPPSRC += gui/view_telemetry.cpp
   

@@ -4115,7 +4115,6 @@ CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.h
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_main.cpp
-CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.h
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_statistics.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_telemetry.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/haptic.cpp
@@ -4129,7 +4128,6 @@ CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/../opentx.h
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/pulses_avr.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/rtc.h
-CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.h
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp-opentx.h
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/strhelpers.cpp
@@ -4609,7 +4607,6 @@ CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.h
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_main.cpp
-CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.h
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_statistics.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_telemetry.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/haptic.cpp
@@ -4623,7 +4620,6 @@ CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/../opentx.h
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/pulses_avr.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/rtc.h
-CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.h
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp-opentx.h
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/strhelpers.cpp
@@ -5103,7 +5099,6 @@ CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.h
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_main.cpp
-CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.h
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_statistics.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_telemetry.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/haptic.cpp
@@ -5117,7 +5112,6 @@ CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/../opentx.h
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/pulses_avr.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/rtc.h
-CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.h
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp-opentx.h
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/strhelpers.cpp
@@ -5604,7 +5598,7 @@ CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/sr
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/menus.h
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_about.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_main.cpp
-CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.h
+CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_statistics.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_telemetry.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_text.cpp
@@ -5623,6 +5617,7 @@ CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/sr
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/pulses_arm.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/pxx_arm.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/rtc.h
+CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.h
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp-opentx.h
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp.cpp
@@ -5851,6 +5846,7 @@ CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/sr
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky_d.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky_sport.cpp
+CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/mavlink.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/templates.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations/tts_cz.cpp
@@ -6130,7 +6126,7 @@ CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_about.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_channels.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_main.cpp
-CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.h
+CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_mavlink.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_statistics.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_telemetry.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/gui/view_text.cpp
@@ -6206,6 +6202,7 @@ CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/pulses/pxx_arm.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/rtc.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/rtc.h
+CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/serial.h
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp-opentx.h
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/stamp.cpp
@@ -6436,6 +6433,7 @@ CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky_d.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky_sport.cpp
+CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/mavlink.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations/tts_cz.cpp
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations/tts_de.cpp

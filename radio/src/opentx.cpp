@@ -1966,6 +1966,9 @@ void evalFunctions()
 #if defined(FRSKY)
                 || g_menuStack[0] == menuTelemetryFrsky
 #endif
+#if defined(MAVLINK)
+                || g_menuStack[0] == menuTelemetryMavlink
+#endif
 #if defined(PCBTARANIS)
                 || g_menuStack[0] == menuMainViewChannelsMonitor
                 || g_menuStack[0] == menuChannelsView
@@ -2768,8 +2771,11 @@ void perMain()
 
   checkBacklight();
 
-#if !defined(CPUARM) && (defined(FRSKY) || defined(MAVLINK))
+#if !defined(CPUARM) && defined(FRSKY)
   telemetryWakeup();
+#endif
+#if !defined(CPUARM) && defined(MAVLINK)
+  MAVLINK_telemetryWakeup();
 #endif
 
 #if defined(PCBTARANIS)

@@ -296,11 +296,6 @@ enum AlarmsCheckSteps {
 
 void telemetryWakeup()
 {
-#ifdef MAVLINK
-  if (IS_MAVLINK_PROTOCOL())
-    MAVLINK_telemetryWakeup();
-#endif
-
 #if defined(CPUARM)
   uint8_t requiredTelemetryProtocol = MODEL_TELEMETRY_PROTOCOL();
   if (telemetryProtocol != requiredTelemetryProtocol) {

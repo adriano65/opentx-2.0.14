@@ -37,8 +37,7 @@
  */
 void MAVLINK_Init(void);
 
-#include "telemetry/mavlink.h"
-#include "../opentx.h"
+#include "../opentx.h"				// includes "telemetry/mavlink.h" too
 #include "serial.h"
 
 /*
@@ -223,7 +222,8 @@ void MAVLINK_telemetryWakeup() {
 	if (!count) {
 	#if defined(CPUARM)
 		mav_heartbeat=0;	/* reset counter */
-		if (MAVLINK_menu==MENU_DUMP_DIAG) TxPushByte('D');
+		//if (MAVLINK_menu==MENU_DUMP_DIAG) TxPushByte('D');
+		TxPushByte('D');
 	#else
 		if (mav_heartbeat > -30) {
 			// TODO mavlink_system.sysid = g_eeGeneral.mavTargetSystem;

@@ -1159,7 +1159,7 @@ enum VarioSource {
 #elif defined(FRSKY)
   #define NUM_TELEMETRY      TELEM_A2
 #elif defined(MAVLINK)
-  #define NUM_TELEMETRY      4
+  #define NUM_TELEMETRY      MAX_MAVLINK_MENU
 #else
   #define NUM_TELEMETRY      TELEM_TIMER2
 #endif
