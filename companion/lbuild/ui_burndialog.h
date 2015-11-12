@@ -34,6 +34,7 @@ public:
     QSpacerItem *hs2;
     QPushButton *cancelButton;
     QPushButton *BurnFlashButton;
+    QSpacerItem *verticalSpacer;
     QGridLayout *gridLayout_4;
     QCheckBox *patchcalib_CB;
     QCheckBox *patchhw_CB;
@@ -60,7 +61,7 @@ public:
     QCheckBox *useAnotherImageCB;
     QCheckBox *useProfileImageCB;
     QCheckBox *useLibraryImageCB;
-    QSpacerItem *verticalSpacer;
+    QCheckBox *checkFirmwareCB;
 
     void setupUi(QDialog *burnDialog)
     {
@@ -98,7 +99,11 @@ public:
         horizontalLayout_4->addWidget(BurnFlashButton);
 
 
-        gridLayout_7->addLayout(horizontalLayout_4, 2, 0, 1, 1);
+        gridLayout_7->addLayout(horizontalLayout_4, 3, 0, 1, 1);
+
+        verticalSpacer = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_7->addItem(verticalSpacer, 2, 0, 1, 1);
 
         gridLayout_4 = new QGridLayout();
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
@@ -270,9 +275,12 @@ public:
 
         gridLayout_7->addLayout(gridLayout_4, 0, 0, 1, 1);
 
-        verticalSpacer = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        checkFirmwareCB = new QCheckBox(burnDialog);
+        checkFirmwareCB->setObjectName(QString::fromUtf8("checkFirmwareCB"));
+        sizePolicy2.setHeightForWidth(checkFirmwareCB->sizePolicy().hasHeightForWidth());
+        checkFirmwareCB->setSizePolicy(sizePolicy2);
 
-        gridLayout_7->addItem(verticalSpacer, 1, 0, 1, 1);
+        gridLayout_7->addWidget(checkFirmwareCB, 1, 0, 1, 1);
 
         QWidget::setTabOrder(FWFileName, FlashLoadButton);
         QWidget::setTabOrder(FlashLoadButton, versionField);
@@ -322,6 +330,10 @@ public:
         useAnotherImageCB->setText(QApplication::translate("burnDialog", "Use another start screen", 0, QApplication::UnicodeUTF8));
         useProfileImageCB->setText(QApplication::translate("burnDialog", "Use profile start screen", 0, QApplication::UnicodeUTF8));
         useLibraryImageCB->setText(QApplication::translate("burnDialog", "Use library start screen", 0, QApplication::UnicodeUTF8));
+#ifndef QT_NO_TOOLTIP
+        checkFirmwareCB->setToolTip(QApplication::translate("burnDialog", "Allows Companion to write to older version of the firmware", 0, QApplication::UnicodeUTF8));
+#endif // QT_NO_TOOLTIP
+        checkFirmwareCB->setText(QApplication::translate("burnDialog", "Check Firmware compatibility", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

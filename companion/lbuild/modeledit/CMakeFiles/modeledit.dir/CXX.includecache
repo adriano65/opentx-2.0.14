@@ -3977,6 +3977,8 @@ QDoubleSpinBox
 -
 QPushButton
 -
+QTimeEdit
+-
 phonon/audiooutput.h
 -
 phonon/mediaobject.h
@@ -4267,18 +4269,6 @@ QSpinBox
 /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.cpp
 customfunctions.h
 /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.h
-QLabel
--
-QLineEdit
--
-QSpinBox
--
-QComboBox
--
-QCheckBox
--
-QDoubleSpinBox
--
 helpers.h
 /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/helpers.h
 appdata.h
@@ -4296,6 +4286,8 @@ QComboBox
 QDoubleSpinBox
 -
 QPushButton
+-
+QTimeEdit
 -
 phonon/audiooutput.h
 -

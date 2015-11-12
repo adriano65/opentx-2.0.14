@@ -59,54 +59,84 @@ simulation/ui_simulatordialog-taranis.h: /usr/local/src/opentx/opentx-v2.0.14a/c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_simulatordialog-taranis.h"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/ui_simulatordialog-taranis.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog-taranis.ui
 
-simulation/ui_joystickdialog.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.ui
+simulation/ui_telemetrysimu.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.ui
 	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_telemetrysimu.h"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/ui_telemetrysimu.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.ui
+
+simulation/ui_trainersimu.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_trainersimu.h"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/ui_trainersimu.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.ui
+
+simulation/ui_debugoutput.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_debugoutput.h"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/ui_debugoutput.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.ui
+
+simulation/ui_joystickdialog.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_joystickdialog.h"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/ui_joystickdialog.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.ui
 
 simulation/moc_simulatordialog.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_simulatordialog.cxx"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_simulatordialog.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.h
 
 simulation/moc_cursorwidget.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/cursorwidget.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_cursorwidget.cxx"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_cursorwidget.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/cursorwidget.h
 
 simulation/moc_menuwidget.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/menuwidget.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_menuwidget.cxx"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_menuwidget.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/menuwidget.h
 
 simulation/moc_xcursorwidget.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/xcursorwidget.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_xcursorwidget.cxx"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_xcursorwidget.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/xcursorwidget.h
 
 simulation/moc_xmenuwidget.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/xmenuwidget.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_xmenuwidget.cxx"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_xmenuwidget.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/xmenuwidget.h
 
 simulation/moc_myslider.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/myslider.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_myslider.cxx"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_myslider.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/myslider.h
 
+simulation/moc_telemetrysimu.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_13)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_telemetrysimu.cxx"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_telemetrysimu.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.h
+
+simulation/moc_trainersimu.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_14)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_trainersimu.cxx"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_trainersimu.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.h
+
+simulation/moc_debugoutput.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_15)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_debugoutput.cxx"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_debugoutput.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.h
+
 simulation/moc_joystick.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_joystick.cxx"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_joystick.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
 
 simulation/moc_joystickdialog.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_joystickdialog.cxx"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_joystickdialog.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.h
 
 simulation/CMakeFiles/simulation.dir/simulatordialog.cpp.o: simulation/CMakeFiles/simulation.dir/flags.make
 simulation/CMakeFiles/simulation.dir/simulatordialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/simulatordialog.cpp.o"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/simulatordialog.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.cpp
 
@@ -127,9 +157,78 @@ simulation/CMakeFiles/simulation.dir/simulatordialog.cpp.o.provides: simulation/
 
 simulation/CMakeFiles/simulation.dir/simulatordialog.cpp.o.provides.build: simulation/CMakeFiles/simulation.dir/simulatordialog.cpp.o
 
+simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o: simulation/CMakeFiles/simulation.dir/flags.make
+simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_19)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/telemetrysimu.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.cpp
+
+simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simulation.dir/telemetrysimu.cpp.i"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.cpp > CMakeFiles/simulation.dir/telemetrysimu.cpp.i
+
+simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simulation.dir/telemetrysimu.cpp.s"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.cpp -o CMakeFiles/simulation.dir/telemetrysimu.cpp.s
+
+simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o.requires:
+.PHONY : simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o.requires
+
+simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o.provides: simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o.requires
+	$(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o.provides.build
+.PHONY : simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o.provides
+
+simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o.provides.build: simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o
+
+simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o: simulation/CMakeFiles/simulation.dir/flags.make
+simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_20)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/trainersimu.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.cpp
+
+simulation/CMakeFiles/simulation.dir/trainersimu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simulation.dir/trainersimu.cpp.i"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.cpp > CMakeFiles/simulation.dir/trainersimu.cpp.i
+
+simulation/CMakeFiles/simulation.dir/trainersimu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simulation.dir/trainersimu.cpp.s"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.cpp -o CMakeFiles/simulation.dir/trainersimu.cpp.s
+
+simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o.requires:
+.PHONY : simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o.requires
+
+simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o.provides: simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o.requires
+	$(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o.provides.build
+.PHONY : simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o.provides
+
+simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o.provides.build: simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o
+
+simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o: simulation/CMakeFiles/simulation.dir/flags.make
+simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_21)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/debugoutput.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.cpp
+
+simulation/CMakeFiles/simulation.dir/debugoutput.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simulation.dir/debugoutput.cpp.i"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.cpp > CMakeFiles/simulation.dir/debugoutput.cpp.i
+
+simulation/CMakeFiles/simulation.dir/debugoutput.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simulation.dir/debugoutput.cpp.s"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.cpp -o CMakeFiles/simulation.dir/debugoutput.cpp.s
+
+simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o.requires:
+.PHONY : simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o.requires
+
+simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o.provides: simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o.requires
+	$(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o.provides.build
+.PHONY : simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o.provides
+
+simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o.provides.build: simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o
+
 simulation/CMakeFiles/simulation.dir/joystick.cpp.o: simulation/CMakeFiles/simulation.dir/flags.make
 simulation/CMakeFiles/simulation.dir/joystick.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_22)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/joystick.cpp.o"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/joystick.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.cpp
 
@@ -152,7 +251,7 @@ simulation/CMakeFiles/simulation.dir/joystick.cpp.o.provides.build: simulation/C
 
 simulation/CMakeFiles/simulation.dir/joystickdialog.cpp.o: simulation/CMakeFiles/simulation.dir/flags.make
 simulation/CMakeFiles/simulation.dir/joystickdialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_23)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/joystickdialog.cpp.o"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/joystickdialog.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.cpp
 
@@ -175,7 +274,7 @@ simulation/CMakeFiles/simulation.dir/joystickdialog.cpp.o.provides.build: simula
 
 simulation/CMakeFiles/simulation.dir/moc_simulatordialog.cxx.o: simulation/CMakeFiles/simulation.dir/flags.make
 simulation/CMakeFiles/simulation.dir/moc_simulatordialog.cxx.o: simulation/moc_simulatordialog.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_24)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/moc_simulatordialog.cxx.o"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/moc_simulatordialog.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_simulatordialog.cxx
 
@@ -198,7 +297,7 @@ simulation/CMakeFiles/simulation.dir/moc_simulatordialog.cxx.o.provides.build: s
 
 simulation/CMakeFiles/simulation.dir/moc_cursorwidget.cxx.o: simulation/CMakeFiles/simulation.dir/flags.make
 simulation/CMakeFiles/simulation.dir/moc_cursorwidget.cxx.o: simulation/moc_cursorwidget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_16)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_25)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/moc_cursorwidget.cxx.o"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/moc_cursorwidget.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_cursorwidget.cxx
 
@@ -221,7 +320,7 @@ simulation/CMakeFiles/simulation.dir/moc_cursorwidget.cxx.o.provides.build: simu
 
 simulation/CMakeFiles/simulation.dir/moc_menuwidget.cxx.o: simulation/CMakeFiles/simulation.dir/flags.make
 simulation/CMakeFiles/simulation.dir/moc_menuwidget.cxx.o: simulation/moc_menuwidget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_17)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_26)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/moc_menuwidget.cxx.o"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/moc_menuwidget.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_menuwidget.cxx
 
@@ -244,7 +343,7 @@ simulation/CMakeFiles/simulation.dir/moc_menuwidget.cxx.o.provides.build: simula
 
 simulation/CMakeFiles/simulation.dir/moc_xcursorwidget.cxx.o: simulation/CMakeFiles/simulation.dir/flags.make
 simulation/CMakeFiles/simulation.dir/moc_xcursorwidget.cxx.o: simulation/moc_xcursorwidget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_27)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/moc_xcursorwidget.cxx.o"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/moc_xcursorwidget.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_xcursorwidget.cxx
 
@@ -267,7 +366,7 @@ simulation/CMakeFiles/simulation.dir/moc_xcursorwidget.cxx.o.provides.build: sim
 
 simulation/CMakeFiles/simulation.dir/moc_xmenuwidget.cxx.o: simulation/CMakeFiles/simulation.dir/flags.make
 simulation/CMakeFiles/simulation.dir/moc_xmenuwidget.cxx.o: simulation/moc_xmenuwidget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_19)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_28)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/moc_xmenuwidget.cxx.o"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/moc_xmenuwidget.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_xmenuwidget.cxx
 
@@ -290,7 +389,7 @@ simulation/CMakeFiles/simulation.dir/moc_xmenuwidget.cxx.o.provides.build: simul
 
 simulation/CMakeFiles/simulation.dir/moc_myslider.cxx.o: simulation/CMakeFiles/simulation.dir/flags.make
 simulation/CMakeFiles/simulation.dir/moc_myslider.cxx.o: simulation/moc_myslider.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_20)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_29)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/moc_myslider.cxx.o"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/moc_myslider.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_myslider.cxx
 
@@ -311,9 +410,78 @@ simulation/CMakeFiles/simulation.dir/moc_myslider.cxx.o.provides: simulation/CMa
 
 simulation/CMakeFiles/simulation.dir/moc_myslider.cxx.o.provides.build: simulation/CMakeFiles/simulation.dir/moc_myslider.cxx.o
 
+simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o: simulation/CMakeFiles/simulation.dir/flags.make
+simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o: simulation/moc_telemetrysimu.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_30)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_telemetrysimu.cxx
+
+simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.i"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_telemetrysimu.cxx > CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.i
+
+simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.s"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_telemetrysimu.cxx -o CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.s
+
+simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o.requires:
+.PHONY : simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o.requires
+
+simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o.provides: simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o.requires
+	$(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o.provides.build
+.PHONY : simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o.provides
+
+simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o.provides.build: simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o
+
+simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o: simulation/CMakeFiles/simulation.dir/flags.make
+simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o: simulation/moc_trainersimu.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_31)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/moc_trainersimu.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_trainersimu.cxx
+
+simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simulation.dir/moc_trainersimu.cxx.i"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_trainersimu.cxx > CMakeFiles/simulation.dir/moc_trainersimu.cxx.i
+
+simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simulation.dir/moc_trainersimu.cxx.s"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_trainersimu.cxx -o CMakeFiles/simulation.dir/moc_trainersimu.cxx.s
+
+simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o.requires:
+.PHONY : simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o.requires
+
+simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o.provides: simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o.requires
+	$(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o.provides.build
+.PHONY : simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o.provides
+
+simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o.provides.build: simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o
+
+simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o: simulation/CMakeFiles/simulation.dir/flags.make
+simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o: simulation/moc_debugoutput.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_32)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/moc_debugoutput.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_debugoutput.cxx
+
+simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simulation.dir/moc_debugoutput.cxx.i"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_debugoutput.cxx > CMakeFiles/simulation.dir/moc_debugoutput.cxx.i
+
+simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simulation.dir/moc_debugoutput.cxx.s"
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_debugoutput.cxx -o CMakeFiles/simulation.dir/moc_debugoutput.cxx.s
+
+simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o.requires:
+.PHONY : simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o.requires
+
+simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o.provides: simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o.requires
+	$(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o.provides.build
+.PHONY : simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o.provides
+
+simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o.provides.build: simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o
+
 simulation/CMakeFiles/simulation.dir/moc_joystick.cxx.o: simulation/CMakeFiles/simulation.dir/flags.make
 simulation/CMakeFiles/simulation.dir/moc_joystick.cxx.o: simulation/moc_joystick.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_21)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_33)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/moc_joystick.cxx.o"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/moc_joystick.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_joystick.cxx
 
@@ -336,7 +504,7 @@ simulation/CMakeFiles/simulation.dir/moc_joystick.cxx.o.provides.build: simulati
 
 simulation/CMakeFiles/simulation.dir/moc_joystickdialog.cxx.o: simulation/CMakeFiles/simulation.dir/flags.make
 simulation/CMakeFiles/simulation.dir/moc_joystickdialog.cxx.o: simulation/moc_joystickdialog.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_22)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_34)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object simulation/CMakeFiles/simulation.dir/moc_joystickdialog.cxx.o"
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/simulation.dir/moc_joystickdialog.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_joystickdialog.cxx
 
@@ -360,6 +528,9 @@ simulation/CMakeFiles/simulation.dir/moc_joystickdialog.cxx.o.provides.build: si
 # Object files for target simulation
 simulation_OBJECTS = \
 "CMakeFiles/simulation.dir/simulatordialog.cpp.o" \
+"CMakeFiles/simulation.dir/telemetrysimu.cpp.o" \
+"CMakeFiles/simulation.dir/trainersimu.cpp.o" \
+"CMakeFiles/simulation.dir/debugoutput.cpp.o" \
 "CMakeFiles/simulation.dir/joystick.cpp.o" \
 "CMakeFiles/simulation.dir/joystickdialog.cpp.o" \
 "CMakeFiles/simulation.dir/moc_simulatordialog.cxx.o" \
@@ -368,6 +539,9 @@ simulation_OBJECTS = \
 "CMakeFiles/simulation.dir/moc_xcursorwidget.cxx.o" \
 "CMakeFiles/simulation.dir/moc_xmenuwidget.cxx.o" \
 "CMakeFiles/simulation.dir/moc_myslider.cxx.o" \
+"CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o" \
+"CMakeFiles/simulation.dir/moc_trainersimu.cxx.o" \
+"CMakeFiles/simulation.dir/moc_debugoutput.cxx.o" \
 "CMakeFiles/simulation.dir/moc_joystick.cxx.o" \
 "CMakeFiles/simulation.dir/moc_joystickdialog.cxx.o"
 
@@ -375,6 +549,9 @@ simulation_OBJECTS = \
 simulation_EXTERNAL_OBJECTS =
 
 simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/simulatordialog.cpp.o
+simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o
+simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o
+simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o
 simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/joystick.cpp.o
 simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/joystickdialog.cpp.o
 simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/moc_simulatordialog.cxx.o
@@ -383,6 +560,9 @@ simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/moc_menuwidget.
 simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/moc_xcursorwidget.cxx.o
 simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/moc_xmenuwidget.cxx.o
 simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/moc_myslider.cxx.o
+simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o
+simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o
+simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o
 simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/moc_joystick.cxx.o
 simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/moc_joystickdialog.cxx.o
 simulation/libsimulation.a: simulation/CMakeFiles/simulation.dir/build.make
@@ -396,6 +576,9 @@ simulation/CMakeFiles/simulation.dir/build: simulation/libsimulation.a
 .PHONY : simulation/CMakeFiles/simulation.dir/build
 
 simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/simulatordialog.cpp.o.requires
+simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o.requires
+simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o.requires
+simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o.requires
 simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/joystick.cpp.o.requires
 simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/joystickdialog.cpp.o.requires
 simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/moc_simulatordialog.cxx.o.requires
@@ -404,6 +587,9 @@ simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.
 simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/moc_xcursorwidget.cxx.o.requires
 simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/moc_xmenuwidget.cxx.o.requires
 simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/moc_myslider.cxx.o.requires
+simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o.requires
+simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o.requires
+simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o.requires
 simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/moc_joystick.cxx.o.requires
 simulation/CMakeFiles/simulation.dir/requires: simulation/CMakeFiles/simulation.dir/moc_joystickdialog.cxx.o.requires
 .PHONY : simulation/CMakeFiles/simulation.dir/requires
@@ -414,6 +600,9 @@ simulation/CMakeFiles/simulation.dir/clean:
 
 simulation/CMakeFiles/simulation.dir/depend: simulation/ui_simulatordialog-9x.h
 simulation/CMakeFiles/simulation.dir/depend: simulation/ui_simulatordialog-taranis.h
+simulation/CMakeFiles/simulation.dir/depend: simulation/ui_telemetrysimu.h
+simulation/CMakeFiles/simulation.dir/depend: simulation/ui_trainersimu.h
+simulation/CMakeFiles/simulation.dir/depend: simulation/ui_debugoutput.h
 simulation/CMakeFiles/simulation.dir/depend: simulation/ui_joystickdialog.h
 simulation/CMakeFiles/simulation.dir/depend: simulation/moc_simulatordialog.cxx
 simulation/CMakeFiles/simulation.dir/depend: simulation/moc_cursorwidget.cxx
@@ -421,6 +610,9 @@ simulation/CMakeFiles/simulation.dir/depend: simulation/moc_menuwidget.cxx
 simulation/CMakeFiles/simulation.dir/depend: simulation/moc_xcursorwidget.cxx
 simulation/CMakeFiles/simulation.dir/depend: simulation/moc_xmenuwidget.cxx
 simulation/CMakeFiles/simulation.dir/depend: simulation/moc_myslider.cxx
+simulation/CMakeFiles/simulation.dir/depend: simulation/moc_telemetrysimu.cxx
+simulation/CMakeFiles/simulation.dir/depend: simulation/moc_trainersimu.cxx
+simulation/CMakeFiles/simulation.dir/depend: simulation/moc_debugoutput.cxx
 simulation/CMakeFiles/simulation.dir/depend: simulation/moc_joystick.cxx
 simulation/CMakeFiles/simulation.dir/depend: simulation/moc_joystickdialog.cxx
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /usr/local/src/opentx/opentx-v2.0.14a/companion/src /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/DependInfo.cmake --color=$(COLOR)

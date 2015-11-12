@@ -4,17 +4,23 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
+  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.cpp" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o"
   "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.cpp" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/joystick.cpp.o"
   "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.cpp" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/joystickdialog.cpp.o"
   "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_cursorwidget.cxx" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/moc_cursorwidget.cxx.o"
+  "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_debugoutput.cxx" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o"
   "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_joystick.cxx" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/moc_joystick.cxx.o"
   "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_joystickdialog.cxx" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/moc_joystickdialog.cxx.o"
   "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_menuwidget.cxx" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/moc_menuwidget.cxx.o"
   "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_myslider.cxx" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/moc_myslider.cxx.o"
   "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_simulatordialog.cxx" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/moc_simulatordialog.cxx.o"
+  "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_telemetrysimu.cxx" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o"
+  "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_trainersimu.cxx" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o"
   "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_xcursorwidget.cxx" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/moc_xcursorwidget.cxx.o"
   "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_xmenuwidget.cxx" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/moc_xmenuwidget.cxx.o"
   "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.cpp" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/simulatordialog.cpp.o"
+  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.cpp" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o"
+  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.cpp" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

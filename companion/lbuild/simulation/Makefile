@@ -173,6 +173,30 @@ simulation/fast:
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/build
 .PHONY : simulation/fast
 
+debugoutput.o: debugoutput.cpp.o
+.PHONY : debugoutput.o
+
+# target to build an object file
+debugoutput.cpp.o:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o
+.PHONY : debugoutput.cpp.o
+
+debugoutput.i: debugoutput.cpp.i
+.PHONY : debugoutput.i
+
+# target to preprocess a source file
+debugoutput.cpp.i:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/debugoutput.cpp.i
+.PHONY : debugoutput.cpp.i
+
+debugoutput.s: debugoutput.cpp.s
+.PHONY : debugoutput.s
+
+# target to generate assembly for a file
+debugoutput.cpp.s:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/debugoutput.cpp.s
+.PHONY : debugoutput.cpp.s
+
 joystick.o: joystick.cpp.o
 .PHONY : joystick.o
 
@@ -244,6 +268,30 @@ moc_cursorwidget.s: moc_cursorwidget.cxx.s
 moc_cursorwidget.cxx.s:
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_cursorwidget.cxx.s
 .PHONY : moc_cursorwidget.cxx.s
+
+moc_debugoutput.o: moc_debugoutput.cxx.o
+.PHONY : moc_debugoutput.o
+
+# target to build an object file
+moc_debugoutput.cxx.o:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o
+.PHONY : moc_debugoutput.cxx.o
+
+moc_debugoutput.i: moc_debugoutput.cxx.i
+.PHONY : moc_debugoutput.i
+
+# target to preprocess a source file
+moc_debugoutput.cxx.i:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.i
+.PHONY : moc_debugoutput.cxx.i
+
+moc_debugoutput.s: moc_debugoutput.cxx.s
+.PHONY : moc_debugoutput.s
+
+# target to generate assembly for a file
+moc_debugoutput.cxx.s:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.s
+.PHONY : moc_debugoutput.cxx.s
 
 moc_joystick.o: moc_joystick.cxx.o
 .PHONY : moc_joystick.o
@@ -365,6 +413,54 @@ moc_simulatordialog.cxx.s:
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_simulatordialog.cxx.s
 .PHONY : moc_simulatordialog.cxx.s
 
+moc_telemetrysimu.o: moc_telemetrysimu.cxx.o
+.PHONY : moc_telemetrysimu.o
+
+# target to build an object file
+moc_telemetrysimu.cxx.o:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o
+.PHONY : moc_telemetrysimu.cxx.o
+
+moc_telemetrysimu.i: moc_telemetrysimu.cxx.i
+.PHONY : moc_telemetrysimu.i
+
+# target to preprocess a source file
+moc_telemetrysimu.cxx.i:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.i
+.PHONY : moc_telemetrysimu.cxx.i
+
+moc_telemetrysimu.s: moc_telemetrysimu.cxx.s
+.PHONY : moc_telemetrysimu.s
+
+# target to generate assembly for a file
+moc_telemetrysimu.cxx.s:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.s
+.PHONY : moc_telemetrysimu.cxx.s
+
+moc_trainersimu.o: moc_trainersimu.cxx.o
+.PHONY : moc_trainersimu.o
+
+# target to build an object file
+moc_trainersimu.cxx.o:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o
+.PHONY : moc_trainersimu.cxx.o
+
+moc_trainersimu.i: moc_trainersimu.cxx.i
+.PHONY : moc_trainersimu.i
+
+# target to preprocess a source file
+moc_trainersimu.cxx.i:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.i
+.PHONY : moc_trainersimu.cxx.i
+
+moc_trainersimu.s: moc_trainersimu.cxx.s
+.PHONY : moc_trainersimu.s
+
+# target to generate assembly for a file
+moc_trainersimu.cxx.s:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.s
+.PHONY : moc_trainersimu.cxx.s
+
 moc_xcursorwidget.o: moc_xcursorwidget.cxx.o
 .PHONY : moc_xcursorwidget.o
 
@@ -437,6 +533,54 @@ simulatordialog.cpp.s:
 	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/simulatordialog.cpp.s
 .PHONY : simulatordialog.cpp.s
 
+telemetrysimu.o: telemetrysimu.cpp.o
+.PHONY : telemetrysimu.o
+
+# target to build an object file
+telemetrysimu.cpp.o:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o
+.PHONY : telemetrysimu.cpp.o
+
+telemetrysimu.i: telemetrysimu.cpp.i
+.PHONY : telemetrysimu.i
+
+# target to preprocess a source file
+telemetrysimu.cpp.i:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.i
+.PHONY : telemetrysimu.cpp.i
+
+telemetrysimu.s: telemetrysimu.cpp.s
+.PHONY : telemetrysimu.s
+
+# target to generate assembly for a file
+telemetrysimu.cpp.s:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.s
+.PHONY : telemetrysimu.cpp.s
+
+trainersimu.o: trainersimu.cpp.o
+.PHONY : trainersimu.o
+
+# target to build an object file
+trainersimu.cpp.o:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o
+.PHONY : trainersimu.cpp.o
+
+trainersimu.i: trainersimu.cpp.i
+.PHONY : trainersimu.i
+
+# target to preprocess a source file
+trainersimu.cpp.i:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/trainersimu.cpp.i
+.PHONY : trainersimu.cpp.i
+
+trainersimu.s: trainersimu.cpp.s
+.PHONY : trainersimu.s
+
+# target to generate assembly for a file
+trainersimu.cpp.s:
+	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f simulation/CMakeFiles/simulation.dir/build.make simulation/CMakeFiles/simulation.dir/trainersimu.cpp.s
+.PHONY : trainersimu.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -452,6 +596,9 @@ help:
 	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... simulation"
+	@echo "... debugoutput.o"
+	@echo "... debugoutput.i"
+	@echo "... debugoutput.s"
 	@echo "... joystick.o"
 	@echo "... joystick.i"
 	@echo "... joystick.s"
@@ -461,6 +608,9 @@ help:
 	@echo "... moc_cursorwidget.o"
 	@echo "... moc_cursorwidget.i"
 	@echo "... moc_cursorwidget.s"
+	@echo "... moc_debugoutput.o"
+	@echo "... moc_debugoutput.i"
+	@echo "... moc_debugoutput.s"
 	@echo "... moc_joystick.o"
 	@echo "... moc_joystick.i"
 	@echo "... moc_joystick.s"
@@ -476,6 +626,12 @@ help:
 	@echo "... moc_simulatordialog.o"
 	@echo "... moc_simulatordialog.i"
 	@echo "... moc_simulatordialog.s"
+	@echo "... moc_telemetrysimu.o"
+	@echo "... moc_telemetrysimu.i"
+	@echo "... moc_telemetrysimu.s"
+	@echo "... moc_trainersimu.o"
+	@echo "... moc_trainersimu.i"
+	@echo "... moc_trainersimu.s"
 	@echo "... moc_xcursorwidget.o"
 	@echo "... moc_xcursorwidget.i"
 	@echo "... moc_xcursorwidget.s"
@@ -485,6 +641,12 @@ help:
 	@echo "... simulatordialog.o"
 	@echo "... simulatordialog.i"
 	@echo "... simulatordialog.s"
+	@echo "... telemetrysimu.o"
+	@echo "... telemetrysimu.i"
+	@echo "... telemetrysimu.s"
+	@echo "... trainersimu.o"
+	@echo "... trainersimu.i"
+	@echo "... trainersimu.s"
 .PHONY : help
 
 

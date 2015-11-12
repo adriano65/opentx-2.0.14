@@ -9,6 +9,42 @@
 #define RESX        1024
 
 int SimulatorDialog::screenshotIdx = 0;
+SimulatorDialog * traceCallbackInstance = 0;
+
+void traceCb(const char * text) {
+  // divert C callback into simulator instance
+  if (traceCallbackInstance) {
+      traceCallbackInstance->traceCallback(text);
+  }
+}
+
+void SimulatorDialog::traceCallback(const char * text)
+{
+  // this function is called from other threads
+  traceMutex.lock();
+  // limit the size of list
+  if (traceList.size() < 1000) {
+    traceList.append(QString(text));
+  }
+  traceMutex.unlock();
+}
+
+void SimulatorDialog::updateDebugOutput()
+{
+  traceMutex.lock();
+  while (!traceList.isEmpty()) {
+    QString text = traceList.takeFirst();
+    traceBuffer.append(text);
+    // limit the size of traceBuffer
+    if (traceBuffer.size() > 10*1024) {
+      traceBuffer.remove(0, 1*1024);
+    }
+    if (DebugOut) {
+      DebugOut->traceCallback(QString(text));
+    }
+  }
+  traceMutex.unlock();
+}
 
 SimulatorDialog::SimulatorDialog(QWidget * parent, unsigned int flags):
   QDialog(parent),
@@ -19,10 +55,19 @@ SimulatorDialog::SimulatorDialog(QWidget * parent, unsigned int flags):
   simulator(NULL),
   lastPhase(-1),
   beepVal(0),
+  TelemetrySimu(0),
+  TrainerSimu(0),
+  DebugOut(0),
   buttonPressed(0),
   trimPressed (TRIM_NONE),
   middleButtonPressed(false)
 {
+  //shorcut for telemetry simulator
+  // new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_T), this, SLOT(openTelemetrySimulator()));
+  new QShortcut(QKeySequence(Qt::Key_F4), this, SLOT(openTelemetrySimulator()));
+  new QShortcut(QKeySequence(Qt::Key_F5), this, SLOT(openTrainerSimulator()));
+  new QShortcut(QKeySequence(Qt::Key_F6), this, SLOT(openDebugOutput()));
+  traceCallbackInstance = this;
 }
 
 uint32_t SimulatorDialog9X::switchstatus = 0;
@@ -36,6 +81,9 @@ SimulatorDialog9X::SimulatorDialog9X(QWidget * parent, unsigned int flags):
   lcdDepth = 1;
 
   initUi<Ui::SimulatorDialog9X>(ui);
+
+  // install simulator TRACE hook
+  simulator->installTraceHook(traceCb);
 
   backLight = g.backLight();
   if (backLight > 4) backLight = 0;
@@ -109,6 +157,10 @@ SimulatorDialogTaranis::SimulatorDialogTaranis(QWidget * parent, unsigned int fl
   lcdDepth = 4;
 
   initUi<Ui::SimulatorDialogTaranis>(ui);
+
+  // install simulator TRACE hook
+  simulator->installTraceHook(traceCb);
+
   dialP_4 = ui->dialP_4;
 
   ui->lcd->setBackgroundColor(47, 123, 227);
@@ -154,6 +206,7 @@ SimulatorDialogTaranis::~SimulatorDialogTaranis()
 
 SimulatorDialog::~SimulatorDialog()
 {
+  traceCallbackInstance = 0;
   delete timer;
   delete simulator;
 }
@@ -213,6 +266,49 @@ void SimulatorDialog::onTrimPressed()
 void SimulatorDialog::onTrimReleased()
 {
   trimPressed = TRIM_NONE;
+}
+
+void SimulatorDialog::openTelemetrySimulator()
+{
+  // allow only one instance
+  if (TelemetrySimu == 0) {
+    TelemetrySimu = new TelemetrySimulator(this, simulator);
+    TelemetrySimu->show();
+  }
+  else if (!TelemetrySimu->isVisible()) {
+    TelemetrySimu->show();
+  }
+}
+
+void SimulatorDialog::openTrainerSimulator()
+{
+  // allow only one instance
+  if (TrainerSimu == 0) {
+    TrainerSimu = new TrainerSimulator(this, simulator);
+    TrainerSimu->show();
+  }
+  else if (!TrainerSimu->isVisible()) {
+    TrainerSimu->show();
+  }
+}
+
+void SimulatorDialog::openDebugOutput()
+{
+  // allow only one instance, but install signal handler to catch dialog destruction just in case
+  if (DebugOut == 0) {
+    DebugOut = new DebugOutput(this);
+    QObject::connect(DebugOut, SIGNAL(destroyed()), this, SLOT(onDebugOutputClose()));
+    DebugOut->traceCallback(traceBuffer);
+    DebugOut->show();
+  }
+  else if (!DebugOut->isVisible()) {
+    DebugOut->show();
+  }
+}
+
+void SimulatorDialog::onDebugOutputClose()
+{
+  DebugOut = 0;
 }
 
 void SimulatorDialog::keyPressEvent (QKeyEvent *event)
@@ -559,6 +655,8 @@ void SimulatorDialog::onTimerEvent()
       QApplication::beep();
     }
   }
+
+  updateDebugOutput();
 }
 
 void SimulatorDialog::centerSticks()
@@ -971,8 +1069,8 @@ void SimulatorDialog::on_FixRightY_clicked(bool checked)
 void SimulatorDialog::onjoystickAxisValueChanged(int axis, int value)
 {
   int stick;
-  if (axis>=0 && axis<=8) {
-    stick=jsmap[axis];
+  if (axis>=0 && axis<8) {
+    stick = jsmap[axis];
     int stickval;
     if (value>jscal[axis][1]) {
       if ((jscal[axis][2]-jscal[axis][1])==0)

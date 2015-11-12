@@ -6099,6 +6099,7 @@ CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtCore/qvector.h
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtCore/qwaitcondition.h
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtCore/qxmlstream.h
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtGui/QCleanlooksStyle
+CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtGui/QCloseEvent
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtGui/QCommonStyle
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtGui/QDialog
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtGui/QFileDialog
@@ -6108,6 +6109,7 @@ CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtGui/QMatrix4x4
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtGui/QPalette
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtGui/QPlatformWindow
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtGui/QPrinter
+CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtGui/QShowEvent
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtGui/QTransform
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtGui/QVector3D
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/lib64/qt/include/QtGui/QtGui
@@ -6355,9 +6357,12 @@ CMakeFiles/companion.dir/helpers.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/co
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.cpp
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+CMakeFiles/companion.dir/helpers.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.h
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.h
 CMakeFiles/companion.dir/helpers.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
+CMakeFiles/companion.dir/helpers.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.h
+CMakeFiles/companion.dir/helpers.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.h
 
 CMakeFiles/companion.dir/hexinterface.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 CMakeFiles/companion.dir/hexinterface.cpp.o: /usr/lib64/qt/include/QtCore/QTextStream
@@ -7364,9 +7369,9 @@ CMakeFiles/companion.dir/mainwindow.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a
 CMakeFiles/companion.dir/mainwindow.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/printdialog.h
 CMakeFiles/companion.dir/mainwindow.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/qcustomplot.h
 CMakeFiles/companion.dir/mainwindow.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/radionotfound.h
-CMakeFiles/companion.dir/mainwindow.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/version.h
 CMakeFiles/companion.dir/mainwindow.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/warnings.h
 CMakeFiles/companion.dir/mainwindow.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/xmlinterface.h
+CMakeFiles/companion.dir/mainwindow.cpp.o: version.h
 
 CMakeFiles/companion.dir/mdichild.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 CMakeFiles/companion.dir/mdichild.cpp.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h

@@ -132,6 +132,7 @@ if(${EXT} MATCHES MAVLINK)
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxTaranisSimulator.cpp
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS
+	# REVPLUS is already defined
 	MAVLINK
   )
 else ()

@@ -129,6 +129,9 @@ void menuGeneralDiagAna(uint8_t event);
 #if defined(FRSKY)
 void menuTelemetryFrsky(uint8_t event);
 #endif
+#if defined(MAVLINK)
+void menuTelemetryMavlink(uint8_t event);
+#endif
 void menuGeneralSetup(uint8_t event);
 void menuGeneralCalib(uint8_t event);
 

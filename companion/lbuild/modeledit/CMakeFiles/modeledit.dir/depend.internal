@@ -1080,13 +1080,12 @@ modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o
  /usr/lib64/qt/include/QtGui/QGridLayout
  /usr/lib64/qt/include/QtGui/QLabel
  /usr/lib64/qt/include/QtGui/QLayout
- /usr/lib64/qt/include/QtGui/QLineEdit
  /usr/lib64/qt/include/QtGui/QMatrix4x4
  /usr/lib64/qt/include/QtGui/QPalette
  /usr/lib64/qt/include/QtGui/QPlatformWindow
  /usr/lib64/qt/include/QtGui/QPrinter
  /usr/lib64/qt/include/QtGui/QPushButton
- /usr/lib64/qt/include/QtGui/QSpinBox
+ /usr/lib64/qt/include/QtGui/QTimeEdit
  /usr/lib64/qt/include/QtGui/QTransform
  /usr/lib64/qt/include/QtGui/QVector3D
  /usr/lib64/qt/include/QtGui/QWidget
@@ -5906,6 +5905,7 @@ modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o
  /usr/lib64/qt/include/QtGui/QLabel
  /usr/lib64/qt/include/QtGui/QPlatformWindow
  /usr/lib64/qt/include/QtGui/QPushButton
+ /usr/lib64/qt/include/QtGui/QTimeEdit
  /usr/lib64/qt/include/QtGui/QWidget
  /usr/lib64/qt/include/QtGui/qabstractbutton.h
  /usr/lib64/qt/include/QtGui/qabstractitemdelegate.h
@@ -5917,6 +5917,7 @@ modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o
  /usr/lib64/qt/include/QtGui/qcolor.h
  /usr/lib64/qt/include/QtGui/qcombobox.h
  /usr/lib64/qt/include/QtGui/qcursor.h
+ /usr/lib64/qt/include/QtGui/qdatetimeedit.h
  /usr/lib64/qt/include/QtGui/qdrag.h
  /usr/lib64/qt/include/QtGui/qevent.h
  /usr/lib64/qt/include/QtGui/qfont.h

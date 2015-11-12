@@ -1,3 +1,28 @@
+<h2>Version 2.0.15 / 2015-01-13</h2>
+<ul>
+<li>Firmware was not written correctly on radio when compatibility warning check enabled</li>
+<li>Time format for Special Functions Set Timers</li>
+</ul>
+
+<h2>Version 2.0.14 / 2015-01-12</h2>
+<ul>
+<li>OpenTX Companion and Companion9x can now be installed side by side on Linux</li>
+<li>Improved TAB order in dialogs</li>
+<li>Special Function <i>Start Logs</i> renamed to more appropriate <i>SD Logs</i></li>
+<li>Improvements for MAC build</li>
+<li>Fixes to Google Earth logs export</li>
+<li>Firmware compatibility warning check added when flashing new firmware to radio</li>
+<li>Fixed issue with Telemetry Type setting on 9XR-PRO</li>
+<li>Added Telemetry simulator</li>
+<li>Added Trainer simulator</li>
+<li>Added Debug Output window</li>
+<li>Various texts and translations corrections</li>
+<li>Various small bug-fixes</li>
+<li>More reliable method of writing EEPROM.BIN and FIRMWARE.BIN to radio</li>
+<li>Fixed issue with Edge function INSTANT for V1>2s</li>
+<li>Fixed buffer overflow in Joystick code</li>
+</ul>
+
 <h2>Version 2.0.13 / 2014-11-20</h2>
 <ul>
 <li>Too many curves shown on non ARM boards</li>
@@ -68,13 +93,13 @@
 <ul>
 <li>Sound should be ok on all platforms</li>
 <li>Min/Max reviewed in Logical switches (for the whole telemetry)</li>
-<li>Various bug fixes</li> 
+<li>Various bug fixes</li>
 </ul>
 
 <h2>Version 2.0.3</h2>
 <ul>
 <li>EEPROM import bug on AdjustGVAR function</li>
-<li>Timers correctly displayed in logical switches tab</li> 
+<li>Timers correctly displayed in logical switches tab</li>
 </ul>
 
 <h2>Version 2.0.2</h2>

@@ -1,23 +1,23 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/local/bin/make "cmTryCompileExec289850280/fast"
-/usr/local/bin/make -f CMakeFiles/cmTryCompileExec289850280.dir/build.make CMakeFiles/cmTryCompileExec289850280.dir/build
+Run Build Command:/usr/local/bin/make "cmTryCompileExec2489235291/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec2489235291.dir/build.make CMakeFiles/cmTryCompileExec2489235291.dir/build
 make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec289850280.dir/CheckSymbolExists.c.o
-/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec289850280.dir/CheckSymbolExists.c.o   -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec289850280
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec289850280.dir/link.txt --verbose=1
-/usr/bin/gcc         CMakeFiles/cmTryCompileExec289850280.dir/CheckSymbolExists.c.o  -o cmTryCompileExec289850280 -rdynamic 
-CMakeFiles/cmTryCompileExec289850280.dir/CheckSymbolExists.c.o: In function `main':
+Building C object CMakeFiles/cmTryCompileExec2489235291.dir/CheckSymbolExists.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec2489235291.dir/CheckSymbolExists.c.o   -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec2489235291
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2489235291.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec2489235291.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2489235291 -rdynamic 
+CMakeFiles/cmTryCompileExec2489235291.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTryCompileExec289850280.dir/build.make:88: recipe for target 'cmTryCompileExec289850280' failed
-make[1]: *** [cmTryCompileExec289850280] Error 1
+CMakeFiles/cmTryCompileExec2489235291.dir/build.make:88: recipe for target 'cmTryCompileExec2489235291' failed
+make[1]: *** [cmTryCompileExec2489235291] Error 1
 make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
-Makefile:114: recipe for target 'cmTryCompileExec289850280/fast' failed
-make: *** [cmTryCompileExec289850280/fast] Error 2
+Makefile:114: recipe for target 'cmTryCompileExec2489235291/fast' failed
+make: *** [cmTryCompileExec2489235291/fast] Error 2
 
 File /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -37,40 +37,40 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/local/bin/make "cmTryCompileExec1561154439/fast"
-/usr/local/bin/make -f CMakeFiles/cmTryCompileExec1561154439.dir/build.make CMakeFiles/cmTryCompileExec1561154439.dir/build
+Run Build Command:/usr/local/bin/make "cmTryCompileExec3420778998/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec3420778998.dir/build.make CMakeFiles/cmTryCompileExec3420778998.dir/build
 make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1561154439.dir/CheckFunctionExists.c.o
-/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1561154439.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec1561154439
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1561154439.dir/link.txt --verbose=1
-/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1561154439.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1561154439 -rdynamic -lpthreads 
+Building C object CMakeFiles/cmTryCompileExec3420778998.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3420778998.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3420778998
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3420778998.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3420778998.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3420778998 -rdynamic -lpthreads 
 /usr/lib64/gcc/x86_64-slackware-linux/4.7.1/../../../../x86_64-slackware-linux/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTryCompileExec1561154439.dir/build.make:88: recipe for target 'cmTryCompileExec1561154439' failed
-make[1]: *** [cmTryCompileExec1561154439] Error 1
+CMakeFiles/cmTryCompileExec3420778998.dir/build.make:88: recipe for target 'cmTryCompileExec3420778998' failed
 make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
-Makefile:114: recipe for target 'cmTryCompileExec1561154439/fast' failed
-make: *** [cmTryCompileExec1561154439/fast] Error 2
+Makefile:114: recipe for target 'cmTryCompileExec3420778998/fast' failed
+make[1]: *** [cmTryCompileExec3420778998] Error 1
+make: *** [cmTryCompileExec3420778998/fast] Error 2
 
 
 Determining if the Q_WS_WIN exist failed with the following output:
 Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/local/bin/make "cmTryCompileExec3093331814/fast"
-/usr/local/bin/make -f CMakeFiles/cmTryCompileExec3093331814.dir/build.make CMakeFiles/cmTryCompileExec3093331814.dir/build
+Run Build Command:/usr/local/bin/make "cmTryCompileExec2047877060/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec2047877060.dir/build.make CMakeFiles/cmTryCompileExec2047877060.dir/build
 make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec3093331814.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/lib64/qt/include    -o CMakeFiles/cmTryCompileExec3093331814.dir/CheckSymbolExists.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Building CXX object CMakeFiles/cmTryCompileExec2047877060.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/lib64/qt/include    -o CMakeFiles/cmTryCompileExec2047877060.dir/CheckSymbolExists.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
 /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function 'int main(int, char**)':
 /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: 'Q_WS_WIN' was not declared in this scope
-CMakeFiles/cmTryCompileExec3093331814.dir/build.make:57: recipe for target 'CMakeFiles/cmTryCompileExec3093331814.dir/CheckSymbolExists.cxx.o' failed
-make[1]: *** [CMakeFiles/cmTryCompileExec3093331814.dir/CheckSymbolExists.cxx.o] Error 1
+CMakeFiles/cmTryCompileExec2047877060.dir/build.make:57: recipe for target 'CMakeFiles/cmTryCompileExec2047877060.dir/CheckSymbolExists.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTryCompileExec2047877060.dir/CheckSymbolExists.cxx.o] Error 1
 make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
-Makefile:114: recipe for target 'cmTryCompileExec3093331814/fast' failed
-make: *** [cmTryCompileExec3093331814/fast] Error 2
+Makefile:114: recipe for target 'cmTryCompileExec2047877060/fast' failed
+make: *** [cmTryCompileExec2047877060/fast] Error 2
 
 File /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
 /* */
@@ -90,19 +90,19 @@ int main(int argc, char** argv)
 Determining if the Q_WS_QWS exist failed with the following output:
 Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/local/bin/make "cmTryCompileExec3754246840/fast"
-/usr/local/bin/make -f CMakeFiles/cmTryCompileExec3754246840.dir/build.make CMakeFiles/cmTryCompileExec3754246840.dir/build
+Run Build Command:/usr/local/bin/make "cmTryCompileExec1504841616/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec1504841616.dir/build.make CMakeFiles/cmTryCompileExec1504841616.dir/build
 make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec3754246840.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/lib64/qt/include    -o CMakeFiles/cmTryCompileExec3754246840.dir/CheckSymbolExists.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Building CXX object CMakeFiles/cmTryCompileExec1504841616.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/lib64/qt/include    -o CMakeFiles/cmTryCompileExec1504841616.dir/CheckSymbolExists.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
 /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function 'int main(int, char**)':
 /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: 'Q_WS_QWS' was not declared in this scope
-CMakeFiles/cmTryCompileExec3754246840.dir/build.make:57: recipe for target 'CMakeFiles/cmTryCompileExec3754246840.dir/CheckSymbolExists.cxx.o' failed
-make[1]: *** [CMakeFiles/cmTryCompileExec3754246840.dir/CheckSymbolExists.cxx.o] Error 1
+CMakeFiles/cmTryCompileExec1504841616.dir/build.make:57: recipe for target 'CMakeFiles/cmTryCompileExec1504841616.dir/CheckSymbolExists.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTryCompileExec1504841616.dir/CheckSymbolExists.cxx.o] Error 1
 make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
-Makefile:114: recipe for target 'cmTryCompileExec3754246840/fast' failed
-make: *** [cmTryCompileExec3754246840/fast] Error 2
+Makefile:114: recipe for target 'cmTryCompileExec1504841616/fast' failed
+make: *** [cmTryCompileExec1504841616/fast] Error 2
 
 File /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
 /* */
@@ -122,19 +122,19 @@ int main(int argc, char** argv)
 Determining if the Q_WS_MAC exist failed with the following output:
 Change Dir: /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/local/bin/make "cmTryCompileExec2029152118/fast"
-/usr/local/bin/make -f CMakeFiles/cmTryCompileExec2029152118.dir/build.make CMakeFiles/cmTryCompileExec2029152118.dir/build
+Run Build Command:/usr/local/bin/make "cmTryCompileExec4034344819/fast"
+/usr/local/bin/make -f CMakeFiles/cmTryCompileExec4034344819.dir/build.make CMakeFiles/cmTryCompileExec4034344819.dir/build
 make[1]: Entering directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec2029152118.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/lib64/qt/include    -o CMakeFiles/cmTryCompileExec2029152118.dir/CheckSymbolExists.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Building CXX object CMakeFiles/cmTryCompileExec4034344819.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/lib64/qt/include    -o CMakeFiles/cmTryCompileExec4034344819.dir/CheckSymbolExists.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
 /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function 'int main(int, char**)':
 /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: 'Q_WS_MAC' was not declared in this scope
-CMakeFiles/cmTryCompileExec2029152118.dir/build.make:57: recipe for target 'CMakeFiles/cmTryCompileExec2029152118.dir/CheckSymbolExists.cxx.o' failed
-make[1]: *** [CMakeFiles/cmTryCompileExec2029152118.dir/CheckSymbolExists.cxx.o] Error 1
+CMakeFiles/cmTryCompileExec4034344819.dir/build.make:57: recipe for target 'CMakeFiles/cmTryCompileExec4034344819.dir/CheckSymbolExists.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTryCompileExec4034344819.dir/CheckSymbolExists.cxx.o] Error 1
 make[1]: Leaving directory '/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp'
-Makefile:114: recipe for target 'cmTryCompileExec2029152118/fast' failed
-make: *** [cmTryCompileExec2029152118/fast] Error 2
+Makefile:114: recipe for target 'cmTryCompileExec4034344819/fast' failed
+make: *** [cmTryCompileExec4034344819/fast] Error 2
 
 File /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
 /* */

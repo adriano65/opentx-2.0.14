@@ -1079,13 +1079,12 @@ modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QGridLayout
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QLabel
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QLayout
-modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QLineEdit
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QMatrix4x4
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QPalette
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QPlatformWindow
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QPrinter
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QPushButton
-modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QSpinBox
+modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QTimeEdit
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QTransform
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QVector3D
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtGui/QWidget
@@ -5905,6 +5904,7 @@ modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/incl
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/QLabel
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/QPlatformWindow
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/QPushButton
+modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/QTimeEdit
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/QWidget
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/qabstractbutton.h
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/qabstractitemdelegate.h
@@ -5916,6 +5916,7 @@ modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/incl
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/qcolor.h
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/qcombobox.h
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/qcursor.h
+modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/qdatetimeedit.h
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/qdrag.h
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/qevent.h
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/QtGui/qfont.h

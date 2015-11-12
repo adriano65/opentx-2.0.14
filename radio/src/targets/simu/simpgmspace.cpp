@@ -161,7 +161,7 @@ void simuSetKey(uint8_t key, bool state)
 #elif defined(PCBGRUVIN9X) || defined(PCBMEGA2560)
     KEY_CASE(BTN_REa, pind, 0x20)
 #elif defined(ROTARY_ENCODER_NAVIGATION)
-    KEY_CASE(BTN_REa, RotEncoder, 0x20)
+    //KEY_CASE(BTN_REa, RotEncoder, 0x20)
 #endif
   }
 }

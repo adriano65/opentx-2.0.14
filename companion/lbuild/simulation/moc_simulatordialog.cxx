@@ -22,7 +22,7 @@ static const uint qt_meta_data_SimulatorDialog[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      17,   14, // methods
+      21,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -46,7 +46,11 @@ static const uint qt_meta_data_SimulatorDialog[] = {
      394,   16,   16,   16, 0x08,
      409,   16,   16,   16, 0x08,
      425,   16,   16,   16, 0x08,
-     453,  442,   16,   16, 0x08,
+     442,   16,   16,   16, 0x08,
+     467,   16,   16,   16, 0x08,
+     490,   16,   16,   16, 0x08,
+     508,   16,   16,   16, 0x08,
+     540,  529,   16,   16, 0x08,
 
        0        // eod
 };
@@ -66,7 +70,9 @@ static const char qt_meta_stringdata_SimulatorDialog[] = {
     "on_trimHRight_valueChanged(int)\0"
     "on_trimVRight_valueChanged(int)\0"
     "onTimerEvent()\0onTrimPressed()\0"
-    "onTrimReleased()\0axis,value\0"
+    "onTrimReleased()\0openTelemetrySimulator()\0"
+    "openTrainerSimulator()\0openDebugOutput()\0"
+    "onDebugOutputClose()\0axis,value\0"
     "onjoystickAxisValueChanged(int,int)\0"
 };
 
@@ -92,7 +98,11 @@ void SimulatorDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 13: _t->onTimerEvent(); break;
         case 14: _t->onTrimPressed(); break;
         case 15: _t->onTrimReleased(); break;
-        case 16: _t->onjoystickAxisValueChanged((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 16: _t->openTelemetrySimulator(); break;
+        case 17: _t->openTrainerSimulator(); break;
+        case 18: _t->openDebugOutput(); break;
+        case 19: _t->onDebugOutputClose(); break;
+        case 20: _t->onjoystickAxisValueChanged((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     }
@@ -130,9 +140,9 @@ int SimulatorDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 17)
+        if (_id < 21)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 17;
+        _id -= 21;
     }
     return _id;
 }

@@ -16,7 +16,7 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-static const uint qt_meta_data_joystickDialog[] = {
+static const uint qt_meta_data_JoystickDialog[] = {
 
  // content:
        6,       // revision
@@ -38,19 +38,19 @@ static const uint qt_meta_data_joystickDialog[] = {
        0        // eod
 };
 
-static const char qt_meta_stringdata_joystickDialog[] = {
-    "joystickDialog\0\0axis,value\0"
+static const char qt_meta_stringdata_JoystickDialog[] = {
+    "JoystickDialog\0\0axis,value\0"
     "onjoystickAxisValueChanged(int,int)\0"
     "on_nextButton_clicked()\0"
     "on_cancelButton_clicked()\0"
     "on_okButton_clicked()\0"
 };
 
-void joystickDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void JoystickDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         Q_ASSERT(staticMetaObject.cast(_o));
-        joystickDialog *_t = static_cast<joystickDialog *>(_o);
+        JoystickDialog *_t = static_cast<JoystickDialog *>(_o);
         switch (_id) {
         case 0: _t->onjoystickAxisValueChanged((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 1: _t->on_nextButton_clicked(); break;
@@ -61,33 +61,33 @@ void joystickDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
     }
 }
 
-const QMetaObjectExtraData joystickDialog::staticMetaObjectExtraData = {
+const QMetaObjectExtraData JoystickDialog::staticMetaObjectExtraData = {
     0,  qt_static_metacall 
 };
 
-const QMetaObject joystickDialog::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_joystickDialog,
-      qt_meta_data_joystickDialog, &staticMetaObjectExtraData }
+const QMetaObject JoystickDialog::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_JoystickDialog,
+      qt_meta_data_JoystickDialog, &staticMetaObjectExtraData }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
-const QMetaObject &joystickDialog::getStaticMetaObject() { return staticMetaObject; }
+const QMetaObject &JoystickDialog::getStaticMetaObject() { return staticMetaObject; }
 #endif //Q_NO_DATA_RELOCATION
 
-const QMetaObject *joystickDialog::metaObject() const
+const QMetaObject *JoystickDialog::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
 }
 
-void *joystickDialog::qt_metacast(const char *_clname)
+void *JoystickDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_joystickDialog))
-        return static_cast<void*>(const_cast< joystickDialog*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_JoystickDialog))
+        return static_cast<void*>(const_cast< JoystickDialog*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
-int joystickDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int JoystickDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)

@@ -22,25 +22,16 @@
 #define SIMU_EXCEPTIONS
 #define PCBSKY9X
 #define CPUARM
+#define REVB
 #define ROTARY_ENCODERS 1
 #define HELI
 #define TEMPLATES
 #define SPLASH
 #define FLIGHT_MODES
-
 #define FRSKY
 #define FRSKY_HUB
-#define FRSKY_STICKS
 #define WS_HOW_HIGH
 #define VARIO
-
-// -- defined in CMakeLists.txt
-//#define MAVLINK
-// FIXME 
-//#define MAVLINK_DEBUG
-
-#define HELI
-#define TEMPLATES
 #define PPM_UNIT_PERCENT_PREC1
 #define BUZZER
 #define AUDIO
@@ -62,10 +53,11 @@
 #define GAUGES
 #define GPS
 #define FAI_CHOICE
+#define FRSKY_STICKS
 #define OVERRIDE_CHANNEL_FUNCTION
-
 #define NUM_POTS  3
 #define EEPROM_VARIANT 3
+#define FLAVOUR "sky9x"
 
 #undef min
 #undef max
@@ -84,6 +76,7 @@ namespace Open9xSky9x {
 #include "radio/src/eeprom_raw.cpp"
 #include "radio/src/eeprom_conversions.cpp"
 #include "radio/src/opentx.cpp"
+// #include "radio/src/debug.cpp"     // only included once in Taranis simulator because functions are exported as C and don't support namespaces
 #include "radio/src/strhelpers.cpp"
 #include "radio/src/switches.cpp"
 #include "radio/src/mixer.cpp"
@@ -92,29 +85,13 @@ namespace Open9xSky9x {
 #include "radio/src/pulses/pulses_arm.cpp"
 #include "radio/src/stamp.cpp"
 #include "radio/src/maths.cpp"
-
+#include "radio/src/vario.cpp"
 #include "radio/src/gui/menus.cpp"
 #include "radio/src/gui/menu_model.cpp"
 #include "radio/src/gui/menu_general.cpp"
 #include "radio/src/gui/view_main.cpp"
 #include "radio/src/gui/view_statistics.cpp"
-
-#if defined(FRSKY)
-#include "radio/src/vario.cpp"
-#include "radio/src/telemetry/frsky.cpp"
-#include "radio/src/telemetry/frsky_sport.cpp"
-#include "radio/src/telemetry/frsky_d.cpp"
 #include "radio/src/gui/view_telemetry.cpp"
-#endif
-
-#if defined(MAVLINK)
-//#error -------------------------------> mavlink-test 
-#include "radio/src/telemetry/mavlink.cpp"
-#include "radio/src/gui/view_mavlink.cpp"
-uint8_t RotEncoder ;
-#endif
-
-
 #include "radio/src/gui/view_about.cpp"
 #include "radio/src/gui/view_text.cpp"
 #include "radio/src/lcd_common.cpp"
@@ -126,7 +103,9 @@ uint8_t RotEncoder ;
 #include "radio/src/templates.cpp"
 #include "radio/src/translations.cpp"
 #include "radio/src/fonts.cpp"
-
+#include "radio/src/telemetry/frsky.cpp"
+#include "radio/src/telemetry/frsky_sport.cpp"
+#include "radio/src/telemetry/frsky_d.cpp"
 #include "radio/src/targets/sky9x/audio_driver.cpp"
 #include "radio/src/audio_arm.cpp"
 #include "radio/src/buzzer.cpp"
@@ -279,4 +258,14 @@ const char * Open9xSky9xSimulator::getError()
 {
 #define GETERROR_IMPORT
 #include "simulatorimport.h"
+}
+
+void Open9xSky9xSimulator::setTrainerInput(unsigned int inputNumber, int16_t value)
+{
+#define SETTRAINER_IMPORT
+#include "simulatorimport.h"
+}
+
+void Open9xSky9xSimulator::installTraceHook(void (*callback)(const char *)) {
+  ::traceCallback = callback;
 }

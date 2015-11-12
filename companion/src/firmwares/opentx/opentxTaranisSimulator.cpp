@@ -22,18 +22,14 @@
 #define SIMU_EXCEPTIONS
 #define PCBTARANIS
 #define CPUARM
-//#define HELI
+#define HELI
 #define SPLASH
 #define FLIGHT_MODES
-
 #define FRSKY
 #define FRSKY_HUB
 #define FRSKY_SPORT
-// -- defined in CMakeLists.txt
-//#define MAVLINK
 #define GPS
 #define VARIO
-
 #define GAUGES
 #define PPM_UNIT_PERCENT_PREC1
 #define AUDIO
@@ -59,8 +55,8 @@
 #define HAPTIC
 #define REVPLUS
 #define OVERRIDE_CHANNEL_FUNCTION
-
 #define NUM_POTS  5
+#define FLAVOUR "taranis-plus"
 
 #undef min
 #undef max
@@ -83,6 +79,7 @@ inline int geteepromsize() {
 #include "radio/src/eeprom_conversions.cpp"
 #include "radio/src/eeprom_rlc.cpp"
 #include "radio/src/opentx.cpp"
+#include "radio/src/debug.cpp"
 #include "radio/src/strhelpers.cpp"
 #include "radio/src/switches.cpp"
 #include "radio/src/curves.cpp"
@@ -122,10 +119,6 @@ inline int geteepromsize() {
 #include "radio/src/telemetry/frsky.cpp"
 #include "radio/src/telemetry/frsky_sport.cpp"
 #include "radio/src/telemetry/frsky_d.cpp"
-
-#include "radio/src/telemetry/mavlink.cpp"
-#include "radio/src/gui/view_mavlink.cpp"
-
 #include "radio/src/targets/taranis/audio_driver.cpp"
 #include "radio/src/targets/taranis/telemetry_driver.cpp"
 #include "radio/src/audio_arm.cpp"
@@ -304,4 +297,19 @@ const char * OpentxTaranisSimulator::getError()
 {
 #define GETERROR_IMPORT
 #include "simulatorimport.h"
+}
+
+void OpentxTaranisSimulator::sendTelemetry(uint8_t * data, unsigned int len) 
+{
+  frskySportProcessPacket(data);
+}
+
+void OpentxTaranisSimulator::setTrainerInput(unsigned int inputNumber, int16_t value)
+{
+#define SETTRAINER_IMPORT
+#include "simulatorimport.h"
+}
+
+void OpentxTaranisSimulator::installTraceHook(void (*callback)(const char *)) {
+  ::traceCallback = callback;
 }

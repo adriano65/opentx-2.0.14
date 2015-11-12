@@ -6100,6 +6100,7 @@ CMakeFiles/companion.dir/helpers.cpp.o
  /usr/lib64/qt/include/QtCore/qwaitcondition.h
  /usr/lib64/qt/include/QtCore/qxmlstream.h
  /usr/lib64/qt/include/QtGui/QCleanlooksStyle
+ /usr/lib64/qt/include/QtGui/QCloseEvent
  /usr/lib64/qt/include/QtGui/QCommonStyle
  /usr/lib64/qt/include/QtGui/QDialog
  /usr/lib64/qt/include/QtGui/QFileDialog
@@ -6109,6 +6110,7 @@ CMakeFiles/companion.dir/helpers.cpp.o
  /usr/lib64/qt/include/QtGui/QPalette
  /usr/lib64/qt/include/QtGui/QPlatformWindow
  /usr/lib64/qt/include/QtGui/QPrinter
+ /usr/lib64/qt/include/QtGui/QShowEvent
  /usr/lib64/qt/include/QtGui/QTransform
  /usr/lib64/qt/include/QtGui/QVector3D
  /usr/lib64/qt/include/QtGui/QtGui
@@ -6356,9 +6358,12 @@ CMakeFiles/companion.dir/helpers.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.cpp
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+ /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
+ /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.h
+ /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.h
 CMakeFiles/companion.dir/hexinterface.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/QtCore/QTextStream
@@ -7365,9 +7370,9 @@ CMakeFiles/companion.dir/mainwindow.cpp.o
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/printdialog.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/qcustomplot.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/radionotfound.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/version.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/warnings.h
  /usr/local/src/opentx/opentx-v2.0.14a/companion/src/xmlinterface.h
+ version.h
 CMakeFiles/companion.dir/mdichild.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h

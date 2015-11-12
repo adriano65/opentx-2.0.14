@@ -1332,7 +1332,7 @@ void RegisterEepromInterfaces()
   eepromInterfaces.push_back(new Gruvin9xInterface(BOARD_STOCK));
   eepromInterfaces.push_back(new Gruvin9xInterface(BOARD_GRUVIN9X));
   eepromInterfaces.push_back(new Ersky9xInterface());
-//  eepromInterfaces.push_back(new Th9xInterface());
+  //eepromInterfaces.push_back(new Th9xInterface());
   eepromInterfaces.push_back(new Er9xInterface());
 }
 

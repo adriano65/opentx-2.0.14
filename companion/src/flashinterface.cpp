@@ -67,6 +67,11 @@ FlashInterface::FlashInterface(QString fileName):
 
   if (flash_size > 0) {
     version = seekLabel(VERS_MARK);
+    if (version.startsWith("opentx-")) {
+      int index = version.lastIndexOf('-');
+      flavour = version.mid(0, index);
+      version = version.mid(index+1);
+    }
     date = seekLabel(DATE_MARK);
     time = seekLabel(TIME_MARK);
     eepromId = seekLabel(EEPR_MARK);
@@ -94,7 +99,7 @@ QString FlashInterface::seekString(const QString & string)
   if (start > 0) {
     start += string.length();
     int end = -1;
-    for (int i=start; i<start+20; i++) {
+    for (int i=start; i<start+50; i++) {
       char c = flash.at(i);
       if (c == '\0' || c == '\036') {
         end = i;
@@ -303,6 +308,29 @@ bool FlashInterface::hasSplash()
 bool FlashInterface::isValid()
 {
   return isValidFlag;
+}
+
+QString FlashInterface::getFlavour()
+{
+  if (flavour == "opentx-x9dp")
+    return "opentx-taranis-plus";
+  else if (flavour == "opentx-x9d")
+    return "opentx-taranis";
+  else
+    return flavour;
+}
+
+bool FlashInterface::isHardwareCompatible(FlashInterface &previousFirmware)
+{
+  QString newFlavour = getFlavour();
+  if (newFlavour.isEmpty())
+    return true;
+
+  QString previousFlavour = previousFirmware.getFlavour();
+  if (previousFlavour.isEmpty())
+    return true;
+
+  return (newFlavour == previousFlavour);
 }
 
 uint FlashInterface::saveFlash(QString fileName)

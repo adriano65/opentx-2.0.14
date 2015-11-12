@@ -188,14 +188,6 @@ NOINLINE void processSerialFrskyData(uint8_t data)
     }
 #endif
 
-#if defined(MAVLINK)
-  if (IS_MAVLINK_PROTOCOL()) {
-    RXHandler(data);
-  }
-#else
-  if (1) {}
-#endif
-  else {
   switch (dataState)
   {
     case STATE_DATA_START:
@@ -290,7 +282,6 @@ NOINLINE void processSerialFrskyData(uint8_t data)
     dataState = STATE_DATA_IDLE;
   }
 #endif
-}
 }
 
 enum AlarmsCheckSteps {
