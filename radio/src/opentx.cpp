@@ -2771,11 +2771,20 @@ void perMain()
 
   checkBacklight();
 
-#if !defined(CPUARM) && defined(FRSKY)
-  telemetryWakeup();
-#endif
-#if !defined(CPUARM) && defined(MAVLINK)
-  MAVLINK_telemetryWakeup();
+#if defined(FRSKY) && defined(MAVLINK)
+  if (g_model.telemetryProtocol == PROTOCOL_MAVLINK) {	// enum TelemetryProtocol in myeeprom.c
+	MAVLINK_telemetryWakeup();
+	}
+  else {
+	FRSKY_telemetryWakeup();
+	}
+#else
+  #if defined(FRSKY)
+	FRSKY_telemetryWakeup();
+  #endif
+  #if defined(MAVLINK)
+	MAVLINK_telemetryWakeup();
+  #endif
 #endif
 
 #if defined(PCBTARANIS)
@@ -3509,10 +3518,23 @@ void mixerTask(void * pdata)
       doMixerCalculations();
       CoLeaveMutexSection(mixerMutex);
 
-#if defined(FRSKY) || defined(MAVLINK)
-      telemetryWakeup();
+#if defined(FRSKY) && defined(MAVLINK)
+  if (g_model.telemetryProtocol == PROTOCOL_MAVLINK) {	// enum TelemetryProtocol in myeeprom.c
+	MAVLINK_telemetryWakeup();
+	}
+  else {
+	FRSKY_telemetryWakeup();
+	}
+#else
+  #if defined(FRSKY)
+	FRSKY_telemetryWakeup();
+  #endif
+  #if defined(MAVLINK)
+	MAVLINK_telemetryWakeup();
+  #endif
+	  
 #endif
-
+	  
       if (heartbeat == HEART_WDT_CHECK) {
         wdt_reset();
         heartbeat = 0;
@@ -3592,7 +3614,11 @@ int main(void)
   sei(); // interrupts needed for telemetryInit and eeReadAll.
 
 #if defined(FRSKY) && !defined(DSM2_SERIAL)
-  telemetryInit();
+  #ifdef MAVLINK
+	MAVLINK_Init();
+  #else
+	FRSKY_Init();
+  #endif
 #endif
 
 #if defined(DSM2_SERIAL) && !defined(FRSKY)
@@ -3611,7 +3637,7 @@ int main(void)
   NMEA_Init();
 #endif
 
-#ifdef MAVLINK
+#if defined(MAVLINK) && !defined(FRSKY)
   MAVLINK_Init();
 #endif
 

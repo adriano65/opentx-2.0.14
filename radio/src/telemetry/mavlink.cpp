@@ -149,12 +149,12 @@ MavlinkData mavlinkData;
 	*/
 SerialFuncP RXHandler = processSerialMavlinkData;
 #else
-#include "serial.cpp"
-void MAVLINK_rxhandler(uint8_t byte) {
-	processSerialMavlinkData(byte);
-}
+  #include "serial.cpp"
+  void MAVLINK_rxhandler(uint8_t byte) {
+	  processSerialMavlinkData(byte);
+  }
 
-SerialFuncP RXHandler = MAVLINK_rxhandler;
+  SerialFuncP RXHandler = MAVLINK_rxhandler;
 #endif
 
 
@@ -222,8 +222,11 @@ void MAVLINK_telemetryWakeup() {
 	if (!count) {
 	#if defined(CPUARM)
 		mav_heartbeat=0;	/* reset counter */
-		//if (MAVLINK_menu==MENU_DUMP_DIAG) TxPushByte('D');
-		TxPushByte('D');
+		#if 0
+		if (MAVLINK_menu==MENU_DUMP_DIAG) TxPushByte('D');
+		#else
+		;
+		#endif
 	#else
 		if (mav_heartbeat > -30) {
 			// TODO mavlink_system.sysid = g_eeGeneral.mavTargetSystem;

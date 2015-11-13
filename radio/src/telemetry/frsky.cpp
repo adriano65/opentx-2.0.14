@@ -67,30 +67,6 @@ uint8_t frskyRxBufferCount = 0;
 
 FrskyData frskyData;
 
-// #if defined(CPUARM)
-// uint8_t telemetryProtocol = 255;
-// #define IS_FRSKY_D_PROTOCOL()      (telemetryProtocol == PROTOCOL_FRSKY_D)
-// #define IS_FRSKY_SPORT_PROTOCOL()  (telemetryProtocol == PROTOCOL_FRSKY_SPORT)
-// #else
-// #define IS_FRSKY_D_PROTOCOL()     (true)
-// #define IS_FRSKY_SPORT_PROTOCOL() (false)
-// #endif
-
-#if defined(CPUARM)
-uint8_t telemetryProtocol = 255;
-#define IS_FRSKY_D_PROTOCOL()      (telemetryProtocol == PROTOCOL_FRSKY_D)
-#define IS_FRSKY_SPORT_PROTOCOL()  (telemetryProtocol == PROTOCOL_FRSKY_SPORT)
-#ifdef MAVLINK
-#define IS_MAVLINK_PROTOCOL()      (telemetryProtocol == PROTOCOL_MAVLINK)
-#endif
-#else
-#define IS_FRSKY_D_PROTOCOL()     (true)
-#define IS_FRSKY_SPORT_PROTOCOL() (false)
-#ifdef MAVLINK
-#define IS_MAVLINK_PROTOCOL()     (false)
-#endif
-#endif
-
 
 void FrskyValueWithMin::set(uint8_t value)
 {
@@ -294,13 +270,13 @@ enum AlarmsCheckSteps {
   ALARM_STEPS_COUNT
 };
 
-void telemetryWakeup()
+void FRSKY_telemetryWakeup()
 {
 #if defined(CPUARM)
   uint8_t requiredTelemetryProtocol = MODEL_TELEMETRY_PROTOCOL();
   if (telemetryProtocol != requiredTelemetryProtocol) {
     telemetryProtocol = requiredTelemetryProtocol;
-    telemetryInit();
+    FRSKY_Init();
   }
 #endif
 
@@ -621,7 +597,7 @@ void telemetryReset()
 #endif
 }
 
-void telemetryInit(void)
+void FRSKY_Init(void)
 {
 #if defined(PCBTARANIS)
   if (telemetryProtocol == PROTOCOL_FRSKY_D) {

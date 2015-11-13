@@ -462,9 +462,9 @@ void frskyDProcessPacket(uint8_t *packet);
 // FrSky S.PORT Protocol
 void frskySportProcessPacket(uint8_t *packet);
 
-void telemetryWakeup(void);
+void FRSKY_telemetryWakeup(void);
 void telemetryReset();
-void telemetryInit(void);
+void FRSKY_Init(void);
 void telemetryInterrupt10ms(void);
 
 #if defined(CPUARM)

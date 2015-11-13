@@ -1340,6 +1340,22 @@ inline bool isFunctionActive(uint8_t func)
   #include "telemetry/mavlink.h"
 #endif
 
+#if defined(CPUARM)
+  uint8_t telemetryProtocol = 255;
+  #define IS_FRSKY_D_PROTOCOL()      (telemetryProtocol == PROTOCOL_FRSKY_D)
+  #define IS_FRSKY_SPORT_PROTOCOL()  (telemetryProtocol == PROTOCOL_FRSKY_SPORT)
+  #ifdef MAVLINK
+  #define IS_MAVLINK_PROTOCOL()      (telemetryProtocol == PROTOCOL_MAVLINK)
+  #endif
+#else
+  #define IS_FRSKY_D_PROTOCOL()     (true)
+  #define IS_FRSKY_SPORT_PROTOCOL() (false)
+  #ifdef MAVLINK
+  #define IS_MAVLINK_PROTOCOL()     (false)
+  #endif
+#endif
+  
+  
 #define PLAY_REPEAT(x)            (x)                 /* Range 0 to 15 */
 #define PLAY_NOW                  0x10
 #define PLAY_BACKGROUND           0x20
