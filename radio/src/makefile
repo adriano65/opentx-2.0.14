@@ -337,7 +337,7 @@ SHELL = sh
 IMG2LBM = -python ../util/img2lbm.py
 BIN2LBM = -python ../util/bin2lbm.py
 TRANSLATE = -python ../util/translate.py
-VERSION = 2.0.14a
+VERSION = 2.0.15a
 
 SRC =
 CPPSRC =
@@ -1249,6 +1249,10 @@ lbm: fonts bitmaps/sticks.lbm
   
 elf: $(TARGET).elf
 bin: $(TARGET).bin
+	mv $(TARGET).bin $(TARGET)$(PCB).bin
+	$(REMOVE) $(TARGET).hex
+	@echo "Done."
+
 hex: $(TARGET).hex
 eep: $(TARGET).eep
 lss: $(TARGET).lss
