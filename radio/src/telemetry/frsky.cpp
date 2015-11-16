@@ -505,8 +505,7 @@ void telemetryInterrupt10ms()
   }
 }
 
-void telemetryReset()
-{
+void telemetryReset() {
   memclear(&frskyData, sizeof(frskyData));
 
   frskyStreaming = 0; // reset counter only if valid frsky packets are being detected
@@ -588,8 +587,7 @@ void telemetryReset()
 #endif
 }
 
-void FRSKY_Init(void)
-{
+void FRSKY_Init(void) {
 #if defined(PCBTARANIS)
   if (telemetryProtocol == PROTOCOL_FRSKY_D) {
     telemetryPortInit(FRSKY_D_BAUDRATE);
