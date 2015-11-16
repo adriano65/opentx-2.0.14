@@ -100,6 +100,10 @@ const pm_uchar * splash_lbm = splashdata+4;
 EEGeneral  g_eeGeneral;
 ModelData  g_model;
 
+#if defined(FRSKY) || defined(MAVLINK)
+Fifo<32> TelemRxFifo;
+#endif
+
 #if defined(PCBTARANIS) && defined(SDCARD)
 uint8_t modelBitmap[MODEL_BITMAP_SIZE];
 void loadModelBitmap(char *name, uint8_t *bitmap)

@@ -44,8 +44,6 @@
 /** Pins description corresponding to Rxd,Txd, (UART pins) */
 #define SECOND_SERIAL_PINS        {PINS_UART}
 
-Fifo<512> serial2RxFifo;
-
 #if !defined(SIMU)
 /*
  * Outputs a character on the UART line.
@@ -116,7 +114,7 @@ extern "C" void UART0_IRQHandler() {
 	//Current_Com2->ready = 0 ;	
 	}
   if ( pUart->UART_SR & UART_SR_RXRDY ) {
-	serial2RxFifo.push(pUart->UART_RHR);	
+	TelemRxFifo.push(pUart->UART_RHR);	
 	}	 
 }
 #else
@@ -131,7 +129,3 @@ void telemetrySecondPortInit(unsigned int baudrate)
 
 #endif
 
-bool telemetrySecondPortReceive(uint8_t & data)
-{
-  return serial2RxFifo.pop(data);
-}

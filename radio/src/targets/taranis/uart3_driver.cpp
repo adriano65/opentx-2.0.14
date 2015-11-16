@@ -38,7 +38,7 @@
 
 bool uart3Telemetry = false;
 Fifo<512> uart3TxFifo;
-extern Fifo<512> telemetryFifo;
+//extern Fifo<512> telemetryFifo;
 
 void uart3Setup(unsigned int baudrate)
 {
@@ -136,7 +136,7 @@ extern "C" void USART3_IRQHandler(void)
     uint8_t data = USART3->DR;
 
     if (uart3Telemetry && !(status & USART_FLAG_ERRORS)) {
-      telemetryFifo.push(data);
+      TelemRxFifo.push(data);
     }
 
     status = USART3->SR;

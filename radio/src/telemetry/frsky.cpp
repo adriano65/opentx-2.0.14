@@ -59,10 +59,6 @@ uint8_t frskyTxBufferCount = 0;
 uint8_t telemetryState = TELEMETRY_INIT;
 #endif
 
-#if defined(PCBTARANIS)
-Fifo<512> telemetryFifo; // TODO should be in the driver
-#endif
-
 uint8_t frskyRxBufferCount = 0;
 
 FrskyData frskyData;
@@ -288,7 +284,7 @@ void FRSKY_telemetryWakeup()
   struct gtm utm;
   gettime(&utm);
   #endif
-  while (telemetryFifo.pop(data)) {
+  while (TelemRxFifo.pop(data)) {
     processSerialFrskyData(data);
 	#if defined(SPORT_FILE_LOG) && !defined(SIMU)
     extern FIL g_telemetryFile;
@@ -304,10 +300,10 @@ void FRSKY_telemetryWakeup()
 #elif defined(CPUARM)
   if (telemetryProtocol == PROTOCOL_FRSKY_D_SECONDARY) {
     uint8_t data;
-    while (telemetrySecondPortReceive(data)) {
-      processSerialFrskyData(data);
-    }
-  }
+	while (TelemRxFifo.pop(data)) {
+	  processSerialFrskyData(data);
+	  }
+	}
   else {
     // Receive serial data here
     rxPdcUsart(processSerialFrskyData);
@@ -430,11 +426,6 @@ void FRSKY_telemetryWakeup()
 
 void telemetryInterrupt10ms()
 {
-#ifdef MAVLINK
-  if (IS_MAVLINK_PROTOCOL())
-    return;
-#endif
-	
 #if defined(CPUARM)
   uint16_t voltage = frskyData.hub.cellsSum; /* unit: 1/10 volts */
 #elif defined(FRSKY_HUB)
@@ -452,15 +443,15 @@ void telemetryInterrupt10ms()
     if (!TELEMETRY_OPENXSENSOR()) {
       // power calculation
       uint8_t channel = g_model.frsky.voltsSource;
-#if defined(CPUARM)
+	  #if defined(CPUARM)
       if (channel <= FRSKY_VOLTS_SOURCE_A4) {
         voltage = applyChannelRatio(channel, frskyData.analog[channel].value) / 10;
       }
-#else
+	  #else
       if (channel <= FRSKY_VOLTS_SOURCE_A2) {
         voltage = applyChannelRatio(channel, frskyData.analog[channel].value) / 10;
       }
-#endif
+	  #endif
 
 #if defined(FRSKY_HUB)
       else if (channel == FRSKY_VOLTS_SOURCE_FAS) {
@@ -605,14 +596,14 @@ void FRSKY_Init(void)
   }
   else if (telemetryProtocol==PROTOCOL_FRSKY_D_SECONDARY) {
     telemetryPortInit(0);
-    telemetrySecondPortInit(9600);
+    telemetrySecondPortInit(FRSKY_D_BAUDRATE);
   }
   else {
     telemetryPortInit(FRSKY_SPORT_BAUDRATE);
   }
 #elif defined(CPUARM)
     telemetryPortInit(0);
-    telemetrySecondPortInit(9600);
+    telemetrySecondPortInit(FRSKY_D_BAUDRATE);
 #elif !defined(SIMU)
   telemetryPortInit();
 #endif

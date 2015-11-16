@@ -36,8 +36,6 @@
 
 #include "../../opentx.h"
 
-extern Fifo<512> telemetryFifo;
-
 void telemetryPortInit(uint32_t baudrate)
 {
   if (baudrate == 0) {
@@ -109,7 +107,7 @@ extern "C" void USART2_IRQHandler()
     data = SPORT->DR;
 
     if (!(status & USART_FLAG_ERRORS))
-      telemetryFifo.push(data);
+      TelemRxFifo.push(data);
 
     status = SPORT->SR;
   }

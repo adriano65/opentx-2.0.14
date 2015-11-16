@@ -387,8 +387,8 @@ enum PotType {
   #define PPM_CH_CENTER(ch) (PPM_CENTER)
 #endif
 
+#include "fifo.h"
 #if defined(CPUARM)
-  #include "fifo.h"
   // This doesn't need protection on this processor
   #define tmr10ms_t uint32_t
   extern volatile tmr10ms_t g_tmr10ms;
@@ -1319,6 +1319,7 @@ inline bool isFunctionActive(uint8_t func)
 #endif
 
 #if defined (FRSKY)
+	extern Fifo<32> TelemRxFifo;
   // FrSky Telemetry
   #include "telemetry/frsky.h"
   // ... and Mavlink Telemetry

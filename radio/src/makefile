@@ -282,15 +282,19 @@ DEFAULT_MODE = 2
 
 # EEPROM_PROGRESS_BAR
 # Values = YES, NO
-ifeq ($(PCB), 9XRPRO)
+ifeq ($(PCB), $(filter $(PCB), 9XRPRO TARANIS))
 EEPROM_PROGRESS_BAR = YES
 else
 EEPROM_PROGRESS_BAR = NO
 endif
 
-# Flight Modes
+# Flight Modes (NEVER set to NO for Taranis)
 # Values = YES, NO
+ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
+FLIGHT_MODES = YES
+else
 FLIGHT_MODES = NO
+endif
 
 # Curves
 # Values = YES, NO
@@ -1027,6 +1031,8 @@ ifeq ($(EXT), $(filter $(EXT), FRSKY FRSKY_SPORT TELEMETREZ FRSKY_MAVLINK))
     ifeq ($(EXT), FRSKY_MAVLINK)
       CPPSRC += telemetry/frsky_sport.cpp telemetry/mavlink.cpp gui/view_mavlink.cpp
       CPPDEFS += -DMAVLINK -DFRSKY_SPORT
+      #CPPSRC += telemetry/mavlink.cpp gui/view_mavlink.cpp
+      #CPPDEFS += -DMAVLINK -DFRSKY
     endif
 
   endif

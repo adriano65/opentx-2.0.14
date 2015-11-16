@@ -87,7 +87,6 @@ MavlinkData mavlinkData;
 
 #if defined(CPUARM)
 	Fifo<32> TelemTxFifo;
-	Fifo<32> TelemRxFifo;
 	OS_STK TelemetryTxStack[MAVLINK_STACK_SIZE];
 	#if defined(MAVLINK_DEBUG)
 	  #ifdef BLUETOOTH
@@ -197,7 +196,7 @@ void MAVLINK_Init(void) {
 			telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
 		  #endif
 	  #else
-		MAVLINK_reset(0);
+		MAVLINK_reset();
 		SERIAL_Init();
 	  #endif
 	#endif
@@ -233,7 +232,7 @@ void MAVLINK_telemetryWakeup() {
 			mav_heartbeat--;
 
 			if (mav_heartbeat == -30) {
-				MAVLINK_reset(1);
+				MAVLINK_reset();
 				SERIAL_Init();
 			}
 		}
@@ -268,7 +267,7 @@ void MAVLINK_telemetryWakeup() {
 				  processSerialMavlinkData(data);
 				  }
 			#else
-			  while (telemetrySecondPortReceive(data)) {
+			  while (TelemRxFifo.pop(data)) {
 				processSerialMavlinkData(data);
 				}	
 			#endif
