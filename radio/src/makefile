@@ -190,7 +190,11 @@ PWM_BACKLIGHT = NO
 
 # SPLASH on START
 # Values = YES, NO, FIXED
+ifeq ($(PCB), TARANIS)
+SPLASH = YES
+else
 SPLASH = NO
+endif
 
 # GRAPHICS (sliders / checkboxes / bold / batt graph)
 GRAPHICS = YES
@@ -324,8 +328,8 @@ MENUS_LOCK = NO
 # Values = JOYSTICK, MASSSTORAGE
 # JOYSTICK: The TX will appear as a joystick
 # MASSSTORAGE: The TX will appear as a drive
-#USB = MASSSTORAGE
-USB = JOYSTICK
+USB = MASSSTORAGE
+#USB = JOYSTICK
 
 # Channel monitor display behavior
 # Values = NO, YES
