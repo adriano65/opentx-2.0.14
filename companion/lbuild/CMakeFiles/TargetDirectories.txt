@@ -1,7 +1,0 @@
-/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/common.dir
-/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/companion.dir
-/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/CMakeFiles/modeledit.dir
-/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/CMakeFiles/simulation.dir
-/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/simulator.dir
-/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/stamp.dir
-/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/translations.dir
