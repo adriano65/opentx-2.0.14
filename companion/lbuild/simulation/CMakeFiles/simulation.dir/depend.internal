@@ -434,11 +434,11 @@ simulation/CMakeFiles/simulation.dir/debugoutput.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/debugoutput.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/debugoutput.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
  simulation/ui_debugoutput.h
 simulation/CMakeFiles/simulation.dir/joystick.cpp.o
  /usr/include/SDL/SDL.h
@@ -531,8 +531,8 @@ simulation/CMakeFiles/simulation.dir/joystick.cpp.o
  /usr/lib64/qt/include/QtCore/qstringlist.h
  /usr/lib64/qt/include/QtCore/qstringmatcher.h
  /usr/lib64/qt/include/QtCore/qtimer.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.h
 simulation/CMakeFiles/simulation.dir/joystickdialog.cpp.o
  /usr/include/SDL/SDL.h
  /usr/include/SDL/SDL_active.h
@@ -999,10 +999,10 @@ simulation/CMakeFiles/simulation.dir/joystickdialog.cpp.o
  /usr/lib64/qt/include/QtGui/qwmatrix.h
  /usr/lib64/qt/include/QtGui/qworkspace.h
  /usr/lib64/qt/include/QtGui/qwsembedwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystickdialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystickdialog.h
  simulation/ui_joystickdialog.h
 simulation/CMakeFiles/simulation.dir/moc_cursorwidget.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -1424,8 +1424,8 @@ simulation/CMakeFiles/simulation.dir/moc_cursorwidget.cxx.o
  /usr/lib64/qt/include/QtGui/qwmatrix.h
  /usr/lib64/qt/include/QtGui/qworkspace.h
  /usr/lib64/qt/include/QtGui/qwsembedwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/cursorwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_cursorwidget.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/cursorwidget.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_cursorwidget.cxx
 simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -1636,11 +1636,11 @@ simulation/CMakeFiles/simulation.dir/moc_debugoutput.cxx.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/debugoutput.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_debugoutput.cxx
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/debugoutput.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_debugoutput.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 simulation/CMakeFiles/simulation.dir/moc_joystick.cxx.o
  /usr/include/SDL/SDL.h
  /usr/include/SDL/SDL_active.h
@@ -1732,8 +1732,8 @@ simulation/CMakeFiles/simulation.dir/moc_joystick.cxx.o
  /usr/lib64/qt/include/QtCore/qstringlist.h
  /usr/lib64/qt/include/QtCore/qstringmatcher.h
  /usr/lib64/qt/include/QtCore/qtimer.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/joystick.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_joystick.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/joystick.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_joystick.cxx
 simulation/CMakeFiles/simulation.dir/moc_joystickdialog.cxx.o
  /usr/include/SDL/SDL.h
  /usr/include/SDL/SDL_active.h
@@ -1871,9 +1871,9 @@ simulation/CMakeFiles/simulation.dir/moc_joystickdialog.cxx.o
  /usr/lib64/qt/include/QtGui/qwindowdefs.h
  /usr/lib64/qt/include/QtGui/qwindowdefs_win.h
  /usr/lib64/qt/include/QtGui/qwmatrix.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/joystick.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/joystickdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_joystickdialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/joystick.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/joystickdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_joystickdialog.cxx
 simulation/CMakeFiles/simulation.dir/moc_menuwidget.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -2294,8 +2294,8 @@ simulation/CMakeFiles/simulation.dir/moc_menuwidget.cxx.o
  /usr/lib64/qt/include/QtGui/qwmatrix.h
  /usr/lib64/qt/include/QtGui/qworkspace.h
  /usr/lib64/qt/include/QtGui/qwsembedwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/menuwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_menuwidget.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/menuwidget.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_menuwidget.cxx
 simulation/CMakeFiles/simulation.dir/moc_myslider.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -2716,8 +2716,8 @@ simulation/CMakeFiles/simulation.dir/moc_myslider.cxx.o
  /usr/lib64/qt/include/QtGui/qwmatrix.h
  /usr/lib64/qt/include/QtGui/qworkspace.h
  /usr/lib64/qt/include/QtGui/qwsembedwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/myslider.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_myslider.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/myslider.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_myslider.cxx
 simulation/CMakeFiles/simulation.dir/moc_simulatordialog.cxx.o
  /usr/include/SDL/SDL.h
  /usr/include/SDL/SDL_active.h
@@ -3175,16 +3175,16 @@ simulation/CMakeFiles/simulation.dir/moc_simulatordialog.cxx.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/debugoutput.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/joystick.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/simulatordialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/telemetrysimu.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/trainersimu.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_simulatordialog.cxx
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/debugoutput.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/joystick.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/simulatordialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/telemetrysimu.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/trainersimu.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_simulatordialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -3397,11 +3397,11 @@ simulation/CMakeFiles/simulation.dir/moc_telemetrysimu.cxx.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/telemetrysimu.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_telemetrysimu.cxx
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/telemetrysimu.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_telemetrysimu.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -3830,12 +3830,12 @@ simulation/CMakeFiles/simulation.dir/moc_trainersimu.cxx.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/trainersimu.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_trainersimu.cxx
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/trainersimu.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_trainersimu.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 simulation/CMakeFiles/simulation.dir/moc_xcursorwidget.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -4256,8 +4256,8 @@ simulation/CMakeFiles/simulation.dir/moc_xcursorwidget.cxx.o
  /usr/lib64/qt/include/QtGui/qwmatrix.h
  /usr/lib64/qt/include/QtGui/qworkspace.h
  /usr/lib64/qt/include/QtGui/qwsembedwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/xcursorwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_xcursorwidget.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/xcursorwidget.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_xcursorwidget.cxx
 simulation/CMakeFiles/simulation.dir/moc_xmenuwidget.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -4678,8 +4678,8 @@ simulation/CMakeFiles/simulation.dir/moc_xmenuwidget.cxx.o
  /usr/lib64/qt/include/QtGui/qwmatrix.h
  /usr/lib64/qt/include/QtGui/qworkspace.h
  /usr/lib64/qt/include/QtGui/qwsembedwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/xmenuwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_xmenuwidget.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/xmenuwidget.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_xmenuwidget.cxx
 simulation/CMakeFiles/simulation.dir/simulatordialog.cpp.o
  /usr/include/SDL/SDL.h
  /usr/include/SDL/SDL_active.h
@@ -5156,24 +5156,24 @@ simulation/CMakeFiles/simulation.dir/simulatordialog.cpp.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/cursorwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/lcdwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/menuwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/myslider.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/xcursorwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/xmenuwidget.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/cursorwidget.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/debugoutput.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/lcdwidget.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/menuwidget.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/myslider.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatordialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatordialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/telemetrysimu.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/trainersimu.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/xcursorwidget.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/xmenuwidget.h
  simulation/ui_simulatordialog-9x.h
  simulation/ui_simulatordialog-taranis.h
 simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o
@@ -5431,12 +5431,12 @@ simulation/CMakeFiles/simulation.dir/telemetrysimu.cpp.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/telemetry/frsky.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/telemetrysimu.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/telemetrysimu.h
  simulation/ui_telemetrysimu.h
 simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -5876,11 +5876,11 @@ simulation/CMakeFiles/simulation.dir/trainersimu.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/trainersimu.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/trainersimu.h
  simulation/ui_trainersimu.h

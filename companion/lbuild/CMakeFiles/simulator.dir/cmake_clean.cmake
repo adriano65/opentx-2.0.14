@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/bitmaps/sticks.lbm"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations/en.h"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua_exports.inc"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/bitmaps/sticks.lbm"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/translations/en.h"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua_exports.inc"
   "modeledit/moc_node.cxx"
   "qrc_companion.cxx"
   "CMakeFiles/simulator.dir/modeledit/node.cpp.o"

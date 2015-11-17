@@ -1,4 +1,4 @@
-# Install script for directory: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation
+# Install script for directory: /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

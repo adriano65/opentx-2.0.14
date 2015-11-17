@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /usr/local/src/opentx/opentx-v2.0.14a/companion/src
+CMAKE_SOURCE_DIR = /usr/local/src/opentx/opentx-2.0.14/companion/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild
+CMAKE_BINARY_DIR = /usr/local/src/opentx/opentx-2.0.14/companion/lbuild
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -101,7 +101,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -111,7 +111,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && /usr/bin/cpack --config ./CPackSourceConfig.cmake /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CPackSourceConfig.cmake
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && /usr/bin/cpack --config ./CPackSourceConfig.cmake /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -130,14 +130,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(CMAKE_COMMAND) -E cmake_progress_start /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/CMakeFiles/progress.marks
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f CMakeFiles/Makefile2 modeledit/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles 0
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(CMAKE_COMMAND) -E cmake_progress_start /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/CMakeFiles/progress.marks
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f CMakeFiles/Makefile2 modeledit/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f CMakeFiles/Makefile2 modeledit/clean
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f CMakeFiles/Makefile2 modeledit/clean
 .PHONY : clean
 
 # The main clean target
@@ -146,22 +146,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f CMakeFiles/Makefile2 modeledit/preinstall
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f CMakeFiles/Makefile2 modeledit/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f CMakeFiles/Makefile2 modeledit/preinstall
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f CMakeFiles/Makefile2 modeledit/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 modeledit/CMakeFiles/modeledit.dir/rule:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f CMakeFiles/Makefile2 modeledit/CMakeFiles/modeledit.dir/rule
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f CMakeFiles/Makefile2 modeledit/CMakeFiles/modeledit.dir/rule
 .PHONY : modeledit/CMakeFiles/modeledit.dir/rule
 
 # Convenience name for target.
@@ -170,7 +170,7 @@ modeledit: modeledit/CMakeFiles/modeledit.dir/rule
 
 # fast build rule for target.
 modeledit/fast:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/build
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/build
 .PHONY : modeledit/fast
 
 channels.o: channels.cpp.o
@@ -178,7 +178,7 @@ channels.o: channels.cpp.o
 
 # target to build an object file
 channels.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/channels.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/channels.cpp.o
 .PHONY : channels.cpp.o
 
 channels.i: channels.cpp.i
@@ -186,7 +186,7 @@ channels.i: channels.cpp.i
 
 # target to preprocess a source file
 channels.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/channels.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/channels.cpp.i
 .PHONY : channels.cpp.i
 
 channels.s: channels.cpp.s
@@ -194,7 +194,7 @@ channels.s: channels.cpp.s
 
 # target to generate assembly for a file
 channels.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/channels.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/channels.cpp.s
 .PHONY : channels.cpp.s
 
 curves.o: curves.cpp.o
@@ -202,7 +202,7 @@ curves.o: curves.cpp.o
 
 # target to build an object file
 curves.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/curves.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/curves.cpp.o
 .PHONY : curves.cpp.o
 
 curves.i: curves.cpp.i
@@ -210,7 +210,7 @@ curves.i: curves.cpp.i
 
 # target to preprocess a source file
 curves.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/curves.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/curves.cpp.i
 .PHONY : curves.cpp.i
 
 curves.s: curves.cpp.s
@@ -218,7 +218,7 @@ curves.s: curves.cpp.s
 
 # target to generate assembly for a file
 curves.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/curves.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/curves.cpp.s
 .PHONY : curves.cpp.s
 
 customfunctions.o: customfunctions.cpp.o
@@ -226,7 +226,7 @@ customfunctions.o: customfunctions.cpp.o
 
 # target to build an object file
 customfunctions.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o
 .PHONY : customfunctions.cpp.o
 
 customfunctions.i: customfunctions.cpp.i
@@ -234,7 +234,7 @@ customfunctions.i: customfunctions.cpp.i
 
 # target to preprocess a source file
 customfunctions.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.i
 .PHONY : customfunctions.cpp.i
 
 customfunctions.s: customfunctions.cpp.s
@@ -242,7 +242,7 @@ customfunctions.s: customfunctions.cpp.s
 
 # target to generate assembly for a file
 customfunctions.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.s
 .PHONY : customfunctions.cpp.s
 
 edge.o: edge.cpp.o
@@ -250,7 +250,7 @@ edge.o: edge.cpp.o
 
 # target to build an object file
 edge.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/edge.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/edge.cpp.o
 .PHONY : edge.cpp.o
 
 edge.i: edge.cpp.i
@@ -258,7 +258,7 @@ edge.i: edge.cpp.i
 
 # target to preprocess a source file
 edge.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/edge.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/edge.cpp.i
 .PHONY : edge.cpp.i
 
 edge.s: edge.cpp.s
@@ -266,7 +266,7 @@ edge.s: edge.cpp.s
 
 # target to generate assembly for a file
 edge.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/edge.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/edge.cpp.s
 .PHONY : edge.cpp.s
 
 expodialog.o: expodialog.cpp.o
@@ -274,7 +274,7 @@ expodialog.o: expodialog.cpp.o
 
 # target to build an object file
 expodialog.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o
 .PHONY : expodialog.cpp.o
 
 expodialog.i: expodialog.cpp.i
@@ -282,7 +282,7 @@ expodialog.i: expodialog.cpp.i
 
 # target to preprocess a source file
 expodialog.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.i
 .PHONY : expodialog.cpp.i
 
 expodialog.s: expodialog.cpp.s
@@ -290,7 +290,7 @@ expodialog.s: expodialog.cpp.s
 
 # target to generate assembly for a file
 expodialog.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.s
 .PHONY : expodialog.cpp.s
 
 flightmodes.o: flightmodes.cpp.o
@@ -298,7 +298,7 @@ flightmodes.o: flightmodes.cpp.o
 
 # target to build an object file
 flightmodes.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o
 .PHONY : flightmodes.cpp.o
 
 flightmodes.i: flightmodes.cpp.i
@@ -306,7 +306,7 @@ flightmodes.i: flightmodes.cpp.i
 
 # target to preprocess a source file
 flightmodes.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.i
 .PHONY : flightmodes.cpp.i
 
 flightmodes.s: flightmodes.cpp.s
@@ -314,7 +314,7 @@ flightmodes.s: flightmodes.cpp.s
 
 # target to generate assembly for a file
 flightmodes.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.s
 .PHONY : flightmodes.cpp.s
 
 heli.o: heli.cpp.o
@@ -322,7 +322,7 @@ heli.o: heli.cpp.o
 
 # target to build an object file
 heli.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/heli.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/heli.cpp.o
 .PHONY : heli.cpp.o
 
 heli.i: heli.cpp.i
@@ -330,7 +330,7 @@ heli.i: heli.cpp.i
 
 # target to preprocess a source file
 heli.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/heli.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/heli.cpp.i
 .PHONY : heli.cpp.i
 
 heli.s: heli.cpp.s
@@ -338,7 +338,7 @@ heli.s: heli.cpp.s
 
 # target to generate assembly for a file
 heli.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/heli.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/heli.cpp.s
 .PHONY : heli.cpp.s
 
 inputs.o: inputs.cpp.o
@@ -346,7 +346,7 @@ inputs.o: inputs.cpp.o
 
 # target to build an object file
 inputs.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o
 .PHONY : inputs.cpp.o
 
 inputs.i: inputs.cpp.i
@@ -354,7 +354,7 @@ inputs.i: inputs.cpp.i
 
 # target to preprocess a source file
 inputs.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/inputs.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/inputs.cpp.i
 .PHONY : inputs.cpp.i
 
 inputs.s: inputs.cpp.s
@@ -362,7 +362,7 @@ inputs.s: inputs.cpp.s
 
 # target to generate assembly for a file
 inputs.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/inputs.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/inputs.cpp.s
 .PHONY : inputs.cpp.s
 
 logicalswitches.o: logicalswitches.cpp.o
@@ -370,7 +370,7 @@ logicalswitches.o: logicalswitches.cpp.o
 
 # target to build an object file
 logicalswitches.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o
 .PHONY : logicalswitches.cpp.o
 
 logicalswitches.i: logicalswitches.cpp.i
@@ -378,7 +378,7 @@ logicalswitches.i: logicalswitches.cpp.i
 
 # target to preprocess a source file
 logicalswitches.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.i
 .PHONY : logicalswitches.cpp.i
 
 logicalswitches.s: logicalswitches.cpp.s
@@ -386,7 +386,7 @@ logicalswitches.s: logicalswitches.cpp.s
 
 # target to generate assembly for a file
 logicalswitches.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.s
 .PHONY : logicalswitches.cpp.s
 
 mixerdialog.o: mixerdialog.cpp.o
@@ -394,7 +394,7 @@ mixerdialog.o: mixerdialog.cpp.o
 
 # target to build an object file
 mixerdialog.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o
 .PHONY : mixerdialog.cpp.o
 
 mixerdialog.i: mixerdialog.cpp.i
@@ -402,7 +402,7 @@ mixerdialog.i: mixerdialog.cpp.i
 
 # target to preprocess a source file
 mixerdialog.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.i
 .PHONY : mixerdialog.cpp.i
 
 mixerdialog.s: mixerdialog.cpp.s
@@ -410,7 +410,7 @@ mixerdialog.s: mixerdialog.cpp.s
 
 # target to generate assembly for a file
 mixerdialog.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.s
 .PHONY : mixerdialog.cpp.s
 
 mixerslist.o: mixerslist.cpp.o
@@ -418,7 +418,7 @@ mixerslist.o: mixerslist.cpp.o
 
 # target to build an object file
 mixerslist.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o
 .PHONY : mixerslist.cpp.o
 
 mixerslist.i: mixerslist.cpp.i
@@ -426,7 +426,7 @@ mixerslist.i: mixerslist.cpp.i
 
 # target to preprocess a source file
 mixerslist.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.i
 .PHONY : mixerslist.cpp.i
 
 mixerslist.s: mixerslist.cpp.s
@@ -434,7 +434,7 @@ mixerslist.s: mixerslist.cpp.s
 
 # target to generate assembly for a file
 mixerslist.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.s
 .PHONY : mixerslist.cpp.s
 
 mixes.o: mixes.cpp.o
@@ -442,7 +442,7 @@ mixes.o: mixes.cpp.o
 
 # target to build an object file
 mixes.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o
 .PHONY : mixes.cpp.o
 
 mixes.i: mixes.cpp.i
@@ -450,7 +450,7 @@ mixes.i: mixes.cpp.i
 
 # target to preprocess a source file
 mixes.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixes.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixes.cpp.i
 .PHONY : mixes.cpp.i
 
 mixes.s: mixes.cpp.s
@@ -458,7 +458,7 @@ mixes.s: mixes.cpp.s
 
 # target to generate assembly for a file
 mixes.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixes.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/mixes.cpp.s
 .PHONY : mixes.cpp.s
 
 moc_channels.o: moc_channels.cxx.o
@@ -466,7 +466,7 @@ moc_channels.o: moc_channels.cxx.o
 
 # target to build an object file
 moc_channels.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o
 .PHONY : moc_channels.cxx.o
 
 moc_channels.i: moc_channels.cxx.i
@@ -474,7 +474,7 @@ moc_channels.i: moc_channels.cxx.i
 
 # target to preprocess a source file
 moc_channels.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.i
 .PHONY : moc_channels.cxx.i
 
 moc_channels.s: moc_channels.cxx.s
@@ -482,7 +482,7 @@ moc_channels.s: moc_channels.cxx.s
 
 # target to generate assembly for a file
 moc_channels.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.s
 .PHONY : moc_channels.cxx.s
 
 moc_curves.o: moc_curves.cxx.o
@@ -490,7 +490,7 @@ moc_curves.o: moc_curves.cxx.o
 
 # target to build an object file
 moc_curves.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o
 .PHONY : moc_curves.cxx.o
 
 moc_curves.i: moc_curves.cxx.i
@@ -498,7 +498,7 @@ moc_curves.i: moc_curves.cxx.i
 
 # target to preprocess a source file
 moc_curves.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.i
 .PHONY : moc_curves.cxx.i
 
 moc_curves.s: moc_curves.cxx.s
@@ -506,7 +506,7 @@ moc_curves.s: moc_curves.cxx.s
 
 # target to generate assembly for a file
 moc_curves.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.s
 .PHONY : moc_curves.cxx.s
 
 moc_customfunctions.o: moc_customfunctions.cxx.o
@@ -514,7 +514,7 @@ moc_customfunctions.o: moc_customfunctions.cxx.o
 
 # target to build an object file
 moc_customfunctions.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o
 .PHONY : moc_customfunctions.cxx.o
 
 moc_customfunctions.i: moc_customfunctions.cxx.i
@@ -522,7 +522,7 @@ moc_customfunctions.i: moc_customfunctions.cxx.i
 
 # target to preprocess a source file
 moc_customfunctions.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.i
 .PHONY : moc_customfunctions.cxx.i
 
 moc_customfunctions.s: moc_customfunctions.cxx.s
@@ -530,7 +530,7 @@ moc_customfunctions.s: moc_customfunctions.cxx.s
 
 # target to generate assembly for a file
 moc_customfunctions.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.s
 .PHONY : moc_customfunctions.cxx.s
 
 moc_expodialog.o: moc_expodialog.cxx.o
@@ -538,7 +538,7 @@ moc_expodialog.o: moc_expodialog.cxx.o
 
 # target to build an object file
 moc_expodialog.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o
 .PHONY : moc_expodialog.cxx.o
 
 moc_expodialog.i: moc_expodialog.cxx.i
@@ -546,7 +546,7 @@ moc_expodialog.i: moc_expodialog.cxx.i
 
 # target to preprocess a source file
 moc_expodialog.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.i
 .PHONY : moc_expodialog.cxx.i
 
 moc_expodialog.s: moc_expodialog.cxx.s
@@ -554,7 +554,7 @@ moc_expodialog.s: moc_expodialog.cxx.s
 
 # target to generate assembly for a file
 moc_expodialog.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.s
 .PHONY : moc_expodialog.cxx.s
 
 moc_flightmodes.o: moc_flightmodes.cxx.o
@@ -562,7 +562,7 @@ moc_flightmodes.o: moc_flightmodes.cxx.o
 
 # target to build an object file
 moc_flightmodes.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o
 .PHONY : moc_flightmodes.cxx.o
 
 moc_flightmodes.i: moc_flightmodes.cxx.i
@@ -570,7 +570,7 @@ moc_flightmodes.i: moc_flightmodes.cxx.i
 
 # target to preprocess a source file
 moc_flightmodes.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.i
 .PHONY : moc_flightmodes.cxx.i
 
 moc_flightmodes.s: moc_flightmodes.cxx.s
@@ -578,7 +578,7 @@ moc_flightmodes.s: moc_flightmodes.cxx.s
 
 # target to generate assembly for a file
 moc_flightmodes.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.s
 .PHONY : moc_flightmodes.cxx.s
 
 moc_heli.o: moc_heli.cxx.o
@@ -586,7 +586,7 @@ moc_heli.o: moc_heli.cxx.o
 
 # target to build an object file
 moc_heli.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o
 .PHONY : moc_heli.cxx.o
 
 moc_heli.i: moc_heli.cxx.i
@@ -594,7 +594,7 @@ moc_heli.i: moc_heli.cxx.i
 
 # target to preprocess a source file
 moc_heli.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.i
 .PHONY : moc_heli.cxx.i
 
 moc_heli.s: moc_heli.cxx.s
@@ -602,7 +602,7 @@ moc_heli.s: moc_heli.cxx.s
 
 # target to generate assembly for a file
 moc_heli.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.s
 .PHONY : moc_heli.cxx.s
 
 moc_inputs.o: moc_inputs.cxx.o
@@ -610,7 +610,7 @@ moc_inputs.o: moc_inputs.cxx.o
 
 # target to build an object file
 moc_inputs.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o
 .PHONY : moc_inputs.cxx.o
 
 moc_inputs.i: moc_inputs.cxx.i
@@ -618,7 +618,7 @@ moc_inputs.i: moc_inputs.cxx.i
 
 # target to preprocess a source file
 moc_inputs.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.i
 .PHONY : moc_inputs.cxx.i
 
 moc_inputs.s: moc_inputs.cxx.s
@@ -626,7 +626,7 @@ moc_inputs.s: moc_inputs.cxx.s
 
 # target to generate assembly for a file
 moc_inputs.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.s
 .PHONY : moc_inputs.cxx.s
 
 moc_logicalswitches.o: moc_logicalswitches.cxx.o
@@ -634,7 +634,7 @@ moc_logicalswitches.o: moc_logicalswitches.cxx.o
 
 # target to build an object file
 moc_logicalswitches.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o
 .PHONY : moc_logicalswitches.cxx.o
 
 moc_logicalswitches.i: moc_logicalswitches.cxx.i
@@ -642,7 +642,7 @@ moc_logicalswitches.i: moc_logicalswitches.cxx.i
 
 # target to preprocess a source file
 moc_logicalswitches.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.i
 .PHONY : moc_logicalswitches.cxx.i
 
 moc_logicalswitches.s: moc_logicalswitches.cxx.s
@@ -650,7 +650,7 @@ moc_logicalswitches.s: moc_logicalswitches.cxx.s
 
 # target to generate assembly for a file
 moc_logicalswitches.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.s
 .PHONY : moc_logicalswitches.cxx.s
 
 moc_mixerdialog.o: moc_mixerdialog.cxx.o
@@ -658,7 +658,7 @@ moc_mixerdialog.o: moc_mixerdialog.cxx.o
 
 # target to build an object file
 moc_mixerdialog.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o
 .PHONY : moc_mixerdialog.cxx.o
 
 moc_mixerdialog.i: moc_mixerdialog.cxx.i
@@ -666,7 +666,7 @@ moc_mixerdialog.i: moc_mixerdialog.cxx.i
 
 # target to preprocess a source file
 moc_mixerdialog.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.i
 .PHONY : moc_mixerdialog.cxx.i
 
 moc_mixerdialog.s: moc_mixerdialog.cxx.s
@@ -674,7 +674,7 @@ moc_mixerdialog.s: moc_mixerdialog.cxx.s
 
 # target to generate assembly for a file
 moc_mixerdialog.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.s
 .PHONY : moc_mixerdialog.cxx.s
 
 moc_mixerslist.o: moc_mixerslist.cxx.o
@@ -682,7 +682,7 @@ moc_mixerslist.o: moc_mixerslist.cxx.o
 
 # target to build an object file
 moc_mixerslist.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.o
 .PHONY : moc_mixerslist.cxx.o
 
 moc_mixerslist.i: moc_mixerslist.cxx.i
@@ -690,7 +690,7 @@ moc_mixerslist.i: moc_mixerslist.cxx.i
 
 # target to preprocess a source file
 moc_mixerslist.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.i
 .PHONY : moc_mixerslist.cxx.i
 
 moc_mixerslist.s: moc_mixerslist.cxx.s
@@ -698,7 +698,7 @@ moc_mixerslist.s: moc_mixerslist.cxx.s
 
 # target to generate assembly for a file
 moc_mixerslist.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.s
 .PHONY : moc_mixerslist.cxx.s
 
 moc_mixes.o: moc_mixes.cxx.o
@@ -706,7 +706,7 @@ moc_mixes.o: moc_mixes.cxx.o
 
 # target to build an object file
 moc_mixes.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o
 .PHONY : moc_mixes.cxx.o
 
 moc_mixes.i: moc_mixes.cxx.i
@@ -714,7 +714,7 @@ moc_mixes.i: moc_mixes.cxx.i
 
 # target to preprocess a source file
 moc_mixes.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.i
 .PHONY : moc_mixes.cxx.i
 
 moc_mixes.s: moc_mixes.cxx.s
@@ -722,7 +722,7 @@ moc_mixes.s: moc_mixes.cxx.s
 
 # target to generate assembly for a file
 moc_mixes.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.s
 .PHONY : moc_mixes.cxx.s
 
 moc_modeledit.o: moc_modeledit.cxx.o
@@ -730,7 +730,7 @@ moc_modeledit.o: moc_modeledit.cxx.o
 
 # target to build an object file
 moc_modeledit.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o
 .PHONY : moc_modeledit.cxx.o
 
 moc_modeledit.i: moc_modeledit.cxx.i
@@ -738,7 +738,7 @@ moc_modeledit.i: moc_modeledit.cxx.i
 
 # target to preprocess a source file
 moc_modeledit.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.i
 .PHONY : moc_modeledit.cxx.i
 
 moc_modeledit.s: moc_modeledit.cxx.s
@@ -746,7 +746,7 @@ moc_modeledit.s: moc_modeledit.cxx.s
 
 # target to generate assembly for a file
 moc_modeledit.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.s
 .PHONY : moc_modeledit.cxx.s
 
 moc_modelpanel.o: moc_modelpanel.cxx.o
@@ -754,7 +754,7 @@ moc_modelpanel.o: moc_modelpanel.cxx.o
 
 # target to build an object file
 moc_modelpanel.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o
 .PHONY : moc_modelpanel.cxx.o
 
 moc_modelpanel.i: moc_modelpanel.cxx.i
@@ -762,7 +762,7 @@ moc_modelpanel.i: moc_modelpanel.cxx.i
 
 # target to preprocess a source file
 moc_modelpanel.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.i
 .PHONY : moc_modelpanel.cxx.i
 
 moc_modelpanel.s: moc_modelpanel.cxx.s
@@ -770,7 +770,7 @@ moc_modelpanel.s: moc_modelpanel.cxx.s
 
 # target to generate assembly for a file
 moc_modelpanel.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.s
 .PHONY : moc_modelpanel.cxx.s
 
 moc_node.o: moc_node.cxx.o
@@ -778,7 +778,7 @@ moc_node.o: moc_node.cxx.o
 
 # target to build an object file
 moc_node.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.o
 .PHONY : moc_node.cxx.o
 
 moc_node.i: moc_node.cxx.i
@@ -786,7 +786,7 @@ moc_node.i: moc_node.cxx.i
 
 # target to preprocess a source file
 moc_node.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.i
 .PHONY : moc_node.cxx.i
 
 moc_node.s: moc_node.cxx.s
@@ -794,7 +794,7 @@ moc_node.s: moc_node.cxx.s
 
 # target to generate assembly for a file
 moc_node.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.s
 .PHONY : moc_node.cxx.s
 
 moc_setup.o: moc_setup.cxx.o
@@ -802,7 +802,7 @@ moc_setup.o: moc_setup.cxx.o
 
 # target to build an object file
 moc_setup.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o
 .PHONY : moc_setup.cxx.o
 
 moc_setup.i: moc_setup.cxx.i
@@ -810,7 +810,7 @@ moc_setup.i: moc_setup.cxx.i
 
 # target to preprocess a source file
 moc_setup.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.i
 .PHONY : moc_setup.cxx.i
 
 moc_setup.s: moc_setup.cxx.s
@@ -818,7 +818,7 @@ moc_setup.s: moc_setup.cxx.s
 
 # target to generate assembly for a file
 moc_setup.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.s
 .PHONY : moc_setup.cxx.s
 
 moc_telemetry.o: moc_telemetry.cxx.o
@@ -826,7 +826,7 @@ moc_telemetry.o: moc_telemetry.cxx.o
 
 # target to build an object file
 moc_telemetry.cxx.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o
 .PHONY : moc_telemetry.cxx.o
 
 moc_telemetry.i: moc_telemetry.cxx.i
@@ -834,7 +834,7 @@ moc_telemetry.i: moc_telemetry.cxx.i
 
 # target to preprocess a source file
 moc_telemetry.cxx.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.i
 .PHONY : moc_telemetry.cxx.i
 
 moc_telemetry.s: moc_telemetry.cxx.s
@@ -842,7 +842,7 @@ moc_telemetry.s: moc_telemetry.cxx.s
 
 # target to generate assembly for a file
 moc_telemetry.cxx.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.s
 .PHONY : moc_telemetry.cxx.s
 
 modeledit.o: modeledit.cpp.o
@@ -850,7 +850,7 @@ modeledit.o: modeledit.cpp.o
 
 # target to build an object file
 modeledit.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o
 .PHONY : modeledit.cpp.o
 
 modeledit.i: modeledit.cpp.i
@@ -858,7 +858,7 @@ modeledit.i: modeledit.cpp.i
 
 # target to preprocess a source file
 modeledit.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.i
 .PHONY : modeledit.cpp.i
 
 modeledit.s: modeledit.cpp.s
@@ -866,7 +866,7 @@ modeledit.s: modeledit.cpp.s
 
 # target to generate assembly for a file
 modeledit.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.s
 .PHONY : modeledit.cpp.s
 
 modelpanel.o: modelpanel.cpp.o
@@ -874,7 +874,7 @@ modelpanel.o: modelpanel.cpp.o
 
 # target to build an object file
 modelpanel.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o
 .PHONY : modelpanel.cpp.o
 
 modelpanel.i: modelpanel.cpp.i
@@ -882,7 +882,7 @@ modelpanel.i: modelpanel.cpp.i
 
 # target to preprocess a source file
 modelpanel.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.i
 .PHONY : modelpanel.cpp.i
 
 modelpanel.s: modelpanel.cpp.s
@@ -890,7 +890,7 @@ modelpanel.s: modelpanel.cpp.s
 
 # target to generate assembly for a file
 modelpanel.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.s
 .PHONY : modelpanel.cpp.s
 
 node.o: node.cpp.o
@@ -898,7 +898,7 @@ node.o: node.cpp.o
 
 # target to build an object file
 node.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/node.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/node.cpp.o
 .PHONY : node.cpp.o
 
 node.i: node.cpp.i
@@ -906,7 +906,7 @@ node.i: node.cpp.i
 
 # target to preprocess a source file
 node.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/node.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/node.cpp.i
 .PHONY : node.cpp.i
 
 node.s: node.cpp.s
@@ -914,7 +914,7 @@ node.s: node.cpp.s
 
 # target to generate assembly for a file
 node.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/node.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/node.cpp.s
 .PHONY : node.cpp.s
 
 setup.o: setup.cpp.o
@@ -922,7 +922,7 @@ setup.o: setup.cpp.o
 
 # target to build an object file
 setup.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/setup.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/setup.cpp.o
 .PHONY : setup.cpp.o
 
 setup.i: setup.cpp.i
@@ -930,7 +930,7 @@ setup.i: setup.cpp.i
 
 # target to preprocess a source file
 setup.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/setup.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/setup.cpp.i
 .PHONY : setup.cpp.i
 
 setup.s: setup.cpp.s
@@ -938,7 +938,7 @@ setup.s: setup.cpp.s
 
 # target to generate assembly for a file
 setup.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/setup.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/setup.cpp.s
 .PHONY : setup.cpp.s
 
 telemetry.o: telemetry.cpp.o
@@ -946,7 +946,7 @@ telemetry.o: telemetry.cpp.o
 
 # target to build an object file
 telemetry.cpp.o:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o
 .PHONY : telemetry.cpp.o
 
 telemetry.i: telemetry.cpp.i
@@ -954,7 +954,7 @@ telemetry.i: telemetry.cpp.i
 
 # target to preprocess a source file
 telemetry.cpp.i:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.i
 .PHONY : telemetry.cpp.i
 
 telemetry.s: telemetry.cpp.s
@@ -962,7 +962,7 @@ telemetry.s: telemetry.cpp.s
 
 # target to generate assembly for a file
 telemetry.cpp.s:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(MAKE) -f modeledit/CMakeFiles/modeledit.dir/build.make modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.s
 .PHONY : telemetry.cpp.s
 
 # Help Target
@@ -1090,6 +1090,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

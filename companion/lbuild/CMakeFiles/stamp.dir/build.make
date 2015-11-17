@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /usr/local/src/opentx/opentx-v2.0.14a/companion/src
+CMAKE_SOURCE_DIR = /usr/local/src/opentx/opentx-2.0.14/companion/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild
+CMAKE_BINARY_DIR = /usr/local/src/opentx/opentx-2.0.14/companion/lbuild
 
 # Utility rule file for stamp.
 
@@ -46,7 +46,7 @@ CMAKE_BINARY_DIR = /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild
 include CMakeFiles/stamp.dir/progress.make
 
 CMakeFiles/stamp: version.h
-	/usr/bin/cmake -E copy /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/version.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../companion.stamp
+	/usr/bin/cmake -E copy /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/version.h /usr/local/src/opentx/opentx-2.0.14/companion/src/../companion.stamp
 
 stamp: CMakeFiles/stamp
 stamp: CMakeFiles/stamp.dir/build.make
@@ -61,6 +61,6 @@ CMakeFiles/stamp.dir/clean:
 .PHONY : CMakeFiles/stamp.dir/clean
 
 CMakeFiles/stamp.dir/depend:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /usr/local/src/opentx/opentx-v2.0.14a/companion/src /usr/local/src/opentx/opentx-v2.0.14a/companion/src /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/stamp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /usr/local/src/opentx/opentx-2.0.14/companion/src /usr/local/src/opentx/opentx-2.0.14/companion/src /usr/local/src/opentx/opentx-2.0.14/companion/lbuild /usr/local/src/opentx/opentx-2.0.14/companion/lbuild /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/stamp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/stamp.dir/depend
 

@@ -432,12 +432,12 @@ modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/lib64/qt/include/QtGui/q
 modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/lib64/qt/include/QtXml/QtXml
 modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
-modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
-modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/channels.cpp
-modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/channels.h
-modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/channels.cpp
+modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/channels.h
+modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 
 modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -882,14 +882,14 @@ modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/lib64/qt/include/QtGui/qws
 modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/lib64/qt/include/QtXml/QtXml
 modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
-modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
-modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.cpp
-modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.h
-modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.h
-modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
-modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.cpp
+modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.h
+modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.h
+modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
+modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: modeledit/ui_curves.h
 
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -1325,13 +1325,13 @@ modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtXml/QtXml
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
-modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
-modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
-modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.cpp
-modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.h
-modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/customfunctions.cpp
+modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/customfunctions.h
+modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 
 modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -1753,9 +1753,9 @@ modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/lib64/qt/include/QtGui/qwiza
 modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/lib64/qt/include/QtGui/qwmatrix.h
 modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/lib64/qt/include/QtGui/qworkspace.h
 modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/lib64/qt/include/QtGui/qwsembedwidget.h
-modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.cpp
-modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.h
-modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.cpp
+modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.h
+modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 
 modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -2197,11 +2197,11 @@ modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/lib64/qt/include/QtXml
 modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
 modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/lib64/qt/include/QtXml/qxmlstream.h
-modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
-modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.cpp
-modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.h
+modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.cpp
+modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.h
 modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: modeledit/ui_expodialog.h
 
 modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -2647,12 +2647,12 @@ modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/lib64/qt/include/QtGu
 modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/lib64/qt/include/QtXml/QtXml
 modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
-modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
-modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmodes.cpp
-modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmodes.h
-modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmodes.cpp
+modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmodes.h
+modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: modeledit/ui_flightmode.h
 
 modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -3090,12 +3090,12 @@ modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/lib64/qt/include/QtGui/qwsem
 modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/lib64/qt/include/QtXml/QtXml
 modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
-modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
-modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.cpp
-modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.h
-modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.cpp
+modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.h
+modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: modeledit/ui_heli.h
 
 modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -3526,14 +3526,14 @@ modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/lib64/qt/include/QtXml/QtX
 modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
 modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/lib64/qt/include/QtXml/qxmlstream.h
-modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
-modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.h
-modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/inputs.cpp
-modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/inputs.h
-modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.h
-modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.h
+modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/inputs.cpp
+modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/inputs.h
+modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.h
+modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 
 modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -3967,12 +3967,12 @@ modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/lib64/qt/include/
 modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/lib64/qt/include/QtXml/QtXml
 modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
-modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
-modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/logicalswitches.cpp
-modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/logicalswitches.h
-modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/logicalswitches.cpp
+modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/logicalswitches.h
+modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 
 modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -4414,11 +4414,11 @@ modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/lib64/qt/include/QtXm
 modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
 modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/lib64/qt/include/QtXml/qxmlstream.h
-modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
-modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.cpp
-modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.h
+modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.cpp
+modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.h
 modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: modeledit/ui_mixerdialog.h
 
 modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -4839,8 +4839,8 @@ modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o: /usr/lib64/qt/include/QtGui
 modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o: /usr/lib64/qt/include/QtGui/qwmatrix.h
 modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o: /usr/lib64/qt/include/QtGui/qworkspace.h
 modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o: /usr/lib64/qt/include/QtGui/qwsembedwidget.h
-modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.cpp
-modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.h
+modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.cpp
+modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.h
 
 modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -5268,14 +5268,14 @@ modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/lib64/qt/include/QtGui/qwse
 modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/lib64/qt/include/QtXml/QtXml
 modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
-modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
-modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.h
-modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.h
-modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixes.cpp
-modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixes.h
-modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.h
+modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.h
+modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixes.cpp
+modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixes.h
+modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -5497,8 +5497,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o: /usr/lib64/qt/include/QtX
 modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o: modeledit/../../src/modeledit/channels.h
 modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o: modeledit/../../src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o: modeledit/moc_channels.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -5720,8 +5720,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o: /usr/lib64/qt/include/QtXml
 modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o: modeledit/../../src/modeledit/curves.h
 modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o: modeledit/../../src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o: modeledit/moc_curves.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -5964,8 +5964,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/lib64/qt/incl
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: modeledit/../../src/modeledit/customfunctions.h
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: modeledit/../../src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: modeledit/moc_customfunctions.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -6178,8 +6178,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o: /usr/lib64/qt/include/Q
 modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o: /usr/lib64/qt/include/QtXml/qxmlstream.h
 modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o: modeledit/../../src/modeledit/expodialog.h
 modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o: modeledit/moc_expodialog.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -6420,8 +6420,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o: /usr/lib64/qt/include/
 modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o: modeledit/../../src/modeledit/flightmodes.h
 modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o: modeledit/../../src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o: modeledit/moc_flightmodes.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -6639,8 +6639,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o: /usr/lib64/qt/include/QtXml/q
 modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o: modeledit/../../src/modeledit/heli.h
 modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o: modeledit/../../src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o: modeledit/moc_heli.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -7072,8 +7072,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o: modeledit/../../src/modeled
 modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o: modeledit/../../src/modeledit/mixerslist.h
 modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o: modeledit/../../src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o: modeledit/moc_inputs.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -7309,8 +7309,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o: /usr/lib64/qt/incl
 modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o: modeledit/../../src/modeledit/logicalswitches.h
 modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o: modeledit/../../src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o: modeledit/moc_logicalswitches.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -7523,8 +7523,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o: /usr/lib64/qt/include/
 modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o: /usr/lib64/qt/include/QtXml/qxmlstream.h
 modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o: modeledit/../../src/modeledit/mixerdialog.h
 modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o: modeledit/moc_mixerdialog.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -8379,8 +8379,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o: modeledit/../../src/modeledi
 modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o: modeledit/../../src/modeledit/mixes.h
 modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o: modeledit/../../src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o: modeledit/moc_mixes.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -8600,8 +8600,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o: /usr/lib64/qt/include/Qt
 modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o: modeledit/../../src/modeledit/modeledit.h
 modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o: modeledit/../../src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o: modeledit/moc_modeledit.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -8818,8 +8818,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o: /usr/lib64/qt/include/Q
 modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o: /usr/lib64/qt/include/QtXml/qxmlstream.h
 modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o: modeledit/../../src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o: modeledit/moc_modelpanel.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -9481,8 +9481,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o: /usr/lib64/qt/include/QtXml/
 modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o: modeledit/../../src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o: modeledit/../../src/modeledit/setup.h
 modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o: modeledit/moc_setup.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -9718,8 +9718,8 @@ modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o: /usr/lib64/qt/include/Qt
 modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o: modeledit/../../src/modeledit/modelpanel.h
 modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o: modeledit/../../src/modeledit/telemetry.h
 modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o: modeledit/moc_telemetry.cxx
-modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
 modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -10167,25 +10167,25 @@ modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/lib64/qt/include/QtGui/
 modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/lib64/qt/include/QtXml/QtXml
 modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/../../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/../eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/../helpers.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/channels.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmodes.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/inputs.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/logicalswitches.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixes.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.cpp
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.h
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/../../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/../eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/../helpers.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/channels.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/customfunctions.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmodes.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/inputs.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/logicalswitches.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixes.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.cpp
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.h
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.h
 modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: modeledit/ui_modeledit.h
 
 modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -10419,10 +10419,10 @@ modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/lib64/qt/include/QtXml
 modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
 modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/lib64/qt/include/QtXml/qxmlstream.h
-modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.cpp
-modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.cpp
+modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 
 modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -10847,9 +10847,9 @@ modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/lib64/qt/include/QtGui/qwiza
 modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/lib64/qt/include/QtGui/qwmatrix.h
 modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/lib64/qt/include/QtGui/qworkspace.h
 modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/lib64/qt/include/QtGui/qwsembedwidget.h
-modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.h
-modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.cpp
-modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.h
+modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.cpp
+modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 
 modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -11297,14 +11297,14 @@ modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/lib64/qt/include/QtGui/qwse
 modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/lib64/qt/include/QtXml/QtXml
 modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
-modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
-modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
-modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
-modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.cpp
-modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.h
-modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/qautocombobox.h
+modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
+modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.cpp
+modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.h
+modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/qautocombobox.h
 modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: modeledit/ui_setup.h
 modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: modeledit/ui_setup_module.h
 modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: modeledit/ui_setup_timer.h
@@ -11752,14 +11752,14 @@ modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/lib64/qt/include/QtGui/
 modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/lib64/qt/include/QtXml/QtXml
 modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
-modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
-modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
-modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
-modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.cpp
-modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.h
-modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/qautocombobox.h
+modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
+modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.cpp
+modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.h
+modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/qautocombobox.h
 modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: modeledit/ui_telemetry.h
 modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: modeledit/ui_telemetry_analog.h
 modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: modeledit/ui_telemetry_customscreen.h

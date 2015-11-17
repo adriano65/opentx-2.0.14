@@ -4,11 +4,11 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.cpp" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/simulator.dir/modeledit/edge.cpp.o"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_node.cxx" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/simulator.dir/modeledit/moc_node.cxx.o"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.cpp" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/simulator.dir/modeledit/node.cpp.o"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/qrc_companion.cxx" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/simulator.dir/qrc_companion.cxx.o"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulator.cpp" "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/simulator.dir/simulator.cpp.o"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.cpp" "/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/simulator.dir/modeledit/edge.cpp.o"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_node.cxx" "/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/simulator.dir/modeledit/moc_node.cxx.o"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.cpp" "/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/simulator.dir/modeledit/node.cpp.o"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/qrc_companion.cxx" "/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/simulator.dir/qrc_companion.cxx.o"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/simulator.cpp" "/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/simulator.dir/simulator.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -26,8 +26,8 @@ SET(CMAKE_TARGET_DEFINITIONS
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/CMakeFiles/simulation.dir/DependInfo.cmake"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/common.dir/DependInfo.cmake"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/CMakeFiles/simulation.dir/DependInfo.cmake"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/common.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
@@ -40,12 +40,12 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/lib64/qt/include/QtNetwork"
   "/usr/lib64/qt/include/QtCore"
   "."
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.."
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/../.."
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

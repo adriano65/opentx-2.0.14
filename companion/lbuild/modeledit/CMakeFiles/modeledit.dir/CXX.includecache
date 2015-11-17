@@ -3952,21 +3952,21 @@ QtCore/qscopedpointer.h
 QtCore/qxmlstream.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/channels.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/channels.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
 QSpinBox
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/curves.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/curves.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
 QSpinBox
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/customfunctions.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/customfunctions.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
 QLabel
 -
 QCheckBox
@@ -3986,15 +3986,15 @@ phonon/mediaobject.h
 phonon/mediasource.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/expodialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/expodialog.h
 QDialog
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/flightmodes.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/flightmodes.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
 QVector
 -
 QLabel
@@ -4008,19 +4008,19 @@ QComboBox
 QCheckBox
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/heli.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/heli.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/inputs.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/inputs.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
 mixerslist.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/mixerslist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/mixerslist.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/logicalswitches.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/logicalswitches.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
 QComboBox
 -
 QDoubleSpinBox
@@ -4028,45 +4028,45 @@ QDoubleSpinBox
 QTimeEdit
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/mixerdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/mixerdialog.h
 QDialog
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/mixerslist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/mixerslist.h
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/mixes.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/mixes.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
 mixerslist.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/mixerslist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/mixerslist.h
 mixerdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/mixerdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/mixerdialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modeledit.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modeledit.h
 QDialog
 -
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
 QWidget
 -
 QGridLayout
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/node.h
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/setup.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/setup.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
 QVector
 -
 QCheckBox
@@ -4080,9 +4080,9 @@ QComboBox
 QLabel
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/telemetry.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/telemetry.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
 QGroupBox
 -
 QComboBox
@@ -4090,73 +4090,73 @@ QComboBox
 QDoubleSpinBox
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_channels.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_channels.cxx
 ../../src/modeledit/channels.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/channels.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/channels.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_curves.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_curves.cxx
 ../../src/modeledit/curves.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/curves.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/curves.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_customfunctions.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_customfunctions.cxx
 ../../src/modeledit/customfunctions.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/customfunctions.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/customfunctions.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_expodialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_expodialog.cxx
 ../../src/modeledit/expodialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/expodialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/expodialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_flightmodes.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_flightmodes.cxx
 ../../src/modeledit/flightmodes.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/flightmodes.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/flightmodes.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_heli.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_heli.cxx
 ../../src/modeledit/heli.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/heli.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/heli.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_inputs.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_inputs.cxx
 ../../src/modeledit/inputs.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/inputs.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/inputs.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_logicalswitches.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_logicalswitches.cxx
 ../../src/modeledit/logicalswitches.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/logicalswitches.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/logicalswitches.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixerdialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixerdialog.cxx
 ../../src/modeledit/mixerdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/mixerdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/mixerdialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixerslist.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixerslist.cxx
 ../../src/modeledit/mixerslist.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/mixerslist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/mixerslist.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixes.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixes.cxx
 ../../src/modeledit/mixes.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/mixes.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/mixes.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_modeledit.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_modeledit.cxx
 ../../src/modeledit/modeledit.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modeledit.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modeledit.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_modelpanel.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_modelpanel.cxx
 ../../src/modeledit/modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/modelpanel.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_node.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_node.cxx
 ../../src/modeledit/node.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/node.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_setup.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_setup.cxx
 ../../src/modeledit/setup.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/setup.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/setup.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_telemetry.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_telemetry.cxx
 ../../src/modeledit/telemetry.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/../../src/modeledit/telemetry.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/../../src/modeledit/telemetry.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 QByteArray
 -
 QStringList
@@ -4166,7 +4166,7 @@ QString
 QSettings
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 inttypes.h
 -
 string.h
@@ -4182,17 +4182,17 @@ QtXml
 iostream
 -
 ../targets/windows/winbuild.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 QtGui
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/../../targets/windows/winbuild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/../../targets/windows/winbuild.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/../eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/../eeprominterface.h
 inttypes.h
 -
 string.h
@@ -4208,19 +4208,19 @@ QtXml
 iostream
 -
 ../targets/windows/winbuild.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/../../targets/windows/winbuild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/../../targets/windows/winbuild.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/../helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/../helpers.h
 QtGui
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/../eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/../eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/channels.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/channels.cpp
 channels.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/channels.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/channels.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/helpers.h
 QLabel
 -
 QLineEdit
@@ -4234,23 +4234,23 @@ QCheckBox
 QDoubleSpinBox
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/channels.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/channels.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 QSpinBox
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.cpp
 curves.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.h
 ui_curves.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/ui_curves.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/ui_curves.h
 node.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 edge.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/helpers.h
 QSpinBox
 -
 QCheckBox
@@ -4260,23 +4260,23 @@ QPushButton
 QMessageBox
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 QSpinBox
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/customfunctions.cpp
 customfunctions.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/customfunctions.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/helpers.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/appdata.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/customfunctions.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 QLabel
 -
 QCheckBox
@@ -4296,49 +4296,49 @@ phonon/mediaobject.h
 phonon/mediasource.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.cpp
 QPainter
 -
 edge.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.h
 node.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 math.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.h
 QGraphicsItem
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.cpp
 expodialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.h
 ui_expodialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/ui_expodialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/ui_expodialog.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.h
 QDialog
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmodes.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmodes.cpp
 flightmodes.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmodes.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmodes.h
 ui_flightmode.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/ui_flightmode.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/ui_flightmode.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/helpers.h
 QComboBox
 -
 QGridLayout
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmodes.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmodes.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 QVector
 -
 QLabel
@@ -4352,41 +4352,41 @@ QComboBox
 QCheckBox
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.cpp
 heli.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.h
 ui_heli.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/ui_heli.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/ui_heli.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/inputs.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/inputs.cpp
 inputs.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/inputs.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/inputs.h
 QMessageBox
 -
 expodialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/helpers.h
 iostream
 -
 QtGui/qwidget.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/inputs.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/inputs.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 mixerslist.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/logicalswitches.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/logicalswitches.cpp
 logicalswitches.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/logicalswitches.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/logicalswitches.h
 QLabel
 -
 QLineEdit
@@ -4400,11 +4400,11 @@ QCheckBox
 QDoubleSpinBox
 -
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/logicalswitches.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/logicalswitches.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 QComboBox
 -
 QDoubleSpinBox
@@ -4412,85 +4412,85 @@ QDoubleSpinBox
 QTimeEdit
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.cpp
 mixerdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.h
 ui_mixerdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/ui_mixerdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/ui_mixerdialog.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/eeprominterface.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.h
 QDialog
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.cpp
 mixerslist.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.h
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixes.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixes.cpp
 mixes.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixes.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixes.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixes.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixes.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 mixerslist.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.h
 mixerdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.cpp
 modeledit.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.h
 ui_modeledit.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/ui_modeledit.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/ui_modeledit.h
 setup.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.h
 heli.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.h
 flightmodes.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmodes.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmodes.h
 inputs.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/inputs.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/inputs.h
 mixes.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixes.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixes.h
 channels.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/channels.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/channels.h
 curves.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.h
 ../helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/../helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/../helpers.h
 logicalswitches.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/logicalswitches.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/logicalswitches.h
 customfunctions.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/customfunctions.h
 telemetry.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/appdata.h
 QScrollArea
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.h
 QDialog
 -
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.cpp
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 QLabel
 -
 QComboBox
@@ -4498,15 +4498,15 @@ QComboBox
 QSpinBox
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 QWidget
 -
 QGridLayout
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.cpp
 QGraphicsScene
 -
 QGraphicsSceneMouseEvent
@@ -4516,31 +4516,31 @@ QPainter
 QStyleOption
 -
 edge.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.h
 node.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.cpp
 setup.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.h
 ui_setup.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/ui_setup.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/ui_setup.h
 ui_setup_timer.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/ui_setup_timer.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/ui_setup_timer.h
 ui_setup_module.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/ui_setup_module.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/ui_setup_module.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/helpers.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/appdata.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 QVector
 -
 QCheckBox
@@ -4554,23 +4554,23 @@ QComboBox
 QLabel
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.cpp
 telemetry.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.h
 ui_telemetry.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/ui_telemetry.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/ui_telemetry.h
 ui_telemetry_analog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/ui_telemetry_analog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/ui_telemetry_analog.h
 ui_telemetry_customscreen.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/ui_telemetry_customscreen.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/ui_telemetry_customscreen.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/helpers.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/appdata.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.h
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 QGroupBox
 -
 QComboBox
@@ -4578,11 +4578,11 @@ QComboBox
 QDoubleSpinBox
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/qautocombobox.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/qautocombobox.h
 QComboBox
 -
 modeledit/modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 
 modeledit/ui_curves.h
 QtCore/QVariant

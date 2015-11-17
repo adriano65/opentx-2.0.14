@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /usr/local/src/opentx/opentx-v2.0.14a/companion/src
+CMAKE_SOURCE_DIR = /usr/local/src/opentx/opentx-2.0.14/companion/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild
+CMAKE_BINARY_DIR = /usr/local/src/opentx/opentx-2.0.14/companion/lbuild
 
 # Utility rule file for translations.
 
@@ -46,7 +46,7 @@ CMAKE_BINARY_DIR = /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild
 include CMakeFiles/translations.dir/progress.make
 
 CMakeFiles/translations:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/src && lupdate-qt4 /usr/local/src/opentx/opentx-v2.0.14a/companion/src -ts translations/companion_he.ts translations/companion_pl.ts translations/companion_pt.ts translations/companion_ru.ts translations/companion_de.ts translations/companion_fr.ts translations/companion_it.ts translations/companion_sv.ts translations/companion_cs.ts translations/companion_fi.ts translations/companion_nl.ts
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/src && lupdate-qt4 /usr/local/src/opentx/opentx-2.0.14/companion/src -ts translations/companion_he.ts translations/companion_pl.ts translations/companion_pt.ts translations/companion_ru.ts translations/companion_de.ts translations/companion_fr.ts translations/companion_it.ts translations/companion_sv.ts translations/companion_cs.ts translations/companion_fi.ts translations/companion_nl.ts
 
 translations: CMakeFiles/translations
 translations: CMakeFiles/translations.dir/build.make
@@ -61,6 +61,6 @@ CMakeFiles/translations.dir/clean:
 .PHONY : CMakeFiles/translations.dir/clean
 
 CMakeFiles/translations.dir/depend:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /usr/local/src/opentx/opentx-v2.0.14a/companion/src /usr/local/src/opentx/opentx-v2.0.14a/companion/src /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/translations.dir/DependInfo.cmake --color=$(COLOR)
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /usr/local/src/opentx/opentx-2.0.14/companion/src /usr/local/src/opentx/opentx-2.0.14/companion/src /usr/local/src/opentx/opentx-2.0.14/companion/lbuild /usr/local/src/opentx/opentx-2.0.14/companion/lbuild /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/translations.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/translations.dir/depend
 

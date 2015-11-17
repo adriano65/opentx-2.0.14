@@ -1,1 +1,3 @@
 /gtest-1.6.0
+src/bootloader/.dep/*
+src/bootloader/bootloader_ramBoot*

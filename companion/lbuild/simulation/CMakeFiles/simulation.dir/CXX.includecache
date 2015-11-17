@@ -4236,19 +4236,19 @@ QtCore/qscopedpointer.h
 QtCore/qxmlstream.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/cursorwidget.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/cursorwidget.h
 QWidget
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/debugoutput.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/debugoutput.h
 QDialog
 -
 simulatorinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/joystick.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/joystick.h
 QObject
 -
 QMap
@@ -4262,45 +4262,45 @@ QStringList
 SDL.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/joystickdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/joystickdialog.h
 joystick.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/joystick.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/joystick.h
 QDialog
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/menuwidget.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/menuwidget.h
 QWidget
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/myslider.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/myslider.h
 QSlider
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/simulatordialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/simulatordialog.h
 QDialog
 -
 modeledit/node.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/modeledit/node.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/eeprominterface.h
 telemetrysimu.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/telemetrysimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/telemetrysimu.h
 trainersimu.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/trainersimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/trainersimu.h
 debugoutput.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/debugoutput.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/debugoutput.h
 joystick.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/joystick.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/joystick.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/telemetrysimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/telemetrysimu.h
 QCloseEvent
 -
 QDialog
@@ -4308,9 +4308,9 @@ QDialog
 QTimer
 -
 simulatorinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/trainersimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/trainersimu.h
 QShowEvent
 -
 QCloseEvent
@@ -4320,73 +4320,73 @@ QDialog
 QTimer
 -
 modeledit/node.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/modeledit/node.h
 simulatorinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/simulatorinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/xcursorwidget.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/xcursorwidget.h
 QWidget
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/xmenuwidget.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/xmenuwidget.h
 QWidget
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_cursorwidget.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_cursorwidget.cxx
 ../../src/simulation/cursorwidget.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/cursorwidget.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/cursorwidget.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_debugoutput.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_debugoutput.cxx
 ../../src/simulation/debugoutput.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/debugoutput.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/debugoutput.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_joystick.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_joystick.cxx
 ../../src/simulation/joystick.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/joystick.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/joystick.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_joystickdialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_joystickdialog.cxx
 ../../src/simulation/joystickdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/joystickdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/joystickdialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_menuwidget.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_menuwidget.cxx
 ../../src/simulation/menuwidget.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/menuwidget.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/menuwidget.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_myslider.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_myslider.cxx
 ../../src/simulation/myslider.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/myslider.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/myslider.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_simulatordialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_simulatordialog.cxx
 ../../src/simulation/simulatordialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/simulatordialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/simulatordialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_telemetrysimu.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_telemetrysimu.cxx
 ../../src/simulation/telemetrysimu.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/telemetrysimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/telemetrysimu.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_trainersimu.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_trainersimu.cxx
 ../../src/simulation/trainersimu.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/trainersimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/trainersimu.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_xcursorwidget.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_xcursorwidget.cxx
 ../../src/simulation/xcursorwidget.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/xcursorwidget.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/xcursorwidget.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/moc_xmenuwidget.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/moc_xmenuwidget.cxx
 ../../src/simulation/xmenuwidget.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/simulation/../../src/simulation/xmenuwidget.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/simulation/../../src/simulation/xmenuwidget.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/telemetry/frsky.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/telemetry/frsky.h
 inttypes.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 QByteArray
 -
 QStringList
@@ -4396,7 +4396,7 @@ QString
 QSettings
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 inttypes.h
 -
 string.h
@@ -4412,45 +4412,45 @@ QtXml
 iostream
 -
 ../targets/windows/winbuild.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 QtGui
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/cursorwidget.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/cursorwidget.h
 QWidget
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/debugoutput.cpp
 QtGui
 -
 stdint.h
 -
 debugoutput.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/debugoutput.h
 ui_debugoutput.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/ui_debugoutput.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/ui_debugoutput.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/debugoutput.h
 QDialog
 -
 simulatorinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.cpp
 joystick.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.h
 QObject
 -
 QMap
@@ -4464,85 +4464,85 @@ QStringList
 SDL.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystickdialog.cpp
 joystickdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystickdialog.h
 ui_joystickdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/ui_joystickdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/ui_joystickdialog.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/appdata.h
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystickdialog.h
 joystick.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.h
 QDialog
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/lcdwidget.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/lcdwidget.h
 QWidget
 -
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/appdata.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/menuwidget.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/menuwidget.h
 QWidget
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/myslider.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/myslider.h
 QSlider
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatordialog.cpp
 simulatordialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatordialog.h
 ui_simulatordialog-9x.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/ui_simulatordialog-9x.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/ui_simulatordialog-9x.h
 ui_simulatordialog-taranis.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/ui_simulatordialog-taranis.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/ui_simulatordialog-taranis.h
 iostream
 -
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/helpers.h
 simulatorinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatordialog.h
 QDialog
 -
 modeledit/node.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/modeledit/node.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/eeprominterface.h
 telemetrysimu.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/telemetrysimu.h
 trainersimu.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/trainersimu.h
 debugoutput.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/debugoutput.h
 joystick.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/telemetrysimu.cpp
 stdint.h
 -
 telemetrysimu.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/telemetrysimu.h
 ui_telemetrysimu.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/ui_telemetrysimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/ui_telemetrysimu.h
 radio/src/telemetry/frsky.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/radio/src/telemetry/frsky.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/radio/src/telemetry/frsky.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/telemetrysimu.h
 QCloseEvent
 -
 QDialog
@@ -4550,19 +4550,19 @@ QDialog
 QTimer
 -
 simulatorinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/trainersimu.cpp
 stdint.h
 -
 trainersimu.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/trainersimu.h
 ui_trainersimu.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/ui_trainersimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/ui_trainersimu.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/trainersimu.h
 QShowEvent
 -
 QCloseEvent
@@ -4572,17 +4572,17 @@ QDialog
 QTimer
 -
 modeledit/node.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/modeledit/node.h
 simulatorinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/xcursorwidget.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/xcursorwidget.h
 QWidget
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/xmenuwidget.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/xmenuwidget.h
 QWidget
 -
 QtGui

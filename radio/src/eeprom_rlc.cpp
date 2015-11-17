@@ -864,7 +864,7 @@ void RlcFile::flush()
 
   ENABLE_SYNC_WRITE(false);
 }
-
+// FIXME -> manage taranis case !
 #if defined (EEPROM_PROGRESS_BAR)
 void RlcFile::DisplayProgressBar(uint8_t x)
 {

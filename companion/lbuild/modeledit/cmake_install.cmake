@@ -1,4 +1,4 @@
-# Install script for directory: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit
+# Install script for directory: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

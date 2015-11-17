@@ -488,18 +488,18 @@ CMakeFiles/companion.dir/apppreferencesdialog.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/apppreferencesdialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/apppreferencesdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mainwindow.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/apppreferencesdialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/apppreferencesdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/file.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mainwindow.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystickdialog.h
  ui_apppreferencesdialog.h
 CMakeFiles/companion.dir/avroutputdialog.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -936,13 +936,13 @@ CMakeFiles/companion.dir/avroutputdialog.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/avroutputdialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/avroutputdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mountlist.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/avroutputdialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/avroutputdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/file.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mountlist.h
  ui_avroutputdialog.h
 CMakeFiles/companion.dir/burnconfigdialog.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -1385,13 +1385,13 @@ CMakeFiles/companion.dir/burnconfigdialog.cpp.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/avroutputdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/burnconfigdialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/burnconfigdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/avroutputdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/burnconfigdialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/burnconfigdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
  ui_burnconfigdialog.h
 CMakeFiles/companion.dir/burndialog.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -1834,17 +1834,17 @@ CMakeFiles/companion.dir/burndialog.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/burndialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/burndialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/hexinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/splashlibrary.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/xmlinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/burndialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/burndialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/file.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/hexinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/splashlibrary.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/xmlinterface.h
  ui_burndialog.h
 CMakeFiles/companion.dir/companion.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -2295,12 +2295,12 @@ CMakeFiles/companion.dir/companion.cpp.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/companion.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mainwindow.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/companion.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mainwindow.h
 CMakeFiles/companion.dir/comparedialog.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -2742,11 +2742,11 @@ CMakeFiles/companion.dir/comparedialog.cpp.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/comparedialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/comparedialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/comparedialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/comparedialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
  ui_comparedialog.h
 CMakeFiles/companion.dir/contributorsdialog.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -3190,12 +3190,12 @@ CMakeFiles/companion.dir/contributorsdialog.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/contributorsdialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/contributorsdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/contributorsdialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/contributorsdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
  ui_contributorsdialog.h
 CMakeFiles/companion.dir/customizesplashdialog.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -3638,17 +3638,17 @@ CMakeFiles/companion.dir/customizesplashdialog.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/burndialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/customizesplashdialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/customizesplashdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/splashlibrary.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/xmlinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/burndialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/customizesplashdialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/customizesplashdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/file.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/splashlibrary.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/xmlinterface.h
  ui_customizesplashdialog.h
 CMakeFiles/companion.dir/downloaddialog.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -4096,11 +4096,11 @@ CMakeFiles/companion.dir/downloaddialog.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
  ui_downloaddialog.h
 CMakeFiles/companion.dir/flashinterface.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -4528,14 +4528,14 @@ CMakeFiles/companion.dir/flashinterface.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/hexinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/splash.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/file.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/hexinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/splash.h
 CMakeFiles/companion.dir/fusesdialog.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -4969,12 +4969,12 @@ CMakeFiles/companion.dir/fusesdialog.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/burnconfigdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/fusesdialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/fusesdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/burnconfigdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/fusesdialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/fusesdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
  ui_fusesdialog.h
 CMakeFiles/companion.dir/fwpreferencesdialog.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -5430,14 +5430,14 @@ CMakeFiles/companion.dir/fwpreferencesdialog.cpp.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/fwpreferencesdialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/fwpreferencesdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mainwindow.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/fwpreferencesdialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/fwpreferencesdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mainwindow.h
  ui_fwpreferencesdialog.h
 CMakeFiles/companion.dir/generaledit.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -5885,12 +5885,12 @@ CMakeFiles/companion.dir/generaledit.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/generaledit.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/generaledit.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/generaledit.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/generaledit.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
  ui_generaledit.h
 CMakeFiles/companion.dir/helpers.cpp.o
  /usr/include/SDL/SDL.h
@@ -6350,20 +6350,20 @@ CMakeFiles/companion.dir/helpers.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/file.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/debugoutput.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatordialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/telemetrysimu.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/trainersimu.h
 CMakeFiles/companion.dir/hexinterface.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/QtCore/QTextStream
@@ -6421,8 +6421,8 @@ CMakeFiles/companion.dir/hexinterface.cpp.o
  /usr/lib64/qt/include/QtCore/qtextcodec.h
  /usr/lib64/qt/include/QtCore/qtextstream.h
  /usr/lib64/qt/include/QtCore/qvariant.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/hexinterface.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/hexinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/hexinterface.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/hexinterface.h
 CMakeFiles/companion.dir/logsdialog.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -6877,14 +6877,14 @@ CMakeFiles/companion.dir/logsdialog.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/./qcustomplot.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/logsdialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/logsdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/qcustomplot.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/./qcustomplot.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/logsdialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/logsdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/qcustomplot.h
  ui_logsdialog.h
 CMakeFiles/companion.dir/mainwindow.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -7345,33 +7345,33 @@ CMakeFiles/companion.dir/mainwindow.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/apppreferencesdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/avroutputdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/burnconfigdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/burndialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/comparedialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/contributorsdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/customizesplashdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/fusesdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/fwpreferencesdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/hexinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/logsdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mainwindow.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mainwindow.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mdichild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mountlist.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/printdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/qcustomplot.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/radionotfound.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/warnings.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/xmlinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/apppreferencesdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/avroutputdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/burnconfigdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/burndialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/comparedialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/contributorsdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/customizesplashdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/file.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/fusesdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/fwpreferencesdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/hexinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/logsdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mainwindow.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mainwindow.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mdichild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mountlist.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/printdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/qcustomplot.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/radionotfound.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/warnings.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/xmlinterface.h
  version.h
 CMakeFiles/companion.dir/mdichild.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -7826,28 +7826,28 @@ CMakeFiles/companion.dir/mdichild.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/avroutputdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/burnconfigdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/burndialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/generaledit.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/hexinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mainwindow.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mdichild.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mdichild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modelslist.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/printdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/xmlinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/avroutputdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/burnconfigdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/burndialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/file.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/generaledit.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/hexinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mainwindow.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mdichild.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mdichild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/modelslist.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/printdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/xmlinterface.h
  ui_mdichild.h
 CMakeFiles/companion.dir/moc_apppreferencesdialog.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -8063,10 +8063,10 @@ CMakeFiles/companion.dir/moc_apppreferencesdialog.cxx.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/apppreferencesdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_apppreferencesdialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/apppreferencesdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_apppreferencesdialog.cxx
 CMakeFiles/companion.dir/moc_avroutputdialog.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -8487,8 +8487,8 @@ CMakeFiles/companion.dir/moc_avroutputdialog.cxx.o
  /usr/lib64/qt/include/QtGui/qwmatrix.h
  /usr/lib64/qt/include/QtGui/qworkspace.h
  /usr/lib64/qt/include/QtGui/qwsembedwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/avroutputdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_avroutputdialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/avroutputdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_avroutputdialog.cxx
 CMakeFiles/companion.dir/moc_burnconfigdialog.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -8909,8 +8909,8 @@ CMakeFiles/companion.dir/moc_burnconfigdialog.cxx.o
  /usr/lib64/qt/include/QtGui/qwmatrix.h
  /usr/lib64/qt/include/QtGui/qworkspace.h
  /usr/lib64/qt/include/QtGui/qwsembedwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/burnconfigdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_burnconfigdialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/burnconfigdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_burnconfigdialog.cxx
 CMakeFiles/companion.dir/moc_burndialog.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -9337,13 +9337,13 @@ CMakeFiles/companion.dir/moc_burndialog.cxx.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/burndialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/file.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/flashinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/xmlinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_burndialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/burndialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/file.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/flashinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/xmlinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_burndialog.cxx
 CMakeFiles/companion.dir/moc_comparedialog.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -9770,10 +9770,10 @@ CMakeFiles/companion.dir/moc_comparedialog.cxx.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/comparedialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_comparedialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/comparedialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_comparedialog.cxx
 CMakeFiles/companion.dir/moc_contributorsdialog.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -9996,11 +9996,11 @@ CMakeFiles/companion.dir/moc_contributorsdialog.cxx.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/contributorsdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/downloaddialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_contributorsdialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/contributorsdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/downloaddialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_contributorsdialog.cxx
 CMakeFiles/companion.dir/moc_customizesplashdialog.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -10426,12 +10426,12 @@ CMakeFiles/companion.dir/moc_customizesplashdialog.cxx.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/customizesplashdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/file.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/flashinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_customizesplashdialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/customizesplashdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/file.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/flashinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_customizesplashdialog.cxx
 CMakeFiles/companion.dir/moc_downloaddialog.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -10549,8 +10549,8 @@ CMakeFiles/companion.dir/moc_downloaddialog.cxx.o
  /usr/lib64/qt/include/QtNetwork/qnetworkaccessmanager.h
  /usr/lib64/qt/include/QtNetwork/qnetworkreply.h
  /usr/lib64/qt/include/QtNetwork/qnetworkrequest.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/downloaddialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_downloaddialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/downloaddialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_downloaddialog.cxx
 CMakeFiles/companion.dir/moc_fusesdialog.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -10654,8 +10654,8 @@ CMakeFiles/companion.dir/moc_fusesdialog.cxx.o
  /usr/lib64/qt/include/QtGui/qwindowdefs.h
  /usr/lib64/qt/include/QtGui/qwindowdefs_win.h
  /usr/lib64/qt/include/QtGui/qwmatrix.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/fusesdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_fusesdialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/fusesdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_fusesdialog.cxx
 CMakeFiles/companion.dir/moc_fwpreferencesdialog.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -10870,10 +10870,10 @@ CMakeFiles/companion.dir/moc_fwpreferencesdialog.cxx.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/fwpreferencesdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_fwpreferencesdialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/fwpreferencesdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_fwpreferencesdialog.cxx
 CMakeFiles/companion.dir/moc_generaledit.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -11084,10 +11084,10 @@ CMakeFiles/companion.dir/moc_generaledit.cxx.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/generaledit.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_generaledit.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/generaledit.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_generaledit.cxx
 CMakeFiles/companion.dir/moc_helpers.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -11512,10 +11512,10 @@ CMakeFiles/companion.dir/moc_helpers.cxx.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_helpers.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_helpers.cxx
 CMakeFiles/companion.dir/moc_logsdialog.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -11947,9 +11947,9 @@ CMakeFiles/companion.dir/moc_logsdialog.cxx.o
  /usr/lib64/qt/include/QtGui/qwmatrix.h
  /usr/lib64/qt/include/QtGui/qworkspace.h
  /usr/lib64/qt/include/QtGui/qwsembedwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/logsdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/qcustomplot.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_logsdialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/logsdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/qcustomplot.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_logsdialog.cxx
 CMakeFiles/companion.dir/moc_mainwindow.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -12388,11 +12388,11 @@ CMakeFiles/companion.dir/moc_mainwindow.cxx.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/downloaddialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/mainwindow.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_mainwindow.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/downloaddialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/mainwindow.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_mainwindow.cxx
 CMakeFiles/companion.dir/moc_mdichild.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -12817,10 +12817,10 @@ CMakeFiles/companion.dir/moc_mdichild.cxx.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/mdichild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_mdichild.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/mdichild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_mdichild.cxx
 CMakeFiles/companion.dir/moc_modelslist.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -13047,10 +13047,10 @@ CMakeFiles/companion.dir/moc_modelslist.cxx.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/modelslist.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_modelslist.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/modelslist.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_modelslist.cxx
 CMakeFiles/companion.dir/moc_printdialog.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -13477,10 +13477,10 @@ CMakeFiles/companion.dir/moc_printdialog.cxx.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/printdialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_printdialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/printdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_printdialog.cxx
 CMakeFiles/companion.dir/moc_qautocombobox.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -13709,11 +13709,11 @@ CMakeFiles/companion.dir/moc_qautocombobox.cxx.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/modeledit/modelpanel.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/qautocombobox.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_qautocombobox.cxx
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/modeledit/modelpanel.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/qautocombobox.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_qautocombobox.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 CMakeFiles/companion.dir/moc_qcustomplot.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -13843,8 +13843,8 @@ CMakeFiles/companion.dir/moc_qcustomplot.cxx.o
  /usr/lib64/qt/include/QtGui/qwindowdefs.h
  /usr/lib64/qt/include/QtGui/qwindowdefs_win.h
  /usr/lib64/qt/include/QtGui/qwmatrix.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/qcustomplot.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_qcustomplot.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/qcustomplot.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_qcustomplot.cxx
 CMakeFiles/companion.dir/moc_radionotfound.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -13948,8 +13948,8 @@ CMakeFiles/companion.dir/moc_radionotfound.cxx.o
  /usr/lib64/qt/include/QtGui/qwindowdefs.h
  /usr/lib64/qt/include/QtGui/qwindowdefs_win.h
  /usr/lib64/qt/include/QtGui/qwmatrix.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/radionotfound.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_radionotfound.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/radionotfound.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_radionotfound.cxx
 CMakeFiles/companion.dir/moc_splashlabel.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -14371,8 +14371,8 @@ CMakeFiles/companion.dir/moc_splashlabel.cxx.o
  /usr/lib64/qt/include/QtGui/qwmatrix.h
  /usr/lib64/qt/include/QtGui/qworkspace.h
  /usr/lib64/qt/include/QtGui/qwsembedwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/splashlabel.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_splashlabel.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/splashlabel.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_splashlabel.cxx
 CMakeFiles/companion.dir/moc_splashlibrary.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -14793,8 +14793,8 @@ CMakeFiles/companion.dir/moc_splashlibrary.cxx.o
  /usr/lib64/qt/include/QtGui/qwmatrix.h
  /usr/lib64/qt/include/QtGui/qworkspace.h
  /usr/lib64/qt/include/QtGui/qwsembedwidget.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/splashlibrary.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_splashlibrary.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/splashlibrary.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_splashlibrary.cxx
 CMakeFiles/companion.dir/moc_wizarddialog.cxx.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -15006,11 +15006,11 @@ CMakeFiles/companion.dir/moc_wizarddialog.cxx.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/wizarddata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/wizarddialog.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_wizarddialog.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/wizarddata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/wizarddialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_wizarddialog.cxx
 CMakeFiles/companion.dir/modelslist.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -15437,15 +15437,15 @@ CMakeFiles/companion.dir/modelslist.cpp.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mdichild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modelslist.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modelslist.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mdichild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/modelslist.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/modelslist.h
 CMakeFiles/companion.dir/mountlist.cpp.o
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mountlist.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/mountlist.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mountlist.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/mountlist.h
 CMakeFiles/companion.dir/printdialog.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -15886,11 +15886,11 @@ CMakeFiles/companion.dir/printdialog.cpp.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/printdialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/printdialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/printdialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/printdialog.h
  ui_printdialog.h
 CMakeFiles/companion.dir/qcustomplot.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -16021,18 +16021,18 @@ CMakeFiles/companion.dir/qcustomplot.cpp.o
  /usr/lib64/qt/include/QtGui/qwindowdefs.h
  /usr/lib64/qt/include/QtGui/qwindowdefs_win.h
  /usr/lib64/qt/include/QtGui/qwmatrix.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/qcustomplot.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/qcustomplot.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/qcustomplot.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/qcustomplot.h
 CMakeFiles/companion.dir/qrc_companion.cxx.o
  /usr/lib64/qt/include/QtCore/qconfig.h
  /usr/lib64/qt/include/QtCore/qfeatures.h
  /usr/lib64/qt/include/QtCore/qglobal.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/qrc_companion.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/qrc_companion.cxx
 CMakeFiles/companion.dir/qrc_translations.cxx.o
  /usr/lib64/qt/include/QtCore/qconfig.h
  /usr/lib64/qt/include/QtCore/qfeatures.h
  /usr/lib64/qt/include/QtCore/qglobal.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/qrc_translations.cxx
+ /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/qrc_translations.cxx
 CMakeFiles/companion.dir/radionotfound.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -16182,8 +16182,8 @@ CMakeFiles/companion.dir/radionotfound.cpp.o
  /usr/lib64/qt/include/QtGui/qwindowdefs.h
  /usr/lib64/qt/include/QtGui/qwindowdefs_win.h
  /usr/lib64/qt/include/QtGui/qwmatrix.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/radionotfound.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/radionotfound.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/radionotfound.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/radionotfound.h
  ui_radionotfound.h
 CMakeFiles/companion.dir/splashlibrary.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -16622,15 +16622,15 @@ CMakeFiles/companion.dir/splashlibrary.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/splashlabel.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/splashlibrary.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/splashlibrary.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/file.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/splashlabel.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/splashlibrary.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/splashlibrary.h
  ui_splashlibrary.h
 CMakeFiles/companion.dir/wizarddata.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
@@ -16811,10 +16811,10 @@ CMakeFiles/companion.dir/wizarddata.cpp.o
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
  /usr/lib64/qt/include/QtXml/qxmlstream.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddata.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddata.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddata.h
 CMakeFiles/companion.dir/wizarddialog.cpp.o
  /usr/lib64/qt/include/Qt3Support/q3cstring.h
  /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -17240,9 +17240,9 @@ CMakeFiles/companion.dir/wizarddialog.cpp.o
  /usr/lib64/qt/include/QtXml/QtXml
  /usr/lib64/qt/include/QtXml/qdom.h
  /usr/lib64/qt/include/QtXml/qxml.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddata.h
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddialog.cpp
- /usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddialog.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddata.h
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddialog.cpp
+ /usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddialog.h

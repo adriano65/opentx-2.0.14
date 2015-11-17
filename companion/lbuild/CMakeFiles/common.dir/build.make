@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /usr/local/src/opentx/opentx-v2.0.14a/companion/src
+CMAKE_SOURCE_DIR = /usr/local/src/opentx/opentx-2.0.14/companion/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild
+CMAKE_BINARY_DIR = /usr/local/src/opentx/opentx-2.0.14/companion/lbuild
 
 # Include any dependencies generated for this target.
 include CMakeFiles/common.dir/depend.make
@@ -49,34 +49,34 @@ include CMakeFiles/common.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/common.dir/flags.make
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/bitmaps/sticks.lbm: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/bitmaps/sticks_4x1.xbm
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/bitmaps/sticks.lbm"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/radio/src && make lbm
+/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/bitmaps/sticks.lbm: /usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/bitmaps/sticks_4x1.xbm
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating /usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/bitmaps/sticks.lbm"
+	cd /usr/local/src/opentx/opentx-2.0.14/radio/src && make lbm
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations/en.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations/en.h.txt
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations/en.h"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/radio/src && make tra
+/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/translations/en.h: /usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/translations/en.h.txt
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating /usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/translations/en.h"
+	cd /usr/local/src/opentx/opentx-2.0.14/radio/src && make tra
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua_exports.inc: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/myeeprom.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua_exports.inc"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/radio/src && make PCB=TARANIS lua_exports.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua_exports.inc: /usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/myeeprom.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating /usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua_exports.inc"
+	cd /usr/local/src/opentx/opentx-2.0.14/radio/src && make PCB=TARANIS lua_exports.cpp
 
 CMakeFiles/common.dir/eeprominterface.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/eeprominterface.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_4)
+CMakeFiles/common.dir/eeprominterface.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/eeprominterface.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/eeprominterface.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/eeprominterface.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.cpp
 
 CMakeFiles/common.dir/eeprominterface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/eeprominterface.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.cpp > CMakeFiles/common.dir/eeprominterface.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.cpp > CMakeFiles/common.dir/eeprominterface.cpp.i
 
 CMakeFiles/common.dir/eeprominterface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/eeprominterface.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.cpp -o CMakeFiles/common.dir/eeprominterface.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.cpp -o CMakeFiles/common.dir/eeprominterface.cpp.s
 
 CMakeFiles/common.dir/eeprominterface.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/eeprominterface.cpp.o.requires
@@ -88,18 +88,18 @@ CMakeFiles/common.dir/eeprominterface.cpp.o.provides: CMakeFiles/common.dir/eepr
 CMakeFiles/common.dir/eeprominterface.cpp.o.provides.build: CMakeFiles/common.dir/eeprominterface.cpp.o
 
 CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/th9x/th9xeeprom.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_5)
+CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/th9x/th9xeeprom.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/th9x/th9xeeprom.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/th9x/th9xeeprom.cpp
 
 CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/th9x/th9xeeprom.cpp > CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/th9x/th9xeeprom.cpp > CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.i
 
 CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/th9x/th9xeeprom.cpp -o CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/th9x/th9xeeprom.cpp -o CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.s
 
 CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.o.requires
@@ -111,18 +111,18 @@ CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.o.provides: CMakeFiles/commo
 CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/th9x/th9xeeprom.cpp.o
 
 CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/er9x/er9xeeprom.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_6)
+CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/er9x/er9xeeprom.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/er9x/er9xeeprom.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/er9x/er9xeeprom.cpp
 
 CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/er9x/er9xeeprom.cpp > CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/er9x/er9xeeprom.cpp > CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.i
 
 CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/er9x/er9xeeprom.cpp -o CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/er9x/er9xeeprom.cpp -o CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.s
 
 CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.o.requires
@@ -134,18 +134,18 @@ CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.o.provides: CMakeFiles/commo
 CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/er9x/er9xeeprom.cpp.o
 
 CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/er9x/er9xinterface.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_7)
+CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/er9x/er9xinterface.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/er9x/er9xinterface.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/er9x/er9xinterface.cpp
 
 CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/er9x/er9xinterface.cpp > CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/er9x/er9xinterface.cpp > CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.i
 
 CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/er9x/er9xinterface.cpp -o CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/er9x/er9xinterface.cpp -o CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.s
 
 CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.o.requires
@@ -157,18 +157,18 @@ CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.o.provides: CMakeFiles/co
 CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/er9x/er9xinterface.cpp.o
 
 CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/gruvin9x/gruvin9xeeprom.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_8)
+CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/gruvin9x/gruvin9xeeprom.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/gruvin9x/gruvin9xeeprom.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/gruvin9x/gruvin9xeeprom.cpp
 
 CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/gruvin9x/gruvin9xeeprom.cpp > CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/gruvin9x/gruvin9xeeprom.cpp > CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.i
 
 CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/gruvin9x/gruvin9xeeprom.cpp -o CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/gruvin9x/gruvin9xeeprom.cpp -o CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.s
 
 CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.o.requires
@@ -180,18 +180,18 @@ CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.o.provides: CMakeFil
 CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xeeprom.cpp.o
 
 CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/gruvin9x/gruvin9xinterface.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_9)
+CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/gruvin9x/gruvin9xinterface.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/gruvin9x/gruvin9xinterface.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/gruvin9x/gruvin9xinterface.cpp
 
 CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/gruvin9x/gruvin9xinterface.cpp > CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/gruvin9x/gruvin9xinterface.cpp > CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.i
 
 CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/gruvin9x/gruvin9xinterface.cpp -o CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/gruvin9x/gruvin9xinterface.cpp -o CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.s
 
 CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.o.requires
@@ -203,18 +203,18 @@ CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.o.provides: CMake
 CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/gruvin9x/gruvin9xinterface.cpp.o
 
 CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/ersky9x/ersky9xeeprom.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_10)
+CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/ersky9x/ersky9xeeprom.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/ersky9x/ersky9xeeprom.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/ersky9x/ersky9xeeprom.cpp
 
 CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/ersky9x/ersky9xeeprom.cpp > CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/ersky9x/ersky9xeeprom.cpp > CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.i
 
 CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/ersky9x/ersky9xeeprom.cpp -o CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/ersky9x/ersky9xeeprom.cpp -o CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.s
 
 CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.o.requires
@@ -226,18 +226,18 @@ CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.o.provides: CMakeFiles
 CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/ersky9x/ersky9xeeprom.cpp.o
 
 CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/ersky9x/ersky9xinterface.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_11)
+CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/ersky9x/ersky9xinterface.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/ersky9x/ersky9xinterface.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/ersky9x/ersky9xinterface.cpp
 
 CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/ersky9x/ersky9xinterface.cpp > CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/ersky9x/ersky9xinterface.cpp > CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.i
 
 CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/ersky9x/ersky9xinterface.cpp -o CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/ersky9x/ersky9xinterface.cpp -o CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.s
 
 CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.o.requires
@@ -249,18 +249,18 @@ CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.o.provides: CMakeFi
 CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/ersky9x/ersky9xinterface.cpp.o
 
 CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxeeprom.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_12)
+CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxeeprom.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxeeprom.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxeeprom.cpp
 
 CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxeeprom.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxeeprom.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.i
 
 CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxeeprom.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxeeprom.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.s
 
 CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.o.requires
@@ -272,18 +272,18 @@ CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.o.provides: CMakeFiles/c
 CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/opentx/opentxeeprom.cpp.o
 
 CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/open9xStockeeprom.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_13)
+CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/open9xStockeeprom.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/open9xStockeeprom.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/open9xStockeeprom.cpp
 
 CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/open9xStockeeprom.cpp > CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/open9xStockeeprom.cpp > CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.i
 
 CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/open9xStockeeprom.cpp -o CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/open9xStockeeprom.cpp -o CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.s
 
 CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.o.requires
@@ -295,18 +295,18 @@ CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.o.provides: CMakeFi
 CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/opentx/open9xStockeeprom.cpp.o
 
 CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/open9xGruvin9xeeprom.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_14)
+CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/open9xGruvin9xeeprom.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/open9xGruvin9xeeprom.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/open9xGruvin9xeeprom.cpp
 
 CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/open9xGruvin9xeeprom.cpp > CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/open9xGruvin9xeeprom.cpp > CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.i
 
 CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/open9xGruvin9xeeprom.cpp -o CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/open9xGruvin9xeeprom.cpp -o CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.s
 
 CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.o.requires
@@ -318,18 +318,18 @@ CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.o.provides: CMak
 CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/opentx/open9xGruvin9xeeprom.cpp.o
 
 CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/open9xSky9xeeprom.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_15)
+CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/open9xSky9xeeprom.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/open9xSky9xeeprom.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/open9xSky9xeeprom.cpp
 
 CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/open9xSky9xeeprom.cpp > CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/open9xSky9xeeprom.cpp > CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.i
 
 CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/open9xSky9xeeprom.cpp -o CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/open9xSky9xeeprom.cpp -o CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.s
 
 CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.o.requires
@@ -341,18 +341,18 @@ CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.o.provides: CMakeFi
 CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/opentx/open9xSky9xeeprom.cpp.o
 
 CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxinterface.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_16)
+CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxinterface.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxinterface.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxinterface.cpp
 
 CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxinterface.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxinterface.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.i
 
 CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxinterface.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxinterface.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.s
 
 CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.o.requires
@@ -364,18 +364,18 @@ CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.o.provides: CMakeFile
 CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/opentx/opentxinterface.cpp.o
 
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_17)
+CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) -DMAVLINK $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp
+	/usr/bin/c++   $(CXX_DEFINES) -DMAVLINK $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp
 
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.i
 
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxTaranisSimulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.s
 
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o.requires
@@ -387,18 +387,18 @@ CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o.provides: CM
 CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/opentx/opentxTaranisSimulator.cpp.o
 
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_18)
+CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) -DMAVLINK -DMAVLINK -DREVX $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp
+	/usr/bin/c++   $(CXX_DEFINES) -DMAVLINK -DMAVLINK -DREVX $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp
 
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK -DMAVLINK -DREVX $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK -DMAVLINK -DREVX $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.i
 
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK -DMAVLINK -DREVX $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) -DMAVLINK -DMAVLINK -DREVX $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxSky9xsimulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.s
 
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o.requires
@@ -410,18 +410,18 @@ CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o.provides: CMak
 CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/opentx/opentxSky9xsimulator.cpp.o
 
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxGruvin9xsimulator.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_19)
+CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxGruvin9xsimulator.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxGruvin9xsimulator.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxGruvin9xsimulator.cpp
 
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxGruvin9xsimulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxGruvin9xsimulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.i
 
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxGruvin9xsimulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxGruvin9xsimulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.s
 
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o.requires
@@ -433,18 +433,18 @@ CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o.provides: C
 CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/opentx/opentxGruvin9xsimulator.cpp.o
 
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxM128simulator.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_20)
+CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxM128simulator.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxM128simulator.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxM128simulator.cpp
 
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxM128simulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxM128simulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.i
 
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxM128simulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxM128simulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.s
 
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o.requires
@@ -456,18 +456,18 @@ CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o.provides: CMake
 CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/opentx/opentxM128simulator.cpp.o
 
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxM64simulator.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_21)
+CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxM64simulator.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_21)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxM64simulator.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxM64simulator.cpp
 
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxM64simulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxM64simulator.cpp > CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.i
 
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/firmwares/opentx/opentxM64simulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/firmwares/opentx/opentxM64simulator.cpp -o CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.s
 
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o.requires
@@ -479,18 +479,18 @@ CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o.provides: CMakeF
 CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o.provides.build: CMakeFiles/common.dir/firmwares/opentx/opentxM64simulator.cpp.o
 
 CMakeFiles/common.dir/file.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/file.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_22)
+CMakeFiles/common.dir/file.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/file.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_22)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/file.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/file.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/file.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/file.cpp
 
 CMakeFiles/common.dir/file.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/file.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.cpp > CMakeFiles/common.dir/file.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/file.cpp > CMakeFiles/common.dir/file.cpp.i
 
 CMakeFiles/common.dir/file.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/file.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.cpp -o CMakeFiles/common.dir/file.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/file.cpp -o CMakeFiles/common.dir/file.cpp.s
 
 CMakeFiles/common.dir/file.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/file.cpp.o.requires
@@ -502,18 +502,18 @@ CMakeFiles/common.dir/file.cpp.o.provides: CMakeFiles/common.dir/file.cpp.o.requ
 CMakeFiles/common.dir/file.cpp.o.provides.build: CMakeFiles/common.dir/file.cpp.o
 
 CMakeFiles/common.dir/appdata.cpp.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/appdata.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_23)
+CMakeFiles/common.dir/appdata.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_23)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/common.dir/appdata.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/appdata.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/appdata.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.cpp
 
 CMakeFiles/common.dir/appdata.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/appdata.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.cpp > CMakeFiles/common.dir/appdata.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.cpp > CMakeFiles/common.dir/appdata.cpp.i
 
 CMakeFiles/common.dir/appdata.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/appdata.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.cpp -o CMakeFiles/common.dir/appdata.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.cpp -o CMakeFiles/common.dir/appdata.cpp.s
 
 CMakeFiles/common.dir/appdata.cpp.o.requires:
 .PHONY : CMakeFiles/common.dir/appdata.cpp.o.requires
@@ -606,9 +606,9 @@ CMakeFiles/common.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/common.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/common.dir/clean
 
-CMakeFiles/common.dir/depend: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/bitmaps/sticks.lbm
-CMakeFiles/common.dir/depend: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/translations/en.h
-CMakeFiles/common.dir/depend: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua_exports.inc
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /usr/local/src/opentx/opentx-v2.0.14a/companion/src /usr/local/src/opentx/opentx-v2.0.14a/companion/src /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles/common.dir/DependInfo.cmake --color=$(COLOR)
+CMakeFiles/common.dir/depend: /usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/bitmaps/sticks.lbm
+CMakeFiles/common.dir/depend: /usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/translations/en.h
+CMakeFiles/common.dir/depend: /usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua_exports.inc
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /usr/local/src/opentx/opentx-2.0.14/companion/src /usr/local/src/opentx/opentx-2.0.14/companion/src /usr/local/src/opentx/opentx-2.0.14/companion/lbuild /usr/local/src/opentx/opentx-2.0.14/companion/lbuild /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles/common.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/common.dir/depend
 

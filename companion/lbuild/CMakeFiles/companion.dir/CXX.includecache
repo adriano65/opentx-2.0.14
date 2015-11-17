@@ -4438,41 +4438,41 @@ QtCore/qscopedpointer.h
 QtCore/qxmlstream.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/apppreferencesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/apppreferencesdialog.h
 QDialog
 -
 QCheckBox
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/avroutputdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/avroutputdialog.h
 QDialog
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/burnconfigdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/burnconfigdialog.h
 QDialog
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/burndialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/burndialog.h
 QtGui
 -
 QDialog
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 flashinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/flashinterface.h
 xmlinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/xmlinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/xmlinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/comparedialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/comparedialog.h
 QDialog
 -
 QtGui
@@ -4480,25 +4480,25 @@ QtGui
 QDir
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/contributorsdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/contributorsdialog.h
 QDialog
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 downloaddialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/downloaddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/downloaddialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/customizesplashdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/customizesplashdialog.h
 QtGui
 -
 QDialog
 -
 flashinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/flashinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/downloaddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/downloaddialog.h
 QDialog
 -
 QNetworkAccessManager
@@ -4510,7 +4510,7 @@ QNetworkRequest
 QFile
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 inttypes.h
 -
 string.h
@@ -4526,13 +4526,13 @@ QtXml
 iostream
 -
 ../targets/windows/winbuild.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/../targets/windows/winbuild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/../targets/windows/winbuild.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/file.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/file.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/flashinterface.h
 QDialog
 -
 QtGui
@@ -4540,41 +4540,41 @@ QtGui
 inttypes.h
 -
 file.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/file.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/file.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/fusesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/fusesdialog.h
 QDialog
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/fwpreferencesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/fwpreferencesdialog.h
 QDialog
 -
 QCheckBox
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/generaledit.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/generaledit.h
 QDialog
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/helpers.h
 QtGui
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/logsdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/logsdialog.h
 QtCore
 -
 QtGui
 -
 qcustomplot.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/qcustomplot.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/qcustomplot.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/mainwindow.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/mainwindow.h
 QtGui
 -
 QMainWindow
@@ -4582,31 +4582,31 @@ QMainWindow
 QDateTime
 -
 downloaddialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/downloaddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/downloaddialog.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/mdichild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/mdichild.h
 QtGui
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/modeledit/modelpanel.h
 QWidget
 -
 QGridLayout
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/modeledit/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/modeledit/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/modelslist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/modelslist.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 QListWidget
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/printdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/printdialog.h
 QDialog
 -
 QtGui
@@ -4614,15 +4614,15 @@ QtGui
 QDir
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/qautocombobox.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/qautocombobox.h
 QComboBox
 -
 modeledit/modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/modeledit/modelpanel.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/qcustomplot.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/qcustomplot.h
 QObject
 -
 QWidget
@@ -4656,11 +4656,11 @@ qmath.h
 limits
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/radionotfound.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/radionotfound.h
 QDialog
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/splashlabel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/splashlabel.h
 QLabel
 -
 QWidget
@@ -4668,131 +4668,131 @@ QWidget
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/splashlibrary.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/splashlibrary.h
 QtGui
 -
 QDialog
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/wizarddata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/wizarddata.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/wizarddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/wizarddialog.h
 QWizard
 -
 wizarddata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/wizarddata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/wizarddata.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/xmlinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/xmlinterface.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/eeprominterface.h
 QTextStream
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_apppreferencesdialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_apppreferencesdialog.cxx
 ../src/apppreferencesdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/apppreferencesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/apppreferencesdialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_avroutputdialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_avroutputdialog.cxx
 ../src/avroutputdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/avroutputdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/avroutputdialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_burnconfigdialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_burnconfigdialog.cxx
 ../src/burnconfigdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/burnconfigdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/burnconfigdialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_burndialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_burndialog.cxx
 ../src/burndialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/burndialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/burndialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_comparedialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_comparedialog.cxx
 ../src/comparedialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/comparedialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/comparedialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_contributorsdialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_contributorsdialog.cxx
 ../src/contributorsdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/contributorsdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/contributorsdialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_customizesplashdialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_customizesplashdialog.cxx
 ../src/customizesplashdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/customizesplashdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/customizesplashdialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_downloaddialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_downloaddialog.cxx
 ../src/downloaddialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/downloaddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/downloaddialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_fusesdialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_fusesdialog.cxx
 ../src/fusesdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/fusesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/fusesdialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_fwpreferencesdialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_fwpreferencesdialog.cxx
 ../src/fwpreferencesdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/fwpreferencesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/fwpreferencesdialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_generaledit.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_generaledit.cxx
 ../src/generaledit.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/generaledit.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/generaledit.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_helpers.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_helpers.cxx
 ../src/helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_logsdialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_logsdialog.cxx
 ../src/logsdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/logsdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/logsdialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_mainwindow.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_mainwindow.cxx
 ../src/mainwindow.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/mainwindow.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/mainwindow.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_mdichild.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_mdichild.cxx
 ../src/mdichild.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/mdichild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/mdichild.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_modelslist.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_modelslist.cxx
 ../src/modelslist.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/modelslist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/modelslist.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_printdialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_printdialog.cxx
 ../src/printdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/printdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/printdialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_qautocombobox.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_qautocombobox.cxx
 ../src/qautocombobox.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/qautocombobox.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/qautocombobox.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_qcustomplot.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_qcustomplot.cxx
 ../src/qcustomplot.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/qcustomplot.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/qcustomplot.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_radionotfound.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_radionotfound.cxx
 ../src/radionotfound.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/radionotfound.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/radionotfound.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_splashlabel.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_splashlabel.cxx
 ../src/splashlabel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/splashlabel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/splashlabel.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_splashlibrary.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_splashlibrary.cxx
 ../src/splashlibrary.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/splashlibrary.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/splashlibrary.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/moc_wizarddialog.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/moc_wizarddialog.cxx
 ../src/wizarddialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/../src/wizarddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/../src/wizarddialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/qrc_companion.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/qrc_companion.cxx
 QtCore/qglobal.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/qrc_translations.cxx
+/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/qrc_translations.cxx
 QtCore/qglobal.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/./qcustomplot.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/./qcustomplot.h
 QObject
 -
 QWidget
@@ -4826,7 +4826,7 @@ qmath.h
 limits
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 QByteArray
 -
 QStringList
@@ -4836,47 +4836,47 @@ QString
 QSettings
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/apppreferencesdialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/apppreferencesdialog.cpp
 apppreferencesdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/apppreferencesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/apppreferencesdialog.h
 ui_apppreferencesdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_apppreferencesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_apppreferencesdialog.h
 mainwindow.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mainwindow.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mainwindow.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 flashinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
 joystick.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/joystick.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/joystick.h
 joystickdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/joystickdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/joystickdialog.h
 QDesktopServices
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/apppreferencesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/apppreferencesdialog.h
 QDialog
 -
 QCheckBox
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/avroutputdialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/avroutputdialog.cpp
 avroutputdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/avroutputdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/avroutputdialog.h
 ui_avroutputdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_avroutputdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_avroutputdialog.h
 QtGui
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 flashinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
 Windows.h
 -
 WinBase.h
@@ -4886,71 +4886,71 @@ tlhelp32.h
 unistd.h
 -
 mountlist.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mountlist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mountlist.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/avroutputdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/avroutputdialog.h
 QDialog
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/burnconfigdialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/burnconfigdialog.cpp
 burnconfigdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/burnconfigdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/burnconfigdialog.h
 ui_burnconfigdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_burnconfigdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_burnconfigdialog.h
 avroutputdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/avroutputdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/avroutputdialog.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 QtGui
 -
 unistd.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/burnconfigdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/burnconfigdialog.h
 QDialog
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/burndialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/burndialog.cpp
 burndialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/burndialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/burndialog.h
 ui_burndialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_burndialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_burndialog.h
 QtGui
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 splashlibrary.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/splashlibrary.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/splashlibrary.h
 flashinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
 hexinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/hexinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/hexinterface.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/burndialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/burndialog.h
 QtGui
 -
 QDialog
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 flashinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
 xmlinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/xmlinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/xmlinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/companion.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/companion.cpp
 QApplication
 -
 QTranslator
@@ -4970,11 +4970,11 @@ QThread
 iostream
 -
 mainwindow.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mainwindow.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mainwindow.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 windows.h
 -
 unistd.h
@@ -4982,15 +4982,15 @@ unistd.h
 QProxyStyle
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/comparedialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/comparedialog.cpp
 comparedialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/comparedialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/comparedialog.h
 ui_comparedialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_comparedialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_comparedialog.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 QtGui
 -
 QImage
@@ -5002,7 +5002,7 @@ QPainter
 unistd.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/comparedialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/comparedialog.h
 QDialog
 -
 QtGui
@@ -5010,57 +5010,57 @@ QtGui
 QDir
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/contributorsdialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/contributorsdialog.cpp
 contributorsdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/contributorsdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/contributorsdialog.h
 ui_contributorsdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_contributorsdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_contributorsdialog.h
 QtGui
 -
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/contributorsdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/contributorsdialog.h
 QDialog
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 downloaddialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/customizesplashdialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/customizesplashdialog.cpp
 customizesplashdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/customizesplashdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/customizesplashdialog.h
 ui_customizesplashdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_customizesplashdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_customizesplashdialog.h
 QtGui
 -
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 burndialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/burndialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/burndialog.h
 splashlibrary.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/splashlibrary.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/splashlibrary.h
 flashinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/customizesplashdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/customizesplashdialog.h
 QtGui
 -
 QDialog
 -
 flashinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.cpp
 downloaddialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.h
 ui_downloaddialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_downloaddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_downloaddialog.h
 QMessageBox
 -
 QtGui
@@ -5068,9 +5068,9 @@ QtGui
 QTime
 -
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.h
 QDialog
 -
 QNetworkAccessManager
@@ -5082,7 +5082,7 @@ QNetworkRequest
 QFile
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 inttypes.h
 -
 string.h
@@ -5098,25 +5098,25 @@ QtXml
 iostream
 -
 ../targets/windows/winbuild.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/file.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.cpp
 QtGui
 -
 hexinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/hexinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/hexinterface.h
 splash.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/splash.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/splash.h
 flashinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
 QDialog
 -
 QtGui
@@ -5124,69 +5124,69 @@ QtGui
 inttypes.h
 -
 file.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/file.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/file.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/fusesdialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/fusesdialog.cpp
 fusesdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/fusesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/fusesdialog.h
 ui_fusesdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_fusesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_fusesdialog.h
 burnconfigdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/burnconfigdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/burnconfigdialog.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/fusesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/fusesdialog.h
 QDialog
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/fwpreferencesdialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/fwpreferencesdialog.cpp
 fwpreferencesdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/fwpreferencesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/fwpreferencesdialog.h
 ui_fwpreferencesdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_fwpreferencesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_fwpreferencesdialog.h
 mainwindow.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mainwindow.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mainwindow.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 QDesktopServices
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/fwpreferencesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/fwpreferencesdialog.h
 QDialog
 -
 QCheckBox
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/generaledit.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/generaledit.cpp
 generaledit.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/generaledit.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/generaledit.h
 ui_generaledit.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_generaledit.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_generaledit.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 QDateTime
 -
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/generaledit.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/generaledit.h
 QDialog
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.cpp
 QtGui
 -
 io.h
@@ -5196,57 +5196,57 @@ stdio.h
 unistd.h
 -
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 simulatordialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulatordialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulatordialog.h
 simulatorinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulatorinterface.h
 flashinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 QtGui
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/hexinterface.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/hexinterface.cpp
 hexinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/hexinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/hexinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/hexinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/hexinterface.h
 inttypes.h
 -
 QTextStream
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/logsdialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/logsdialog.cpp
 logsdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/logsdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/logsdialog.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 ui_logsdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_logsdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_logsdialog.h
 qcustomplot.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/qcustomplot.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/qcustomplot.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 windows.h
 -
 unistd.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/logsdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/logsdialog.h
 QtCore
 -
 QtGui
 -
 qcustomplot.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/qcustomplot.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/qcustomplot.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mainwindow.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mainwindow.cpp
 QtGui
 -
 QNetworkProxyFactory
@@ -5256,55 +5256,55 @@ QFileInfo
 QDesktopServices
 -
 mainwindow.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mainwindow.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mainwindow.h
 mdichild.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mdichild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mdichild.h
 burnconfigdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/burnconfigdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/burnconfigdialog.h
 avroutputdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/avroutputdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/avroutputdialog.h
 comparedialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/comparedialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/comparedialog.h
 logsdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/logsdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/logsdialog.h
 apppreferencesdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/apppreferencesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/apppreferencesdialog.h
 fwpreferencesdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/fwpreferencesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/fwpreferencesdialog.h
 flashinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
 fusesdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/fusesdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/fusesdialog.h
 downloaddialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.h
 printdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/printdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/printdialog.h
 version.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/version.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/version.h
 contributorsdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/contributorsdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/contributorsdialog.h
 customizesplashdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/customizesplashdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/customizesplashdialog.h
 burndialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/burndialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/burndialog.h
 hexinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/hexinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/hexinterface.h
 warnings.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/warnings.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/warnings.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 radionotfound.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/radionotfound.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/radionotfound.h
 windows.h
 -
 unistd.h
 -
 mountlist.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mountlist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mountlist.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mainwindow.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mainwindow.h
 QtGui
 -
 QMainWindow
@@ -5312,39 +5312,39 @@ QMainWindow
 QDateTime
 -
 downloaddialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/downloaddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/downloaddialog.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mdichild.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mdichild.cpp
 mdichild.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mdichild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mdichild.h
 ui_mdichild.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_mdichild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_mdichild.h
 xmlinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/xmlinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/xmlinterface.h
 hexinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/hexinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/hexinterface.h
 mainwindow.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mainwindow.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mainwindow.h
 modeledit/modeledit.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.h
 generaledit.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/generaledit.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/generaledit.h
 avroutputdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/avroutputdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/avroutputdialog.h
 burnconfigdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/burnconfigdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/burnconfigdialog.h
 printdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/printdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/printdialog.h
 burndialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/burndialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/burndialog.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 wizarddialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddialog.h
 QFileInfo
 -
 windows.h
@@ -5352,45 +5352,45 @@ windows.h
 unistd.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mdichild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mdichild.h
 QtGui
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.h
 QDialog
 -
 modelpanel.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 QWidget
 -
 QGridLayout
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modelslist.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modelslist.cpp
 modelslist.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modelslist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modelslist.h
 mdichild.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mdichild.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mdichild.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/modelslist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/modelslist.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 QListWidget
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mountlist.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mountlist.cpp
 sys/types.h
 -
 sys/param.h
@@ -5400,7 +5400,7 @@ sys/types.h
 sys/types.h
 -
 mountlist.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mountlist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mountlist.h
 limits.h
 -
 stdio.h
@@ -5458,23 +5458,23 @@ sys/vfs.h
 sys/mntent.h
 -
 unlocked-io.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/unlocked-io.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/unlocked-io.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/mountlist.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/mountlist.h
 stdbool.h
 -
 sys/types.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/printdialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/printdialog.cpp
 printdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/printdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/printdialog.h
 ui_printdialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_printdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_printdialog.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 QtGui
 -
 QImage
@@ -5486,7 +5486,7 @@ QPainter
 unistd.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/printdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/printdialog.h
 QDialog
 -
 QtGui
@@ -5494,13 +5494,13 @@ QtGui
 QDir
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/qcustomplot.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/qcustomplot.cpp
 qcustomplot.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/qcustomplot.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/qcustomplot.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/qcustomplot.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/qcustomplot.h
 QObject
 -
 QWidget
@@ -5534,23 +5534,23 @@ qmath.h
 limits
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/radionotfound.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/radionotfound.cpp
 radionotfound.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/radionotfound.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/radionotfound.h
 ui_radionotfound.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_radionotfound.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_radionotfound.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/radionotfound.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/radionotfound.h
 QDialog
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/debugoutput.h
 QDialog
 -
 simulatorinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.h
 QObject
 -
 QMap
@@ -5564,33 +5564,33 @@ QStringList
 SDL.h
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystickdialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystickdialog.h
 joystick.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.h
 QDialog
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatordialog.h
 QDialog
 -
 modeledit/node.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/modeledit/node.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/eeprominterface.h
 telemetrysimu.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/telemetrysimu.h
 trainersimu.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/trainersimu.h
 debugoutput.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/debugoutput.h
 joystick.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/telemetrysimu.h
 QCloseEvent
 -
 QDialog
@@ -5598,9 +5598,9 @@ QDialog
 QTimer
 -
 simulatorinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/trainersimu.h
 QShowEvent
 -
 QCloseEvent
@@ -5610,13 +5610,13 @@ QDialog
 QTimer
 -
 modeledit/node.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/modeledit/node.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/modeledit/node.h
 simulatorinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/splash.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/splash.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/splashlabel.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/splashlabel.h
 QLabel
 -
 QWidget
@@ -5624,61 +5624,61 @@ QWidget
 QtGui
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/splashlibrary.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/splashlibrary.cpp
 splashlibrary.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/splashlibrary.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/splashlibrary.h
 ui_splashlibrary.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/ui_splashlibrary.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/ui_splashlibrary.h
 appdata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/appdata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/appdata.h
 QtGui
 -
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 flashinterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/flashinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/flashinterface.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/splashlibrary.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/splashlibrary.h
 QtGui
 -
 QDialog
 -
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/warnings.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/warnings.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddata.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddata.cpp
 string.h
 -
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 wizarddata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddata.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddata.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddialog.cpp
+/usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddialog.cpp
 QtGui
 -
 wizarddialog.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddialog.h
 wizarddata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddata.h
 helpers.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/helpers.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/helpers.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddialog.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddialog.h
 QWizard
 -
 wizarddata.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/wizarddata.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/wizarddata.h
 
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/xmlinterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/xmlinterface.h
 eeprominterface.h
-/usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
+/usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
 QTextStream
 -
 

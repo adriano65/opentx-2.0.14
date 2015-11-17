@@ -29,12 +29,12 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/lib64/qt/include/QtNetwork"
   "/usr/lib64/qt/include/QtCore"
   "."
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.."
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src"
-  "/usr/local/src/opentx/opentx-v2.0.14a/companion/src"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/../.."
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src"
+  "/usr/local/src/opentx/opentx-2.0.14/companion/src"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /usr/local/src/opentx/opentx-v2.0.14a/companion/src
+CMAKE_SOURCE_DIR = /usr/local/src/opentx/opentx-2.0.14/companion/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild
+CMAKE_BINARY_DIR = /usr/local/src/opentx/opentx-2.0.14/companion/lbuild
 
 # Include any dependencies generated for this target.
 include modeledit/CMakeFiles/modeledit.dir/depend.make
@@ -49,159 +49,159 @@ include modeledit/CMakeFiles/modeledit.dir/progress.make
 # Include the compile flags for this target's objects.
 include modeledit/CMakeFiles/modeledit.dir/flags.make
 
-modeledit/ui_setup_timer.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup_timer.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_1)
+modeledit/ui_setup_timer.h: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup_timer.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_setup_timer.h"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/ui_setup_timer.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup_timer.ui
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/ui_setup_timer.h /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup_timer.ui
 
-modeledit/ui_setup_module.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup_module.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_2)
+modeledit/ui_setup_module.h: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup_module.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_setup_module.h"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/ui_setup_module.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup_module.ui
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/ui_setup_module.h /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup_module.ui
 
-modeledit/ui_flightmode.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmode.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_3)
+modeledit/ui_flightmode.h: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmode.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_flightmode.h"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/ui_flightmode.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmode.ui
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/ui_flightmode.h /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmode.ui
 
-modeledit/ui_telemetry_analog.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry_analog.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_4)
+modeledit/ui_telemetry_analog.h: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry_analog.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_telemetry_analog.h"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/ui_telemetry_analog.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry_analog.ui
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/ui_telemetry_analog.h /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry_analog.ui
 
-modeledit/ui_telemetry_customscreen.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry_customscreen.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_5)
+modeledit/ui_telemetry_customscreen.h: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry_customscreen.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_telemetry_customscreen.h"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/ui_telemetry_customscreen.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry_customscreen.ui
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/ui_telemetry_customscreen.h /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry_customscreen.ui
 
-modeledit/ui_modeledit.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_6)
+modeledit/ui_modeledit.h: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_modeledit.h"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/ui_modeledit.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.ui
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/ui_modeledit.h /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.ui
 
-modeledit/ui_setup.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_7)
+modeledit/ui_setup.h: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_setup.h"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/ui_setup.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.ui
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/ui_setup.h /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.ui
 
-modeledit/ui_heli.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_8)
+modeledit/ui_heli.h: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_heli.h"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/ui_heli.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.ui
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/ui_heli.h /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.ui
 
-modeledit/ui_curves.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_9)
+modeledit/ui_curves.h: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_curves.h"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/ui_curves.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.ui
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/ui_curves.h /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.ui
 
-modeledit/ui_telemetry.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_10)
+modeledit/ui_telemetry.h: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_telemetry.h"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/ui_telemetry.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.ui
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/ui_telemetry.h /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.ui
 
-modeledit/ui_expodialog.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_11)
+modeledit/ui_expodialog.h: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_expodialog.h"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/ui_expodialog.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.ui
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/ui_expodialog.h /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.ui
 
-modeledit/ui_mixerdialog.h: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_12)
+modeledit/ui_mixerdialog.h: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_mixerdialog.h"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/ui_mixerdialog.h /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.ui
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/uic -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/ui_mixerdialog.h /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.ui
 
-modeledit/moc_modelpanel.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_13)
+modeledit/moc_modelpanel.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_modelpanel.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_modelpanel.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_modelpanel.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.h
 
-modeledit/moc_flightmodes.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmodes.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_14)
+modeledit/moc_flightmodes.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmodes.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_flightmodes.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_flightmodes.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmodes.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_flightmodes.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmodes.h
 
-modeledit/moc_inputs.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/inputs.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_15)
+modeledit/moc_inputs.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/inputs.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_inputs.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_inputs.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/inputs.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_inputs.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/inputs.h
 
-modeledit/moc_mixes.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixes.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_16)
+modeledit/moc_mixes.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixes.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_mixes.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixes.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixes.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixes.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixes.h
 
-modeledit/moc_channels.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/channels.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_17)
+modeledit/moc_channels.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/channels.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_channels.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_channels.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/channels.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_channels.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/channels.h
 
-modeledit/moc_logicalswitches.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/logicalswitches.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_18)
+modeledit/moc_logicalswitches.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/logicalswitches.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_logicalswitches.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_logicalswitches.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/logicalswitches.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_logicalswitches.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/logicalswitches.h
 
-modeledit/moc_customfunctions.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_19)
+modeledit/moc_customfunctions.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/customfunctions.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_customfunctions.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_customfunctions.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_customfunctions.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/customfunctions.h
 
-modeledit/moc_mixerslist.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_20)
+modeledit/moc_mixerslist.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_mixerslist.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixerslist.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixerslist.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.h
 
-modeledit/moc_node.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_21)
+modeledit/moc_node.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_21)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_node.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_node.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_node.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 
-modeledit/moc_modeledit.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_22)
+modeledit/moc_modeledit.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_22)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_modeledit.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_modeledit.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_modeledit.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.h
 
-modeledit/moc_setup.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_23)
+modeledit/moc_setup.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_23)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_setup.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_setup.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_setup.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.h
 
-modeledit/moc_heli.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_24)
+modeledit/moc_heli.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_24)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_heli.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_heli.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_heli.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.h
 
-modeledit/moc_curves.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_25)
+modeledit/moc_curves.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_25)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_curves.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_curves.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_curves.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.h
 
-modeledit/moc_telemetry.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_26)
+modeledit/moc_telemetry.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_26)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_telemetry.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_telemetry.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_telemetry.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.h
 
-modeledit/moc_expodialog.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_27)
+modeledit/moc_expodialog.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_27)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_expodialog.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_expodialog.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_expodialog.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.h
 
-modeledit/moc_mixerdialog.cxx: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_28)
+modeledit/moc_mixerdialog.cxx: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_28)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_mixerdialog.cxx"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../.. -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-v2.0.14a/companion/src -I/usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixerdialog.cxx /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.h
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/lib64/qt/bin/moc -I/usr/local/include -I/usr/local/include -I/usr/include/SDL -I/usr/lib64/qt/include -I/usr/lib64/qt/include/QtGui -I/usr/lib64/qt/include/QtXml -I/usr/lib64/qt/include/QtNetwork -I/usr/lib64/qt/include/QtCore -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../.. -I/usr/local/src/opentx/opentx-2.0.14/companion/src/simulation -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/fonts/std -I/usr/local/src/opentx/opentx-2.0.14/companion/src/../../radio/src/lua/src -I/usr/local/include -I/usr/local/src/opentx/opentx-2.0.14/companion/src -I/usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit -DJOYSTICKS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DPHONON -o /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixerdialog.cxx /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.h
 
 modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_29)
+modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_29)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/modelpanel.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/modelpanel.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.cpp
 
 modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/modelpanel.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.cpp > CMakeFiles/modeledit.dir/modelpanel.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.cpp > CMakeFiles/modeledit.dir/modelpanel.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/modelpanel.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modelpanel.cpp -o CMakeFiles/modeledit.dir/modelpanel.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modelpanel.cpp -o CMakeFiles/modeledit.dir/modelpanel.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o.requires
@@ -213,18 +213,18 @@ modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o.provides: modeledit/CMakeFil
 modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/modelpanel.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmodes.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_30)
+modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmodes.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_30)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/flightmodes.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmodes.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/flightmodes.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmodes.cpp
 
 modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/flightmodes.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmodes.cpp > CMakeFiles/modeledit.dir/flightmodes.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmodes.cpp > CMakeFiles/modeledit.dir/flightmodes.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/flightmodes.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/flightmodes.cpp -o CMakeFiles/modeledit.dir/flightmodes.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/flightmodes.cpp -o CMakeFiles/modeledit.dir/flightmodes.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o.requires
@@ -236,18 +236,18 @@ modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o.provides: modeledit/CMakeFi
 modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/flightmodes.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/inputs.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_31)
+modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/inputs.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_31)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/inputs.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/inputs.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/inputs.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/inputs.cpp
 
 modeledit/CMakeFiles/modeledit.dir/inputs.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/inputs.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/inputs.cpp > CMakeFiles/modeledit.dir/inputs.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/inputs.cpp > CMakeFiles/modeledit.dir/inputs.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/inputs.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/inputs.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/inputs.cpp -o CMakeFiles/modeledit.dir/inputs.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/inputs.cpp -o CMakeFiles/modeledit.dir/inputs.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o.requires
@@ -259,18 +259,18 @@ modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o.provides: modeledit/CMakeFiles/m
 modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/inputs.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixes.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_32)
+modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixes.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_32)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/mixes.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixes.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/mixes.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixes.cpp
 
 modeledit/CMakeFiles/modeledit.dir/mixes.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/mixes.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixes.cpp > CMakeFiles/modeledit.dir/mixes.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixes.cpp > CMakeFiles/modeledit.dir/mixes.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/mixes.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/mixes.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixes.cpp -o CMakeFiles/modeledit.dir/mixes.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixes.cpp -o CMakeFiles/modeledit.dir/mixes.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o.requires
@@ -282,18 +282,18 @@ modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o.provides: modeledit/CMakeFiles/mo
 modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/mixes.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/channels.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_33)
+modeledit/CMakeFiles/modeledit.dir/channels.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/channels.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_33)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/channels.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/channels.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/channels.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/channels.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/channels.cpp
 
 modeledit/CMakeFiles/modeledit.dir/channels.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/channels.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/channels.cpp > CMakeFiles/modeledit.dir/channels.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/channels.cpp > CMakeFiles/modeledit.dir/channels.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/channels.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/channels.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/channels.cpp -o CMakeFiles/modeledit.dir/channels.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/channels.cpp -o CMakeFiles/modeledit.dir/channels.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/channels.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/channels.cpp.o.requires
@@ -305,18 +305,18 @@ modeledit/CMakeFiles/modeledit.dir/channels.cpp.o.provides: modeledit/CMakeFiles
 modeledit/CMakeFiles/modeledit.dir/channels.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/channels.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/logicalswitches.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_34)
+modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/logicalswitches.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_34)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/logicalswitches.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/logicalswitches.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/logicalswitches.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/logicalswitches.cpp
 
 modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/logicalswitches.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/logicalswitches.cpp > CMakeFiles/modeledit.dir/logicalswitches.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/logicalswitches.cpp > CMakeFiles/modeledit.dir/logicalswitches.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/logicalswitches.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/logicalswitches.cpp -o CMakeFiles/modeledit.dir/logicalswitches.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/logicalswitches.cpp -o CMakeFiles/modeledit.dir/logicalswitches.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o.requires
@@ -328,18 +328,18 @@ modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o.provides: modeledit/CMa
 modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/logicalswitches.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_35)
+modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/customfunctions.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_35)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/customfunctions.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/customfunctions.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/customfunctions.cpp
 
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/customfunctions.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.cpp > CMakeFiles/modeledit.dir/customfunctions.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/customfunctions.cpp > CMakeFiles/modeledit.dir/customfunctions.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/customfunctions.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/customfunctions.cpp -o CMakeFiles/modeledit.dir/customfunctions.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/customfunctions.cpp -o CMakeFiles/modeledit.dir/customfunctions.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o.requires
@@ -351,18 +351,18 @@ modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o.provides: modeledit/CMa
 modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/customfunctions.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_36)
+modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_36)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/mixerslist.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/mixerslist.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.cpp
 
 modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/mixerslist.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.cpp > CMakeFiles/modeledit.dir/mixerslist.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.cpp > CMakeFiles/modeledit.dir/mixerslist.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/mixerslist.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerslist.cpp -o CMakeFiles/modeledit.dir/mixerslist.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerslist.cpp -o CMakeFiles/modeledit.dir/mixerslist.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o.requires
@@ -374,18 +374,18 @@ modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o.provides: modeledit/CMakeFil
 modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/mixerslist.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/node.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_37)
+modeledit/CMakeFiles/modeledit.dir/node.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_37)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/node.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/node.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/node.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.cpp
 
 modeledit/CMakeFiles/modeledit.dir/node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/node.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.cpp > CMakeFiles/modeledit.dir/node.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.cpp > CMakeFiles/modeledit.dir/node.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/node.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.cpp -o CMakeFiles/modeledit.dir/node.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.cpp -o CMakeFiles/modeledit.dir/node.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/node.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/node.cpp.o.requires
@@ -397,18 +397,18 @@ modeledit/CMakeFiles/modeledit.dir/node.cpp.o.provides: modeledit/CMakeFiles/mod
 modeledit/CMakeFiles/modeledit.dir/node.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/node.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_38)
+modeledit/CMakeFiles/modeledit.dir/edge.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_38)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/edge.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/edge.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/edge.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.cpp
 
 modeledit/CMakeFiles/modeledit.dir/edge.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/edge.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.cpp > CMakeFiles/modeledit.dir/edge.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.cpp > CMakeFiles/modeledit.dir/edge.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/edge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/edge.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.cpp -o CMakeFiles/modeledit.dir/edge.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.cpp -o CMakeFiles/modeledit.dir/edge.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/edge.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/edge.cpp.o.requires
@@ -420,18 +420,18 @@ modeledit/CMakeFiles/modeledit.dir/edge.cpp.o.provides: modeledit/CMakeFiles/mod
 modeledit/CMakeFiles/modeledit.dir/edge.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/edge.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_39)
+modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_39)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/modeledit.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/modeledit.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.cpp
 
 modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/modeledit.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.cpp > CMakeFiles/modeledit.dir/modeledit.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.cpp > CMakeFiles/modeledit.dir/modeledit.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/modeledit.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/modeledit.cpp -o CMakeFiles/modeledit.dir/modeledit.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/modeledit.cpp -o CMakeFiles/modeledit.dir/modeledit.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o.requires
@@ -443,18 +443,18 @@ modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o.provides: modeledit/CMakeFile
 modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/modeledit.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_40)
+modeledit/CMakeFiles/modeledit.dir/setup.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_40)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/setup.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/setup.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/setup.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.cpp
 
 modeledit/CMakeFiles/modeledit.dir/setup.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/setup.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.cpp > CMakeFiles/modeledit.dir/setup.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.cpp > CMakeFiles/modeledit.dir/setup.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/setup.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/setup.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/setup.cpp -o CMakeFiles/modeledit.dir/setup.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/setup.cpp -o CMakeFiles/modeledit.dir/setup.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/setup.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/setup.cpp.o.requires
@@ -466,18 +466,18 @@ modeledit/CMakeFiles/modeledit.dir/setup.cpp.o.provides: modeledit/CMakeFiles/mo
 modeledit/CMakeFiles/modeledit.dir/setup.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/setup.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_41)
+modeledit/CMakeFiles/modeledit.dir/heli.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_41)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/heli.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/heli.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/heli.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.cpp
 
 modeledit/CMakeFiles/modeledit.dir/heli.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/heli.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.cpp > CMakeFiles/modeledit.dir/heli.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.cpp > CMakeFiles/modeledit.dir/heli.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/heli.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/heli.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/heli.cpp -o CMakeFiles/modeledit.dir/heli.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/heli.cpp -o CMakeFiles/modeledit.dir/heli.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/heli.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/heli.cpp.o.requires
@@ -489,18 +489,18 @@ modeledit/CMakeFiles/modeledit.dir/heli.cpp.o.provides: modeledit/CMakeFiles/mod
 modeledit/CMakeFiles/modeledit.dir/heli.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/heli.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_42)
+modeledit/CMakeFiles/modeledit.dir/curves.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_42)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/curves.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/curves.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/curves.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.cpp
 
 modeledit/CMakeFiles/modeledit.dir/curves.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/curves.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.cpp > CMakeFiles/modeledit.dir/curves.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.cpp > CMakeFiles/modeledit.dir/curves.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/curves.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/curves.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/curves.cpp -o CMakeFiles/modeledit.dir/curves.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/curves.cpp -o CMakeFiles/modeledit.dir/curves.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/curves.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/curves.cpp.o.requires
@@ -512,18 +512,18 @@ modeledit/CMakeFiles/modeledit.dir/curves.cpp.o.provides: modeledit/CMakeFiles/m
 modeledit/CMakeFiles/modeledit.dir/curves.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/curves.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_43)
+modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_43)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/telemetry.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/telemetry.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.cpp
 
 modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/telemetry.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.cpp > CMakeFiles/modeledit.dir/telemetry.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.cpp > CMakeFiles/modeledit.dir/telemetry.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/telemetry.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/telemetry.cpp -o CMakeFiles/modeledit.dir/telemetry.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/telemetry.cpp -o CMakeFiles/modeledit.dir/telemetry.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o.requires
@@ -535,18 +535,18 @@ modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o.provides: modeledit/CMakeFile
 modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/telemetry.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_44)
+modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_44)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/expodialog.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/expodialog.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.cpp
 
 modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/expodialog.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.cpp > CMakeFiles/modeledit.dir/expodialog.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.cpp > CMakeFiles/modeledit.dir/expodialog.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/expodialog.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/expodialog.cpp -o CMakeFiles/modeledit.dir/expodialog.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/expodialog.cpp -o CMakeFiles/modeledit.dir/expodialog.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o.requires
@@ -558,18 +558,18 @@ modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o.provides: modeledit/CMakeFil
 modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o.provides.build: modeledit/CMakeFiles/modeledit.dir/expodialog.cpp.o
 
 modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: modeledit/CMakeFiles/modeledit.dir/flags.make
-modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_45)
+modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_45)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/mixerdialog.cpp.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.cpp
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/mixerdialog.cpp.o -c /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.cpp
 
 modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/mixerdialog.cpp.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.cpp > CMakeFiles/modeledit.dir/mixerdialog.cpp.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.cpp > CMakeFiles/modeledit.dir/mixerdialog.cpp.i
 
 modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/mixerdialog.cpp.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/mixerdialog.cpp -o CMakeFiles/modeledit.dir/mixerdialog.cpp.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/mixerdialog.cpp -o CMakeFiles/modeledit.dir/mixerdialog.cpp.s
 
 modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o.requires
@@ -582,17 +582,17 @@ modeledit/CMakeFiles/modeledit.dir/mixerdialog.cpp.o.provides.build: modeledit/C
 
 modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o: modeledit/moc_modelpanel.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_46)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_46)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_modelpanel.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_modelpanel.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_modelpanel.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_modelpanel.cxx > CMakeFiles/modeledit.dir/moc_modelpanel.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_modelpanel.cxx > CMakeFiles/modeledit.dir/moc_modelpanel.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_modelpanel.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_modelpanel.cxx -o CMakeFiles/modeledit.dir/moc_modelpanel.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_modelpanel.cxx -o CMakeFiles/modeledit.dir/moc_modelpanel.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o.requires
@@ -605,17 +605,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_modelpanel.cxx.o.provides.build: modeledi
 
 modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o: modeledit/moc_flightmodes.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_47)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_47)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_flightmodes.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_flightmodes.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_flightmodes.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_flightmodes.cxx > CMakeFiles/modeledit.dir/moc_flightmodes.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_flightmodes.cxx > CMakeFiles/modeledit.dir/moc_flightmodes.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_flightmodes.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_flightmodes.cxx -o CMakeFiles/modeledit.dir/moc_flightmodes.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_flightmodes.cxx -o CMakeFiles/modeledit.dir/moc_flightmodes.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o.requires
@@ -628,17 +628,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_flightmodes.cxx.o.provides.build: modeled
 
 modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o: modeledit/moc_inputs.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_48)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_48)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_inputs.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_inputs.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_inputs.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_inputs.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_inputs.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_inputs.cxx > CMakeFiles/modeledit.dir/moc_inputs.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_inputs.cxx > CMakeFiles/modeledit.dir/moc_inputs.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_inputs.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_inputs.cxx -o CMakeFiles/modeledit.dir/moc_inputs.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_inputs.cxx -o CMakeFiles/modeledit.dir/moc_inputs.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o.requires
@@ -651,17 +651,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_inputs.cxx.o.provides.build: modeledit/CM
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o: modeledit/moc_mixes.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_49)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_49)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_mixes.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixes.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_mixes.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixes.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_mixes.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixes.cxx > CMakeFiles/modeledit.dir/moc_mixes.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixes.cxx > CMakeFiles/modeledit.dir/moc_mixes.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_mixes.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixes.cxx -o CMakeFiles/modeledit.dir/moc_mixes.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixes.cxx -o CMakeFiles/modeledit.dir/moc_mixes.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o.requires
@@ -674,17 +674,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_mixes.cxx.o.provides.build: modeledit/CMa
 
 modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o: modeledit/moc_channels.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_50)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_50)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_channels.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_channels.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_channels.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_channels.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_channels.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_channels.cxx > CMakeFiles/modeledit.dir/moc_channels.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_channels.cxx > CMakeFiles/modeledit.dir/moc_channels.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_channels.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_channels.cxx -o CMakeFiles/modeledit.dir/moc_channels.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_channels.cxx -o CMakeFiles/modeledit.dir/moc_channels.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o.requires
@@ -697,17 +697,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_channels.cxx.o.provides.build: modeledit/
 
 modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o: modeledit/moc_logicalswitches.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_51)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_51)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_logicalswitches.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_logicalswitches.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_logicalswitches.cxx > CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_logicalswitches.cxx > CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_logicalswitches.cxx -o CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_logicalswitches.cxx -o CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o.requires
@@ -720,17 +720,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_logicalswitches.cxx.o.provides.build: mod
 
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o: modeledit/moc_customfunctions.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_52)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_52)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_customfunctions.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_customfunctions.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_customfunctions.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_customfunctions.cxx > CMakeFiles/modeledit.dir/moc_customfunctions.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_customfunctions.cxx > CMakeFiles/modeledit.dir/moc_customfunctions.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_customfunctions.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_customfunctions.cxx -o CMakeFiles/modeledit.dir/moc_customfunctions.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_customfunctions.cxx -o CMakeFiles/modeledit.dir/moc_customfunctions.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o.requires
@@ -743,17 +743,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_customfunctions.cxx.o.provides.build: mod
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.o: modeledit/moc_mixerslist.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_53)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_53)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_mixerslist.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixerslist.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_mixerslist.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixerslist.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_mixerslist.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixerslist.cxx > CMakeFiles/modeledit.dir/moc_mixerslist.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixerslist.cxx > CMakeFiles/modeledit.dir/moc_mixerslist.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_mixerslist.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixerslist.cxx -o CMakeFiles/modeledit.dir/moc_mixerslist.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixerslist.cxx -o CMakeFiles/modeledit.dir/moc_mixerslist.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.o.requires
@@ -766,17 +766,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_mixerslist.cxx.o.provides.build: modeledi
 
 modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.o: modeledit/moc_node.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_54)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_54)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_node.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_node.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_node.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_node.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_node.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_node.cxx > CMakeFiles/modeledit.dir/moc_node.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_node.cxx > CMakeFiles/modeledit.dir/moc_node.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_node.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_node.cxx -o CMakeFiles/modeledit.dir/moc_node.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_node.cxx -o CMakeFiles/modeledit.dir/moc_node.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.o.requires
@@ -789,17 +789,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_node.cxx.o.provides.build: modeledit/CMak
 
 modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o: modeledit/moc_modeledit.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_55)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_55)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_modeledit.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_modeledit.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_modeledit.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_modeledit.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_modeledit.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_modeledit.cxx > CMakeFiles/modeledit.dir/moc_modeledit.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_modeledit.cxx > CMakeFiles/modeledit.dir/moc_modeledit.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_modeledit.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_modeledit.cxx -o CMakeFiles/modeledit.dir/moc_modeledit.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_modeledit.cxx -o CMakeFiles/modeledit.dir/moc_modeledit.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o.requires
@@ -812,17 +812,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_modeledit.cxx.o.provides.build: modeledit
 
 modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o: modeledit/moc_setup.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_56)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_56)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_setup.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_setup.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_setup.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_setup.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_setup.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_setup.cxx > CMakeFiles/modeledit.dir/moc_setup.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_setup.cxx > CMakeFiles/modeledit.dir/moc_setup.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_setup.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_setup.cxx -o CMakeFiles/modeledit.dir/moc_setup.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_setup.cxx -o CMakeFiles/modeledit.dir/moc_setup.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o.requires
@@ -835,17 +835,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_setup.cxx.o.provides.build: modeledit/CMa
 
 modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o: modeledit/moc_heli.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_57)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_57)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_heli.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_heli.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_heli.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_heli.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_heli.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_heli.cxx > CMakeFiles/modeledit.dir/moc_heli.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_heli.cxx > CMakeFiles/modeledit.dir/moc_heli.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_heli.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_heli.cxx -o CMakeFiles/modeledit.dir/moc_heli.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_heli.cxx -o CMakeFiles/modeledit.dir/moc_heli.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o.requires
@@ -858,17 +858,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_heli.cxx.o.provides.build: modeledit/CMak
 
 modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o: modeledit/moc_curves.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_58)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_58)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_curves.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_curves.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_curves.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_curves.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_curves.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_curves.cxx > CMakeFiles/modeledit.dir/moc_curves.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_curves.cxx > CMakeFiles/modeledit.dir/moc_curves.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_curves.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_curves.cxx -o CMakeFiles/modeledit.dir/moc_curves.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_curves.cxx -o CMakeFiles/modeledit.dir/moc_curves.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o.requires
@@ -881,17 +881,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_curves.cxx.o.provides.build: modeledit/CM
 
 modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o: modeledit/moc_telemetry.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_59)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_59)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_telemetry.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_telemetry.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_telemetry.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_telemetry.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_telemetry.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_telemetry.cxx > CMakeFiles/modeledit.dir/moc_telemetry.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_telemetry.cxx > CMakeFiles/modeledit.dir/moc_telemetry.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_telemetry.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_telemetry.cxx -o CMakeFiles/modeledit.dir/moc_telemetry.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_telemetry.cxx -o CMakeFiles/modeledit.dir/moc_telemetry.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o.requires
@@ -904,17 +904,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_telemetry.cxx.o.provides.build: modeledit
 
 modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o: modeledit/moc_expodialog.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_60)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_60)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_expodialog.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_expodialog.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_expodialog.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_expodialog.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_expodialog.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_expodialog.cxx > CMakeFiles/modeledit.dir/moc_expodialog.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_expodialog.cxx > CMakeFiles/modeledit.dir/moc_expodialog.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_expodialog.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_expodialog.cxx -o CMakeFiles/modeledit.dir/moc_expodialog.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_expodialog.cxx -o CMakeFiles/modeledit.dir/moc_expodialog.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o.requires
@@ -927,17 +927,17 @@ modeledit/CMakeFiles/modeledit.dir/moc_expodialog.cxx.o.provides.build: modeledi
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o: modeledit/CMakeFiles/modeledit.dir/flags.make
 modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o: modeledit/moc_mixerdialog.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_61)
+	$(CMAKE_COMMAND) -E cmake_progress_report /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/CMakeFiles $(CMAKE_PROGRESS_61)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o -c /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixerdialog.cxx
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o -c /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixerdialog.cxx
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.i"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixerdialog.cxx > CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.i
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixerdialog.cxx > CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.i
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.s"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/moc_mixerdialog.cxx -o CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.s
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/moc_mixerdialog.cxx -o CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.s
 
 modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o.requires:
 .PHONY : modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx.o.requires
@@ -1023,8 +1023,8 @@ modeledit/libmodeledit.a: modeledit/CMakeFiles/modeledit.dir/moc_mixerdialog.cxx
 modeledit/libmodeledit.a: modeledit/CMakeFiles/modeledit.dir/build.make
 modeledit/libmodeledit.a: modeledit/CMakeFiles/modeledit.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libmodeledit.a"
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && $(CMAKE_COMMAND) -P CMakeFiles/modeledit.dir/cmake_clean_target.cmake
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/modeledit.dir/link.txt --verbose=$(VERBOSE)
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && $(CMAKE_COMMAND) -P CMakeFiles/modeledit.dir/cmake_clean_target.cmake
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/modeledit.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 modeledit/CMakeFiles/modeledit.dir/build: modeledit/libmodeledit.a
@@ -1066,7 +1066,7 @@ modeledit/CMakeFiles/modeledit.dir/requires: modeledit/CMakeFiles/modeledit.dir/
 .PHONY : modeledit/CMakeFiles/modeledit.dir/requires
 
 modeledit/CMakeFiles/modeledit.dir/clean:
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit && $(CMAKE_COMMAND) -P CMakeFiles/modeledit.dir/cmake_clean.cmake
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit && $(CMAKE_COMMAND) -P CMakeFiles/modeledit.dir/cmake_clean.cmake
 .PHONY : modeledit/CMakeFiles/modeledit.dir/clean
 
 modeledit/CMakeFiles/modeledit.dir/depend: modeledit/ui_setup_timer.h
@@ -1097,6 +1097,6 @@ modeledit/CMakeFiles/modeledit.dir/depend: modeledit/moc_curves.cxx
 modeledit/CMakeFiles/modeledit.dir/depend: modeledit/moc_telemetry.cxx
 modeledit/CMakeFiles/modeledit.dir/depend: modeledit/moc_expodialog.cxx
 modeledit/CMakeFiles/modeledit.dir/depend: modeledit/moc_mixerdialog.cxx
-	cd /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /usr/local/src/opentx/opentx-v2.0.14a/companion/src /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit /usr/local/src/opentx/opentx-v2.0.14a/companion/lbuild/modeledit/CMakeFiles/modeledit.dir/DependInfo.cmake --color=$(COLOR)
+	cd /usr/local/src/opentx/opentx-2.0.14/companion/lbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /usr/local/src/opentx/opentx-2.0.14/companion/src /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit /usr/local/src/opentx/opentx-2.0.14/companion/lbuild /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit /usr/local/src/opentx/opentx-2.0.14/companion/lbuild/modeledit/CMakeFiles/modeledit.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : modeledit/CMakeFiles/modeledit.dir/depend
 

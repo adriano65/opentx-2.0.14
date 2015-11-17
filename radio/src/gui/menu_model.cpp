@@ -73,7 +73,7 @@ void menuModelGVars(uint8_t event);
 void menuModelLogicalSwitches(uint8_t event);
 void menuModelCustomFunctions(uint8_t event);
 void menuModelCustomScripts(uint8_t event);
-void menuModelTelemetry(uint8_t event);
+void menuTelemetryFrskySetup(uint8_t event);
 void menuTelemetryMavlinkSetup(uint8_t event);
 void menuModelTemplates(uint8_t event);
 void menuModelExpoOne(uint8_t event);
@@ -95,7 +95,7 @@ const MenuFuncP_PROGMEM menuTabModel[] PROGMEM = {
 #if defined(LUA_MODEL_SCRIPTS)
   menuModelCustomScripts,
 #endif
-  CASE_FRSKY(menuModelTelemetry)
+  CASE_FRSKY(menuTelemetryFrskySetup)
   CASE_MAVLINK(menuTelemetryMavlinkSetup)
   CASE_TEMPLATES(menuModelTemplates)
 };
@@ -5688,8 +5688,8 @@ enum menuModelTelemetryItems {
   #define IF_FAS_OFFSET(x) 
 #endif
 
-#if 0
-//#if defined(PCBTARANIS)
+//#if 0
+#if defined(PCBTARANIS)
   #define TELEMETRY_TYPE_ROWS  (g_model.moduleData[INTERNAL_MODULE].rfProtocol == RF_PROTO_OFF && g_model.externalModule == MODULE_TYPE_PPM) ? (uint8_t)0 : HIDDEN_ROW,
 #elif defined(CPUARM)
   #define TELEMETRY_TYPE_ROWS  0,
@@ -5697,9 +5697,26 @@ enum menuModelTelemetryItems {
   #define TELEMETRY_TYPE_ROWS
 #endif
 
-void menuModelTelemetry(uint8_t event)
+void menuTelemetryFrskySetup(uint8_t event)
 {
-  MENU(STR_MENUTELEMETRY, menuTabModel, e_Telemetry, ITEM_TELEMETRY_MAX+1, {0, TELEMETRY_TYPE_ROWS CHANNEL_ROWS, CHANNEL_ROWS, CASE_CPUARM(CHANNEL_ROWS) CASE_CPUARM(CHANNEL_ROWS) RSSI_ROWS, USRDATA_LINES 0, 0, IF_FAS_OFFSET(0) CASE_CPUARM(0) CASE_VARIO(LABEL(Vario)) CASE_VARIO(0) CASE_VARIO(VARIO_RANGE_ROWS) CASE_PCBTARANIS(LABEL(TopBar)) CASE_PCBTARANIS(0) SCREEN_TYPE_ROWS, 2, 2, 2, 2, SCREEN_TYPE_ROWS, 2, 2, 2, 2, CASE_CPUARM(SCREEN_TYPE_ROWS) CASE_CPUARM(2) CASE_CPUARM(2) CASE_CPUARM(2) CASE_CPUARM(2)});
+  MENU(STR_MENUTELEMETRY, menuTabModel, e_Telemetry, ITEM_TELEMETRY_MAX+1
+			, {0
+			, TELEMETRY_TYPE_ROWS CHANNEL_ROWS
+			, CHANNEL_ROWS
+			, CASE_CPUARM(CHANNEL_ROWS) CASE_CPUARM(CHANNEL_ROWS) RSSI_ROWS
+			, USRDATA_LINES 0
+			, 0
+			, IF_FAS_OFFSET(0) CASE_CPUARM(0) CASE_VARIO(LABEL(Vario)) CASE_VARIO(0) CASE_VARIO(VARIO_RANGE_ROWS) CASE_PCBTARANIS(LABEL(TopBar)) CASE_PCBTARANIS(0) SCREEN_TYPE_ROWS
+			, 2
+			, 2
+			, 2
+			, 2
+			, SCREEN_TYPE_ROWS
+			, 2
+			, 2
+			, 2
+			, 2
+			, CASE_CPUARM(SCREEN_TYPE_ROWS) CASE_CPUARM(2) CASE_CPUARM(2) CASE_CPUARM(2) CASE_CPUARM(2)});
 
   uint8_t sub = m_posVert - 1;
 

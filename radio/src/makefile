@@ -70,8 +70,8 @@ MAVLINK_DEBUG = NO
 #PCB = 9X
 #PCB = 9XR128
 #PCB = SKY9X
-PCB = 9XRPRO
-#PCB = TARANIS
+#PCB = 9XRPRO
+PCB = TARANIS
 
 
 # PCB revision
@@ -282,7 +282,10 @@ DEFAULT_MODE = 2
 
 # EEPROM_PROGRESS_BAR
 # Values = YES, NO
-ifeq ($(PCB), $(filter $(PCB), 9XRPRO TARANIS))
+ifeq ($(PCB), TARANIS)
+EEPROM_PROGRESS_BAR = NO
+endif
+ifeq ($(PCB), 9XRPRO)
 EEPROM_PROGRESS_BAR = YES
 else
 EEPROM_PROGRESS_BAR = NO
@@ -310,7 +313,8 @@ GVARS = YES
 
 # Lua interpreter embedded
 # Values = NO, NO_MODEL_SCRIPTS, YES 
-LUA = YES
+#LUA = YES
+LUA = NO
 
 # Menu Lock modes
 # Values = NO, READONLY, NOMENUS 
@@ -341,7 +345,7 @@ SHELL = sh
 IMG2LBM = -python ../util/img2lbm.py
 BIN2LBM = -python ../util/bin2lbm.py
 TRANSLATE = -python ../util/translate.py
-VERSION = 2.0.15a
+VERSION = 2.0.14b
 
 SRC =
 CPPSRC =

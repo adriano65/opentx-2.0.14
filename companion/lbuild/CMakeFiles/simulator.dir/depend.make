@@ -421,9 +421,9 @@ CMakeFiles/simulator.dir/modeledit/edge.cpp.o: /usr/lib64/qt/include/QtGui/qwiza
 CMakeFiles/simulator.dir/modeledit/edge.cpp.o: /usr/lib64/qt/include/QtGui/qwmatrix.h
 CMakeFiles/simulator.dir/modeledit/edge.cpp.o: /usr/lib64/qt/include/QtGui/qworkspace.h
 CMakeFiles/simulator.dir/modeledit/edge.cpp.o: /usr/lib64/qt/include/QtGui/qwsembedwidget.h
-CMakeFiles/simulator.dir/modeledit/edge.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.cpp
-CMakeFiles/simulator.dir/modeledit/edge.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.h
-CMakeFiles/simulator.dir/modeledit/edge.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+CMakeFiles/simulator.dir/modeledit/edge.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.cpp
+CMakeFiles/simulator.dir/modeledit/edge.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.h
+CMakeFiles/simulator.dir/modeledit/edge.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 
 CMakeFiles/simulator.dir/modeledit/moc_node.cxx.o: /usr/lib64/qt/include/Qt3Support/q3cstring.h
 CMakeFiles/simulator.dir/modeledit/moc_node.cxx.o: /usr/lib64/qt/include/Qt3Support/q3valuelist.h
@@ -1269,9 +1269,9 @@ CMakeFiles/simulator.dir/modeledit/node.cpp.o: /usr/lib64/qt/include/QtGui/qwiza
 CMakeFiles/simulator.dir/modeledit/node.cpp.o: /usr/lib64/qt/include/QtGui/qwmatrix.h
 CMakeFiles/simulator.dir/modeledit/node.cpp.o: /usr/lib64/qt/include/QtGui/qworkspace.h
 CMakeFiles/simulator.dir/modeledit/node.cpp.o: /usr/lib64/qt/include/QtGui/qwsembedwidget.h
-CMakeFiles/simulator.dir/modeledit/node.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/edge.h
-CMakeFiles/simulator.dir/modeledit/node.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.cpp
-CMakeFiles/simulator.dir/modeledit/node.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
+CMakeFiles/simulator.dir/modeledit/node.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/edge.h
+CMakeFiles/simulator.dir/modeledit/node.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.cpp
+CMakeFiles/simulator.dir/modeledit/node.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
 
 CMakeFiles/simulator.dir/qrc_companion.cxx.o: /usr/lib64/qt/include/QtCore/qconfig.h
 CMakeFiles/simulator.dir/qrc_companion.cxx.o: /usr/lib64/qt/include/QtCore/qfeatures.h
@@ -1742,14 +1742,14 @@ CMakeFiles/simulator.dir/simulator.cpp.o: /usr/lib64/qt/include/QtXml/QtXml
 CMakeFiles/simulator.dir/simulator.cpp.o: /usr/lib64/qt/include/QtXml/qdom.h
 CMakeFiles/simulator.dir/simulator.cpp.o: /usr/lib64/qt/include/QtXml/qxml.h
 CMakeFiles/simulator.dir/simulator.cpp.o: /usr/lib64/qt/include/QtXml/qxmlstream.h
-CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/../targets/windows/winbuild.h
-CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/eeprominterface.h
-CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/modeledit/node.h
-CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/debugoutput.h
-CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/joystick.h
-CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatordialog.h
-CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/simulatorinterface.h
-CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/telemetrysimu.h
-CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulation/trainersimu.h
-CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-v2.0.14a/companion/src/simulator.cpp
+CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/../targets/windows/winbuild.h
+CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/eeprominterface.h
+CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/modeledit/node.h
+CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/debugoutput.h
+CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/joystick.h
+CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatordialog.h
+CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/simulatorinterface.h
+CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/telemetrysimu.h
+CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/simulation/trainersimu.h
+CMakeFiles/simulator.dir/simulator.cpp.o: /usr/local/src/opentx/opentx-2.0.14/companion/src/simulator.cpp
 
