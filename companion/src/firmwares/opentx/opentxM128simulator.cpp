@@ -90,6 +90,10 @@ namespace OpenTxM128 {
 #include "radio/src/targets/stock/voice.cpp"
 #include "radio/src/telemetry/frsky.cpp"
 #include "radio/src/telemetry/frsky_d.cpp"
+
+#include "radio/src/telemetry/mavlink.cpp"
+#include "radio/src/gui/view_mavlink.cpp"
+
 #include "radio/src/translations/tts_en.cpp"
 #include "radio/src/haptic.cpp"
 

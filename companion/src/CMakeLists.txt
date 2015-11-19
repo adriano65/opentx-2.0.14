@@ -114,7 +114,7 @@ add_subdirectory(simulation)
 #set_source_files_properties( ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp PROPERTIES COMPILE_DEFINITIONS MAVLINK)
 
 if(${EXT} MATCHES MAVLINK)
-  MESSAGE("Sky9x, 9xrPro and Taranis MAVLINK protocol enabled." )
+  MESSAGE("9xr128, Sky9x, 9xrPro and Taranis MAVLINK protocol enabled." )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
 	APPEND
@@ -133,6 +133,12 @@ if(${EXT} MATCHES MAVLINK)
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS
 	# REVPLUS is already defined
+	MAVLINK
+  )
+  set_property(
+	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxM128simulator.cpp
+	APPEND
+	PROPERTY COMPILE_DEFINITIONS
 	MAVLINK
   )
 else ()
