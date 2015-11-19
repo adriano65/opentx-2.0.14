@@ -38,7 +38,6 @@
 void MAVLINK_Init(void);
 
 #include "../opentx.h"				// includes "telemetry/mavlink.h" too
-#include "serial.h"
 
 /*
  * 	mavlink_system_t ----------------------------------------------------------------
@@ -146,14 +145,7 @@ MavlinkData mavlinkData;
 		return;
 	}
 	*/
-SerialFuncP RXHandler = processSerialMavlinkData;
-#else
-  #include "serial.cpp"
-  void MAVLINK_rxhandler(uint8_t byte) {
-	  processSerialMavlinkData(byte);
-  }
-
-  SerialFuncP RXHandler = MAVLINK_rxhandler;
+//SerialFuncP RXHandler = processSerialMavlinkData;
 #endif
 
 
@@ -179,8 +171,8 @@ void MAVLINK_Init(void) {
 	mav_statustext[0] = 0;
 	actualbaudrateIdx=g_eeGeneral.mavbaud;
 	#if !defined(SIMU)
+	  MAVLINK_reset();
 	  #if defined(CPUARM)
-		  MAVLINK_reset();
 		  #if defined(REVX)
 			  #if defined(MAVLINK_DEBUG)
 				// btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
@@ -196,8 +188,7 @@ void MAVLINK_Init(void) {
 			telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
 		  #endif
 	  #else
-		MAVLINK_reset();
-		SERIAL_Init();
+		telemetryPortInit();		// see targets/common_avr/telemetry_driver.cpp
 	  #endif
 	#endif
 }
@@ -233,7 +224,7 @@ void MAVLINK_telemetryWakeup() {
 
 			if (mav_heartbeat == -30) {
 				MAVLINK_reset();
-				SERIAL_Init();
+				telemetryPortInit();
 			}
 		}
 	#endif	  
@@ -341,12 +332,12 @@ void TelemetryTxTask(void* pdata) {
 	}		// while 1
   
 }
-#endif
 
 void TxPushByte(uint8_t data) {
   TelemTxFifo.push(data);
   CoSetFlag(TelemTxFlag); // Tell the TelemetryTxTask something to do
 }
+#endif
 
 
 void request_mavlink_rates() {

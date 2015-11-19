@@ -68,10 +68,10 @@ MAVLINK_DEBUG = NO
 # Values: 9X, 9X128, 9X2561, 9XR, 9XR128, 9XR2561, GRUVIN9X, MEGA2560, SKY9X, 9XRPRO, TARANIS 
 # Old values STD and STD128 are mapped to 9X and 9X128 for compatibility
 #PCB = 9X
-#PCB = 9XR128
+PCB = 9XR128
 #PCB = SKY9X
 #PCB = 9XRPRO
-PCB = TARANIS
+#PCB = TARANIS
 
 
 # PCB revision
@@ -1037,10 +1037,13 @@ ifeq ($(EXT), $(filter $(EXT), FRSKY FRSKY_SPORT TELEMETREZ FRSKY_MAVLINK))
     CPPSRC += telemetry/frsky.cpp telemetry/frsky_d.cpp
 
     ifeq ($(EXT), FRSKY_MAVLINK)
-      CPPSRC += telemetry/frsky_sport.cpp telemetry/mavlink.cpp gui/view_mavlink.cpp
-      CPPDEFS += -DMAVLINK -DFRSKY_SPORT
-      #CPPSRC += telemetry/mavlink.cpp gui/view_mavlink.cpp
-      #CPPDEFS += -DMAVLINK -DFRSKY
+	ifeq ($(ARCH), ARM)
+	  CPPSRC += telemetry/frsky_sport.cpp telemetry/mavlink.cpp gui/view_mavlink.cpp
+	  CPPDEFS += -DMAVLINK -DFRSKY_SPORT
+	else
+	  CPPSRC += telemetry/mavlink.cpp gui/view_mavlink.cpp
+	  CPPDEFS += -DMAVLINK -DFRSKY
+	endif
     endif
 
   endif

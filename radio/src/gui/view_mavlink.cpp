@@ -39,7 +39,6 @@
 #include "../opentx.h"
 //#include "telemetry/mavlink.h"
 //#include "gui/menus.h"
-//#include "serial.h"
 
 /*	Top Mavlink Menu definition
  *	Registers button events and handles that info. Buttons select menus,

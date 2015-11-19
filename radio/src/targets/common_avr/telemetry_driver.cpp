@@ -36,7 +36,7 @@
 
 #include "../../opentx.h"
 
-#if defined(FRSKY)
+#if defined(FRSKY) || defined(MAVLINK)
 
 void telemetryEnableTx(void)
 {
@@ -98,7 +98,11 @@ ISR(USART0_RX_vect)
     frskyRxBufferCount = 0;
   }
   else {
+#if defined(FRSKY)
     processSerialFrskyData(data);
+#else
+	processSerialMavlinkData(data);
+#endif
   }
 
   cli() ;
