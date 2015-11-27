@@ -5688,7 +5688,7 @@ enum menuModelTelemetryItems {
   #define IF_FAS_OFFSET(x) 
 #endif
 
-//#if 0
+/*
 #if defined(PCBTARANIS)
   #define TELEMETRY_TYPE_ROWS  (g_model.moduleData[INTERNAL_MODULE].rfProtocol == RF_PROTO_OFF && g_model.externalModule == MODULE_TYPE_PPM) ? (uint8_t)0 : HIDDEN_ROW,
 #elif defined(CPUARM)
@@ -5696,6 +5696,8 @@ enum menuModelTelemetryItems {
 #else
   #define TELEMETRY_TYPE_ROWS
 #endif
+*/
+#define TELEMETRY_TYPE_ROWS
 
 void menuTelemetryFrskySetup(uint8_t event)
 {

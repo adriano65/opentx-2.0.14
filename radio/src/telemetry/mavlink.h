@@ -181,7 +181,7 @@ extern inline uint8_t MAVLINK_Action2CtrlMode(uint8_t action) {
 #endif
 void MAVLINK_Init(void);
 void MAVLINK_telemetryWakeup();
-NOINLINE void processSerialMavlinkData(uint8_t);
+static void processSerialMavlinkData(uint8_t);
 uint32_t Index2Baud(uint8_t);
 #if defined(CPUARM)
 OS_TID TelemetryTxTaskId;

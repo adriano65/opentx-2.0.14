@@ -179,16 +179,20 @@ void MAVLINK_Init(void) {
 				UART3_Configure(Index2Baud(g_eeGeneral.mavbaud), Master_frequency);
 			  #else
 				telemetryPortInit(0);
-				// telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
 				// in ersky9x CONSOLE_USART==UART0
+				// 9XR-PRO has external module connected via FUTABA Port
+				// telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
 				telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
 			  #endif
 		  #else
+			// SKY9x
 			//telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
+			// TARANIS			
+			// telemetryPortInit -> USART2_IRQn				
 			telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
 		  #endif
 	  #else
-		telemetryPortInit();		// see targets/common_avr/telemetry_driver.cpp
+		telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));		// see targets/common_avr/telemetry_driver.cpp
 	  #endif
 	#endif
 }
@@ -233,45 +237,32 @@ void MAVLINK_telemetryWakeup() {
 	
 	/* CHANGE BAUDRATE IF USER MODIFY SPEED IN MENU ------- */
 	if (actualbaudrateIdx!=g_eeGeneral.mavbaud) {
-	#if defined(CPUARM)
-		#if defined(REVX)
-			#if defined(MAVLINK_DEBUG)
-			  UART3_Configure(Index2Baud(g_eeGeneral.mavbaud), Master_frequency);
-			#else
-			  telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
-			#endif
-		#else
-		  telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
-		#endif
-	#else
-		// See RXHandler for 9x, 9xr
-	#endif
+	  #if defined(REVX)
+		  #if defined(MAVLINK_DEBUG)
+			UART3_Configure(Index2Baud(g_eeGeneral.mavbaud), Master_frequency);
+		  #else
+			telemetryPortInit(0);
+			telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
+		  #endif
+	  #else
+		telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
+	  #endif
 	  actualbaudrateIdx=g_eeGeneral.mavbaud;
 	  }
 	/* ---------------------------------------------------- */
 	
-	#if defined(CPUARM)
-		uint8_t data;
-		#if defined(REVX)
-			#if defined(MAVLINK_DEBUG)
-			  if (TelemRxFifo.pop(data)) {
-				  processSerialMavlinkData(data);
-				  }
-			#else
-			  while (TelemRxFifo.pop(data)) {
-				processSerialMavlinkData(data);
-				}	
-			#endif
-		#else
-		  #if defined(SKY9X)
-		  rxPdcUsart(processSerialMavlinkData);
-		  #else
-		  while (TelemRxFifo.pop(data)) {
+	uint8_t data;
+	#if defined(REVX)
+	  #if defined(MAVLINK_DEBUG)
+		if (TelemRxFifo.pop(data)) {
 			processSerialMavlinkData(data);
-			}	
-		  #endif
-		  
-		#endif
+			}
+	  #else
+		while (TelemRxFifo.pop(data)) {
+		  processSerialMavlinkData(data);
+		  }	
+	  #endif
+	  }	
 	#endif
 }
 
@@ -319,7 +310,7 @@ void TelemetryTxTask(void* pdata) {
 				#endif
 			  #else
 				#if defined(SKY9X)
-					txPdcUsart(&byte, 1); 
+					//txPdcUsart(&byte, 1); 
 				#else
 					
 				#endif
@@ -410,7 +401,7 @@ Payload			6 to (n+6)		The data into the message, depends on the message id.
 CRC				(n+7) to (n+8)	Check-sum of the entire packet, excluding the packet start sign (LSB to MSB)
 ------------------------------------------------------------------------------------------------------------
 */
-NOINLINE void processSerialMavlinkData(uint8_t c) {
+static void processSerialMavlinkData(uint8_t c) {
 	// The current decoding status
 	mavlink_status_t* p_status = mavlink_get_channel_status(MAVLINK_COMM_0);
 

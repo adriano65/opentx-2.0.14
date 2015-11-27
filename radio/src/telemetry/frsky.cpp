@@ -600,10 +600,14 @@ void FRSKY_Init(void) {
     telemetryPortInit(FRSKY_SPORT_BAUDRATE);
   }
 #elif defined(CPUARM)
-    telemetryPortInit(0);
-    telemetrySecondPortInit(FRSKY_D_BAUDRATE);
+	#if defined(REVX)
+	  telemetryPortInit(0);
+	  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
+	#else
+	  telemetryPortInit(FRSKY_D_BAUDRATE);
+	#endif
 #elif !defined(SIMU)
-  telemetryPortInit();
+  telemetryPortInit(FRSKY_D_BAUDRATE);
 #endif
 
   // we don't reset the telemetry here as we would also reset the consumption after model load

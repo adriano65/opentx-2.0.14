@@ -68,10 +68,10 @@ MAVLINK_DEBUG = NO
 # Values: 9X, 9X128, 9X2561, 9XR, 9XR128, 9XR2561, GRUVIN9X, MEGA2560, SKY9X, 9XRPRO, TARANIS 
 # Old values STD and STD128 are mapped to 9X and 9X128 for compatibility
 #PCB = 9X
-PCB = 9XR128
+#PCB = 9XR128
 #PCB = SKY9X
 #PCB = 9XRPRO
-#PCB = TARANIS
+PCB = TARANIS
 
 
 # PCB revision
@@ -139,7 +139,12 @@ AUTOSWITCH = NO
 
 # Stock sticks replaced by FrSky ones
 # Values = YES, NO 
+ifeq ($(PCB), TARANIS)
+FRSKY_STICKS = YES
+else
+#FRSKY_STICKS = PEHARPS 
 FRSKY_STICKS = NO
+endif
 
 # Sources automatic selection
 # Values = YES, NO 
@@ -151,11 +156,19 @@ DBLKEYS = NO
 
 # AUDIO Mods
 # Values = YES, NO 
+ifeq ($(PCB), $(filter $(PCB), 9X 9X128))
+AUDIO = NO
+else
 AUDIO = YES
+endif
 
 # VOICE Mods
 # Values = YES, NO 
+ifeq ($(PCB), $(filter $(PCB), 9X 9X128))
+VOICE = NO
+else
 VOICE = YES
+endif
 
 # corrects different rounding for negative values. So instead of -99.9 you will see again -100.0
 # Values = YES, NO
@@ -174,7 +187,7 @@ ACCURAT_THROTTLE_STATS = NO
 
 # HAPTIC Mods
 # Values = YES, NO 
-ifeq ($(PCB), 9XRPRO)
+ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
 HAPTIC = YES
 else
 HAPTIC = NO
@@ -1042,7 +1055,7 @@ ifeq ($(EXT), $(filter $(EXT), FRSKY FRSKY_SPORT TELEMETREZ FRSKY_MAVLINK))
 	  CPPDEFS += -DMAVLINK -DFRSKY_SPORT
 	else
 	  CPPSRC += telemetry/mavlink.cpp gui/view_mavlink.cpp
-	  CPPDEFS += -DMAVLINK -DFRSKY
+	  CPPDEFS += -DMAVLINK
 	endif
     endif
 

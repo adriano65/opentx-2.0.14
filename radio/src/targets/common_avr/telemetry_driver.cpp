@@ -98,18 +98,14 @@ ISR(USART0_RX_vect)
     frskyRxBufferCount = 0;
   }
   else {
-#if defined(FRSKY)
-    processSerialFrskyData(data);
-#else
-	processSerialMavlinkData(data);
-#endif
-  }
+	TelemRxFifo.push(data);
+	}
 
   cli() ;
   UCSR0B |= (1 << RXCIE0); // enable Interrupt
 }
 
-void telemetryPortInit()
+void telemetryPortInit(uint8_t baudrate)
 {
 #if !defined(SIMU)
   DDRE &= ~(1 << DDE0);    // set RXD0 pin as input
