@@ -2776,7 +2776,7 @@ void perMain()
   checkBacklight();
 
 #if defined(FRSKY) && defined(MAVLINK)
-  if (g_model.telemetryProtocol == PROTOCOL_MAVLINK) {	// enum TelemetryProtocol in myeeprom.c
+  if (g_model.telemetryProtocol == PROTOCOL_MAVLINK) {	// enum TelemetryProtocol in myeeprom.h
 	MAVLINK_telemetryWakeup();
 	}
   else {
@@ -3618,11 +3618,7 @@ int main(void)
   sei(); // interrupts needed for telemetryInit and eeReadAll.
 
 #if defined(FRSKY) && !defined(DSM2_SERIAL)
-  #ifdef MAVLINK
-	MAVLINK_Init();
-  #else
 	FRSKY_Init();
-  #endif
 #endif
 
 #if defined(DSM2_SERIAL) && !defined(FRSKY)
@@ -3639,10 +3635,6 @@ int main(void)
 
 #ifdef NMEA
   NMEA_Init();
-#endif
-
-#if defined(MAVLINK) && !defined(FRSKY)
-  MAVLINK_Init();
 #endif
 
 #ifdef MENU_ROTARY_SW
@@ -3670,6 +3662,10 @@ int main(void)
 
   audioMutex = CoCreateMutex();
   mixerMutex = CoCreateMutex();
+
+#if defined(MAVLINK)
+  MAVLINK_Init();
+#endif
 
   CoStartOS();
 #else

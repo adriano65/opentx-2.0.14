@@ -170,17 +170,8 @@ extern inline uint8_t MAVLINK_CtrlMode2Action(uint8_t mode) {
 	
 	return action;
 }
-#if 0
-extern inline uint8_t MAVLINK_Action2CtrlMode(uint8_t action) {
-	uint8_t mode = ERROR_NUM_MODES;
-	switch (action) {
-	
-	return action;
-	}
-}
-#endif
 void MAVLINK_Init(void);
-void MAVLINK_telemetryWakeup();
+void MAVLINK_telemetryWakeup(void);
 static void processSerialMavlinkData(uint8_t);
 uint32_t Index2Baud(uint8_t);
 #if defined(CPUARM)

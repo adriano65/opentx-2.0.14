@@ -40,7 +40,7 @@ bool uart3Telemetry = false;
 Fifo<512> uart3TxFifo;
 //extern Fifo<512> telemetryFifo;
 
-void uart3Setup(unsigned int baudrate)
+void uart3Setup(uint32_t baudrate)
 {
   USART_InitTypeDef USART_InitStructure;
   GPIO_InitTypeDef GPIO_InitStructure;

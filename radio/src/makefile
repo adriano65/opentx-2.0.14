@@ -3,21 +3,12 @@
 #----------------------------------------------------------------------------
 # On command line:
 #
-# make all = Make software.
-#
-# make clean = Clean out built project files.
-#
-# make install = Install the most recently compiled hex file.
-#
-# make filename.s = Just compile filename.c into the assembler code only.
-#
-# make filename.i = Create a preprocessed source file for use in submitting
-#                   bug reports to the GCC project.
-#
 # make PCB=SKY9X PCBREV=REVB
 # make PCB=9XRPRO
 #
 # make PCB=9XR EXT=MAVLINK
+#
+# sox <infile> -c 1 -b 16 -r 32000 <outfile.wav>
 #
 # To rebuild project do "make clean" then "make all".
 #----------------------------------------------------------------------------
@@ -42,16 +33,6 @@ RESTORE_EEPROM = NO
 # not erase the eeprom when you erase the flash.
 DOUBLE_WRITE_OK = NO
 
-# Command to read/write FLASH/EEPROM images. Currently
-# Must have avrdude interface
-AVRDUDE = /usr/local/bin/avrdude
-
-# Device options for AVRDUDE Command. 
-AVRDEVICE = -c usbasp -p m128 -B 11
-
-# Delay to start second AVRDUDE command (required by some).
-DELAY = 2
-
 #----------- BUILD OPTIONS ---------------------------
 
 # Activates the DEBUG Mode (all boards)
@@ -70,8 +51,8 @@ MAVLINK_DEBUG = NO
 #PCB = 9X
 #PCB = 9XR128
 #PCB = SKY9X
-#PCB = 9XRPRO
-PCB = TARANIS
+PCB = 9XRPRO
+#PCB = TARANIS
 
 
 # PCB revision
@@ -82,6 +63,20 @@ endif
 ifeq ($(PCB), TARANIS)
 PCBREV = REVPLUS
 endif
+
+# Command to read/write FLASH/EEPROM images. Currently
+# Must have avrdude interface
+AVRDUDE = /usr/local/bin/avrdude
+
+# Device options for AVRDUDE Command. 
+ifeq ($(PCB), 9X)
+AVRDEVICE = -c usbasp -p m64 -B 11
+else
+AVRDEVICE = -c usbasp -p m128 -B 11
+endif
+
+# Delay to start second AVRDUDE command (required by some).
+DELAY = 2
 
 # Enable JETI-Telemetry or FrSky Telemetry reception on UART0
 # For this option you need to modify your hardware!
@@ -1060,7 +1055,7 @@ ifeq ($(EXT), $(filter $(EXT), FRSKY FRSKY_SPORT TELEMETREZ FRSKY_MAVLINK))
     endif
 
   endif
-  CPPSRC += gui/view_telemetry.cpp
+  CPPSRC += gui/view_frsky.cpp
   
   ifeq ($(FRSKY_HUB), YES)
     CPPDEFS += -DFRSKY_HUB
@@ -1272,8 +1267,7 @@ bootloader.lbm:
 	wget http://ersky9x.googlecode.com/svn/trunk/src/bootloader/bootflash4.lbm
 	mv bootflash4.lbm $@
 endif
-	$(REMOVE) $(TARGET).hex
-
+	
 tra: translations/en.h translations/cz.h translations/de.h translations/es.h translations/fi.h translations/fr.h translations/it.h translations/pl.h translations/pt.h translations/se.h
 lbm: fonts bitmaps/sticks.lbm
   
@@ -1430,6 +1424,7 @@ ifeq ($(ARCH), AVR)
 	@echo
 	@echo $(MSG_FLASH) $@
 	$(OBJCOPY) -O $(FORMAT) -R .eeprom $< $@
+	mv opentx.hex opentx$(PCB).hex
 else
 %.hex: %.elf
 	@echo
@@ -1523,7 +1518,7 @@ clean_list :
 DATE = ${shell sh -c "date +%F:%T" }
 AVRCOMMAND = $(AVRDUDE) $(AVRDEVICE)
 
-WRITE_COMMAND = $(AVRCOMMAND) -U flash:w:opentx.hex:i
+WRITE_COMMAND = $(AVRCOMMAND) -U flash:w:opentx$(PCB).hex:i
 ifeq ($(RESTORE_EEPROM), YES)
   BACKUP_EEPROM = YES
   ifeq ($(DOUBLE_WRITE_OK), YES)

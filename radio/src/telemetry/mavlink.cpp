@@ -35,8 +35,6 @@
  * GNU General Public License for more details.
  *
  */
-void MAVLINK_Init(void);
-
 #include "../opentx.h"				// includes "telemetry/mavlink.h" too
 
 /*
@@ -173,6 +171,8 @@ void MAVLINK_Init(void) {
 	#if !defined(SIMU)
 	  MAVLINK_reset();
 	  #if defined(CPUARM)
+		  // enable AFTER CoInitOS()
+		  TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 19, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
 		  #if defined(REVX)
 			  #if defined(MAVLINK_DEBUG)
 				// btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
@@ -189,33 +189,27 @@ void MAVLINK_Init(void) {
 			//telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
 			// TARANIS			
 			// telemetryPortInit -> USART2_IRQn				
+			// 9x 9x128
+			// see targets/common_avr/telemetry_driver.cpp
 			telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
 		  #endif
-	  #else
-		telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));		// see targets/common_avr/telemetry_driver.cpp
 	  #endif
 	#endif
 }
 
 void MAVLINK_telemetryWakeup() {
-	/* RESET protocol activity status (* symbol) on display */
+	/*
+	// RESET protocol activity status (* symbol) on display
 	uint16_t tmr10ms = get_tmr10ms();
 	#if defined(CPUARM)
 	uint16_t count = tmr10ms & 0x02BC; // 700*10ms ==  7 SEC
-	// enable AFTER CoInitOS()
-	if (data_stream_start_stop==0) {
-	  #if !defined(SIMU)
-	  TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 19, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
-	  #endif
-	  data_stream_start_stop=1;
-	  }
 	#else
 	uint8_t count = tmr10ms & 0x0f; // 15*10ms
 	#endif	  
 
 	if (!count) {
 	#if defined(CPUARM)
-		mav_heartbeat=0;	/* reset counter */
+		mav_heartbeat=0;	// reset counter
 		#if 0
 		if (MAVLINK_menu==MENU_DUMP_DIAG) TxPushByte('D');
 		#else
@@ -228,11 +222,15 @@ void MAVLINK_telemetryWakeup() {
 
 			if (mav_heartbeat == -30) {
 				MAVLINK_reset();
-				telemetryPortInit();
+				#if !defined(SIMU)
+				telemetryPortInit(9600);
+				#endif
 			}
 		}
-	#endif	  
-	  }
+	#endif
+	}
+	*/
+	
 	/* ---------------------------------------------------- */
 	
 	/* CHANGE BAUDRATE IF USER MODIFY SPEED IN MENU ------- */
@@ -245,24 +243,25 @@ void MAVLINK_telemetryWakeup() {
 			telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
 		  #endif
 	  #else
-		telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
+		  telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
 	  #endif
 	  actualbaudrateIdx=g_eeGeneral.mavbaud;
 	  }
 	/* ---------------------------------------------------- */
 	
-	uint8_t data;
-	#if defined(REVX)
-	  #if defined(MAVLINK_DEBUG)
-		if (TelemRxFifo.pop(data)) {
+	#if defined(SKY9X)
+		rxPdcUsart(processSerialMavlinkData);
+	#else
+		uint8_t data;
+		#if defined(MAVLINK_DEBUG)
+		  if (TelemRxFifo.pop(data)) {
+			  processSerialMavlinkData(data);
+			  }
+		#else
+		  while (TelemRxFifo.pop(data)) {
 			processSerialMavlinkData(data);
-			}
-	  #else
-		while (TelemRxFifo.pop(data)) {
-		  processSerialMavlinkData(data);
-		  }	
-	  #endif
-	  }	
+			}	
+		#endif
 	#endif
 }
 

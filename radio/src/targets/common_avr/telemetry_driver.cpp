@@ -49,7 +49,7 @@ void telemetryEnableRx(void)
   UCSR0B |= (1 << RXCIE0); // enable Interrupt
 }
 
-void processSerialFrskyData(uint8_t data);
+//void processSerialFrskyData(uint8_t data);
 extern uint8_t frskyRxBufferCount; // TODO not driver, change name
 
 ISR(USART0_RX_vect)
@@ -105,7 +105,7 @@ ISR(USART0_RX_vect)
   UCSR0B |= (1 << RXCIE0); // enable Interrupt
 }
 
-void telemetryPortInit(uint8_t baudrate)
+void telemetryPortInit(uint32_t baudrate)
 {
 #if !defined(SIMU)
   DDRE &= ~(1 << DDE0);    // set RXD0 pin as input
@@ -127,10 +127,10 @@ void telemetryPortInit(uint8_t baudrate)
   while (UCSR0A & (1 << RXC0)) UDR0; // flush receive buffer
 
   // These should be running right from power up on a FrSky enabled '9X.
-  telemetryEnableTx(); // enable FrSky-Telemetry emission
+  telemetryEnableTx(); // enable Telemetry emission
   frskyTxBufferCount = 0; // TODO not driver code
 
-  telemetryEnableRx(); // enable FrSky-Telemetry reception
+  telemetryEnableRx(); // enable Telemetry reception
 #endif
 }
 
