@@ -193,6 +193,8 @@ void MAVLINK_Init(void) {
 			// see targets/common_avr/telemetry_driver.cpp
 			telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
 		  #endif
+	  #else
+		  telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
 	  #endif
 	#endif
 }
@@ -400,7 +402,7 @@ Payload			6 to (n+6)		The data into the message, depends on the message id.
 CRC				(n+7) to (n+8)	Check-sum of the entire packet, excluding the packet start sign (LSB to MSB)
 ------------------------------------------------------------------------------------------------------------
 */
-static void processSerialMavlinkData(uint8_t c) {
+NOINLINE void processSerialMavlinkData(uint8_t c) {
 	// The current decoding status
 	mavlink_status_t* p_status = mavlink_get_channel_status(MAVLINK_COMM_0);
 

@@ -148,8 +148,8 @@ void usbMassStorage();
 #define PIN_HIGH                        0x100
 
 // Telemetry port
-#define SECOND_USART       USART0
-#define SECOND_ID          ID_USART0
+#define SECOND_USART					USART0
+#define SECOND_USART_ID					ID_USART0
 #define SECOND_PINS        {PINS_USART0}
 
 void configure_pins( uint32_t pins, uint16_t config );
@@ -292,6 +292,6 @@ uint32_t telemetryTransmitPending();
 void telemetryTransmitBuffer(uint8_t * buffer, uint32_t size);
 
 // Second UART driver
-void telemetrySecondPortInit(unsigned int);
+void telemetrySecondPortInit(uint32_t);
 
 #endif

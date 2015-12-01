@@ -58,7 +58,7 @@ void UART2_Configure(uint32_t baudrate, uint32_t masterClock)
   configure_pins( (PIO_PA5 | PIO_PA6), PIN_PERIPHERAL | PIN_INPUT | PIN_PER_A | PIN_PORTA | PIN_NO_PULLUP ) ;
 
   // Configure PMC
-  PMC->PMC_PCER0 = 1 << SECOND_ID;
+  PMC->PMC_PCER0 = 1 << SECOND_USART_ID;
 
   // Reset and disable receiver & transmitter */
   pUsart->US_CR = US_CR_RSTRX | US_CR_RSTTX | US_CR_RXDIS | US_CR_TXDIS;

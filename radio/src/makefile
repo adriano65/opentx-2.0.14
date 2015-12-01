@@ -48,10 +48,18 @@ MAVLINK_DEBUG = NO
 # PCB version
 # Values: 9X, 9X128, 9X2561, 9XR, 9XR128, 9XR2561, GRUVIN9X, MEGA2560, SKY9X, 9XRPRO, TARANIS 
 # Old values STD and STD128 are mapped to 9X and 9X128 for compatibility
-#PCB = 9X
+
+# MAVLINK OK, FRSKY OK
+PCB = 9X
+
 #PCB = 9XR128
+
+# MAVLINK NO, FRSKY OK for frsky d option (not cable ?!)
 #PCB = SKY9X
-PCB = 9XRPRO
+
+# MAVLINK OK, FRSKY OK for frsky d option (not cable ?!)
+#PCB = 9XRPRO
+
 #PCB = TARANIS
 
 

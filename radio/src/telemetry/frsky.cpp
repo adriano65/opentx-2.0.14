@@ -276,8 +276,8 @@ void FRSKY_telemetryWakeup()
   }
 #endif
 
+uint8_t data;
 #if defined(PCBTARANIS)
-  uint8_t data;
   #if defined(SPORT_FILE_LOG) && !defined(SIMU)
   static tmr10ms_t lastTime = 0;
   tmr10ms_t newTime = get_tmr10ms();
@@ -299,7 +299,6 @@ void FRSKY_telemetryWakeup()
   }
 #elif defined(CPUARM)
   if (telemetryProtocol == PROTOCOL_FRSKY_D_SECONDARY) {
-    uint8_t data;
 	while (TelemRxFifo.pop(data)) {
 	  processSerialFrskyData(data);
 	  }
@@ -308,6 +307,8 @@ void FRSKY_telemetryWakeup()
     // Receive serial data here
     rxPdcUsart(processSerialFrskyData);
   }
+#else
+  while (TelemRxFifo.pop(data)) { processSerialFrskyData(data); }
 #endif
 
 #if !defined(PCBTARANIS)

@@ -143,11 +143,11 @@ typedef struct MavlinkData_t {
 	// GPS
 	uint8_t 	fix_type; // 0-1: no fix, 2: 2D fix, 3: 3D fix. 
 						  // Some applications will not use the value of this field unless it is at least two, so always correctly fill in the fix.
-	uint8_t 	satellites_visible; // Number of satellites visible
+	uint8_t 	satellites_visible; // Number of visible satellites
 	Location_t	loc_current;
 	float 		eph;
 	uint16_t 	course;
-	float v; 			// Ground speed
+	float 		v;		// Ground speed
 	// Navigation
 	uint16_t 	heading;
 	uint16_t 	bearing;
@@ -172,7 +172,7 @@ extern inline uint8_t MAVLINK_CtrlMode2Action(uint8_t mode) {
 }
 void MAVLINK_Init(void);
 void MAVLINK_telemetryWakeup(void);
-static void processSerialMavlinkData(uint8_t);
+NOINLINE void processSerialMavlinkData(uint8_t);
 uint32_t Index2Baud(uint8_t);
 #if defined(CPUARM)
 OS_TID TelemetryTxTaskId;
