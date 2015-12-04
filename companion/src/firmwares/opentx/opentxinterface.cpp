@@ -401,7 +401,6 @@ int OpenTxEepromInterface::save(uint8_t *eeprom, RadioData &radioData, uint32_t 
   }
   
   #if defined(MAVLINK)
-  #error ooo
   variant |= MAVLINK_VARIANT;
   #endif
   

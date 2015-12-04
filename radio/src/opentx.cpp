@@ -69,6 +69,12 @@ OS_TID debugTaskId;
 OS_STK debugStack[DEBUG_STACK_SIZE];
 #endif
 
+#if defined(MAVLINK)
+Fifo<32> TelemTxFifo;
+OS_TID TelemetryTxTaskId;
+OS_STK TelemetryTxStack[MAVLINK_STACK_SIZE];
+#endif
+
 OS_MutexID audioMutex;
 OS_MutexID mixerMutex;
 
@@ -3621,6 +3627,10 @@ int main(void)
 	FRSKY_Init();
 #endif
 
+#if defined(MAVLINK)
+  MAVLINK_Init();
+#endif
+  
 #if defined(DSM2_SERIAL) && !defined(FRSKY)
   DSM2_Init();
 #endif
@@ -3659,15 +3669,16 @@ int main(void)
   mixerTaskId = CoCreateTask(mixerTask, NULL, 5, &mixerStack[MIXER_STACK_SIZE-1], MIXER_STACK_SIZE);
   menusTaskId = CoCreateTask(menusTask, NULL, 10, &menusStack[MENUS_STACK_SIZE-1], MENUS_STACK_SIZE);
   audioTaskId = CoCreateTask(audioTask, NULL, 7, &audioStack[AUDIO_STACK_SIZE-1], AUDIO_STACK_SIZE);
+#if defined(MAVLINK)
+  TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 19, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
+#endif
 
   audioMutex = CoCreateMutex();
   mixerMutex = CoCreateMutex();
 
-#if defined(MAVLINK)
-  MAVLINK_Init();
-#endif
-
   CoStartOS();
+
+  
 #else
 #if defined(CPUM2560)
   uint8_t shutdown_state = 0;

@@ -69,8 +69,7 @@ void debugPutc(const char c)
  * masterClock  Frequency of the system master clock (in Hz).
  * uses PA9 and PA10, RXD2 and TXD2
  */
-void SECOND_UART_Configure(uint32_t baudrate, uint32_t masterClock)
-{
+void SECOND_UART_Configure(uint32_t baudrate, uint32_t masterClock) {
   register Uart *pUart = SECOND_SERIAL_UART;
 
   /* Configure PIO */

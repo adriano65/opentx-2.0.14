@@ -42,8 +42,8 @@ DOUBLE_WRITE_OK = NO
 # Values = YES, NO
 DEBUG = NO
 #DEBUG = YES
-MAVLINK_DEBUG = NO
-#MAVLINK_DEBUG = YES
+#MAVLINK_DEBUG = NO
+MAVLINK_DEBUG = YES
 
 # PCB version
 # Values: 9X, 9X128, 9X2561, 9XR, 9XR128, 9XR2561, GRUVIN9X, MEGA2560, SKY9X, 9XRPRO, TARANIS 
@@ -55,10 +55,10 @@ MAVLINK_DEBUG = NO
 #PCB = 9XR128
 
 # MAVLINK OK, FRSKY OK for frsky d option (not cable ?!)
-PCB = SKY9X
+#PCB = SKY9X
 
 # MAVLINK OK, FRSKY OK ( frsky(cable) option )
-#PCB = 9XRPRO
+PCB = 9XRPRO
 
 #PCB = TARANIS
 
@@ -206,7 +206,8 @@ PWM_BACKLIGHT = NO
 
 # SPLASH on START
 # Values = YES, NO, FIXED
-ifeq ($(PCB), TARANIS)
+#ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
+ifeq ($(PCB), $(filter $(PCB), TARANIS))
 SPLASH = YES
 else
 SPLASH = NO

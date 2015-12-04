@@ -132,6 +132,12 @@ if(${EXT} MATCHES MAVLINK)
 	#"EEPROM_VARIANT=11"
   )
   set_property(
+	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxinterface.cpp
+	APPEND
+	PROPERTY COMPILE_DEFINITIONS
+	MAVLINK
+  )
+  set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxTaranisSimulator.cpp
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS

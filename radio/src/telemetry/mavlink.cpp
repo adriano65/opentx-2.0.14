@@ -83,8 +83,6 @@ MavlinkData mavlinkData;
 // *****************************************************
 
 #if defined(CPUARM)
-	Fifo<32> TelemTxFifo;
-	OS_STK TelemetryTxStack[MAVLINK_STACK_SIZE];
 	#if defined(MAVLINK_DEBUG)
 	  #ifdef BLUETOOTH
 		#error "---->> MAVLINK_DEBUG NOT works with BLUETOOTH defined (btTask conflicts)"
@@ -172,7 +170,6 @@ void MAVLINK_Init(void) {
 	  MAVLINK_reset();
 	  #if defined(CPUARM)
 		  // enable AFTER CoInitOS()
-		  TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 19, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
 	  #endif
 	  #if defined(TARANIS) || defined(REVX)
 		  #if defined(MAVLINK_DEBUG)
@@ -236,17 +233,7 @@ void MAVLINK_telemetryWakeup() {
 	
 	/* CHANGE BAUDRATE IF USER MODIFY SPEED IN MENU ------- */
 	if (actualbaudrateIdx!=g_model.mavlink.mavbaud) {
-	  #if defined(TARANIS) || defined(REVX)
-		  #if defined(MAVLINK_DEBUG)
-			UART3_Configure(Index2Baud(g_model.mavlink.mavbaud), Master_frequency);
-		  #else
-			telemetryPortInit(0);
-			telemetrySecondPortInit(Index2Baud(g_model.mavlink.mavbaud));
-		  #endif
-	  #else
-		  telemetryPortInit(Index2Baud(g_model.mavlink.mavbaud));
-	  #endif
-	  actualbaudrateIdx=g_model.mavlink.mavbaud;
+	  MAVLINK_Init();
 	  }
 	/* ---------------------------------------------------- */
 	

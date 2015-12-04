@@ -175,7 +175,6 @@ void MAVLINK_telemetryWakeup(void);
 NOINLINE void processSerialMavlinkData(uint8_t);
 uint32_t Index2Baud(uint8_t);
 #if defined(CPUARM)
-OS_TID TelemetryTxTaskId;
 OS_FlagID TelemTxFlag;
 //static void mavlink_checksum(uint8_t*);
 void TelemetryTxTask(void*);
