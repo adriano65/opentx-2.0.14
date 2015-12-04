@@ -76,14 +76,12 @@ void uart3Setup(uint32_t baudrate)
   NVIC_SetPriority(USART3_IRQn, 7);
 }
 
-void uart3Init(unsigned int mode, unsigned int protocol)
-{
-  USART_DeInit(USART3);
-  uart3Telemetry = false;
+void telemetrySecondPortInit(uint32_t baudrate) {
+	USART_DeInit(USART3);
+	uart3Telemetry = false;
 
-  switch (mode) {
-    case UART_MODE_TELEMETRY_MIRROR:
-      uart3Setup(FRSKY_SPORT_BAUDRATE);
+	uart3Setup(baudrate);
+	/*
       break;
 #if defined(DEBUG)
     case UART_MODE_DEBUG:
@@ -97,6 +95,7 @@ void uart3Init(unsigned int mode, unsigned int protocol)
       }
       break;
   }
+  */
 }
 
 void uart3Putc(const char c)

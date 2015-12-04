@@ -50,14 +50,14 @@ MAVLINK_DEBUG = NO
 # Old values STD and STD128 are mapped to 9X and 9X128 for compatibility
 
 # MAVLINK OK, FRSKY OK
-PCB = 9X
+#PCB = 9X
 
 #PCB = 9XR128
 
-# MAVLINK NO, FRSKY OK for frsky d option (not cable ?!)
-#PCB = SKY9X
-
 # MAVLINK OK, FRSKY OK for frsky d option (not cable ?!)
+PCB = SKY9X
+
+# MAVLINK OK, FRSKY OK ( frsky(cable) option )
 #PCB = 9XRPRO
 
 #PCB = TARANIS
@@ -666,7 +666,7 @@ ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO))
   SDCARD = YES
   BUZZER = NO
   THR_TRACE = YES
-  CPPDEFS += -DPCBSKY9X -DCPUARM -DEEPROM_VARIANT=0 -DAUDIO -DHAPTIC -DDSM2 -DDSM2_PPM
+  CPPDEFS += -DPCBSKY9X -DCPUARM -DAUDIO -DHAPTIC -DDSM2 -DDSM2_PPM
   ifeq ($(PCB), SKY9X)
     CPPDEFS += -DROTARY_ENCODERS=1
     CPPSRC += targets/sky9x/rotenc_driver.cpp 
@@ -742,7 +742,7 @@ ifeq ($(PCB), TARANIS)
   PPM_LIMITS_SYMETRICAL = YES
   PPM_CENTER_ADJUSTABLE = YES
   DSM2 = PPM
-  CPPDEFS += -DPCBTARANIS -DCPUARM -DEEPROM_VARIANT=0 -DAUDIO -DPXX
+  CPPDEFS += -DPCBTARANIS -DCPUARM -DAUDIO -DPXX
   INCDIRS += targets/taranis CoOS/kernel CoOS/portable
   EXTRAINCDIRS += targets/taranis/STM32F2xx_StdPeriph_Lib_V1.1.0/Libraries/STM32F2xx_StdPeriph_Driver/inc targets/taranis/STM32F2xx_StdPeriph_Lib_V1.1.0/Libraries/CMSIS/Device/ST/STM32F2xx/Include targets/taranis/STM32F2xx_StdPeriph_Lib_V1.1.0/Libraries/CMSIS/include
   EXTRAINCDIRS += targets/taranis/STM32_USB-Host-Device_Lib_V2.1.0/Libraries/STM32_USB_OTG_Driver/inc targets/taranis/STM32_USB-Host-Device_Lib_V2.1.0/Libraries/STM32_USB_Device_Library/Core/inc 
@@ -1038,6 +1038,7 @@ ifeq ($(EXT), MAVLINK)
  INCDIRS += GCS_MAVLink/include_v1.0
  CPPSRC += telemetry/mavlink.cpp gui/view_mavlink.cpp
  EEPROM_VARIANT += ${MAVLINK_VARIANT}
+ CPPDEFS += -DEEPROM_VARIANT=$(shell echo ${EEPROM_VARIANT} | bc)
 endif
 
 ifeq ($(EXT), TELEMETREZ)
@@ -1046,6 +1047,7 @@ endif
 
 ifeq ($(EXT), $(filter $(EXT), FRSKY FRSKY_SPORT TELEMETREZ FRSKY_MAVLINK))
   CPPDEFS += -DFRSKY
+
   ifeq ($(EXT), FRSKY_SPORT)
     CPPSRC += telemetry/frsky.cpp telemetry/frsky_sport.cpp telemetry/frsky_d.cpp
     CPPDEFS += -DFRSKY_SPORT
@@ -1060,9 +1062,11 @@ ifeq ($(EXT), $(filter $(EXT), FRSKY FRSKY_SPORT TELEMETREZ FRSKY_MAVLINK))
 	  CPPSRC += telemetry/mavlink.cpp gui/view_mavlink.cpp
 	  CPPDEFS += -DMAVLINK
 	endif
+	EEPROM_VARIANT += ${MAVLINK_VARIANT}
     endif
 
   endif
+
   CPPSRC += gui/view_frsky.cpp
   
   ifeq ($(FRSKY_HUB), YES)
@@ -1085,7 +1089,8 @@ ifeq ($(EXT), $(filter $(EXT), FRSKY FRSKY_SPORT TELEMETREZ FRSKY_MAVLINK))
     CPPSRC += vario.cpp
     CPPDEFS += -DVARIO
   endif
-  EEPROM_VARIANT += ${FRSKY_VARIANT}
+#  EEPROM_VARIANT += ${FRSKY_VARIANT}
+CPPDEFS += -DEEPROM_VARIANT=$(shell echo ${EEPROM_VARIANT} | bc)
 endif
 
 ifeq ($(DEBUG), YES)

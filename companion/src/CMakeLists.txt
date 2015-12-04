@@ -119,14 +119,17 @@ if(${EXT} MATCHES MAVLINK)
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS
-	MAVLINK 
+	MAVLINK
 	# REVB is already defined
+	"EEPROM_VARIANT=11"
   )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxSky9xsimulator.cpp
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS
-	MAVLINK REVX
+	MAVLINK
+	REVX
+	#"EEPROM_VARIANT=11"
   )
   set_property(
 	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxTaranisSimulator.cpp

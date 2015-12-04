@@ -246,6 +246,65 @@ PACK(typedef struct {
   #define NUM_POTS_215 3
 #endif
 
+#if 0
+PACK(typedef struct {
+  uint8_t   version;
+  uint16_t  variant;
+  CalibData calib[NUM_STICKS+NUM_POTS];
+  uint16_t  chkSum;
+  int8_t    currModel;
+  uint8_t   contrast;
+  uint8_t   vBatWarn;
+  int8_t    vBatCalib;
+  int8_t    backlightMode;
+  TrainerData trainer;
+  uint8_t   view;            // index of view in main screen
+  int8_t    buzzerMode:2;    // -2=quiet, -1=only alarms, 0=no keys, 1=all
+  uint8_t   fai:1;
+  int8_t    beepMode:2;      // -2=quiet, -1=only alarms, 0=no keyt_EEGenerals, 1=all
+  uint8_t   alarmsFlash:1;
+  uint8_t   disableMemoryWarning:1;
+  uint8_t   disableAlarmWarning:1;
+  uint8_t   stickMode:2;
+  int8_t    timezone:5;
+  uint8_t   spare1:1;
+  uint8_t   inactivityTimer;
+  uint8_t   mavbaud:3;
+  SPLASH_MODE; /* 3bits */
+  int8_t    hapticMode:2;    // -2=quiet, -1=only alarms, 0=no keys, 1=all
+  AVR_FIELD(uint8_t blOffBright:4)
+  AVR_FIELD(uint8_t blOnBright:4)
+  ARM_FIELD(int8_t switchesDelay)
+  uint8_t   lightAutoOff;
+  uint8_t   templateSetup;   // RETA order for receiver channels
+  int8_t    PPM_Multiplier;
+  int8_t    hapticLength;
+  N_PCBSTD_FIELD( uint8_t   reNavigation)
+//  N_TARANIS_FIELD(uint8_t   stickReverse)
+  uint8_t   stickReverse;
+  int8_t    beepLength:3;
+  int8_t    hapticStrength:3;
+  uint8_t   gpsFormat:1;
+  uint8_t   unexpectedShutdown:1;
+  uint8_t   speakerPitch;
+  int8_t    speakerVolume;
+  int8_t    vBatMin;
+  int8_t    vBatMax;
+
+  EXTRA_GENERAL_FIELDS
+
+  swstate_t switchUnlockStates;
+
+}) GeneralSettings_v216;
+
+void CheckGeneralSettings_216(EEGeneral &settings){
+  GeneralSettings_v216 oldSettings;
+}
+#endif
+
+
+
+
 PACK(typedef struct {
   uint8_t   version;
   uint16_t  variant;
@@ -894,6 +953,7 @@ bool eeConvert()
 {
   const char *msg = NULL;
 
+  TRACE("EEPROM version %d variant %d -", g_eeGeneral.version, g_eeGeneral.variant);
   if (g_eeGeneral.version == 215) {
     msg = PSTR("EEprom Data v215");
   }
@@ -920,6 +980,9 @@ bool eeConvert()
     version = 216;
     ConvertGeneralSettings_215_to_216(g_eeGeneral);
   }
+  
+  //CheckGeneralSettings_216(g_eeGeneral);
+  
   s_eeDirtyMsk = EE_GENERAL;
   eeCheck(true);
 

@@ -167,35 +167,34 @@ void MAVLINK_reset(void) {
 /* initialize serial (see opentx.cpp) */
 void MAVLINK_Init(void) {
 	mav_statustext[0] = 0;
-	actualbaudrateIdx=g_eeGeneral.mavbaud;
+	actualbaudrateIdx=g_model.mavlink.mavbaud;
 	#if !defined(SIMU)
 	  MAVLINK_reset();
 	  #if defined(CPUARM)
 		  // enable AFTER CoInitOS()
 		  TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 19, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
-		  #if defined(REVX)
-			  #if defined(MAVLINK_DEBUG)
-				// btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
-				UART3_Configure(Index2Baud(g_eeGeneral.mavbaud), Master_frequency);
-			  #else
-				telemetryPortInit(0);
-				// in ersky9x CONSOLE_USART==UART0
-				// 9XR-PRO has external module connected via FUTABA Port
-				// telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
-				telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
-			  #endif
+	  #endif
+	  #if defined(TARANIS) || defined(REVX)
+		  #if defined(MAVLINK_DEBUG)
+			// btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
+			UART3_Configure(Index2Baud(g_model.mavlink.mavbaud), Master_frequency);
 		  #else
-			// SKY9x
-			//telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
-			// TARANIS			
-			// telemetryPortInit -> USART2_IRQn				
-			// 9x 9x128
-			// see targets/common_avr/telemetry_driver.cpp
-			telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
+			telemetryPortInit(0);
+			// in ersky9x CONSOLE_USART==UART0
+			// 9XR-PRO has external module connected via FUTABA Port
+			// telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
+			telemetrySecondPortInit(Index2Baud(g_model.mavlink.mavbaud));
 		  #endif
 	  #else
-		  telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
+		// SKY9X
+		//telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
+		// TARANIS			
+		// telemetryPortInit -> USART2_IRQn				
+		// 9x 9x128
+		// see targets/common_avr/telemetry_driver.cpp
+		telemetryPortInit(Index2Baud(g_model.mavlink.mavbaud));
 	  #endif
+		
 	#endif
 }
 
@@ -219,7 +218,7 @@ void MAVLINK_telemetryWakeup() {
 		#endif
 	#else
 		if (mav_heartbeat > -30) {
-			// TODO mavlink_system.sysid = g_eeGeneral.mavTargetSystem;
+			// TODO mavlink_system.sysid = g_model.mavlink.mavTargetSystem;
 			mav_heartbeat--;
 
 			if (mav_heartbeat == -30) {
@@ -236,34 +235,30 @@ void MAVLINK_telemetryWakeup() {
 	/* ---------------------------------------------------- */
 	
 	/* CHANGE BAUDRATE IF USER MODIFY SPEED IN MENU ------- */
-	if (actualbaudrateIdx!=g_eeGeneral.mavbaud) {
-	  #if defined(REVX)
+	if (actualbaudrateIdx!=g_model.mavlink.mavbaud) {
+	  #if defined(TARANIS) || defined(REVX)
 		  #if defined(MAVLINK_DEBUG)
-			UART3_Configure(Index2Baud(g_eeGeneral.mavbaud), Master_frequency);
+			UART3_Configure(Index2Baud(g_model.mavlink.mavbaud), Master_frequency);
 		  #else
 			telemetryPortInit(0);
-			telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
+			telemetrySecondPortInit(Index2Baud(g_model.mavlink.mavbaud));
 		  #endif
 	  #else
-		  telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
+		  telemetryPortInit(Index2Baud(g_model.mavlink.mavbaud));
 	  #endif
-	  actualbaudrateIdx=g_eeGeneral.mavbaud;
+	  actualbaudrateIdx=g_model.mavlink.mavbaud;
 	  }
 	/* ---------------------------------------------------- */
 	
-	#if defined(SKY9X)
-		rxPdcUsart(processSerialMavlinkData);
+	uint8_t data;
+	#if defined(MAVLINK_DEBUG)
+	  if (TelemRxFifo.pop(data)) {
+		  processSerialMavlinkData(data);
+		  }
 	#else
-		uint8_t data;
-		#if defined(MAVLINK_DEBUG)
-		  if (TelemRxFifo.pop(data)) {
-			  processSerialMavlinkData(data);
-			  }
-		#else
-		  while (TelemRxFifo.pop(data)) {
-			processSerialMavlinkData(data);
-			}	
-		#endif
+	  while (TelemRxFifo.pop(data)) {
+		processSerialMavlinkData(data);
+		}	
 	#endif
 }
 

@@ -258,9 +258,8 @@ void hapticOff(void);
 
 // UART3 driver
 #define DEBUG_BAUDRATE      115200
-void uart3Init(unsigned int mode, unsigned int protocol);
+void telemetrySecondPortInit(uint32_t baudrate);
 void uart3Putc(const char c);
-#define telemetrySecondPortInit(protocol) uart3Init(UART_MODE_TELEMETRY, protocol)
 
 extern uint8_t currentTrainerMode;
 

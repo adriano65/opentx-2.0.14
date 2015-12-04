@@ -110,12 +110,22 @@ void telemetryPortInit(uint32_t baudrate)
   DDRE &= ~(1 << DDE0);    // set RXD0 pin as input
   PORTE &= ~(1 << PORTE0); // disable pullup on RXD0 pin
 
+  
+  #if 1
+  uint16_t UBRR_VALUE=( F_CPU / ( 16 * baudrate)) - 1;
+  /* Set baud rate */
+  UBRR0H = (unsigned char)(UBRR_VALUE>>8);
+  UBRR0L = (unsigned char)UBRR_VALUE;
+  
+  #else
+  
   #undef BAUD
   #define BAUD 9600
   #include <util/setbaud.h>
-
   UBRR0H = UBRRH_VALUE;
   UBRR0L = UBRRL_VALUE;
+  #endif
+  
   UCSR0A &= ~(1 << U2X0); // disable double speed operation.
 
   // set 8N1

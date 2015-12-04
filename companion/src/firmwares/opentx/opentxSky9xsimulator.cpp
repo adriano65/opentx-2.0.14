@@ -28,7 +28,10 @@
 #define TEMPLATES
 #define SPLASH
 #define FLIGHT_MODES
+
 #define FRSKY
+//#define FRSKY
+
 #define FRSKY_HUB
 #define WS_HOW_HIGH
 #define VARIO
@@ -56,7 +59,8 @@
 #define FRSKY_STICKS
 #define OVERRIDE_CHANNEL_FUNCTION
 #define NUM_POTS  3
-#define EEPROM_VARIANT 3
+//#define EEPROM_VARIANT 3
+
 #define FLAVOUR "sky9x"
 
 #undef min

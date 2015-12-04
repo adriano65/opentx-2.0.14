@@ -37,6 +37,8 @@
 #include "../../opentx.h"
 
 #define RX_UART_BUFFER_SIZE     128
+//#undef UART2_TEST
+#define UART2_TEST
 
 struct t_rxUartBuffer
 {
@@ -50,8 +52,7 @@ uint16_t DsmRxTimeout;
 // USART0 configuration
 // Work in Progress, UNTESTED
 // Uses PA5 and PA6 (RXD and TXD)
-void UART2_Configure(uint32_t baudrate, uint32_t masterClock)
-{
+void UART2_Configure(uint32_t baudrate, uint32_t masterClock) {
   register Usart *pUsart = SECOND_USART;
 
   // Configure PIO
@@ -70,11 +71,16 @@ void UART2_Configure(uint32_t baudrate, uint32_t masterClock)
   // Asynchronous, no oversampling
   pUsart->US_BRGR = (masterClock / baudrate) / 16;
 
-  // Disable PDC channel
+  // Disable PDC channelstartPdcUsartReceive
   pUsart->US_PTCR = US_PTCR_RXTDIS | US_PTCR_TXTDIS;
 
   // Enable receiver and transmitter
   pUsart->US_CR = US_CR_RXEN | US_CR_TXEN;
+
+  #ifdef UART2_TEST
+  pUsart->US_IER = US_IER_RXRDY;
+  NVIC_EnableIRQ(USART0_IRQn);
+  #endif
 }
 
 void UART2_timeout_enable()
@@ -95,11 +101,40 @@ void UART2_timeout_disable()
   NVIC_DisableIRQ(USART0_IRQn);
 }
 
-extern "C" void USART0_IRQHandler()
-{
+
+extern "C" void USART0_IRQHandler() {
   register Usart *pUsart = SECOND_USART;
+  #ifdef UART2_TEST
+  /*
+  #define USART_FLAG_ERRORS (USART_FLAG_ORE | USART_FLAG_NE | USART_FLAG_FE | USART_FLAG_PE)
+  
+  uint32_t status;
+  uint8_t data;
+  
+  status = pUsart->SR;
+
+  while (status & (USART_FLAG_RXNE | USART_FLAG_ERRORS)) {
+    data = pUsart->DR;
+
+    if (!(status & USART_FLAG_ERRORS))
+      TelemRxFifo.push(data);
+
+    status = pUsart->SR;
+  }
+  */
+  
+  if ( pUsart->US_CSR & US_CSR_TXBUFE ) {
+	pUsart->US_IDR = US_IDR_TXBUFE ;
+	pUsart->US_PTCR = US_PTCR_TXTDIS ;
+	}
+  if ( pUsart->US_CSR & US_CSR_RXRDY ) {
+	TelemRxFifo.push(pUsart->US_RHR);	
+	}	 
+  
+  #else
   pUsart->US_CR = US_CR_STTTO ;         // Clears timeout bit
   DsmRxTimeout = 1;
+  #endif
 }
 
 void startPdcUsartReceive()
@@ -182,7 +217,9 @@ uint32_t telemetryTransmitPending()
 void telemetryPortInit(uint32_t baudrate)
 {
   UART2_Configure(baudrate, Master_frequency);
+  #ifndef UART2_TEST
   startPdcUsartReceive();
+  #endif
 }
 
 void telemetryTransmitBuffer(uint8_t * buffer, uint32_t size)

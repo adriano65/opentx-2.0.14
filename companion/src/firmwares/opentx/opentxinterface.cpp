@@ -154,7 +154,7 @@ bool OpenTxEepromInterface::loadModelVariant(unsigned int index, ModelData &mode
     int numbytes = efile->readRlc2((uint8_t *)eepromData.data(), eepromData.size());
     if (numbytes) {
       open9xModel.Import(eepromData);
-      // open9xModel.Dump();
+      //open9xModel.Dump();	// ----------------- comment
       model.used = true;
     }
     else {
@@ -400,6 +400,11 @@ int OpenTxEepromInterface::save(uint8_t *eeprom, RadioData &radioData, uint32_t 
     variant |= M128_VARIANT;
   }
   
+  #if defined(MAVLINK)
+  #error ooo
+  variant |= MAVLINK_VARIANT;
+  #endif
+  
   int result = saveGeneral<OpenTxGeneralData>(radioData.generalSettings, board, version, variant);
   if (!result) {
     return 0;
@@ -465,7 +470,7 @@ int OpenTxEepromInterface::getSize(GeneralSettings &settings)
   efile->EeFsCreate(tmp, EESIZE_RLC_MAX, board);
 
   OpenTxGeneralData open9xGeneral(settings, board, 255, GetCurrentFirmware()->getVariantNumber());
-  // open9xGeneral.Dump();
+  open9xGeneral.Dump();
 
   QByteArray eeprom;
   open9xGeneral.Export(eeprom);

@@ -64,8 +64,6 @@
 #define BEEP_VAL     ( (g_eeGeneral.warnOpts & WARN_BVAL_BIT) >>3 )
 
 #if defined(PCBTARANIS)
-  //#define EEPROM_VER             217
-  //#define FIRST_CONV_EEPROM_VER             216
   #define EEPROM_VER             216
   #define FIRST_CONV_EEPROM_VER  215
 #elif defined(PCBSKY9X)
@@ -438,7 +436,6 @@ PACK(typedef struct t_EEGeneral {
   int8_t    timezone:5;
   uint8_t   spare1:1;
   uint8_t   inactivityTimer;
-  uint8_t   mavbaud:3;
   SPLASH_MODE; /* 3bits */
   int8_t    hapticMode:2;    // -2=quiet, -1=only alarms, 0=no keys, 1=all
   AVR_FIELD(uint8_t blOffBright:4)
@@ -1271,7 +1268,7 @@ PACK(typedef struct MavLinkData_t {
   uint8_t pc_rssi_en:1;
   uint8_t bluetooth_en:1;
   uint8_t mavreq_en:1;
-  uint8_t spare2[3];
+  uint8_t mavbaud:3;
 }) MavLinkData;
 #endif
 
@@ -1710,12 +1707,6 @@ enum FailsafeModes {
   FAILSAFE_LAST = FAILSAFE_RECEIVER
 };
 
-#if defined(FRSKY) || !defined(PCBSTD)
-  #define TELEMETRY_DATA FrSkyData frsky;
-#else
-  #define TELEMETRY_DATA
-#endif
-
 #if defined(CPUARM) || defined(PCBGRUVIN9X) || defined(PCBMEGA2560)
   #define BeepANACenter uint16_t
 #else
@@ -1744,16 +1735,50 @@ enum ThrottleSources {
   THROTTLE_SOURCE_CH1,
 };
 
+
 enum TelemetryProtocol
 {
   PROTOCOL_TELEMETRY_FIRST,
-  PROTOCOL_FRSKY_SPORT = PROTOCOL_TELEMETRY_FIRST,
-  PROTOCOL_FRSKY_D,
-#if defined(MAVLINK)
-  PROTOCOL_MAVLINK,
+#if defined(CPUARM)
+  #if defined(FRSKY) && defined(MAVLINK)
+	#define PROTOCOLTYPES PSTR("\015""FrSky S.PORT\0""FrSky D     \0""Mavlink     \0""FrSky(cable)\0")
+	PROTOCOL_FRSKY_SPORT = PROTOCOL_TELEMETRY_FIRST,
+	PROTOCOL_FRSKY_D,
+	PROTOCOL_MAVLINK,
+	PROTOCOL_FRSKY_D_SECONDARY,
+	PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D_SECONDARY
+  #else
+	#if defined(FRSKY)
+	  #define PROTOCOLTYPES PSTR("\015""FrSky S.PORT\0""FrSky D     \0""FrSky(cable)\0")
+	  PROTOCOL_FRSKY_SPORT = PROTOCOL_TELEMETRY_FIRST,
+	  PROTOCOL_FRSKY_D,
+	  PROTOCOL_FRSKY_D_SECONDARY,
+	  PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D_SECONDARY
+	#else
+	  #define PROTOCOLTYPES PSTR("\015""Mavlink     \0")
+	  PROTOCOL_MAVLINK = PROTOCOL_TELEMETRY_FIRST,
+	  PROTOCOL_TELEMETRY_LAST=PROTOCOL_MAVLINK
+	#endif
+  #endif
+#else
+  #if defined(FRSKY) && defined(MAVLINK)
+	#define PROTOCOLTYPES PSTR("\015""Mavlink     \0""FrSky(cable)\0")
+	PROTOCOL_MAVLINK = PROTOCOL_TELEMETRY_FIRST,
+	PROTOCOL_FRSKY_D_SECONDARY,
+	PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D_SECONDARY
+  #else
+	#if defined(FRSKY)
+	  #define PROTOCOLTYPES PSTR("\015""FrSky(cable)\0")
+	  PROTOCOL_MAVLINK = PROTOCOL_TELEMETRY_FIRST,
+	  PROTOCOL_FRSKY_D_SECONDARY,
+	  PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D_SECONDARY
+	#else
+	  #define PROTOCOLTYPES PSTR("\015""Mavlink     \0")
+	  PROTOCOL_MAVLINK = PROTOCOL_TELEMETRY_FIRST,
+	  PROTOCOL_TELEMETRY_LAST=PROTOCOL_MAVLINK
+	#endif
+  #endif
 #endif
-  PROTOCOL_FRSKY_D_SECONDARY,
-  PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D_SECONDARY
 };
 
 PACK(typedef struct t_ModelData {
@@ -1793,7 +1818,9 @@ PACK(typedef struct t_ModelData {
 
   MODEL_GVARS_DATA
 
-  TELEMETRY_DATA
+#if defined(FRSKY)
+  FrSkyData frsky;
+#endif
 
 #if defined(MAVLINK)
   MavLinkData mavlink;
