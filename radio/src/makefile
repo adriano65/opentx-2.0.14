@@ -62,6 +62,7 @@ PCB = SKY9X
 
 #PCB = TARANIS
 
+#------- END BUILD OPTIONS ---------------------------
 
 # PCB revision
 #PCBREV = REVA
@@ -361,7 +362,6 @@ CHANNELS_MONITOR_INV_HIDE = NO
 # Values = NO, YES
 NANO = NO
 
-#------- END BUILD OPTIONS ---------------------------
 
 # Define programs and commands.
 SHELL = sh
