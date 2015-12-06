@@ -237,18 +237,8 @@ void MAVLINK_telemetryWakeup() {
 	
 	/* CHANGE BAUDRATE IF USER MODIFY SPEED IN MENU ------- */
 	if (actualbaudrateIdx!=g_eeGeneral.mavbaud) {
-	  #if defined(REVX)
-		  #if defined(MAVLINK_DEBUG)
-			UART3_Configure(Index2Baud(g_eeGeneral.mavbaud), Master_frequency);
-		  #else
-			telemetryPortInit(0);
-			telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
-		  #endif
-	  #else
-		  telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
-	  #endif
-	  actualbaudrateIdx=g_eeGeneral.mavbaud;
-	  }
+		MAVLINK_Init();  
+		}
 	/* ---------------------------------------------------- */
 	
 	#if defined(SKY9X)

@@ -50,12 +50,12 @@ MAVLINK_DEBUG = NO
 # Old values STD and STD128 are mapped to 9X and 9X128 for compatibility
 
 # MAVLINK OK, FRSKY OK
-PCB = 9X
+#PCB = 9X
 
 #PCB = 9XR128
 
 # MAVLINK NO, FRSKY OK for frsky d option (not cable ?!)
-#PCB = SKY9X
+PCB = SKY9X
 
 # MAVLINK OK, FRSKY OK for frsky d option (not cable ?!)
 #PCB = 9XRPRO
@@ -159,7 +159,8 @@ DBLKEYS = NO
 
 # AUDIO Mods
 # Values = YES, NO 
-ifeq ($(PCB), $(filter $(PCB), 9X 9X128))
+#ifeq ($(PCB), $(filter $(PCB), 9X 9X128))
+ifeq ($(PCB), $(filter $(PCB), 9X))
 AUDIO = NO
 else
 AUDIO = YES
@@ -167,7 +168,8 @@ endif
 
 # VOICE Mods
 # Values = YES, NO 
-ifeq ($(PCB), $(filter $(PCB), 9X 9X128))
+#ifeq ($(PCB), $(filter $(PCB), 9X 9X128))
+ifeq ($(PCB), $(filter $(PCB), 9X))
 VOICE = NO
 else
 VOICE = YES
@@ -206,7 +208,8 @@ PWM_BACKLIGHT = NO
 
 # SPLASH on START
 # Values = YES, NO, FIXED
-ifeq ($(PCB), TARANIS)
+#ifeq ($(PCB), TARANIS)
+ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
 SPLASH = YES
 else
 SPLASH = NO
