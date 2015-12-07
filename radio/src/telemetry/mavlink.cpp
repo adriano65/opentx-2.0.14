@@ -168,9 +168,6 @@ void MAVLINK_Init(void) {
 	actualbaudrateIdx=g_model.mavlink.mavbaud;
 	#if !defined(SIMU)
 	  MAVLINK_reset();
-	  #if defined(CPUARM)
-		  // enable AFTER CoInitOS()
-	  #endif
 	  #if defined(TARANIS) || defined(REVX)
 		  #if defined(MAVLINK_DEBUG)
 			// btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
@@ -196,41 +193,6 @@ void MAVLINK_Init(void) {
 }
 
 void MAVLINK_telemetryWakeup() {
-	/*
-	// RESET protocol activity status (* symbol) on display
-	uint16_t tmr10ms = get_tmr10ms();
-	#if defined(CPUARM)
-	uint16_t count = tmr10ms & 0x02BC; // 700*10ms ==  7 SEC
-	#else
-	uint8_t count = tmr10ms & 0x0f; // 15*10ms
-	#endif	  
-
-	if (!count) {
-	#if defined(CPUARM)
-		mav_heartbeat=0;	// reset counter
-		#if 0
-		if (MAVLINK_menu==MENU_DUMP_DIAG) TxPushByte('D');
-		#else
-		;
-		#endif
-	#else
-		if (mav_heartbeat > -30) {
-			// TODO mavlink_system.sysid = g_model.mavlink.mavTargetSystem;
-			mav_heartbeat--;
-
-			if (mav_heartbeat == -30) {
-				MAVLINK_reset();
-				#if !defined(SIMU)
-				telemetryPortInit(9600);
-				#endif
-			}
-		}
-	#endif
-	}
-	*/
-	
-	/* ---------------------------------------------------- */
-	
 	/* CHANGE BAUDRATE IF USER MODIFY SPEED IN MENU ------- */
 	if (actualbaudrateIdx!=g_model.mavlink.mavbaud) {
 	  MAVLINK_Init();

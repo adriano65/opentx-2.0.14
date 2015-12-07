@@ -39,16 +39,17 @@
 #define RX_UART_BUFFER_SIZE     128
 //#undef UART2_TEST
 #define UART2_TEST
-
-struct t_rxUartBuffer
-{
+#ifdef UART2_TEST
+struct t_rxUartBuffer {
   uint8_t fifo[RX_UART_BUFFER_SIZE] ;
   uint8_t *outPtr ;
 };
 
 struct t_rxUartBuffer TelemetryInBuffer ;
 uint16_t DsmRxTimeout;
+#endif
 
+#ifdef SIMU
 // USART0 configuration
 // Work in Progress, UNTESTED
 // Uses PA5 and PA6 (RXD and TXD)
@@ -82,9 +83,11 @@ void UART2_Configure(uint32_t baudrate, uint32_t masterClock) {
   NVIC_EnableIRQ(USART0_IRQn);
   #endif
 }
+#else
+#define UART2_Configure(...)
+#endif
 
-void UART2_timeout_enable()
-{
+void UART2_timeout_enable() {
   register Usart *pUsart = SECOND_USART;
   pUsart->US_CR = US_CR_STTTO ;
   pUsart->US_RTOR = 115 ;               // Bits @ 115200 ~= 1mS
@@ -93,8 +96,7 @@ void UART2_timeout_enable()
   NVIC_EnableIRQ(USART0_IRQn);
 }
 
-void UART2_timeout_disable()
-{
+void UART2_timeout_disable() {
   register Usart *pUsart = SECOND_USART;
   pUsart->US_RTOR = 0 ;
   pUsart->US_IDR = US_IDR_TIMEOUT ;
@@ -150,8 +152,7 @@ void startPdcUsartReceive()
   pUsart->US_PTCR = US_PTCR_RXTEN ;
 }
 
-void rxPdcUsart( void (*pChProcess)(uint8_t x) )
-{
+void rxPdcUsart( void (*pChProcess)(uint8_t x) ) {
 #if !defined(SIMU)
   register Usart *pUsart = SECOND_USART;
   uint8_t *ptr ;
