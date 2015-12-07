@@ -768,7 +768,8 @@ QString FuncSwData::funcToString()
   else if (func >= FuncAdjustGV1 && func <= FuncAdjustGVLast)
     return QObject::tr("Adjust GV%1").arg(func-FuncAdjustGV1+1);
   else {
-    return QString("???"); // Highlight unknown functions with output of question marks.(BTW should not happen that we do not know what a function is)
+    return QString("???");	// Highlight unknown functions with output of question marks.
+							//(BTW should not happen that we do not know what a function is)
   }
 }
 
