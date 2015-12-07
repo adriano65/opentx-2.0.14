@@ -165,14 +165,14 @@ void MAVLINK_reset(void) {
 }
 
 /* initialize serial (see opentx.cpp) */
-void MAVLINK_Init(void) {
+void MAVLINK_Init(bool bHardReset) {
 	mav_statustext[0] = 0;
 	actualbaudrateIdx=g_eeGeneral.mavbaud;
-	#if !defined(SIMU)
-	  MAVLINK_reset();
+	#if !defined(SIMU)	  
+	  if (bHardReset) MAVLINK_reset();
 	  #if defined(CPUARM)
 		  // enable AFTER CoInitOS()
-		  TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 19, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
+		  if (bHardReset) TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 19, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
 		  #if defined(REVX)
 			  #if defined(MAVLINK_DEBUG)
 				// btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
@@ -233,11 +233,9 @@ void MAVLINK_telemetryWakeup() {
 	}
 	*/
 	
-	/* ---------------------------------------------------- */
-	
 	/* CHANGE BAUDRATE IF USER MODIFY SPEED IN MENU ------- */
 	if (actualbaudrateIdx!=g_eeGeneral.mavbaud) {
-		MAVLINK_Init();  
+		MAVLINK_Init(false);  
 		}
 	/* ---------------------------------------------------- */
 	

@@ -170,7 +170,7 @@ extern inline uint8_t MAVLINK_CtrlMode2Action(uint8_t mode) {
 	
 	return action;
 }
-void MAVLINK_Init(void);
+void MAVLINK_Init(bool);
 void MAVLINK_telemetryWakeup(void);
 NOINLINE void processSerialMavlinkData(uint8_t);
 uint32_t Index2Baud(uint8_t);

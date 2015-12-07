@@ -3664,7 +3664,7 @@ int main(void)
   mixerMutex = CoCreateMutex();
 
 #if defined(MAVLINK)
-  MAVLINK_Init();
+  MAVLINK_Init(true);
 #endif
 
   CoStartOS();

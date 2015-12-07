@@ -449,8 +449,8 @@ PACK(typedef struct t_EEGeneral {
   int8_t    PPM_Multiplier;
   int8_t    hapticLength;
   N_PCBSTD_FIELD( uint8_t   reNavigation)
-//  N_TARANIS_FIELD(uint8_t   stickReverse)
-  uint8_t   stickReverse;
+  N_TARANIS_FIELD(uint8_t   stickReverse)
+  //uint8_t   stickReverse;
   int8_t    beepLength:3;
   int8_t    hapticStrength:3;
   uint8_t   gpsFormat:1;

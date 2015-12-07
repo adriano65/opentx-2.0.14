@@ -47,6 +47,9 @@ struct t_rxUartBuffer
 struct t_rxUartBuffer TelemetryInBuffer ;
 uint16_t DsmRxTimeout;
 
+#if defined(SIMU)
+#define UART2_Configure(...)
+#else
 // USART0 configuration
 // Work in Progress, UNTESTED
 // Uses PA5 and PA6 (RXD and TXD)
@@ -76,6 +79,7 @@ void UART2_Configure(uint32_t baudrate, uint32_t masterClock)
   // Enable receiver and transmitter
   pUsart->US_CR = US_CR_RXEN | US_CR_TXEN;
 }
+#endif
 
 void UART2_timeout_enable()
 {
