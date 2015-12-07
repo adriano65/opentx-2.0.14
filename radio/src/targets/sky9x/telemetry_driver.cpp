@@ -39,7 +39,7 @@
 #define RX_UART_BUFFER_SIZE     128
 //#undef UART2_TEST
 #define UART2_TEST
-#ifdef UART2_TEST
+
 struct t_rxUartBuffer {
   uint8_t fifo[RX_UART_BUFFER_SIZE] ;
   uint8_t *outPtr ;
@@ -47,9 +47,8 @@ struct t_rxUartBuffer {
 
 struct t_rxUartBuffer TelemetryInBuffer ;
 uint16_t DsmRxTimeout;
-#endif
 
-#ifdef SIMU
+#ifndef SIMU
 // USART0 configuration
 // Work in Progress, UNTESTED
 // Uses PA5 and PA6 (RXD and TXD)
