@@ -239,7 +239,7 @@ void MAVLINK_telemetryWakeup() {
 		}
 	/* ---------------------------------------------------- */
 	
-	#if defined(PCBSKY9X)
+	#if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
 		rxPdcUsart(processSerialMavlinkData);
 	#else
 		uint8_t data;
