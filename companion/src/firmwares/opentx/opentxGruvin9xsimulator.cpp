@@ -47,7 +47,6 @@
 #define GAUGES
 #define GPS
 #define FAI_CHOICE
-#define FRSKY_STICKS
 #define OVERRIDE_CHANNEL_FUNCTION
 #define FLAVOUR "gruvin9x"
 

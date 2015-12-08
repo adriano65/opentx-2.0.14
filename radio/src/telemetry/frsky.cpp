@@ -156,7 +156,7 @@ NOINLINE void processSerialFrskyData(uint8_t data)
 
 #if defined(PCBTARANIS)
     if (g_eeGeneral.uart3Mode == UART_MODE_TELEMETRY_MIRROR) {
-      uart3Putc(data);
+      //uart3Putc(data);
     }
 #endif
 

@@ -36,12 +36,9 @@
 
 #include "../../opentx.h"
 
-bool uart3Telemetry = false;
 Fifo<512> uart3TxFifo;
-//extern Fifo<512> telemetryFifo;
 
-void uart3Setup(uint32_t baudrate)
-{
+void uart3Setup(uint32_t baudrate) {
   USART_InitTypeDef USART_InitStructure;
   GPIO_InitTypeDef GPIO_InitStructure;
 
@@ -76,38 +73,18 @@ void uart3Setup(uint32_t baudrate)
   NVIC_SetPriority(USART3_IRQn, 7);
 }
 
-void uart3Init(unsigned int mode, unsigned int protocol)
-{
+void telemetrySecondPortInit(uint32_t baudrate) {
   USART_DeInit(USART3);
-  uart3Telemetry = false;
-
-  switch (mode) {
-    case UART_MODE_TELEMETRY_MIRROR:
-      uart3Setup(FRSKY_SPORT_BAUDRATE);
-      break;
-#if defined(DEBUG)
-    case UART_MODE_DEBUG:
-      uart3Setup(DEBUG_BAUDRATE);
-      break;
-#endif
-    case UART_MODE_TELEMETRY:
-      if (protocol == PROTOCOL_FRSKY_D_SECONDARY) {
-        uart3Setup(FRSKY_D_BAUDRATE);
-        uart3Telemetry = true;
-      }
-      break;
-  }
+  uart3Setup(baudrate);
 }
 
-void uart3Putc(const char c)
-{
+void uart3Putc(const char c) {
   uart3TxFifo.push(c);
   USART_ITConfig(UART3, USART_IT_TXE, ENABLE);
 }
 
 #if defined(DEBUG)
-void debugPutc(const char c)
-{
+void debugPutc(const char c) {
   if (g_eeGeneral.uart3Mode == UART_MODE_DEBUG) {
     uart3Putc(c);
   }
@@ -116,8 +93,7 @@ void debugPutc(const char c)
 
 #define USART_FLAG_ERRORS (USART_FLAG_ORE | USART_FLAG_NE | USART_FLAG_FE | USART_FLAG_PE)
 
-extern "C" void USART3_IRQHandler(void)
-{
+extern "C" void USART3_IRQHandler(void) {
   // Send
   if (USART_GetITStatus(UART3, USART_IT_TXE) != RESET) {
     uint8_t txchar;
@@ -135,7 +111,7 @@ extern "C" void USART3_IRQHandler(void)
   while (status & (USART_FLAG_RXNE | USART_FLAG_ERRORS)) {
     uint8_t data = USART3->DR;
 
-    if (uart3Telemetry && !(status & USART_FLAG_ERRORS)) {
+    if ( !(status & USART_FLAG_ERRORS) ) {
       TelemRxFifo.push(data);
     }
 

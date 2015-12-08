@@ -45,7 +45,6 @@
 #define GAUGES
 #define GPS
 #define FAI_CHOICE
-#define FRSKY_STICKS
 #define DSM2
 #define DSM2_PPM
 #define OVERRIDE_CHANNEL_FUNCTION

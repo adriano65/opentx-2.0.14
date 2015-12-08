@@ -410,9 +410,9 @@ PACK(typedef struct {
 #endif
 
 #if defined(PCBTARANIS)
-  #define N_TARANIS_FIELD(x)
-#else
   #define N_TARANIS_FIELD(x) x;
+#else
+  #define N_TARANIS_FIELD(x)
 #endif
 
 #define ALTERNATE_VIEW 0x10

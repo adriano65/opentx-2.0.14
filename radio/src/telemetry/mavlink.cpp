@@ -178,20 +178,21 @@ void MAVLINK_Init(bool bHardReset) {
 				// btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
 				UART3_Configure(Index2Baud(g_eeGeneral.mavbaud), Master_frequency);
 			  #else
-				telemetryPortInit(0);
 				// in ersky9x CONSOLE_USART==UART0
 				// 9XR-PRO has external module connected via FUTABA Port
 				// telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
 				telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
 			  #endif
 		  #else
+			#if defined(TARANIS)
+			  telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
+			#else
 			// SKY9x
 			//telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
-			// TARANIS			
-			// telemetryPortInit -> USART2_IRQn				
 			// 9x 9x128
 			// see targets/common_avr/telemetry_driver.cpp
 			telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
+			#endif
 		  #endif
 	  #else
 		  telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));

@@ -55,12 +55,12 @@ MAVLINK_DEBUG = NO
 #PCB = 9XR128
 
 # MAVLINK NO, FRSKY OK for frsky d option (not cable ?!)
-PCB = SKY9X
+#PCB = SKY9X
 
 # MAVLINK OK, FRSKY OK for frsky d option (not cable ?!)
 #PCB = 9XRPRO
 
-#PCB = TARANIS
+PCB = TARANIS
 
 #------- END BUILD OPTIONS ---------------------------
 
@@ -368,7 +368,7 @@ SHELL = sh
 IMG2LBM = -python ../util/img2lbm.py
 BIN2LBM = -python ../util/bin2lbm.py
 TRANSLATE = -python ../util/translate.py
-VERSION = 2.0.14b
+VERSION = 2.0.14c
 
 SRC =
 CPPSRC =

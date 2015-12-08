@@ -3491,10 +3491,6 @@ inline void opentxInit(OPENTX_INIT_ARGS)
   lcdSetContrast();
   backlightOn();
 
-#if defined(PCBTARANIS)
-  uart3Init(g_eeGeneral.uart3Mode, MODEL_TELEMETRY_PROTOCOL());
-#endif
-
 #if defined(CPUARM)
   init_trainer_capture();
 #endif
@@ -3580,8 +3576,7 @@ extern void audioTask(void* pdata);
 
 #endif
 
-int main(void)
-{
+int main(void) {
   // G: The WDT remains active after a WDT reset -- at maximum clock speed. So it's
   // important to disable it before commencing with system initialisation (or
   // we could put a bunch more wdt_reset()s in. But I don't like that approach

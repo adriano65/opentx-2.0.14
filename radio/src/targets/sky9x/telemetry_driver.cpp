@@ -53,8 +53,7 @@ uint16_t DsmRxTimeout;
 // USART0 configuration
 // Work in Progress, UNTESTED
 // Uses PA5 and PA6 (RXD and TXD)
-void UART2_Configure(uint32_t baudrate, uint32_t masterClock)
-{
+void UART2_Configure(uint32_t baudrate, uint32_t masterClock) {
   register Usart *pUsart = SECOND_USART;
 
   // Configure PIO
