@@ -76,8 +76,6 @@
   #define EEPROM_VER             217
   #define FIRST_CONV_EEPROM_VER  EEPROM_VER
 #elif defined(CPUM128)
-  #define EEPROM_VER             217
-#else
   #define EEPROM_VER             216
 #endif
 
