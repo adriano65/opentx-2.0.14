@@ -185,15 +185,15 @@ enum menuGeneralSetupItems {
   ITEM_SETUP_STICK_MODE,
   ITEM_SETUP_MAX
 };
-
+/*
 #if defined(FRSKY_STICKS)
   #define COL_TX_MODE 0
 #else
   #define COL_TX_MODE LABEL(TX_MODE)
 #endif
+*/
 
-void menuGeneralSetup(uint8_t event)
-{
+void menuGeneralSetup(uint8_t event) {
 #if defined(RTCLOCK)
   struct gtm t;
   gettime(&t);
@@ -218,7 +218,11 @@ void menuGeneralSetup(uint8_t event)
 	  , menuTabDiag
 	  , e_Setup
 	  , ITEM_SETUP_MAX+1
-	  , {0, CASE_RTCLOCK(2) CASE_RTCLOCK(2) CASE_BATTGRAPH(1) LABEL(SOUND), CASE_AUDIO(0) CASE_BUZZER(0) CASE_VOICE(0) CASE_CPUARM(0) CASE_CPUARM(0) CASE_CPUARM(0) 0
+	  , {0, 
+		 CASE_RTCLOCK(2) 
+		 CASE_RTCLOCK(2) 
+		 CASE_BATTGRAPH(1) 
+		 LABEL(SOUND), CASE_AUDIO(0) CASE_BUZZER(0) CASE_VOICE(0) CASE_CPUARM(0) CASE_CPUARM(0) CASE_CPUARM(0) 0
 	  , CASE_AUDIO(0) CASE_VARIO_CPUARM(LABEL(VARIO)) CASE_VARIO_CPUARM(0) CASE_VARIO_CPUARM(0) CASE_VARIO_CPUARM(0) CASE_VARIO_CPUARM(0) CASE_HAPTIC(LABEL(HAPTIC)) CASE_HAPTIC(0) CASE_HAPTIC(0) CASE_HAPTIC(0) 0
 	  , LABEL(ALARMS)
 	  , 0
@@ -231,14 +235,19 @@ void menuGeneralSetup(uint8_t event)
 	  , CASE_CPUARM(0) CASE_REVPLUS(0) 			// ITEM_SETUP_BACKLIGHT_COLOR
 	  CASE_PWM_BACKLIGHT(0) CASE_PWM_BACKLIGHT(0) 
 	  0											// ITEM_SETUP_FLASH_BEEP
-	  , CASE_SPLASH_PARAM(0) CASE_GPS(0) CASE_GPS(0) CASE_PXX(0) 
+	  , CASE_SPLASH_PARAM(0) 					// ITEM_SETUP_DISABLE_SPLASH
+	  CASE_GPS(0) 								// ITEM_SETUP_TIMEZONE
+	  CASE_GPS(0) 								// ITEM_SETUP_GPSFORMAT
+	  CASE_PXX(0) 								// ITEM_SETUP_COUNTRYCODE
 	  CASE_CPUARM(0) 							// ITEM_SETUP_LANGUAGE
-	  CASE_CPUARM(0) IF_FAI_CHOICE(0) CASE_MAVLINK(0) 
-	  CASE_CPUARM(0)
-	  0
-	  , COL_TX_MODE
-	  , CASE_PCBTARANIS(0) 
-	  1/*to force edit mode*/});
+	  CASE_CPUARM(0) 							// ITEM_SETUP_IMPERIAL
+	  IF_FAI_CHOICE(0) 							// ITEM_SETUP_FAI
+	  CASE_CPUARM(0) 							// ITEM_SETUP_SWITCHES_DELAY
+	  CASE_CPUARM(0)							// ITEM_SETUP_RX_CHANNEL_ORD
+	  0											// ITEM_SETUP_STICK_MODE_LABELS						
+	  //, COL_TX_MODE								// ITEM_SETUP_STICK_MODE
+	  , 0								// ITEM_SETUP_STICK_MODE
+	  });
 
   uint8_t sub = m_posVert - 1;
 
@@ -494,9 +503,7 @@ void menuGeneralSetup(uint8_t event)
         putsTelemetryValue(RADIO_SETUP_2ND_COLUMN, y, g_eeGeneral.mAhWarn*50, UNIT_MAH, attr|LEFT) ;
         if(attr) CHECK_INCDEC_GENVAR(event, g_eeGeneral.mAhWarn, 0, 100);
         break;
-#endif
-
-#if defined(PCBSKY9X)
+		
       case ITEM_SETUP_TEMPERATURE_WARNING:
         lcd_putsLeft(y, STR_TEMPWARNING);
         putsTelemetryValue(RADIO_SETUP_2ND_COLUMN, y, g_eeGeneral.temperatureWarn, UNIT_TEMPERATURE, attr|LEFT) ;

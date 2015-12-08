@@ -143,7 +143,8 @@ AUTOSWITCH = NO
 
 # Stock sticks replaced by FrSky ones
 # Values = YES, NO 
-ifeq ($(PCB), TARANIS)
+#ifeq ($(PCB), $(filter $(PCB), TARANIS 9XRPRO))
+ifeq ($(PCB), $(filter $(PCB), TARANIS))
 FRSKY_STICKS = YES
 else
 #FRSKY_STICKS = PEHARPS 
