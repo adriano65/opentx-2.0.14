@@ -1456,12 +1456,12 @@ void menuModelSetup(uint8_t event)
         break;
 #endif
 
-#if defined(FRSKY) && defined(MAVLINK)
+#if defined(FRSKY) || defined(MAVLINK)
       case ITEM_MODEL_PROTOCOL: {
 			g_model.telemetryProtocol = selectMenuItem( MODEL_SETUP_2ND_COLUMN
 													  , y
 													  , STR_TELEMETRY_TYPE
-													  , PSTR("\015""FrSky S.PORT\0""FrSky D     \0""Mavlink     \0""FrSky(cable)\0")
+													  , PROTOCOLTYPES
 													  , g_model.telemetryProtocol
 													  , PROTOCOL_TELEMETRY_FIRST
 													  , PROTOCOL_TELEMETRY_LAST
@@ -1469,34 +1469,6 @@ void menuModelSetup(uint8_t event)
 													  , event);
 			break;
 		}
-#else
-	#if defined(FRSKY)
-	  case ITEM_MODEL_PROTOCOL:
-		  g_model.telemetryProtocol = selectMenuItem( MODEL_SETUP_2ND_COLUMN
-													  , y
-													  , STR_TELEMETRY_TYPE
-													  , PSTR("\015""FrSky S.PORT\0""FrSky D     \0""FrSky(cable)\0")
-													  , g_model.telemetryProtocol
-													  , PROTOCOL_TELEMETRY_FIRST
-													  , PROTOCOL_TELEMETRY_LAST
-													  , attr
-													  , event);
-		  eeDirty(EE_MODEL);
-		  break;
-	#else
-	  case ITEM_MODEL_PROTOCOL:
-		  g_model.telemetryProtocol = selectMenuItem( MODEL_SETUP_2ND_COLUMN
-													  , y
-													  , STR_TELEMETRY_TYPE
-													  , PSTR("\015""Mavlink     \0")
-													  , g_model.telemetryProtocol
-													  , PROTOCOL_TELEMETRY_FIRST
-													  , PROTOCOL_TELEMETRY_LAST
-													  , attr
-													  , event);
-		  eeDirty(EE_MODEL);
-		  break;
-	#endif
 #endif
 
 #if defined(PCBTARANIS)
