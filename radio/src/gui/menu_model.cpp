@@ -977,7 +977,7 @@ void onModelSetupBitmapMenu(const char *result)
 
 #if defined(PCBTARANIS)
   #define CURRENT_MODULE_EDITED(k)         (k>=ITEM_MODEL_TRAINER_LABEL ? TRAINER_MODULE : (k>=ITEM_MODEL_EXTERNAL_MODULE_LABEL ? EXTERNAL_MODULE : INTERNAL_MODULE))
-#elif defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
+#elif (defined(PCBSKY9X) && !defined(REVA))
   #define CURRENT_MODULE_EDITED(k)         (k>=ITEM_MODEL_EXTRA_MODULE_LABEL ? EXTRA_MODULE : EXTERNAL_MODULE)
 #else
   #define CURRENT_MODULE_EDITED(k)         (EXTERNAL_MODULE)
@@ -1052,8 +1052,8 @@ void menuModelSetup(uint8_t event)
   #define CURSOR_ON_CELL                    (true)
   #define MODEL_SETUP_MAX_LINES             (1+ITEM_MODEL_SETUP_MAX)
   #define POT_WARN_ITEMS()                  ((g_model.nPotsToWarn >> 6) ? (uint8_t)NUM_POTS : (uint8_t)0)
-  #if (defined(PCBSKY9X) && !defined(REVA) && !defined(REVX))
-	#define EXTRA_MODULE_ROWS                 LABEL(ExtraModule), 1, 2,
+  #if (defined(PCBSKY9X) && !defined(REVA))
+	#define EXTRA_MODULE_ROWS                 LABEL(ExtraModule), 1, 2
   #else
 	#define EXTRA_MODULE_ROWS
   #endif
@@ -1538,7 +1538,7 @@ void menuModelSetup(uint8_t event)
         break;
 
       case ITEM_MODEL_INTERNAL_MODULE_CHANNELS:
-#elif defined(PCBSKY9X) && !defined(REVX)
+#elif defined(PCBSKY9X) && !defined(REVA)
       case ITEM_MODEL_EXTRA_MODULE_CHANNELS:
 #endif
 #if defined(CPUARM)
@@ -1578,7 +1578,7 @@ void menuModelSetup(uint8_t event)
 
 #if defined(PCBTARANIS)
       case ITEM_MODEL_INTERNAL_MODULE_BIND:
-#elif defined(PCBSKY9X) && !defined(REVX)
+#elif defined(PCBSKY9X) && !defined(REVA)
       case ITEM_MODEL_EXTRA_MODULE_BIND:
 #endif
 #if defined(CPUARM)

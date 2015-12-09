@@ -52,10 +52,10 @@ MAVLINK_DEBUG = NO
 # MAVLINK OK, FRSKY OK
 #PCB = 9X
 
-PCB = 9XR128
+#PCB = 9XR128
 
 # MAVLINK NO, FRSKY OK for frsky d option (not cable ?!)
-#PCB = SKY9X
+PCB = SKY9X
 
 # MAVLINK OK, FRSKY OK for frsky d option (not cable ?!)
 #PCB = 9XRPRO
