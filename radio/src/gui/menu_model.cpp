@@ -918,7 +918,7 @@ enum menuModelSetupItems {
   ITEM_MODEL_EXTERNAL_MODULE_CHANNELS,
   ITEM_MODEL_EXTERNAL_MODULE_BIND,
   ITEM_MODEL_EXTERNAL_MODULE_FAILSAFE,
-  #if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
+  #if defined(PCBSKY9X) && !defined(REVA)
 	ITEM_MODEL_EXTRA_MODULE_LABEL,
 	ITEM_MODEL_EXTRA_MODULE_CHANNELS,
 	ITEM_MODEL_EXTRA_MODULE_BIND,
@@ -1450,7 +1450,7 @@ void menuModelSetup(uint8_t event)
         }
         break;
 
-#if defined(PCBSKY9X) && !defined(REVX)
+#if defined(PCBSKY9X) && !defined(REVA)
       case ITEM_MODEL_EXTRA_MODULE_LABEL:
         lcd_putsLeft(y, "RF Port 2 (PPM)");
         break;
