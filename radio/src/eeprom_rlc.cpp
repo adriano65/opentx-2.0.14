@@ -904,9 +904,12 @@ bool eeLoadGeneral()
   theFile.openRlc(FILE_GENERAL);
   if (theFile.readRlc((uint8_t*)&g_eeGeneral, 1) == 1 && g_eeGeneral.version == EEPROM_VER) {
     theFile.openRlc(FILE_GENERAL);
+	TRACE("g_eeGeneral.version %d (%d), EEPROM_VER %d (%d)", g_eeGeneral.version, g_eeGeneral.variant, EEPROM_VER, EEPROM_VARIANT);  
+	
     if (theFile.readRlc((uint8_t*)&g_eeGeneral, sizeof(g_eeGeneral)) <= sizeof(EEGeneral) && CHECK_EEPROM_VARIANT()) {
       return true;
     }
+    TRACE("sizeof(g_eeGeneral) %d, sizeof(EEGeneral) %d", sizeof(g_eeGeneral), sizeof(EEGeneral));
   }
 
 #if defined(CPUARM)

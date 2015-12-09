@@ -301,8 +301,8 @@ void memclear(void *ptr, uint8_t size)
 }
 #endif
 
-void generalDefault()
-{
+void generalDefault() {
+  #pragma message "EEPROM_VER: " STR(EEPROM_VER)
   memclear(&g_eeGeneral, sizeof(g_eeGeneral));
   g_eeGeneral.version  = EEPROM_VER;
   g_eeGeneral.variant = EEPROM_VARIANT;

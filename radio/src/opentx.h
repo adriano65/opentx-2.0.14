@@ -1786,4 +1786,12 @@ void varioWakeup();
   extern void usbPluggedIn();
 #endif
 
+
+#define STR_HELPER(x) #x
+#define STR(x) STR_HELPER(x)
+
+//#define AAA 123
+//#pragma message "content of AAA: " STR(AAA)
+  
+  
 #endif

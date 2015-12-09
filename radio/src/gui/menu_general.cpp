@@ -243,10 +243,9 @@ void menuGeneralSetup(uint8_t event) {
 	  CASE_CPUARM(0) 							// ITEM_SETUP_IMPERIAL
 	  IF_FAI_CHOICE(0) 							// ITEM_SETUP_FAI
 	  CASE_CPUARM(0) 							// ITEM_SETUP_SWITCHES_DELAY
-	  CASE_CPUARM(0)							// ITEM_SETUP_RX_CHANNEL_ORD
-	  0											// ITEM_SETUP_STICK_MODE_LABELS						
-	  //, COL_TX_MODE								// ITEM_SETUP_STICK_MODE
-	  , 0								// ITEM_SETUP_STICK_MODE
+	  0											// ITEM_SETUP_RX_CHANNEL_ORD
+	  , 0										// ITEM_SETUP_STICK_MODE_LABELS
+	  , 0										// ITEM_SETUP_STICK_MODE
 	  });
 
   uint8_t sub = m_posVert - 1;

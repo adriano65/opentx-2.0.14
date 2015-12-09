@@ -54,8 +54,7 @@ OpenTxEepromInterface::~OpenTxEepromInterface()
   delete efile;
 }
 
-const char * OpenTxEepromInterface::getName()
-{
+const char * OpenTxEepromInterface::getName() {
   switch (board) {
     case BOARD_STOCK:
       return "OpenTX for 9X board";
@@ -76,8 +75,7 @@ const char * OpenTxEepromInterface::getName()
   }
 }
 
-const int OpenTxEepromInterface::getEEpromSize()
-{
+const int OpenTxEepromInterface::getEEpromSize() {
   switch (board) {
     case BOARD_STOCK:
       return EESIZE_STOCK;
@@ -97,8 +95,7 @@ const int OpenTxEepromInterface::getEEpromSize()
   }
 }
 
-const int OpenTxEepromInterface::getMaxModels()
-{
+const int OpenTxEepromInterface::getMaxModels() {
   if (IS_ARM(board))
     return 60;
   else if (board == BOARD_M128)
@@ -110,8 +107,7 @@ const int OpenTxEepromInterface::getMaxModels()
 }
 
 template <class T>
-bool OpenTxEepromInterface::loadModel(ModelData &model, uint8_t *data, int index, unsigned int stickMode)
-{
+bool OpenTxEepromInterface::loadModel(ModelData &model, uint8_t *data, int index, unsigned int stickMode) {
   T _model;
   
   if (!data) {
@@ -367,9 +363,10 @@ bool OpenTxEepromInterface::load(RadioData &radioData, const uint8_t *eeprom, in
   return true;
 }
 
-int OpenTxEepromInterface::save(uint8_t *eeprom, RadioData &radioData, uint32_t variant, uint8_t version)
-{
+int OpenTxEepromInterface::save(uint8_t *eeprom, RadioData &radioData, uint32_t variant, uint8_t version) {
   EEPROMWarnings.clear();
+  //TRACE("g_eeGeneral.version %d (%d), EEPROM_VER %d (%d)", g_eeGeneral.version, g_eeGeneral.variant, EEPROM_VER, EEPROM_VARIANT);  
+  //std::cout << "g_eeGeneral.version " << g_eeGeneral.version << " " << g_eeGeneral.variant;
 
   if (!version) {
     switch(board) {
@@ -384,7 +381,8 @@ int OpenTxEepromInterface::save(uint8_t *eeprom, RadioData &radioData, uint32_t 
         version = 217;
         break;
       case BOARD_M128:
-        version = 217;
+        //version = 217;
+        version = 216;
         break;
       case BOARD_STOCK:
         version = 216;
