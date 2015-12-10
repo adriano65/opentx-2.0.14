@@ -374,7 +374,7 @@ SHELL = sh
 IMG2LBM = -python ../util/img2lbm.py
 BIN2LBM = -python ../util/bin2lbm.py
 TRANSLATE = -python ../util/translate.py
-VERSION = 0.2.14
+VERSION = 0.2.15
 
 SRC =
 CPPSRC =
