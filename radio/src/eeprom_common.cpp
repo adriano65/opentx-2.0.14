@@ -128,11 +128,31 @@ void eeLoadModel(uint8_t id) {
     }
 #endif
 
-#if defined(CPUARM)
-    if (g_model.frsky.mAhPersistent) {
-      frskyData.hub.currentConsumption = g_model.frsky.storedMah;
-    }
-#endif
+	switch (g_model.telemetryProtocol) {
+	  #if defined(FRSKY)
+	  #if defined(CPUARM)
+	  case PROTOCOL_FRSKY_SPORT:
+	  case PROTOCOL_FRSKY_D:
+	  #endif
+	  case PROTOCOL_FRSKY_D_SECONDARY:
+		FRSKY_Init();
+		#if defined(CPUARM)
+		if (g_model.frsky.mAhPersistent) {
+		  frskyData.hub.currentConsumption = g_model.frsky.storedMah;
+		  }
+		#endif
+		break;
+	  #endif
+		
+	  #if defined(MAVLINK)
+	  case PROTOCOL_MAVLINK:
+		MAVLINK_Init(true);
+		break;
+	  #endif
+	  default:
+		break;
+	  }
+	
 
     LOAD_MODEL_CURVES();
 

@@ -192,8 +192,7 @@ void watchdogSetTimeout(uint32_t timeout)
 }
 #endif
 
-void per10ms()
-{
+void per10ms() {
   g_tmr10ms++;
 
 #if defined(CPUARM)
@@ -3505,8 +3504,7 @@ inline void opentxInit(OPENTX_INIT_ARGS)
 }
 
 #if defined(CPUARM)
-void mixerTask(void * pdata)
-{
+void mixerTask(void * pdata) {
   s_pulses_paused = true;
 
   while(1) {
@@ -3548,8 +3546,7 @@ void mixerTask(void * pdata)
   }
 }
 
-void menusTask(void * pdata)
-{
+void menusTask(void * pdata) {
   opentxInit();
 
   while (pwrCheck() != e_power_off) {
@@ -3612,10 +3609,6 @@ int main(void) {
 
   sei(); // interrupts needed for telemetryInit and eeReadAll.
 
-#if defined(FRSKY) && !defined(DSM2_SERIAL)
-	FRSKY_Init();
-#endif
-
 #if defined(DSM2_SERIAL) && !defined(FRSKY)
   DSM2_Init();
 #endif
@@ -3657,10 +3650,6 @@ int main(void) {
 
   audioMutex = CoCreateMutex();
   mixerMutex = CoCreateMutex();
-
-#if defined(MAVLINK)
-  MAVLINK_Init(true);
-#endif
 
   CoStartOS();
 #else

@@ -147,6 +147,12 @@ if(${EXT} MATCHES MAVLINK)
 	PROPERTY COMPILE_DEFINITIONS
 	MAVLINK
   )
+  set_property(
+	SOURCE ${COMPANION_SRC_DIRECTORY}/firmwares/opentx/opentxGruvin9xsimulator.cpp
+	APPEND
+	PROPERTY COMPILE_DEFINITIONS
+	MAVLINK
+  )
 else ()
   MESSAGE(FATAL_ERROR "This version MUST be configured: see ReadMe" )
 endif()

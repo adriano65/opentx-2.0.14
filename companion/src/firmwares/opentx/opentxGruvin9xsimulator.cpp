@@ -27,8 +27,10 @@
 #define TEMPLATES
 #define SPLASH
 #define FLIGHT_MODES
+
 #define FRSKY
 #define FRSKY_HUB
+
 #define WS_HOW_HIGH
 #define VARIO
 #define PPM_UNIT_PERCENT_PREC1
@@ -89,6 +91,10 @@ namespace Open9xGruvin9x {
 #include "radio/src/targets/gruvin9x/somo14d.cpp"
 #include "radio/src/telemetry/frsky.cpp"
 #include "radio/src/telemetry/frsky_d.cpp"
+
+#include "radio/src/telemetry/mavlink.cpp"
+#include "radio/src/gui/view_mavlink.cpp"
+
 #include "radio/src/translations/tts_en.cpp"
 #include "radio/src/haptic.cpp"
 
