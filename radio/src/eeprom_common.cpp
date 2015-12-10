@@ -57,3 +57,98 @@ void eeLoadModelHeaders()
   }
 }
 #endif
+
+// TODO Now the 2 functions in eeprom_rlc.cpp and eeprom_raw.cpp are really close, should be merged.
+void eeLoadModel(uint8_t id) {
+  if (id<MAX_MODELS) {
+
+#if defined(CPUARM)
+    watchdogSetTimeout(500/*5s*/);
+#endif
+
+#if defined(SDCARD)
+    closeLogs();
+#endif
+
+    if (pulsesStarted()) {
+      pausePulses();
+    }
+
+    pauseMixerCalculations();
+
+	#if defined(PCBSKY9X)
+    uint16_t size = File_system[id+1].size ;
+    memset(&g_model, 0, sizeof(g_model));
+	
+	#else	
+	
+    theFile.openRlc(FILE_MODEL(id));
+    uint16_t size = theFile.readRlc((uint8_t*)&g_model, sizeof(g_model));
+	#endif
+
+#ifdef SIMU
+    if (size > 0 && size != sizeof(g_model)) {
+      printf("Model data read=%d bytes vs %d bytes\n", size, (int)sizeof(ModelData));
+    }
+#endif
+
+    bool newModel = false;
+
+    if (size < 256) {
+      modelDefault(id);
+      eeCheck(true);
+      newModel = true;
+	  }
+	#if defined(PCBSKY9X)
+    else {
+      read32_eeprom_data((File_system[id+1].block_no << 12) + sizeof(struct t_eeprom_header), (uint8_t *)&g_model, size) ;
+	  }
+	#endif
+
+    AUDIO_FLUSH();
+    flightReset();
+    logicalSwitchesReset();
+
+    if (pulsesStarted()) {
+      if (!newModel) {
+        checkAll();
+      }
+      resumePulses();
+    }
+
+    activeFnSwitches = 0;
+    activeFunctions = 0;
+    memclear(lastFunctionTime, sizeof(lastFunctionTime));
+
+#if !defined(PCBSTD)
+    for (uint8_t i=0; i<MAX_TIMERS; i++) {
+      if (g_model.timers[i].persistent) {
+        timersStates[i].val = g_model.timers[i].value;
+      }
+    }
+#endif
+
+#if defined(CPUARM)
+    if (g_model.frsky.mAhPersistent) {
+      frskyData.hub.currentConsumption = g_model.frsky.storedMah;
+    }
+#endif
+
+    LOAD_MODEL_CURVES();
+
+    resumeMixerCalculations();
+    // TODO pulses should be started after mixer calculations ...
+
+#if defined(FRSKY) || defined(MAVLINK)
+    frskySendAlarms();
+#endif
+
+#if defined(CPUARM) && defined(SDCARD)
+    referenceModelAudioFiles();
+#endif
+
+    LOAD_MODEL_BITMAP();
+    LUA_LOAD_MODEL_SCRIPTS();
+    SEND_FAILSAFE_1S();
+  }
+}

@@ -336,20 +336,19 @@ void loadModel(int index)
   }
 }
 
-bool eeLoadGeneral()
-{
+bool eeLoadGeneral() {
   loadGeneralSettings();
   if (g_eeGeneral.version != EEPROM_VER) {
     TRACE("EEPROM version %d instead of %d", g_eeGeneral.version, EEPROM_VER);
     if (!eeConvert())
       return false;
-  }
-
+	}
+  TRACE("eeprom_raw - eeLoadGeneral");
   return true;
 }
 
-void eeLoadModel(uint8_t id)
-{
+/*
+void eeLoadModel(uint8_t id) {
   if (id<MAX_MODELS) {
 
 #if defined(SDCARD)
@@ -362,11 +361,13 @@ void eeLoadModel(uint8_t id)
 
     pauseMixerCalculations();
 
+	
     uint16_t size = File_system[id+1].size ;
 
     memset(&g_model, 0, sizeof(g_model));
 
 #if defined(SIMU)
+	TRACE("eeLoadModel\n");
     if (sizeof(struct t_eeprom_header) + sizeof(g_model) > 4096)
       TRACE("Model data size can't exceed %d bytes (%d bytes)", int(4096-sizeof(struct t_eeprom_header)), (int)sizeof(g_model));
     else if (size > 0 && size != sizeof(g_model))
@@ -420,6 +421,8 @@ void eeLoadModel(uint8_t id)
     SEND_FAILSAFE_1S();
   }
 }
+*/
+
 
 bool eeModelExists(uint8_t id)
 {
@@ -458,12 +461,11 @@ void fill_file_index()
   }
 }
 
-void eeReadAll()
-{
+void eeReadAll() {
   fill_file_index() ;
+  TRACE("eeReadAll");
 
-  if (!eeLoadGeneral() )
-  {
+  if (!eeLoadGeneral() ) {
     generalDefault();
     modelDefault(0);
 
@@ -477,7 +479,7 @@ void eeReadAll()
 
     eeDirty(EE_GENERAL);
     eeDirty(EE_MODEL);
-  }
+	}
   else {
     eeLoadModelHeaders() ;
   }

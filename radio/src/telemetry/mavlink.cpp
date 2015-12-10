@@ -77,7 +77,7 @@ static uint8_t data_stream_start_stop = 0;
 
 static int8_t actualbaudrateIdx = 0;
 
-// Telemetry data hold
+// Telemetry data holder
 MavlinkData mavlinkData;
 
 // *****************************************************
@@ -156,11 +156,10 @@ void MAVLINK_reset(void) {
 	mavlinkData.rcv_control_mode = MAV_MODE_PREFLIGHT;
 	mavlinkData.req_mode = MAV_MODE_ENUM_END;
 
-	mavlinkData.type = MAV_TYPE_ENUM_END;
-	mavlinkData.autopilot = MAV_AUTOPILOT_ENUM_END;
-	mavlinkData.type_autopilot = MAV_AUTOPILOT_INVALID;
+	mavlinkData.heartbeat.type = MAV_TYPE_ENUM_END;
+	mavlinkData.heartbeat.autopilot = MAV_AUTOPILOT_ENUM_END;
+	mavlinkData.heartbeat.custom_mode = MAV_AUTOPILOT_INVALID;
 
-	mavlinkData.heartbeat = 0;
 	data_stream_start_stop = 0;
 }
 
@@ -201,39 +200,6 @@ void MAVLINK_Init(bool bHardReset) {
 }
 
 void MAVLINK_telemetryWakeup() {
-	/*
-	// RESET protocol activity status (* symbol) on display
-	uint16_t tmr10ms = get_tmr10ms();
-	#if defined(CPUARM)
-	uint16_t count = tmr10ms & 0x02BC; // 700*10ms ==  7 SEC
-	#else
-	uint8_t count = tmr10ms & 0x0f; // 15*10ms
-	#endif	  
-
-	if (!count) {
-	#if defined(CPUARM)
-		mav_heartbeat=0;	// reset counter
-		#if 0
-		if (MAVLINK_menu==MENU_DUMP_DIAG) TxPushByte('D');
-		#else
-		;
-		#endif
-	#else
-		if (mav_heartbeat > -30) {
-			// TODO mavlink_system.sysid = g_eeGeneral.mavTargetSystem;
-			mav_heartbeat--;
-
-			if (mav_heartbeat == -30) {
-				MAVLINK_reset();
-				#if !defined(SIMU)
-				telemetryPortInit(9600);
-				#endif
-			}
-		}
-	#endif
-	}
-	*/
-	
 	/* CHANGE BAUDRATE IF USER MODIFY SPEED IN MENU ------- */
 	if (actualbaudrateIdx!=g_eeGeneral.mavbaud) {
 		MAVLINK_Init(false);  
@@ -488,7 +454,7 @@ NOINLINE void processSerialMavlinkData(uint8_t c) {
 				handleMessage(pmavlink_msg);
 				}
 			break;
-	}
+		}
 	// Error occur
 	if (p_status->parse_error) {
 		p_status->parse_state = MAVLINK_PARSE_STATE_IDLE;
@@ -562,8 +528,8 @@ static inline void REC_MAVLINK_MSG_ID_RC_CHANNELS_RAW(const mavlink_message_t* m
  *
  */
 static inline void REC_MAVLINK_MSG_ID_RADIO(const mavlink_message_t* msg) {
-	if (msg->sysid != 51)		// ArduPilot/Arducopter customization
-		return;
+	//if (msg->sysid != 51)		// ArduPilot/Arducopter customization
+	//	return;
 	mavlinkData.pc_rssi =  (mavlink_msg_radio_get_rssi(msg) * 100) / 255;
 	mavlinkData.packet_drop = mavlink_msg_radio_get_rxerrors(msg);
 	mavlinkData.packet_fixed = mavlink_msg_radio_get_fixed(msg);
@@ -590,19 +556,12 @@ static inline void REC_MAVLINK_MSG_ID_VFR_HUD(const mavlink_message_t* msg) {
  *	type and autopilot is used to determine if the UAV is an ArduPlane or Arducopter
  */
 static inline void REC_MAVLINK_MSG_ID_HEARTBEAT(const mavlink_message_t* msg) {
-	mavlinkData.mode  = mavlink_msg_heartbeat_get_base_mode(msg);
-	mavlinkData.custom_mode  = mavlink_msg_heartbeat_get_custom_mode(msg);
-	mavlinkData.status = mavlink_msg_heartbeat_get_system_status(msg);
+	mavlink_msg_heartbeat_decode(msg, &mavlinkData.heartbeat);
+
 	mavlinkData.mav_sysid = msg->sysid;
 	mavlinkData.mav_compid = msg->compid;
-	uint8_t type = mavlink_msg_heartbeat_get_type(msg);
-	uint8_t autopilot = mavlink_msg_heartbeat_get_autopilot(msg);
-	if (type != mavlinkData.type || autopilot != mavlinkData.autopilot) {
-		mavlinkData.type = mavlink_msg_heartbeat_get_type(msg);
-		mavlinkData.autopilot = mavlink_msg_heartbeat_get_autopilot(msg);
-		}
-	mavlinkData.active = (mavlinkData.mode & MAV_MODE_FLAG_SAFETY_ARMED) ? true : false;
-	mavlinkData.heartbeat++;
+	
+	mavlinkData.active = (mavlinkData.heartbeat.base_mode & MAV_MODE_FLAG_SAFETY_ARMED) ? true : false;
 }
 
 static inline void REC_MAVLINK_MSG_ID_HIL_CONTROLS(const mavlink_message_t* msg) {
@@ -805,26 +764,14 @@ static inline void MAVLINK_msg_param_set(uint8_t idx) {
 #endif
 
 /*
-static inline void MAVLINK_msg_request_data_stream_pack_send(uint8_t req_stream_id, uint16_t req_message_rate,
-				uint8_t start_stop) {
+static inline void MAVLINK_msg_request_data_stream_pack_send(uint8_t req_stream_id, uint16_t req_message_rate, uint8_t start_stop) {
 	mavlink_channel_t chan = MAVLINK_COMM_0;
-	mavlink_msg_request_data_stream_send(chan, mavlink_system.sysid, mavlink_system.compid, req_stream_id, req_message_rate,
-					start_stop);
-}
-
-//! \brief old mode switch funtion
-static inline void MAVLINK_msg_action_pack_send(uint8_t action) {
-//	mavlink_channel_t chan = MAVLINK_COMM_0;
-//	mavlink_msg_action_send(chan, mavlink_system.sysid, mavlink_system.compid, action);
-}
-
-//! \brief old mode switch funtion
-static inline void MAVLINK_msg_set_mode_send(uint8_t mode) {
-	mavlink_channel_t chan = MAVLINK_COMM_0;
-	mavlink_msg_set_mode_send(chan, mavlink_system.sysid, mode, 0);
+	mavlink_msg_request_data_stream_send(chan, mavlink_system.sysid, mavlink_system.compid, req_stream_id, req_message_rate, start_stop);
 }
 */
-
+/* Decode the various messages groups APM can send
+ * 
+ */
 static inline void handleMessage(mavlink_message_t* pmavlink_msg) {
 	switch (pmavlink_msg->msgid) {
 		case MAVLINK_MSG_ID_HEARTBEAT:

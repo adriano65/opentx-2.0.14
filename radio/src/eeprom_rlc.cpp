@@ -939,97 +939,10 @@ bool eeModelExists(uint8_t id)
     return EFile::exists(FILE_MODEL(id));
 }
 
-// TODO Now the 2 functions in eeprom_rlc.cpp and eeprom_raw.cpp are really close, should be merged.
-void eeLoadModel(uint8_t id)
-{
-  if (id<MAX_MODELS) {
-
-#if defined(CPUARM)
-    watchdogSetTimeout(500/*5s*/);
-#endif
-
-#if defined(SDCARD)
-    closeLogs();
-#endif
-
-    if (pulsesStarted()) {
-      pausePulses();
-    }
-
-    pauseMixerCalculations();
-
-    theFile.openRlc(FILE_MODEL(id));
-    uint16_t sz = theFile.readRlc((uint8_t*)&g_model, sizeof(g_model));
-
-#ifdef SIMU
-    if (sz > 0 && sz != sizeof(g_model)) {
-      printf("Model data read=%d bytes vs %d bytes\n", sz, (int)sizeof(ModelData));
-    }
-#endif
-
-    bool newModel = false;
-
-    if (sz < 256) {
-      modelDefault(id);
-      eeCheck(true);
-      newModel = true;
-    }
-
-    AUDIO_FLUSH();
-    flightReset();
-    logicalSwitchesReset();
-
-    if (pulsesStarted()) {
-      if (!newModel) {
-        checkAll();
-      }
-      resumePulses();
-    }
-
-    activeFnSwitches = 0;
-    activeFunctions = 0;
-    memclear(lastFunctionTime, sizeof(lastFunctionTime));
-
-#if !defined(PCBSTD)
-    for (uint8_t i=0; i<MAX_TIMERS; i++) {
-      if (g_model.timers[i].persistent) {
-        timersStates[i].val = g_model.timers[i].value;
-      }
-    }
-#endif
-
-#if defined(CPUARM)
-    if (g_model.frsky.mAhPersistent) {
-      frskyData.hub.currentConsumption = g_model.frsky.storedMah;
-    }
-#endif
-
-    LOAD_MODEL_CURVES();
-
-    resumeMixerCalculations();
-    // TODO pulses should be started after mixer calculations ...
-
-#if defined(FRSKY)
-    frskySendAlarms();
-#endif
-
-#if defined(CPUARM) && defined(SDCARD)
-    referenceModelAudioFiles();
-#endif
-
-    LOAD_MODEL_BITMAP();
-    LUA_LOAD_MODEL_SCRIPTS();
-    SEND_FAILSAFE_1S();
-  }
-}
 
 // TODO merge this code with eeprom_arm.cpp one
-void eeReadAll()
-{
-  if (!EeFsOpen() ||
-       EeFsck() < 0 ||
-      !eeLoadGeneral())
-  {
+void eeReadAll() {
+  if (!EeFsOpen() || EeFsck() < 0 || !eeLoadGeneral()) {
     generalDefault();
 
     ALERT(STR_EEPROMWARN, STR_BADEEPROMDATA, AU_BAD_EEPROM);

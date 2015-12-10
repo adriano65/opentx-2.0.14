@@ -109,18 +109,14 @@ typedef struct Location_ {
 } Location_t;
 
 typedef struct MavlinkData_t {
-	uint8_t		status; // System status flag, see MAV_STATUS ENUM
-	uint8_t		type;
-	uint8_t		autopilot;
-	uint8_t		type_autopilot;
-	uint16_t	packet_drop;
-	uint16_t	packet_fixed;
+	uint8_t		mav_sysid;
+	uint8_t		mav_compid;	
 	uint8_t		radio_sysid;
 	uint8_t		radio_compid;
-	uint8_t		mav_sysid;
-	uint8_t		mav_compid;
-	uint8_t		mode;
-	uint32_t	custom_mode;
+	mavlink_heartbeat_t		heartbeat;
+	uint16_t	packet_drop;
+	uint16_t	packet_fixed;
+
 	bool 		active;
 	uint8_t 	nav_mode;
 	uint8_t 	rcv_control_mode;	// System mode, see MAV_MODE ENUM in mavlink/include/mavlink_types.h
@@ -134,7 +130,6 @@ typedef struct MavlinkData_t {
 	
 	uint8_t 	debug;
 	uint16_t	unknow_pckt_cnt;
-	int8_t 		heartbeat;
 
 	// MSG ACTION / ACK
 	uint8_t 	req_mode;

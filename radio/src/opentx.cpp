@@ -302,10 +302,11 @@ void memclear(void *ptr, uint8_t size)
 #endif
 
 void generalDefault() {
-  #pragma message "EEPROM_VER: " STR(EEPROM_VER)
   memclear(&g_eeGeneral, sizeof(g_eeGeneral));
   g_eeGeneral.version  = EEPROM_VER;
+  #pragma message "EEPROM_VER: " STR(EEPROM_VER)
   g_eeGeneral.variant = EEPROM_VARIANT;
+  #pragma message "EEPROM_VARIANT: " STR(EEPROM_VARIANT)
   g_eeGeneral.contrast = 25;
 
 #if defined(PCBTARANIS)
@@ -2530,8 +2531,7 @@ uint8_t calcStickScroll( uint8_t index )
 }
 #endif
 
-void opentxStart()
-{
+void opentxStart() {
   doSplash();
 
 #if defined(DEBUG_TRACE_BUFFER)

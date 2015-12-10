@@ -211,20 +211,24 @@ void lcd_outdezFloat(uint8_t x, uint8_t y, float val, uint8_t precis, uint8_t mo
  *	This funtion can handle ArduPilot and ArduCoper code.
  *	To support new autopilot pilots add a STR_MAVLINK_... to the translations,
  *	and if requred a lut (see arduplane for examle) if there are unused modes
- *	in the sequence.
+ *	in the sequence.MAV_MODE_MANUAL_ARMED
  */
-
 void print_mav_mode(uint8_t x, uint8_t y, uint8_t attr) {
-	switch (mavlinkData.type_autopilot) {
-		case MAV_TYPE_QUADROTOR:
-			lcd_putsiAtt(x,y,STR_MAVLINK_AC_MODES, mavlinkData.custom_mode, attr);
+	switch (mavlinkData.heartbeat.base_mode) {  
+		case MAV_MODE_MANUAL_ARMED:
+			lcd_putsAtt (FW, y, PSTR("Armed"), attr);
 			break;
-		case MAV_TYPE_FIXED_WING:
-			//lcd_putsiAtt(x,y,STR_MAVLINK_AP_MODES, ap_modes_lut[custom_mode],attr);
-			lcd_putsiAtt(x,y,STR_MAVLINK_AP_MODES, mavlinkData.custom_mode, attr);
+		case MAV_MODE_TEST_ARMED:
+			lcd_putsAtt (FW, y, PSTR("Test"), attr);
+			break;
+		case MAV_MODE_STABILIZE_ARMED:
+			lcd_putsAtt (FW, y, PSTR("Stab"), attr);
+			break;
+		case MAV_MODE_AUTO_ARMED:
+			lcd_putsAtt (FW, y, PSTR("Auto"), attr);
 			break;
 		default:
-			lcd_putsAtt (FW, y, PSTR("UNKN MAV TYPE"), attr);
+			lcd_putsAtt (0, 0, PSTR("UNKN Mode"), INVERS);
 			break;
 		}
 }
@@ -233,15 +237,28 @@ void print_mav_mode(uint8_t x, uint8_t y, uint8_t attr) {
  *	Small helper function to print the standard header on the screen.
  */
 void mav_title(const pm_char * s, uint8_t index) {
-  lcd_putsAtt(0, 0, PSTR("MAVLINK"), INVERS);
-  lcd_puts(10 * FW, 0, s);
-  displayScreenIndex(index, MAX_MAVLINK_MENU, INVERS);
-  #if defined(PCBSKY9X)
-  lcd_putc(7 * FW, 0, mav_heartbeat+'0');	/* ok until 9 :-) */
-  #else
-  lcd_putc(7 * FW, 0, (mav_heartbeat > 0) ? '*' : ' ');  
-  #endif
-  lcd_putc(8 * FW, 0, mavlinkData.active ? 'A' : 'N');
+	switch (mavlinkData.mav_sysid) {  
+		case MAV_TYPE_FIXED_WING:
+			lcd_putsAtt (0, 0, PSTR("Plane"), INVERS);
+			break;
+		case MAV_TYPE_QUADROTOR:
+			lcd_putsAtt (0, 0, PSTR("Quadcop"), INVERS);
+			break;
+		case MAV_TYPE_HEXAROTOR:
+			lcd_putsAtt (0, 0, PSTR("HEXAROTOR"), INVERS);
+			break;
+		default:
+			lcd_putsAtt (0, 0, PSTR("UNKN MAV TYP"), INVERS);
+			break;
+		}
+	  lcd_puts(10 * FW, 0, s);
+	  displayScreenIndex(index, MAX_MAVLINK_MENU, INVERS);
+	  #if defined(PCBSKY9X)
+	  lcd_putc(7 * FW, 0, mav_heartbeat+'0');	/* ok until 9 :-) */
+	  #else
+	  lcd_putc(7 * FW, 0, (mav_heartbeat > 0) ? '*' : ' ');  
+	  #endif
+	  lcd_putc(8 * FW, 0, mavlinkData.active ? 'A' : 'N');
 }
 
 /* Global info menu
@@ -275,7 +292,7 @@ void menuTelemetryMavlinkInfos(void) {
 	lcd_putsnAtt(x1, y, STR_MAVLINK_MODE, 4, 0);
 	if (mavlinkData.active)
 		lcd_putsnAtt(x2, y, PSTR("A"), 1, 0);
-	lcd_outdezAtt(xnum, y, mavlinkData.mode, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.heartbeat.base_mode, 0);
 
 	y += FH;
 	lcd_puts(x1, y, PSTR("UNKN PKT"));
@@ -555,7 +572,7 @@ void menuMavlinkDiag(void) {
 	lcd_putsnAtt(x1, y, STR_MAVLINK_MODE, 4, 0);
 	if (mavlinkData.active)
 		lcd_putsnAtt(x2, y, PSTR("A"), 1, 0);
-	lcd_outdezAtt(xnum, y, mavlinkData.mode, 0);
+	lcd_outdezAtt(xnum, y, mavlinkData.heartbeat.base_mode, 0);
 
 	y += FH;
 	lcd_puts(x1, y, PSTR("GPS_RAW_INT"));
