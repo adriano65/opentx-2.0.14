@@ -58,11 +58,11 @@ MAVLINK_DEBUG = NO
 
 # --- use eeprom_raw.cpp ---
 # MAVLINK NO, FRSKY OK for frsky d option (not cable ?!)
-#PCB = SKY9X
+PCB = SKY9X
 
 # --- use eeprom_raw.cpp ---
 # MAVLINK OK, FRSKY OK for frsky d option (not cable ?!)
-PCB = 9XRPRO
+#PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
 #PCB = TARANIS
@@ -216,7 +216,7 @@ PWM_BACKLIGHT = NO
 # SPLASH on START
 # Values = YES, NO, FIXED
 #ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
-ifeq ($(PCB), $(filter $(PCB), TARANIS))
+ifeq ($(PCB), $(filter $(PCB), TARANIS SKY9X))
 SPLASH = YES
 else
 SPLASH = NO
@@ -335,7 +335,11 @@ CURVES = YES
 
 # Global Vars
 # Values = YES, NO
+ifeq ($(PCB), $(filter $(PCB), 9XR128))
+GVARS = NO
+else
 GVARS = YES
+endif
 
 # Enable another 3 positions switch to replace a pot
 # Values = NO, POT1, POT2, POT3,
@@ -466,8 +470,9 @@ ifeq ($(PCB), $(filter $(PCB), STD128 9X128 9XR128))
   OPT = 2
   SDCARD = NO
   THR_TRACE = NO
-  EEPROM_VARIANT += ${M128_VARIANT}
-  CPPDEFS = -DF_CPU=$(F_CPU)UL -DPCBSTD -DCPUM128 -DEEPROM_VARIANT=$(shell echo ${EEPROM_VARIANT} | bc)
+  #EEPROM_VARIANT += ${M128_VARIANT}
+  #CPPDEFS = -DF_CPU=$(F_CPU)UL -DPCBSTD -DCPUM128 -DEEPROM_VARIANT=$(shell echo ${EEPROM_VARIANT} | bc)
+  CPPDEFS = -DF_CPU=$(F_CPU)UL -DPCBSTD -DCPUM128 -DEEPROM_VARIANT=0
   INCDIRS += targets/stock
   BOARDSRC = targets/stock/board_stock.cpp
   EXTRABOARDSRC = targets/stock/lcd_driver.cpp targets/common_avr/telemetry_driver.cpp
