@@ -78,7 +78,7 @@ static uint8_t data_stream_start_stop = 0;
 static int8_t actualbaudrateIdx = 0;
 
 // Telemetry data holder
-MavlinkData mavlinkData;
+Mavlink_t mavlinkRT;
 
 // *****************************************************
 
@@ -152,13 +152,13 @@ void MAVLINK_reset(void) {
 	mavlink_status_t* p_status = mavlink_get_channel_status(MAVLINK_COMM_0);
 	p_status->current_rx_seq = 0;
 	p_status->current_tx_seq = 0;
-	memset(&mavlinkData, 0, sizeof(mavlinkData));
-	mavlinkData.rcv_control_mode = MAV_MODE_PREFLIGHT;
-	mavlinkData.req_mode = MAV_MODE_ENUM_END;
+	memset(&mavlinkRT, 0, sizeof(mavlinkRT));
+	mavlinkRT.rcv_control_mode = MAV_MODE_PREFLIGHT;
+	mavlinkRT.req_mode = MAV_MODE_ENUM_END;
 
-	mavlinkData.heartbeat.type = MAV_TYPE_ENUM_END;
-	mavlinkData.heartbeat.autopilot = MAV_AUTOPILOT_ENUM_END;
-	mavlinkData.heartbeat.custom_mode = MAV_AUTOPILOT_INVALID;
+	mavlinkRT.heartbeat.type = MAV_TYPE_ENUM_END;
+	mavlinkRT.heartbeat.autopilot = MAV_AUTOPILOT_ENUM_END;
+	mavlinkRT.heartbeat.custom_mode = MAV_AUTOPILOT_INVALID;
 
 	data_stream_start_stop = 0;
 }
@@ -166,7 +166,7 @@ void MAVLINK_reset(void) {
 /* initialize serial (see opentx.cpp) */
 void MAVLINK_Init(bool bHardReset) {
 	mav_statustext[0] = 0;
-	actualbaudrateIdx=g_eeGeneral.mavbaud;
+	actualbaudrateIdx=g_model.mavlink.baud;
 	#if !defined(SIMU)	  
 	  if (bHardReset) MAVLINK_reset();
 	  #if defined(CPUARM)
@@ -175,33 +175,33 @@ void MAVLINK_Init(bool bHardReset) {
 		  #if defined(REVX)
 			  #if defined(MAVLINK_DEBUG)
 				// btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
-				UART3_Configure(Index2Baud(g_eeGeneral.mavbaud), Master_frequency);
+				UART3_Configure(Index2Baud(g_model.mavlink.baud), Master_frequency);
 			  #else
 				// in ersky9x CONSOLE_USART==UART0
 				// 9XR-PRO has external module connected via FUTABA Port
 				// telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
-				telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
+				telemetrySecondPortInit(Index2Baud(g_model.mavlink.baud));
 			  #endif
 		  #else
 			#if defined(TARANIS)
-			  telemetrySecondPortInit(Index2Baud(g_eeGeneral.mavbaud));
+			  telemetrySecondPortInit(Index2Baud(g_model.mavlink.baud));
 			#else
 			// SKY9x
 			//telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
 			// 9x 9x128
 			// see targets/common_avr/telemetry_driver.cpp
-			telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
+			telemetryPortInit(Index2Baud(g_model.mavlink.baud));
 			#endif
 		  #endif
 	  #else
-		  telemetryPortInit(Index2Baud(g_eeGeneral.mavbaud));
+		  telemetryPortInit(Index2Baud(g_model.mavlink.baud));
 	  #endif
 	#endif
 }
 
 void MAVLINK_telemetryWakeup() {
 	/* CHANGE BAUDRATE IF USER MODIFY SPEED IN MENU ------- */
-	if (actualbaudrateIdx!=g_eeGeneral.mavbaud) {
+	if (actualbaudrateIdx!=g_model.mavlink.baud) {
 		MAVLINK_Init(false);  
 		}
 	/* ---------------------------------------------------- */
@@ -220,30 +220,30 @@ void MAVLINK_telemetryWakeup() {
 			}	
 		#endif
 	#endif
+	
 }
 
 uint32_t Index2Baud(uint8_t mavbaudIdx) {
 	switch (mavbaudIdx) {
-	  //"4800  ""9600  ""14400 ""19200 ""38400 ""57600 ""76800 ""115200"
+	  //"1200  ""2400  ""4800  ""9600  ""19200 ""38400 ""57600 ""115200"
 	  case 0:
-		return 4800;
+		return 1200;
 	  case 1:
-		return 9600;
+		return 2400;
 	  case 2:
-		return 14400;
+		return 4800;
 	  case 3:
-		return 19200;
+		return 9600;
 	  case 4:
-		return 38400;
+		return 19200;
 	  case 5:
-		return 57600;
+		return 38400;
 	  case 6:
-		return 76800;
+		return 57600;
 	  case 7:
 		return 115200;
-	  default:
-		return 4800;
 	  }
+	return 9600;
 }
 
 #if defined(CPUARM) && !defined(SIMU)
@@ -298,8 +298,8 @@ void request_mavlink_rates() {
     const uint16_t MAVRates[maxStreams] = {0x02, 0x02, 0x05, 0x02, 0x05, 0x02};
     for (int i=0; i < maxStreams; i++) {
         mavlink_msg_request_data_stream_send(MAVLINK_COMM_0,
-											 mavlinkData.radio_sysid, 
-											 mavlinkData.radio_compid,
+											 mavlinkRT.radio_sysid, 
+											 mavlinkRT.radio_compid,
 											 MAVStreams[i], MAVRates[i], 1);
     }
 }
@@ -445,7 +445,7 @@ NOINLINE void processSerialMavlinkData(uint8_t c) {
 				}
 			else {
 				// Successfully got message ------------------------------------------------
-				mavlinkData.packet_fixed++;
+				mavlinkRT.packet_fixed++;
 				
 				p_status->current_rx_seq = pmavlink_msg->seq;
 				//p_status->msg_received = 1;
@@ -462,7 +462,7 @@ NOINLINE void processSerialMavlinkData(uint8_t c) {
 			p_status->parse_state = MAVLINK_PARSE_STATE_GOT_STX;
 			mavlink_start_checksum(pmavlink_msg);
 		}
-		mavlinkData.packet_drop++;
+		mavlinkRT.packet_drop++;
 		p_status->parse_error = 0;
 	}
 	// If a message has been sucessfully decoded, check index
@@ -500,20 +500,20 @@ static inline void REC_MAVLINK_MSG_ID_STATUSTEXT(const mavlink_message_t* msg) {
  *	is not realy of use while flying. The complete message can be decoded in to
  *	a struct with the first two commented lines.
  *  The battery votage is in mV. We divide by 100 to display tenths of volts.'
- *	\todo Add battery remaining variable in mavlinkData struct for estimated
+ *	\todo Add battery remaining variable in mavlinkRT struct for estimated
  *	remaining battery. Decoding function already in place.
  */
 
 static inline void REC_MAVLINK_MSG_ID_SYS_STATUS(const mavlink_message_t* msg) {
-	mavlinkData.vbat = mavlink_msg_sys_status_get_voltage_battery(msg) / 100; // Voltage * 10
-	mavlinkData.ibat = mavlink_msg_sys_status_get_current_battery(msg) / 10;
-	mavlinkData.rem_bat = mavlink_msg_sys_status_get_battery_remaining(msg);
+	mavlinkRT.vbat = mavlink_msg_sys_status_get_voltage_battery(msg) / 100; // Voltage * 10
+	mavlinkRT.ibat = mavlink_msg_sys_status_get_current_battery(msg) / 10;
+	mavlinkRT.rem_bat = mavlink_msg_sys_status_get_battery_remaining(msg);
 
 #ifdef MAVLINK_PARAMS
-	mavlinkData.vbat_low = (getMavlinParamsValue(BATT_MONITOR) > 0)
-					&& (((float) mavlinkData.vbat / 10.0) < getMavlinParamsValue(LOW_VOLT)) && (mavlinkData.vbat > 50);
+	mavlinkRT.vbat_low = (getMavlinParamsValue(BATT_MONITOR) > 0)
+					&& (((float) mavlinkRT.vbat / 10.0) < getMavlinParamsValue(LOW_VOLT)) && (mavlinkRT.vbat > 50);
 #else
-	mavlinkData.vbat_low = (mavlinkData.rem_bat < 10);
+	mavlinkRT.vbat_low = (mavlinkRT.rem_bat < 10);
 #endif
 }
 
@@ -521,7 +521,7 @@ static inline void REC_MAVLINK_MSG_ID_SYS_STATUS(const mavlink_message_t* msg) {
 static inline void REC_MAVLINK_MSG_ID_RC_CHANNELS_RAW(const mavlink_message_t* msg) {
 	uint8_t temp_rssi =(mavlink_msg_rc_channels_raw_get_rssi(msg) * 100) / 255;
 	uint8_t temp_scale = 25 + g_model.mavlink.rc_rssi_scale * 5;
-	mavlinkData.rc_rssi =  (temp_rssi * 100) / temp_scale;
+	mavlinkRT.rc_rssi =  (temp_rssi * 100) / temp_scale;
 }
 
 /*Arducopter specific radio message
@@ -530,11 +530,11 @@ static inline void REC_MAVLINK_MSG_ID_RC_CHANNELS_RAW(const mavlink_message_t* m
 static inline void REC_MAVLINK_MSG_ID_RADIO(const mavlink_message_t* msg) {
 	//if (msg->sysid != 51)		// ArduPilot/Arducopter customization
 	//	return;
-	mavlinkData.pc_rssi =  (mavlink_msg_radio_get_rssi(msg) * 100) / 255;
-	mavlinkData.packet_drop = mavlink_msg_radio_get_rxerrors(msg);
-	mavlinkData.packet_fixed = mavlink_msg_radio_get_fixed(msg);
-	mavlinkData.radio_sysid = msg->sysid;
-	mavlinkData.radio_compid = msg->compid;
+	mavlinkRT.pc_rssi =  (mavlink_msg_radio_get_rssi(msg) * 100) / 255;
+	mavlinkRT.packet_drop = mavlink_msg_radio_get_rxerrors(msg);
+	mavlinkRT.packet_fixed = mavlink_msg_radio_get_fixed(msg);
+	mavlinkRT.radio_sysid = msg->sysid;
+	mavlinkRT.radio_compid = msg->compid;
 }
 static inline void REC_MAVLINK_MSG_ID_RADIO_STATUS(const mavlink_message_t* msg) {
 	REC_MAVLINK_MSG_ID_RADIO(msg);
@@ -542,13 +542,13 @@ static inline void REC_MAVLINK_MSG_ID_RADIO_STATUS(const mavlink_message_t* msg)
 
 //! \brief Navigation output message
 static inline void REC_MAVLINK_MSG_ID_NAV_CONTROLLER_OUTPUT(const mavlink_message_t* msg) {
-	mavlinkData.bearing = mavlink_msg_nav_controller_output_get_target_bearing(msg);
+	mavlinkRT.bearing = mavlink_msg_nav_controller_output_get_target_bearing(msg);
 }
 
 //! \brief Hud navigation message
 static inline void REC_MAVLINK_MSG_ID_VFR_HUD(const mavlink_message_t* msg) {
-	mavlinkData.heading = mavlink_msg_vfr_hud_get_heading(msg);
-	mavlinkData.loc_current.rel_alt = mavlink_msg_vfr_hud_get_alt(msg);
+	mavlinkRT.heading = mavlink_msg_vfr_hud_get_heading(msg);
+	mavlinkRT.loc_current.rel_alt = mavlink_msg_vfr_hud_get_alt(msg);
 }
 
 /*!	\brief Heartbeat message
@@ -556,16 +556,16 @@ static inline void REC_MAVLINK_MSG_ID_VFR_HUD(const mavlink_message_t* msg) {
  *	type and autopilot is used to determine if the UAV is an ArduPlane or Arducopter
  */
 static inline void REC_MAVLINK_MSG_ID_HEARTBEAT(const mavlink_message_t* msg) {
-	mavlink_msg_heartbeat_decode(msg, &mavlinkData.heartbeat);
+	mavlink_msg_heartbeat_decode(msg, &mavlinkRT.heartbeat);
 
-	mavlinkData.mav_sysid = msg->sysid;
-	mavlinkData.mav_compid = msg->compid;
+	mavlinkRT.mav_sysid = msg->sysid;
+	mavlinkRT.mav_compid = msg->compid;
 	
-	mavlinkData.active = (mavlinkData.heartbeat.base_mode & MAV_MODE_FLAG_SAFETY_ARMED) ? true : false;
+	mavlinkRT.active = (mavlinkRT.heartbeat.base_mode & MAV_MODE_FLAG_SAFETY_ARMED) ? true : false;
 }
 
 static inline void REC_MAVLINK_MSG_ID_HIL_CONTROLS(const mavlink_message_t* msg) {
-	mavlinkData.nav_mode = mavlink_msg_hil_controls_get_mode(msg);
+	mavlinkRT.nav_mode = mavlink_msg_hil_controls_get_mode(msg);
 }
 
 /* Process GPS raw integer message
@@ -578,14 +578,14 @@ static inline void REC_MAVLINK_MSG_ID_HIL_CONTROLS(const mavlink_message_t* msg)
  *		- Ground speed in m/s * 100
  */
 static inline void REC_MAVLINK_MSG_ID_GPS_RAW_INT(const mavlink_message_t* msg) {
-	mavlinkData.fix_type = mavlink_msg_gps_raw_int_get_fix_type(msg);
-	mavlinkData.loc_current.lat = mavlink_msg_gps_raw_int_get_lat(msg) / 1E7;
-	mavlinkData.loc_current.lon = mavlink_msg_gps_raw_int_get_lon(msg) / 1E7;
-	mavlinkData.loc_current.gps_alt = mavlink_msg_gps_raw_int_get_alt(msg) / 1E3;
-	mavlinkData.eph = mavlink_msg_gps_raw_int_get_eph(msg) / 100.0;
-	mavlinkData.course = mavlink_msg_gps_raw_int_get_cog(msg) / 100.0;
-	mavlinkData.v = mavlink_msg_gps_raw_int_get_vel(msg) / 100.0 ;
-	mavlinkData.satellites_visible = mavlink_msg_gps_raw_int_get_satellites_visible(msg);
+	mavlinkRT.fix_type = mavlink_msg_gps_raw_int_get_fix_type(msg);
+	mavlinkRT.loc_current.lat = mavlink_msg_gps_raw_int_get_lat(msg) / 1E7;
+	mavlinkRT.loc_current.lon = mavlink_msg_gps_raw_int_get_lon(msg) / 1E7;
+	mavlinkRT.loc_current.gps_alt = mavlink_msg_gps_raw_int_get_alt(msg) / 1E3;
+	mavlinkRT.eph = mavlink_msg_gps_raw_int_get_eph(msg) / 100.0;
+	mavlinkRT.course = mavlink_msg_gps_raw_int_get_cog(msg) / 100.0;
+	mavlinkRT.v = mavlink_msg_gps_raw_int_get_vel(msg) / 100.0 ;
+	mavlinkRT.satellites_visible = mavlink_msg_gps_raw_int_get_satellites_visible(msg);
 }
 
 #ifdef MAVLINK_PARAMS
@@ -752,7 +752,7 @@ static inline void MAVLINK_msg_param_set(uint8_t idx) {
 		}
 		*p++ = c;
 	}
-	//float param_value = ((float) mavlinkData.params[idx].pi_param[subIdx].pi_value / 100.00 + 0.005);
+	//float param_value = ((float) mavlinkRT.params[idx].pi_param[subIdx].pi_value / 100.00 + 0.005);
 	float param_value = getParam(idx)->value;
 
 	mavlink_channel_t chan = MAVLINK_COMM_0;
@@ -811,7 +811,7 @@ static inline void handleMessage(mavlink_message_t* pmavlink_msg) {
 			break;
 	#endif
 		default:
-			mavlinkData.unknow_pckt_cnt++;
+			mavlinkRT.unknow_pckt_cnt++;
 			break;
 	}
 
@@ -830,7 +830,7 @@ static inline void handleMessage(mavlink_message_t* pmavlink_msg) {
 			watch_mav_req_id_action--;
 			// Repeat  is not ack : 150ms*0x07
 			if ((watch_mav_req_id_action & 0x07) == 0) {
-				uint8_t action = MAVLINK_CtrlMode2Action(mavlinkData.req_mode);
+				uint8_t action = MAVLINK_CtrlMode2Action(mavlinkRT.req_mode);
 				MAVLINK_msg_action_pack_send(action);
 				char *ptr = mav_statustext;
 				*ptr++ = 'R';
@@ -841,9 +841,9 @@ static inline void handleMessage(mavlink_message_t* pmavlink_msg) {
 				*ptr++ = 0;
 			}
 		}
-		if (mavlinkData.ack_result < 5) {
-			if (mavlinkData.ack_result > 0) {
-				mavlinkData.ack_result++;
+		if (mavlinkRT.ack_result < 5) {
+			if (mavlinkRT.ack_result > 0) {
+				mavlinkRT.ack_result++;
 			}
 		}
 		break;

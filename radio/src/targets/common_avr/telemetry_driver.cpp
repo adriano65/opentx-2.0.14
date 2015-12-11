@@ -111,6 +111,7 @@ void telemetryPortInit(uint32_t baudrate)
   PORTE &= ~(1 << PORTE0); // disable pullup on RXD0 pin
 
   #if 1
+  #pragma message "VAR SPEED " STR(baudrate)
   /* FIXME: working if NO Double speed */
   uint16_t UBRR_VALUE=( F_CPU / ( 16 * baudrate)) - 1;
   UBRR0H = (unsigned char)(UBRR_VALUE>>8);
@@ -120,6 +121,7 @@ void telemetryPortInit(uint32_t baudrate)
   
   #undef BAUD
   #define BAUD 9600
+  #pragma message "FIXED SPEED " STR(BAUD)
   #include <util/setbaud.h>
   UBRR0H = UBRRH_VALUE;
   UBRR0L = UBRRL_VALUE;

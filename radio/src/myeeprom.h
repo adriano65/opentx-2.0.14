@@ -437,9 +437,9 @@ PACK(typedef struct t_EEGeneral {
   uint8_t   disableAlarmWarning:1;
   uint8_t   stickMode:2;
   int8_t    timezone:5;
-  uint8_t   spare1:1;
+  uint8_t   telemetryCom:2;
   uint8_t   inactivityTimer;
-  uint8_t   mavbaud:3;
+  uint8_t   telemetryMirrorCom:2;
   SPLASH_MODE; /* 3bits */
   int8_t    hapticMode:2;    // -2=quiet, -1=only alarms, 0=no keys, 1=all
   AVR_FIELD(uint8_t blOffBright:4)
@@ -1267,13 +1267,13 @@ enum FrskyVoltsSource {
 #endif
 
 #if defined(MAVLINK)
-PACK(typedef struct MavLinkData_t {
+PACK(typedef struct MavLinkData_ {
   uint8_t rc_rssi_scale:4;
   uint8_t pc_rssi_en:1;
   uint8_t bluetooth_en:1;
   uint8_t mavreq_en:1;
-  uint8_t spare2[3];
-}) MavLinkData;
+  uint8_t baud:3;
+  }) MavLinkData_t;
 #endif
 
 enum SwashType {
@@ -1711,12 +1711,6 @@ enum FailsafeModes {
   FAILSAFE_LAST = FAILSAFE_RECEIVER
 };
 
-#if defined(FRSKY) || !defined(PCBSTD)
-  #define TELEMETRY_DATA FrSkyData frsky;
-#else
-  #define TELEMETRY_DATA
-#endif
-
 #if defined(CPUARM) || defined(PCBGRUVIN9X) || defined(PCBMEGA2560)
   #define BeepANACenter uint16_t
 #else
@@ -1792,45 +1786,47 @@ enum TelemetryProtocol {
 
 PACK(typedef struct t_ModelData {
   ModelHeader header;
-  TimerData timers[MAX_TIMERS];
-  AVR_FIELD(uint8_t   protocol:3)
-  uint8_t   telemetryProtocol:3;
-  uint8_t   thrTrim:1;            // Enable Throttle Trim
-  AVR_FIELD(int8_t    ppmNCH:4)
-  ARM_FIELD(int8_t    spare2:4)
-  int8_t    trimInc:3;            // Trim Increments
-  uint8_t   disableThrottleWarning:1;
+  TimerData 		timers[MAX_TIMERS];
+  AVR_FIELD(uint8_t protocol:3)
+  uint8_t   		telemetryProtocol:3;
+  uint8_t			thrTrim:1;            // Enable Throttle Trim
+  AVR_FIELD(int8_t	ppmNCH:4)
+  ARM_FIELD(int8_t	spare2:4)
+  int8_t    		trimInc:3;            // Trim Increments
+  uint8_t   		disableThrottleWarning:1;
   ARM_FIELD(uint8_t displayChecklist:1)
   AVR_FIELD(uint8_t pulsePol:1)
-  uint8_t   extendedLimits:1;
-  uint8_t   extendedTrims:1;
-  uint8_t   throttleReversed:1;
+  uint8_t   		extendedLimits:1;
+  uint8_t   		extendedTrims:1;
+  uint8_t   		throttleReversed:1;
   AVR_FIELD(int8_t ppmDelay)
-  BeepANACenter beepANACenter;        // 1<<0->A1.. 1<<6->A7
-  MixData   mixData[MAX_MIXERS];
-  LimitData limitData[NUM_CHNOUT];
-  ExpoData  expoData[MAX_EXPOS];
+  BeepANACenter		beepANACenter;        // 1<<0->A1.. 1<<6->A7
+  MixData   		mixData[MAX_MIXERS];
+  LimitData 		limitData[NUM_CHNOUT];
+  ExpoData  		expoData[MAX_EXPOS];
   
-  CURVDATA  curves[MAX_CURVES];
-  int8_t    points[NUM_POINTS];
+  CURVDATA  		curves[MAX_CURVES];
+  int8_t    		points[NUM_POINTS];
   
   LogicalSwitchData logicalSw[NUM_LOGICAL_SWITCH];
-  CustomFnData funcSw[NUM_CFN];
-  SwashRingData swashR;
-  FlightModeData flightModeData[MAX_FLIGHT_MODES];
+  CustomFnData		funcSw[NUM_CFN];
+  SwashRingData		swashR;
+  FlightModeData	flightModeData[MAX_FLIGHT_MODES];
 
   AVR_FIELD(int8_t ppmFrameLength)     // 0=22.5ms  (10ms-30ms) 0.5ms increments
-  uint8_t   thrTraceSrc;
+  uint8_t   		thrTraceSrc;
   
-  swstate_t switchWarningStates;
-  uint8_t nSwToWarn;
+  swstate_t 		switchWarningStates;
+  uint8_t 			nSwToWarn;
 
   MODEL_GVARS_DATA
 
-  TELEMETRY_DATA
+#if defined(FRSKY)
+  FrSkyData frsky;
+#endif
 
 #if defined(MAVLINK)
-  MavLinkData mavlink;
+  MavLinkData_t mavlink;
 #endif
   
   MODELDATA_EXTRA

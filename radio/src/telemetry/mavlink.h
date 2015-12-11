@@ -108,7 +108,7 @@ typedef struct Location_ {
 	float rel_alt;
 } Location_t;
 
-typedef struct MavlinkData_t {
+typedef struct Mavlink_ {
 	uint8_t		mav_sysid;
 	uint8_t		mav_compid;	
 	uint8_t		radio_sysid;
@@ -152,10 +152,10 @@ typedef struct MavlinkData_t {
 	MavlinkParam_t params[NB_PARAMS];
 #endif
 
-} MavlinkData;
+} Mavlink_t;
 
 // Telemetry data hold
-extern MavlinkData mavlinkData;
+extern Mavlink_t mavlinkRT;
 
 /*
  * Funtion definitions

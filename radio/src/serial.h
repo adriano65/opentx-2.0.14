@@ -24,18 +24,6 @@ typedef enum serial_tx_state_ {
 } serial_tx_state_t;
 extern serial_tx_state_t serialTxState;
 
-//! \brief Baudrate selection.
-enum SERIAL_BAUDS {
-	BAUD_4800 = 0,
-	BAUD_9600,
-	BAUD_14400,
-	BAUD_19200,
-	BAUD_38400,
-	BAUD_57600,
-	BAUD_76800,
-	BAUD_115200
-};
-
 //! \brief Definition of baudrate settings item choices.
 typedef void (*SerialFuncP)(uint8_t event);
 

@@ -54,11 +54,11 @@ MAVLINK_DEBUG = NO
 #PCB = 9X
 
 # --- use eeprom_rlc.cpp ---
-PCB = 9XR128
+#PCB = 9XR128
 
 # --- use eeprom_raw.cpp ---
 # MAVLINK NO, FRSKY OK for frsky d option (not cable ?!)
-#PCB = SKY9X
+PCB = SKY9X
 
 # --- use eeprom_raw.cpp ---
 # MAVLINK OK, FRSKY OK for frsky d option (not cable ?!)
