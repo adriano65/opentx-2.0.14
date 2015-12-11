@@ -670,7 +670,7 @@ void menuGeneralSetup(uint8_t event) {
         break;
 #endif
 		
-#if defined(FRSKY)
+#if defined(MAVLINK)
       case ITEM_SETUP_MAVCOM:
 			g_eeGeneral.telemetryCom = selectMenuItem( MODEL_SETUP_2ND_COLUMN
 													  , y

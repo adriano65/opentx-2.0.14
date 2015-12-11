@@ -266,8 +266,7 @@ enum AlarmsCheckSteps {
   ALARM_STEPS_COUNT
 };
 
-void FRSKY_telemetryWakeup()
-{
+void FRSKY_telemetryWakeup() {
 #if defined(CPUARM)
   uint8_t requiredTelemetryProtocol = MODEL_TELEMETRY_PROTOCOL();
   if (telemetryProtocol != requiredTelemetryProtocol) {

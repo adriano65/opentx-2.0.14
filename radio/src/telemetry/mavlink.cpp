@@ -200,12 +200,6 @@ void MAVLINK_Init(bool bHardReset) {
 }
 
 void MAVLINK_telemetryWakeup() {
-	/* CHANGE BAUDRATE IF USER MODIFY SPEED IN MENU ------- */
-	if (actualbaudrateIdx!=g_model.mavlink.baud) {
-		MAVLINK_Init(false);  
-		}
-	/* ---------------------------------------------------- */
-	
 	#if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
 		rxPdcUsart(processSerialMavlinkData);
 	#else
