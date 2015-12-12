@@ -58,14 +58,14 @@ MAVLINK_DEBUG = NO
 
 # --- use eeprom_raw.cpp ---
 # MAVLINK NO, FRSKY OK for frsky d option (not cable ?!)
-PCB = SKY9X
+#PCB = SKY9X
 
 # --- use eeprom_raw.cpp ---
 # MAVLINK OK, FRSKY OK for frsky d option (not cable ?!)
 #PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
-#PCB = TARANIS
+PCB = TARANIS
 
 #------- END BUILD OPTIONS ---------------------------
 

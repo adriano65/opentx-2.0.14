@@ -591,11 +591,10 @@ void FRSKY_Init(void) {
 #if defined(PCBTARANIS)
   if (telemetryProtocol == PROTOCOL_FRSKY_D) {
     telemetryPortInit(FRSKY_D_BAUDRATE);
-  }
+	}
   else if (telemetryProtocol==PROTOCOL_FRSKY_D_SECONDARY) {
-    telemetryPortInit(0);
-    telemetrySecondPortInit(FRSKY_D_BAUDRATE);
-  }
+		  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
+		  }
   else {
     telemetryPortInit(FRSKY_SPORT_BAUDRATE);
   }

@@ -183,15 +183,16 @@ void MAVLINK_Init(bool bHardReset) {
 				telemetrySecondPortInit(Index2Baud(g_model.mavlink.baud));
 			  #endif
 		  #else
-			#if defined(TARANIS)
-			  telemetrySecondPortInit(Index2Baud(g_model.mavlink.baud));
-			#else
-			// SKY9x
-			//telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
-			// 9x 9x128
-			// see targets/common_avr/telemetry_driver.cpp
-			telemetryPortInit(Index2Baud(g_model.mavlink.baud));
-			#endif
+			  #if defined(TARANIS)
+				/* my taranis is wired on first and second serial (first is RX only) :-)
+				 */
+				//telemetryPortInit(Index2Baud(g_model.mavlink.baud));
+				telemetrySecondPortInit(Index2Baud(g_model.mavlink.baud));
+			  #else
+				// SKY9x
+				//telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
+				telemetryPortInit(Index2Baud(g_model.mavlink.baud));
+			  #endif
 		  #endif
 	  #else
 		  telemetryPortInit(Index2Baud(g_model.mavlink.baud));
