@@ -104,8 +104,7 @@ ISR(USART0_RX_vect)
   UCSR0B |= (1 << RXCIE0); // enable Interrupt
 }
 
-void telemetryPortInit(uint32_t baudrate)
-{
+void telemetryPortInit(uint32_t baudrate) {
 #if !defined(SIMU)
   DDRE &= ~(1 << DDE0);    // set RXD0 pin as input
   PORTE &= ~(1 << PORTE0); // disable pullup on RXD0 pin
@@ -144,9 +143,10 @@ void telemetryPortInit(uint32_t baudrate)
 #endif
 }
 
-void telemetryTransmitBuffer()
-{
+void telemetryTransmitBuffer() {
   UCSR0B |= (1 << UDRIE0); // enable  UDRE0 interrupt
 }
+
+void telemetrySecondPortInit(uint32_t baudrate) { ; }
 
 #endif

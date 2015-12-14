@@ -37,3 +37,4 @@
 // Telemetry driver
 void telemetryPortInit(uint32_t baudrate);
 void telemetryTransmitBuffer();
+void telemetrySecondPortInit(uint32_t baudrate);

@@ -179,8 +179,8 @@ enum menuGeneralSetupItems {
   CASE_CPUARM(ITEM_SETUP_LANGUAGE)
   CASE_CPUARM(ITEM_SETUP_IMPERIAL)
   IF_FAI_CHOICE(ITEM_SETUP_FAI)
-  CASE_FRSKY(ITEM_SETUP_FRCOM)
-  CASE_MAVLINK(ITEM_SETUP_MAVCOM)
+  CASE_MAVLINKFRSKY(ITEM_SETUP_TELCOM)
+  CASE_MAVLINKFRSKY(ITEM_SETUP_MIRRCOM)
   CASE_CPUARM(ITEM_SETUP_SWITCHES_DELAY)
   ITEM_SETUP_RX_CHANNEL_ORD,
   ITEM_SETUP_STICK_MODE_LABELS,
@@ -246,8 +246,8 @@ void menuGeneralSetup(uint8_t event) {
 			CASE_CPUARM(0) 							// ITEM_SETUP_LANGUAGE
 			CASE_CPUARM(0) 							// ITEM_SETUP_IMPERIAL
 			IF_FAI_CHOICE(0) 						// ITEM_SETUP_FAI
-			CASE_FRSKY(0) 							// ITEM_SETUP_FRCOM
-			CASE_MAVLINK(0) 						// ITEM_SETUP_MAVCOM
+			CASE_MAVLINKFRSKY(0)					// ITEM_SETUP_TELCOM
+			CASE_MAVLINKFRSKY(0)					// ITEM_SETUP_MIRRCOM
 			CASE_CPUARM(0) 							// ITEM_SETUP_SWITCHES_DELAY
 			0										// ITEM_SETUP_RX_CHANNEL_ORD
 		  , COL_TX_MODE								// ITEM_SETUP_STICK_MODE_LABELS
@@ -656,26 +656,23 @@ void menuGeneralSetup(uint8_t event) {
         break;
 #endif
 		
-#if defined(FRSKY)
-      case ITEM_SETUP_FRCOM:
+#if defined(FRSKY) || defined(MAVLINK)
+      case ITEM_SETUP_TELCOM:
 			g_eeGeneral.telemetryMirrorCom = selectMenuItem( MODEL_SETUP_2ND_COLUMN
 													  , y
-													  , STR_TELEMETRY_TYPE
-													  , PSTR("\004tty0")
+													  , PSTR("Telem com")
+													  , PSTR("\004com0""com1""com2""com3")
 													  , g_eeGeneral.telemetryMirrorCom
 													  , 0
 													  , 3
 													  , attr
 													  , event);
         break;
-#endif
-		
-#if defined(MAVLINK)
-      case ITEM_SETUP_MAVCOM:
+      case ITEM_SETUP_MIRRCOM:
 			g_eeGeneral.telemetryCom = selectMenuItem( MODEL_SETUP_2ND_COLUMN
 													  , y
-													  , STR_TELEMETRY_TYPE
-													  , PSTR("\004tty0")
+													  , PSTR("Mirror com")
+													  , PSTR("\004com0""com1""com2""com3")
 													  , g_eeGeneral.telemetryCom
 													  , 0
 													  , 3

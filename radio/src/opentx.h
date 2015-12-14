@@ -150,6 +150,12 @@
   #define CASE_SPLASH(x)
 #endif
 
+#if defined(FRSKY) || defined(MAVLINK)
+  #define CASE_MAVLINKFRSKY(x) x,
+#else
+  #define CASE_MAVLINKFRSKY(x)
+#endif
+
 #if defined(FRSKY)
   #define CASE_FRSKY(x) x,
 #else

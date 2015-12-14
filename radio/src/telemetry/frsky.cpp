@@ -588,27 +588,26 @@ void telemetryReset() {
 }
 
 void FRSKY_Init(void) {
-#if defined(PCBTARANIS)
-  if (telemetryProtocol == PROTOCOL_FRSKY_D) {
-    telemetryPortInit(FRSKY_D_BAUDRATE);
-	}
-  else if (telemetryProtocol==PROTOCOL_FRSKY_D_SECONDARY) {
+#if !defined(SIMU)
+	switch (g_eeGeneral.telemetryMirrorCom) {
+	  case 0:
+		  // SKY9x
+		  //telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
+		  telemetryPortInit(FRSKY_D_BAUDRATE);
+		  break;			  
+	  case 1:
+		  // in ersky9x CONSOLE_USART==UART0
+		  // 9XR-PRO has external module connected via FUTABA Port
+		  // telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
+		  /* my taranis is wired on first and second serial (first is RX only) :-) */
 		  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
-		  }
-  else {
-    telemetryPortInit(FRSKY_SPORT_BAUDRATE);
-  }
-#elif defined(CPUARM)
-	#if defined(REVX)
-	  telemetryPortInit(0);
-	  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
-	#else
-	  telemetryPortInit(FRSKY_D_BAUDRATE);
-	#endif
-#elif !defined(SIMU)
-  telemetryPortInit(FRSKY_D_BAUDRATE);
+		  break;			  
+	  case 2:
+		  // btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
+		  //UART3_Configure(Index2Baud(g_model.mavlink.baud), Master_frequency);
+		  break;			  
+	  }
 #endif
-
   // we don't reset the telemetry here as we would also reset the consumption after model load
 }
 
