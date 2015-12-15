@@ -658,26 +658,29 @@ void menuGeneralSetup(uint8_t event) {
 		
 #if defined(FRSKY) || defined(MAVLINK)
       case ITEM_SETUP_TELCOM:
-			g_eeGeneral.telemetryMirrorCom = selectMenuItem( MODEL_SETUP_2ND_COLUMN
-													  , y
-													  , PSTR("Telem com")
-													  , PSTR("\004com0""com1""com2""com3")
-													  , g_eeGeneral.telemetryMirrorCom
-													  , 0
-													  , 3
-													  , attr
-													  , event);
-        break;
-      case ITEM_SETUP_MIRRCOM:
 			g_eeGeneral.telemetryCom = selectMenuItem( MODEL_SETUP_2ND_COLUMN
 													  , y
-													  , PSTR("Mirror com")
+													  , PSTR("Telem com")
 													  , PSTR("\004com0""com1""com2""com3")
 													  , g_eeGeneral.telemetryCom
 													  , 0
 													  , 3
 													  , attr
 													  , event);
+			//eeDirty(EE_MODEL);
+        break;
+		
+      case ITEM_SETUP_MIRRCOM:
+			g_eeGeneral.telemetryMirrorCom = selectMenuItem( MODEL_SETUP_2ND_COLUMN
+													  , y
+													  , PSTR("Mirror com")
+													  , PSTR("\004com0""com1""com2""com3")
+													  , g_eeGeneral.telemetryMirrorCom
+													  , 0
+													  , 3
+													  , attr
+													  , event);
+			//eeDirty(EE_MODEL);
         break;
 #endif
 

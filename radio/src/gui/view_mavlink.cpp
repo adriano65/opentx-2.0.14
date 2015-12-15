@@ -524,9 +524,8 @@ void menuTelemetryMavlinkSetup(uint8_t event) {
 				break;
 			case ITEM_MAVLINK_BAUD:
 				g_model.mavlink.baud = selectMenuItem(RADIO_SETUP_2ND_COLUMN, y, STR_MAVLINK_BAUD_LABEL, STR_MAVLINK_BAUDS, g_model.mavlink.baud, 0, 7, attr, event);
+				//MAVLINK_Init(false);
 				break;
-			//CASE_MAVLINK(ITEM_MAVLINK_BAUD)
-				
 		}
 	}
 }

@@ -54,7 +54,7 @@ MAVLINK_DEBUG = NO
 #PCB = 9X
 
 # --- use eeprom_rlc.cpp ---
-PCB = 9XR128
+#PCB = 9XR128
 
 # --- use eeprom_raw.cpp ---
 # MAVLINK NO, FRSKY OK for frsky d option (not cable ?!)
@@ -62,7 +62,7 @@ PCB = 9XR128
 
 # --- use eeprom_raw.cpp ---
 # MAVLINK OK, FRSKY OK for frsky d option (not cable ?!)
-#PCB = 9XRPRO
+PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
 #PCB = TARANIS
@@ -215,8 +215,8 @@ PWM_BACKLIGHT = NO
 
 # SPLASH on START
 # Values = YES, NO, FIXED
-#ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
-ifeq ($(PCB), $(filter $(PCB), TARANIS SKY9X))
+ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
+#ifeq ($(PCB), $(filter $(PCB), TARANIS SKY9X))
 SPLASH = YES
 else
 SPLASH = NO
@@ -378,7 +378,7 @@ SHELL = sh
 IMG2LBM = -python ../util/img2lbm.py
 BIN2LBM = -python ../util/bin2lbm.py
 TRANSLATE = -python ../util/translate.py
-VERSION = 0.2.15
+VERSION = 0.2.16
 
 SRC =
 CPPSRC =

@@ -876,11 +876,11 @@ void RlcFile::DisplayProgressBar(uint8_t x)
 }
 #endif
 
-#if defined(PCBSTD)
-  #define CHECK_EEPROM_VARIANT() (g_eeGeneral.variant == EEPROM_VARIANT)
-#else
+//#if defined(PCBSTD)
+//  #define CHECK_EEPROM_VARIANT() (g_eeGeneral.variant == EEPROM_VARIANT)
+//#else
   #define CHECK_EEPROM_VARIANT() (1)
-#endif
+//#endif
 
 // For conversions ...
 #if defined(CPUARM)
@@ -899,8 +899,7 @@ void loadModel(int index)
 }
 #endif
 
-bool eeLoadGeneral()
-{
+bool eeLoadGeneral() {
   theFile.openRlc(FILE_GENERAL);
   if (theFile.readRlc((uint8_t*)&g_eeGeneral, 1) == 1 && g_eeGeneral.version == EEPROM_VER) {
     theFile.openRlc(FILE_GENERAL);
@@ -908,9 +907,9 @@ bool eeLoadGeneral()
 	
     if (theFile.readRlc((uint8_t*)&g_eeGeneral, sizeof(g_eeGeneral)) <= sizeof(EEGeneral) && CHECK_EEPROM_VARIANT()) {
       return true;
-    }
+	  }
     TRACE("sizeof(g_eeGeneral) %d, sizeof(EEGeneral) %d", sizeof(g_eeGeneral), sizeof(EEGeneral));
-  }
+	}
 
 #if defined(CPUARM)
   if (g_eeGeneral.version != EEPROM_VER) {

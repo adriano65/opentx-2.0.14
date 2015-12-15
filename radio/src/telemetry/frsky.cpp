@@ -589,7 +589,7 @@ void telemetryReset() {
 
 void FRSKY_Init(void) {
 #if !defined(SIMU)
-	switch (g_eeGeneral.telemetryMirrorCom) {
+	switch (g_eeGeneral.telemetryCom) {
 	  case 0:
 		  // SKY9x
 		  //telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
