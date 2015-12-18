@@ -189,6 +189,7 @@ void MAVLINK_Init(bool bHardReset) {
 			break;			  
 		}
 	#endif
+	TRACE("MAVLINK_Init %d", bHardReset ? "true" : "false");
 }
 
 void MAVLINK_telemetryWakeup() {
@@ -364,6 +365,7 @@ NOINLINE void processSerialMavlinkData(uint8_t c) {
 				p_status->parse_state = MAVLINK_PARSE_STATE_GOT_STX;
 				mavlink_start_checksum(pmavlink_msg);
 				}
+			TRACE("MAVLINK_PARSE_STATE %d", p_status->parse_state);
 			break;
 
 		case MAVLINK_PARSE_STATE_GOT_STX:
@@ -573,6 +575,14 @@ static inline void REC_MAVLINK_MSG_ID_GPS_RAW_INT(const mavlink_message_t* msg) 
 	mavlinkRT.v = mavlink_msg_gps_raw_int_get_vel(msg) / 100.0 ;
 	mavlinkRT.satellites_visible = mavlink_msg_gps_raw_int_get_satellites_visible(msg);
 }
+
+static inline void REC_MAVLINK_MESSAGE_INFO_ATTITUDE(const mavlink_message_t* msg) {
+  ;
+}
+
+static inline void REC_MAVLINK_MESSAGE_INFO_SYSTEM_TIME(const mavlink_message_t* msg) {
+}
+
 
 #ifdef MAVLINK_PARAMS
 const pm_char *getParamId(uint8_t idx) {
@@ -791,6 +801,13 @@ static inline void handleMessage(mavlink_message_t* pmavlink_msg) {
 		case MAVLINK_MSG_ID_GPS_RAW_INT:
 			REC_MAVLINK_MSG_ID_GPS_RAW_INT(pmavlink_msg);
 			break;
+		case MAVLINK_MSG_ID_ATTITUDE:
+			REC_MAVLINK_MESSAGE_INFO_ATTITUDE(pmavlink_msg);
+			break;
+		case MAVLINK_MSG_ID_SYSTEM_TIME:
+			REC_MAVLINK_MESSAGE_INFO_SYSTEM_TIME(pmavlink_msg);
+			break;
+			
 	#ifdef MAVLINK_PARAMS
 		case MAVLINK_MSG_ID_PARAM_VALUE:
 			REC_MAVLINK_MSG_ID_PARAM_VALUE(pmavlink_msg);
@@ -805,7 +822,7 @@ static inline void handleMessage(mavlink_message_t* pmavlink_msg) {
 
 
 /*!	\brief Looks like some kind of task switcher on a timer
- *	\todo Figure out where this was used for and intergrate in current
+ *	\todo Figure out where this was used for and integrate in current
  *	implemnetation. Function disabled without any side affects.
  */
 #if 0

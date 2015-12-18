@@ -37,6 +37,7 @@
 
 #define MAV_SYSTEM_ID	1
 
+
 //#undef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 #define MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -48,6 +49,8 @@ extern mavlink_system_t mavlink_system;
 
 #include "../GCS_MAVLink/include_v1.0/ardupilotmega/mavlink.h"
 
+//#define MAVLINK_BIG_ENDIAN 1
+//#undef MAVLINK_LITTLE_ENDIAN 1
 /*
 static const uint8_t ap_modes_lut[18] PROGMEM = {0,1,2,3,12,4,5,12,12,12,6,7,8,9,12,12,10,11};
 */

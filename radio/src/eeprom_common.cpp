@@ -61,14 +61,15 @@ void eeLoadModelHeaders()
 // TODO Now the 2 functions in eeprom_rlc.cpp and eeprom_raw.cpp are really close, should be merged.
 void eeLoadModel(uint8_t id) {
   if (id<MAX_MODELS) {
+	TRACE("eeLoadModel %d", id);
 
-#if defined(CPUARM)
+	#if defined(CPUARM)
     watchdogSetTimeout(500/*5s*/);
-#endif
+	#endif
 
-#if defined(SDCARD)
+	#if defined(SDCARD)
     closeLogs();
-#endif
+	#endif
 
     if (pulsesStarted()) {
       pausePulses();
@@ -86,11 +87,11 @@ void eeLoadModel(uint8_t id) {
     uint16_t size = theFile.readRlc((uint8_t*)&g_model, sizeof(g_model));
 	#endif
 
-#ifdef SIMU
+	#ifdef SIMU
     if (size > 0 && size != sizeof(g_model)) {
       printf("Model data read=%d bytes vs %d bytes\n", size, (int)sizeof(ModelData));
-    }
-#endif
+	  }
+	#endif
 
     bool newModel = false;
 
@@ -112,21 +113,21 @@ void eeLoadModel(uint8_t id) {
     if (pulsesStarted()) {
       if (!newModel) {
         checkAll();
-      }
+		}
       resumePulses();
-    }
+	  }
 
     activeFnSwitches = 0;
     activeFunctions = 0;
     memclear(lastFunctionTime, sizeof(lastFunctionTime));
 
-#if !defined(PCBSTD)
+	#if !defined(PCBSTD)
     for (uint8_t i=0; i<MAX_TIMERS; i++) {
       if (g_model.timers[i].persistent) {
         timersStates[i].val = g_model.timers[i].value;
-      }
-    }
-#endif
+		}
+	  }
+	#endif
 
 	switch (g_model.telemetryProtocol) {
 	  #if defined(FRSKY)

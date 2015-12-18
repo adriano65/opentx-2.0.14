@@ -18,6 +18,7 @@
  * - Rob Thomson
  * - Romolo Manfredini <romolo.manfredini@gmail.com>
  * - Thomas Husterer
+ * - Adriano Carosso <adriano.carosso@gmail.com>
  *
  * opentx is based on code named
  * gruvin9x by Bryan J. Rentoul: http://code.google.com/p/gruvin9x/,
@@ -70,7 +71,7 @@ enum menuMavlinkSetupItems {
 	ITEM_MAVLINK_MAX
 };
 
-//Menu index variable, initialized on info menu.
+// Menu index variable, initialized on info menu.
 uint8_t MAVLINK_menu = MENU_INFO;
 
 #define APSIZE (BSS | DBLSIZE)
@@ -150,9 +151,7 @@ void menuTelemetryMavlink(uint8_t event) {
  *	\param mode Use one of the defines in lcd.h line 81
  *	The maximum value is 9999. The position is the position of the ones, see below for explanation "*" marks
  *	the x position.
- *	\verbatim
-          *
-       9999.9999 \endverbatim
+ *	\verbatim 9999.9999 \endverbatim
  */
 void lcd_outdezFloat(uint8_t x, uint8_t y, float val, uint8_t precis, uint8_t mode) {
 	char c;
@@ -206,36 +205,49 @@ void lcd_outdezFloat(uint8_t x, uint8_t y, float val, uint8_t precis, uint8_t mo
 	}
 }
 
-/*Flightmode string printer
+/*	Flightmode string printer
  *	Decodes the flight mode from Mavlink custom mode enum to a string.
  *	This funtion can handle ArduPilot and ArduCoper code.
  *	To support new autopilot pilots add a STR_MAVLINK_... to the translations,
  *	and if requred a lut (see arduplane for examle) if there are unused modes
  *	in the sequence.MAV_MODE_MANUAL_ARMED
+ *  -----------------------------------------------
+ * 	base_mode     uint8_t     System mode bitfield
  */
-void print_mav_mode(uint8_t x, uint8_t y, uint8_t attr) {
-	switch (mavlinkRT.heartbeat.base_mode) {  
-		case MAV_MODE_MANUAL_ARMED:
-			//lcd_putsAtt (FW, y, PSTR("Armed"), attr);
-			lcd_putsAtt (FW, y, STR_MAVLINK_ARMED, attr);
-			break;
+void print_mav_base_mode(uint8_t x, uint8_t y, uint8_t attr) {
+	switch (mavlinkRT.heartbeat.base_mode-1) {  
 		case MAV_MODE_TEST_ARMED:
+		case 16:
 			lcd_putsAtt (FW, y, PSTR("Test"), attr);
 			break;
-		case MAV_MODE_STABILIZE_ARMED:
+		case MAV_MODE_STABILIZE_DISARMED:
+			lcd_putsAtt (FW, y, PSTR("Disarmed"), attr);
+			break;
+			
+		case MAV_MODE_STABILIZE_ARMED:					// == (209-1)
 			lcd_putsAtt (FW, y, PSTR("Stab"), attr);
 			break;
+			
+		case MAV_MODE_MANUAL_ARMED:
+			lcd_putsAtt (FW, y, STR_MAVLINK_ARMED, attr);
+			break;
+			
+		case MAV_MODE_GUIDED_ARMED:
+			lcd_putsAtt (FW, y, PSTR("Auto 1"), attr);
+			break;
+			
 		case MAV_MODE_AUTO_ARMED:
-			lcd_putsAtt (FW, y, PSTR("Auto"), attr);
+			lcd_putsAtt (FW, y, PSTR("Auto 2"), attr);
 			break;
 		default:
-			lcd_putsAtt (FW, y, PSTR("UNKN Mode"), attr);
+			//lcd_putsAtt (FW, y, PSTR("UNKN Mode"), attr);
+			lcd_outdezAtt(FW+10, y, mavlinkRT.heartbeat.base_mode, 0);
 			break;
 		}
 }
 //STR_MAVLINK_AP_MODES  "Manual       ""Circle       ""Stabilize    ""Training     ""Fly by Wire A""Fly by Wire A""Auto         ""RTL          ""Loiter       ""Guided       ""Initialising ""INVALID      "
 //STR_MAVLINK_AC_MODES  "Stabilize""Acro     ""Alt Hold ""Auto     ""Guided   ""Loiter   ""RTL      ""Circle   ""Pos Hold ""Land     ""OF Loiter""Toy A    ""Toy M    ""INVALID  "
-void print_mav_state(uint8_t x, uint8_t y, uint8_t attr) {
+void print_mav_system_status(uint8_t x, uint8_t y, uint8_t attr) {
 	switch (mavlinkRT.heartbeat.system_status) {  
 		case MAV_STATE_BOOT:
 			lcd_putsAtt (FW, y, PSTR("Boot"), attr);
@@ -250,7 +262,8 @@ void print_mav_state(uint8_t x, uint8_t y, uint8_t attr) {
 			lcd_putsAtt (FW, y, PSTR("Active"), attr);
 			break;
 		default:
-			lcd_putsAtt (FW, y, PSTR("UNKN Stat"), attr);
+			//lcd_putsAtt (FW, y, PSTR("UNKN Stat"), attr);
+			lcd_outdezAtt(FW+10, y, mavlinkRT.heartbeat.system_status, 0);
 			break;
 		}
 }
@@ -270,7 +283,7 @@ void mav_title(const pm_char * s, uint8_t index) {
 			lcd_putsAtt (0, 0, PSTR("HEXAROTOR"), INVERS);
 			break;
 		default:
-			lcd_putsAtt (0, 0, PSTR("UNKN sys"), INVERS);
+			lcd_putsAtt (0, 0, PSTR("? sys"), INVERS);
 			break;
 		}
 	  lcd_puts(10 * FW, 0, s);
@@ -333,8 +346,8 @@ void menuTelemetryMavlinkInfos(void) {
 	lcd_puts(x1, y, PSTR("MAV Sys"));
 	lcd_outdezAtt(xnum, y, mavlinkRT.mav_sysid, 0);
 	y += FH;
-	lcd_puts(x1, y, PSTR("Radio Comp"));
-	lcd_outdezAtt(xnum, y, mavlinkRT.radio_compid, 0);
+	lcd_puts(x1, y, PSTR("MAV Ver"));
+	lcd_outdezAtt(xnum, y, mavlinkRT.heartbeat.mavlink_version, 0);
 	y += FH;
 	lcd_puts(x1, y, PSTR("Radio Sys"));
 	lcd_outdezAtt(xnum, y, mavlinkRT.radio_sysid, 0);
@@ -354,7 +367,7 @@ void menuTelemetryMavlinkFlightMode(void) {
 	
     lcd_puts  (x, y, STR_MAVLINK_CUR_MODE);
     y += FH;
-    print_mav_mode(FW, y, DBLSIZE);
+    print_mav_base_mode(FW, y, DBLSIZE);
     y += 2 * FH;
 	
 	char * ptr = mav_statustext;
@@ -369,9 +382,7 @@ void menuTelemetryMavlinkFlightMode(void) {
     y += FH;
     x = 0;
 	
-    //if (mavlinkRT.active)
-    //	lcd_putsAtt (FW, y, STR_MAVLINK_ARMED, DBLSIZE);
-	print_mav_state(FW, y, DBLSIZE);
+	print_mav_system_status(FW, y, DBLSIZE);
 
 }
 
@@ -593,8 +604,6 @@ void menuMavlinkDiag(void) {
 	y = FH;
 
 	lcd_putsnAtt(x1, y, STR_MAVLINK_MODE, 4, 0);
-	if (mavlinkRT.active)
-		lcd_putsnAtt(x2, y, PSTR("A"), 1, 0);
 	lcd_outdezAtt(xnum, y, mavlinkRT.heartbeat.base_mode, 0);
 
 	y += FH;

@@ -440,8 +440,7 @@ bool isFileAvailable(const char * filename)
 }
 #endif
 
-void modelDefault(uint8_t id)
-{
+void modelDefault(uint8_t id) {
   memset(&g_model, 0, sizeof(g_model));
 
   applyDefaultTemplate();
@@ -2649,8 +2648,7 @@ void usbJoystickUpdate(void)
 #endif //#if defined(USB_JOYSTICK) && defined(PCBTARANIS) && !defined(SIMU)
 
 
-void perMain()
-{
+void perMain() {
 #if defined(SIMU)
   doMixerCalculations();
 #elif !defined(CPUARM)
@@ -3419,8 +3417,7 @@ uint16_t stack_free()
   #define OPENTX_INIT_ARGS
 #endif
 
-inline void opentxInit(OPENTX_INIT_ARGS)
-{
+inline void opentxInit(OPENTX_INIT_ARGS) {
   eeReadAll();
 
 #if defined(CPUARM)
@@ -3468,17 +3465,17 @@ inline void opentxInit(OPENTX_INIT_ARGS)
   if (g_eeGeneral.backlightMode != e_backlight_mode_off) backlightOn(); // on Tx start turn the light on
 
   if (UNEXPECTED_SHUTDOWN()) {
-#if !defined(CPUARM)
+	#if !defined(CPUARM)
     // is done above on ARM
     unexpectedShutdown = 1;
-#endif
-#if defined(CPUARM)
+	#endif
+	#if defined(CPUARM)
     eeLoadModel(g_eeGeneral.currModel);
-#endif
-  }
+	#endif
+	}
   else {
     opentxStart();
-  }
+	}
 
 #if defined(CPUARM) || defined(CPUM2560)
   if (!g_eeGeneral.unexpectedShutdown) {

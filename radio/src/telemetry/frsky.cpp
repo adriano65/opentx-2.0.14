@@ -267,61 +267,31 @@ enum AlarmsCheckSteps {
 };
 
 void FRSKY_telemetryWakeup() {
-#if defined(CPUARM)
-  uint8_t requiredTelemetryProtocol = MODEL_TELEMETRY_PROTOCOL();
-  if (telemetryProtocol != requiredTelemetryProtocol) {
-    telemetryProtocol = requiredTelemetryProtocol;
-    FRSKY_Init();
-  }
-#endif
-
-uint8_t data;
-#if defined(PCBTARANIS)
-  #if defined(SPORT_FILE_LOG) && !defined(SIMU)
-  static tmr10ms_t lastTime = 0;
-  tmr10ms_t newTime = get_tmr10ms();
-  struct gtm utm;
-  gettime(&utm);
-  #endif
-  while (TelemRxFifo.pop(data)) {
-    processSerialFrskyData(data);
-	#if defined(SPORT_FILE_LOG) && !defined(SIMU)
-    extern FIL g_telemetryFile;
-    if (lastTime != newTime) {
-      f_printf(&g_telemetryFile, "\r\n%4d-%02d-%02d,%02d:%02d:%02d.%02d0: %02X", utm.tm_year+1900, utm.tm_mon+1, utm.tm_mday, utm.tm_hour, utm.tm_min, utm.tm_sec, g_ms100, data);
-      lastTime = newTime;
-    }
-    else {
-      f_printf(&g_telemetryFile, " %02X", data);
-    }
-	#endif
-  }
-#elif defined(CPUARM)
-  if (telemetryProtocol == PROTOCOL_FRSKY_D_SECONDARY) {
+  uint8_t data;
+  if (g_model.telemetryProtocol == PROTOCOL_FRSKY_D_SECONDARY) {
 	while (TelemRxFifo.pop(data)) {
 	  processSerialFrskyData(data);
 	  }
 	}
+  #if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
   else {
     // Receive serial data here
     rxPdcUsart(processSerialFrskyData);
-  }
-#else
-  while (TelemRxFifo.pop(data)) { processSerialFrskyData(data); }
-#endif
+	}
+  #endif
 
-#if !defined(PCBTARANIS)
+  #if !defined(PCBTARANIS)
   if (IS_FRSKY_D_PROTOCOL()) {
     // Attempt to transmit any waiting Fr-Sky alarm set packets every 50ms (subject to packet buffer availability)
     static uint8_t frskyTxDelay = 5;
     if (frskyAlarmsSendState && (--frskyTxDelay == 0)) {
       frskyTxDelay = 5; // 50ms
-#if !defined(SIMU)
+	  #if !defined(SIMU)
       frskyDSendNextAlarm();
-#endif
+	  #endif
     }
   }
-#endif
+  #endif
 
 
 #if defined(VARIO)
@@ -609,6 +579,7 @@ void FRSKY_Init(void) {
 	  }
 #endif
   // we don't reset the telemetry here as we would also reset the consumption after model load
+	TRACE("FRSKY_Init");
 }
 
 #if defined(CPUARM)

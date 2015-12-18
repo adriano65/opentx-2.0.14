@@ -896,6 +896,7 @@ void loadModel(int index)
   memset(&g_model, 0, sizeof(g_model));
   theFile.openRlc(FILE_MODEL(index));
   theFile.readRlc((uint8_t*)&g_model, sizeof(g_model));
+  TRACE("loadModel");
 }
 #endif
 

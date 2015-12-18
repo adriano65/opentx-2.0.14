@@ -215,8 +215,8 @@ PWM_BACKLIGHT = NO
 
 # SPLASH on START
 # Values = YES, NO, FIXED
-ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
-#ifeq ($(PCB), $(filter $(PCB), TARANIS SKY9X))
+#ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
+ifeq ($(PCB), $(filter $(PCB), 9XRPRO TARANIS))
 SPLASH = YES
 else
 SPLASH = NO
