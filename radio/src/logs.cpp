@@ -49,6 +49,22 @@ uint8_t logDelay;
 
 #define get3PosState(sw) (switchState(SW_ ## sw ## 0) ? -1 : (switchState(SW_ ## sw ## 2) ? 1 : 0))
 
+tmr10ms_t lastLogTime = 0;
+
+void closeLogs() {
+  if (f_close(&g_oLogFile) != FR_OK) {
+    // close failed, forget file
+    g_oLogFile.fs = 0;
+  }
+  lastLogTime = 0;
+}
+
+getvalue_t getConvertedTelemetryValue(getvalue_t val, uint8_t unit) {
+  convertUnit(val, unit);
+  return val;
+}
+
+
 const pm_char * openLogs() {
   // Determine and set log file filename
   FRESULT result;
@@ -140,7 +156,7 @@ const pm_char * openLogs() {
 		
 	  case PROTOCOL_MAVLINK:
 		#pragma message "LOG-1: " STR(MAVLINK)
-		f_puts("SWR,RSSI,A1,A2,A3,A4, fix, lat, lon, alt, eph, course, v, sat_vis, ", &g_oLogFile);
+		f_puts("RSSI, IDSwitch, fix, lat, lon, alt, eph, course, v, sat_vis\n", &g_oLogFile);
 		break;
 	  }
 	}
@@ -152,22 +168,6 @@ const pm_char * openLogs() {
 	}
 
   return NULL;
-}
-
-tmr10ms_t lastLogTime = 0;
-
-void closeLogs() {
-  if (f_close(&g_oLogFile) != FR_OK) {
-    // close failed, forget file
-    g_oLogFile.fs = 0;
-  }
-  lastLogTime = 0;
-}
-
-getvalue_t getConvertedTelemetryValue(getvalue_t val, uint8_t unit)
-{
-  convertUnit(val, unit);
-  return val;
 }
 
 // TODO test when disk full
@@ -289,15 +289,23 @@ void writeLogs() {
 		
 	  case PROTOCOL_MAVLINK:
 		#pragma message "LOG-2: " STR(MAVLINK)
-		f_puts("SWR,RSSI,A1,A2,A3,A4, fix, lat, lon, alt, eph, course, v, sat_vis, ", &g_oLogFile);
-		//					  fix    lat     lon     alt   eph   course v	sat_vis
-        f_printf(&g_oLogFile, "%02u, %02.5d, %02.5d, %.1d, %.1d, %04u, %03d, %02u,",
+		float lat=mavlinkRT.loc_current.lat;
+		int16_t lnum = lat;
+		lat -= lnum;		
+		int16_t declat = lat*1000;
+		//					   RSSI, IDSw, fix    lat     	lon        alt   eph   cour  v	  sat_vis
+        f_printf(&g_oLogFile, "%02d, %02u, %02u, %02d.%05d, %02d.%05d, %03d, %03d, %04u, %03d, %02u\n",
+		  mavlinkRT.rc_rssi,
+		  get3PosState(ID),
 		  mavlinkRT.fix_type,
-		  mavlinkRT.loc_current.lat,
-		  mavlinkRT.loc_current.lon,
-		  mavlinkRT.loc_current.gps_alt,
-		  mavlinkRT.eph,
-		  mavlinkRT.course,
+		  lnum,
+		  declat,
+		  //mavlinkRT.loc_current.lon,
+		  lnum,
+		  declat,
+		  (int16_t)mavlinkRT.loc_current.gps_alt,
+		  (int16_t)mavlinkRT.eph,
+		  (int16_t)mavlinkRT.course,
 		  mavlinkRT.v,
 		  mavlinkRT.satellites_visible);
 		break;

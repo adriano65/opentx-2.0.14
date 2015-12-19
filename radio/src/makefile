@@ -217,6 +217,7 @@ PWM_BACKLIGHT = NO
 # Values = YES, NO, FIXED
 #ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
 ifeq ($(PCB), $(filter $(PCB), 9XRPRO TARANIS))
+#ifeq ($(PCB), $(filter $(PCB), TARANIS))
 SPLASH = YES
 else
 SPLASH = NO
@@ -378,7 +379,7 @@ SHELL = sh
 IMG2LBM = -python ../util/img2lbm.py
 BIN2LBM = -python ../util/bin2lbm.py
 TRANSLATE = -python ../util/translate.py
-VERSION = 0.2.16
+VERSION = 0.2.17
 
 SRC =
 CPPSRC =

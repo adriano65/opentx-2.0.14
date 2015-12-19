@@ -209,7 +209,7 @@ void lcd_outdezFloat(uint8_t x, uint8_t y, float val, uint8_t precis, uint8_t mo
  *	Decodes the flight mode from Mavlink custom mode enum to a string.
  *	This funtion can handle ArduPilot and ArduCoper code.
  *	To support new autopilot pilots add a STR_MAVLINK_... to the translations,
- *	and if requred a lut (see arduplane for examle) if there are unused modes
+ *	and if required a lut (see arduplane for examle) if there are unused modes
  *	in the sequence.MAV_MODE_MANUAL_ARMED
  *  -----------------------------------------------
  * 	base_mode     uint8_t     System mode bitfield
@@ -225,7 +225,7 @@ void print_mav_base_mode(uint8_t x, uint8_t y, uint8_t attr) {
 			break;
 			
 		case MAV_MODE_STABILIZE_ARMED:					// == (209-1)
-			lcd_putsAtt (FW, y, PSTR("Stab"), attr);
+			lcd_putsAtt (FW, y, STR_MAVLINK_ARMED, attr);
 			break;
 			
 		case MAV_MODE_MANUAL_ARMED:
@@ -602,13 +602,16 @@ void menuMavlinkDiag(void) {
 	x2 = 7 * FW;
 	xnum = x2 + 12 * FWNUM;
 	y = FH;
-
 	lcd_putsnAtt(x1, y, STR_MAVLINK_MODE, 4, 0);
 	lcd_outdezAtt(xnum, y, mavlinkRT.heartbeat.base_mode, 0);
+	y += FH;
+	lcd_puts(x1, y, PSTR("Sys_stat"));
+	lcd_outdezAtt(xnum, y, mavlinkRT.heartbeat.system_status, 0);
 
 	y += FH;
 	lcd_puts(x1, y, PSTR("GPS_RAW_INT"));
 	lcd_outdezNAtt(xnum, y, mavlinkRT.vbat, PREC1, 5);
+	
 	y += FH;
 	lcd_puts(x1, y, PSTR("PKT DROP"));
 	lcd_outdezAtt(xnum, y, mavlinkRT.packet_drop, 0);
@@ -624,9 +627,6 @@ void menuMavlinkDiag(void) {
 	y += FH;
 	lcd_puts(x1, y, PSTR("Rad Comp"));
 	lcd_outdezAtt(xnum, y, mavlinkRT.radio_compid, 0);
-	y += FH;
-	lcd_puts(x1, y, PSTR("Rad Sys"));
-	lcd_outdezAtt(xnum, y, mavlinkRT.radio_sysid, 0);
 }
 
 
