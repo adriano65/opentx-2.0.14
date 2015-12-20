@@ -145,7 +145,7 @@ typedef struct Mavlink_ {
 	Location_t	loc_current;
 	float 		eph;
 	uint16_t 	course;
-	float 		v;		// Ground speed
+	float 		ground_speed;		// Ground speed
 	// Navigation
 	uint16_t 	heading;
 	uint16_t 	bearing;

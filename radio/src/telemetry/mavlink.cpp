@@ -560,10 +560,68 @@ static inline void REC_MAVLINK_MSG_ID_HIL_CONTROLS(const mavlink_message_t* msg)
  *	This message contains the following data:
  *		- fix type: 0-1: no fix, 2: 2D fix, 3: 3D fix.
  *		- Latitude, longitude in 1E7 * degrees
- *		- Altutude 1E3 * meters above MSL.
+ *		- Altitude 1E3 * meters above MSL.
  *		- Course over ground in 100 * degrees
  *		- GPS HDOP horizontal dilution of precision in cm (m*100).
  *		- Ground speed in m/s * 100
+ * 
+---->   Received data
+Data are received as packets, each packet is identified by a prefix of seven
+characters ('$GPGGA,' or '$GPRMC,')and is ended by one star plus two bytes checksum.
+The values are terminated by a comma.
+
+$GPGGA - Global Positioning System Fix Data, Time, Position and fix related data fora GPS receiver.
+
+                                                      11
+        1         2       3 4        5 6 7  8   9  10 |  12 13  14   15
+        |         |       | |        | | |  |   |   | |   | |   |    |
+    GGA,hhmmss.ss,llll.ll,a,yyyyy.yy,a,x,xx,x.x,x.x,M,x.x,M,x.x,xxxx*hh<CR><LF>
+
+Field Number:
+  1) Universal Time Coordinated (UTC)
+  2) Latitude
+  3) N or S (North or South)
+  4) Longitude
+  5) E or W (East or West)
+  6) GPS Quality Indicator,
+     0 - fix not available,
+     1 - GPS fix,
+     2 - Differential GPS fix
+  7) Number of satellites in view, 00 - 12
+  8) Horizontal Dilution of precision
+  9) Antenna Altitude above/below mean-sea-level (geoid)
+ 10) Units of antenna altitude, meters
+ 11) Geoidal separation, the difference between the WGS-84 earth
+     ellipsoid and mean-sea-level (geoid), "-" means mean-sea-level
+     below ellipsoid
+ 12) Units of geoidal separation, meters
+ 13) Age of differential GPS data, time in seconds since last SC104
+     type 1 or 9 update, null field when DGPS is not used
+ 14) Differential reference station ID, 0000-1023
+ *
+ 15) Checksum
+ CrLf
+
+
+$GPRMC - Recommended Minimum Navigation Information
+                                                            12
+        1         2 3       4 5        6 7   8   9    10  11|
+        |         | |       | |        | |   |   |    |   | |
+    RMC,hhmmss.ss,A,llll.ll,a,yyyyy.yy,a,x.x,x.x,xxxx,x.x,a*hh<CR><LF>
+
+ Field Number:
+  1) UTC Time
+  2) Status, V = Navigation receiver warning
+  3) Latitude
+  4) N or S
+  5) Longitude
+  6) E or W
+  7) Speed over ground, knots
+  8) Track made good, degrees true. = =  Course over ground (COG)
+  9) Date, ddmmyy
+ 10) Magnetic Variation, degrees
+ 11) E or W
+ 12) Checksum
  */
 static inline void REC_MAVLINK_MSG_ID_GPS_RAW_INT(const mavlink_message_t* msg) {
 	mavlinkRT.fix_type = mavlink_msg_gps_raw_int_get_fix_type(msg);
@@ -572,7 +630,7 @@ static inline void REC_MAVLINK_MSG_ID_GPS_RAW_INT(const mavlink_message_t* msg) 
 	mavlinkRT.loc_current.gps_alt = mavlink_msg_gps_raw_int_get_alt(msg) / 1E3;
 	mavlinkRT.eph = mavlink_msg_gps_raw_int_get_eph(msg) / 100.0;
 	mavlinkRT.course = mavlink_msg_gps_raw_int_get_cog(msg) / 100.0;
-	mavlinkRT.v = mavlink_msg_gps_raw_int_get_vel(msg) / 100.0 ;
+	mavlinkRT.ground_speed = mavlink_msg_gps_raw_int_get_vel(msg) / 100.0 ;
 	mavlinkRT.satellites_visible = mavlink_msg_gps_raw_int_get_satellites_visible(msg);
 }
 

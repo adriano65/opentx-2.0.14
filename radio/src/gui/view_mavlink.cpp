@@ -474,7 +474,7 @@ void menuTelemetryMavlinkGPS(void) {
 
 		y += FH;
 		lcd_putsnAtt(x1, y, PSTR("V"), 1, 0);
-		lcd_outdezAtt(xnum, y, mavlinkRT.v, 0);
+		lcd_outdezAtt(xnum, y, mavlinkRT.ground_speed, 0);
 	}
 }
 
