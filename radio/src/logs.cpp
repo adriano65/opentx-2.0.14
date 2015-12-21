@@ -156,7 +156,7 @@ const pm_char * openLogs() {
 		
 	  case PROTOCOL_MAVLINK:
 		#pragma message "LOG-1: " STR(MAVLINK)
-		f_puts("RSSI,IDSwitch,vbat,heading,alt,fix,lat,lon,alt,eph,course,ground_speed,sat_vis\n", &g_oLogFile);
+		f_puts("RSSI,IDSwitch,vbat,heading,alt,fix,lat,lon,alt,eph,course,ground_speed\n", &g_oLogFile);
 		break;
 	  }
 	}
@@ -293,73 +293,36 @@ void writeLogs() {
 		int16_t lnum = f;
 		f -= lnum;		
 		int16_t declat = f*1000;
-		/*
-		//					   RSSI, IDSw,vbat,headng,alt, fix   lat     	
-        f_printf(&g_oLogFile, "%02d,%d,%02d,%d,%03d,%02d,%02d.%05d, ",
-		  mavlinkRT.rc_rssi,			// uint8_t
-		  #if defined(PCBTARANIS)
-		  get3PosState(SC),
-		  #else
-		  get3PosState(ID),
-		  #endif
-		  mavlinkRT.vbat,				// uint8_t
-		  mavlinkRT.heading,			// uint16_t
-		  (int16_t)mavlinkRT.loc_current.rel_alt,
-		  mavlinkRT.fix_type,			// uint8_t
-		  lnum,
-		  declat);
-		*/
-		
-		//					   RSSI,IDSw,vbat,headng
-        f_printf(&g_oLogFile, "%02d,%d,%02d,%d,",
-		  mavlinkRT.rc_rssi,			// uint8_t
-		  #if defined(PCBTARANIS)
-		  get3PosState(SC),
-		  #else
-		  get3PosState(ID),
-		  #endif
-		  mavlinkRT.vbat,			// uint8_t
-		  mavlinkRT.heading			// uint16_t
-		  );
-		
-		
-		//					   alt, fixt  lat 
-        f_printf(&g_oLogFile, "%02d, %d, %02d.%05d,",
-		  (int16_t)mavlinkRT.loc_current.rel_alt,
-		  mavlinkRT.fix_type,			// uint8_t
-		  lnum,
-		  declat);
-		
-		/*
-		//					   alt, fix   lat 
-        f_printf(&g_oLogFile, "%02d,",
-		  (int16_t)mavlinkRT.loc_current.rel_alt
-		);
-		*/
-
-		/*
-        f_printf(&g_oLogFile, "%02d.%05d,",
-		  mavlinkRT.fix_type,			// uint8_t
-		  lnum,
-		  declat);
-		*/
-		
-		
+		//		     RSSI,IDSw,vbat,headng, rel_alt
+		f_printf(&g_oLogFile, "%u,%d,%u,%u,%d,%d",
+			  mavlinkRT.rc_rssi,			// uint8_t
+			  #if defined(PCBTARANIS)
+			  get3PosState(SC),
+			  #else
+			  get3PosState(ID),
+			  #endif
+			  mavlinkRT.vbat,			// uint8_t
+			  mavlinkRT.heading,			// uint16_t
+			  (int16_t)mavlinkRT.loc_current.rel_alt
+			  );
+		f_printf(&g_oLogFile, "%u,%02d.%05d,",
+			  mavlinkRT.fix_type,			// uint8_t
+			  lnum,
+			  declat);
 		
 		f=mavlinkRT.loc_current.lon;
 		lnum = f;
 		f -= lnum;		
 		int16_t declon = f*1000;
-		//					   lon       alt  eph  cour v	 sat_vis
-        f_printf(&g_oLogFile, "%02d.%05d,%03d,%03d,%04d,%03d,%02d\n",
-		  //mavlinkRT.loc_current.lon,
-		  lnum,
-		  declon,
-		  (int16_t)mavlinkRT.loc_current.gps_alt,
-		  (int16_t)mavlinkRT.eph,
-		  (int16_t)mavlinkRT.course,
-		  mavlinkRT.ground_speed,
-		  mavlinkRT.satellites_visible);		// uint8_t
+		//	      lon       alt  eph  cour ground_speed
+		f_printf(&g_oLogFile, "%02d.%05d,%d,%d,%d,%d\n",
+			  //mavlinkRT.loc_current.lon,
+			  lnum,
+			  declon,
+			  (int16_t)mavlinkRT.loc_current.gps_alt,
+			  (int16_t)mavlinkRT.eph,
+			  (int16_t)mavlinkRT.course,
+			  mavlinkRT.ground_speed);		// uint8_t
 		break;
 	  }
 
