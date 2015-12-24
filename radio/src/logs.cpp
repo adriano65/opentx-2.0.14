@@ -293,7 +293,7 @@ void writeLogs() {
 		int16_t lnum = f;
 		f -= lnum;		
 		int16_t declat = f*1000;
-		//		     RSSI,IDSw,vbat,headng, rel_alt
+		//		     		 RSSI,IDSw,vbat,headng, rel_alt
 		f_printf(&g_oLogFile, "%u,%d,%u,%u,%d,%d",
 			  mavlinkRT.rc_rssi,			// uint8_t
 			  #if defined(PCBTARANIS)
@@ -305,7 +305,7 @@ void writeLogs() {
 			  mavlinkRT.heading,			// uint16_t
 			  (int16_t)mavlinkRT.loc_current.rel_alt
 			  );
-		f_printf(&g_oLogFile, "%u,%02d.%05d,",
+		f_printf(&g_oLogFile, "%u,%d.%5d,",
 			  mavlinkRT.fix_type,			// uint8_t
 			  lnum,
 			  declat);
@@ -315,7 +315,7 @@ void writeLogs() {
 		f -= lnum;		
 		int16_t declon = f*1000;
 		//	      lon       alt  eph  cour ground_speed
-		f_printf(&g_oLogFile, "%02d.%05d,%d,%d,%d,%d\n",
+		f_printf(&g_oLogFile, "%d.%5d,%d,%d,%d,%d\n",
 			  //mavlinkRT.loc_current.lon,
 			  lnum,
 			  declon,
