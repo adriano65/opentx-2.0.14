@@ -221,37 +221,96 @@ void lcd_outdezFloat(uint8_t x, uint8_t y, float val, uint8_t precis, uint8_t mo
         else if (osd_mode == 11) mode_str = "retl"; //Return to Launch
         else if (osd_mode == 12) mode_str = "loit"; //Loiter
         else if (osd_mode == 15) mode_str = "guid"; //GUIDED
-
+//STR_MAVLINK_AP_MODES  "Manual       "		0
+						"Circle       "		1
+						"Stabilize    "		2
+						"Training     "		3
+						"Fly by Wire A"		4
+						"Fly by Wire B"		5
+						"Auto         "		6
+						"RTL          "		7
+						"Loiter       "		8
+						"Guided       "		9
+						"Initialising "
+						"INVALID      "
+//STR_MAVLINK_AC_MODES  "Stabilize"			0
+						"Acro     "			1
+						"Alt Hold "			2
+						"Auto     "			3
+						"Guided   "			4
+						"Loiter   "			5
+						"RTL      "			6
+						"Circle   "			7
+						"Pos Hold "
+						"Land     "
+						"OF Loiter""Toy A    ""Toy M    ""INVALID  "
  */
-//STR_MAVLINK_AP_MODES  "Manual       ""Circle       ""Stabilize    ""Training     ""Fly by Wire A""Fly by Wire A""Auto         ""RTL          ""Loiter       ""Guided       ""Initialising ""INVALID      "
-//STR_MAVLINK_AC_MODES  "Stabilize""Acro     ""Alt Hold ""Auto     ""Guided   ""Loiter   ""RTL      ""Circle   ""Pos Hold ""Land     ""OF Loiter""Toy A    ""Toy M    ""INVALID  "
 void print_mav_custom_mode(uint8_t x, uint8_t y, uint8_t attr) {
 	switch (mavlinkRT.heartbeat.custom_mode) {  
 		case 0:
-			lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 0, attr);
-			break;
-		case MAV_MODE_STABILIZE_DISARMED:
-			lcd_putsAtt (FW, y, PSTR("Disarmed"), attr);
-			break;
-			
-		case MAV_MODE_STABILIZE_ARMED:					// == (209-1)
-			lcd_putsAtt (FW, y, STR_MAVLINK_ARMED, attr);
+			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 0, attr);
+			else
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 0, attr);
 			break;
 			
-		case MAV_MODE_MANUAL_ARMED:
-			lcd_putsAtt (FW, y, STR_MAVLINK_ARMED, attr);
+		case 1:
+			lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 1, attr);
 			break;
 			
-		case MAV_MODE_GUIDED_ARMED:
-			lcd_putsAtt (FW, y, PSTR("Auto 1"), attr);
+		case 2:
+			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 2, attr);
+			else
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 2, attr);
 			break;
 			
-		case MAV_MODE_AUTO_ARMED:
-			lcd_putsAtt (FW, y, PSTR("Auto 2"), attr);
+		case 5:
+			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 4, attr);
+			else
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 4, attr);
 			break;
+			
+		case 6:
+			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 5, attr);
+			else
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 4, attr);
+			break;
+			
+		case 10:
+			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 6, attr);
+			else
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 6, attr);
+			break;
+			
+		case 11:
+			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 7, attr);
+			else
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 7, attr);
+			break;
+			
+		case 12:
+			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 8, attr);
+			else
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 8, attr);
+			break;
+			
+		case 15:
+			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 9, attr);
+			else
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 9, attr);
+			break;
+			break;
+			
 		default:
 			//lcd_putsAtt (FW, y, PSTR("UNKN Mode"), attr);
-			lcd_outdezAtt(FW+10, y, mavlinkRT.heartbeat.base_mode, 0);
+			lcd_outdezAtt(FW+10, y, mavlinkRT.heartbeat.custom_mode, 0);
 			break;
 		}
 }
