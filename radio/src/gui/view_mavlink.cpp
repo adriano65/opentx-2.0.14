@@ -1,5 +1,6 @@
 /*
  * Authors (alphabetical order)
+ * - Adriano Carosso <adriano.carosso@gmail.com>
  * - Andre Bernet <bernet.andre@gmail.com>
  * - Andreas Weitl
  * - Bertrand Songis <bsongis@gmail.com>

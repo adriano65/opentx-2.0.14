@@ -193,11 +193,11 @@ void interrupt10ms(void)
 {
   Tenms |= 1;			// 10 mS has passed
 
-  uint16_t enuk = KEY_MENU;
-  uint16_t in = ~readKeys();
+  uint32_t enuk = KEY_MENU;
+  uint32_t in = ~readKeys();
 
-  for (int i = 1; i < 7; i++) {
-    uint16_t value = in & (1 << i);
+  for (int i=1; i<7; ++i) {
+    uint32_t value = in & (1 << i);
     keys[enuk].input(value, (EnumKeys) enuk);
     ++enuk;
   }
@@ -259,28 +259,6 @@ extern "C" void TIM8_TRG_COM_TIM14_IRQHandler()
 {
   TIM14->SR &= ~TIM_SR_UIF;
   interrupt10ms();
-}
-
-void init_hw_timer()
-{
-  // Timer13
-  RCC->APB1ENR |= RCC_APB1ENR_TIM13EN;		// Enable clock
-  TIM13->ARR = 65535;
-  TIM13->PSC = (PERI1_FREQUENCY * TIMER_MULT_APB1) / 10000000 - 1;// 0.1uS from 12MHz
-  TIM13->CCER = 0;
-  TIM13->CCMR1 = 0;
-  TIM13->EGR = 0;
-  TIM13->CR1 = 1;
-}
-
-// delay in units of 0.1 uS up to 6.5535 mS
-void hw_delay(uint16_t time)
-{
-  TIM13->CNT = 0;
-  TIM13->EGR = 1;		// Re-start counter
-  while ( TIM13->CNT < time) {
-    // wait
-  }
 }
 #endif
 
@@ -486,13 +464,9 @@ int main()
 #endif
 
 #if defined(PCBTARANIS)
-  init_hw_timer();            //needed for lcdInitxxx()
-  lcdInitStart();
-  //nothing to do here
-  lcdInitFinish();
-#else
-  lcdInit();
+  delaysInit();               //needed for lcdInit()
 #endif 
+  lcdInit();
 
 #if defined(PCBSKY9X)
   extern uint8_t OptrexDisplay;

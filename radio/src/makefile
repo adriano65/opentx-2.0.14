@@ -58,11 +58,11 @@ MAVLINK_DEBUG = NO
 
 # --- use eeprom_raw.cpp ---
 # MAVLINK NO, FRSKY OK for frsky d option (not cable ?!)
-PCB = SKY9X
+#PCB = SKY9X
 
 # --- use eeprom_raw.cpp ---
 # MAVLINK OK, FRSKY OK for frsky d option (not cable ?!)
-#PCB = 9XRPRO
+PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
 #PCB = TARANIS
@@ -605,7 +605,7 @@ ifeq ($(PCB), GRUVIN9X)
   
   ifeq ($(SDCARD), YES)
     CPPDEFS += -DRTCLOCK
-    CPPSRC += rtc.cpp targets/gruvin9x/rtc_driver.cpp 
+    CPPSRC += rtc.cpp targets/gruvin9x/rtc_driver.cpp sdcard.cpp
     EXTRABOARDSRC += FatFs/ff.c FatFs/fattime.c FatFs/option/ccsbcs.c targets/gruvin9x/diskio.cpp
   endif
     
@@ -643,7 +643,7 @@ ifeq ($(PCB), MEGA2560)
   CPPSRC += audio_avr.cpp
 
   ifeq ($(SDCARD), YES)
-    EXTRABOARDSRC += FatFs/ff.c FatFs/fattime.c FatFs/option/ccsbcs.c targets/gruvin9x/diskio.cpp 
+    EXTRABOARDSRC += FatFs/ff.c FatFs/fattime.c FatFs/option/ccsbcs.c targets/gruvin9x/diskio.cpp sdcard.cpp
     CPPDEFS += -DRTCLOCK
     CPPSRC += rtc.cpp targets/mega2560/rtc_driver.cpp 
   endif
@@ -705,7 +705,7 @@ ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO))
   ifeq ($(SDCARD), YES)
     CPPDEFS += -DVOICE
     INCDIRS += FatFs FatFs/option
-    EXTRABOARDSRC += FatFs/ff.c FatFs/fattime.c FatFs/option/ccsbcs.c targets/sky9x/diskio.cpp
+    EXTRABOARDSRC += FatFs/ff.c FatFs/fattime.c FatFs/option/ccsbcs.c targets/sky9x/diskio.cpp sdcard.cpp
   endif
   
   ifeq ($(BUZZER), YES)

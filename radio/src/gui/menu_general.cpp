@@ -752,7 +752,7 @@ void menuGeneralSdManagerInfo(uint8_t event)
   lcd_puts(10*FW, 2*FH, SD_IS_HC() ? STR_SDHC_CARD : STR_SD_CARD);
 
   lcd_putsLeft(3*FH, STR_SD_SIZE);
-  lcd_outdezAtt(10*FW, 3*FH, SD_GET_SIZE_MB(), LEFT);
+  lcd_outdezAtt(10*FW, 3*FH, sdGetSize(), LEFT);
   lcd_putc(lcdLastPos, 3*FH, 'M');
 
   lcd_putsLeft(4*FH, STR_SD_SECTORS);
