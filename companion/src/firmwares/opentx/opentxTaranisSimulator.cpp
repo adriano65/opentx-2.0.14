@@ -122,6 +122,7 @@ inline int geteepromsize() {
 
 #include "radio/src/telemetry/mavlink.cpp"
 #include "radio/src/gui/view_mavlink.cpp"
+#include "radio/src/sdcard.cpp"
 
 #include "radio/src/targets/taranis/audio_driver.cpp"
 #include "radio/src/targets/taranis/telemetry_driver.cpp"
