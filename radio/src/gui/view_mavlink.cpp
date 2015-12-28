@@ -212,13 +212,23 @@ void lcd_outdezFloat(uint8_t x, uint8_t y, float val, uint8_t precis, uint8_t mo
  *	and if required a lut (see arduplane for examle) if there are unused modes
  *	in the sequence.MAV_MODE_MANUAL_ARMED
  *  -----------------------------------------------
- * 	base_mode     uint8_t     System mode bitfield
+ *         if (osd_mode == 0) mode_str = "manu"; //Manual
+        else if (osd_mode == 1) mode_str = "circ"; //CIRCLE
+        else if (osd_mode == 2) mode_str = "stab"; //Stabilize
+        else if (osd_mode == 5) mode_str = "fbwa"; //FLY_BY_WIRE_A
+        else if (osd_mode == 6) mode_str = "fbwb"; //FLY_BY_WIRE_B
+        else if (osd_mode == 10) mode_str = "auto"; //AUTO
+        else if (osd_mode == 11) mode_str = "retl"; //Return to Launch
+        else if (osd_mode == 12) mode_str = "loit"; //Loiter
+        else if (osd_mode == 15) mode_str = "guid"; //GUIDED
+
  */
-void print_mav_base_mode(uint8_t x, uint8_t y, uint8_t attr) {
-	switch (mavlinkRT.heartbeat.base_mode-1) {  
-		case MAV_MODE_TEST_ARMED:
-		case 16:
-			lcd_putsAtt (FW, y, PSTR("Test"), attr);
+//STR_MAVLINK_AP_MODES  "Manual       ""Circle       ""Stabilize    ""Training     ""Fly by Wire A""Fly by Wire A""Auto         ""RTL          ""Loiter       ""Guided       ""Initialising ""INVALID      "
+//STR_MAVLINK_AC_MODES  "Stabilize""Acro     ""Alt Hold ""Auto     ""Guided   ""Loiter   ""RTL      ""Circle   ""Pos Hold ""Land     ""OF Loiter""Toy A    ""Toy M    ""INVALID  "
+void print_mav_custom_mode(uint8_t x, uint8_t y, uint8_t attr) {
+	switch (mavlinkRT.heartbeat.custom_mode) {  
+		case 0:
+			lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 0, attr);
 			break;
 		case MAV_MODE_STABILIZE_DISARMED:
 			lcd_putsAtt (FW, y, PSTR("Disarmed"), attr);
@@ -245,8 +255,6 @@ void print_mav_base_mode(uint8_t x, uint8_t y, uint8_t attr) {
 			break;
 		}
 }
-//STR_MAVLINK_AP_MODES  "Manual       ""Circle       ""Stabilize    ""Training     ""Fly by Wire A""Fly by Wire A""Auto         ""RTL          ""Loiter       ""Guided       ""Initialising ""INVALID      "
-//STR_MAVLINK_AC_MODES  "Stabilize""Acro     ""Alt Hold ""Auto     ""Guided   ""Loiter   ""RTL      ""Circle   ""Pos Hold ""Land     ""OF Loiter""Toy A    ""Toy M    ""INVALID  "
 void print_mav_system_status(uint8_t x, uint8_t y, uint8_t attr) {
 	switch (mavlinkRT.heartbeat.system_status) {  
 		case MAV_STATE_BOOT:
@@ -367,7 +375,7 @@ void menuTelemetryMavlinkFlightMode(void) {
 	
     lcd_puts  (x, y, STR_MAVLINK_CUR_MODE);
     y += FH;
-    print_mav_base_mode(FW, y, DBLSIZE);
+    print_mav_custom_mode(FW, y, DBLSIZE);
     y += 2 * FH;
 	
 	char * ptr = mav_statustext;
@@ -473,7 +481,7 @@ void menuTelemetryMavlinkGPS(void) {
 		lcd_outdezFloat(xnum, y, mavlinkRT.course, 2);
 
 		y += FH;
-		lcd_putsnAtt(x1, y, PSTR("V"), 1, 0);
+		lcd_putsnAtt(x1, y, PSTR("Gnd Spd"), 1, 0);
 		lcd_outdezAtt(xnum, y, mavlinkRT.ground_speed, 0);
 	}
 }
