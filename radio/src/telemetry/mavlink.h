@@ -60,6 +60,43 @@ static const uint8_t ap_modes_lut[18] PROGMEM = {0,1,2,3,12,4,5,12,12,12,6,7,8,9
 /*
  * Type definitions
  */
+/*
+enum AP_FlightMode {
+    MANUAL        = 0,
+    CIRCLE        = 1,
+    STABILIZE     = 2,
+    TRAINING      = 3,
+    ACRO          = 4,
+    FLY_BY_WIRE_A = 5,
+    FLY_BY_WIRE_B = 6,
+    CRUISE        = 7,
+    AUTOTUNE      = 8,
+    AUTO          = 10,
+    RTL           = 11,
+    LOITER        = 12,
+    GUIDED        = 15,
+    INITIALISING  = 16
+};
+
+// ArduCopter Pilot modes
+// ----------------
+enum AC_FlightMode {
+STABILIZE =0,                     // hold level position
+ACRO =1,                          // rate control
+ALT_HOLD =2,                      // AUTO control
+AUTO =3,                          // AUTO control
+GUIDED =4,                        // AUTO control
+LOITER =5,                        // Hold a single location
+RTL =6,                           // AUTO control
+CIRCLE =7,                        // AUTO control
+POSITION =8,                      // AUTO control
+LAND =9,                          // AUTO control
+OF_LOITER =10,                    // Hold a single location using optical flow sensor
+DRIFT =11,                        // DRIFT mode (Note: 12 is no longer used)
+SPORT =13,                        // earth frame rate control
+NUM_MODES =14
+};
+*/
 
 #ifdef MAVLINK_PARAMS
 

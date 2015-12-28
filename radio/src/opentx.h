@@ -1348,18 +1348,11 @@ inline bool isFunctionActive(uint8_t func)
 #endif
 
 #if defined(CPUARM)
-  uint8_t telemetryProtocol = 255;
-  #define IS_FRSKY_D_PROTOCOL()      (telemetryProtocol == PROTOCOL_FRSKY_D)
-  #define IS_FRSKY_SPORT_PROTOCOL()  (telemetryProtocol == PROTOCOL_FRSKY_SPORT)
-  #ifdef MAVLINK
-  #define IS_MAVLINK_PROTOCOL()      (telemetryProtocol == PROTOCOL_MAVLINK)
-  #endif
+  #define IS_FRSKY_D_PROTOCOL()      (g_model.telemetryProtocol == PROTOCOL_FRSKY_D)
+  #define IS_FRSKY_SPORT_PROTOCOL()  (g_model.telemetryProtocol == PROTOCOL_FRSKY_SPORT)
 #else
   #define IS_FRSKY_D_PROTOCOL()     (true)
   #define IS_FRSKY_SPORT_PROTOCOL() (false)
-  #ifdef MAVLINK
-  #define IS_MAVLINK_PROTOCOL()     (false)
-  #endif
 #endif
   
   

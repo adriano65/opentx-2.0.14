@@ -180,7 +180,7 @@ void lcd_putsnAtt(xcoord_t x, uint8_t y, const pm_char * s,unsigned char len, Lc
 void lcd_puts(xcoord_t x, uint8_t y, const pm_char * s);
 void lcd_putsn(xcoord_t x, uint8_t y, const pm_char * s, unsigned char len);
 void lcd_putsLeft(uint8_t y, const pm_char * s);
-#define lcd_putsCenter(y, s) lcd_puts((LCD_W-sizeof(TR_##s)*FW+FW-2)/2, y, STR_##s)
+#define lcd_putsCenter(y, s) lcd_puts((LCD_W-sizeof(TR_##s)*FW+FW+1)/2, y, STR_##s)
 
 void lcd_outhex4(xcoord_t x, uint8_t y, uint16_t val);
 void lcd_outdezAtt(xcoord_t x, uint8_t y, lcdint_t val, LcdFlags mode=0);
@@ -265,12 +265,10 @@ void lcd_bmp(xcoord_t x, uint8_t y, const pm_uchar * img, uint8_t offset=0, uint
 void lcdSetRefVolt(unsigned char val);
 void lcd_clear();
 void lcdSetContrast();
+void lcdInit();
 #if defined(PCBTARANIS)
-  void lcdInitStart();
-  void lcdInitFinish();
   void lcdOff();
 #else
-  void lcdInit();
   #define lcdOff()
 #endif
 

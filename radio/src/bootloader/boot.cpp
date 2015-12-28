@@ -58,7 +58,7 @@
 #include "../pwr.h"
 #include "../lcd.h"
 #include "../keys.h"
-#include "../sdcard.h"
+//#include "../sdcard.h"
 #include "../FatFs/ff.h"
 #include "../FatFs/diskio.h"
 #include "../translations/en.h"

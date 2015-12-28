@@ -62,10 +62,10 @@ MAVLINK_DEBUG = NO
 
 # --- use eeprom_raw.cpp ---
 # MAVLINK OK, FRSKY OK for frsky d option (not cable ?!)
-PCB = 9XRPRO
+#PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
-#PCB = TARANIS
+PCB = TARANIS
 
 #------- END BUILD OPTIONS ---------------------------
 
@@ -825,7 +825,7 @@ ifeq ($(PCB), TARANIS)
   endif           
 
   ifeq ($(SDCARD), YES)
-    EXTRABOARDSRC += FatFs/ff.c FatFs/fattime.c FatFs/option/ccsbcs.c targets/taranis/diskio.cpp
+    EXTRABOARDSRC += FatFs/ff.c FatFs/fattime.c FatFs/option/ccsbcs.c targets/taranis/diskio.cpp sdcard.cpp
     CPPDEFS += -DVOICE
     INCDIRS += FatFs FatFs/option
   endif

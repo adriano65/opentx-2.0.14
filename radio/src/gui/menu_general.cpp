@@ -756,7 +756,7 @@ void menuGeneralSdManagerInfo(uint8_t event)
   lcd_putc(lcdLastPos, 3*FH, 'M');
 
   lcd_putsLeft(4*FH, STR_SD_SECTORS);
-  lcd_outdezAtt(10*FW, 4*FH, SD_GET_BLOCKNR()/1000, LEFT);
+  lcd_outdezAtt(10*FW, 4*FH, sdGetSize()/1000, LEFT);
   lcd_putc(lcdLastPos, 4*FH, 'k');
 
   lcd_putsLeft(5*FH, STR_SD_SPEED);

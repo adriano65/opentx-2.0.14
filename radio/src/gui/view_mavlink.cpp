@@ -39,8 +39,6 @@
  */
  
 #include "../opentx.h"
-//#include "telemetry/mavlink.h"
-//#include "gui/menus.h"
 
 /*	Top Mavlink Menu definition
  *	Registers button events and handles that info. Buttons select menus,
@@ -90,6 +88,8 @@ void menuTelemetryMavlinkNavigation(void);
 void menuMavlinkDiag(void);
 void menuTelemetryMavlinkSetup(uint8_t event);
 //void menuTelemetryMavlink(uint8_t event);	// defined in menus.h (companion)
+void print_mav_custom_modeAP(uint8_t x, uint8_t y, uint8_t attr);
+void print_mav_custom_modeAC(uint8_t x, uint8_t y, uint8_t attr);
 
 void menuTelemetryMavlink(uint8_t event) {
 	
@@ -222,91 +222,85 @@ void lcd_outdezFloat(uint8_t x, uint8_t y, float val, uint8_t precis, uint8_t mo
         else if (osd_mode == 11) mode_str = "retl"; //Return to Launch
         else if (osd_mode == 12) mode_str = "loit"; //Loiter
         else if (osd_mode == 15) mode_str = "guid"; //GUIDED
-//STR_MAVLINK_AP_MODES  "Manual       "		0
-						"Circle       "		1
-						"Stabilize    "		2
-						"Training     "		3
-						"Fly by Wire A"		4
-						"Fly by Wire B"		5
-						"Auto         "		6
-						"RTL          "		7
-						"Loiter       "		8
-						"Guided       "		9
-						"Initialising "
-						"INVALID      "
-//STR_MAVLINK_AC_MODES  "Stabilize"			0
-						"Acro     "			1
-						"Alt Hold "			2
-						"Auto     "			3
-						"Guided   "			4
-						"Loiter   "			5
-						"RTL      "			6
-						"Circle   "			7
-						"Pos Hold "
-						"Land     "
-						"OF Loiter""Toy A    ""Toy M    ""INVALID  "
- */
+// --------------------------------------------> see ardupilot/ArduPlane/defines.h
+                                                 enum FlightMode { 
+//STR_MAVLINK_AP_MODES  "Manual       "		0          MANUAL        = 0,
+						"Circle       "		1          CIRCLE        = 1,
+						"Stabilize    "		2          STABILIZE     = 2,
+						"Training     "		3          TRAINING      = 3,
+						"Fly by Wire A"		4          ACRO          = 4,
+						"Fly by Wire B"		5          FLY_BY_WIRE_A = 5,
+						"Auto         "		6          FLY_BY_WIRE_B = 6,
+						"RTL          "		7          CRUISE        = 7,
+						"Loiter       "		8          AUTOTUNE      = 8,
+						"Guided       "		9          AUTO          = 10,
+						"Initialising "		10         RTL           = 11,
+						"INVALID      "                LOITER        = 12,
+						                               GUIDED        = 15
+						                               INITIALISING  = 16
+						                               
+//STR_MAVLINK_AC_MODES  "Stabilize"		};	0          STABILIZE =0,    
+						"Acro     "			1          ACRO =1,         
+						"Alt Hold "			2          ALT_HOLD =2,     
+						"Auto     "			3          AUTO =3,         
+						"Guided   "			4          GUIDED =4,       
+						"Loiter   "			5          LOITER =5,       
+						"RTL      "			6          RTL =6,          
+						"Circle   "			7          CIRCLE =7,       
+						"Pos Hold "			8          POSITION =8,     
+						"Land     "			9          LAND =9,         
+						"OF Loiter"			10         OF_LOITER =10,   
+						"Toy A    "			11		   DRIFT =11,       
+						"Toy M    "			12		   SPORT =13,
+						"INVALID  "            
+ */                                                       
 void print_mav_custom_mode(uint8_t x, uint8_t y, uint8_t attr) {
+	if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
+	  print_mav_custom_modeAP(x, y, attr);
+	else
+	  print_mav_custom_modeAC(x, y, attr);
+}
+	  
+void print_mav_custom_modeAP(uint8_t x, uint8_t y, uint8_t attr) {
 	switch (mavlinkRT.heartbeat.custom_mode) {  
 		case 0:
-			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
 			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 0, attr);
-			else
-			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 0, attr);
 			break;
 			
 		case 1:
-			lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 1, attr);
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 1, attr);
 			break;
 			
 		case 2:
-			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
 			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 2, attr);
-			else
-			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 2, attr);
 			break;
 			
 		case 5:
-			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
 			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 4, attr);
-			else
-			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 4, attr);
 			break;
 			
 		case 6:
-			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
 			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 5, attr);
-			else
-			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 4, attr);
 			break;
 			
 		case 10:
-			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
 			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 6, attr);
-			else
-			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 6, attr);
 			break;
 			
 		case 11:
-			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
 			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 7, attr);
-			else
-			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 7, attr);
 			break;
 			
 		case 12:
-			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
 			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 8, attr);
-			else
-			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 8, attr);
 			break;
 			
 		case 15:
-			if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
 			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 9, attr);
-			else
-			  lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 9, attr);
 			break;
+			
+		case 16:
+			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 10, attr);
 			break;
 			
 		default:
@@ -315,6 +309,29 @@ void print_mav_custom_mode(uint8_t x, uint8_t y, uint8_t attr) {
 			break;
 		}
 }
+
+void print_mav_custom_modeAC(uint8_t x, uint8_t y, uint8_t attr) {
+	switch (mavlinkRT.heartbeat.custom_mode) {  
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+			lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, (uint8_t)mavlinkRT.heartbeat.custom_mode, attr);
+			break;
+			
+		default:
+			//lcd_putsAtt (FW, y, PSTR("UNKN Mode"), attr);
+			lcd_outdezAtt(FW+10, y, mavlinkRT.heartbeat.custom_mode, 0);
+			break;
+		}
+}
+
 void print_mav_system_status(uint8_t x, uint8_t y, uint8_t attr) {
 	switch (mavlinkRT.heartbeat.system_status) {  
 		case MAV_STATE_BOOT:

@@ -111,20 +111,31 @@ extern uint16_t sessionTimer;
 #define SLAVE_MODE()         (g_model.trainerMode == 1)
 #define TRAINER_CONNECTED()  (GPIO_ReadInputDataBit(GPIOTRNDET, PIN_TRNDET) == Bit_RESET)
 
-void delaysInit(void);
-
+#ifdef __cplusplus
+extern "C" {
+#endif
 void delaysInit(void);
 void delay_01us(uint16_t nb);
+#ifdef __cplusplus
+}
+#endif
 
 // SD driver
+#if !defined(SIMU) || defined(SIMU_DISKIO)
+  uint32_t sdIsHC();
+  uint32_t sdGetSpeed();
+  #define SD_IS_HC()              (sdIsHC())
+  #define SD_GET_SPEED()          (sdGetSpeed())
+  #define SD_GET_FREE_BLOCKNR()   (sdGetFreeSectors())
+#else
+  #define SD_IS_HC()              (0)
+  #define SD_GET_SPEED()          (0)
+#endif
+
 #if defined(SIMU)
   #define sdInit()
   #define sdDone()
 #else
-  #define SD_IS_HC()              (1)
-  #define SD_GET_SIZE_MB()        (0)
-  #define SD_GET_BLOCKNR()        (0)
-  #define SD_GET_SPEED()          (0)
   void sdInit(void);
   void sdDone(void);
   void sdPoll10ms(void);
@@ -146,6 +157,10 @@ void init_no_pulses(uint32_t port);
 void disable_no_pulses(uint32_t port);
 void init_ppm( uint32_t module_index );
 void disable_ppm( uint32_t module_index );
+void set_external_ppm_parameters(uint32_t idleTime, uint32_t delay, uint32_t positive);
+#if defined(TARANIS_INTERNAL_PPM)
+  void set_internal_ppm_parameters(uint32_t idleTime, uint32_t delay, uint32_t positive);
+#endif
 void init_pxx( uint32_t module_index );
 void disable_pxx( uint32_t module_index );
 void init_dsm2( uint32_t module_index );
@@ -154,6 +169,7 @@ void disable_dsm2( uint32_t module_index );
 // Trainer driver
 void init_trainer_ppm(void);
 void stop_trainer_ppm(void);
+void set_trainer_ppm_parameters(uint32_t idleTime, uint32_t delay, uint32_t positive);
 void init_trainer_capture(void);
 void stop_trainer_capture(void);
 
@@ -258,8 +274,9 @@ void hapticOff(void);
 
 // UART3 driver
 #define DEBUG_BAUDRATE      115200
-void telemetrySecondPortInit(uint32_t);
+//void uart3Init(unsigned int mode, unsigned int protocol);
 void uart3Putc(const char c);
+//#define telemetrySecondPortInit(protocol) uart3Init(UART_MODE_TELEMETRY, protocol)
 
 extern uint8_t currentTrainerMode;
 
