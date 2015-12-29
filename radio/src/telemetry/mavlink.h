@@ -150,13 +150,10 @@ typedef struct Location_ {
 } Location_t;
 
 typedef struct Mavlink_ {
-	uint8_t		mav_sysid;
-	uint8_t		mav_compid;	
-	uint8_t		radio_sysid;
-	uint8_t		radio_compid;
-	mavlink_heartbeat_t		heartbeat;
 	uint16_t	packet_drop;
 	uint16_t	packet_fixed;
+	uint16_t	unknow_pckt_cnt;
+	mavlink_heartbeat_t		heartbeat;
 
 	bool 		active;
 	uint8_t 	nav_mode;
@@ -170,7 +167,6 @@ typedef struct Mavlink_ {
 	uint8_t 	pc_rssi;
 	
 	uint8_t 	debug;
-	uint16_t	unknow_pckt_cnt;
 
 	// MSG ACTION / ACK
 	uint8_t 	req_mode;

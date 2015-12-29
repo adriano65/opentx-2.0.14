@@ -286,8 +286,10 @@ void request_mavlink_rates() {
     const uint16_t MAVRates[maxStreams] = {0x02, 0x02, 0x05, 0x02, 0x05, 0x02};
     for (int i=0; i < maxStreams; i++) {
         mavlink_msg_request_data_stream_send(MAVLINK_COMM_0,
-											 mavlinkRT.radio_sysid, 
-											 mavlinkRT.radio_compid,
+											 //mavlinkRT.radio_sysid,
+											 2,
+											 //mavlinkRT.radio_compid,
+											 3,
 											 MAVStreams[i], MAVRates[i], 1);
     }
 }
@@ -513,28 +515,22 @@ static inline void REC_MAVLINK_MSG_ID_RC_CHANNELS_RAW(const mavlink_message_t* m
 	mavlinkRT.rc_rssi =  (temp_rssi * 100) / temp_scale;
 }
 
-/*Arducopter specific radio message
- *
- */
+/*Arducopter specific radio message */
 static inline void REC_MAVLINK_MSG_ID_RADIO(const mavlink_message_t* msg) {
-	//if (msg->sysid != 51)		// ArduPilot/Arducopter customization
-	//	return;
 	mavlinkRT.pc_rssi =  (mavlink_msg_radio_get_rssi(msg) * 100) / 255;
 	mavlinkRT.packet_drop = mavlink_msg_radio_get_rxerrors(msg);
 	mavlinkRT.packet_fixed = mavlink_msg_radio_get_fixed(msg);
-	mavlinkRT.radio_sysid = msg->sysid;
-	mavlinkRT.radio_compid = msg->compid;
 }
 static inline void REC_MAVLINK_MSG_ID_RADIO_STATUS(const mavlink_message_t* msg) {
 	REC_MAVLINK_MSG_ID_RADIO(msg);
 }
 
-//! \brief Navigation output message
+/* Navigation output message */
 static inline void REC_MAVLINK_MSG_ID_NAV_CONTROLLER_OUTPUT(const mavlink_message_t* msg) {
 	mavlinkRT.bearing = mavlink_msg_nav_controller_output_get_target_bearing(msg);
 }
 
-//! \brief Hud navigation message
+/* Hud navigation message */
 static inline void REC_MAVLINK_MSG_ID_VFR_HUD(const mavlink_message_t* msg) {
 	mavlinkRT.heading = mavlink_msg_vfr_hud_get_heading(msg);
 	mavlinkRT.loc_current.rel_alt = mavlink_msg_vfr_hud_get_alt(msg);
@@ -546,10 +542,6 @@ static inline void REC_MAVLINK_MSG_ID_VFR_HUD(const mavlink_message_t* msg) {
  */
 static inline void REC_MAVLINK_MSG_ID_HEARTBEAT(const mavlink_message_t* msg) {
 	mavlink_msg_heartbeat_decode(msg, &mavlinkRT.heartbeat);
-
-	mavlinkRT.mav_sysid = msg->sysid;
-	mavlinkRT.mav_compid = msg->compid;
-	
 	mavlinkRT.active = (mavlinkRT.heartbeat.base_mode & MAV_MODE_FLAG_SAFETY_ARMED) ? true : false;
 }
 

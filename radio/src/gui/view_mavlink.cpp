@@ -56,8 +56,7 @@ enum mavlink_menu_ {
 	MENU_BATT,
 	MENU_GPS,
 	MENU_NAV,			// seems not very useful in flight
-	MENU_DUMP_DIAG,
-	MAX_MAVLINK_MENU=MENU_DUMP_DIAG
+	MAX_MAVLINK_MENU=MENU_NAV
 };
 
 //! \brief Mavlink setup menu configuration items list.
@@ -85,7 +84,6 @@ void menuTelemetryMavlinkGPS(void);
 //void lcd_outhex2(uint8_t x, uint8_t y, uint8_t val);
 void menuMavlinkLastGPSFix(void);
 void menuTelemetryMavlinkNavigation(void);
-void menuMavlinkDiag(void);
 void menuTelemetryMavlinkSetup(uint8_t event);
 //void menuTelemetryMavlink(uint8_t event);	// defined in menus.h (companion)
 void print_mav_custom_modeAP(uint8_t x, uint8_t y, uint8_t attr);
@@ -108,7 +106,7 @@ void menuTelemetryMavlink(uint8_t event) {
 				return;
 				}
 		case EVT_KEY_FIRST(KEY_DOWN):
-			if (MAVLINK_menu < MAX_MAVLINK_MENU - 1)
+			if (MAVLINK_menu < MAX_MAVLINK_MENU)
 				MAVLINK_menu++;
 			break;
 			
@@ -135,9 +133,6 @@ void menuTelemetryMavlink(uint8_t event) {
 			break;
 		case MENU_NAV:
 			menuTelemetryMavlinkNavigation();
-			break;
-		case MENU_DUMP_DIAG:
-			menuMavlinkDiag();
 			break;
 		default:
 			break;
@@ -255,7 +250,7 @@ void lcd_outdezFloat(uint8_t x, uint8_t y, float val, uint8_t precis, uint8_t mo
 						"INVALID  "            
  */                                                       
 void print_mav_custom_mode(uint8_t x, uint8_t y, uint8_t attr) {
-	if (mavlinkRT.mav_sysid==MAV_TYPE_FIXED_WING)
+	if (mavlinkRT.heartbeat.type==MAV_TYPE_FIXED_WING)
 	  print_mav_custom_modeAP(x, y, attr);
 	else
 	  print_mav_custom_modeAC(x, y, attr);
@@ -264,15 +259,9 @@ void print_mav_custom_mode(uint8_t x, uint8_t y, uint8_t attr) {
 void print_mav_custom_modeAP(uint8_t x, uint8_t y, uint8_t attr) {
 	switch (mavlinkRT.heartbeat.custom_mode) {  
 		case 0:
-			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 0, attr);
-			break;
-			
 		case 1:
-			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 1, attr);
-			break;
-			
 		case 2:
-			  lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, 2, attr);
+			lcd_putsiAtt (FW, y, STR_MAVLINK_AP_MODES, mavlinkRT.heartbeat.custom_mode, attr);
 			break;
 			
 		case 5:
@@ -357,7 +346,7 @@ void print_mav_system_status(uint8_t x, uint8_t y, uint8_t attr) {
  *	Small helper function to print the standard header on the screen.
  */
 void mav_title(const pm_char * s, uint8_t index) {
-	switch (mavlinkRT.mav_sysid) {  
+	switch (mavlinkRT.heartbeat.type) {  
 		case MAV_TYPE_FIXED_WING:
 			lcd_putsAtt (0, 0, PSTR("Plane"), INVERS);
 			break;
@@ -426,22 +415,19 @@ void menuTelemetryMavlinkInfos(void) {
 	lcd_outdezAtt(xnum, y, mavlinkRT.packet_fixed, 0);		/* TODO use correct var */
 	y += FH;
 	lcd_puts(x1, y, PSTR("MAV Comp"));
-	lcd_outdezAtt(xnum, y, mavlinkRT.mav_compid, 0);
+	lcd_outdezAtt(xnum, y, 1, 0);
 	y += FH;
 	lcd_puts(x1, y, PSTR("MAV Sys"));
-	lcd_outdezAtt(xnum, y, mavlinkRT.mav_sysid, 0);
+	lcd_outdezAtt(xnum, y, 2, 0);
 	y += FH;
 	lcd_puts(x1, y, PSTR("MAV Ver"));
 	lcd_outdezAtt(xnum, y, mavlinkRT.heartbeat.mavlink_version, 0);
 	y += FH;
 	lcd_puts(x1, y, PSTR("Radio Sys"));
-	lcd_outdezAtt(xnum, y, mavlinkRT.radio_sysid, 0);
+	lcd_outdezAtt(xnum, y, 3, 0);
 }
 
-/*!	\brief Flight mode menu
- *	\details Clear display of current flight mode.
- *	\todo Add functionality to change flight mode.
- */
+/*Flight mode menu */
 void menuTelemetryMavlinkFlightMode(void) {
 	
 	mav_title(STR_MAVLINK_MODE, MAVLINK_menu);
@@ -676,42 +662,4 @@ void menuTelemetryMavlinkNavigation(void) {
 	lcd_puts(x + 7 * FWNUM, ynum + FH,  PSTR("m"));
  
 }
-
-/*	Diagnostic menu */
-void menuMavlinkDiag(void) {
-
-	mav_title(PSTR("Diag"), MAVLINK_menu);
-
-	uint8_t x1, x2, xnum, y;
-	x1 = FW;
-	x2 = 7 * FW;
-	xnum = x2 + 12 * FWNUM;
-	y = FH;
-	lcd_putsnAtt(x1, y, STR_MAVLINK_MODE, 4, 0);
-	lcd_outdezAtt(xnum, y, mavlinkRT.heartbeat.base_mode, 0);
-	y += FH;
-	lcd_puts(x1, y, PSTR("Sys_stat"));
-	lcd_outdezAtt(xnum, y, mavlinkRT.heartbeat.system_status, 0);
-
-	y += FH;
-	lcd_puts(x1, y, PSTR("GPS_RAW_INT"));
-	lcd_outdezNAtt(xnum, y, mavlinkRT.vbat, PREC1, 5);
-	
-	y += FH;
-	lcd_puts(x1, y, PSTR("PKT DROP"));
-	lcd_outdezAtt(xnum, y, mavlinkRT.packet_drop, 0);
-	y += FH;
-	lcd_puts(x1, y, PSTR("PKT REC"));
-	lcd_outdezAtt(xnum, y, mavlinkRT.packet_fixed, 0);		/* TODO use correct var */
-	y += FH;
-	lcd_puts(x1, y, PSTR("MAV Comp"));
-	lcd_outdezAtt(xnum, y, mavlinkRT.mav_compid, 0);
-	y += FH;
-	lcd_puts(x1, y, PSTR("MAV Sys"));
-	lcd_outdezAtt(xnum, y, mavlinkRT.mav_sysid, 0);
-	y += FH;
-	lcd_puts(x1, y, PSTR("Rad Comp"));
-	lcd_outdezAtt(xnum, y, mavlinkRT.radio_compid, 0);
-}
-
 
