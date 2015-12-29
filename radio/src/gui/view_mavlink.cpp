@@ -309,9 +309,12 @@ void print_mav_custom_modeAC(uint8_t x, uint8_t y, uint8_t attr) {
 		case 5:
 		case 6:
 		case 7:
-		case 8:
 		case 9:
 			lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, (uint8_t)mavlinkRT.heartbeat.custom_mode, attr);
+			break;
+			
+		case 16:
+			lcd_putsiAtt (FW, y, STR_MAVLINK_AC_MODES, 8, attr);
 			break;
 			
 		default:
@@ -385,19 +388,7 @@ void menuTelemetryMavlinkInfos(void) {
 	x2 = 7 * FW;
 	xnum = x2 + 10 * FWNUM;
 	y = FH;
-/*
-	char * ptr = mav_statustext;
-	for (uint8_t j = 0; j < LEN_STATUSTEXT; j++) {
-		if (*ptr == 0) {
-			lcd_putc(x1, y, ' ');
-		} else {
-			lcd_putc(x1, y, *ptr++);
-		}
-		x1 += FW;
-	}
-	x1 = FW;
-	y += FH;
-*/
+	
 	lcd_putsnAtt(x1, y, STR_MAVLINK_MODE, 4, 0);
 	if (mavlinkRT.active)
 		lcd_putsnAtt(x2, y, PSTR("A"), 1, 0);
@@ -414,17 +405,17 @@ void menuTelemetryMavlinkInfos(void) {
 	lcd_puts(x1, y, PSTR("PKT REC"));
 	lcd_outdezAtt(xnum, y, mavlinkRT.packet_fixed, 0);		/* TODO use correct var */
 	y += FH;
-	lcd_puts(x1, y, PSTR("MAV Comp"));
-	lcd_outdezAtt(xnum, y, 1, 0);
-	y += FH;
-	lcd_puts(x1, y, PSTR("MAV Sys"));
-	lcd_outdezAtt(xnum, y, 2, 0);
-	y += FH;
-	lcd_puts(x1, y, PSTR("MAV Ver"));
+	lcd_puts(x1, y, PSTR("MAV Vers"));
 	lcd_outdezAtt(xnum, y, mavlinkRT.heartbeat.mavlink_version, 0);
 	y += FH;
-	lcd_puts(x1, y, PSTR("Radio Sys"));
-	lcd_outdezAtt(xnum, y, 3, 0);
+	lcd_puts(x1, y, PSTR("RC Rssi"));
+	lcd_outdezAtt(xnum, y, mavlinkRT.rc_rssi, 0);
+	y += FH;
+	lcd_puts(x1, y, PSTR("PC Rssi"));
+	lcd_outdezAtt(xnum, y, mavlinkRT.pc_rssi, 0);
+	y += FH;
+	lcd_puts(x1, y, PSTR("Baudrate"));
+	lcd_outdezAtt(xnum, y, Index2Baud(g_model.mavlink.baud), 0);
 }
 
 /*Flight mode menu */
@@ -499,8 +490,7 @@ void menuTelemetryMavlinkBattery(void) {
 
 
 /*	GPS information menu
- *	Menu gives a lot of info from the gps like fix type, position,
- *	attitude, heading and velocity.
+ *	fix type, position,attitude, heading and velocity.
  */
 void menuTelemetryMavlinkGPS(void) {
 	mav_title(STR_MAVLINK_GPS, MAVLINK_menu);
@@ -550,7 +540,7 @@ void menuTelemetryMavlinkGPS(void) {
 }
 
 
-/*Mavlink General setup menu.
+/* Mavlink General setup menu.
  * Setup menu for generic mavlink settings.
  *	Current menu items
  *	- RC RSSI scale item. Used to adjust the scale of the RSSI indicator to match

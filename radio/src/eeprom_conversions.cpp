@@ -330,8 +330,7 @@ void ConvertGeneralSettings_215_to_216(EEGeneral &settings)
   settings.hapticStrength = 0; // Haptic strength reset
 }
 
-int ConvertTelemetrySource_215_to_216(int source)
-{
+int ConvertTelemetrySource_215_to_216(int source) {
   // TELEM_TX_TIME and 5 spare added
   if (source >= TELEM_TX_TIME)
     source += 6;
@@ -384,8 +383,7 @@ int ConvertSource_215_to_216(int source, bool insertZero=false)
   return source;
 }
 
-int ConvertSwitch_215_to_216(int swtch)
-{
+int ConvertSwitch_215_to_216(int swtch) {
   if (swtch < 0)
     return -ConvertSwitch_215_to_216(-swtch);
   else if (swtch <= SWSRC_LAST_SWITCH)
@@ -446,8 +444,7 @@ int16_t ConvertGVAR_215_to_216(int16_t var)
     return var;
 }
 
-void ConvertModel_215_to_216(ModelData &model)
-{
+void ConvertModel_215_to_216(ModelData &model) {
   // Virtual inputs added instead of Expo/DR
   // LUA scripts added
   // GVARS: now 9 GVARS, popup param added
@@ -890,8 +887,7 @@ void ConvertModel(int id, int version)
   g_eeGeneral.currModel = currModel;
 }
 
-bool eeConvert()
-{
+bool eeConvert() {
   const char *msg = NULL;
 
   if (g_eeGeneral.version == 215) {

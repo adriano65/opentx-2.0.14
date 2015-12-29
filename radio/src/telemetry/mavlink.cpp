@@ -190,7 +190,7 @@ void MAVLINK_Init(bool bHardReset) {
 			break;			  
 		}
 	#endif
-	TRACE("MAVLINK_Init %d", bHardReset ? "true" : "false");
+	TRACE("MAVLINK_Init %s", bHardReset ? "true" : "false");
 }
 
 void MAVLINK_telemetryWakeup() {

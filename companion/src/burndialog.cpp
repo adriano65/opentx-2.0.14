@@ -127,8 +127,11 @@ burnDialog::~burnDialog()
   delete ui;
 }
 
-void burnDialog::on_FlashLoadButton_clicked()
-{
+
+/*
+------------------------------------------------------- FLASH
+*/
+void burnDialog::on_FlashLoadButton_clicked() {
   QString fileName;
 
   ui->BurnFlashButton->setDisabled(true);
@@ -146,7 +149,7 @@ void burnDialog::on_FlashLoadButton_clicked()
     if(fileName.isEmpty())
       return;
     checkFw(fileName);
-  }
+	}
   else {
     QString fileName = QFileDialog::getOpenFileName(this,tr("Choose Radio Backup file"), g.eepromDir(), tr(EXTERNAL_EEPROM_FILES_FILTER));
     if (checkeEprom(fileName)) {
@@ -211,16 +214,14 @@ void burnDialog::checkFw(QString fileName)
   g.flashDir( QFileInfo(fileName).dir().absolutePath() );
 }
 
-bool burnDialog::checkeEprom(QString fileName)
-{
-  if (fileName.isEmpty()) {
-    return false;
-  }
+bool burnDialog::checkeEprom(QString fileName) {
+  if (fileName.isEmpty()) { return false; }
+  
   QFile file(fileName);
   if (!file.exists()) {
     QMessageBox::critical(this, tr("Error"), tr("Unable to find file %1!").arg(fileName));
     return false;
-  }
+	}
   burnraw=false;
   int fileType = getFileType(fileName);
 #if 0
@@ -238,14 +239,14 @@ bool burnDialog::checkeEprom(QString fileName)
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {  //reading HEX TEXT file
         QMessageBox::critical(this, tr("Error"),tr("Error opening file %1:\n%2.").arg(fileName).arg(file.errorString()));
         return false;
-    }        
+		}
     QDomDocument doc(ER9X_EEPROM_FILE_TYPE);
     bool xmlOK = doc.setContent(&file);
     if(xmlOK) {
       if (!LoadEepromXml(radioData, doc)){
         return false;
-      }
-    }
+		}
+	  }
     file.reset();
       
     QTextStream inputStream(&file);
@@ -254,8 +255,9 @@ bool burnDialog::checkeEprom(QString fileName)
       if (hline!=EEPE_EEPROM_FILE_HEADER) {
         file.close();
         return false;
-      }
-    }
+		}
+	  }
+	  
     uint8_t eeprom[EESIZE_RLC_MAX];
     int eeprom_size = HexInterface(inputStream).load(eeprom, EESIZE_RLC_MAX);
     if (!eeprom_size) {
@@ -276,32 +278,33 @@ bool burnDialog::checkeEprom(QString fileName)
       burnraw=true;
       ui->FWFileName->setText(fileName);
       return true;
-    }
-  }
-  else if (fileType==FILE_TYPE_BIN) { //read binary
-    int eeprom_size = file.size();
-    if (!file.open(QFile::ReadOnly)) {  //reading binary file   - TODO HEX support
+	  }
+	}
+  else //read binary
+	if (fileType==FILE_TYPE_BIN) {
+	  int eeprom_size = file.size();
+	  if (!file.open(QFile::ReadOnly)) {  //reading binary file   - TODO HEX support
         QMessageBox::critical(this, tr("Error"),tr("Error opening file %1:\n%2.").arg(fileName).arg(file.errorString()));
         return false;
-    }
-    uint8_t *eeprom = (uint8_t *)malloc(eeprom_size);
-    memset(eeprom, 0, eeprom_size);
-    long result = file.read((char*)eeprom, eeprom_size);
-    file.close();
-    if (result != eeprom_size) {
+		}
+	  uint8_t *eeprom = (uint8_t *)malloc(eeprom_size);
+	  memset(eeprom, 0, eeprom_size);
+	  long result = file.read((char*)eeprom, eeprom_size);
+	  file.close();
+	  if (result != eeprom_size) {
         QMessageBox::critical(this, tr("Error"),tr("Error reading file %1:\n%2.").arg(fileName).arg(file.errorString()));
         return false;
-    }
-    if (!LoadEeprom(radioData, eeprom, eeprom_size)) {
-      int res = QMessageBox::question(this, "Companion",tr("Invalid binary Models and Settings File %1, Proceed anyway ?").arg(fileName),QMessageBox::Yes | QMessageBox::No);
-      if (res == QMessageBox::No) {
-        return false;
-      }
-      burnraw=true;
-    }
-  }
-  ui->FWFileName->setText(fileName);
-  return true;
+		}
+	  if (!LoadEeprom(radioData, eeprom, eeprom_size)) {
+		int res = QMessageBox::question(this, "Companion",tr("Invalid binary Models and Settings File %1, Proceed anyway ?").arg(fileName),QMessageBox::Yes | QMessageBox::No);
+		if (res == QMessageBox::No) {
+		  return false;
+		  }
+		burnraw=true;
+		}
+	  }
+	ui->FWFileName->setText(fileName);
+	return true;
 }
 
 void burnDialog::displaySplash()
@@ -407,8 +410,7 @@ void burnDialog::on_useLibraryImageCB_clicked()
   updateUI();
 }
 
-void burnDialog::on_BurnFlashButton_clicked()
-{
+void burnDialog::on_BurnFlashButton_clicked() {
   if (hexType==FLASH_FILE_TYPE) {
     g.checkHardwareCompatibility(ui->checkFirmwareCB->isChecked());
     QString fileName=ui->FWFileName->text();
@@ -419,7 +421,7 @@ void burnDialog::on_BurnFlashButton_clicked()
         QImage image;
         if (pixmap) {
           image = pixmap->toImage().scaled(ui->imageLabel->width(), ui->imageLabel->height());
-        }
+		  }
         if (!image.isNull()) {
           QString tempFile;
           if (getFileType(fileName) == FILE_TYPE_HEX)
@@ -432,22 +434,22 @@ void burnDialog::on_BurnFlashButton_clicked()
           if (flash.saveFlash(tempFile) > 0) {
             hexfileName->clear();
             hexfileName->append(tempFile);
-          }
+			}
           else {
             hexfileName->clear();
             QMessageBox::critical(this, tr("Warning"), tr("Cannot save customized firmware"));
-          }
-        }
+			}
+		  }
         else {
           hexfileName->clear();
           QMessageBox::critical(this, tr("Warning"), tr("Custom image not found"));
-        }
-      }
+		  }
+		}
       else {
         hexfileName->clear();
         hexfileName->append(fileName);
-      }
-    }
+		}
+	  }
     else {
       QMessageBox::critical(this, tr("Warning"), tr("No firmware selected"));
       hexfileName->clear();     

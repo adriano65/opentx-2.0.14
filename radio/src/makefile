@@ -51,14 +51,14 @@ MAVLINK_DEBUG = NO
 
 # --- use eeprom_rlc.cpp ---
 # MAVLINK OK, FRSKY OK
-# PCB = 9X
+PCB = 9X
 
 # --- use eeprom_rlc.cpp ---
-PCB = 9XR128
+#PCB = 9XR128
 
 # --- use eeprom_raw.cpp ---
 # MAVLINK NO, FRSKY OK for frsky d option (not cable ?!)
-# PCB = SKY9X
+#PCB = SKY9X
 
 # --- use eeprom_raw.cpp ---
 # MAVLINK OK, FRSKY OK for frsky d option (not cable ?!)
@@ -90,7 +90,7 @@ AVRDEVICE = -c usbasp -p m128 -B 11
 endif
 
 # Delay to start second AVRDUDE command (required by some).
-DELAY = 2
+DELAY = 1
 
 # Enable JETI-Telemetry or FrSky Telemetry reception on UART0
 # For this option you need to modify your hardware!
@@ -379,7 +379,7 @@ SHELL = sh
 IMG2LBM = -python ../util/img2lbm.py
 BIN2LBM = -python ../util/bin2lbm.py
 TRANSLATE = -python ../util/translate.py
-VERSION = 0.2.17
+VERSION = 0.2.18
 
 SRC =
 CPPSRC =
@@ -653,7 +653,11 @@ ifeq ($(PCB), MEGA2560)
   ROTARY_ENCODERS = 2
   CPPDEFS += -DROTARY_ENCODERS=${ROTARY_ENCODERS}
 endif
-
+#
+#
+# ---------------------------------------------- S K Y 9 X  and  9 X R P R O ---------
+#
+#
 ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO))
   # 9x/9XR radio with a sky9x replacement board
   ARCH = ARM
@@ -729,6 +733,12 @@ ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO))
   endif
 
 endif
+
+#
+#
+# ---------------------------------------------- T A R A N I S ---------
+#
+#
 
 ifeq ($(PCB), TARANIS)
   # TARANIS radio
@@ -1289,6 +1299,8 @@ bootloader.lbm:
 	@echo "Fetching Mike's bootloader..."
 	wget http://ersky9x.googlecode.com/svn/trunk/src/bootloader/bootflash4.lbm
 	mv bootflash4.lbm $@
+	#echo " ->  $@"
+	#read a
 endif
 	
 tra: translations/en.h translations/cz.h translations/de.h translations/es.h translations/fi.h translations/fr.h translations/it.h translations/pl.h translations/pt.h translations/se.h
@@ -1542,7 +1554,9 @@ DATE = ${shell sh -c "date +%F:%T" }
 AVRCOMMAND = $(AVRDUDE) $(AVRDEVICE)
 
 WRITE_COMMAND = $(AVRCOMMAND) -U flash:w:opentx$(PCB).hex:i
+
 ifeq ($(RESTORE_EEPROM), YES)
+	exit 0 
   BACKUP_EEPROM = YES
   ifeq ($(DOUBLE_WRITE_OK), YES)
     WRITE_COMMAND += -U eeprom:w:$(DATA_DIR)/eeprom-$(DATE).hex:i

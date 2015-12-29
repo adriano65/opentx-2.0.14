@@ -109,6 +109,10 @@ enum MemoryTypes {
  *----------------------------------------------------------------------------*/
 
 uint32_t FirmwareSize;
+/*
+ * targets/sky9x/board_sky9x.h:#define FIRMWARE_ADDRESS             0x00400000
+ * targets/taranis/board_taranis.h:#define FIRMWARE_ADDRESS   		0x08000000
+ */
 uint32_t firmwareAddress = FIRMWARE_ADDRESS;
 uint32_t firmwareWritten = 0;
 uint32_t eepromAddress = 0;
@@ -414,8 +418,7 @@ extern Key keys[];
 
 static uint32_t PowerUpDelay;
 
-void writeFlashBlock()
-{
+void writeFlashBlock() {
   uint32_t blockOffset = 0;
   while (BlockCount) {
     writeFlash((uint32_t *)firmwareAddress, &Block_buffer[blockOffset]);
@@ -436,8 +439,7 @@ void writeEepromBlock()
   eepromAddress += BlockCount;
 }
 
-int main()
-{
+int main() {
   uint32_t index = 0;
   uint32_t maxhsize = DISPLAY_CHAR_WIDTH;
   FRESULT fr;
