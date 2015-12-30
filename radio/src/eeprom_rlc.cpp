@@ -875,12 +875,12 @@ void RlcFile::DisplayProgressBar(uint8_t x)
   }
 }
 #endif
-
-//#if defined(PCBSTD)
-//  #define CHECK_EEPROM_VARIANT() (g_eeGeneral.variant == EEPROM_VARIANT)
-//#else
+// PCBSTD is 9X and 9xr128 !
+#if defined(PCBSTD)
+  #define CHECK_EEPROM_VARIANT() (g_eeGeneral.variant == EEPROM_VARIANT)
+#else
   #define CHECK_EEPROM_VARIANT() (1)
-//#endif
+#endif
 
 // For conversions ...
 #if defined(CPUARM)
@@ -925,8 +925,7 @@ bool eeLoadGeneral() {
 #endif
 }
 
-void eeLoadModelName(uint8_t id, char *name)
-{
+void eeLoadModelName(uint8_t id, char *name) {
   memclear(name, sizeof(g_model.header.name));
   if (id < MAX_MODELS) {
     theFile.openRlc(FILE_MODEL(id));

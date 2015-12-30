@@ -388,32 +388,37 @@ void menuTelemetryMavlinkInfos(void) {
 	x2 = 7 * FW;
 	xnum = x2 + 10 * FWNUM;
 	y = FH;
-	
+	/*
 	lcd_putsnAtt(x1, y, STR_MAVLINK_MODE, 4, 0);
 	if (mavlinkRT.active)
 		lcd_putsnAtt(x2, y, PSTR("A"), 1, 0);
 	lcd_outdezAtt(xnum, y, mavlinkRT.heartbeat.base_mode, 0);
-
 	y += FH;
+	*/
 	lcd_puts(x1, y, PSTR("UNKN PKT"));
 	lcd_outdezAtt(xnum, y, mavlinkRT.unknow_pckt_cnt, 0);
-	
 	y += FH;
+	
 	lcd_puts(x1, y, PSTR("PKT DROP"));
 	lcd_outdezAtt(xnum, y, mavlinkRT.packet_drop, 0);
 	y += FH;
+	
 	lcd_puts(x1, y, PSTR("PKT REC"));
 	lcd_outdezAtt(xnum, y, mavlinkRT.packet_fixed, 0);		/* TODO use correct var */
 	y += FH;
+	
 	lcd_puts(x1, y, PSTR("MAV Vers"));
 	lcd_outdezAtt(xnum, y, mavlinkRT.heartbeat.mavlink_version, 0);
 	y += FH;
+	
 	lcd_puts(x1, y, PSTR("RC Rssi"));
 	lcd_outdezAtt(xnum, y, mavlinkRT.rc_rssi, 0);
 	y += FH;
+	
 	lcd_puts(x1, y, PSTR("PC Rssi"));
 	lcd_outdezAtt(xnum, y, mavlinkRT.pc_rssi, 0);
 	y += FH;
+	
 	lcd_puts(x1, y, PSTR("Baudrate"));
 	lcd_outdezAtt(xnum, y, Index2Baud(g_model.mavlink.baud), 0);
 }
