@@ -913,6 +913,10 @@ class MavlinkData {
     MavlinkData() { clear();}
     unsigned int rc_rssi_scale;
     unsigned int pc_rssi_en;
+	unsigned int bluetooth_en;
+	unsigned int mavreq_en;
+	unsigned int baud;
+	
     void clear() { memset(this, 0, sizeof(MavlinkData)); }
 };
 

@@ -2449,10 +2449,9 @@ class MavlinkField: public StructField {
     {
       Append(new UnsignedField<4>(mavlink.rc_rssi_scale, "Rc_rssi_scale"));
       Append(new UnsignedField<1>(mavlink.pc_rssi_en, "Pc_rssi_en"));
-      Append(new SpareBitsField<1>( mavlink.bluetooth_en, "bluetooth_en"));
-      Append(new SpareBitsField<1>( mavlink.mavreq_en, "mavreq_en"));
-      Append(new SpareBitsField<3>( mavlink.baud, "baud"));
-      Append(new SpareBitsField<8>());
+      Append(new UnsignedField<1>( mavlink.bluetooth_en, "bluetooth_en"));
+      Append(new UnsignedField<1>( mavlink.mavreq_en, "mavreq_en"));
+      Append(new UnsignedField<3>( mavlink.baud, "baud"));
     }
 };
 
