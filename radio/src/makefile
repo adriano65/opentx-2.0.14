@@ -62,10 +62,10 @@ MAVLINK_DEBUG = NO
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
-PCB = 9XRPRO
+#PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
-# PCB = TARANIS
+PCB = TARANIS
 
 #------- END BUILD OPTIONS ---------------------------
 
@@ -98,7 +98,7 @@ DELAY = 1
 # Values = STD, FRSKY, FRSKY_SPORT, JETI, NMEA, ARDUPILOT, MAVLINK, TELEMETREZ, FRSKY_MAVLINK
 #EXT = STD
 #EXT = FRSKY
-#EXT = ARDUPILOT
+# EXT = ARDUPILOT
 #EXT = MAVLINK
 EXT = FRSKY_MAVLINK
 
@@ -1310,6 +1310,7 @@ elf: $(TARGET).elf
 bin: $(TARGET).bin
 	mv $(TARGET).bin $(TARGET)$(PCB).bin
 	$(REMOVE) $(TARGET).hex
+	$(REMOVE) $(TARGET).lst
 	@echo "Done."
 
 hex: $(TARGET).hex
