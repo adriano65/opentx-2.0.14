@@ -35,16 +35,6 @@ DOUBLE_WRITE_OK = NO
 
 #----------- BUILD OPTIONS ---------------------------
 
-# Activates the DEBUG Mode (all boards)
-# On G9X V4 board, when VOICE=NO:
-#  PORTH:7 --> Transition LOW to HIGH = start of setupPulses(). Transition HIGH to LOW = end of setupPulses().
-#  PORTH:6 --> LOW->HIGH = start of mixer calcs. HIGH->LOW, end of mixer calcs.
-# Values = YES, NO
-DEBUG = NO
-#DEBUG = YES
-MAVLINK_DEBUG = NO
-#MAVLINK_DEBUG = YES
-
 # PCB version
 # Values: 9X, 9X128, 9X2561, 9XR, 9XR128, 9XR2561, GRUVIN9X, MEGA2560, SKY9X, 9XRPRO, TARANIS 
 # Old values STD and STD128 are mapped to 9X and 9X128 for compatibility
@@ -58,16 +48,27 @@ MAVLINK_DEBUG = NO
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
-#PCB = SKY9X
+PCB = SKY9X
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
 #PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
-PCB = TARANIS
+#PCB = TARANIS
 
 #------- END BUILD OPTIONS ---------------------------
+
+# Activates the DEBUG Mode (all boards)
+# On G9X V4 board, when VOICE=NO:
+#  PORTH:7 --> Transition LOW to HIGH = start of setupPulses(). Transition HIGH to LOW = end of setupPulses().
+#  PORTH:6 --> LOW->HIGH = start of mixer calcs. HIGH->LOW, end of mixer calcs.
+# Values = YES, NO
+DEBUG = NO
+#DEBUG = YES
+MAVLINK_DEBUG = NO
+#MAVLINK_DEBUG = YES
+
 
 # PCB revision
 #PCBREV = REVA
@@ -217,7 +218,8 @@ PWM_BACKLIGHT = NO
 # Values = YES, NO, FIXED
 #ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
 #ifeq ($(PCB), $(filter $(PCB), 9XRPRO TARANIS))
-ifeq ($(PCB), $(filter $(PCB), TARANIS))
+#ifeq ($(PCB), $(filter $(PCB), TARANIS))
+ifeq ($(PCB), $(filter $(PCB), SKY9X TARANIS))
 SPLASH = YES
 else
 SPLASH = NO

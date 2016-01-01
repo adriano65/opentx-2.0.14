@@ -877,7 +877,8 @@ void RlcFile::DisplayProgressBar(uint8_t x)
 #endif
 // PCBSTD is 9X and 9xr128 !
 #if defined(PCBSTD)
-  #define CHECK_EEPROM_VARIANT() (g_eeGeneral.variant == EEPROM_VARIANT)
+  //#define CHECK_EEPROM_VARIANT() (g_eeGeneral.variant == EEPROM_VARIANT)
+  #define CHECK_EEPROM_VARIANT() (1)
 #else
   #define CHECK_EEPROM_VARIANT() (1)
 #endif
