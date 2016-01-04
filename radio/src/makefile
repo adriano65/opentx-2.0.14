@@ -48,11 +48,11 @@ DOUBLE_WRITE_OK = NO
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
-PCB = SKY9X
+#PCB = SKY9X
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
-#PCB = 9XRPRO
+PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
 #PCB = TARANIS
@@ -168,7 +168,7 @@ DBLKEYS = NO
 # AUDIO Mods
 # Values = YES, NO 
 #ifeq ($(PCB), $(filter $(PCB), 9X 9X128))
-ifeq ($(PCB), $(filter $(PCB), 9X))
+ifeq ($(PCB), $(filter $(PCB), 9X 9XRPRO))
 AUDIO = NO
 else
 AUDIO = YES
@@ -177,7 +177,7 @@ endif
 # VOICE Mods
 # Values = YES, NO 
 #ifeq ($(PCB), $(filter $(PCB), 9X 9X128))
-ifeq ($(PCB), $(filter $(PCB), 9X))
+ifeq ($(PCB), $(filter $(PCB), 9X 9XRPRO))
 VOICE = NO
 else
 VOICE = YES
@@ -216,10 +216,10 @@ PWM_BACKLIGHT = NO
 
 # SPLASH on START
 # Values = YES, NO, FIXED
-#ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
-#ifeq ($(PCB), $(filter $(PCB), 9XRPRO TARANIS))
 #ifeq ($(PCB), $(filter $(PCB), TARANIS))
-ifeq ($(PCB), $(filter $(PCB), SKY9X TARANIS))
+#ifeq ($(PCB), $(filter $(PCB), 9XRPRO TARANIS))
+#ifeq ($(PCB), $(filter $(PCB), SKY9X TARANIS))
+ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
 SPLASH = YES
 else
 SPLASH = NO
