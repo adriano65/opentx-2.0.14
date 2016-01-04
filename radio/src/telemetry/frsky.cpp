@@ -145,8 +145,7 @@ extern uint8_t TrotCount;
 extern uint8_t TezRotary;
 #endif
 
-NOINLINE void processSerialFrskyData(uint8_t data)
-{
+NOINLINE void processSerialFrskyData(uint8_t data) {
   static uint8_t dataState = STATE_DATA_IDLE;
 
 #if defined(BLUETOOTH)
@@ -154,14 +153,7 @@ NOINLINE void processSerialFrskyData(uint8_t data)
   btPushByte(data);
 #endif
 
-#if defined(PCBTARANIS)
-    if (g_eeGeneral.uart3Mode == UART_MODE_TELEMETRY_MIRROR) {
-      //uart3Putc(data);
-    }
-#endif
-
-  switch (dataState)
-  {
+  switch (dataState)  {
     case STATE_DATA_START:
       if (data == START_STOP) {
         if (IS_FRSKY_SPORT_PROTOCOL()) {
@@ -267,16 +259,14 @@ enum AlarmsCheckSteps {
 };
 
 void FRSKY_telemetryWakeup() {
-  uint8_t data;
-  if (g_model.telemetryProtocol == PROTOCOL_FRSKY_D_SECONDARY) {
-	while (TelemRxFifo.pop(data)) {
-	  processSerialFrskyData(data);
-	  }
-	}
+    uint8_t data;
+    while (TelemRxFifo.pop(data)) {
+      processSerialFrskyData(data);
+      }
   #if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
   else {
-    // Receive serial data here
-    rxPdcUsart(processSerialFrskyData);
+      // Receive serial data here
+      rxPdcUsart(processSerialFrskyData);
 	}
   #endif
 
@@ -394,8 +384,7 @@ void FRSKY_telemetryWakeup() {
 #endif
 }
 
-void telemetryInterrupt10ms()
-{
+void telemetryInterrupt10ms() {
 #if defined(CPUARM)
   uint16_t voltage = frskyData.hub.cellsSum; /* unit: 1/10 volts */
 #elif defined(FRSKY_HUB)
@@ -574,7 +563,9 @@ void FRSKY_Init(void) {
 		  break;			  
 	  case 2:
 		  // btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
-		  //UART3_Configure(Index2Baud(g_model.mavlink.baud), Master_frequency);
+		  #if defined(PCBTARANIS)
+		  uart3Setup(FRSKY_D_BAUDRATE);
+		  #endif
 		  break;			  
 	  }
 #endif
@@ -583,8 +574,7 @@ void FRSKY_Init(void) {
 }
 
 #if defined(CPUARM)
-void frskySetCellsCount(uint8_t cellscount)
-{
+void frskySetCellsCount(uint8_t cellscount) {
   if (cellscount <= DIM(frskyData.hub.cellVolts)) {
     frskyData.hub.cellsCount = cellscount;
     frskyData.hub.cellsState = 0;

@@ -301,20 +301,10 @@ enum BeeperMode {
 #endif
 
 #if defined(PCBTARANIS)
-enum uartModes {
-  UART_MODE_NONE,
-  UART_MODE_TELEMETRY_MIRROR,
-  UART_MODE_TELEMETRY,
-#if defined(DEBUG)
-  UART_MODE_DEBUG,
-#endif
-  UART_MODE_COUNT,
-  UART_MODE_MAX = UART_MODE_COUNT-1
-};
 
 #define EXTRA_GENERAL_FIELDS \
   EXTRA_GENERAL_FIELDS_ARM \
-  uint8_t  uart3Mode; \
+  uint8_t  extra_spare; \
   uint8_t  potsType; \
   uint8_t  backlightColor;
 #elif defined(CPUARM)
@@ -1273,6 +1263,7 @@ PACK(typedef struct MavLinkData_ {
   uint8_t bluetooth_en:1;
   uint8_t mavreq_en:1;
   uint8_t baud:3;
+  uint8_t TelemetryPort:2;
   }) MavLinkData_t;
 #endif
 
@@ -1817,7 +1808,7 @@ PACK(typedef struct t_ModelData {
   uint8_t   		thrTraceSrc;
   
   swstate_t 		switchWarningStates;
-  uint8_t 			nSwToWarn;
+  uint8_t 		nSwToWarn;
 
   MODEL_GVARS_DATA
 

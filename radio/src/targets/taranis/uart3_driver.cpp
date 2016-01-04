@@ -85,9 +85,7 @@ void uart3Putc(const char c) {
 
 #if defined(DEBUG)
 void debugPutc(const char c) {
-  if (g_eeGeneral.uart3Mode == UART_MODE_DEBUG) {
     uart3Putc(c);
-  }
 }
 #endif
 
