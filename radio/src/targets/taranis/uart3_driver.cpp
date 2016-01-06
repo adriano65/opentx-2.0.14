@@ -111,7 +111,7 @@ extern "C" void USART3_IRQHandler(void) {
 
     if ( !(status & USART_FLAG_ERRORS) ) {
       TelemRxFifo.push(data);
-    }
+	  }
 
     status = USART3->SR;
   }

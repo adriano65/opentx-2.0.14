@@ -36,8 +36,7 @@
 
 #include "../../opentx.h"
 
-void telemetryPortInit(uint32_t baudrate)
-{
+void telemetryPortInit(uint32_t baudrate) {
   if (baudrate == 0) {
     USART_DeInit(USART2);
     return;
@@ -85,8 +84,7 @@ void telemetryPortInit(uint32_t baudrate)
   NVIC_SetPriority(USART2_IRQn, 6);
 }
 
-void telemetryPutc(const char c)
-{
+void telemetryPutc(const char c) {
   GPIO_SetBits(GPIO_PIN_SPORT_ON, PIN_SPORT_ON);
   USART_SendData(SPORT, c);
   GPIO_ResetBits(GPIO_PIN_SPORT_ON, PIN_SPORT_ON);

@@ -135,7 +135,7 @@ void eeLoadModel(uint8_t id) {
 	  case PROTOCOL_FRSKY_SPORT:
 	  case PROTOCOL_FRSKY_D:
 	  #endif
-	  case PROTOCOL_FRSKY_D_SECONDARY:
+	  case PROTOCOL_FRSKY_D_SECONDARY:		
 		FRSKY_Init();
 		#if defined(CPUARM)
 		if (g_model.frsky.mAhPersistent) {

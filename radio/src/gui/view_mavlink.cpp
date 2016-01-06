@@ -66,6 +66,7 @@ enum menuMavlinkSetupItems {
 	ITEM_MAVLINK_REQUEST_APMPARAM,
 	ITEM_MAVLINK_ENABLE_BLUETOOTH,
 	ITEM_MAVLINK_BAUD,
+	ITEM_MAVLINK_COM,
 	ITEM_MAVLINK_MAX
 };
 
@@ -603,6 +604,16 @@ void menuTelemetryMavlinkSetup(uint8_t event) {
 				g_model.mavlink.baud = selectMenuItem(RADIO_SETUP_2ND_COLUMN, y, STR_MAVLINK_BAUD_LABEL, STR_MAVLINK_BAUDS, g_model.mavlink.baud, 0, 7, attr, event);
 				//MAVLINK_Init(false);
 				break;
+			case ITEM_MAVLINK_COM:
+				g_model.mavlink.TelemetryPort = selectMenuItem(RADIO_SETUP_2ND_COLUMN
+															  , y
+															  , PSTR("Telem com")
+															  , PSTR("\004com0""com1""com2""com3")
+															  , g_model.mavlink.TelemetryPort
+															  , 0, 3, attr, event);
+				//MAVLINK_Init(false);
+				break;
+				
 		}
 	}
 }

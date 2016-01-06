@@ -1,5 +1,5 @@
-# !!!! BETA makefile !!!!
-# !!!! Use at own risk !!!!
+# !!!! VERY EXPERIMENTAL makefile !!!!
+# !!!! ---> Use at own risk !!!!
 #----------------------------------------------------------------------------
 # On command line:
 #
@@ -1294,8 +1294,10 @@ bootloader.lbm: bootloader/bootloader_ramBoot.bin
 else ifeq ($(PCB), 9XRPRO)
 bootloader.lbm:
 	@echo "Fetching Mike's bootloader..."
-	wget http://ersky9x.googlecode.com/svn/trunk/src/bootloader/bootflash8.lbm
-	mv bootflash8.lbm $@
+	#wget http://ersky9x.googlecode.com/svn/trunk/src/bootloader/bootflash8.lbm
+	#mv bootflash8.lbm $@
+	wget http://ersky9x.googlecode.com/svn/trunk/src/bootloader/bootflashX.lbm
+	mv bootflashX.lbm $@
 else ifeq ($(PCB), SKY9X)
 bootloader.lbm:
 	@echo "Fetching Mike's bootloader..."
