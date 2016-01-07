@@ -171,22 +171,22 @@ void MAVLINK_Init(bool bHardReset) {
 	  // enable AFTER CoInitOS()
 	  if (bHardReset) TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 19, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
 	  #endif
-	  switch (g_eeGeneral.telemetryCom) {
+	  switch (g_model.telemetryCom) {
 		case 0:
 			// SKY9x
 			//telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
-			telemetryPortInit(Index2Baud(g_model.mavlink.baud));
+			telemetryPortInit(Index2Baud(g_model.telemetryBaud));
 			break;			  
 		case 1:
 			// in ersky9x CONSOLE_USART==UART0
 			// 9XR-PRO has external module connected via FUTABA Port
 			// telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
 			/* my taranis is wired on first and second serial (first is RX only) :-) */
-			telemetrySecondPortInit(Index2Baud(g_model.mavlink.baud));
+			telemetrySecondPortInit(Index2Baud(g_model.telemetryBaud));
 			break;			  
 		case 2:
 			// btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
-			//UART3_Configure(Index2Baud(g_model.mavlink.baud), Master_frequency);
+			//UART3_Configure(Index2Baud(g_model.telemetryBaud), Master_frequency);
 			break;			  
 		}
 	#endif

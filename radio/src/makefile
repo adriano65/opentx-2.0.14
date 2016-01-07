@@ -40,22 +40,21 @@ DOUBLE_WRITE_OK = NO
 # Old values STD and STD128 are mapped to 9X and 9X128 for compatibility
 
 # --- use eeprom_rlc.cpp ---
-# MAVLINK OK, FRSKY OK
-#PCB = 9X
+# PCB = 9X
 
 # --- use eeprom_rlc.cpp ---
-#PCB = 9XR128
+# PCB = 9XR128
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
-#PCB = SKY9X
+# PCB = SKY9X
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
 PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
-#PCB = TARANIS
+# PCB = TARANIS
 
 #------- END BUILD OPTIONS ---------------------------
 
@@ -105,7 +104,7 @@ EXT = FRSKY_MAVLINK
 
 # BLUETOOTH
 # Values = YES, NO
-#BLUETOOTH = YES
+# BLUETOOTH = YES
 ifeq ($(MAVLINK_DEBUG), YES)
 BLUETOOTH = NO
 endif
@@ -381,7 +380,7 @@ SHELL = sh
 IMG2LBM = -python ../util/img2lbm.py
 BIN2LBM = -python ../util/bin2lbm.py
 TRANSLATE = -python ../util/translate.py
-VERSION = 0.2.18
+VERSION = 0.2.19
 
 SRC =
 CPPSRC =

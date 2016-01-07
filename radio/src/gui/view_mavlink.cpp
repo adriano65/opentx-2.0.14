@@ -63,10 +63,8 @@ enum mavlink_menu_ {
 enum menuMavlinkSetupItems {
 	ITEM_MAVLINK_RC_RSSI_SCALE,
 	ITEM_MAVLINK_PC_RSSI_EN,
-	ITEM_MAVLINK_REQUEST_APMPARAM,
 	ITEM_MAVLINK_ENABLE_BLUETOOTH,
-	ITEM_MAVLINK_BAUD,
-	ITEM_MAVLINK_COM,
+	ITEM_MAVLINK_REQUEST_APMPARAM,
 	ITEM_MAVLINK_MAX
 };
 
@@ -421,7 +419,7 @@ void menuTelemetryMavlinkInfos(void) {
 	y += FH;
 	
 	lcd_puts(x1, y, PSTR("Baudrate"));
-	lcd_outdezAtt(xnum, y, Index2Baud(g_model.mavlink.baud), 0);
+	lcd_outdezAtt(xnum, y, Index2Baud(g_model.telemetryBaud), 0);
 }
 
 /*Flight mode menu */
@@ -600,20 +598,6 @@ void menuTelemetryMavlinkSetup(uint8_t event) {
 					attr,
 					event);
 				break;
-			case ITEM_MAVLINK_BAUD:
-				g_model.mavlink.baud = selectMenuItem(RADIO_SETUP_2ND_COLUMN, y, STR_MAVLINK_BAUD_LABEL, STR_MAVLINK_BAUDS, g_model.mavlink.baud, 0, 7, attr, event);
-				//MAVLINK_Init(false);
-				break;
-			case ITEM_MAVLINK_COM:
-				g_model.mavlink.TelemetryPort = selectMenuItem(RADIO_SETUP_2ND_COLUMN
-															  , y
-															  , PSTR("Telem com")
-															  , PSTR("\004com0""com1""com2""com3")
-															  , g_model.mavlink.TelemetryPort
-															  , 0, 3, attr, event);
-				//MAVLINK_Init(false);
-				break;
-				
 		}
 	}
 }

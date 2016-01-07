@@ -895,6 +895,9 @@ enum menuModelSetupItems {
   ITEM_MODEL_BEEP_CENTER,
 #if defined(FRSKY) || defined(MAVLINK)
   ITEM_MODEL_PROTOCOL,
+  ITEM_SETUP_TELCOM,
+  ITEM_TELCOM_BAUD,
+  ITEM_SETUP_MIRRCOM,
 #endif
 #if defined(PCBTARANIS)
   ITEM_MODEL_INTERNAL_MODULE_LABEL,
@@ -958,8 +961,7 @@ void copySelection(char *dst, const char *src, uint8_t size)
     memcpy(dst, src, size);
 }
 
-void onModelSetupBitmapMenu(const char *result)
-{
+void onModelSetupBitmapMenu(const char *result) {
   if (result == STR_UPDATE_LIST) {
     if (!listSdFiles(BITMAPS_PATH, BITMAPS_EXT, sizeof(g_model.header.bitmap), NULL)) {
       POPUP_WARNING(STR_NO_BITMAPS_ON_SD);
@@ -984,8 +986,7 @@ void onModelSetupBitmapMenu(const char *result)
   #define CURRENT_MODULE_EDITED(k)         (EXTERNAL_MODULE)
 #endif
 
-void menuModelSetup(uint8_t event)
-{
+void menuModelSetup(uint8_t event) {
 #if defined(PCBTARANIS)
   #define IF_INTERNAL_MODULE_ON(x)          (g_model.moduleData[INTERNAL_MODULE].rfProtocol == RF_PROTO_OFF ? HIDDEN_ROW : (uint8_t)(x))
   #define IF_EXTERNAL_MODULE_ON(x)          (g_model.externalModule == MODULE_TYPE_NONE ? HIDDEN_ROW : (uint8_t)(x))
@@ -1026,6 +1027,16 @@ void menuModelSetup(uint8_t event)
 			, NAVIGATION_LINE_BY_LINE | (NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1)
 			//, 0								// ITEM_MODEL_BEEP_CENTER
 			, 0								// ITEM_MODEL_PROTOCOL
+			
+			//, 0								// ITEM_SETUP_TELCOM Label
+			, 0								// ITEM_SETUP_TELCOM
+			
+			//, 0								// ITEM_TELCOM_BAUD Label
+			, 0								// ITEM_TELCOM_BAUD
+			
+			//, 0								// ITEM_SETUP_MIRRCOM Label
+			, 0								// ITEM_SETUP_MIRRCOM
+			
 			, LABEL(InternalModule)			// ITEM_MODEL_INTERNAL_MODULE_LABEL
 			, 0								// ITEM_MODEL_INTERNAL_MODULE_MODE
 			, IF_INTERNAL_MODULE_ON(1)		// ITEM_MODEL_INTERNAL_MODULE_CHANNELS
@@ -1081,6 +1092,16 @@ void menuModelSetup(uint8_t event)
 			, 0								// ITEM_MODEL_BEEP_CENTER
 			, 0								// ITEM_MODEL_PROTOCOL Label
 			, 0								// ITEM_MODEL_PROTOCOL
+			
+			, 0								// ITEM_SETUP_TELCOM Label
+			, 0								// ITEM_SETUP_TELCOM
+			
+			, 0								// ITEM_TELCOM_BAUD Label
+			, 0								// ITEM_TELCOM_BAUD
+			
+			, 0								// ITEM_SETUP_MIRRCOM Label
+			, 0								// ITEM_SETUP_MIRRCOM
+			
 			, LABEL(ExternalModule)			// ITEM_MODEL_EXTERNAL_MODULE_LABEL
 			, (IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)1 : (uint8_t)0	//ITEM_MODEL_EXTERNAL_MODULE_MODE
 			, EXTERNAL_MODULE_CHANNELS_ROWS()	// ITEM_MODEL_EXTERNAL_MODULE_CHANNELS
@@ -1092,7 +1113,25 @@ void menuModelSetup(uint8_t event)
   #define CURSOR_ON_CELL                    (true)
   #define MODEL_SETUP_MAX_LINES             ((IS_PPM_PROTOCOL(protocol)||IS_DSM2_PROTOCOL(protocol)||IS_PXX_PROTOCOL(protocol)) ? 1+ITEM_MODEL_SETUP_MAX : ITEM_MODEL_SETUP_MAX)
   uint8_t protocol = g_model.protocol;
-  MENU_TAB({ 0, 0, CASE_PCBTARANIS(0) 2, CASE_PERSISTENT_TIMERS(0) 0, 0, 2, CASE_PERSISTENT_TIMERS(0) 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1, FIELD_PROTOCOL_MAX, 2 });
+  MENU_TAB({ 0
+			, 0
+			, CASE_PCBTARANIS(0) 2
+			, CASE_PERSISTENT_TIMERS(0) 0
+			, 0
+			, 2
+			, CASE_PERSISTENT_TIMERS(0) 0
+			, 0
+			, 0
+			, 0
+			, 0
+			, 0
+			, 0
+			, 0
+			, 0
+			, 5
+			, NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1
+			, FIELD_PROTOCOL_MAX
+			, 2 });
 #else
   #define CURSOR_ON_CELL                    (true)
   #define MODEL_SETUP_MAX_LINES             ((IS_PPM_PROTOCOL(protocol)||IS_DSM2_PROTOCOL(protocol)||IS_PXX_PROTOCOL(protocol)) ? 1+ITEM_MODEL_SETUP_MAX : ITEM_MODEL_SETUP_MAX)
@@ -1470,6 +1509,41 @@ void menuModelSetup(uint8_t event)
 													  , event);
 			break;
 		}
+		
+      case ITEM_SETUP_TELCOM:
+			g_model.telemetryCom = selectMenuItem( MODEL_SETUP_2ND_COLUMN
+													  , y
+													  , PSTR("Telem com")
+													  , PSTR("\004com0""com1""com2""com3")
+													  , g_model.telemetryCom
+													  , 0
+													  , 3
+													  , attr
+													  , event);
+			//eeDirty(EE_MODEL);
+        break;
+		
+	  case ITEM_TELCOM_BAUD:
+		  g_model.telemetryBaud = selectMenuItem(MODEL_SETUP_2ND_COLUMN
+												, y
+												, STR_MAVLINK_BAUD_LABEL
+												, STR_MAVLINK_BAUDS, g_model.telemetryBaud, 0, 7, attr, event);
+		  break;
+				
+		
+      case ITEM_SETUP_MIRRCOM:
+			g_model.telemetryMirrorCom = selectMenuItem( MODEL_SETUP_2ND_COLUMN
+													  , y
+													  , PSTR("Mirror com")
+													  , PSTR("\004com0""com1""com2""com3")
+													  , g_model.telemetryMirrorCom
+													  , 0
+													  , 3
+													  , attr
+													  , event);
+			//eeDirty(EE_MODEL);
+        break;
+		
 #endif
 
 #if defined(PCBTARANIS)
@@ -5672,8 +5746,7 @@ enum menuModelTelemetryItems {
 */
 #define TELEMETRY_TYPE_ROWS
 
-void menuTelemetryFrskySetup(uint8_t event)
-{
+void menuTelemetryFrskySetup(uint8_t event) {
   MENU(STR_MENUTELEMETRY, menuTabModel, e_Telemetry, ITEM_TELEMETRY_MAX+1
 			, {0
 			, TELEMETRY_TYPE_ROWS CHANNEL_ROWS

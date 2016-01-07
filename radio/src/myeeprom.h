@@ -284,7 +284,6 @@ enum BeeperMode {
   uint16_t mAhUsed; \
   uint32_t globalTimer; \
   int8_t   temperatureCalib; \
-  uint8_t  btBaudrate; \
   uint8_t  optrexDisplay; \
   uint8_t  sticksGain; \
   uint8_t  rotarySteps; \
@@ -1262,8 +1261,6 @@ PACK(typedef struct MavLinkData_ {
   uint8_t pc_rssi_en:1;
   uint8_t bluetooth_en:1;
   uint8_t mavreq_en:1;
-  uint8_t baud:3;
-  uint8_t TelemetryPort:2;
   }) MavLinkData_t;
 #endif
 
@@ -1780,6 +1777,9 @@ PACK(typedef struct t_ModelData {
   TimerData 		timers[MAX_TIMERS];
   AVR_FIELD(uint8_t protocol:3)
   uint8_t   		telemetryProtocol:3;
+  uint8_t 			telemetryCom:2;
+  uint8_t 			telemetryBaud:3;  
+  uint8_t			telemetryMirrorCom:2;
   uint8_t			thrTrim:1;            // Enable Throttle Trim
   AVR_FIELD(int8_t	ppmNCH:4)
   ARM_FIELD(int8_t	spare2:4)

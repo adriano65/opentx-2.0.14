@@ -179,8 +179,6 @@ enum menuGeneralSetupItems {
   CASE_CPUARM(ITEM_SETUP_LANGUAGE)
   CASE_CPUARM(ITEM_SETUP_IMPERIAL)
   IF_FAI_CHOICE(ITEM_SETUP_FAI)
-  CASE_MAVLINKFRSKY(ITEM_SETUP_TELCOM)
-  CASE_MAVLINKFRSKY(ITEM_SETUP_MIRRCOM)
   CASE_CPUARM(ITEM_SETUP_SWITCHES_DELAY)
   ITEM_SETUP_RX_CHANNEL_ORD,
   ITEM_SETUP_STICK_MODE_LABELS,
@@ -656,34 +654,6 @@ void menuGeneralSetup(uint8_t event) {
         break;
 #endif
 		
-#if defined(FRSKY) || defined(MAVLINK)
-      case ITEM_SETUP_TELCOM:
-			g_eeGeneral.telemetryCom = selectMenuItem( MODEL_SETUP_2ND_COLUMN
-													  , y
-													  , PSTR("Telem com")
-													  , PSTR("\004com0""com1""com2""com3")
-													  , g_eeGeneral.telemetryCom
-													  , 0
-													  , 3
-													  , attr
-													  , event);
-			//eeDirty(EE_MODEL);
-        break;
-		
-      case ITEM_SETUP_MIRRCOM:
-			g_eeGeneral.telemetryMirrorCom = selectMenuItem( MODEL_SETUP_2ND_COLUMN
-													  , y
-													  , PSTR("Mirror com")
-													  , PSTR("\004com0""com1""com2""com3")
-													  , g_eeGeneral.telemetryMirrorCom
-													  , 0
-													  , 3
-													  , attr
-													  , event);
-			//eeDirty(EE_MODEL);
-        break;
-#endif
-
 #if defined(CPUARM)
       case ITEM_SETUP_SWITCHES_DELAY:
         lcd_putsLeft(y, STR_SWITCHES_DELAY);
@@ -1462,7 +1432,6 @@ enum menuGeneralHwItems {
   ITEM_SETUP_HW_STICK_RV_GAIN,
   ITEM_SETUP_HW_STICK_RH_GAIN,
   IF_ROTARY_ENCODERS(ITEM_SETUP_HW_ROTARY_ENCODER)
-  CASE_BLUETOOTH(ITEM_SETUP_HW_BT_BAUDRATE)
   ITEM_SETUP_HW_MAX
 };
 
@@ -1511,15 +1480,6 @@ void menuGeneralHardware(uint8_t event)
 #if defined(ROTARY_ENCODERS)
       case ITEM_SETUP_HW_ROTARY_ENCODER:
         g_eeGeneral.rotarySteps = selectMenuItem(GENERAL_HW_PARAM_OFS, y, PSTR("Rotary Encoder"), PSTR("\0062steps4steps"), g_eeGeneral.rotarySteps, 0, 1, attr, event);
-        break;
-#endif
-
-#if defined(BLUETOOTH)
-      case ITEM_SETUP_HW_BT_BAUDRATE:
-        g_eeGeneral.btBaudrate = selectMenuItem(GENERAL_HW_PARAM_OFS, y, STR_BAUDRATE, PSTR("\005115k 9600 19200"), g_eeGeneral.btBaudrate, 0, 2, attr, event);
-        if (attr && checkIncDec_Ret) {
-          btInit();
-        }
         break;
 #endif
 
