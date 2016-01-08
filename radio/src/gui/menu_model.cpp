@@ -1090,16 +1090,16 @@ void menuModelSetup(uint8_t event) {
 			, 1								// ITEM_MODEL_THROTTLE_WARNING
 			, NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1		// ITEM_MODEL_SWITCHES_WARNING
 			, 0								// ITEM_MODEL_BEEP_CENTER
-			, 0								// ITEM_MODEL_PROTOCOL Label
+			//, 0								// ITEM_MODEL_PROTOCOL Label
 			, 0								// ITEM_MODEL_PROTOCOL
 			
-			, 0								// ITEM_SETUP_TELCOM Label
+			//, 0								// ITEM_SETUP_TELCOM Label
 			, 0								// ITEM_SETUP_TELCOM
 			
-			, 0								// ITEM_TELCOM_BAUD Label
+			//, 0								// ITEM_TELCOM_BAUD Label
 			, 0								// ITEM_TELCOM_BAUD
 			
-			, 0								// ITEM_SETUP_MIRRCOM Label
+			//, 0								// ITEM_SETUP_MIRRCOM Label
 			, 0								// ITEM_SETUP_MIRRCOM
 			
 			, LABEL(ExternalModule)			// ITEM_MODEL_EXTERNAL_MODULE_LABEL

@@ -265,7 +265,7 @@ void FRSKY_telemetryWakeup() {
       processSerialFrskyData(data);
       }
   #else
-      // Receive serial data here
+      // SKY9X - Receive serial data here
       rxPdcUsart(processSerialFrskyData);
   #endif
 
@@ -547,13 +547,10 @@ void telemetryReset() {
 
 void FRSKY_Init(void) {
 #if !defined(SIMU)
-	switch (g_eeGeneral.telemetryCom) {
+	switch (g_model.telemetryCom) {
 	  case 0:
 		  // SKY9x
 		  //telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
-		  #if defined(PCBTARANIS)
-		  telemetryPortInit(0);
-		  #endif
 		  telemetryPortInit(FRSKY_D_BAUDRATE);
 		  break;			  
 	  case 1:

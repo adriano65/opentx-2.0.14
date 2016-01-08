@@ -132,7 +132,6 @@ const pm_char * openLogs() {
 	switch (g_model.telemetryProtocol) {
 	  case PROTOCOL_FRSKY_SPORT:
 	  case PROTOCOL_FRSKY_D:
-	  case PROTOCOL_FRSKY_D_SECONDARY:
 		f_puts("SWR,RSSI,A1,A2,A3,A4,", &g_oLogFile);
 		if (IS_USR_PROTO_FRSKY_HUB()) {
 		  f_puts("GPS Date,GPS Time,Long,Lat,Course,GPS Speed(kts),GPS Alt,Baro Alt(", &g_oLogFile);
@@ -201,8 +200,7 @@ void writeLogs() {
 
 	switch (g_model.telemetryProtocol) {
 	  case PROTOCOL_FRSKY_SPORT:
-	  case PROTOCOL_FRSKY_D:
-	  case PROTOCOL_FRSKY_D_SECONDARY: {
+	  case PROTOCOL_FRSKY_D: {
 		#if defined(PCBTARANIS) && defined(REVPLUS)
 		if (IS_VALID_XJT_VERSION())
 		  f_printf(&g_oLogFile, "%d,%d,", RAW_FRSKY_MINMAX(frskyData.swr), RAW_FRSKY_MINMAX(frskyData.rssi[0]));

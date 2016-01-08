@@ -426,9 +426,9 @@ PACK(typedef struct t_EEGeneral {
   uint8_t   disableAlarmWarning:1;
   uint8_t   stickMode:2;
   int8_t    timezone:5;
-  uint8_t   telemetryCom:2;
+  uint8_t   spare1:2;
   uint8_t   inactivityTimer;
-  uint8_t   telemetryMirrorCom:2;
+  uint8_t   spare2:2;
   SPLASH_MODE; /* 3bits */
   int8_t    hapticMode:2;    // -2=quiet, -1=only alarms, 0=no keys, 1=all
   AVR_FIELD(uint8_t blOffBright:4)
@@ -1731,19 +1731,17 @@ enum TelemetryProtocol {
   PROTOCOL_TELEMETRY_FIRST,
 #if defined(CPUARM)
   #if defined(FRSKY) && defined(MAVLINK)
-	#define PROTOCOLTYPES PSTR("\015""FrSky S.PORT\0""FrSky D     \0""Mavlink     \0""FrSky(cable)\0")
+	#define PROTOCOLTYPES PSTR("\015""FrSky S.PORT\0""FrSky D     \0""Mavlink     \0")
 	PROTOCOL_FRSKY_SPORT = PROTOCOL_TELEMETRY_FIRST,
 	PROTOCOL_FRSKY_D,
 	PROTOCOL_MAVLINK,
-	PROTOCOL_FRSKY_D_SECONDARY,
-	PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D_SECONDARY
+	PROTOCOL_TELEMETRY_LAST=PROTOCOL_MAVLINK
   #else
 	#if defined(FRSKY)
-	  #define PROTOCOLTYPES PSTR("\015""FrSky S.PORT\0""FrSky D     \0""FrSky(cable)\0")
+	  #define PROTOCOLTYPES PSTR("\015""FrSky S.PORT\0""FrSky D     \0")
 	  PROTOCOL_FRSKY_SPORT = PROTOCOL_TELEMETRY_FIRST,
 	  PROTOCOL_FRSKY_D,
-	  PROTOCOL_FRSKY_D_SECONDARY,
-	  PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D_SECONDARY
+	  PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D
 	#else
 	  #define PROTOCOLTYPES PSTR("\015""Mavlink     \0")
 	  PROTOCOL_MAVLINK = PROTOCOL_TELEMETRY_FIRST,
@@ -1752,16 +1750,16 @@ enum TelemetryProtocol {
   #endif
 #else
   #if defined(FRSKY) && defined(MAVLINK)
-	#define PROTOCOLTYPES PSTR("\015""Mavlink     \0""FrSky(cable)\0")
+	#define PROTOCOLTYPES PSTR("\015""Mavlink     \0")
 	PROTOCOL_MAVLINK = PROTOCOL_TELEMETRY_FIRST,
-	PROTOCOL_FRSKY_D_SECONDARY,
-	PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D_SECONDARY
+	PROTOCOL_FRSKY_D,
+	PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D
   #else
 	#if defined(FRSKY)
-	  #define PROTOCOLTYPES PSTR("\015""FrSky(cable)\0")
+	  #define PROTOCOLTYPES PSTR("\015")
 	  PROTOCOL_MAVLINK = PROTOCOL_TELEMETRY_FIRST,
-	  PROTOCOL_FRSKY_D_SECONDARY,
-	  PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D_SECONDARY
+	  PROTOCOL_FRSKY_D,
+	  PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D
 	#else
 	  #define PROTOCOLTYPES PSTR("\015""Mavlink     \0")
 	  PROTOCOL_MAVLINK = PROTOCOL_TELEMETRY_FIRST,
