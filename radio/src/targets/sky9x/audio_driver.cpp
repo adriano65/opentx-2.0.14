@@ -162,8 +162,7 @@ void audioEnd()
   PMC->PMC_PCER0 &= ~0x40000000L ;		// Disable peripheral clock to DAC
 }
 
-void setVolume(uint8_t volume)
-{
+void setVolume(uint8_t volume) {
   volumeRequired = volumeScale[min<uint8_t>(volume, VOLUME_LEVEL_MAX)];
   __disable_irq() ;
   i2cCheck() ;

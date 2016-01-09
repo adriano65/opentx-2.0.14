@@ -47,6 +47,14 @@
   #include <direct.h>
 #endif
 
+#if defined(SIMU_DISKIO)
+  FILE * diskImage = 0;
+#endif
+
+#if defined(SIMU_AUDIO) && defined(CPUARM)
+  #include <SDL.h>
+#endif
+
 volatile uint8_t pina=0xff, pinb=0xff, pinc=0xff, pind, pine=0xff, pinf=0xff, ping=0xff, pinh=0xff, pinj=0xff, pinl=0;
 uint8_t portb, portc, porth=0, dummyport;
 uint16_t dummyport16;
@@ -94,7 +102,7 @@ Adc Adc0;
   #define EESIZE_SIMU EESIZE
 #endif
 
-#if defined(SDCARD)
+#if defined(SDCARD) && !defined(SKIP_FATFS_DECLARATION)
 char simuSdDirectory[1024] = "";
 #endif
 
@@ -168,7 +176,7 @@ void simuSetKey(uint8_t key, bool state)
 
 void simuSetTrim(uint8_t trim, bool state)
 {
-  // printf("trim=%d state=%d\n", trim, state); fflush(stdout);
+  // TRACE("trim=%d state=%d", trim, state);
 
   switch (trim) {
     TRIM_CASE(0, GPIO_TRIM_LH_L, PIN_TRIM_LH_L)
@@ -185,7 +193,7 @@ void simuSetTrim(uint8_t trim, bool state)
 // TODO use a better numbering to allow google tests to work on Taranis
 void simuSetSwitch(uint8_t swtch, int8_t state)
 {
-  // printf("swtch=%d state=%d\n", swtch, state); fflush(stdout);
+  // TRACE("swtch=%d state=%d", swtch, state);
   switch (swtch) {
 #if defined(PCBTARANIS)
     SWITCH_3_CASE(0, GPIO_PIN_SW_A_L, GPIO_PIN_SW_A_H, PIN_SW_A_L, PIN_SW_A_H)
@@ -311,6 +319,12 @@ void *main_thread(void *)
 
     eeReadAll(); // load general setup and selected model
 
+#if defined(SIMU_DISKIO)
+    f_mount(&g_FATFS_Obj, "", 1);
+    // call sdGetFreeSectors() now because f_getfree() takes a long time first time it's called
+    sdGetFreeSectors();
+#endif
+
 #if defined(CPUARM) && defined(SDCARD)
     referenceSystemAudioFiles();
 #endif
@@ -339,6 +353,12 @@ void *main_thread(void *)
   }
 #endif
 
+#if defined(SIMU_DISKIO)
+  if (diskImage) {
+    fclose(diskImage);
+  }
+#endif
+
   return NULL;
 }
 
@@ -360,7 +380,7 @@ void StartMainThread(bool tests)
   pthread_mutex_init(&audioMutex, NULL);
 #endif
 
-  g_tmr10ms = 0;
+  g_tmr10ms = 1;      // must be non-zero otherwise some SF functions (that use this timer as a marker when it was last executed) will be executed twice on startup
 #if defined(RTCLOCK)
   g_rtcTime = time(0);
 #endif
@@ -375,7 +395,143 @@ void StopMainThread()
   pthread_join(main_thread_pid, NULL);
 }
 
+#if defined(CPUARM)
+int Volume = volumeScale[VOLUME_LEVEL_DEF];
+bool dacQueue(AudioBuffer *buffer)
+{
+  return false;
+}
+
+void setVolume(uint8_t volume)
+{
+  Volume = volumeScale[min<uint8_t>(volume, VOLUME_LEVEL_MAX)];
+}
+#endif
+
+#if defined(SIMU_AUDIO) && defined(CPUARM)
+
+int leftover_len = 0;
+uint16_t leftover_data[AUDIO_BUFFER_SIZE];
+
+void copyBuffer(uint8_t * dest, uint16_t * buff, unsigned int samples) 
+{
+  for(unsigned int i=0; i<samples; i++) {
+    int sample = ((int32_t)(uint32_t)(buff[i]) - 0x8000);  // conversion from uint16_t 
+    *((uint16_t*)dest) = (int16_t)((sample * Volume)/127);
+    dest += 2;
+  }
+}
+
+void fill_audio(void *udata, Uint8 *stream, int len)
+{
+  SDL_memset(stream, 0, len);
+
+  if (leftover_len) {
+    copyBuffer(stream, leftover_data, leftover_len);
+    len -= leftover_len*2;
+    stream += leftover_len*2;
+    leftover_len = 0;
+    // putchar('l');
+  }
+
+  if (audioQueue.filledAtleast(len/(AUDIO_BUFFER_SIZE*2)+1) ) {
+    while(true) {
+      AudioBuffer *nextBuffer = audioQueue.getNextFilledBuffer();
+      if (nextBuffer) {
+        if (len >= nextBuffer->size*2) {
+          copyBuffer(stream, nextBuffer->data, nextBuffer->size);
+          stream += nextBuffer->size*2;
+          len -= nextBuffer->size*2;
+          // putchar('+');
+        }
+        else {
+          //partial
+          copyBuffer(stream, nextBuffer->data, len/2);
+          leftover_len = (nextBuffer->size-len/2);
+          memcpy(leftover_data, &nextBuffer->data[len/2], leftover_len*2);
+          len = 0;
+          // putchar('p');
+          break;
+        }
+      }
+      else {
+        break;
+      }
+    }
+  }
+
+  //fill the rest of buffer with silence
+  if (len > 0) {
+    SDL_memset(stream, 0x8000, len);  // make sure this is silence.
+    // putchar('.');
+  }
+}
+
+bool audio_thread_running = false;
+
+void *audio_thread(void *)
+{
+  /*
+    Checking here if SDL audio was initialized is wrong, because
+    the SDL_CloseAudio() de-initializes it.
+
+    if ( !SDL_WasInit(SDL_INIT_AUDIO) ) {
+      fprintf(stderr, "ERROR: couldn't initialize SDL audio support\n");
+      return 0;
+    }
+  */
+
+  SDL_AudioSpec wanted, have;
+
+  /* Set the audio format */
+  wanted.freq = AUDIO_SAMPLE_RATE;
+  wanted.format = AUDIO_S16SYS;
+  wanted.channels = 1;    /* 1 = mono, 2 = stereo */
+  wanted.samples = AUDIO_BUFFER_SIZE*2;  /* Good low-latency value for callback */
+  wanted.callback = fill_audio;
+  wanted.userdata = NULL;
+
+  /*
+    SDL_OpenAudio() internally calls SDL_InitSubSystem(SDL_INIT_AUDIO),
+    which initializes SDL Audio subsystem if necessary
+  */
+  if ( SDL_OpenAudio(&wanted, &have) < 0 ) {
+    fprintf(stderr, "Couldn't open audio: %s\n", SDL_GetError());
+    return 0;
+  }
+  SDL_PauseAudio(0);
+
+  while (audio_thread_running) {
+    audioQueue.wakeup();
+    sleep(1);
+  }
+  SDL_CloseAudio();
+  return 0;
+}
+
+pthread_t audio_thread_pid;
+
+void StartAudioThread()
+{ 
+  pthread_attr_t attr;
+  pthread_attr_init(&attr);
+  struct sched_param sp;
+  sp.sched_priority = SCHED_RR;
+  pthread_attr_setschedparam(&attr, &sp);
+  pthread_create(&audio_thread_pid, &attr, &audio_thread, NULL);
+  audio_thread_running = true;
+  return;
+}
+
+void StopAudioThread()
+{
+  audio_thread_running = false;
+  pthread_join(audio_thread_pid, NULL);
+}
+#endif // #if defined(CPUARM)
+
 pthread_t eeprom_thread_pid;
+
 void StartEepromThread(const char *filename)
 {
   eepromFile = filename;
@@ -416,7 +572,7 @@ void eeprom_read_block (void *pointer_ram, const void *pointer_eeprom, size_t si
   assert(size);
 
   if (fp) {
-    // printf("EEPROM read (pos=%d, size=%d)\n", pointer_eeprom, size); fflush(stdout);
+    // TRACE("EEPROM read (pos=%d, size=%d)", pointer_eeprom, size);
     if (fseek(fp, (long)pointer_eeprom, SEEK_SET)==-1) perror("error in fseek");
     if (fread(pointer_ram, size, 1, fp) <= 0) perror("error in fread");
   }
@@ -431,7 +587,7 @@ void eeWriteBlockCmp(const void *pointer_ram, uint16_t pointer_eeprom, size_t si
   assert(size);
 
   if (fp) {
-    // printf("EEPROM write (pos=%d, size=%d)\n", pointer_eeprom, size); fflush(stdout);
+    // TRACE("EEPROM write (pos=%d, size=%d)", pointer_eeprom, size);
     if (fseek(fp, (long)pointer_eeprom, SEEK_SET)==-1) perror("error in fseek");
     if (fwrite(pointer_ram, size, 1, fp) <= 0) perror("error in fwrite");
   }
@@ -462,15 +618,22 @@ static void EeFsDump(){
 }
 #endif
 
-#if defined(SDCARD)
+#if defined(SDCARD) && !defined(SKIP_FATFS_DECLARATION) && !defined(SIMU_DISKIO)
 namespace simu {
 #include <dirent.h>
+#if !defined WIN32
+  #include <libgen.h>
+#endif
 }
 #include "FatFs/ff.h"
 
 #if defined WIN32 || !defined __GNUC__
 #include <direct.h>
+#include <stdlib.h>
 #endif
+
+#include <map>
+#include <string>
 
 #if defined(CPUARM)
 FATFS g_FATFS_Obj;
@@ -487,12 +650,96 @@ char *convertSimuPath(const char *path)
   return result;
 }
 
+typedef std::map<std::string, std::string> filemap_t;
+
+filemap_t fileMap;
+
+char *findTrueFileName(const char *path)
+{
+  TRACE("findTrueFileName(%s)", path);
+  static char result[1024];
+  filemap_t::iterator i = fileMap.find(path);
+  if (i != fileMap.end()) {
+    strcpy(result, i->second.c_str());
+    TRACE("\tfound in map: %s", result);
+    return result;
+  }
+  else {
+    //find file
+    //add to map
+#if defined WIN32 || !defined __GNUC__
+    char drive[_MAX_DRIVE];
+    char dir[_MAX_DIR];
+    char fname[_MAX_FNAME];
+    char ext[_MAX_EXT];
+    _splitpath(path, drive, dir, fname, ext);
+    std::string fileName = std::string(fname) + "." + std::string(ext);
+    std::string dirName = std::string(drive) + std::string(dir);
+    if (dir) {
+      // TRACE("\tsearching for: %s", fileName.c_str());
+      WIN32_FIND_DATA ffd;
+      HANDLE hFind = FindFirstFile(dirName.c_str(), &ffd);
+      if (INVALID_HANDLE_VALUE != hFind) {
+        do {
+          if (ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY == 0) {
+            // TRACE("comparing with: %s", ffd.cFileName);
+            if (!strcasecmp(fileName.c_str(), ffd.cFileName)) {
+              strcpy(result, dirName.c_str());
+              strcat(result, "/");
+              strcat(result, ffd.cFileName);
+              TRACE("\tfound: %s", ffd.cFileName);
+              fileMap.insert(filemap_t:: value_type(path, result));
+              return result;  
+            }
+          }
+        }
+        while (FindNextFile(hFind, &ffd) != 0);
+      }
+    }
+#else
+    strcpy(result, path);
+    std::string fileName = simu::basename(result);
+    strcpy(result, path);
+    std::string dirName = simu::dirname(result);
+    simu::DIR * dir = simu::opendir(dirName.c_str());
+    if (dir) {
+      // TRACE("\tsearching for: %s", fileName.c_str());
+      for (;;) {
+        struct simu::dirent * res = simu::readdir(dir);
+        if (res == 0) break;
+        if ((res->d_type == simu::DT_REG) || (res->d_type == simu::DT_LNK)) {
+          // TRACE("comparing with: %s", res->d_name);
+          if (!strcasecmp(fileName.c_str(), res->d_name)) {
+            strcpy(result, dirName.c_str());
+            strcat(result, "/");
+            strcat(result, res->d_name);
+            TRACE("\tfound: %s", res->d_name);
+            fileMap.insert(filemap_t:: value_type(path, result));
+            return result;  
+          }
+        }
+      }
+    }
+#endif
+  }
+  TRACE("\tnot found");
+  strcpy(result, path);
+  return result;
+}
+
 FRESULT f_stat (const TCHAR * name, FILINFO *)
 {
   char *path = convertSimuPath(name);
+  char * realPath = findTrueFileName(path);
   struct stat tmp;
-  TRACE("f_stat(%s)", path);
-  return stat(path, &tmp) ? FR_INVALID_NAME : FR_OK;
+  if (stat(realPath, &tmp)) {
+    TRACE("f_stat(%s) = error %d (%s)", path, errno, strerror(errno));
+    return FR_INVALID_NAME;
+  }
+  else {
+    TRACE("f_stat(%s) = OK", path);
+    return FR_OK;
+  }
 }
 
 FRESULT f_mount (FATFS* ,const TCHAR*, BYTE opt)
@@ -503,23 +750,30 @@ FRESULT f_mount (FATFS* ,const TCHAR*, BYTE opt)
 FRESULT f_open (FIL * fil, const TCHAR *name, BYTE flag)
 {
   char *path = convertSimuPath(name);
-
-  TRACE("f_open(%s)", path);
-
+  char * realPath = findTrueFileName(path);
   if (!(flag & FA_WRITE)) {
     struct stat tmp;
-    if (stat(path, &tmp))
+    if (stat(realPath, &tmp)) {
+      TRACE("f_open(%s) = INVALID_NAME", path);
       return FR_INVALID_NAME;
+    }
     fil->fsize = tmp.st_size;
   }
-  fil->fs = (FATFS*)fopen(path, (flag & FA_WRITE) ? "wb+" : "rb+");
-  return FR_OK;
+  fil->fs = (FATFS*)fopen(realPath, (flag & FA_WRITE) ? "wb+" : "rb+");
+  fil->fptr = 0;
+  if (fil->fs) {
+    TRACE("f_open(%s) = %p", path, (FILE*)fil->fs);
+    return FR_OK;
+  }
+  TRACE("f_open(%s) = error %d (%s)", path, errno, strerror(errno));
+  return FR_INVALID_NAME;
 }
 
 FRESULT f_read (FIL* fil, void* data, UINT size, UINT* read)
 {
   if (fil && fil->fs) {
     *read = fread(data, 1, size, (FILE*)fil->fs);
+    fil->fptr += *read;
     // TRACE("fread(%p) %u, %u", fil->fs, size, *read);
   }
   return FR_OK;
@@ -528,18 +782,21 @@ FRESULT f_read (FIL* fil, void* data, UINT size, UINT* read)
 FRESULT f_write (FIL* fil, const void* data, UINT size, UINT* written)
 {
   if (fil && fil->fs) *written = fwrite(data, 1, size, (FILE*)fil->fs);
+  fil->fptr += size;
   return FR_OK;
 }
 
 FRESULT f_lseek (FIL* fil, DWORD offset)
 {
   if (fil && fil->fs) fseek((FILE*)fil->fs, offset, SEEK_SET);
+  fil->fptr = offset;
   return FR_OK;
 }
 
 FRESULT f_close (FIL * fil)
 {
   if (fil && fil->fs) {
+    TRACE("f_close(%p)", (FILE*)fil->fs);
     fclose((FILE*)fil->fs);
     fil->fs = NULL;
   }
@@ -555,9 +812,13 @@ FRESULT f_chdir (const TCHAR *name)
 FRESULT f_opendir (DIR * rep, const TCHAR * name)
 {
   char *path = convertSimuPath(name);
-  TRACE("f_opendir(%s)", path);
   rep->fs = (FATFS *)simu::opendir(path);
-  return FR_OK;
+  if ( rep->fs ) {
+    TRACE("f_opendir(%s) = OK", path);
+    return FR_OK;
+  }
+  TRACE("f_opendir(%s) = error %d (%s)", path, errno, strerror(errno));
+  return FR_INVALID_NAME;
 }
 
 FRESULT f_readdir (DIR * rep, FILINFO * fil)
@@ -591,7 +852,7 @@ FRESULT f_readdir (DIR * rep, FILINFO * fil)
 
 FRESULT f_mkfs (const TCHAR *path, BYTE, UINT)
 {
-  printf("Format SD...\n"); fflush(stdout);
+  TRACE("Format SD...");
   return FR_OK;
 }
 
@@ -635,12 +896,205 @@ FRESULT f_getcwd (TCHAR *path, UINT sz_path)
   return FR_OK;
 }
 
+FRESULT f_getfree (const TCHAR* path, DWORD* nclst, FATFS** fatfs)
+{
+  // just fake that we always have some clusters free
+  *nclst = 10;
+  return FR_OK;  
+}
+
 #if defined(PCBSKY9X)
 int32_t Card_state = SD_ST_MOUNTED;
 uint32_t Card_CSD[4]; // TODO elsewhere
 #endif
 
+#endif  // #if defined(SDCARD) && !defined(SKIP_FATFS_DECLARATION) && !defined(SIMU_DISKIO)
+
+
+#if defined(SIMU_DISKIO)
+#include "FatFs/diskio.h"
+#include <time.h>
+#include <stdio.h>
+
+#if defined(CPUARM)
+FATFS g_FATFS_Obj = { 0};
 #endif
+
+int ff_cre_syncobj (BYTE vol, _SYNC_t* sobj) /* Create a sync object */
+{
+  return 1;
+}
+
+int ff_req_grant (_SYNC_t sobj)        /* Lock sync object */
+{
+  return 1;
+}
+
+void ff_rel_grant (_SYNC_t sobj)        /* Unlock sync object */
+{
+
+}
+
+int ff_del_syncobj (_SYNC_t sobj)        /* Delete a sync object */
+{
+  return 1;
+}
+
+DWORD get_fattime (void)
+{
+  time_t tim = time(0);
+  const struct tm * t = gmtime(&tim);
+
+  /* Pack date and time into a DWORD variable */
+  return ((DWORD)(t->tm_year - 80) << 25)
+    | ((uint32_t)(t->tm_mon+1) << 21)
+    | ((uint32_t)t->tm_mday << 16)
+    | ((uint32_t)t->tm_hour << 11)
+    | ((uint32_t)t->tm_min << 5)
+    | ((uint32_t)t->tm_sec >> 1);
+}
+
+unsigned int noDiskStatus = 0;
+
+void traceDiskStatus()
+{
+  if (noDiskStatus > 0) {
+    TRACE("disk_status() called %d times", noDiskStatus);
+    noDiskStatus = 0;  
+  }
+}
+
+DSTATUS disk_initialize (BYTE pdrv)
+{
+  traceDiskStatus();
+  TRACE("disk_initialize(%u)", pdrv);
+  diskImage = fopen("sdcard.image", "r+");
+  return diskImage ? (DSTATUS)0 : (DSTATUS)STA_NODISK;
+}
+
+DSTATUS disk_status (BYTE pdrv)
+{
+  ++noDiskStatus;
+  // TRACE("disk_status(%u)", pdrv);
+  return (DSTATUS)0;
+}
+
+DRESULT disk_read (BYTE pdrv, BYTE* buff, DWORD sector, UINT count)
+{
+  if (diskImage == 0) return RES_NOTRDY;
+  traceDiskStatus();
+  TRACE("disk_read(%u, %p, %u, %u)", pdrv, buff, sector, count);
+  fseek(diskImage, sector*512, SEEK_SET);
+  fread(buff, count, 512, diskImage);
+  return RES_OK;
+}
+
+DRESULT disk_write (BYTE pdrv, const BYTE* buff, DWORD sector, UINT count)
+{
+  if (diskImage == 0) return RES_NOTRDY;
+  traceDiskStatus();
+  TRACE("disk_write(%u, %p, %u, %u)", pdrv, buff, sector, count);
+  fseek(diskImage, sector*512, SEEK_SET);
+  fwrite(buff, count, 512, diskImage);
+  return RES_OK;
+}
+
+DRESULT disk_ioctl (BYTE pdrv, BYTE cmd, void* buff)
+{
+  if (diskImage == 0) return RES_NOTRDY;
+  traceDiskStatus();
+  TRACE("disk_ioctl(%u, %u, %p)", pdrv, cmd, buff);
+  if (pdrv) return RES_PARERR;
+
+  DRESULT res;
+  BYTE *ptr = (BYTE *)buff;
+
+  if (cmd == CTRL_POWER) {
+    switch (*ptr) {
+      case 0:         /* Sub control code == 0 (POWER_OFF) */
+        res = RES_OK;
+        break;
+      case 1:         /* Sub control code == 1 (POWER_ON) */
+        res = RES_OK;
+        break;
+      case 2:         /* Sub control code == 2 (POWER_GET) */
+        *(ptr+1) = (BYTE)1;  /* fake powered */
+        res = RES_OK;
+        break;
+      default :
+        res = RES_PARERR;
+    }
+    return res;
+  }
+
+  switch(cmd) {
+/* Generic command (Used by FatFs) */
+    case CTRL_SYNC :     /* Complete pending write process (needed at _FS_READONLY == 0) */
+      break;
+
+    case GET_SECTOR_COUNT: /* Get media size (needed at _USE_MKFS == 1) */
+      {
+        struct stat buf;
+        if (stat("sdcard.image", &buf) == 0) {
+          DWORD noSectors  = buf.st_size / 512;
+          *(DWORD*)buff = noSectors;
+          TRACE("disk_ioctl(GET_SECTOR_COUNT) = %u", noSectors);
+          return RES_OK; 
+        }
+        return RES_ERROR;
+      }
+
+    case GET_SECTOR_SIZE: /* Get sector size (needed at _MAX_SS != _MIN_SS) */
+      TRACE("disk_ioctl(GET_SECTOR_SIZE) = 512");
+      *(WORD*)buff = 512;
+      res = RES_OK;
+      break;
+
+    case GET_BLOCK_SIZE : /* Get erase block size (needed at _USE_MKFS == 1) */
+      *(WORD*)buff = 512 * 4;
+      res = RES_OK;
+      break;
+
+    case CTRL_TRIM : /* Inform device that the data on the block of sectors is no longer used (needed at _USE_TRIM == 1) */
+      break;
+
+/* Generic command (Not used by FatFs) */
+    case CTRL_LOCK : /* Lock/Unlock media removal */
+    case CTRL_EJECT: /* Eject media */
+    case CTRL_FORMAT: /* Create physical format on the media */
+      return RES_PARERR;
+
+
+/* MMC/SDC specific ioctl command */
+    // case MMC_GET_TYPE    10  /* Get card type */
+    // case MMC_GET_CSD     11  /* Get CSD */
+    // case MMC_GET_CID     12  /* Get CID */
+    // case MMC_GET_OCR     13  /* Get OCR */
+    // case MMC_GET_SDSTAT    14  /* Get SD status */
+
+/* ATA/CF specific ioctl command */
+    // case ATA_GET_REV     20  /* Get F/W revision */
+    // case ATA_GET_MODEL   21  /* Get model name */
+    // case ATA_GET_SN      22  /* Get serial number */
+    default:
+      return RES_PARERR;
+  }
+  return RES_OK;
+}
+
+uint32_t sdIsHC()
+{
+  return sdGetSize() > 2000000;
+}
+
+uint32_t sdGetSpeed()
+{
+  return 330000;
+}
+
+#endif // #if defined(SIMU_DISKIO)
+
+
 
 bool lcd_refresh = true;
 uint8_t lcd_buf[DISPLAY_BUF_SIZE];
@@ -707,5 +1161,5 @@ void turnBacklightOff(void)
 }
 #endif
 
-#endif
+#endif  // #if defined(PCBTARANIS)
 
