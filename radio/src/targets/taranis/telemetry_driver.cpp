@@ -80,8 +80,8 @@ void telemetryPortInit(uint32_t baudrate) {
   
   USART_ITConfig(SPORT, USART_IT_RXNE, ENABLE);
 
-  NVIC_EnableIRQ(USART2_IRQn);
   NVIC_SetPriority(USART2_IRQn, 6);
+  NVIC_EnableIRQ(USART2_IRQn);
 }
 
 void telemetryPutc(const char c) {
@@ -94,8 +94,7 @@ void telemetryPutc(const char c) {
 
 #define USART_FLAG_ERRORS (USART_FLAG_ORE | USART_FLAG_NE | USART_FLAG_FE | USART_FLAG_PE)
 
-extern "C" void USART2_IRQHandler()
-{
+extern "C" void USART2_IRQHandler() {
   uint32_t status;
   uint8_t data;
 

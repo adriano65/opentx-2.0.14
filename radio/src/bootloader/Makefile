@@ -97,7 +97,7 @@ ifeq ($(RUN_FROM_FLASH), 1)
  # If REVX board
  ifeq ($(REVX), 1)
    CPPDEFS += -DREVX
-  endif
+ endif
 
   CPPDEFS += -DREVB
 

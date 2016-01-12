@@ -38,7 +38,7 @@
 
 Fifo<512> uart3TxFifo;
 
-void uart3Setup(uint32_t baudrate) {
+void telemetrySecondPortInit(uint32_t baudrate) {
   USART_InitTypeDef USART_InitStructure;
   GPIO_InitTypeDef GPIO_InitStructure;
 
@@ -71,11 +71,6 @@ void uart3Setup(uint32_t baudrate) {
 
   NVIC_EnableIRQ(USART3_IRQn);
   NVIC_SetPriority(USART3_IRQn, 7);
-}
-
-void telemetrySecondPortInit(uint32_t baudrate) {
-  USART_DeInit(USART3);
-  uart3Setup(baudrate);
 }
 
 void uart3Putc(const char c) {

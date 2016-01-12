@@ -259,14 +259,14 @@ enum AlarmsCheckSteps {
 };
 
 void FRSKY_telemetryWakeup() {
-  #if !defined(REVB)
+  #if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
+	// SKY9X - Receive serial data here
+	rxPdcUsart(processSerialFrskyData);
+  #else
     uint8_t data;
     while (TelemRxFifo.pop(data)) {
       processSerialFrskyData(data);
       }
-  #else
-      // SKY9X - Receive serial data here
-      rxPdcUsart(processSerialFrskyData);
   #endif
 
   #if !defined(PCBTARANIS)
@@ -551,6 +551,9 @@ void FRSKY_Init(void) {
 	  case 0:
 		  // SKY9x
 		  //telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
+		  #if defined(PCBTARANIS)
+		  telemetryPortInit(0);
+		  #endif
 		  telemetryPortInit(FRSKY_D_BAUDRATE);
 		  break;			  
 	  case 1:
@@ -561,7 +564,10 @@ void FRSKY_Init(void) {
 		  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
 		  break;			  
 	  case 2:
-		  // btSetBaudrate -> UART3_Configure -> BT_USART -> UART1 -> 0x400E0800U Base Address
+		  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
+		  break;			  
+	  case 3:
+		  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
 		  break;			  
 	  }
 #endif

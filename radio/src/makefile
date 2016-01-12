@@ -64,9 +64,9 @@ DOUBLE_WRITE_OK = NO
 #  PORTH:6 --> LOW->HIGH = start of mixer calcs. HIGH->LOW, end of mixer calcs.
 # Values = YES, NO
 DEBUG = NO
-#DEBUG = YES
+# DEBUG = YES
 MAVLINK_DEBUG = NO
-#MAVLINK_DEBUG = YES
+# MAVLINK_DEBUG = YES
 
 
 # PCB revision
@@ -215,10 +215,10 @@ PWM_BACKLIGHT = NO
 
 # SPLASH on START
 # Values = YES, NO, FIXED
-#ifeq ($(PCB), $(filter $(PCB), TARANIS))
+ifeq ($(PCB), $(filter $(PCB), TARANIS))
 #ifeq ($(PCB), $(filter $(PCB), 9XRPRO TARANIS))
 #ifeq ($(PCB), $(filter $(PCB), SKY9X TARANIS))
-ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
+#ifeq ($(PCB), $(filter $(PCB), SKY9X 9XRPRO TARANIS))
 SPLASH = YES
 else
 SPLASH = NO
@@ -1293,10 +1293,10 @@ bootloader.lbm: bootloader/bootloader_ramBoot.bin
 else ifeq ($(PCB), 9XRPRO)
 bootloader.lbm:
 	@echo "Fetching Mike's bootloader..."
-	#wget http://ersky9x.googlecode.com/svn/trunk/src/bootloader/bootflash8.lbm
-	#mv bootflash8.lbm $@
-	wget http://ersky9x.googlecode.com/svn/trunk/src/bootloader/bootflashX.lbm
-	mv bootflashX.lbm $@
+	wget http://ersky9x.googlecode.com/svn/trunk/src/bootloader/bootflash8.lbm
+	mv bootflash8.lbm $@
+	#wget http://ersky9x.googlecode.com/svn/trunk/src/bootloader/bootflashX.lbm
+	#mv bootflashX.lbm $@
 else ifeq ($(PCB), SKY9X)
 bootloader.lbm:
 	@echo "Fetching Mike's bootloader..."
