@@ -894,9 +894,13 @@ enum menuModelSetupItems {
   CASE_PCBTARANIS(ITEM_MODEL_POT_WARNING)
   ITEM_MODEL_BEEP_CENTER,
 #if defined(FRSKY) || defined(MAVLINK)
+  //ITEM_MODEL_PROTOCOL_LABEL,
   ITEM_MODEL_PROTOCOL,
+  //ITEM_SETUP_TELCOM_LABEL,
   ITEM_SETUP_TELCOM,
+  //ITEM_TELCOM_BAUD_LABEL,
   ITEM_TELCOM_BAUD,
+  //ITEM_SETUP_MIRRCOM_LABEL,
   ITEM_SETUP_MIRRCOM,
 #endif
 #if defined(PCBTARANIS)
@@ -1089,16 +1093,14 @@ void menuModelSetup(uint8_t event) {
 			, 0								// ITEM_MODEL_CHECKLIST_DISPLAY
 			, 1								// ITEM_MODEL_THROTTLE_WARNING
 			, NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1		// ITEM_MODEL_SWITCHES_WARNING
-			, 0								// ITEM_MODEL_BEEP_CENTER
+			//, 0								// ITEM_MODEL_BEEP_CENTER
+			
 			//, 0								// ITEM_MODEL_PROTOCOL Label
 			, 0								// ITEM_MODEL_PROTOCOL
-			
 			//, 0								// ITEM_SETUP_TELCOM Label
 			, 0								// ITEM_SETUP_TELCOM
-			
 			//, 0								// ITEM_TELCOM_BAUD Label
 			, 0								// ITEM_TELCOM_BAUD
-			
 			//, 0								// ITEM_SETUP_MIRRCOM Label
 			, 0								// ITEM_SETUP_MIRRCOM
 			
@@ -1520,14 +1522,15 @@ void menuModelSetup(uint8_t event) {
 													  , 3
 													  , attr
 													  , event);
-			//eeDirty(EE_MODEL);
         break;
 		
 	  case ITEM_TELCOM_BAUD:
 		  g_model.telemetryBaud = selectMenuItem(MODEL_SETUP_2ND_COLUMN
 												, y
 												, STR_MAVLINK_BAUD_LABEL
-												, STR_MAVLINK_BAUDS, g_model.telemetryBaud, 0, 7, attr, event);
+												, STR_MAVLINK_BAUDS, g_model.telemetryBaud
+												, 0
+												, 7, attr, event);
 		  break;
 				
 		
