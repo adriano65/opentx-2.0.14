@@ -39,6 +39,10 @@
 Fifo<512> uart3TxFifo;
 
 void telemetrySecondPortInit(uint32_t baudrate) {
+  if (baudrate == 0) {
+	USART_DeInit(USART3);
+    return;
+  }
   USART_InitTypeDef USART_InitStructure;
   GPIO_InitTypeDef GPIO_InitStructure;
 

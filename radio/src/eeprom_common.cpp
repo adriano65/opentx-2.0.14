@@ -149,6 +149,7 @@ void eeLoadModel(uint8_t id) {
 		MAVLINK_Init(true);
 		break;
 	  #endif
+		
 	  default:
 		break;
 	  }

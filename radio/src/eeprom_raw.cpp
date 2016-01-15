@@ -327,8 +327,7 @@ void loadGeneralSettings()
   }
 }
 
-void loadModel(int index)
-{
+void loadModel(int index) {
   memset(&g_model, 0, sizeof(g_model));
   int size = min<int>(File_system[index+1].size, sizeof(g_model));
   if (size > 256) { // if loaded a fair amount

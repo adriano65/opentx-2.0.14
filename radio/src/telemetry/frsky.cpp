@@ -552,7 +552,7 @@ void FRSKY_Init(void) {
 		  // SKY9x
 		  //telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
 		  #if defined(PCBTARANIS)
-		  telemetryPortInit(0);
+		  telemetrySecondPortInit(0);
 		  #endif
 		  telemetryPortInit(FRSKY_D_BAUDRATE);
 		  break;			  
@@ -561,6 +561,9 @@ void FRSKY_Init(void) {
 		  // 9XR-PRO has external module connected via FUTABA Port
 		  // telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
 		  /* my taranis is wired on first and second serial (first is RX only) :-) */
+		  #if defined(PCBTARANIS)
+		  telemetryPortInit(0);
+		  #endif
 		  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
 		  break;			  
 	  case 2:
@@ -568,7 +571,15 @@ void FRSKY_Init(void) {
 		  break;			  
 	  case 3:
 		  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
+		  break;
+		  
+	  default:
+		  #if defined(PCBTARANIS)
+		  telemetrySecondPortInit(0);
+		  #endif
+		  telemetryPortInit(FRSKY_D_BAUDRATE);
 		  break;			  
+		  
 	  }
 #endif
   // we don't reset the telemetry here as we would also reset the consumption after model load

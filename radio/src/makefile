@@ -96,11 +96,11 @@ DELAY = 1
 # For this option you need to modify your hardware!
 # More information at [insertURLhere]
 # Values = STD, FRSKY, FRSKY_SPORT, JETI, NMEA, ARDUPILOT, MAVLINK, TELEMETREZ, FRSKY_MAVLINK
-#EXT = STD
-#EXT = FRSKY
+# EXT = STD
+# EXT = FRSKY
 # EXT = ARDUPILOT
-#EXT = MAVLINK
-EXT = FRSKY_MAVLINK
+# EXT = MAVLINK
+ EXT = FRSKY_MAVLINK
 
 # BLUETOOTH
 # Values = YES, NO
