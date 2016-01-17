@@ -552,7 +552,7 @@ void FRSKY_Init(void) {
 		  // SKY9x
 		  //telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
 		  #if defined(PCBTARANIS)
-		  telemetrySecondPortInit(0);
+		  telemetryPortInit(0);
 		  #endif
 		  telemetryPortInit(FRSKY_D_BAUDRATE);
 		  break;			  
@@ -562,7 +562,7 @@ void FRSKY_Init(void) {
 		  // telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
 		  /* my taranis is wired on first and second serial (first is RX only) :-) */
 		  #if defined(PCBTARANIS)
-		  telemetryPortInit(0);
+		  telemetrySecondPortInit(0);
 		  #endif
 		  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
 		  break;			  
@@ -575,7 +575,7 @@ void FRSKY_Init(void) {
 		  
 	  default:
 		  #if defined(PCBTARANIS)
-		  telemetrySecondPortInit(0);
+		  telemetryPortInit(0);
 		  #endif
 		  telemetryPortInit(FRSKY_D_BAUDRATE);
 		  break;			  

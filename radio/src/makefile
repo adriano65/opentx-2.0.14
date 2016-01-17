@@ -34,6 +34,8 @@ RESTORE_EEPROM = NO
 DOUBLE_WRITE_OK = NO
 
 #----------- BUILD OPTIONS ---------------------------
+#----------- MAKE CLEAN WHEN CHANGIN MODEL !!!!!!!!!!!!!!!!
+#----------- -----------------------------
 
 # PCB version
 # Values: 9X, 9X128, 9X2561, 9XR, 9XR128, 9XR2561, GRUVIN9X, MEGA2560, SKY9X, 9XRPRO, TARANIS 
@@ -51,10 +53,10 @@ DOUBLE_WRITE_OK = NO
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
- PCB = 9XRPRO
+# PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
-# PCB = TARANIS
+ PCB = TARANIS
 
 #------- END BUILD OPTIONS ---------------------------
 
@@ -149,10 +151,11 @@ AUTOSWITCH = NO
 # Stock sticks replaced by FrSky ones
 # Values = YES, NO 
 #ifeq ($(PCB), $(filter $(PCB), TARANIS 9XRPRO))
-ifeq ($(PCB), $(filter $(PCB), TARANIS))
+ifeq ($(PCB), $(filter $(PCB), 9X))
+#ifeq ($(PCB), $(filter $(PCB), TARANIS))
 FRSKY_STICKS = YES
 else
-#FRSKY_STICKS = PEHARPS 
+# FRSKY_STICKS = PEHARPS 
 FRSKY_STICKS = NO
 endif
 
@@ -167,7 +170,7 @@ DBLKEYS = NO
 # AUDIO Mods
 # Values = YES, NO 
 #ifeq ($(PCB), $(filter $(PCB), 9X 9X128))
-ifeq ($(PCB), $(filter $(PCB), 9X 9XRPRO))
+ifeq ($(PCB), $(filter $(PCB), 9X 9XRPRO TARANIS))
 AUDIO = NO
 else
 AUDIO = YES
@@ -176,7 +179,7 @@ endif
 # VOICE Mods
 # Values = YES, NO 
 #ifeq ($(PCB), $(filter $(PCB), 9X 9X128))
-ifeq ($(PCB), $(filter $(PCB), 9X 9XRPRO))
+ifeq ($(PCB), $(filter $(PCB), 9X 9XRPRO TARANIS))
 VOICE = NO
 else
 VOICE = YES
