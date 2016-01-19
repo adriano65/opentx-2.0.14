@@ -330,6 +330,7 @@ enum AlarmLevel {
 
 #if defined(CPUARM)
   #define TELEMETRY_STREAMING()           (frskyData.rssi[0].value > 0)
+  //#define TELEMETRY_STREAMING()           (true)
 
   #define TELEMETRY_CELL_VOLTAGE_MUTLIPLIER  1
 

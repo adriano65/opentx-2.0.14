@@ -305,7 +305,8 @@ void FRSKY_telemetryWakeup() {
 
     if (alarmsCheckStep == ALARM_SWR_STEP) {
 #if defined(PCBTARANIS)
-      if (IS_FRSKY_SPORT_PROTOCOL() && FRSKY_BAD_ANTENNA()) {
+      if ((g_model.moduleData[INTERNAL_MODULE].rfProtocol != RF_PROTO_OFF || g_model.externalModule == MODULE_TYPE_XJT) && FRSKY_BAD_ANTENNA()) {
+      //if (IS_FRSKY_SPORT_PROTOCOL() && FRSKY_BAD_ANTENNA()) {
         AUDIO_SWR_RED();
         POPUP_WARNING(STR_ANTENNAPROBLEM);
         alarmsCheckTime = get_tmr10ms() + 300; /* next check in 3 seconds */
@@ -551,9 +552,6 @@ void FRSKY_Init(void) {
 	  case 0:
 		  // SKY9x
 		  //telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
-		  #if defined(PCBTARANIS)
-		  telemetryPortInit(0);
-		  #endif
 		  telemetryPortInit(FRSKY_D_BAUDRATE);
 		  break;			  
 	  case 1:
@@ -562,7 +560,7 @@ void FRSKY_Init(void) {
 		  // telemetrySecondPortInit -> SECOND_UART_Configure -> SECOND_SERIAL_UART -> UART0 -> 0x400E0600U Base Address
 		  /* my taranis is wired on first and second serial (first is RX only) :-) */
 		  #if defined(PCBTARANIS)
-		  telemetrySecondPortInit(0);
+		  telemetryPortInit(0);
 		  #endif
 		  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
 		  break;			  
@@ -574,9 +572,6 @@ void FRSKY_Init(void) {
 		  break;
 		  
 	  default:
-		  #if defined(PCBTARANIS)
-		  telemetryPortInit(0);
-		  #endif
 		  telemetryPortInit(FRSKY_D_BAUDRATE);
 		  break;			  
 		  

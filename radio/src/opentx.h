@@ -1325,7 +1325,7 @@ inline bool isFunctionActive(uint8_t func)
 #endif
 
 #if defined (FRSKY)
-	extern Fifo<32> TelemRxFifo;
+	extern Fifo<64> TelemRxFifo;
   // FrSky Telemetry
   #include "telemetry/frsky.h"
   // ... and Mavlink Telemetry

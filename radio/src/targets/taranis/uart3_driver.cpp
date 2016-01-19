@@ -113,6 +113,7 @@ extern "C" void USART3_IRQHandler(void) {
 	  }
 
     status = USART3->SR;
-  }
+	}
+  
 }
 

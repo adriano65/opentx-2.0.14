@@ -101,7 +101,7 @@ EEGeneral  g_eeGeneral;
 ModelData  g_model;
 
 #if defined(FRSKY) || defined(MAVLINK)
-Fifo<32> TelemRxFifo;
+Fifo<64> TelemRxFifo;
 #endif
 
 #if defined(PCBTARANIS) && defined(SDCARD)
@@ -3514,18 +3514,18 @@ void mixerTask(void * pdata) {
       CoLeaveMutexSection(mixerMutex);
 
 #if defined(FRSKY) && defined(MAVLINK)
-  if (g_model.telemetryProtocol == PROTOCOL_MAVLINK) {	// enum TelemetryProtocol in myeeprom.c
-	MAVLINK_telemetryWakeup();
-	}
-  else {
-	FRSKY_telemetryWakeup();
-	}
+	  if (g_model.telemetryProtocol == PROTOCOL_MAVLINK) {	// enum TelemetryProtocol in myeeprom.c
+		MAVLINK_telemetryWakeup();
+		}
+	  else {
+		FRSKY_telemetryWakeup();
+		}
 #else
   #if defined(FRSKY)
-	FRSKY_telemetryWakeup();
+	  FRSKY_telemetryWakeup();
   #endif
   #if defined(MAVLINK)
-	MAVLINK_telemetryWakeup();
+	  MAVLINK_telemetryWakeup();
   #endif
 	  
 #endif

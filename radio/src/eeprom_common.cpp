@@ -151,6 +151,7 @@ void eeLoadModel(uint8_t id) {
 	  #endif
 		
 	  default:
+		FRSKY_Init();
 		break;
 	  }
 	

@@ -36,7 +36,7 @@
 
 #include "../../opentx.h"
 
-extern Fifo<32> TelemRxFifo;
+//extern Fifo<32> TelemRxFifo;
 
 void telemetryPortInit(uint32_t baudrate) {
   if (baudrate == 0) {
