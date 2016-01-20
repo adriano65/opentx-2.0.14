@@ -555,11 +555,7 @@ void FRSKY_Init(void) {
 		  #if defined(PCBTARANIS)
 		  telemetrySecondPortInit(0);
 		  #endif
-<<<<<<< HEAD
 		  telemetryPortInit(Index2Baud(g_model.telemetryBaud));
-=======
-		  telemetryPortInit(FRSKY_D_BAUDRATE);
->>>>>>> bfc8f241ce4122174c4ce1f1bc788368bb657b84
 		  break;			  
 	  case 1:
 		  // in ersky9x CONSOLE_USART==UART0
@@ -572,25 +568,12 @@ void FRSKY_Init(void) {
 		  telemetrySecondPortInit(Index2Baud(g_model.telemetryBaud));
 		  break;			  
 	  case 2:
-<<<<<<< HEAD
-		  telemetrySecondPortInit(Index2Baud(g_model.telemetryBaud));
-		  break;			  
-	  case 3:
-		  telemetrySecondPortInit(Index2Baud(g_model.telemetryBaud));
-		  break;
-		  
-	  default:
-		  telemetryPortInit(Index2Baud(g_model.telemetryBaud));
-		  break;			  
-		  
-=======
 		  //telemetrySecondPortInit(FRSKY_D_BAUDRATE);
 		  break;			  
 	  case 3:
 		  //telemetrySecondPortInit(FRSKY_D_BAUDRATE);
 		  break;
 		  
->>>>>>> bfc8f241ce4122174c4ce1f1bc788368bb657b84
 	  }
 #endif
   // we don't reset the telemetry here as we would also reset the consumption after model load

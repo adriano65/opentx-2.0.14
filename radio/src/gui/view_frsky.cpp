@@ -159,9 +159,6 @@ void displayVoltageScreenLine(uint8_t y, uint8_t index) {
     lcd_putc(12*FW-1, y-FH, '<'); putsTelemetryChannel(17*FW, y-FH, index+TELEM_A1-1, frskyData.analog[index].min, NO_UNIT);
     lcd_putc(12*FW, y, '>');      putsTelemetryChannel(17*FW, y, index+TELEM_A1-1, frskyData.analog[index].max, NO_UNIT);
     }
-	else {
-	  putsTelemetryChannel(3*FW+6*FW+4, y-FH, index+TELEM_A1-1, frskyData.rssi[1].value, DBLSIZE);
-	  }
 }
 
 uint8_t barCoord(int16_t value, int16_t min, int16_t max)
