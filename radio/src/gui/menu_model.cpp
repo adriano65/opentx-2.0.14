@@ -1541,7 +1541,6 @@ void menuModelSetup(uint8_t event) {
 													  , 3
 													  , attr
 													  , event);
-			//eeDirty(EE_MODEL);
         break;
 		
 #endif

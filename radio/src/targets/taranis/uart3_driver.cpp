@@ -36,7 +36,7 @@
 
 #include "../../opentx.h"
 
-Fifo<512> uart3TxFifo;
+Fifo<64> uart3TxFifo;
 
 void telemetrySecondPortInit(uint32_t baudrate) {
   if (baudrate == 0) {

@@ -105,8 +105,10 @@ extern "C" void USART2_IRQHandler() {
   while (status & (USART_FLAG_RXNE | USART_FLAG_ERRORS)) {
     data = SPORT->DR;
 
-    if (!(status & USART_FLAG_ERRORS))
+    if (!(status & USART_FLAG_ERRORS)) {
       TelemRxFifo.push(data);
+	  //uart3Putc(data);
+	  }
 
     status = SPORT->SR;
   }

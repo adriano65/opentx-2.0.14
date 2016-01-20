@@ -34,8 +34,8 @@ RESTORE_EEPROM = NO
 DOUBLE_WRITE_OK = NO
 
 #----------- BUILD OPTIONS ---------------------------
-#----------- MAKE CLEAN WHEN CHANGIN MODEL !!!!!!!!!!!!!!!!
-#----------- -----------------------------
+#----------- ALWAYS DO a MAKE CLEAN WHEN CHANGING MODEL !!!!!!!!!!!!!!!!
+#----------- -----------------------------------------------------------
 
 # PCB version
 # Values: 9X, 9X128, 9X2561, 9XR, 9XR128, 9XR2561, GRUVIN9X, MEGA2560, SKY9X, 9XRPRO, TARANIS 
@@ -352,7 +352,7 @@ endif
 
 # Lua interpreter embedded
 # Values = NO, NO_MODEL_SCRIPTS, YES 
-#LUA = YES
+# LUA = YES
 LUA = NO
 
 # Menu Lock modes

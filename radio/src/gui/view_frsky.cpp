@@ -70,6 +70,11 @@ void displayRssiLine()
   else {
     lcd_putsAtt(7*FW, STATUS_BAR_Y, STR_NODATA, BLINK);
     lcd_status_line();
+	
+	//uint8_t data;
+	//TelemRxFifo.pop(data);
+	//lcd_putsn(0, STATUS_BAR_Y, STR_RX, 2); lcd_outdezNAtt(4*FW, STATUS_BAR_Y, data, LEADING0, 2);
+	
   }
 }
 #else
@@ -153,12 +158,9 @@ void displayVoltageScreenLine(uint8_t y, uint8_t index) {
     putsTelemetryChannel(3*FW+6*FW+4, y-FH, index+TELEM_A1-1, frskyData.analog[index].value, DBLSIZE);
     lcd_putc(12*FW-1, y-FH, '<'); putsTelemetryChannel(17*FW, y-FH, index+TELEM_A1-1, frskyData.analog[index].min, NO_UNIT);
     lcd_putc(12*FW, y, '>');      putsTelemetryChannel(17*FW, y, index+TELEM_A1-1, frskyData.analog[index].max, NO_UNIT);
-	}
+    }
 	else {
-	  //uint8_t data;
 	  putsTelemetryChannel(3*FW+6*FW+4, y-FH, index+TELEM_A1-1, frskyData.rssi[1].value, DBLSIZE);
-	  //TelemRxFifo.pop(data);
-	  //putsTelemetryChannel(3*FW+6*FW+4, y-FH, index+TELEM_A1-1, data, DBLSIZE);
 	  }
 }
 

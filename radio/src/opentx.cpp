@@ -101,7 +101,7 @@ EEGeneral  g_eeGeneral;
 ModelData  g_model;
 
 #if defined(FRSKY) || defined(MAVLINK)
-Fifo<64> TelemRxFifo;
+Fifo<32> TelemRxFifo;
 #endif
 
 #if defined(PCBTARANIS) && defined(SDCARD)
@@ -2772,20 +2772,14 @@ void perMain() {
 
   checkBacklight();
 
-#if defined(FRSKY) && defined(MAVLINK)
+#if (!defined(CPUARM) || defined(SIMU)) && (defined(FRSKY) || defined(MAVLINK))
+  #pragma message "test" STR(EEPROM_VER)
   if (g_model.telemetryProtocol == PROTOCOL_MAVLINK) {	// enum TelemetryProtocol in myeeprom.h
 	MAVLINK_telemetryWakeup();
 	}
   else {
 	FRSKY_telemetryWakeup();
 	}
-#else
-  #if defined(FRSKY)
-	FRSKY_telemetryWakeup();
-  #endif
-  #if defined(MAVLINK)
-	MAVLINK_telemetryWakeup();
-  #endif
 #endif
 
 #if defined(PCBTARANIS)
@@ -3514,18 +3508,19 @@ void mixerTask(void * pdata) {
       CoLeaveMutexSection(mixerMutex);
 
 #if defined(FRSKY) && defined(MAVLINK)
-	  if (g_model.telemetryProtocol == PROTOCOL_MAVLINK) {	// enum TelemetryProtocol in myeeprom.c
-		MAVLINK_telemetryWakeup();
-		}
-	  else {
-		FRSKY_telemetryWakeup();
-		}
+  #pragma message "mixerTask " STR(EEPROM_VER)
+      if (g_model.telemetryProtocol == PROTOCOL_MAVLINK) {	// enum TelemetryProtocol in myeeprom.c
+	    MAVLINK_telemetryWakeup();
+	    }
+      else {
+	    FRSKY_telemetryWakeup();
+	    }
 #else
   #if defined(FRSKY)
-	  FRSKY_telemetryWakeup();
+      FRSKY_telemetryWakeup();
   #endif
   #if defined(MAVLINK)
-	  MAVLINK_telemetryWakeup();
+      MAVLINK_telemetryWakeup();
   #endif
 	  
 #endif

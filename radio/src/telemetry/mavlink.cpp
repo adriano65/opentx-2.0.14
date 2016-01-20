@@ -85,6 +85,7 @@ Mavlink_t mavlinkRT;
 	Fifo<32> TelemTxFifo;
 	OS_STK TelemetryTxStack[MAVLINK_STACK_SIZE];
 	#if defined(MAVLINK_DEBUG)
+	  #error "MAVLINK_DEBUG NOT works yet."
 	  #ifdef BLUETOOTH
 		#error "---->> MAVLINK_DEBUG NOT works with BLUETOOTH defined (btTask conflicts)"
 	  #endif
@@ -105,6 +106,7 @@ Mavlink_t mavlinkRT;
 	  #endif
 		return 0 ;  // Busy
 	  }
+	  
 	  extern "C" void UART1_IRQHandler() {
 		Uart *pUart = BT_USART;
 		if ( pUart->UART_SR & UART_SR_TXBUFE ) {
@@ -115,6 +117,7 @@ Mavlink_t mavlinkRT;
 		  TelemRxFifo.push(pUart->UART_RHR);
 		  }
 	  }
+	  
 	#endif
 	/*
 	void Txchar(uint8_t c) {

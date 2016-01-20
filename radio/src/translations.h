@@ -290,8 +290,9 @@ extern const pm_char STR_OPEN9X[];
   #define STR_CURVE_TYPES       (STR_OPEN9X + OFS_CURVE_TYPES)
 #endif
 
+#define STR_MAVLINK_BAUDS	(STR_OPEN9X + OFS_MAVLINK_BAUDS)
+
 #if defined(MAVLINK)
-  #define STR_MAVLINK_BAUDS	(STR_OPEN9X + OFS_MAVLINK_BAUDS)
   #define STR_MAVLINK_AC_MODES	(STR_OPEN9X + OFS_MAVLINK_AC_MODES)
   #define STR_MAVLINK_AP_MODES	(STR_OPEN9X + OFS_MAVLINK_AP_MODES)
 #endif
@@ -742,13 +743,14 @@ extern const pm_char STR_BLCOLOR[];
   extern const pm_char STR_MODULE_RANGE[];
 #endif
 
+extern const pm_char STR_MAVLINK_BAUD_LABEL[];
+
 #if defined(MAVLINK)
   extern const pm_char STR_MAVLINK_RC_RSSI_SCALE_LABEL[];
   extern const pm_char STR_MAVLINK_PC_RSSI_EN_LABEL[];
   extern const pm_char STR_MAVLINK_BLUETOOTH[];
   extern const pm_char STR_MAVLINK_MAVLINREQ[];
   extern const pm_char STR_MAVMENUSETUP_TITLE[];
-  extern const pm_char STR_MAVLINK_BAUD_LABEL[];
   extern const pm_char STR_MAVLINK_INFOS[];
   extern const pm_char STR_MAVLINK_MODE[];
   extern const pm_char STR_MAVLINK_CUR_MODE[];

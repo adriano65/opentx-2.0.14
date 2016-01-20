@@ -1325,7 +1325,7 @@ inline bool isFunctionActive(uint8_t func)
 #endif
 
 #if defined (FRSKY)
-	extern Fifo<64> TelemRxFifo;
+	extern Fifo<32> TelemRxFifo;
   // FrSky Telemetry
   #include "telemetry/frsky.h"
   // ... and Mavlink Telemetry
@@ -1786,7 +1786,7 @@ void varioWakeup();
 #endif
 
 
-#define STR_HELPER(x) x
+#define STR_HELPER(x) #x
 #define STR(x) STR_HELPER(x)
 
 //#define AAA 123

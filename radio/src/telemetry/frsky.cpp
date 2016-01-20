@@ -552,7 +552,14 @@ void FRSKY_Init(void) {
 	  case 0:
 		  // SKY9x
 		  //telemetryPortInit -> UART2_Configure -> SECOND_USART -> USART0 -> 0x40024000U Base Address
+		  #if defined(PCBTARANIS)
+		  telemetrySecondPortInit(0);
+		  #endif
+<<<<<<< HEAD
+		  telemetryPortInit(Index2Baud(g_model.telemetryBaud));
+=======
 		  telemetryPortInit(FRSKY_D_BAUDRATE);
+>>>>>>> bfc8f241ce4122174c4ce1f1bc788368bb657b84
 		  break;			  
 	  case 1:
 		  // in ersky9x CONSOLE_USART==UART0
@@ -562,19 +569,28 @@ void FRSKY_Init(void) {
 		  #if defined(PCBTARANIS)
 		  telemetryPortInit(0);
 		  #endif
-		  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
+		  telemetrySecondPortInit(Index2Baud(g_model.telemetryBaud));
 		  break;			  
 	  case 2:
-		  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
+<<<<<<< HEAD
+		  telemetrySecondPortInit(Index2Baud(g_model.telemetryBaud));
 		  break;			  
 	  case 3:
-		  telemetrySecondPortInit(FRSKY_D_BAUDRATE);
+		  telemetrySecondPortInit(Index2Baud(g_model.telemetryBaud));
 		  break;
 		  
 	  default:
-		  telemetryPortInit(FRSKY_D_BAUDRATE);
+		  telemetryPortInit(Index2Baud(g_model.telemetryBaud));
 		  break;			  
 		  
+=======
+		  //telemetrySecondPortInit(FRSKY_D_BAUDRATE);
+		  break;			  
+	  case 3:
+		  //telemetrySecondPortInit(FRSKY_D_BAUDRATE);
+		  break;
+		  
+>>>>>>> bfc8f241ce4122174c4ce1f1bc788368bb657b84
 	  }
 #endif
   // we don't reset the telemetry here as we would also reset the consumption after model load

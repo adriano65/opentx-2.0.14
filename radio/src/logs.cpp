@@ -153,10 +153,12 @@ const pm_char * openLogs() {
 		#endif
 		break;
 		
+	  #if defined(MAVLINK)
 	  case PROTOCOL_MAVLINK:
 		#pragma message "LOG-1: " STR(MAVLINK)
 		f_puts("RSSI,IDSwitch,vbat,heading,alt,fix,lat,lon,alt,eph,course,ground_speed\n", &g_oLogFile);
 		break;
+	  #endif
 	  }
 	}
   else {
@@ -285,6 +287,7 @@ void writeLogs() {
 		}  
 		break;
 		
+	  #if defined(MAVLINK)
 	  case PROTOCOL_MAVLINK:
 		#pragma message "Never use floats in f_printf! -> see FAtFs/ff.c"
 		float f=mavlinkRT.loc_current.lat;
@@ -322,6 +325,7 @@ void writeLogs() {
 			  (int16_t)mavlinkRT.course,
 			  mavlinkRT.ground_speed);		// uint8_t
 		break;
+	  #endif
 	  }
 
 

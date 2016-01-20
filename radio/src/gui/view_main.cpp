@@ -278,6 +278,10 @@ void displayTopBar()
       putsTelemetryValue(altitude_icon_x+2*FW-1, BAR_Y+1, TELEMETRY_RELATIVE_BARO_ALT_BP, UNIT_DIST, LEFT);
     }
   }
+  else {
+    //if (TelemRxFifo.pop(altitude_icon_x)) ; else altitude_icon_x=0x55;
+    //putsTelemetryChannel(batt_icon_x+7*FW+2, BAR_Y+1, TELEM_A1+g_model.frsky.voltsSource-1, altitude_icon_x, LEFT);
+    }
 
   /* Notifs icons */
   xcoord_t x = BAR_NOTIFS_X;

@@ -1757,7 +1757,6 @@ enum TelemetryProtocol {
   #else
 	#if defined(FRSKY)
 	  #define PROTOCOLTYPES PSTR("\015""FrSky D     \0")
-	  PROTOCOL_MAVLINK = PROTOCOL_TELEMETRY_FIRST,
 	  PROTOCOL_FRSKY_D,
 	  PROTOCOL_TELEMETRY_LAST=PROTOCOL_FRSKY_D
 	#else

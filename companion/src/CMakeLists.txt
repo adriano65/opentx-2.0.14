@@ -69,7 +69,7 @@ IF( MSVC )
   SET( PTHREAD_LIBRARY pthreadVC2.lib )
 ELSE( )
   SET( PTHREAD_LIBRARY pthread )
-  ADD_DEFINITIONS( -Wall )
+  ADD_DEFINITIONS( -Wall -ftrack-macro-expansion=0 -fno-diagnostics-show-caret)
   LINK_DIRECTORIES( /usr/local/lib )
 ENDIF( )
 
