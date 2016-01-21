@@ -253,7 +253,8 @@ PPM_UNIT = PERCENT_PREC1
 OVERRIDE_CHANNEL_FUNCTION = YES
 
 # FrSky Hub 
-FRSKY_HUB = YES
+# FRSKY_HUB = YES
+FRSKY_HUB = NO
 
 # FrSky FAS current sensor offset compensation
 # Values = YES, NO

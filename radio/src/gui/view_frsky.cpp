@@ -322,6 +322,7 @@ void displayAfterFlightScreen()
 #endif
 
   uint8_t line=1*FH+1;
+#if defined(FRSKY_HUB) && defined(GAUGES)
   if (IS_GPS_AVAILABLE()) {
     // Latitude
     lcd_putsLeft(line, STR_LATITUDE);
@@ -333,8 +334,11 @@ void displayAfterFlightScreen()
     displayGpsTime();
     line+=1*FH+1;
   }
+  
   // Rssi
   lcd_putsLeft(line, STR_MINRSSI);
+#endif
+  
 #if defined(PCBTARANIS)
   lcd_outdezNAtt(TELEM_2ND_COLUMN, line, frskyData.rssi[0].min, LEFT|LEADING0, 2);
 #else
