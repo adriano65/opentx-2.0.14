@@ -922,7 +922,7 @@ enum menuModelSetupItems {
   ITEM_MODEL_EXTERNAL_MODULE_CHANNELS,
   ITEM_MODEL_EXTERNAL_MODULE_BIND,
   ITEM_MODEL_EXTERNAL_MODULE_FAILSAFE,
-  #if defined(PCBSKY9X) && !defined(REVA)
+  #if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
 	ITEM_MODEL_EXTRA_MODULE_LABEL,
 	ITEM_MODEL_EXTRA_MODULE_CHANNELS,
 	ITEM_MODEL_EXTRA_MODULE_BIND,
@@ -980,7 +980,7 @@ void onModelSetupBitmapMenu(const char *result) {
 
 #if defined(PCBTARANIS)
   #define CURRENT_MODULE_EDITED(k)         (k>=ITEM_MODEL_TRAINER_LABEL ? TRAINER_MODULE : (k>=ITEM_MODEL_EXTERNAL_MODULE_LABEL ? EXTERNAL_MODULE : INTERNAL_MODULE))
-#elif (defined(PCBSKY9X) && !defined(REVA))
+#elif defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
   #define CURRENT_MODULE_EDITED(k)         (k>=ITEM_MODEL_EXTRA_MODULE_LABEL ? EXTRA_MODULE : EXTERNAL_MODULE)
 #else
   #define CURRENT_MODULE_EDITED(k)         (EXTERNAL_MODULE)
@@ -1001,40 +1001,32 @@ void menuModelSetup(uint8_t event) {
   #define MODEL_SETUP_MAX_LINES             (1+ITEM_MODEL_SETUP_MAX)
   #define POT_WARN_ITEMS()                  ((g_model.nPotsToWarn >> 6) ? (uint8_t)NUM_POTS : (uint8_t)0)
   bool CURSOR_ON_CELL = (m_posHorz >= 0);
-  MENU_TAB({ 0
-			, 0
-			, 0
-			, 2
+  MENU_TAB({ 0								// ITEM_MODEL_NAME
+			, 0								// ITEM_MODEL_BITMAP
+			, 2								// ITEM_MODEL_TIMER1
 			, CASE_PERSISTENT_TIMERS(0) 
 			0
 			, 0
 			, 2
-			, CASE_PERSISTENT_TIMERS(0) 
-			0
-			, 0
-			, 0
-			, 1
-			, 0
-			, LABEL(Throttle)
-			, 0
-			, 0
-			, 0
-			, LABEL(PreflightCheck)
+			, CASE_PERSISTENT_TIMERS(0) 	// ITEM_MODEL_TIMER2_PERSISTENT
+			0								// ITEM_MODEL_TIMER2_MINUTE_BEEP
+			, 0								// ITEM_MODEL_TIMER2_COUNTDOWN_BEEP
+			, 0								// ITEM_MODEL_EXTENDED_LIMITS
+			, 1								// ITEM_MODEL_EXTENDED_TRIMS
+			, 0								// ITEM_MODEL_TRIM_INC
+			, LABEL(Throttle)				// ITEM_MODEL_THROTTLE_LABEL
+			, 0								// ITEM_MODEL_THROTTLE_REVERSED
+			, 0								// ITEM_MODEL_THROTTLE_TRACE
+			, 0								// ITEM_MODEL_THROTTLE_TRIM
+			, LABEL(PreflightCheck)			// ITEM_MODEL_PREFLIGHT_LABEL
 			, 0 							// ITEM_MODEL_CHECKLIST_DISPLAY
 			, 0								// ITEM_MODEL_THROTTLE_WARNING
 			, 7								// ITEM_MODEL_SWITCHES_WARNING
 			, POT_WARN_ITEMS()				// ITEM_MODEL_POT_WARNING
 			, NAVIGATION_LINE_BY_LINE | (NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1)
-			//, 0								// ITEM_MODEL_BEEP_CENTER
 			, 0								// ITEM_MODEL_PROTOCOL
-			
-			//, 0								// ITEM_SETUP_TELCOM Label
 			, 0								// ITEM_SETUP_TELCOM
-			
-			//, 0								// ITEM_TELCOM_BAUD Label
 			, 0								// ITEM_TELCOM_BAUD
-			
-			//, 0								// ITEM_SETUP_MIRRCOM Label
 			, 0								// ITEM_SETUP_MIRRCOM
 			
 			, LABEL(InternalModule)			// ITEM_MODEL_INTERNAL_MODULE_LABEL
@@ -1071,7 +1063,7 @@ void menuModelSetup(uint8_t event) {
   #endif
   
   MENU_TAB({ 0								// ITEM_MODEL_NAME
-			, 0								// ITEM_MODEL_TIMER1
+			, 2								// ITEM_MODEL_TIMER1
 			, CASE_PERSISTENT_TIMERS(0) 	// ITEM_MODEL_TIMER1_PERSISTENT
 			0								// ITEM_MODEL_TIMER1_MINUTE_BEEP
 			, 0								// ITEM_MODEL_TIMER1_COUNTDOWN_BEEP
@@ -1083,27 +1075,21 @@ void menuModelSetup(uint8_t event) {
 			, 1								// ITEM_MODEL_EXTENDED_TRIMS
 			, 0								// ITEM_MODEL_TRIM_INC
 			, 0								// ITEM_MODEL_THROTTLE_REVERSED
-			, 0								// ITEM_MODEL_THROTTLE_TRACE
-			, 0								// ITEM_MODEL_THROTTLE_TRIM
+			, 1								// ITEM_MODEL_THROTTLE_TRACE
+			, 1								// ITEM_MODEL_THROTTLE_TRIM
 			, LABEL(PreflightCheck) 		// ITEM_MODEL_PREFLIGHT_LABEL
-			, 0								// ITEM_MODEL_CHECKLIST_DISPLAY
+			, 1								// ITEM_MODEL_CHECKLIST_DISPLAY
 			, 1								// ITEM_MODEL_THROTTLE_WARNING
 			, NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1		// ITEM_MODEL_SWITCHES_WARNING
 			, 0								// ITEM_MODEL_BEEP_CENTER
-			//, 0								// ITEM_MODEL_PROTOCOL Label
+			//, 0							// ITEM_MODEL_PROTOCOL Label -- it's a single row like ITEM_MODEL_PREFLIGHT_LABEL
 			, 0								// ITEM_MODEL_PROTOCOL
-			
-			//, 0								// ITEM_SETUP_TELCOM Label
 			, 0								// ITEM_SETUP_TELCOM
-			
-			//, 0								// ITEM_TELCOM_BAUD Label
 			, 0								// ITEM_TELCOM_BAUD
-			
-			//, 0								// ITEM_SETUP_MIRRCOM Label
 			, 0								// ITEM_SETUP_MIRRCOM
-			
+			// ITEM_MODEL_EXTRA_MODULE_LABEL							--> #define LABEL(...) (uint8_t)-1
 			, LABEL(ExternalModule)			// ITEM_MODEL_EXTERNAL_MODULE_LABEL
-			, (IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)1 : (uint8_t)0	//ITEM_MODEL_EXTERNAL_MODULE_MODE
+			, (IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)1 : (uint8_t)0	 //ITEM_MODEL_EXTERNAL_MODULE_MODE
 			, EXTERNAL_MODULE_CHANNELS_ROWS()	// ITEM_MODEL_EXTERNAL_MODULE_CHANNELS
 			, (IS_MODULE_XJT(EXTERNAL_MODULE) && IS_D8_RX(EXTERNAL_MODULE)) ? (uint8_t)1 : (IS_MODULE_PPM(EXTERNAL_MODULE) || IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)2 : HIDDEN_ROW
 			, IF_EXTERNAL_MODULE_XJT(FAILSAFE_ROWS(EXTERNAL_MODULE))
@@ -1490,7 +1476,7 @@ void menuModelSetup(uint8_t event) {
         }
         break;
 
-#if defined(PCBSKY9X) && !defined(REVA)
+#if defined(PCBSKY9X) && !defined(REVX)
       case ITEM_MODEL_EXTRA_MODULE_LABEL:
         lcd_putsLeft(y, "RF Port 2 (PPM)");
         break;
@@ -1612,7 +1598,7 @@ void menuModelSetup(uint8_t event) {
         break;
 
       case ITEM_MODEL_INTERNAL_MODULE_CHANNELS:
-#elif defined(PCBSKY9X) && !defined(REVA)
+#elif defined(PCBSKY9X) && !defined(REVX)
       case ITEM_MODEL_EXTRA_MODULE_CHANNELS:
 #endif
 #if defined(CPUARM)
@@ -1652,7 +1638,7 @@ void menuModelSetup(uint8_t event) {
 
 #if defined(PCBTARANIS)
       case ITEM_MODEL_INTERNAL_MODULE_BIND:
-#elif defined(PCBSKY9X) && !defined(REVA)
+#elif defined(PCBSKY9X) && !defined(REVX)
       case ITEM_MODEL_EXTRA_MODULE_BIND:
 #endif
 #if defined(CPUARM)

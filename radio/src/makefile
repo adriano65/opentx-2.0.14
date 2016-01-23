@@ -53,10 +53,10 @@ DOUBLE_WRITE_OK = NO
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
-# PCB = 9XRPRO
+ PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
- PCB = TARANIS
+# PCB = TARANIS
 
 #------- END BUILD OPTIONS ---------------------------
 
@@ -253,8 +253,8 @@ PPM_UNIT = PERCENT_PREC1
 OVERRIDE_CHANNEL_FUNCTION = YES
 
 # FrSky Hub 
-# FRSKY_HUB = YES
-FRSKY_HUB = NO
+ FRSKY_HUB = YES
+# FRSKY_HUB = NO
 
 # FrSky FAS current sensor offset compensation
 # Values = YES, NO
