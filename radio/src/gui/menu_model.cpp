@@ -1063,6 +1063,7 @@ void menuModelSetup(uint8_t event) {
   #endif
   
   MENU_TAB({ 0								// ITEM_MODEL_NAME
+			, 0								// ??
 			, 2								// ITEM_MODEL_TIMER1
 			, CASE_PERSISTENT_TIMERS(0) 	// ITEM_MODEL_TIMER1_PERSISTENT
 			0								// ITEM_MODEL_TIMER1_MINUTE_BEEP
@@ -1083,10 +1084,11 @@ void menuModelSetup(uint8_t event) {
 			, NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1		// ITEM_MODEL_SWITCHES_WARNING
 			, 0								// ITEM_MODEL_BEEP_CENTER
 			//, 0							// ITEM_MODEL_PROTOCOL Label -- it's a single row like ITEM_MODEL_PREFLIGHT_LABEL
-			, 0								// ITEM_MODEL_PROTOCOL
-			, 0								// ITEM_SETUP_TELCOM
-			, 0								// ITEM_TELCOM_BAUD
-			, 0								// ITEM_SETUP_MIRRCOM
+			, 1								// ITEM_MODEL_PROTOCOL
+			, 1								// ITEM_SETUP_TELCOM
+			//, 1								// ?
+			, 1								// ITEM_TELCOM_BAUD
+			, 1								// ITEM_SETUP_MIRRCOM
 			// ITEM_MODEL_EXTRA_MODULE_LABEL							--> #define LABEL(...) (uint8_t)-1
 			, LABEL(ExternalModule)			// ITEM_MODEL_EXTERNAL_MODULE_LABEL
 			, (IS_MODULE_XJT(EXTERNAL_MODULE) || IS_MODULE_DSM2(EXTERNAL_MODULE)) ? (uint8_t)1 : (uint8_t)0	 //ITEM_MODEL_EXTERNAL_MODULE_MODE
