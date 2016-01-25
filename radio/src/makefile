@@ -53,10 +53,10 @@ DOUBLE_WRITE_OK = NO
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
- PCB = 9XRPRO
+# PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
-# PCB = TARANIS
+ PCB = TARANIS
 
 #------- END BUILD OPTIONS ---------------------------
 
@@ -353,8 +353,11 @@ endif
 
 # Lua interpreter embedded
 # Values = NO, NO_MODEL_SCRIPTS, YES 
-# LUA = YES
+ifeq ($(PCB), $(filter $(PCB), TARANIS))
+LUA = YES
+else
 LUA = NO
+endif
 
 # Menu Lock modes
 # Values = NO, READONLY, NOMENUS 
@@ -384,7 +387,7 @@ SHELL = sh
 IMG2LBM = -python ../util/img2lbm.py
 BIN2LBM = -python ../util/bin2lbm.py
 TRANSLATE = -python ../util/translate.py
-VERSION = 0.2.19
+VERSION = 0.2.20
 
 SRC =
 CPPSRC =

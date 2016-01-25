@@ -63,6 +63,14 @@ uint8_t frskyRxBufferCount = 0;
 
 FrskyData frskyData;
 
+#if defined(CPUARM)
+uint8_t telemetryProtocol = 255;
+#define IS_FRSKY_D_PROTOCOL()      (telemetryProtocol == PROTOCOL_FRSKY_D)
+#define IS_FRSKY_SPORT_PROTOCOL()  (telemetryProtocol == PROTOCOL_FRSKY_SPORT)
+#else
+#define IS_FRSKY_D_PROTOCOL()     (true)
+#define IS_FRSKY_SPORT_PROTOCOL() (false)
+#endif
 
 void FrskyValueWithMin::set(uint8_t value)
 {
@@ -259,6 +267,16 @@ enum AlarmsCheckSteps {
 };
 
 void FRSKY_telemetryWakeup() {
+#if defined(CPUARM)
+  uint8_t requiredTelemetryProtocol = MODEL_TELEMETRY_PROTOCOL();
+  if (telemetryProtocol != requiredTelemetryProtocol) {
+    telemetryProtocol = requiredTelemetryProtocol;
+    FRSKY_Init();
+  }
+#endif
+  
+  
+  
   #if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
 	// SKY9X - Receive serial data here
 	rxPdcUsart(processSerialFrskyData);

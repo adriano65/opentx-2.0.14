@@ -1003,32 +1003,33 @@ void menuModelSetup(uint8_t event) {
   bool CURSOR_ON_CELL = (m_posHorz >= 0);
   MENU_TAB({ 0								// ITEM_MODEL_NAME
 			, 0								// ITEM_MODEL_BITMAP
-			, 2								// ITEM_MODEL_TIMER1
-			, CASE_PERSISTENT_TIMERS(0) 
-			0
-			, 0
-			, 2
+			, 0								// ?
+			, 2|NAVIGATION_LINE_BY_LINE		// ITEM_MODEL_TIMER1
+			, CASE_PERSISTENT_TIMERS(0) 	// ITEM_MODEL_TIMER1_PERSISTENT
+			0								// ITEM_MODEL_TIMER1_MINUTE_BEEP
+			, 0								// ITEM_MODEL_TIMER1_COUNTDOWN_BEEP
+			, 2|NAVIGATION_LINE_BY_LINE		// ITEM_MODEL_TIMER2
 			, CASE_PERSISTENT_TIMERS(0) 	// ITEM_MODEL_TIMER2_PERSISTENT
 			0								// ITEM_MODEL_TIMER2_MINUTE_BEEP
 			, 0								// ITEM_MODEL_TIMER2_COUNTDOWN_BEEP
 			, 0								// ITEM_MODEL_EXTENDED_LIMITS
 			, 1								// ITEM_MODEL_EXTENDED_TRIMS
 			, 0								// ITEM_MODEL_TRIM_INC
-			, LABEL(Throttle)				// ITEM_MODEL_THROTTLE_LABEL
-			, 0								// ITEM_MODEL_THROTTLE_REVERSED
+			, CASE_PCBTARANIS(LABEL(Throttle))				// ITEM_MODEL_THROTTLE_LABEL
+			 0								// ITEM_MODEL_THROTTLE_REVERSED
 			, 0								// ITEM_MODEL_THROTTLE_TRACE
 			, 0								// ITEM_MODEL_THROTTLE_TRIM
-			, LABEL(PreflightCheck)			// ITEM_MODEL_PREFLIGHT_LABEL
-			, 0 							// ITEM_MODEL_CHECKLIST_DISPLAY
-			, 0								// ITEM_MODEL_THROTTLE_WARNING
+			, CASE_CPUARM(LABEL(PreflightCheck))	// ITEM_MODEL_PREFLIGHT_LABEL
+			  CASE_CPUARM(0)				// ITEM_MODEL_CHECKLIST_DISPLAY
+			0								// ITEM_MODEL_THROTTLE_WARNING
 			, 7								// ITEM_MODEL_SWITCHES_WARNING
 			, POT_WARN_ITEMS()				// ITEM_MODEL_POT_WARNING
 			, NAVIGATION_LINE_BY_LINE | (NUM_STICKS+NUM_POTS+NUM_ROTARY_ENCODERS-1)
+			, 0								// ITEM_MODEL_BEEP_CENTER
 			, 0								// ITEM_MODEL_PROTOCOL
 			, 0								// ITEM_SETUP_TELCOM
 			, 0								// ITEM_TELCOM_BAUD
 			, 0								// ITEM_SETUP_MIRRCOM
-			
 			, LABEL(InternalModule)			// ITEM_MODEL_INTERNAL_MODULE_LABEL
 			, 0								// ITEM_MODEL_INTERNAL_MODULE_MODE
 			, IF_INTERNAL_MODULE_ON(1)		// ITEM_MODEL_INTERNAL_MODULE_CHANNELS
@@ -1103,7 +1104,7 @@ void menuModelSetup(uint8_t event) {
   uint8_t protocol = g_model.protocol;
   MENU_TAB({ 0
 			, 0
-			, CASE_PCBTARANIS(0) 2
+			, 2
 			, CASE_PERSISTENT_TIMERS(0) 0
 			, 0
 			, 2
@@ -1495,6 +1496,7 @@ void menuModelSetup(uint8_t event) {
 													  , PROTOCOL_TELEMETRY_LAST
 													  , attr
 													  , event);
+			//FRSKY_Init();
 			break;
 		}
 		
