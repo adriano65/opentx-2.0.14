@@ -368,7 +368,7 @@ MENUS_LOCK = NO
 # JOYSTICK: The TX will appear as a joystick
 # MASSSTORAGE: The TX will appear as a drive
 USB = MASSSTORAGE
-#USB = JOYSTICK
+# USB = JOYSTICK
 
 # Channel monitor display behavior
 # Values = NO, YES
@@ -380,6 +380,10 @@ CHANNELS_MONITOR_INV_HIDE = NO
 # Use newlib-nano 
 # Values = NO, YES
 NANO = NO
+
+# Support for D16-EU only (no D8, no LR12 which are not EU compatible)
+# Value = NO, YES
+SUPPORT_D16_EU_ONLY = NO
 
 
 # Define programs and commands.
@@ -761,6 +765,10 @@ ifeq ($(PCB), TARANIS)
   else
     CPPDEFS = -DREV4
   endif
+  ifeq ($(SUPPORT_D16_EU_ONLY), YES)
+    CPPDEFS += -DMODULE_D16_EU_ONLY_SUPPORT
+  endif
+
   LDSCRIPT = targets/taranis/stm32_flash_bl.ld
   TRGT = arm-none-eabi-
   MCU  = cortex-m3
