@@ -267,19 +267,17 @@ enum AlarmsCheckSteps {
 };
 
 void FRSKY_telemetryWakeup() {
-#if defined(CPUARM)
+  #if defined(CPUARM)
   uint8_t requiredTelemetryProtocol = MODEL_TELEMETRY_PROTOCOL();
   if (telemetryProtocol != requiredTelemetryProtocol) {
     telemetryProtocol = requiredTelemetryProtocol;
     FRSKY_Init();
-  }
-#endif
-  
-  
+    }
+  #endif  
   
   #if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
-	// SKY9X - Receive serial data here
-	rxPdcUsart(processSerialFrskyData);
+    // SKY9X - Receive serial data here
+    rxPdcUsart(processSerialFrskyData);
   #else
     uint8_t data;
     while (TelemRxFifo.pop(data)) {
@@ -293,9 +291,9 @@ void FRSKY_telemetryWakeup() {
     static uint8_t frskyTxDelay = 5;
     if (frskyAlarmsSendState && (--frskyTxDelay == 0)) {
       frskyTxDelay = 5; // 50ms
-	  #if !defined(SIMU)
+      #if !defined(SIMU)
       frskyDSendNextAlarm();
-	  #endif
+      #endif
     }
   }
   #endif
