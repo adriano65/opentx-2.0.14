@@ -180,22 +180,7 @@ bool OpenTxEepromInterface::loadModelVariant(unsigned int index, ModelData &mode
 
 bool OpenTxEepromInterface::loadModel(uint8_t version, ModelData &model, uint8_t *data, int index, unsigned int variant, unsigned int stickMode)
 {
-  if (version == 201) {
-    return loadModel<Open9xModelData_v201>(model, data, index, stickMode);
-  }
-  else if (version == 202) {
-    return loadModel<Open9xModelData_v202>(model, data, index, 0 /*no more stick mode messed*/);
-  }
-  else if (version == 203) {
-    return loadModel<Open9xModelData_v203>(model, data, index, 0 /*no more stick mode messed*/);
-  }
-  else if (version == 204) {
-    return loadModel<Open9xModelData_v204>(model, data, index, 0 /*no more stick mode messed*/);
-  }
-  else if (version == 205) {
-    return loadModel<Open9xModelData_v205>(model, data, index, 0 /*no more stick mode messed*/);
-  }
-  else if (board == BOARD_GRUVIN9X && version == 207) {
+if (board == BOARD_GRUVIN9X && version == 207) {
     return loadModel<Open9xGruvin9xModelData_v207>(model, data, index, 0 /*no more stick mode messed*/);
   }
   else if (version == 208) {
@@ -749,7 +734,7 @@ bool OpenTxFirmware::isTelemetrySourceAvailable(int source)
   return true;
 }
 
-int OpenTxEepromInterface::isAvailable(Protocol proto, int port)
+int OpenTxEepromInterface::isAvailable(RFprotocol proto, int port)
 {
   if (IS_TARANIS(board)) {
     switch (port) {

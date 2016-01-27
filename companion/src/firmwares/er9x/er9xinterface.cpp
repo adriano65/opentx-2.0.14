@@ -200,7 +200,7 @@ int Er9xInterface::getSize(GeneralSettings &settings)
   return 0;
 }
 
-int Er9xInterface::isAvailable(Protocol prot, int port)
+int Er9xInterface::isAvailable(RFprotocol prot, int port)
 {
   switch (prot) {
     case PPM:

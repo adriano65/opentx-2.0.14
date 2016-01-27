@@ -216,7 +216,7 @@ int Gruvin9xInterface::getSize(GeneralSettings &settings)
   return 0;
 }
 
-int Gruvin9xInterface::isAvailable(Protocol proto, int port)
+int Gruvin9xInterface::isAvailable(RFprotocol proto, int port)
 {
   switch (proto) {
     case PPM:

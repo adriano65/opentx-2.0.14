@@ -244,7 +244,7 @@ int Ersky9xInterface::getSize(GeneralSettings &settings)
   return 0;
 }
 
-int Ersky9xInterface::isAvailable(Protocol prot, int port)
+int Ersky9xInterface::isAvailable(RFprotocol prot, int port)
 {
   switch (prot) {
     case PPM:

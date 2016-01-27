@@ -45,7 +45,7 @@ DOUBLE_WRITE_OK = NO
 # PCB = 9X
 
 # --- use eeprom_rlc.cpp ---
-# PCB = 9XR128
+ PCB = 9XR128
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
@@ -56,7 +56,7 @@ DOUBLE_WRITE_OK = NO
 # PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
- PCB = TARANIS
+# PCB = TARANIS
 
 #------- END BUILD OPTIONS ---------------------------
 

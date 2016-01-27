@@ -47,7 +47,7 @@ class Gruvin9xInterface : public EEPROMInterface
     
     virtual int getSize(GeneralSettings &settings);
 
-    virtual int isAvailable(Protocol proto, int port=0);
+    virtual int isAvailable(RFprotocol proto, int port=0);
 
   protected:
 

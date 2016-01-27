@@ -197,6 +197,7 @@ void MAVLINK_Init(bool bHardReset) {
 }
 
 void MAVLINK_telemetryWakeup() {
+    #if !defined(SIMU)
 	#if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
 		rxPdcUsart(processSerialMavlinkData);
 	#else
@@ -211,7 +212,7 @@ void MAVLINK_telemetryWakeup() {
 			}	
 		#endif
 	#endif
-	
+    #endif
 }
 
 uint32_t Index2Baud(uint8_t mavbaudIdx) {

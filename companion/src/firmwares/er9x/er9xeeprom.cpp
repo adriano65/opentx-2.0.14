@@ -361,16 +361,16 @@ t_Er9xModelData::operator ModelData ()
   c9x.timers[0].val = tmrVal;
   switch(protocol) {
     case 1:
-      c9x.moduleData[0].protocol = PXX_DJT;
+      c9x.moduleData[0].RFprotocol = PXX_DJT;
       break;
     case 2:
-      c9x.moduleData[0].protocol = DSM2;
+      c9x.moduleData[0].RFprotocol = DSM2;
       break;
     case 3:
-      c9x.moduleData[0].protocol = PPM16;
+      c9x.moduleData[0].RFprotocol = PPM16;
       break;
     default:
-      c9x.moduleData[0].protocol = PPM;
+      c9x.moduleData[0].RFprotocol = PPM;
       break;
   }
   c9x.moduleData[0].ppmFrameLength=ppmFrameLength;

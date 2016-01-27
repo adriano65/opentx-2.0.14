@@ -840,9 +840,9 @@ QString getTimerStr(TimerData & timer)
 
 QString getProtocol(ModelData * g_model)
 {
-  QString str = getProtocolStr(g_model->moduleData[0].protocol);
+  QString str = getProtocolStr(g_model->moduleData[0].RFprotocol);
 
-  if (g_model->moduleData[0].protocol == PPM)
+  if (g_model->moduleData[0].RFprotocol == PPM)
     str.append(QObject::tr(": %1 Channels, %2usec Delay").arg(g_model->moduleData[0].channelsCount).arg(g_model->moduleData[0].ppmDelay));
 
   return str;

@@ -914,390 +914,6 @@ t_Open9xFrSkyData_v210::operator FrSkyData ()
   return c9x;
 }
 
-t_Open9xModelData_v201::operator ModelData ()
-{
-  ModelData c9x;
-  c9x.used = true;
-  getEEPROMZString(c9x.name, name, sizeof(name));
-  c9x.timers[0] = timer1;
-  c9x.timers[1] = timer2;
-  switch(protocol) {
-    case 1:
-      c9x.moduleData[0].protocol = PXX_DJT;
-      break;
-    case 2:
-      c9x.moduleData[0].protocol = DSM2;
-      break;
-    case 3:
-      c9x.moduleData[0].protocol = PPM16;
-      break;
-    default:
-      c9x.moduleData[0].protocol = PPM;
-      break;
-  }
-  c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);
-  c9x.thrTrim = thrTrim;
-  c9x.trimInc = trimInc - 2;
-  c9x.moduleData[0].ppmDelay = 300 + 50 * ppmDelay;
-  c9x.beepANACenter = beepANACenter;
-  c9x.moduleData[0].ppmPulsePol = pulsePol;
-  c9x.extendedLimits = extendedLimits;
-  c9x.extendedTrims = extendedTrims;
-  for (int i=0; i<O9X_MAX_FLIGHT_MODES; i++) {
-    c9x.flightModeData[i] = flightModeData[i];
-    for (int j=0; j<NUM_STICKS; j++) {
-      if (c9x.flightModeData[i].trim[j] > 500) {
-        c9x.flightModeData[i].trimRef[j] = c9x.flightModeData[i].trim[j] - 501;
-        if (c9x.flightModeData[i].trimRef[j] >= i)
-          c9x.flightModeData[i].trimRef[j] += 1;
-        c9x.flightModeData[i].trim[j] = 0;
-      }
-    }
-  }
-  for (int i=0; i<O9X_MAX_MIXERS; i++)
-    c9x.mixData[i] = mixData[i];
-  for (int i=0; i<O9X_NUM_CHNOUT; i++)
-    c9x.limitData[i] = limitData[i];
-  for (int i=0; i<O9X_MAX_EXPOS; i++)
-    c9x.expoData[i] = expoData[i];
-
-  for (int i=0; i<O9X_209_MAX_CURVE5; i++) {
-    c9x.curves[i].count = 5;
-    for (int j = 0; j < 5; j++) {
-      c9x.curves[i].points[j].x = -100 + 50 * i;
-      c9x.curves[i].points[j].y = curves5[i][j];
-    }
-  }
-  for (int i=0; i<O9X_209_MAX_CURVE9; i++) {
-    c9x.curves[O9X_209_MAX_CURVE5 + i].count = 9;
-    for (int j = 0; j < 9; j++) {
-      c9x.curves[O9X_209_MAX_CURVE5 + i].points[j].x = -100 + 25 * i;
-      c9x.curves[O9X_209_MAX_CURVE5 + i].points[j].y = curves9[i][j];
-    }
-  }
-
-  for (int i=0; i<12; i++)
-    c9x.customSw[i] = customSw[i];
-  for (int i=0; i<12; i++)
-    c9x.funcSw[i] = funcSw[i];
-  // for (int i=0; i<O9X_NUM_CHNOUT; i++)
-  //   c9x.safetySw[i] = safetySw[i];
-  c9x.swashRingData = swashR;
-  c9x.frsky = frsky;
-
-  return c9x;
-}
-
-t_Open9xModelData_v202::operator ModelData ()
-{
-  ModelData c9x;
-  c9x.used = true;
-  getEEPROMZString(c9x.name, name, sizeof(name));
-  c9x.timers[0] = timer1;
-  c9x.timers[1] = timer2;
-  switch(protocol) {
-    case 1:
-      c9x.moduleData[0].protocol = PXX_DJT;
-      break;
-    case 2:
-      c9x.moduleData[0].protocol = DSM2;
-      break;
-    case 3:
-      c9x.moduleData[0].protocol = PPM16;
-      break;
-    default:
-      c9x.moduleData[0].protocol = PPM;
-      break;
-  }
-  c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);
-  c9x.thrTrim = thrTrim;
-  c9x.trimInc = trimInc - 2;
-  c9x.moduleData[0].ppmDelay = 300 + 50 * ppmDelay;
-  c9x.beepANACenter = beepANACenter,
-  c9x.moduleData[0].ppmPulsePol = pulsePol;
-  c9x.extendedLimits = extendedLimits;
-  c9x.extendedTrims = extendedTrims;
-  for (int i=0; i<O9X_MAX_FLIGHT_MODES; i++) {
-    c9x.flightModeData[i] = flightModeData[i];
-    for (int j=0; j<NUM_STICKS; j++) {
-      if (c9x.flightModeData[i].trim[j] > 500) {
-        c9x.flightModeData[i].trimRef[j] = c9x.flightModeData[i].trim[j] - 501;
-        if (c9x.flightModeData[i].trimRef[j] >= i)
-          c9x.flightModeData[i].trimRef[j] += 1;
-        c9x.flightModeData[i].trim[j] = 0;
-      }
-    }
-  }
-  for (int i=0; i<O9X_MAX_MIXERS; i++)
-    c9x.mixData[i] = mixData[i];
-  for (int i=0; i<O9X_NUM_CHNOUT; i++)
-    c9x.limitData[i] = limitData[i];
-  for (int i=0; i<O9X_MAX_EXPOS; i++)
-    c9x.expoData[i] = expoData[i];
-
-  for (int i=0; i<O9X_209_MAX_CURVE5; i++) {
-    c9x.curves[i].count = 5;
-    for (int j = 0; j < 5; j++) {
-      c9x.curves[i].points[j].x = -100 + 50 * i;
-      c9x.curves[i].points[j].y = curves5[i][j];
-    }
-  }
-  for (int i=0; i<O9X_209_MAX_CURVE9; i++) {
-    c9x.curves[O9X_209_MAX_CURVE5 + i].count = 9;
-    for (int j = 0; j < 9; j++) {
-      c9x.curves[O9X_209_MAX_CURVE5 + i].points[j].x = -100 + 25 * i;
-      c9x.curves[O9X_209_MAX_CURVE5 + i].points[j].y = curves9[i][j];
-    }
-  }
-
-  for (int i=0; i<12; i++)
-    c9x.customSw[i] = customSw[i];
-  for (int i=0; i<12; i++)
-    c9x.funcSw[i] = funcSw[i];
-  // for (int i=0; i<O9X_NUM_CHNOUT; i++)
-  //  c9x.safetySw[i] = safetySw[i];
-  c9x.swashRingData = swashR;
-  c9x.frsky = frsky;
-  c9x.moduleData[0].ppmFrameLength = ppmFrameLength;
-  c9x.thrTraceSrc = thrTraceSrc;
-  c9x.modelId=modelId;
-  return c9x;
-}
-
-t_Open9xModelData_v203::operator ModelData ()
-{
-  ModelData c9x;
-  c9x.used = true;
-  getEEPROMZString(c9x.name, name, sizeof(name));
-  c9x.timers[0] = timer1;
-  c9x.timers[1] = timer2;
-  switch(protocol) {
-    case 1:
-      c9x.moduleData[0].protocol = PXX_DJT;
-      break;
-    case 2:
-      c9x.moduleData[0].protocol = DSM2;
-      break;
-    case 3:
-      c9x.moduleData[0].protocol = PPM16;
-      break;
-    default:
-      c9x.moduleData[0].protocol = PPM;
-      break;
-  }
-  c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);
-  c9x.thrTrim = thrTrim;
-  c9x.trimInc = trimInc - 2;
-  c9x.moduleData[0].ppmDelay = 300 + 50 * ppmDelay;
-  c9x.beepANACenter = beepANACenter;
-  c9x.moduleData[0].ppmPulsePol = pulsePol;
-  c9x.extendedLimits = extendedLimits;
-  c9x.extendedTrims = extendedTrims;
-  for (int i=0; i<O9X_MAX_FLIGHT_MODES; i++) {
-    c9x.flightModeData[i] = flightModeData[i];
-    for (int j=0; j<NUM_STICKS; j++) {
-      if (c9x.flightModeData[i].trim[j] > 500) {
-        c9x.flightModeData[i].trimRef[j] = c9x.flightModeData[i].trim[j] - 501;
-        if (c9x.flightModeData[i].trimRef[j] >= i)
-          c9x.flightModeData[i].trimRef[j] += 1;
-        c9x.flightModeData[i].trim[j] = 0;
-      }
-    }
-  }
-  for (int i=0; i<O9X_MAX_MIXERS; i++)
-    c9x.mixData[i] = mixData[i];
-  for (int i=0; i<O9X_NUM_CHNOUT; i++)
-    c9x.limitData[i] = limitData[i];
-  for (int i=0; i<O9X_MAX_EXPOS; i++)
-    c9x.expoData[i] = expoData[i];
-
-  for (int i=0; i<O9X_209_MAX_CURVE5; i++) {
-    c9x.curves[i].count = 5;
-    for (int j = 0; j < 5; j++) {
-      c9x.curves[i].points[j].x = -100 + 50 * i;
-      c9x.curves[i].points[j].y = curves5[i][j];
-    }
-  }
-  for (int i=0; i<O9X_209_MAX_CURVE9; i++) {
-    c9x.curves[O9X_209_MAX_CURVE5 + i].count = 9;
-    for (int j = 0; j < 9; j++) {
-      c9x.curves[O9X_209_MAX_CURVE5 + i].points[j].x = -100 + 25 * i;
-      c9x.curves[O9X_209_MAX_CURVE5 + i].points[j].y = curves9[i][j];
-    }
-  }
-
-  for (int i=0; i<O9X_NUM_CSW; i++)
-    c9x.customSw[i] = customSw[i];
-  for (int i=0; i<O9X_NUM_FSW; i++)
-    c9x.funcSw[i] = funcSw[i];
-  c9x.swashRingData = swashR;
-  c9x.frsky = frsky;
-  c9x.moduleData[0].ppmFrameLength = ppmFrameLength;
-  c9x.thrTraceSrc = thrTraceSrc;
-  c9x.modelId = modelId;
-  return c9x;
-}
-
-t_Open9xModelData_v204::operator ModelData ()
-{
-  ModelData c9x;
-  c9x.used = true;
-  getEEPROMZString(c9x.name, name, sizeof(name));
-  c9x.timers[0] = timer1;
-  c9x.timers[1] = timer2;
-  switch(protocol) {
-    case 1:
-      c9x.moduleData[0].protocol = PXX_DJT;
-      break;
-    case 2:
-      c9x.moduleData[0].protocol = DSM2;
-      break;
-    case 3:
-      c9x.moduleData[0].protocol = PPM16;
-      break;
-    default:
-      c9x.moduleData[0].protocol = PPM;
-      break;
-  }
-  c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);
-  c9x.thrTrim = thrTrim;
-  c9x.trimInc = trimInc - 2;
-  c9x.moduleData[0].ppmDelay = 300 + 50 * ppmDelay;
-  c9x.beepANACenter = beepANACenter;
-  c9x.moduleData[0].ppmPulsePol = pulsePol;
-  c9x.extendedLimits = extendedLimits;
-  c9x.extendedTrims = extendedTrims;
-  for (int i=0; i<O9X_MAX_FLIGHT_MODES; i++) {
-    c9x.flightModeData[i] = flightModeData[i];
-    for (int j=0; j<NUM_STICKS; j++) {
-      if (c9x.flightModeData[i].trim[j] > 500) {
-        c9x.flightModeData[i].trimRef[j] = c9x.flightModeData[i].trim[j] - 501;
-        if (c9x.flightModeData[i].trimRef[j] >= i)
-          c9x.flightModeData[i].trimRef[j] += 1;
-        c9x.flightModeData[i].trim[j] = 0;
-      }
-    }
-  }
-  for (int i=0; i<O9X_MAX_MIXERS; i++)
-    c9x.mixData[i] = mixData[i];
-  for (int i=0; i<O9X_NUM_CHNOUT; i++)
-    c9x.limitData[i] = limitData[i];
-  for (int i=0; i<O9X_MAX_EXPOS; i++)
-    c9x.expoData[i] = expoData[i];
-
-  for (int i=0; i<O9X_209_MAX_CURVE5; i++) {
-    c9x.curves[i].count = 5;
-    for (int j = 0; j < 5; j++) {
-      c9x.curves[i].points[j].x = -100 + 50 * i;
-      c9x.curves[i].points[j].y = curves5[i][j];
-    }
-  }
-  for (int i=0; i<O9X_209_MAX_CURVE9; i++) {
-    c9x.curves[O9X_209_MAX_CURVE5 + i].count = 9;
-    for (int j = 0; j < 9; j++) {
-      c9x.curves[O9X_209_MAX_CURVE5 + i].points[j].x = -100 + 25 * i;
-      c9x.curves[O9X_209_MAX_CURVE5 + i].points[j].y = curves9[i][j];
-    }
-  }
-
-  for (int i=0; i<O9X_NUM_CSW; i++)
-    c9x.customSw[i] = customSw[i];
-  for (int i=0; i<O9X_NUM_FSW; i++)
-    c9x.funcSw[i] = funcSw[i];
-  c9x.swashRingData = swashR;
-  c9x.frsky = frsky;
-  c9x.frsky.rssiAlarms[0] = frskyRssiAlarms[0].get(0);
-  c9x.frsky.rssiAlarms[1] = frskyRssiAlarms[1].get(1);
-  c9x.moduleData[0].ppmFrameLength = ppmFrameLength;
-  c9x.thrTraceSrc = thrTraceSrc;
-  c9x.modelId = modelId;
-  return c9x;
-}
-
-t_Open9xModelData_v205::operator ModelData ()
-{
-  ModelData c9x;
-  c9x.used = true;
-  getEEPROMZString(c9x.name, name, sizeof(name));
-  for (int i=0; i<O9X_MAX_TIMERS; i++)
-    c9x.timers[i] = timers[i];
-  switch(protocol) {
-    case 1:
-      c9x.moduleData[0].protocol = PXX_DJT;
-      break;
-    case 2:
-      c9x.moduleData[0].protocol = DSM2;
-      break;
-    case 3:
-      c9x.moduleData[0].protocol = PPM16;
-      break;
-    case 4:
-      c9x.moduleData[0].protocol = PPM;
-      break;
-    default:
-      c9x.moduleData[0].protocol = PPM;
-      break;
-  }
-  c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);
-  c9x.thrTrim = thrTrim;
-  c9x.trimInc = trimInc - 2;
-  c9x.moduleData[0].ppmDelay = 300 + 50 * ppmDelay;
-  c9x.beepANACenter = beepANACenter;
-  c9x.moduleData[0].ppmPulsePol = pulsePol;
-  c9x.extendedLimits = extendedLimits;
-  c9x.extendedTrims = extendedTrims;
-  for (int i=0; i<O9X_MAX_FLIGHT_MODES; i++) {
-    c9x.flightModeData[i] = flightModeData[i];
-    for (int j=0; j<NUM_STICKS; j++) {
-      if (c9x.flightModeData[i].trim[j] > 500) {
-        c9x.flightModeData[i].trimRef[j] = c9x.flightModeData[i].trim[j] - 501;
-        if (c9x.flightModeData[i].trimRef[j] >= i)
-          c9x.flightModeData[i].trimRef[j] += 1;
-        c9x.flightModeData[i].trim[j] = 0;
-      }
-    }
-  }
-  for (int i=0; i<O9X_MAX_MIXERS; i++)
-    c9x.mixData[i] = mixData[i];
-  for (int i=0; i<O9X_NUM_CHNOUT; i++)
-    c9x.limitData[i] = limitData[i];
-  for (int i=0; i<O9X_MAX_EXPOS; i++)
-    c9x.expoData[i] = expoData[i];
-
-  for (int i=0; i<O9X_209_MAX_CURVE5; i++) {
-    c9x.curves[i].count = 5;
-    for (int j = 0; j < 5; j++) {
-      c9x.curves[i].points[j].x = -100 + 50 * i;
-      c9x.curves[i].points[j].y = curves5[i][j];
-    }
-  }
-  for (int i=0; i<O9X_209_MAX_CURVE9; i++) {
-    c9x.curves[O9X_209_MAX_CURVE5 + i].count = 9;
-    for (int j = 0; j < 9; j++) {
-      c9x.curves[O9X_209_MAX_CURVE5 + i].points[j].x = -100 + 25 * i;
-      c9x.curves[O9X_209_MAX_CURVE5 + i].points[j].y = curves9[i][j];
-    }
-  }
-
-  for (int i=0; i<O9X_NUM_CSW; i++)
-    c9x.customSw[i] = customSw[i];
-  for (int i=0; i<O9X_NUM_FSW; i++)
-    c9x.funcSw[i] = funcSw[i];
-  c9x.swashRingData = swashR;
-  c9x.frsky = frsky;
-  c9x.moduleData[0].ppmFrameLength = ppmFrameLength;
-  c9x.thrTraceSrc = thrTraceSrc;
-  c9x.modelId = modelId;
-  c9x.frsky.screens[1].type = 0;
-  for (int line=0; line<4; line++) {
-    for (int col=0; col<2; col++) {
-      c9x.frsky.screens[1].body.lines[line].source[col] = (col==0 ? (frskyLines[line] & 0x0f) : ((frskyLines[line] & 0xf0) / 16));
-      c9x.frsky.screens[1].body.lines[line].source[col] += (((frskyLinesXtra >> (4*line+2*col)) & 0x03) * 16);
-    }
-  }
-
-  return c9x;
-}
 
 t_Open9xModelData_v208::operator ModelData ()
 {
@@ -1308,19 +924,19 @@ t_Open9xModelData_v208::operator ModelData ()
     c9x.timers[i] = timers[i];
   switch(protocol) {
     case 1:
-      c9x.moduleData[0].protocol = PPM16;
+      c9x.moduleData[0].RFprotocol = PPM16;
       break;
     case 2:
-      c9x.moduleData[0].protocol = PPMSIM;
+      c9x.moduleData[0].RFprotocol = PPMSIM;
       break;
     case 3:
-      c9x.moduleData[0].protocol = PXX_DJT;
+      c9x.moduleData[0].RFprotocol = PXX_DJT;
       break;
     case 4:
-      c9x.moduleData[0].protocol = DSM2;
+      c9x.moduleData[0].RFprotocol = DSM2;
       break;
     default:
-      c9x.moduleData[0].protocol = PPM;
+      c9x.moduleData[0].RFprotocol = PPM;
       break;
   }
   c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);
@@ -1401,19 +1017,19 @@ t_Open9xModelData_v209::operator ModelData ()
     c9x.timers[i] = timers[i];
   switch(protocol) {
     case 1:
-      c9x.moduleData[0].protocol = PPM16;
+      c9x.moduleData[0].RFprotocol = PPM16;
       break;
     case 2:
-      c9x.moduleData[0].protocol = PPMSIM;
+      c9x.moduleData[0].RFprotocol = PPMSIM;
       break;
     case 3:
-      c9x.moduleData[0].protocol = PXX_DJT;
+      c9x.moduleData[0].RFprotocol = PXX_DJT;
       break;
     case 4:
-      c9x.moduleData[0].protocol = DSM2;
+      c9x.moduleData[0].RFprotocol = DSM2;
       break;
     default:
-      c9x.moduleData[0].protocol = PPM;
+      c9x.moduleData[0].RFprotocol = PPM;
       break;
   }
   c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);
@@ -1495,19 +1111,19 @@ t_Open9xModelData_v210::operator ModelData ()
     c9x.timers[i] = timers[i];
   switch(protocol) {
     case 1:
-      c9x.moduleData[0].protocol = PPM16;
+      c9x.moduleData[0].RFprotocol = PPM16;
       break;
     case 2:
-      c9x.moduleData[0].protocol = PPMSIM;
+      c9x.moduleData[0].RFprotocol = PPMSIM;
       break;
     case 3:
-      c9x.moduleData[0].protocol = PXX_DJT;
+      c9x.moduleData[0].RFprotocol = PXX_DJT;
       break;
     case 4:
-      c9x.moduleData[0].protocol = DSM2;
+      c9x.moduleData[0].RFprotocol = DSM2;
       break;
     default:
-      c9x.moduleData[0].protocol = PPM;
+      c9x.moduleData[0].RFprotocol = PPM;
       break;
   }
   c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);
@@ -1583,19 +1199,19 @@ t_Open9xModelData_v211::operator ModelData ()
     c9x.timers[i] = timers[i];
   switch(protocol) {
     case 1:
-      c9x.moduleData[0].protocol = PPM16;
+      c9x.moduleData[0].RFprotocol = PPM16;
       break;
     case 2:
-      c9x.moduleData[0].protocol = PPMSIM;
+      c9x.moduleData[0].RFprotocol = PPMSIM;
       break;
     case 3:
-      c9x.moduleData[0].protocol = PXX_DJT;
+      c9x.moduleData[0].RFprotocol = PXX_DJT;
       break;
     case 4:
-      c9x.moduleData[0].protocol = DSM2;
+      c9x.moduleData[0].RFprotocol = DSM2;
       break;
     default:
-      c9x.moduleData[0].protocol = PPM;
+      c9x.moduleData[0].RFprotocol = PPM;
       break;
   }
   c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);

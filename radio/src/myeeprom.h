@@ -1784,7 +1784,7 @@ PACK(typedef struct t_ModelData {
   TimerData 		timers[MAX_TIMERS];
   AVR_FIELD(uint8_t protocol:3)
   uint8_t   		telemetryProtocol:3;
-  uint8_t 			telemetryCom:2;
+  uint8_t 		telemetryCom:2;
   uint8_t 			telemetryBaud:3;  
   uint8_t			telemetryMirrorCom:2;
   uint8_t			thrTrim:1;            // Enable Throttle Trim

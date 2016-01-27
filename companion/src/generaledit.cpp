@@ -94,15 +94,7 @@ GeneralEdit::GeneralEdit(RadioData &radioData, QWidget *parent) :
       voiceLangEditLock = false;
     }
 
-    if (!GetCurrentFirmware()->getCapability(MavlinkTelemetry)) {
-      ui->mavbaud_CB->hide();
-      ui->mavbaud_label->hide();
-    }
-    else {
-      mavbaudEditLock = true;
-      ui->mavbaud_CB->setCurrentIndex(g_eeGeneral.mavbaud);
-      // TODO why ??? populateVoiceLangCB(ui->voiceLang_CB, g_eeGeneral.ttsLanguage);
-      mavbaudEditLock = false;
+    if (GetCurrentFirmware()->getCapability(MavlinkTelemetry)) {
     }
     
     if (!GetCurrentFirmware()->getCapability(HasSoundMixer)) {
@@ -274,7 +266,7 @@ GeneralEdit::GeneralEdit(RadioData &radioData, QWidget *parent) :
     }
     
     if (IS_TARANIS(eepromInterface->getBoard())) {
-      ui->serialPortMode->setCurrentIndex(g_eeGeneral.hw_uartMode);
+      //ui->serialPortMode->setCurrentIndex(g_eeGeneral.hw_uartMode);
     }
     else {
       ui->serialPortMode->hide();
@@ -353,12 +345,6 @@ void GeneralEdit::on_pot2Type_currentIndexChanged(int index)
 void GeneralEdit::on_pot3Type_currentIndexChanged(int index)
 {
   g_eeGeneral.potsType[2] = index;
-  updateSettings();
-}
-
-void GeneralEdit::on_serialPortMode_currentIndexChanged(int index)
-{
-  g_eeGeneral.hw_uartMode = index;
   updateSettings();
 }
 
@@ -482,15 +468,6 @@ void GeneralEdit::on_backlightswCB_currentIndexChanged(int index)
   g_eeGeneral.backlightMode = ui->backlightswCB->currentIndex();
   updateSettings();
 }
-
-void GeneralEdit::on_mavbaud_CB_currentIndexChanged(int index)
-{
-  if (mavbaudEditLock)
-    return;
-  g_eeGeneral.mavbaud = ui->mavbaud_CB->currentIndex();
-  updateSettings();
-}
-
 
 void GeneralEdit::on_voiceLang_CB_currentIndexChanged(int index)
 {

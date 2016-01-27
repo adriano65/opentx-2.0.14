@@ -46,7 +46,7 @@ class OpenTxEepromInterface : public EEPROMInterface
 
     virtual int getSize(GeneralSettings &);
     
-    virtual int isAvailable(Protocol proto, int port=0);
+    virtual int isAvailable(RFprotocol proto, int port=0);
     
   protected:
 

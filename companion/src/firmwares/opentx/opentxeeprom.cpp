@@ -2451,7 +2451,6 @@ class MavlinkField: public StructField {
       Append(new UnsignedField<1>(mavlink.pc_rssi_en, "Pc_rssi_en"));
       Append(new UnsignedField<1>( mavlink.bluetooth_en, "bluetooth_en"));
       Append(new UnsignedField<1>( mavlink.mavreq_en, "mavreq_en"));
-      Append(new UnsignedField<3>( mavlink.baud, "baud"));
     }
 };
 
@@ -2516,10 +2515,14 @@ OpenTxModelData::OpenTxModelData(ModelData & modelData, BoardEnum board, unsigne
     }
   }
 
-  if (IS_ARM(board))
+  if (IS_ARM(board)) {
     internalField.Append(new UnsignedField<3>(modelData.telemetryProtocol));
+    internalField.Append(new UnsignedField<3>(modelData.telemetryCom));
+    internalField.Append(new UnsignedField<3>(modelData.telemetryBaud));
+    internalField.Append(new UnsignedField<3>(modelData.telemetryMirrorCom));
+    }
   else
-    internalField.Append(new ConversionField< UnsignedField<3> >((unsigned int &)modelData.moduleData[0].protocol, &protocolsConversionTable, "Protocol", ::QObject::tr("OpenTX doesn't accept this telemetry protocol")));
+    internalField.Append(new ConversionField< UnsignedField<3> >((unsigned int &)modelData.moduleData[0].RFprotocol, &protocolsConversionTable, "Protocol", ::QObject::tr("OpenTX doesn't accept this telemetry protocol")));
 
   internalField.Append(new BoolField<1>(modelData.thrTrim));
 
@@ -2623,12 +2626,12 @@ OpenTxModelData::OpenTxModelData(ModelData & modelData, BoardEnum board, unsigne
 
   if (IS_TARANIS(board)) {
     modulesCount = 3;
-    internalField.Append(new ConversionField< SignedField<8> >(modelData.moduleData[1].protocol, &protocolsConversionTable, "Protocol", ::QObject::tr("OpenTX doesn't accept this radio protocol")));
+    internalField.Append(new ConversionField< SignedField<8> >(modelData.moduleData[1].RFprotocol, &protocolsConversionTable, "Protocol", ::QObject::tr("OpenTX doesn't accept this radio protocol")));
     internalField.Append(new UnsignedField<8>(modelData.trainerMode));
   }
   else if (IS_ARM(board) && version >= 216) {
     modulesCount = 3;
-    internalField.Append(new ConversionField< SignedField<8> >(modelData.moduleData[0].protocol, &protocolsConversionTable, "Protocol", ::QObject::tr("OpenTX doesn't accept this radio protocol")));
+    internalField.Append(new ConversionField< SignedField<8> >(modelData.moduleData[0].RFprotocol, &protocolsConversionTable, "Protocol", ::QObject::tr("OpenTX doesn't accept this radio protocol")));
   }
 
   if (IS_ARM(board) && version >= 215) {
@@ -2682,10 +2685,10 @@ void OpenTxModelData::beforeExport()
   // qDebug() << QString("before export model") << modelData.name;
 
   for (int module=0; module<3; module++) {
-    if (modelData.moduleData[module].protocol >= PXX_XJT_X16 && modelData.moduleData[module].protocol <= PXX_XJT_LR12)
-      subprotocols[module] = modelData.moduleData[module].protocol - PXX_XJT_X16;
-    else if (modelData.moduleData[module].protocol >= LP45 && modelData.moduleData[module].protocol <= DSMX)
-      subprotocols[module] = modelData.moduleData[module].protocol - LP45;
+    if (modelData.moduleData[module].RFprotocol >= PXX_XJT_X16 && modelData.moduleData[module].RFprotocol <= PXX_XJT_LR12)
+      subprotocols[module] = modelData.moduleData[module].RFprotocol - PXX_XJT_X16;
+    else if (modelData.moduleData[module].RFprotocol >= LP45 && modelData.moduleData[module].RFprotocol <= DSMX)
+      subprotocols[module] = modelData.moduleData[module].RFprotocol - LP45;
     else
       subprotocols[module] = (module==0 ? -1 : 0);
   }
@@ -2715,11 +2718,11 @@ void OpenTxModelData::afterImport()
   }
 
   for (int module=0; module<3; module++) {
-    if (modelData.moduleData[module].protocol == PXX_XJT_X16 || modelData.moduleData[module].protocol == LP45) {
+    if (modelData.moduleData[module].RFprotocol == PXX_XJT_X16 || modelData.moduleData[module].RFprotocol == LP45) {
       if (subprotocols[module] >= 0)
-        modelData.moduleData[module].protocol += subprotocols[module];
+        modelData.moduleData[module].RFprotocol += subprotocols[module];
       else
-        modelData.moduleData[module].protocol = OFF;
+        modelData.moduleData[module].RFprotocol = OFF;
     }
   }
 }
@@ -2789,15 +2792,12 @@ OpenTxGeneralData::OpenTxGeneralData(GeneralSettings & generalData, BoardEnum bo
   internalField.Append(new SignedField<5>(generalData.timezone));
   internalField.Append(new SpareBitsField<1>());
 
+  internalField.Append(new SpareBitsField<2>());
   internalField.Append(new UnsignedField<8>(generalData.inactivityTimer));
-  if (IS_9X(board) && version >= 215) {
-    internalField.Append(new UnsignedField<3>(generalData.mavbaud));
-  }
-  else {
-    internalField.Append(new SpareBitsField<1>());
-    internalField.Append(new BoolField<1>(generalData.minuteBeep));
-    internalField.Append(new BoolField<1>(generalData.preBeep));
-  }
+  internalField.Append(new SpareBitsField<2>());
+  internalField.Append(new BoolField<1>(generalData.minuteBeep));
+  internalField.Append(new BoolField<1>(generalData.preBeep));
+
   if (version >= 216 && IS_TARANIS(board))
     internalField.Append(new SignedField<3>(generalData.splashDuration));
   else if (version >= 213 || (!IS_ARM(board) && version >= 212))
@@ -2851,7 +2851,6 @@ OpenTxGeneralData::OpenTxGeneralData(GeneralSettings & generalData, BoardEnum bo
       internalField.Append(new UnsignedField<16>(generalData.mAhUsed));
       internalField.Append(new UnsignedField<32>(generalData.globalTimer));
       internalField.Append(new SignedField<8>(generalData.temperatureCalib)); // TODO
-      internalField.Append(new UnsignedField<8>(generalData.btBaudrate)); // TODO
       internalField.Append(new BoolField<8>(generalData.optrexDisplay)); //TODO
       internalField.Append(new UnsignedField<8>(generalData.sticksGain)); // TODO
     }
@@ -2873,7 +2872,6 @@ OpenTxGeneralData::OpenTxGeneralData(GeneralSettings & generalData, BoardEnum bo
       internalField.Append(new SignedField<8>(generalData.backgroundVolume));
     }
     if (IS_TARANIS(board) && version >= 216) {
-      internalField.Append(new UnsignedField<8>(generalData.hw_uartMode));
       for (int i=0; i<4; i++) {
         internalField.Append(new UnsignedField<2>(potsType[i]));
       }

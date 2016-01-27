@@ -493,6 +493,8 @@ class GeneralSettings {
     int    timezone;
     bool      optrexDisplay;
     unsigned int    inactivityTimer;
+    unsigned int spare1;
+    unsigned int spare2;
     bool      minuteBeep;
     bool      preBeep;
     bool      flashBeep;
@@ -528,7 +530,6 @@ class GeneralSettings {
     unsigned int mAhWarn;
     unsigned int mAhUsed;
     unsigned int globalTimer;
-    unsigned int btBaudrate;
     unsigned int sticksGain;
     unsigned int rotarySteps;
     unsigned int countryCode;
@@ -542,9 +543,7 @@ class GeneralSettings {
     int varioRange;
     int varioRepeat;
     int backgroundVolume;
-    unsigned int mavbaud;
     unsigned int switchUnlockStates;
-    unsigned int hw_uartMode;
     unsigned int potsType[8];
     unsigned int backlightColor;
 };
@@ -913,9 +912,8 @@ class MavlinkData {
     MavlinkData() { clear();}
     unsigned int rc_rssi_scale;
     unsigned int pc_rssi_en;
-	unsigned int bluetooth_en;
-	unsigned int mavreq_en;
-	unsigned int baud;
+    unsigned int bluetooth_en;
+    unsigned int mavreq_en;
 	
     void clear() { memset(this, 0, sizeof(MavlinkData)); }
 };
@@ -932,7 +930,7 @@ class TimerData {
     void clear() { memset(this, 0, sizeof(TimerData)); mode = RawSwitch(SWITCH_TYPE_TIMER_MODE, 0); }
 };
 
-enum Protocol {
+enum RFprotocol {
   OFF,
   PPM,
   SILV_A,
@@ -954,7 +952,7 @@ enum Protocol {
 class ModuleData {
   public:
     ModuleData() { clear(); }
-    int          protocol;
+    int          RFprotocol;
     unsigned int channelsStart;
     int          channelsCount; // 0=8 channels
     unsigned int failsafeMode;
@@ -1023,6 +1021,9 @@ class ModelData {
     bool     gvars_popups[C9X_MAX_GVARS];
     MavlinkData mavlink;
     unsigned int telemetryProtocol;
+    unsigned int 		telemetryCom;
+    unsigned int 		telemetryBaud;  
+    unsigned int		telemetryMirrorCom;
     FrSkyData frsky;
 
     char bitmap[10+1];
@@ -1193,7 +1194,7 @@ class EEPROMInterface
     
     virtual int getSize(GeneralSettings &) = 0;
     
-    virtual int isAvailable(Protocol proto, int port=0) = 0;
+    virtual int isAvailable(RFprotocol proto, int port=0) = 0;
 
     virtual const int getEEpromSize() = 0;
 

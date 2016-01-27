@@ -742,19 +742,19 @@ t_Open9xArmModelData_v208::operator ModelData ()
     c9x.timers[i] = timers[i];
   switch(protocol) {
     case 1:
-      c9x.moduleData[0].protocol = PPM16;
+      c9x.moduleData[0].RFprotocol = PPM16;
       break;
     case 2:
-      c9x.moduleData[0].protocol = PPMSIM;
+      c9x.moduleData[0].RFprotocol = PPMSIM;
       break;
     case 3:
-      c9x.moduleData[0].protocol = PXX_DJT;
+      c9x.moduleData[0].RFprotocol = PXX_DJT;
       break;
     case 4:
-      c9x.moduleData[0].protocol = DSM2;
+      c9x.moduleData[0].RFprotocol = DSM2;
       break;
     default:
-      c9x.moduleData[0].protocol = PPM;
+      c9x.moduleData[0].RFprotocol = PPM;
       break;
   }
   c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);
@@ -831,19 +831,19 @@ t_Open9xArmModelData_v209::operator ModelData ()
     c9x.timers[i] = timers[i];
   switch(protocol) {
     case 1:
-      c9x.moduleData[0].protocol = PPM16;
+      c9x.moduleData[0].RFprotocol = PPM16;
       break;
     case 2:
-      c9x.moduleData[0].protocol = PPMSIM;
+      c9x.moduleData[0].RFprotocol = PPMSIM;
       break;
     case 3:
-      c9x.moduleData[0].protocol = PXX_DJT;
+      c9x.moduleData[0].RFprotocol = PXX_DJT;
       break;
     case 4:
-      c9x.moduleData[0].protocol = DSM2;
+      c9x.moduleData[0].RFprotocol = DSM2;
       break;
     default:
-      c9x.moduleData[0].protocol = PPM;
+      c9x.moduleData[0].RFprotocol = PPM;
       break;
   }
   c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);
@@ -921,19 +921,19 @@ t_Open9xArmModelData_v210::operator ModelData ()
     c9x.timers[i] = timers[i];
   switch(protocol) {
     case 1:
-      c9x.moduleData[0].protocol = PPM16;
+      c9x.moduleData[0].RFprotocol = PPM16;
       break;
     case 2:
-      c9x.moduleData[0].protocol = PPMSIM;
+      c9x.moduleData[0].RFprotocol = PPMSIM;
       break;
     case 3:
-      c9x.moduleData[0].protocol = PXX_DJT;
+      c9x.moduleData[0].RFprotocol = PXX_DJT;
       break;
     case 4:
-      c9x.moduleData[0].protocol = DSM2;
+      c9x.moduleData[0].RFprotocol = DSM2;
       break;
     default:
-      c9x.moduleData[0].protocol = PPM;
+      c9x.moduleData[0].RFprotocol = PPM;
       break;
   }
   c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);
@@ -1005,19 +1005,19 @@ t_Open9xArmModelData_v211::operator ModelData ()
     c9x.timers[i] = timers[i];
   switch(protocol) {
     case 1:
-      c9x.moduleData[0].protocol = PPM16;
+      c9x.moduleData[0].RFprotocol = PPM16;
       break;
     case 2:
-      c9x.moduleData[0].protocol = PPMSIM;
+      c9x.moduleData[0].RFprotocol = PPMSIM;
       break;
     case 3:
-      c9x.moduleData[0].protocol = PXX_DJT;
+      c9x.moduleData[0].RFprotocol = PXX_DJT;
       break;
     case 4:
-      c9x.moduleData[0].protocol = DSM2;
+      c9x.moduleData[0].RFprotocol = DSM2;
       break;
     default:
-      c9x.moduleData[0].protocol = PPM;
+      c9x.moduleData[0].RFprotocol = PPM;
       break;
   }
   c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);
@@ -1092,19 +1092,19 @@ t_Open9xArmModelData_v212::operator ModelData ()
   }
   switch(protocol) {
     case 1:
-      c9x.moduleData[0].protocol = PPM16;
+      c9x.moduleData[0].RFprotocol = PPM16;
       break;
     case 2:
-      c9x.moduleData[0].protocol = PPMSIM;
+      c9x.moduleData[0].RFprotocol = PPMSIM;
       break;
     case 3:
-      c9x.moduleData[0].protocol = PXX_DJT;
+      c9x.moduleData[0].RFprotocol = PXX_DJT;
       break;
     case 4:
-      c9x.moduleData[0].protocol = DSM2;
+      c9x.moduleData[0].RFprotocol = DSM2;
       break;
     default:
-      c9x.moduleData[0].protocol = PPM;
+      c9x.moduleData[0].RFprotocol = PPM;
       break;
   }
   c9x.moduleData[0].channelsCount = 8 + (2 * ppmNCH);

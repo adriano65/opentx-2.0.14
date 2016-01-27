@@ -534,7 +534,7 @@ TelemetryPanel::~TelemetryPanel()
 void TelemetryPanel::update()
 {
   if (IS_TARANIS(firmware->getBoard())) {
-    if (model.moduleData[0].protocol == OFF && model.moduleData[1].protocol == PPM) {
+    if (model.moduleData[0].RFprotocol == OFF && model.moduleData[1].RFprotocol == PPM) {
       ui->telemetryProtocol->setEnabled(true);
     }
     else {
@@ -553,9 +553,7 @@ void TelemetryPanel::setup()
     if (IS_ARM(firmware->getBoard())) {
       ui->telemetryProtocol->addItem(tr("FrSky S.PORT"), 0);
       ui->telemetryProtocol->addItem(tr("FrSky D"), 1);
-      if (IS_9XRPRO(firmware->getBoard())) {
-        ui->telemetryProtocol->addItem(tr("FrSky D (cable)"), 2);
-      }
+      ui->telemetryProtocol->addItem(tr("MAVLINK"), 2);
       ui->telemetryProtocol->setCurrentIndex(model.telemetryProtocol);
     }
     else {
@@ -707,13 +705,34 @@ void TelemetryPanel::populateCurrentSource()
   cb->addItem(tr("FAS"), TELEMETRY_CURRENT_SOURCE_FAS);
 }
 
-void TelemetryPanel::on_telemetryProtocol_currentIndexChanged(int index)
-{
+void TelemetryPanel::on_telemetryProtocol_currentIndexChanged(int index) {
   if (!lock) {
     model.telemetryProtocol = index;
     emit modified();
   }
 }
+
+void TelemetryPanel::on_telemetryCom_currentIndexChanged(int index) {
+  if (!lock) {
+    model.telemetryCom = index;
+    emit modified();
+  }
+}
+
+void TelemetryPanel::on_telemetryBaud_currentIndexChanged(int index) {
+  if (!lock) {
+    model.telemetryBaud = index;
+    emit modified();
+  }
+}
+
+void TelemetryPanel::on_telemetryMirrorCom_currentIndexChanged(int index) {
+  if (!lock) {
+    model.telemetryMirrorCom = index;
+    emit modified();
+  }
+}
+
 
 void TelemetryPanel::onAnalogModified()
 {

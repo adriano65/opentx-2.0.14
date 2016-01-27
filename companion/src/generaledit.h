@@ -24,7 +24,6 @@ class GeneralEdit : public QDialog
 
     bool switchDefPosEditLock;
     bool voiceLangEditLock;
-    bool mavbaudEditLock;
     void getGeneralSwitchDefPos(int i, bool val);
     void setSwitchDefPos();
     void updateVarioPitchRange();
@@ -116,7 +115,6 @@ class GeneralEdit : public QDialog
     void on_pot1Type_currentIndexChanged(int index);
     void on_pot2Type_currentIndexChanged(int index);
     void on_pot3Type_currentIndexChanged(int index);
-    void on_serialPortMode_currentIndexChanged(int index);
 
     void on_stickmodeCB_currentIndexChanged(int index);
     void on_channelorderCB_currentIndexChanged(int index);
@@ -125,7 +123,6 @@ class GeneralEdit : public QDialog
     void on_inactimerSB_editingFinished();
     void on_backlightautoSB_editingFinished();
     void on_backlightswCB_currentIndexChanged(int index);
-    void on_mavbaud_CB_currentIndexChanged(int index);
     void on_voiceLang_CB_currentIndexChanged(int index);
     void on_battCalibDSB_editingFinished();
     void on_battwarningDSB_editingFinished();

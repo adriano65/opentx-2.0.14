@@ -85,6 +85,11 @@ class TelemetryPanel : public ModelPanel
 
   private slots:
     void on_telemetryProtocol_currentIndexChanged(int index);
+    void on_telemetryCom_currentIndexChanged(int index);
+    void on_telemetryBaud_currentIndexChanged(int index);
+    void on_telemetryMirrorCom_currentIndexChanged(int index);
+    
+    
     void onAnalogModified();
     void on_frskyProtoCB_currentIndexChanged(int index);
     void on_bladesCount_editingFinished();

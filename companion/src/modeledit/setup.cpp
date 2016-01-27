@@ -143,9 +143,9 @@ ModulePanel::ModulePanel(QWidget *parent, ModelData & model, ModuleData & module
 
   // The protocols available on this board
   for (int i=0; i<PROTO_LAST; i++) {
-    if (GetEepromInterface()->isAvailable((Protocol)i, moduleIdx)) {
+    if (GetEepromInterface()->isAvailable((RFprotocol)i, moduleIdx)) {
       ui->protocol->addItem(getProtocolStr(i), (QVariant)i);
-      if (i == module.protocol) ui->protocol->setCurrentIndex(ui->protocol->count()-1);
+      if (i == module.RFprotocol) ui->protocol->setCurrentIndex(ui->protocol->count()-1);
     }
   }
 
@@ -188,7 +188,7 @@ ModulePanel::~ModulePanel()
 void ModulePanel::update()
 {
   unsigned int mask = 0;
-  Protocol protocol = (Protocol)module.protocol;
+  RFprotocol protocol = (RFprotocol)module.RFprotocol;
   unsigned int max_rx_num = 63;
 
   if (moduleIdx >= 0) {
@@ -274,7 +274,7 @@ void ModulePanel::on_trainerMode_currentIndexChanged(int index)
 void ModulePanel::on_protocol_currentIndexChanged(int index)
 {
   if (!lock) {
-    module.protocol = ui->protocol->itemData(index).toInt();
+    module.RFprotocol = ui->protocol->itemData(index).toInt();
     update();
     emit modified();
   }
