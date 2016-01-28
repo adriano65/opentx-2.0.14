@@ -2517,9 +2517,9 @@ OpenTxModelData::OpenTxModelData(ModelData & modelData, BoardEnum board, unsigne
 
   if (IS_ARM(board)) {
     internalField.Append(new UnsignedField<3>(modelData.telemetryProtocol));
-    internalField.Append(new UnsignedField<3>(modelData.telemetryCom));
+    internalField.Append(new UnsignedField<2>(modelData.telemetryCom));
     internalField.Append(new UnsignedField<3>(modelData.telemetryBaud));
-    internalField.Append(new UnsignedField<3>(modelData.telemetryMirrorCom));
+    internalField.Append(new UnsignedField<2>(modelData.telemetryMirrorCom));
     }
   else
     internalField.Append(new ConversionField< UnsignedField<3> >((unsigned int &)modelData.moduleData[0].RFprotocol, &protocolsConversionTable, "Protocol", ::QObject::tr("OpenTX doesn't accept this telemetry protocol")));
@@ -2527,12 +2527,12 @@ OpenTxModelData::OpenTxModelData(ModelData & modelData, BoardEnum board, unsigne
   internalField.Append(new BoolField<1>(modelData.thrTrim));
 
   if (IS_TARANIS(board) || (IS_ARM(board) && version >= 216))
-    internalField.Append(new SpareBitsField<4>());
+    internalField.Append(new SpareBitsField<4>());			//spare2
   else
     internalField.Append(new ConversionField< SignedField<4> >(modelData.moduleData[0].channelsCount, &channelsConversionTable, "Channels number", ::QObject::tr("OpenTX doesn't allow this number of channels")));
 
   if (version >= 216)
-    internalField.Append(new SignedField<3>(modelData.trimInc));
+    internalField.Append(new SignedField<3>(modelData.trimInc));	//Trim Increments
   else
     internalField.Append(new ConversionField< SignedField<3> >(modelData.trimInc, +2));
 
@@ -2611,12 +2611,12 @@ OpenTxModelData::OpenTxModelData(ModelData & modelData, BoardEnum board, unsigne
     }
   }
 
-  if ((board != BOARD_STOCK && (board != BOARD_M128 || version < 215)) || (variant & FRSKY_VARIANT)) {
+  // ((board != BOARD_STOCK && (board != BOARD_M128 || version < 215)) || (variant & FRSKY_VARIANT)) {
     internalField.Append(new FrskyField(modelData.frsky, board, version));
-  }
-  else if ((board == BOARD_STOCK || board == BOARD_M128) && (variant & MAVLINK_VARIANT)) {
+  //}
+  //else if ((board == BOARD_STOCK || board == BOARD_M128) && (variant & MAVLINK_VARIANT)) {
     internalField.Append(new MavlinkField(modelData.mavlink, board, version));
-  }
+  //}
 
   if (IS_TARANIS(board) && version < 215) {
     internalField.Append(new CharField<10>(modelData.bitmap));
@@ -2781,7 +2781,7 @@ OpenTxGeneralData::OpenTxGeneralData(GeneralSettings & generalData, BoardEnum bo
 
   internalField.Append(new UnsignedField<8>(generalData.view, 0, MAX_VIEWS(board)-1));
 
-  internalField.Append(new SpareBitsField<2>());
+  internalField.Append(new SpareBitsField<2>());				// buzzerMode
   internalField.Append(new BoolField<1>(generalData.fai));
   internalField.Append(new SignedField<2>((int &)generalData.beeperMode));
   internalField.Append(new BoolField<1>(generalData.flashBeep));
@@ -2790,7 +2790,6 @@ OpenTxGeneralData::OpenTxGeneralData(GeneralSettings & generalData, BoardEnum bo
 
   internalField.Append(new UnsignedField<2>(generalData.stickMode));
   internalField.Append(new SignedField<5>(generalData.timezone));
-  internalField.Append(new SpareBitsField<1>());
 
   internalField.Append(new SpareBitsField<2>());
   internalField.Append(new UnsignedField<8>(generalData.inactivityTimer));

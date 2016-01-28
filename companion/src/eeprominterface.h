@@ -992,6 +992,10 @@ class ModelData {
     bool      thrTrim;            // Enable Throttle Trim
     int       trimInc;            // Trim Increments
     bool      disableThrottleWarning;
+    unsigned int telemetryProtocol;
+    unsigned int 		telemetryCom;
+    unsigned int 		telemetryBaud;  
+    unsigned int		telemetryMirrorCom;
 
     unsigned int beepANACenter;      // 1<<0->A1.. 1<<6->A7
 
@@ -1019,13 +1023,9 @@ class ModelData {
     // TODO structure
     char     gvars_names[C9X_MAX_GVARS][6+1];
     bool     gvars_popups[C9X_MAX_GVARS];
-    MavlinkData mavlink;
-    unsigned int telemetryProtocol;
-    unsigned int 		telemetryCom;
-    unsigned int 		telemetryBaud;  
-    unsigned int		telemetryMirrorCom;
     FrSkyData frsky;
 
+    MavlinkData mavlink;
     char bitmap[10+1];
 
     unsigned int trainerMode;

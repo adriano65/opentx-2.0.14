@@ -1275,50 +1275,6 @@ Acceptable values are 5v..10v</string>
          </property>
         </widget>
        </item>
-       <item row="17" column="1">
-        <widget class="QComboBox" name="mavbaud_CB">
-         <item>
-          <property name="text">
-           <string>4800 Baud</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>9600 Baud</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>14400 Baud</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>19200 Baud</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>38400 Baud</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>57600 Baud</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>76800 Baud</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>115200 Baud</string>
-          </property>
-         </item>
-        </widget>
-       </item>
        <item row="11" column="3">
         <widget class="QLabel" name="label_4">
          <property name="text">
@@ -1409,13 +1365,6 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="checked">
           <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="0">
-        <widget class="QLabel" name="mavbaud_label">
-         <property name="text">
-          <string>MAVLink Baud Rate</string>
          </property>
         </widget>
        </item>
@@ -3362,7 +3311,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>splashScreenDuration</tabstop>
   <tabstop>alarmwarnChkB</tabstop>
   <tabstop>memwarnChkB</tabstop>
-  <tabstop>mavbaud_CB</tabstop>
   <tabstop>chkSA</tabstop>
   <tabstop>chkSB</tabstop>
   <tabstop>chkSC</tabstop>

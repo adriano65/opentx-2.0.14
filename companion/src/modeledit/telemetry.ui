@@ -48,6 +48,36 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QComboBox" name="telemetryCom">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="telemetryBaud">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="telemetryMirrorCom">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
@@ -1007,6 +1037,9 @@
  </customwidgets>
  <tabstops>
   <tabstop>telemetryProtocol</tabstop>
+  <tabstop>telemetryCom</tabstop>
+  <tabstop>telemetryBaud</tabstop>
+  <tabstop>telemetryMirrorCom</tabstop>
   <tabstop>rssiAlarm1CB</tabstop>
   <tabstop>rssiAlarm1SB</tabstop>
   <tabstop>rssiAlarm2CB</tabstop>
