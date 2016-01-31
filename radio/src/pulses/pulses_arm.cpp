@@ -40,8 +40,7 @@ uint8_t s_pulses_paused = 0;
 uint8_t s_current_protocol[NUM_MODULES] = { MODULES_INIT(255) };
 uint32_t failsafeCounter[NUM_MODULES] = { MODULES_INIT(100) };
 
-void setupPulses(unsigned int port)
-{
+void setupPulses(unsigned int port) {
   uint8_t required_protocol;
 
   heartbeat |= (HEART_TIMER_PULSES << port);
@@ -151,6 +150,7 @@ void setupPulses(unsigned int port)
       setupPulsesPPM(port);
       break ;
     default:
+      setupPulsesPPM(port);
       break;
   }
 }

@@ -58,7 +58,6 @@ void eeLoadModelHeaders()
 }
 #endif
 
-// TODO Now the 2 functions in eeprom_rlc.cpp and eeprom_raw.cpp are really close, should be merged.
 void eeLoadModel(uint8_t id) {
   if (id<MAX_MODELS) {
 	TRACE("eeLoadModel %d", id);
@@ -160,6 +159,7 @@ void eeLoadModel(uint8_t id) {
 
     resumeMixerCalculations();
     // TODO pulses should be started after mixer calculations ...
+	//startPulses();
 
 #if defined(FRSKY) || defined(MAVLINK)
     frskySendAlarms();
