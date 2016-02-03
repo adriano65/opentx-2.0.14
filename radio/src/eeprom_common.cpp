@@ -148,10 +148,6 @@ void eeLoadModel(uint8_t id) {
 		MAVLINK_Init(true);
 		break;
 	  #endif
-		
-	  default:
-		FRSKY_Init();
-		break;
 	  }
 	
 
@@ -159,7 +155,6 @@ void eeLoadModel(uint8_t id) {
 
     resumeMixerCalculations();
     // TODO pulses should be started after mixer calculations ...
-	//startPulses();
 
 #if defined(FRSKY) || defined(MAVLINK)
     frskySendAlarms();
