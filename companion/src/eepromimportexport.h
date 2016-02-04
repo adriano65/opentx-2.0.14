@@ -67,24 +67,27 @@ class DataField {
       return 0;
     }
 
-    virtual int Dump(int level=0, int offset=0)
-    {
+    virtual int Dump(int level=0, int offset=0) {
       QBitArray bits;
       ExportBits(bits);
       QByteArray bytes = bitsToBytes(bits);
+	  
       int result = (offset+bits.count()) % 8;
+	  
       for (int i=0; i<level; i++) printf("  ");
+	  
       if (bits.count() % 8 == 0)
         printf("%s (%dbytes) ", getName(), bytes.count());
       else
         printf("%s (%dbits) ", getName(), bits.count());
+	  
       for (int i=0; i<bytes.count(); i++) {
         unsigned char c = bytes[i];
         if ((i==0 && offset) || (i==bytes.count()-1 && result!=0))
           printf("(%02x) ", c);
         else
           printf("%02x ", c);
-      }
+		}
       printf("\n"); fflush(stdout);
       return result;
     }
@@ -176,6 +179,12 @@ class BoolField: public DataField {
     {
     }
 
+    explicit BoolField(bool & field, const char *name):
+      DataField(name),
+      field(field)
+    {
+    }
+    
     virtual void ExportBits(QBitArray & output)
     {
       output.resize(N);
@@ -277,6 +286,13 @@ class SpareBitsField: public UnsignedField<N> {
       spare(0)
     {
     }
+    /*
+    SpareBitsField(const char *name="Unsigned"):
+      UnsignedField<N>(spare, 0, 0, name),
+      spare(0)
+    {
+    }
+    */
   protected:
     unsigned int spare;
 };
@@ -641,6 +657,22 @@ class ConversionField: public TransformedField {
       table(NULL),
       shift(shift),
       scale(scale),
+      min(INT_MIN),
+      max(INT_MAX),
+      exportFunc(NULL),
+      importFunc(NULL),
+      error("")
+    {
+    }
+
+    ConversionField(int & field, int shift, const char *name):
+      TransformedField(internalField),
+      internalField(_field, name),
+      field((int &)field),
+      _field(0),
+      table(NULL),
+      shift(shift),
+      scale(0),
       min(INT_MIN),
       max(INT_MAX),
       exportFunc(NULL),

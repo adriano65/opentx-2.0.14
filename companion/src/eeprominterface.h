@@ -1000,20 +1000,20 @@ class ModelData {
     unsigned int beepANACenter;      // 1<<0->A1.. 1<<6->A7
 
     bool      extendedLimits; // TODO xml
-    bool      extendedTrims;
-    bool      throttleReversed;
-    FlightModeData flightModeData[C9X_MAX_FLIGHT_MODES];
-    MixData   mixData[C9X_MAX_MIXERS];
-    LimitData limitData[C9X_NUM_CHNOUT];
+    bool      			extendedTrims;
+    bool      			throttleReversed;
+    FlightModeData 		flightModeData[C9X_MAX_FLIGHT_MODES];
+    MixData   			mixData[C9X_MAX_MIXERS];
+    LimitData 			limitData[C9X_NUM_CHNOUT];
 
-    char      inputNames[C9X_MAX_INPUTS][4+1];
-    ExpoData  expoData[C9X_MAX_EXPOS];
+    char      			inputNames[C9X_MAX_INPUTS][4+1];
+    ExpoData  			expoData[C9X_MAX_EXPOS];
 
-    CurveData curves[C9X_MAX_CURVES];
-    LogicalSwitchData  customSw[C9X_NUM_CSW];
-    FuncSwData    funcSw[C9X_MAX_CUSTOM_FUNCTIONS];
-    SwashRingData swashRingData;
-    unsigned int thrTraceSrc;
+    CurveData 			curves[C9X_MAX_CURVES];
+    LogicalSwitchData  	customSw[C9X_NUM_CSW];
+    FuncSwData    		funcSw[C9X_MAX_CUSTOM_FUNCTIONS];
+    SwashRingData 		swashRingData;
+    unsigned int 		thrTraceSrc;
     unsigned int modelId;
     unsigned int switchWarningStates;
     unsigned int nSwToWarn;

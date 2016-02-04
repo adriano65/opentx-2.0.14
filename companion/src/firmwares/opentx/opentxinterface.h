@@ -20,6 +20,8 @@
 
 #define OPENTX_FIRMWARE_DOWNLOADS    "http://downloads-20.open-tx.org/firmware"
 
+#define _DBG(fmt, args...) printf("%s: " fmt "\n", __FUNCTION__, ##args)
+
 class RleFile;
 
 class OpenTxEepromInterface : public EEPROMInterface

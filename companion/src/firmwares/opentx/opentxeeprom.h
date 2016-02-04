@@ -109,11 +109,9 @@ class ThrottleSourceConversionTable: public ConversionTable {
     ThrottleSourceConversionTable(BoardEnum board, unsigned int version);
 };
 
-class ChannelsConversionTable: public ConversionTable
-{
+class ChannelsConversionTable: public ConversionTable {
   public:
-    ChannelsConversionTable()
-    {
+    ChannelsConversionTable() {
       for (int i=4; i<=16; i+= 2)
         addConversion(i, -4+i/2);
     }

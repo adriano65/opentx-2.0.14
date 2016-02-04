@@ -43,14 +43,10 @@ size_t SizeOfArray( T(&)[ N ] )
   return N;
 }
 
-OpenTxEepromInterface::OpenTxEepromInterface(BoardEnum board):
-  EEPROMInterface(board),
-  efile(new RleFile())
-{
+OpenTxEepromInterface::OpenTxEepromInterface(BoardEnum board): EEPROMInterface(board), efile(new RleFile()) {
 }
 
-OpenTxEepromInterface::~OpenTxEepromInterface()
-{
+OpenTxEepromInterface::~OpenTxEepromInterface() {
   delete efile;
 }
 
@@ -111,24 +107,24 @@ bool OpenTxEepromInterface::loadModel(ModelData &model, uint8_t *data, int index
   T _model;
   
   if (!data) {
-    // load from EEPROM
     efile->openRd(FILE_MODEL(index));
     int sz = efile->readRlc2((uint8_t*)&_model, sizeof(T));
     if (sz) {
+	  _DBG("loadModel from EEPROM, size=%d\n", sz);
       model = _model;
       if (sz < (int)sizeof(T)) {
-        std::cout << " size(" << model.name << ") " << sz << " < " << (int)sizeof(T) << " ";
-      }
+        _DBG("%s size %d < %d", model.name, sz, (int)sizeof(T));
+		}
       if (stickMode) {
         applyStickModeToModel(model, stickMode);
-      }
-    }
+		}
+	  }
     else {
       model.clear();
-    }
-  }
+	  }
+	}
   else {
-    // load from SD Backup, size is stored in index
+	_DBG("load from SD Backup, size is stored in index\n"); 
     if ((unsigned int)index < sizeof(T))
       return false;
     memcpy((uint8_t*)&_model, data, sizeof(T));
@@ -139,26 +135,28 @@ bool OpenTxEepromInterface::loadModel(ModelData &model, uint8_t *data, int index
 }
 
 template <class T>
-bool OpenTxEepromInterface::loadModelVariant(unsigned int index, ModelData &model, uint8_t *data, unsigned int version, unsigned int variant)
-{
+bool OpenTxEepromInterface::loadModelVariant(unsigned int index, ModelData &model, uint8_t *data, unsigned int version, unsigned int variant) {
   T open9xModel(model, board, version, variant);
 
   if (!data) {
-    // load from EEPROM
+	//_DBG("load from EEPROM\n");
     QByteArray eepromData(sizeof(model), 0);  // ModelData should be always bigger than the EEPROM struct
     efile->openRd(FILE_MODEL(index));
     int numbytes = efile->readRlc2((uint8_t *)eepromData.data(), eepromData.size());
     if (numbytes) {
       open9xModel.Import(eepromData);
-      // open9xModel.Dump();
+	  
+	  _DBG("model.modelId = %d, model.name %s\n", model.modelId, model.name);
+      if (strcmp(model.name, "Firstar V2")==0) open9xModel.Dump();
+	  
       model.used = true;
-    }
+	  }
     else {
       model.clear();
-    }
-  }
+	  }
+	}
   else {
-    // load from SD Backup, size is stored in index
+	_DBG("load from SD Backup, size is stored in index\n");
     QByteArray backupData((char *)data, index);
     QByteArray modelData;
     if (IS_SKY9X(board))
@@ -178,68 +176,19 @@ bool OpenTxEepromInterface::loadModelVariant(unsigned int index, ModelData &mode
   return true;
 }
 
-bool OpenTxEepromInterface::loadModel(uint8_t version, ModelData &model, uint8_t *data, int index, unsigned int variant, unsigned int stickMode)
-{
-if (board == BOARD_GRUVIN9X && version == 207) {
-    return loadModel<Open9xGruvin9xModelData_v207>(model, data, index, 0 /*no more stick mode messed*/);
-  }
-  else if (version == 208) {
-    if (board == BOARD_GRUVIN9X) {
-      return loadModel<Open9xGruvin9xModelData_v208>(model, data, index, 0 /*no more stick mode messed*/);
-    }
-    else if (IS_SKY9X(board)) {
-      return loadModel<Open9xArmModelData_v208>(model, data, index, 0 /*no more stick mode messed*/);
-    }
-    else {
-      return loadModel<Open9xModelData_v208>(model, data, index, 0 /*no more stick mode messed*/);
-    }
-  }
-  else if (version == 209) {
-    if (board == BOARD_GRUVIN9X) {
-      return loadModel<Open9xGruvin9xModelData_v209>(model, data, index, 0 /*no more stick mode messed*/);
-    }
-    else if (IS_SKY9X(board)) {
-      return loadModel<Open9xArmModelData_v209>(model, data, index, 0 /*no more stick mode messed*/);
-    }
-    else {
-      return loadModel<Open9xModelData_v209>(model, data, index, 0 /*no more stick mode messed*/);
-    }
-  }
-  else if (version == 210) {
-    if (board == BOARD_GRUVIN9X) {
-      return loadModel<Open9xGruvin9xModelData_v210>(model, data, index, 0 /*no more stick mode messed*/);
-    }
-    else if (IS_SKY9X(board)) {
-      return loadModel<Open9xArmModelData_v210>(model, data, index, 0 /*no more stick mode messed*/);
-    }
-    else {
-      return loadModel<Open9xModelData_v210>(model, data, index, 0 /*no more stick mode messed*/);
-    }
-  }
-  else if (version == 211) {
-    if (board == BOARD_GRUVIN9X) {
-      return loadModel<Open9xGruvin9xModelData_v211>(model, data, index, 0 /*no more stick mode messed*/);
-    }
-    else if (IS_SKY9X(board)) {
-      return loadModel<Open9xArmModelData_v211>(model, data, index, 0 /*no more stick mode messed*/);
-    }
-    else {
-      return loadModel<Open9xModelData_v211>(model, data, index, 0 /*no more stick mode messed*/);
-    }
-  }
-  else if (version == 212) {
+bool OpenTxEepromInterface::loadModel(uint8_t version, ModelData &model, uint8_t *data, int index, unsigned int variant, unsigned int stickMode) {
+  if (version == 212) {
     if (IS_SKY9X(board)) {
       return loadModel<Open9xArmModelData_v212>(model, data, index);
-    }
+	  }
     else {
       return loadModelVariant<OpenTxModelData>(index, model, data, version, variant);
-    }
-  }
+	  }
+	}
   else if (version >= 213) {
     return loadModelVariant<OpenTxModelData>(index, model, data, version, variant);
-  }
+	}
 
-  std::cout << " ko\n";
   return false;
 }
 
@@ -252,10 +201,13 @@ bool OpenTxEepromInterface::loadGeneral(GeneralSettings &settings, unsigned int 
   int sz = efile->readRlc2((uint8_t *)eepromData.data(), eepromData.size());
   if (sz) {
     open9xSettings.Import(eepromData);
+	
+    //open9xSettings.Dump();
+	
     return checkVariant(settings.version, settings.variant);
   }
 
-  std::cout << " error when loading general settings";
+  _DBG(" error when loading general settings\n");
   return false;
 }
 
@@ -288,7 +240,7 @@ bool OpenTxEepromInterface::loadxml(RadioData &radioData, QDomDocument &doc)
 
 bool OpenTxEepromInterface::load(RadioData &radioData, const uint8_t *eeprom, int size)
 {
-  std::cout << "trying " << getName() << " import...";
+  _DBG("trying %s import...", getName());
 
   if (size != getEEpromSize()) {    
     if (size==4096) {
@@ -299,7 +251,7 @@ bool OpenTxEepromInterface::load(RadioData &radioData, const uint8_t *eeprom, in
         }
       }
       if (notnull) {
-        std::cout << " wrong size (" << size << ")\n";
+        _DBG(" wrong size (%d)\n",size);
         return false;
       }
       else {
@@ -350,8 +302,6 @@ bool OpenTxEepromInterface::load(RadioData &radioData, const uint8_t *eeprom, in
 
 int OpenTxEepromInterface::save(uint8_t *eeprom, RadioData &radioData, uint32_t variant, uint8_t version) {
   EEPROMWarnings.clear();
-  //TRACE("g_eeGeneral.version %d (%d), EEPROM_VER %d (%d)", g_eeGeneral.version, g_eeGeneral.variant, EEPROM_VER, EEPROM_VARIANT);  
-  //std::cout << "g_eeGeneral.version " << g_eeGeneral.version << " " << g_eeGeneral.variant;
 
   if (!version) {
     switch(board) {
@@ -386,7 +336,7 @@ int OpenTxEepromInterface::save(uint8_t *eeprom, RadioData &radioData, uint32_t 
   int result = saveGeneral<OpenTxGeneralData>(radioData.generalSettings, board, version, variant);
   if (!result) {
     return 0;
-  }
+	}
 
   for (int i=0; i<getMaxModels(); i++) {
     if (!radioData.models[i].isempty()) {
@@ -403,10 +353,10 @@ int OpenTxEepromInterface::save(uint8_t *eeprom, RadioData &radioData, uint32_t 
     for (int n = 0; n < noErrorsToDisplay; n++) {
       msg += "-" + EEPROMWarnings.front() + "\n";
       EEPROMWarnings.pop_front();
-    }
+	  }
     if (!EEPROMWarnings.empty()) {
       msg = QObject::tr("(displaying only first 10 warnings)") + "\n" + msg;
-    }
+	  }
     EEPROMWarnings.clear();
     QMessageBox::warning(NULL,
         QObject::tr("Warning"),
@@ -416,8 +366,7 @@ int OpenTxEepromInterface::save(uint8_t *eeprom, RadioData &radioData, uint32_t 
   return size;
 }
 
-int OpenTxEepromInterface::getSize(ModelData &model)
-{
+int OpenTxEepromInterface::getSize(ModelData &model) {
   if (IS_SKY9X(board))
     return 0;
 
@@ -439,8 +388,7 @@ int OpenTxEepromInterface::getSize(ModelData &model)
   return efile->size(0);
 }
 
-int OpenTxEepromInterface::getSize(GeneralSettings &settings)
-{
+int OpenTxEepromInterface::getSize(GeneralSettings &settings) {
   if (IS_SKY9X(board))
     return 0;
 
@@ -448,7 +396,6 @@ int OpenTxEepromInterface::getSize(GeneralSettings &settings)
   efile->EeFsCreate(tmp, EESIZE_RLC_MAX, board);
 
   OpenTxGeneralData open9xGeneral(settings, board, 255, GetCurrentFirmware()->getVariantNumber());
-  // open9xGeneral.Dump();
 
   QByteArray eeprom;
   open9xGeneral.Export(eeprom);
@@ -459,8 +406,7 @@ int OpenTxEepromInterface::getSize(GeneralSettings &settings)
   return efile->size(0);
 }
 
-FirmwareInterface * OpenTxFirmware::getFirmwareVariant(const QString & id)
-{
+FirmwareInterface * OpenTxFirmware::getFirmwareVariant(const QString & id) {
   if (id.contains(getId()+"-") || (!id.contains("-") && id.contains(getId()))) {
     FirmwareInterface * result = new OpenTxFirmware(id, this);
     // TODO result.variant = firmware->getVariant(id);
@@ -471,8 +417,7 @@ FirmwareInterface * OpenTxFirmware::getFirmwareVariant(const QString & id)
   }
 }
 
-int OpenTxFirmware::getCapability(const Capability capability)
-{
+int OpenTxFirmware::getCapability(const Capability capability) {
   switch (capability) {
     case Imperial:
       if (IS_ARM(board))
@@ -723,8 +668,7 @@ int OpenTxFirmware::getCapability(const Capability capability)
   }
 }
 
-bool OpenTxFirmware::isTelemetrySourceAvailable(int source)
-{
+bool OpenTxFirmware::isTelemetrySourceAvailable(int source) {
   if (IS_TARANIS(board) && (source == TELEMETRY_SOURCE_RSSI_TX))
     return false;
 
@@ -734,8 +678,7 @@ bool OpenTxFirmware::isTelemetrySourceAvailable(int source)
   return true;
 }
 
-int OpenTxEepromInterface::isAvailable(RFprotocol proto, int port)
-{
+int OpenTxEepromInterface::isAvailable(RFprotocol proto, int port) {
   if (IS_TARANIS(board)) {
     switch (port) {
       case 0:
@@ -826,42 +769,8 @@ size_t getSizeA(T (&)[SIZE]) {
     return SIZE;
 }
 
-bool OpenTxEepromInterface::checkVersion(unsigned int version)
-{
+bool OpenTxEepromInterface::checkVersion(unsigned int version) {
   switch(version) {
-    case 201:
-      // first version
-      break;
-    case 202:
-      // channel order is now always RUD - ELE - THR - AIL
-      // changes in timers
-      // ppmFrameLength added
-      // thrTraceSrc added
-      break;
-    case 203:
-      // mixers changed (for the trims use for change the offset of a mix)
-      // telemetry offset raised to -127 +127
-      // function switches now have a param on 4 bits
-      break;
-    case 204:
-      // telemetry changes (bars)
-      break;
-    case 205:
-      // mixer changes (differential, negative curves)...
-      break;
-    // case 206:
-    case 207:
-      // V4: Rotary Encoders position in FlightModes
-      break;
-    case 208:
-      // Trim value in 16bits
-      // FrSky A1/A2 offset on 12bits
-      // ARM: More Mixers / Expos / CSW / FSW / CHNOUT
-      break;
-    case 209:
-      // Add TrmR, TrmE, TrmT, TrmA as Mix sources
-      // Trims are now OFF / ON / Rud / Ele / Thr / Ail
-      break;
     case 210:
       // Add names in Mixes / Expos
       // Add a new telemetry screen
@@ -895,8 +804,7 @@ bool OpenTxEepromInterface::checkVersion(unsigned int version)
   return true;
 }
 
-bool OpenTxEepromInterface::checkVariant(unsigned int version, unsigned int variant)
-{
+bool OpenTxEepromInterface::checkVariant(unsigned int version, unsigned int variant) {
   if (board == BOARD_M128 && !(variant & 0x8000)) {
     if (version == 212) {
       uint8_t tmp[1000];
@@ -917,8 +825,7 @@ bool OpenTxEepromInterface::checkVariant(unsigned int version, unsigned int vari
   }
 }
 
-bool OpenTxEepromInterface::loadBackup(RadioData &radioData, uint8_t *eeprom, int esize, int index)
-{
+bool OpenTxEepromInterface::loadBackup(RadioData &radioData, uint8_t *eeprom, int esize, int index) {
   std::cout << "trying " << getName() << " backup import...";
 
   if (esize < 8 || memcmp(eeprom, "o9x", 3) != 0) {
@@ -979,8 +886,7 @@ bool OpenTxEepromInterface::loadBackup(RadioData &radioData, uint8_t *eeprom, in
   return true;
 }
 
-QString OpenTxFirmware::getFirmwareUrl()
-{
+QString OpenTxFirmware::getFirmwareUrl() {
   QString url = OPENTX_FIRMWARE_DOWNLOADS;
   switch (board) {
     case BOARD_STOCK:
@@ -1044,8 +950,7 @@ void addOpenTxCommonOptions(OpenTxFirmware * firmware)
   firmware->addOptions(fai_options);
 }
 
-void registerOpenTxFirmwares()
-{
+void registerOpenTxFirmwares() {
   OpenTxFirmware * openTx;
 
   Option ext_options[] = { { "frsky", QObject::tr("Support for frsky telemetry mod"), FRSKY_VARIANT }, { "telemetrez", QObject::tr("Support for telemetry easy board"), FRSKY_VARIANT }, { "jeti", QObject::tr("Support for jeti telemetry mod"), 0 }, { "ardupilot", QObject::tr("Support for receiving ardupilot data"), 0 }, { "nmea", QObject::tr("Support for receiving NMEA data"), 0 }, { "mavlink", QObject::tr("Support for MAVLINK devices"), MAVLINK_VARIANT }, { NULL } };
