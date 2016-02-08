@@ -267,6 +267,7 @@ enum AlarmsCheckSteps {
 };
 
 void FRSKY_telemetryWakeup() {
+  /*
   #if defined(CPUARM)
   uint8_t requiredTelemetryProtocol = MODEL_TELEMETRY_PROTOCOL();
   if (telemetryProtocol != requiredTelemetryProtocol) {
@@ -274,6 +275,7 @@ void FRSKY_telemetryWakeup() {
     FRSKY_Init();
     }
   #endif  
+  */
   
   #if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
     // SKY9X - Receive serial data here

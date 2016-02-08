@@ -173,6 +173,7 @@ void MAVLINK_Init(bool bHardReset) {
 	  if (bHardReset) MAVLINK_reset();
 	  // enable AFTER CoInitOS()
 	  if (bHardReset) TelemetryTxTaskId = CoCreateTask(TelemetryTxTask, NULL, 19, &TelemetryTxStack[MAVLINK_STACK_SIZE-1], MAVLINK_STACK_SIZE);
+	  g_model.externalModule=MODULE_TYPE_PPM;
 	  #endif
 	  switch (g_model.telemetryCom) {
 		case 0:
