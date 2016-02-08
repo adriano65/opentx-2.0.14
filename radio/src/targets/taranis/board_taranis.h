@@ -279,6 +279,7 @@ void uart3Putc(const char c);
 //#define telemetrySecondPortInit(protocol) uart3Init(UART_MODE_TELEMETRY, protocol)
 void telemetrySecondPortInit(uint32_t baudrate);
 
+
 extern uint8_t currentTrainerMode;
 
 #endif

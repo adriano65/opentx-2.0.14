@@ -995,8 +995,8 @@ void menuModelSetup(uint8_t event) {
   #define IS_D8_RX(x)                       (g_model.moduleData[x].rfProtocol == RF_PROTO_D8)
   #define INTERNAL_MODULE_CHANNELS_ROWS()   IF_INTERNAL_MODULE_ON(1)
   #define EXTERNAL_MODULE_CHANNELS_ROWS     IF_EXTERNAL_MODULE_ON(IS_MODULE_DSM2(EXTERNAL_MODULE) ? (uint8_t)0 : (uint8_t)1)
-  #define TRAINER_CHANNELS_ROWS()           IF_TRAINER_ON(1)
-  #define PORT_CHANNELS_ROWS(x)             (x==INTERNAL_MODULE ? INTERNAL_MODULE_CHANNELS_ROWS() : (x==EXTERNAL_MODULE ? EXTERNAL_MODULE_CHANNELS_ROWS : TRAINER_CHANNELS_ROWS()))
+  #define TRAINER_CHANNELS_ROWS		        IF_TRAINER_ON(1)
+  #define PORT_CHANNELS_ROWS(x)             (x==INTERNAL_MODULE ? INTERNAL_MODULE_CHANNELS_ROWS() : (x==EXTERNAL_MODULE ? EXTERNAL_MODULE_CHANNELS_ROWS : TRAINER_CHANNELS_ROWS))
   #define FAILSAFE_ROWS(x)                  ((g_model.moduleData[x].rfProtocol==RF_PROTO_X16 || g_model.moduleData[x].rfProtocol==RF_PROTO_LR12) ? (g_model.moduleData[x].failsafeMode==FAILSAFE_CUSTOM ? (uint8_t)1 : (uint8_t)0) : HIDDEN_ROW)
   #define MODEL_SETUP_MAX_LINES             (1+ITEM_MODEL_SETUP_MAX)
   #define POT_WARN_ITEMS()                  ((g_model.nPotsToWarn >> 6) ? (uint8_t)NUM_POTS : (uint8_t)0)
@@ -1035,7 +1035,7 @@ void menuModelSetup(uint8_t event) {
 			IF_EXTERNAL_MODULE_XJT(FAILSAFE_ROWS(EXTERNAL_MODULE)),		// ITEM_MODEL_EXTERNAL_MODULE_FAILSAFE
 			LABEL(Trainer),									// ITEM_MODEL_TRAINER_MODE
 			0,
-			TRAINER_CHANNELS_ROWS(),
+			TRAINER_CHANNELS_ROWS,
 			IF_TRAINER_ON(2)
 			});
 #elif defined(CPUARM)

@@ -1347,15 +1347,6 @@ inline bool isFunctionActive(uint8_t func)
   #include "telemetry/mavlink.h"
 #endif
 
-#if defined(CPUARM)
-  #define IS_FRSKY_D_PROTOCOL()      (g_model.telemetryProtocol == PROTOCOL_FRSKY_D)
-  #define IS_FRSKY_SPORT_PROTOCOL()  (g_model.telemetryProtocol == PROTOCOL_FRSKY_SPORT)
-#else
-  #define IS_FRSKY_D_PROTOCOL()     (true)
-  #define IS_FRSKY_SPORT_PROTOCOL() (false)
-#endif
-  
-  
 #define PLAY_REPEAT(x)            (x)                 /* Range 0 to 15 */
 #define PLAY_NOW                  0x10
 #define PLAY_BACKGROUND           0x20

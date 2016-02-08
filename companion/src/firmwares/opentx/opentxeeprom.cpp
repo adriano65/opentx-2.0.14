@@ -866,19 +866,19 @@ class MixField: public TransformedField {
     {
       if (IS_TARANIS(board) && version >= 216) {
         internalField.Append(new UnsignedField<8>(_destCh, "_destCh"));
-        internalField.Append(new UnsignedField<16>(mix.phases));
+        internalField.Append(new UnsignedField<16>(mix.phases, "phases"));
         internalField.Append(new UnsignedField<2>((unsigned int &)mix.mltpx));
         internalField.Append(new UnsignedField<1>((unsigned int &)mix.carryTrim));
         internalField.Append(new SpareBitsField<5>());
         internalField.Append(new SignedField<16>(_weight, "_weight"));
         internalField.Append(new SwitchField<8>(mix.swtch, board, version));
         internalField.Append(new CurveReferenceField(mix.curve, board, version));
-        internalField.Append(new UnsignedField<4>(mix.mixWarn));
+        internalField.Append(new UnsignedField<4>(mix.mixWarn, "mixWarn"));
         internalField.Append(new SpareBitsField<4>());
         internalField.Append(new UnsignedField<8>(mix.delayUp, "mix.delayUp"));
         internalField.Append(new UnsignedField<8>(mix.delayDown, "mix.delayDown"));
-        internalField.Append(new UnsignedField<8>(mix.speedUp));
-        internalField.Append(new UnsignedField<8>(mix.speedDown));
+        internalField.Append(new UnsignedField<8>(mix.speedUp, "speedUp"));
+        internalField.Append(new UnsignedField<8>(mix.speedDown, "speedDown"));
         internalField.Append(new SourceField<8>(mix.srcRaw, board, version, FLAG_NOTELEMETRY));
         internalField.Append(new SignedField<16>(_offset));
         internalField.Append(new ZCharField<8>(mix.name));
@@ -2536,13 +2536,13 @@ OpenTxModelData::OpenTxModelData(ModelData & modelData, BoardEnum board, unsigne
   internalField.Append(new BoolField<1>(modelData.disableThrottleWarning));
 
   if (IS_TARANIS(board) || (IS_ARM(board) && version >= 216))
-    internalField.Append(new BoolField<1>(modelData.displayChecklist));
+    internalField.Append(new BoolField<1>(modelData.displayChecklist, "displayChecklist"));
   else
-    internalField.Append(new BoolField<1>(modelData.moduleData[0].ppmPulsePol));
+    internalField.Append(new BoolField<1>(modelData.moduleData[0].ppmPulsePol, "ppmPulsePol"));
 
-  internalField.Append(new BoolField<1>(modelData.extendedLimits));
-  internalField.Append(new BoolField<1>(modelData.extendedTrims));
-  internalField.Append(new BoolField<1>(modelData.throttleReversed));
+  internalField.Append(new BoolField<1>(modelData.extendedLimits, "extendedLimits"));
+  internalField.Append(new BoolField<1>(modelData.extendedTrims, "extendedTrims"));
+  internalField.Append(new BoolField<1>(modelData.throttleReversed, "throttleReversed"));
 
   if (!IS_ARM(board) || version < 216) {
     internalField.Append(new ConversionField< SignedField<8> >(modelData.moduleData[0].ppmDelay, exportPpmDelay, importPpmDelay));
