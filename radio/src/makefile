@@ -282,7 +282,11 @@ VARIO = NO
 RTCLOCK = YES
 
 # PXX (FrSky PCM) protocol
+ifeq ($(PCB), $(filter $(PCB), 9XRPRO TARANIS))
+PXX = YES
+else
 PXX = NO
+endif
 
 # DSM2 (Spektrum) protocol
 # Values = NO, SERIAL, PPM
