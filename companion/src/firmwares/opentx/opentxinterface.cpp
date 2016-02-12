@@ -494,6 +494,7 @@ int OpenTxFirmware::getCapability(const Capability capability) {
         return 1;
       else
         return 0;
+	  
     case Pots:
       return (IS_TARANIS(board) ? 5 : 3);
     case Switches:
@@ -509,6 +510,7 @@ int OpenTxFirmware::getCapability(const Capability capability) {
         return 16;
     case SafetyChannelCustomFunction:
       return id.contains("noovveridech") ? 0 : 1;
+	  
     case LogicalSwitches:
       if (IS_ARM(board))
         return 32;
@@ -530,6 +532,7 @@ int OpenTxFirmware::getCapability(const Capability capability) {
         return 0;
     case Outputs:
       return (IS_ARM(board) ? O9X_ARM_NUM_CHNOUT : O9X_NUM_CHNOUT);
+	  
     case NumCurvePoints:
       return (IS_ARM(board) ? 512 : 104);
     case VoicesAsNumbers:
@@ -571,15 +574,27 @@ int OpenTxFirmware::getCapability(const Capability capability) {
       return (IS_TARANIS(board) ? 6 : 0);
     case HasCvNames:
       return (IS_TARANIS(board) ? 1 : 0);
+	  
     case Telemetry:
       if (board == BOARD_GRUVIN9X || IS_ARM(board) || id.contains("frsky") || id.contains("telemetrez"))
         return TM_HASTELEMETRY|TM_HASOFFSET|TM_HASWSHH;
       else
         return 0;
+	  
+    case telemetryProtocol:
+      return 1;
+    case telemetryCom:
+      return 1;
+    case telemetryBaud:
+      return 1;
+    case telemetryMirrorCom:
+      return 1;
+	  
     case TelemetryBars:
       return 1;
     case TelemetryCustomScreens:
       return IS_TARANIS(board) ? 3 : 2;
+	  
     case TelemetryCustomScreensFieldsPerLine:
       return IS_TARANIS(board) ? 3 : 2;
     case NoTelemetryProtocol:
@@ -596,6 +611,7 @@ int OpenTxFirmware::getCapability(const Capability capability) {
       return id.contains("ppmus") ? 1 : 0;
     case SYMLimits:
       return 1;
+	  
     case OptrexDisplay:
       return (board==BOARD_SKY9X ? true : false);
     case HasVario:
@@ -660,6 +676,7 @@ int OpenTxFirmware::getCapability(const Capability capability) {
         return 0;
     case MavlinkTelemetry:
       return id.contains("mavlink") ? 1 : 0;
+	  
     case HasInputDiff:
     case HasMixerExpo:
       return (IS_ARM(board) ? true : false);

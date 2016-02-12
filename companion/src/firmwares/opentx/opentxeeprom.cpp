@@ -663,7 +663,7 @@ void importGvarParam(int & gvar, const int _gvar, int version)
     gvar = _gvar;
   }
 
-  // qDebug() << QString("import") << _gvar << gvar;
+  //qDebug() << QString("importGvarParam") << _gvar << gvar;
 }
 
 class CurveReferenceField: public TransformedField {
@@ -886,22 +886,22 @@ class MixField: public TransformedField {
       }
       else if (IS_ARM(board) && version >= 216) {
         internalField.Append(new UnsignedField<5>(_destCh, "_destCh"));
-        internalField.Append(new UnsignedField<3>(mix.mixWarn, "mix.mixWarn"));
-        internalField.Append(new UnsignedField<16>(mix.phases));
-        internalField.Append(new BoolField<1>(_curveMode));
-        internalField.Append(new BoolField<1>(mix.noExpo));
-        internalField.Append(new SignedField<3>(mix.carryTrim));
-        internalField.Append(new UnsignedField<2>((unsigned int &)mix.mltpx));
+        internalField.Append(new UnsignedField<3>(mix.mixWarn, "mixWarn"));
+        internalField.Append(new UnsignedField<16>(mix.phases, "phases"));
+        internalField.Append(new BoolField<1>(_curveMode, "_curveMode"));
+        internalField.Append(new BoolField<1>(mix.noExpo, "noExpo"));
+        internalField.Append(new SignedField<3>(mix.carryTrim, "carryTrim"));
+        internalField.Append(new UnsignedField<2>((unsigned int &)mix.mltpx, "mltpx"));
         internalField.Append(new SpareBitsField<1>());
         internalField.Append(new SignedField<16>(_weight, "_weight"));
         internalField.Append(new SwitchField<8>(mix.swtch, board, version));
-        internalField.Append(new SignedField<8>(_curveParam));
-        internalField.Append(new UnsignedField<8>(mix.delayUp, "mix.delayUp"));
-        internalField.Append(new UnsignedField<8>(mix.delayDown, "mix.delayDown"));
-        internalField.Append(new UnsignedField<8>(mix.speedUp));
-        internalField.Append(new UnsignedField<8>(mix.speedDown));
+        internalField.Append(new SignedField<8>(_curveParam, "_curveParam"));
+        internalField.Append(new UnsignedField<8>(mix.delayUp, "delayUp"));
+        internalField.Append(new UnsignedField<8>(mix.delayDown, "delayDown"));
+        internalField.Append(new UnsignedField<8>(mix.speedUp, "speedUp"));
+        internalField.Append(new UnsignedField<8>(mix.speedDown, "speedDown"));
         internalField.Append(new SourceField<8>(mix.srcRaw, board, version, FLAG_NOTELEMETRY));
-        internalField.Append(new SignedField<16>(_offset));
+        internalField.Append(new SignedField<16>(_offset, "_offset"));
         internalField.Append(new ZCharField<6>(mix.name));
       }
       else if (IS_ARM(board)) {
@@ -1027,8 +1027,8 @@ class MixField: public TransformedField {
       }
     }
 
-    virtual void afterImport()
-    {
+    virtual void afterImport() {
+//	  #if 0
       if (IS_TARANIS(board) && version < 216) {
         if (mix.srcRaw.type == SOURCE_TYPE_STICK && mix.srcRaw.index < NUM_STICKS) {
           if (!mix.noExpo) {
@@ -1057,11 +1057,11 @@ class MixField: public TransformedField {
           importGvarParam(mix.sOffset, _offset, version);
         else
           concatGvarParam(mix.sOffset, _offset, _offsetMode, board, version);
-      }
+		}
       else {
         concatGvarParam(mix.weight, _weight, _weightMode, board, version);
         concatGvarParam(mix.sOffset, _offset, _offsetMode, board, version);
-      }
+		}
 
       if (IS_TARANIS(board) && version < 216) {
         if (mix.sOffset >= -500 && mix.sOffset <= 500 && mix.weight >= -500 && mix.weight <= 500) {
@@ -1069,6 +1069,7 @@ class MixField: public TransformedField {
         }
         if (mix.carryTrim < 0) mix.carryTrim = 0;
       }
+//	#endif
     }
 
   protected:
@@ -2491,7 +2492,7 @@ OpenTxModelData::OpenTxModelData(ModelData & modelData, BoardEnum board, unsigne
       internalField.Append(new UnsignedField<2>(modelData.timers[i].countdownBeep, "countdownBeep"));
       internalField.Append(new BoolField<1>(modelData.timers[i].minuteBeep, "minuteBeep"));
       internalField.Append(new UnsignedField<2>(modelData.timers[i].persistent, "timers[i].persistent"));
-      //internalField.Append(new SpareBitsField<3>());
+      internalField.Append(new SpareBitsField<3>());
       internalField.Append(new SignedField<16>(modelData.timers[i].pvalue, "timers[i].pvalue"));
 	  }
     else if (afterrelease21March2013) {
@@ -2510,16 +2511,20 @@ OpenTxModelData::OpenTxModelData(ModelData & modelData, BoardEnum board, unsigne
     else {
       internalField.Append(new UnsignedField<16>(modelData.timers[i].val,"timers.val"));
       if (HAS_PERSISTENT_TIMERS(board)) {
-        internalField.Append(new UnsignedField<1>(modelData.timers[i].persistent));
+        internalField.Append(new UnsignedField<1>(modelData.timers[i].persistent,"timers.persistent"));
         internalField.Append(new SpareBitsField<15>());
 		}
 	  }
 	}
 
-  internalField.Append(new UnsignedField<3>(modelData.telemetryProtocol, "telemetryProtocol"));
-  internalField.Append(new UnsignedField<2>(modelData.telemetryCom, "telemetryCom"));
-  internalField.Append(new UnsignedField<3>(modelData.telemetryBaud, "telemetryBaud"));
-  internalField.Append(new UnsignedField<2>(modelData.telemetryMirrorCom, "telemetryMirrorCom"));
+  //if (IS_ARM(board)) {
+	internalField.Append(new UnsignedField<3>(modelData.telemetryProtocol, "telemetryProtocol"));
+	internalField.Append(new UnsignedField<2>(modelData.telemetryCom, "telemetryCom"));
+	internalField.Append(new UnsignedField<3>(modelData.telemetryBaud, "telemetryBaud"));
+	internalField.Append(new UnsignedField<2>(modelData.telemetryMirrorCom, "telemetryMirrorCom"));
+  //	}
+  //else
+  //  internalField.Append(new ConversionField< UnsignedField<3> >((unsigned int &)modelData.moduleData[0].RFprotocol, &protocolsConversionTable, "Protocol", ::QObject::tr("OpenTX doesn't accept this telemetry protocol")));
 
   internalField.Append(new BoolField<1>(modelData.thrTrim, "thrTrim"));
 
@@ -2533,7 +2538,7 @@ OpenTxModelData::OpenTxModelData(ModelData & modelData, BoardEnum board, unsigne
   else
     internalField.Append(new ConversionField< SignedField<3> >(modelData.trimInc, +2));
 
-  internalField.Append(new BoolField<1>(modelData.disableThrottleWarning));
+  internalField.Append(new BoolField<1>(modelData.disableThrottleWarning, "disableThrottleWarning"));
 
   if (IS_TARANIS(board) || (IS_ARM(board) && version >= 216))
     internalField.Append(new BoolField<1>(modelData.displayChecklist, "displayChecklist"));
@@ -2553,6 +2558,8 @@ OpenTxModelData::OpenTxModelData(ModelData & modelData, BoardEnum board, unsigne
   else
     internalField.Append(new UnsignedField<8>(modelData.beepANACenter));
 
+  
+  
   for (int i=0; i<MAX_MIXERS(board, version); i++)
     internalField.Append(new MixField(modelData.mixData[i], board, version, &modelData));
   
@@ -2645,10 +2652,10 @@ OpenTxModelData::OpenTxModelData(ModelData & modelData, BoardEnum board, unsigne
       internalField.Append(new ConversionField< SignedField<8> >(modelData.moduleData[module].channelsCount, -8, "channelsCount"));
       internalField.Append(new UnsignedField<8>(modelData.moduleData[module].failsafeMode, "failsafeMode"));
       for (int i=0; i<32; i++)
-        internalField.Append(new SignedField<16>(modelData.moduleData[module].failsafeChannels[i]));
+        internalField.Append(new SignedField<16>(modelData.moduleData[module].failsafeChannels[i],"failsafeChannels"));
       internalField.Append(new ConversionField< SignedField<8> >(modelData.moduleData[module].ppmDelay, exportPpmDelay, importPpmDelay));
-      internalField.Append(new SignedField<8>(modelData.moduleData[module].ppmFrameLength));
-      internalField.Append(new BoolField<8>(modelData.moduleData[module].ppmPulsePol));
+      internalField.Append(new SignedField<8>(modelData.moduleData[module].ppmFrameLength,"ppmFrameLength"));
+      internalField.Append(new BoolField<8>(modelData.moduleData[module].ppmPulsePol,"ppmPulsePol"));
 	  }
 	}
 

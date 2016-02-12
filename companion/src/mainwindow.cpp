@@ -2054,14 +2054,14 @@ int MainWindow::getEpromVersion(QString fileName)
     if (!file.open(QFile::ReadOnly)) {  //reading binary file   - TODO HEX support
       QMessageBox::critical(this, tr("Error"),tr("Error opening file %1:\n%2.").arg(fileName).arg(file.errorString()));
       return -1;
-    }
+	  }
     QByteArray eeprom(eeprom_size, 0);
     long result = file.read(eeprom.data(), eeprom_size);
     file.close();
     if (result != eeprom_size) {
       QMessageBox::critical(this, tr("Error"),tr("Error reading file %1:\n%2.").arg(fileName).arg(file.errorString()));
       return -1;
-    }
+	  }
     if (!LoadEeprom(testData, (uint8_t *)eeprom.data(), eeprom_size)) {
       QMessageBox::critical(this, tr("Error"),tr("Invalid binary Models and Settings File %1").arg(fileName));
       return -1;

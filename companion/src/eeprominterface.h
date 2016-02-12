@@ -301,13 +301,12 @@ enum RawSourceType {
   MAX_SOURCE_TYPE
 };
 
-class ModelData;
+class ModelData;		// goto 977 line
 
 QString AnalogString(int index);
 QString RotaryEncoderString(int index);
 
-class RawSourceRange
-{
+class RawSourceRange {
   public:
     RawSourceRange():
       decimals(0),
@@ -989,17 +988,17 @@ class ModelData {
     bool      used;
     char      name[12+1];
     TimerData timers[2];
-    bool      thrTrim;            // Enable Throttle Trim
-    int       trimInc;            // Trim Increments
-    bool      disableThrottleWarning;
-    unsigned int telemetryProtocol;
+    unsigned int 		telemetryProtocol;
     unsigned int 		telemetryCom;
     unsigned int 		telemetryBaud;  
     unsigned int		telemetryMirrorCom;
+    bool      			thrTrim;            // Enable Throttle Trim
+    int       			trimInc;            // Trim Increments
+    bool      			disableThrottleWarning;
 
-    unsigned int beepANACenter;      // 1<<0->A1.. 1<<6->A7
+    unsigned int 		beepANACenter;      // 1<<0->A1.. 1<<6->A7
 
-    bool      extendedLimits; // TODO xml
+    bool      			extendedLimits; // TODO xml
     bool      			extendedTrims;
     bool      			throttleReversed;
     FlightModeData 		flightModeData[C9X_MAX_FLIGHT_MODES];
@@ -1014,25 +1013,25 @@ class ModelData {
     FuncSwData    		funcSw[C9X_MAX_CUSTOM_FUNCTIONS];
     SwashRingData 		swashRingData;
     unsigned int 		thrTraceSrc;
-    unsigned int modelId;
-    unsigned int switchWarningStates;
-    unsigned int nSwToWarn;
-    unsigned int nPotsToWarn;
-    int          potPosition[C9X_NUM_POTS];
-    bool         displayChecklist;
+    unsigned int 		modelId;
+    unsigned int 		switchWarningStates;
+    unsigned int 		nSwToWarn;
+    unsigned int 		nPotsToWarn;
+    int          		potPosition[C9X_NUM_POTS];
+    bool         		displayChecklist;
     // TODO structure
-    char     gvars_names[C9X_MAX_GVARS][6+1];
-    bool     gvars_popups[C9X_MAX_GVARS];
-    FrSkyData frsky;
+    char     			gvars_names[C9X_MAX_GVARS][6+1];
+    bool     			gvars_popups[C9X_MAX_GVARS];
+    FrSkyData 			frsky;
 
-    MavlinkData mavlink;
+    MavlinkData 		mavlink;
     char bitmap[10+1];
 
-    unsigned int trainerMode;
+    unsigned int 		trainerMode;
 
-    ModuleData moduleData[C9X_NUM_MODULES+1/*trainer*/];
+    ModuleData 			moduleData[C9X_NUM_MODULES+1/*trainer*/];
 
-    ScriptData scriptData[C9X_MAX_SCRIPTS];
+    ScriptData 			scriptData[C9X_MAX_SCRIPTS];
 
     void clear();
     bool isempty();
@@ -1117,6 +1116,11 @@ enum Capability {
   PPMFrameLength,
   DSM2Indexes,
   Telemetry,
+  telemetryProtocol,
+  telemetryCom,
+  telemetryBaud,
+  telemetryMirrorCom,
+  
   TelemetryUnits,
   TelemetryBars,
   Heli,

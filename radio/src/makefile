@@ -49,11 +49,11 @@ DOUBLE_WRITE_OK = NO
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
-# PCB = SKY9X
+ PCB = SKY9X
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
- PCB = 9XRPRO
+# PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
 # PCB = TARANIS
@@ -396,7 +396,7 @@ SHELL = sh
 IMG2LBM = -python ../util/img2lbm.py
 BIN2LBM = -python ../util/bin2lbm.py
 TRANSLATE = -python ../util/translate.py
-VERSION = 0.2.20
+VERSION = 0.2.21
 
 SRC =
 CPPSRC =
