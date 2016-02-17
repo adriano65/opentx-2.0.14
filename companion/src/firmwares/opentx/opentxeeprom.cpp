@@ -2517,14 +2517,14 @@ OpenTxModelData::OpenTxModelData(ModelData & modelData, BoardEnum board, unsigne
 	  }
 	}
 
-  //if (IS_ARM(board)) {
+  if (IS_ARM(board)) {
 	internalField.Append(new UnsignedField<3>(modelData.telemetryProtocol, "telemetryProtocol"));
 	internalField.Append(new UnsignedField<2>(modelData.telemetryCom, "telemetryCom"));
 	internalField.Append(new UnsignedField<3>(modelData.telemetryBaud, "telemetryBaud"));
 	internalField.Append(new UnsignedField<2>(modelData.telemetryMirrorCom, "telemetryMirrorCom"));
-  //	}
-  //else
-  //  internalField.Append(new ConversionField< UnsignedField<3> >((unsigned int &)modelData.moduleData[0].RFprotocol, &protocolsConversionTable, "Protocol", ::QObject::tr("OpenTX doesn't accept this telemetry protocol")));
+  	}
+  else
+    internalField.Append(new ConversionField< UnsignedField<3> >((unsigned int &)modelData.moduleData[0].RFprotocol, &protocolsConversionTable, "RFprotocol", ::QObject::tr("OpenTX doesn't accept this telemetry protocol")));
 
   internalField.Append(new BoolField<1>(modelData.thrTrim, "thrTrim"));
 

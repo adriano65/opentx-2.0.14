@@ -78,6 +78,7 @@ class ProtocolsConversionTable: public ConversionTable
         addConversion(OFF, val++);
       }
       addConversion(PPM, val++);
+	  
       if (!IS_ARM(board)) {
         addConversion(PPM16, val++);
         addConversion(PPMSIM, val++);
