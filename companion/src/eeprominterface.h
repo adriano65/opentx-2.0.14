@@ -31,6 +31,8 @@
   #include "../targets/windows/winbuild.h"
 #endif
 
+#define _DBG(fmt, args...) printf("%s: " fmt "\n", __FUNCTION__, ##args)
+
 #define EESIZE_STOCK          2048
 #define EESIZE_M128           4096
 #define EESIZE_GRUVIN9X       4096
@@ -985,9 +987,9 @@ class ModelData {
 
     bool isInputValid(const unsigned int idx) const;
 
-    bool      used;
-    char      name[12+1];
-    TimerData timers[2];
+    bool      			used;
+    char      			name[12+1];
+    TimerData 			timers[2];
     unsigned int 		telemetryProtocol;
     unsigned int 		telemetryCom;
     unsigned int 		telemetryBaud;  

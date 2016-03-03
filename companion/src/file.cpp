@@ -293,6 +293,7 @@ unsigned int RleFile::readRlc12(uint8_t *buf, unsigned int i_len, bool rlc2)
   memset(buf, 0, i_len);
 
   if (IS_SKY9X(board)) {
+	_DBG("SKY9X i_len=%d, rlc2=%d", i_len, rlc2);
     int len = std::min((int)i_len, (int)m_size + (int)sizeof(t_eeprom_header) - (int)m_pos);
     if (len > 0) {
       eeprom_read_block(buf, (m_fileId << 12) + m_pos, len);

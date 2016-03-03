@@ -185,21 +185,22 @@ ModulePanel::~ModulePanel()
 #define MASK_PPM_FIELDS     16
 #define MASK_FAILSAFES      32
 
-void ModulePanel::update()
-{
+void ModulePanel::update() {
   unsigned int mask = 0;
-  RFprotocol protocol = (RFprotocol)module.RFprotocol;
+  //RFprotocol protocol = (RFprotocol)module.RFprotocol;
   unsigned int max_rx_num = 63;
 
+  _DBG("moduleIdx %d", moduleIdx);
   if (moduleIdx >= 0) {
     mask |= MASK_PROTOCOL;
-    switch (protocol) {
+	_DBG("module.RFprotocol %d", module.RFprotocol);
+    switch (module.RFprotocol) {
       case PXX_XJT_X16:
       case PXX_XJT_D8:
       case PXX_XJT_LR12:
       case PXX_DJT:
         mask |= MASK_CHANNELS_RANGE | MASK_CHANNELS_COUNT;
-        if ((protocol==PXX_XJT_X16) || (protocol==PXX_XJT_LR12)) mask |= MASK_FAILSAFES | MASK_RX_NUMBER;
+        if ((module.RFprotocol==PXX_XJT_X16) || (module.RFprotocol==PXX_XJT_LR12)) mask |= MASK_FAILSAFES | MASK_RX_NUMBER;
         break;
       case LP45:
       case DSM2:
@@ -212,9 +213,13 @@ void ModulePanel::update()
         mask |= MASK_PPM_FIELDS | MASK_CHANNELS_RANGE| MASK_CHANNELS_COUNT;
         break;
       case OFF:
-      default:
         break;
-    }
+      default:
+		_DBG("unknown RF module.RFprotocol (%d)", moduleIdx);
+        //mask |= MASK_PPM_FIELDS | MASK_CHANNELS_RANGE| MASK_CHANNELS_COUNT;
+        break;
+	  }
+  
   }
   else if (!IS_TARANIS(firmware->getBoard()) || model.trainerMode != 0) {
     mask |= MASK_PPM_FIELDS | MASK_CHANNELS_RANGE | MASK_CHANNELS_COUNT;

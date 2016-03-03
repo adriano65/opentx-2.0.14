@@ -146,7 +146,7 @@ bool OpenTxEepromInterface::loadModelVariant(unsigned int index, ModelData &mode
     if (numbytes) {
       open9xModel.Import(eepromData);
 	  
-	  _DBG("model.modelId = %d, model.name %s\n", model.modelId, model.name);
+	  _DBG("model.modelId = %d, model.name %s, model.moduleData[0].RFprotocol = %d", model.modelId, model.name, model.moduleData[0].RFprotocol);
       if (strcmp(model.name, "Firstar V2")==0) open9xModel.Dump();
 	  
       model.used = true;
@@ -277,7 +277,7 @@ bool OpenTxEepromInterface::load(RadioData &radioData, const uint8_t *eeprom, in
     return false;
   }
 
-  std::cout << " version " << (unsigned int)version;
+  _DBG("version %d", (unsigned int)version);
 
   if (!checkVersion(version)) {
     std::cout << " not open9x\n";
@@ -289,12 +289,13 @@ bool OpenTxEepromInterface::load(RadioData &radioData, const uint8_t *eeprom, in
     return false;
   }
   
-  std::cout << " variant " << radioData.generalSettings.variant;
+  _DBG("variant...%d", radioData.generalSettings.variant);
   for (int i=0; i<getMaxModels(); i++) {
     if (!loadModel(version, radioData.models[i], NULL, i, radioData.generalSettings.variant, radioData.generalSettings.stickMode+1)) {
       std::cout << " ko\n";
       return false;
-    }
+	  }
+	_DBG("radioData.models[%d].moduleData[0].RFprotocol %d", i, radioData.models[i].moduleData[0].RFprotocol);
   }
   std::cout << " ok\n";
   return true;
@@ -1143,7 +1144,7 @@ void registerOpenTxFirmwares() {
   openTx->addOption("nographics", QObject::tr("No graphical check boxes and sliders"));
   openTx->addOption("battgraph", QObject::tr("Battery graph"));
   openTx->addOption("nobold", QObject::tr("Don't use bold font for highlighting active items"));
-  openTx->addOption("bluetooth", QObject::tr("Bluetooth interface"));
+  //openTx->addOption("bluetooth", QObject::tr("Bluetooth interface"));
   addOpenTxCommonOptions(openTx);
   firmwares.push_back(openTx);
   
@@ -1162,7 +1163,7 @@ void registerOpenTxFirmwares() {
   openTx->addOption("nographics", QObject::tr("No graphical check boxes and sliders"));
   openTx->addOption("battgraph", QObject::tr("Battery graph"));
   openTx->addOption("nobold", QObject::tr("Don't use bold font for highlighting active items"));
-  openTx->addOption("bluetooth", QObject::tr("Bluetooth interface"));
+  //openTx->addOption("bluetooth", QObject::tr("Bluetooth interface"));
   addOpenTxCommonOptions(openTx);
   firmwares.push_back(openTx);
   

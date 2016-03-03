@@ -276,6 +276,8 @@ enum BeeperMode {
 };
 
 #if defined(CPUARM)
+  // uint8_t  btBaudrate;
+
   #define EXTRA_GENERAL_FIELDS_ARM \
   uint8_t  backlightBright; \
   int8_t   currentCalib; \
@@ -300,7 +302,6 @@ enum BeeperMode {
 #endif
 
 #if defined(PCBTARANIS)
-
 #define EXTRA_GENERAL_FIELDS \
   EXTRA_GENERAL_FIELDS_ARM \
   uint8_t  extra_spare; \
@@ -1778,7 +1779,7 @@ enum TelemetryProtocol {
 #endif
 };
 
-
+// Companion: see eeprominterface.h
 PACK(typedef struct t_ModelData {
   ModelHeader header;
   TimerData 		timers[MAX_TIMERS];

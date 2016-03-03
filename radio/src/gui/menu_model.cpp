@@ -922,7 +922,7 @@ enum menuModelSetupItems {
   ITEM_MODEL_EXTERNAL_MODULE_CHANNELS,
   ITEM_MODEL_EXTERNAL_MODULE_BIND,
   ITEM_MODEL_EXTERNAL_MODULE_FAILSAFE,
-  #if defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
+  #if defined(PCBSKY9X) && !defined(REVA)
 	ITEM_MODEL_EXTRA_MODULE_LABEL,
 	ITEM_MODEL_EXTRA_MODULE_CHANNELS,
 	ITEM_MODEL_EXTRA_MODULE_BIND,
@@ -980,7 +980,7 @@ void onModelSetupBitmapMenu(const char *result) {
 
 #if defined(PCBTARANIS)
   #define CURRENT_MODULE_EDITED(k)         (k>=ITEM_MODEL_TRAINER_LABEL ? TRAINER_MODULE : (k>=ITEM_MODEL_EXTERNAL_MODULE_LABEL ? EXTERNAL_MODULE : INTERNAL_MODULE))
-#elif defined(PCBSKY9X) && !defined(REVA) && !defined(REVX)
+#elif defined(PCBSKY9X) && !defined(REVA)
   #define CURRENT_MODULE_EDITED(k)         (k>=ITEM_MODEL_EXTRA_MODULE_LABEL ? EXTRA_MODULE : EXTERNAL_MODULE)
 #else
   #define CURRENT_MODULE_EDITED(k)         (EXTERNAL_MODULE)
@@ -1467,7 +1467,7 @@ void menuModelSetup(uint8_t event) {
         }
         break;
 
-#if defined(PCBSKY9X) && !defined(REVX)
+#if defined(PCBSKY9X) && !defined(REVA)
       case ITEM_MODEL_EXTRA_MODULE_LABEL:
         lcd_putsLeft(y, "RF Port 2 (PPM)");
         break;
@@ -1592,7 +1592,7 @@ void menuModelSetup(uint8_t event) {
         break;
 
       case ITEM_MODEL_INTERNAL_MODULE_CHANNELS:
-#elif defined(PCBSKY9X) && !defined(REVX)
+#elif defined(PCBSKY9X) && !defined(REVA)
       case ITEM_MODEL_EXTRA_MODULE_CHANNELS:
 #endif
 #if defined(CPUARM)
@@ -1632,7 +1632,7 @@ void menuModelSetup(uint8_t event) {
 
 #if defined(PCBTARANIS)
       case ITEM_MODEL_INTERNAL_MODULE_BIND:
-#elif defined(PCBSKY9X) && !defined(REVX)
+#elif defined(PCBSKY9X) && !defined(REVA)
       case ITEM_MODEL_EXTRA_MODULE_BIND:
 #endif
 #if defined(CPUARM)

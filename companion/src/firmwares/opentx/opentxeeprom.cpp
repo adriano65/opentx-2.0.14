@@ -2643,6 +2643,7 @@ OpenTxModelData::OpenTxModelData(ModelData & modelData, BoardEnum board, unsigne
   else if (IS_ARM(board) && version >= 216) {
     modulesCount = 3;
     internalField.Append(new ConversionField< SignedField<8> >(modelData.moduleData[0].RFprotocol, &protocolsConversionTable, "RFProtocol", ::QObject::tr("OpenTX doesn't accept this radio protocol")));
+    //internalField.Append(new SignedField<8>(modelData.moduleData[0].RFprotocol, "RFProtocol"));
 	}
 
   if (IS_ARM(board) && version >= 215) {

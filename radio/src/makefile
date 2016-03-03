@@ -49,11 +49,11 @@ DOUBLE_WRITE_OK = NO
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
- PCB = SKY9X
+# PCB = SKY9X
 
 # --- use eeprom_raw.cpp ---
 # /dev/sdh on /mnt/sdh type vfat (rw,sync,noatime) <-- mount options!!
-# PCB = 9XRPRO
+ PCB = 9XRPRO
 
 # --- use eeprom_rlc.cpp ---
 # PCB = TARANIS
